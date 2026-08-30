@@ -33,7 +33,7 @@ through these endpoints rather than scraping rendered HTML.
 | Endpoint | What you get |
 | -------- | ------------ |
 | [`/llms.txt`](../llms.txt) | Linked outline of every page with one-line descriptions ([llms.txt convention](https://llmstxt.org){target=_blank}) |
-| [`/llms-full.txt`](../llms-full.txt) | The entire corpus in one file — every page's Markdown with frontmatter, prefixed by its canonical URL |
+| [`/llms-full.txt`](../llms-full.txt) | The entire corpus in one file — every page's Markdown with frontmatter, prefixed by its canonical URL. **It is large (hundreds of KB) and may exceed your fetch window** — if it truncates, use [`/llms.txt`](../llms.txt) as the outline and fetch pages individually via their `index.md` mirrors |
 | Any page URL + `index.md` | That page's Markdown source with full OKF frontmatter (e.g. `/running-jobs/slurm-intro/index.md`) |
 | `/sitemap.xml`, `/robots.txt` | Standard crawl surface; robots.txt repeats these pointers |
 | [Source repository](https://github.com/UNM-CARC/docs){target=_blank} | The bundle itself, plus `AGENTS.md` with contribution rules for coding agents |
