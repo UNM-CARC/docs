@@ -13,14 +13,14 @@ sources:
     resource: "https://github.com/UNM-CARC/QuickBytes/blob/master/transfer_data.md"
     title: "UNM-CARC QuickBytes: transfer_data.md"
     author: "team:unm-carc"
-    last_modified: "2026-06-22T11:18:55-06:00"
+    last_modified: "2026-08-03T20:10:33-06:00"
 ---
 
 # Transferring data
 
 ### Where is your data?
 
-Your home directory, `/users/your-user-name/`, is shared across all CARC machines, meaning that once your data has been uploaded to your home directory, it is accessible regardless of which machine you are logged in to. Refer to our [CARC Systems documentation page](#) for details on CARC systems.
+Your home directory, `/users/your-user-name/`, is shared across all CARC machines, meaning that once your data has been uploaded to your home directory, it is accessible regardless of which machine you are logged in to.
 
 ### Graphical User Interface (GUI) options
 
@@ -89,4 +89,4 @@ As you can see, the syntax for these two programs is very similar; however, the 
 
 <iframe class="carc-video" src="https://www.youtube-nocookie.com/embed/2UphEzHOHGM" title="Transferring data" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-<p class="carc-provenance" markdown>Migrated from [UNM-CARC QuickBytes](https://github.com/UNM-CARC/QuickBytes/blob/master/transfer_data.md){target=_blank} (last source update 2026-06-22). Spotted a problem? [Open an issue or pull request](https://github.com/UNM-CARC/QuickBytes){target=_blank}.</p>
+<p class="carc-provenance" markdown>Migrated from [UNM-CARC QuickBytes](https://github.com/UNM-CARC/QuickBytes/blob/master/transfer_data.md){target=_blank} (last source update 2026-08-03). Spotted a problem? [Open an issue or pull request](https://github.com/UNM-CARC/QuickBytes){target=_blank}.</p>

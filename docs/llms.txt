@@ -60,6 +60,7 @@ Section listing  /running-jobs/              ->  https://raw.githubusercontent.c
 - [Installing deep learning packages](https://carc.unm.edu/docs/software/deep-learning-packages/): Install GPU-enabled deep learning frameworks (PyTorch, TensorFlow) into conda environments. (draft) Markdown twin: https://carc.unm.edu/docs/software/deep-learning-packages/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/deep-learning-packages.md
 - [Parallel Python with Dask and scikit-learn](https://carc.unm.edu/docs/software/dask-scikit-learn/): Scale scikit-learn workloads across cluster nodes from JupyterHub using Dask. Markdown twin: https://carc.unm.edu/docs/software/dask-scikit-learn/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/dask-scikit-learn.md
 - [MPI parallelization from JupyterHub](https://carc.unm.edu/docs/software/jupyterhub-mpi/): Run MPI-parallel Python (mpi4py/ipyparallel) from CARC JupyterHub sessions. Markdown twin: https://carc.unm.edu/docs/software/jupyterhub-mpi/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/jupyterhub-mpi.md
+- [Julia in JupyterHub](https://carc.unm.edu/docs/software/julia-jupyterhub/): Register a Julia kernel and use Julia notebooks in CARC JupyterHub. Markdown twin: https://carc.unm.edu/docs/software/julia-jupyterhub/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/julia-jupyterhub.md
 
 ### R
 
@@ -92,18 +93,21 @@ Section listing  /running-jobs/              ->  https://raw.githubusercontent.c
 - [Apache Spark](https://carc.unm.edu/docs/software/spark/): Launch Apache Spark clusters inside Slurm allocations for large-scale data analysis. Markdown twin: https://carc.unm.edu/docs/software/spark/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/spark.md
 - [ParaView remote visualization](https://carc.unm.edu/docs/software/paraview/): Run the ParaView server on CARC compute nodes and connect from your desktop client. Markdown twin: https://carc.unm.edu/docs/software/paraview/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/paraview.md
 - [CUDA-aware MPI](https://carc.unm.edu/docs/software/cuda-aware-mpi/): Pass GPU device pointers directly to MPI calls with the CUDA-aware OpenMPI/UCX stack, and fix the mixed-environment segfault. Markdown twin: https://carc.unm.edu/docs/software/cuda-aware-mpi/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/cuda-aware-mpi.md
+- [Installing Perl libraries](https://carc.unm.edu/docs/software/perl-libraries/): Install Perl modules into your own home directory with cpan. Markdown twin: https://carc.unm.edu/docs/software/perl-libraries/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/perl-libraries.md
+- [Haskell at CARC](https://carc.unm.edu/docs/software/haskell/): Install GHC with ghcup and build a Stack project on CARC clusters. Markdown twin: https://carc.unm.edu/docs/software/haskell/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/haskell.md
 
 ## Tutorials
 
 - [Variant calling with GATK](https://carc.unm.edu/docs/tutorials/gatk/): A genomics variant-calling workflow using GATK best practices on CARC systems. Markdown twin: https://carc.unm.edu/docs/tutorials/gatk/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/tutorials/gatk.md
 - [Metabarcoding analysis](https://carc.unm.edu/docs/tutorials/metabarcoding/): Process environmental DNA metabarcoding data on CARC clusters. Markdown twin: https://carc.unm.edu/docs/tutorials/metabarcoding/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/tutorials/metabarcoding.md
 - [RAD-seq analysis with Stacks](https://carc.unm.edu/docs/tutorials/stacks/): Analyze restriction-site associated DNA sequencing (RAD-seq) data with Stacks. Markdown twin: https://carc.unm.edu/docs/tutorials/stacks/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/tutorials/stacks.md
+- [Genome assembly evaluation with QUAST and BUSCO](https://carc.unm.edu/docs/tutorials/genome-evaluation/): Evaluate genome assembly quality and completeness with QUAST and BUSCO. Markdown twin: https://carc.unm.edu/docs/tutorials/genome-evaluation/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/tutorials/genome-evaluation.md
 - [Coalescent simulation with msprime](https://carc.unm.edu/docs/tutorials/msprime/): Simulate genealogical histories and genome sequences with msprime. Markdown twin: https://carc.unm.edu/docs/tutorials/msprime/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/tutorials/msprime.md
 - [Demographic inference with PSMC](https://carc.unm.edu/docs/tutorials/psmc/): Infer population size history from diploid genomes using PSMC. Markdown twin: https://carc.unm.edu/docs/tutorials/psmc/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/tutorials/psmc.md
 - [Bayesian phylogenetics with BEAST](https://carc.unm.edu/docs/tutorials/beast/): Run BEAST Bayesian evolutionary analyses on CARC clusters. Markdown twin: https://carc.unm.edu/docs/tutorials/beast/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/tutorials/beast.md
 - [SimCov epidemiological simulation](https://carc.unm.edu/docs/tutorials/simcov/): Run the SimCov agent-based model of SARS-CoV-2 infection dynamics in lung tissue. Markdown twin: https://carc.unm.edu/docs/tutorials/simcov/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/tutorials/simcov.md
 - [VASP materials simulation](https://carc.unm.edu/docs/tutorials/vasp/): Set up and run VASP density-functional-theory calculations on CARC clusters. Markdown twin: https://carc.unm.edu/docs/tutorials/vasp/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/tutorials/vasp.md
-- [ORCA quantum chemistry](https://carc.unm.edu/docs/tutorials/orca/): Run ORCA quantum chemistry calculations in parallel on CARC clusters. (draft) Markdown twin: https://carc.unm.edu/docs/tutorials/orca/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/tutorials/orca.md
+- [ORCA quantum chemistry](https://carc.unm.edu/docs/tutorials/orca/): Run ORCA quantum chemistry calculations in parallel on CARC clusters. Markdown twin: https://carc.unm.edu/docs/tutorials/orca/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/tutorials/orca.md
 - [Parallel CASA for radio astronomy](https://carc.unm.edu/docs/tutorials/mpi-casa/): Run mpiCASA for parallel radio astronomy imaging on CARC clusters. Markdown twin: https://carc.unm.edu/docs/tutorials/mpi-casa/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/tutorials/mpi-casa.md
 
 ## FAQ
@@ -131,7 +135,7 @@ Section listing  /running-jobs/              ->  https://raw.githubusercontent.c
 
 ## Meta
 
-- [Full corpus in one file](https://carc.unm.edu/docs/llms-full.txt): every page's Markdown with frontmatter, links made absolute; about 518 KB, roughly 133,000 tokens. Prefer it over fetching pages one at a time.
+- [Full corpus in one file](https://carc.unm.edu/docs/llms-full.txt): every page's Markdown with frontmatter, links made absolute; about 538 KB, roughly 138,000 tokens. Prefer it over fetching pages one at a time.
 - [Documentation update log](https://carc.unm.edu/docs/log/): dated history of changes to this bundle.
 - [For AI agents](https://carc.unm.edu/docs/about/ai-agents/): endpoints, trust signals, and how to answer questions from this corpus; includes what to do if you cannot fetch this site.
 - [Sitemap](https://carc.unm.edu/docs/sitemap.xml) and [robots.txt](https://carc.unm.edu/docs/robots.txt).

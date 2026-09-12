@@ -113,6 +113,36 @@ def main() -> int:
         full += [f"---8<--- {url}", "", (head + body).rstrip(), ""]
         n += 1
 
+    # Safety net: a page that exists in docs/ but is missing from the nav is
+    # still listed (under its directory's section) and reported, so a new
+    # page never silently disappears from the index. Fix by adding it to nav.
+    section_of_dir = {}
+    for trail, _label, target in nav_pages(cfg.get("nav", [])):
+        if not is_external(target) and target.endswith("index.md") and trail:
+            section_of_dir[str(Path(target).parent).replace("\\", "/")] = trail[0]
+    for path in sorted(DOCS.rglob("*.md")):
+        rel = path.relative_to(DOCS).as_posix()
+        if (rel in seen or rel.split("/")[0] == "assets"
+                or rel.endswith("index.md") or rel == "log.md"):
+            continue
+        print(f"warning: {rel} is not in the zensical.toml nav; add it "
+              "(listed at the end of its section for now)", file=sys.stderr)
+        fm = frontmatter(path)
+        url = page_url(base, rel)
+        title = fm.get("title") or Path(rel).stem.replace("-", " ").title()
+        summary = str(fm.get("description", "")).strip()
+        raw = raw_source_url(cfg, rel)
+        alt = f" Markdown twin: {url}index.md" + (f" Raw source: {raw}" if raw else "")
+        section = section_of_dir.get(str(Path(rel).parent).replace("\\", "/"), "Other pages")
+        groups.setdefault(section, {}).setdefault(None, []).append(
+            f"- [{title}]({url}): {summary}{alt}")
+        text = path.read_text(encoding="utf-8")
+        _, body = split_frontmatter(text)
+        head = text[: len(text) - len(body)]
+        body = rewrite_link_targets(body, lambda t, r=rel: absolutize(t, r, base))
+        full += [f"---8<--- {url}", "", (head + body).rstrip(), ""]
+        n += 1
+
     for section, subs in groups.items():
         lines += [f"## {section}", ""]
         for sub, entries in subs.items():

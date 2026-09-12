@@ -11,6 +11,7 @@ Language environments, machine learning frameworks, containers, and applications
 * [Installing deep learning packages](deep-learning-packages.md) - Install GPU-enabled deep learning frameworks (PyTorch, TensorFlow) into conda environments.
 * [Parallel Python with Dask and scikit-learn](dask-scikit-learn.md) - Scale scikit-learn workloads across cluster nodes from JupyterHub using Dask.
 * [MPI parallelization from JupyterHub](jupyterhub-mpi.md) - Run MPI-parallel Python (mpi4py/ipyparallel) from CARC JupyterHub sessions.
+* [Julia in JupyterHub](julia-jupyterhub.md) - Register a Julia kernel and use Julia notebooks in CARC JupyterHub.
 
 ## R
 
@@ -43,3 +44,5 @@ Language environments, machine learning frameworks, containers, and applications
 * [Apache Spark](spark.md) - Launch Apache Spark clusters inside Slurm allocations for large-scale data analysis.
 * [ParaView remote visualization](paraview.md) - Run the ParaView server on CARC compute nodes and connect from your desktop client.
 * [CUDA-aware MPI](cuda-aware-mpi.md) - Pass GPU device pointers directly to MPI calls with the CUDA-aware OpenMPI/UCX stack, and fix the mixed-environment segfault.
+* [Installing Perl libraries](perl-libraries.md) - Install Perl modules into your own home directory with cpan.
+* [Haskell at CARC](haskell.md) - Install GHC with ghcup and build a Stack project on CARC clusters.

@@ -13,7 +13,7 @@ sources:
     resource: "https://github.com/UNM-CARC/QuickBytes/blob/master/Parallel_R_with_Future.ipynb"
     title: "UNM-CARC QuickBytes: Parallel_R_with_Future.ipynb"
     author: "team:unm-carc"
-    last_modified: "2021-08-11T10:26:45-06:00"
+    last_modified: "2026-08-03T15:49:29-06:00"
 ---
 
 # Parallel R with the future package
@@ -42,8 +42,8 @@ Table of Contents
 
 ## Packages 
 
-Before you run the code, I recommend installing R 4.0 and IRKernal via conda. Once you activate your conda environment, feel free to run the rest through jupyter: 
-the CARC JupyterHub on [Hopper](https://hopper.alliance.unm.edu){target=_blank} or [Easley](https://easley.alliance.unm.edu/jupyter){target=_blank}.
+Before you run the code, I recommend installing R 4.5 and IRKernel via conda. Once you activate your conda environment, feel free to run the rest through jupyter: 
+https://easley.alliance.unm.edu/jupyter or https://hopper.alliance.unm.edu/jupyter
 
 Final note:
 make sure you are on a node with 8 cores on an interactive node or logged into Jupyter before running the code. 
@@ -52,10 +52,10 @@ make sure you are on a node with 8 cores on an interactive node or logged into J
 
 ```R
 # Load miniconda
-module load miniconda3-4.7.12.1-gcc-4.8.5-lmtvtik
+module load miniconda3/latest
 
 # create r_parallel which installs 4
-conda create -n r_parallel_tutorial r=4 r-irkernel -c conda-forge
+conda create -n r_parallel_tutorial r=4.5 r-irkernel -c conda-forge
 
 # enables you do use conda activate
 eval "$(conda shell.bash hook)"
@@ -596,9 +596,9 @@ These Bayesian models are joint-species distribution models (jSDMs) which fit th
 
 For the sequential version, I already set up it using future. You can check your future code by running it sequentially by using plan(sequential).
 
-### batchtools.torque.tmpl
+### batchtools.slurm.tmpl
 
-batchtools.torque.tmpl file needed in the same directory or specify the path to it. You will need this file created prior to running this example.
+batchtools.slurm.tmpl file needed in the same directory or specify the path to it. You will need this file created prior to running this example - see the [future.batchtools Slurm template docs](https://github.com/HenrikBengtsson/future.batchtools){target=_blank} for the current format.
 
 ## Setup 
 
@@ -696,20 +696,30 @@ samples = 10
 #!/bin/bash
 
 ## Job name:
-#PBS -q default
-#PBS -l nodes=1:ppn=4
-#PBS -l walltime=0:20:00
-#PBS -N x_big_model_test_parallel_4_cores_4_chains
-#PBS -j oe
-#PBS -m ae
+#SBATCH --partition general
+#SBATCH --nodes 1
+#SBATCH --ntasks-per-node 4
+#SBATCH --time 0:20:00
+#SBATCH --job-name x_big_model_test_parallel_4_cores_4_chains
+#SBATCH --output x_big_model_test.out
+#SBATCH --error x_big_model_test.err
+#SBATCH --mail-type end,fail
 
 
 start=`date +%s`
 
-cd $PBS_O_WORKDIR
+cd $SLURM_SUBMIT_DIR
 
 # load R
-module load r-4.0.4-gcc-10.2.0-python3-dghog6f
+module load libdeflate/1.14-2pby r/4.5.2-pspo
+export LD_LIBRARY_PATH=$LIBDEFLATE_LIB:$LD_LIBRARY_PATH
+
+# if the driver session (e.g. a conda-based R kernel in JupyterHub) exported
+# R_LIBS_USER, it points at that R's own personal library path (a different
+# platform triplet than the module R), which shadows the module R's own
+# default personal library and makes it unable to find batchtools. Unset it
+# so the worker uses the module R's own default:
+unset R_LIBS_USER
 
 #Rscript -e '.libPaths("~/R/Jupyter")' -e 'batchtools::doJobCollection("<%= uri %>")'
 Rscript -e 'batchtools::doJobCollection("<%= uri %>")'
@@ -722,7 +732,7 @@ echo "Runtime was $runtime seconds"
 
 
 ```R
-# set up that it will submit pbs scripts for each model
+# this example runs sequentially (no scheduler submission) as a baseline
 plan(sequential)
 
 m = Hmsc(Y=Y, XData = XData, XFormula=XFormula, 
@@ -762,10 +772,10 @@ round(time_Elapsed, 2)
 
 
 ```R
-# set up that it will submit pbs scripts for each model
-# calls upon the batchtools.torque.tmpl file to set the parameters for each job
+# set up that it will submit slurm scripts for each model
+# calls upon the batchtools.slurm.tmpl file to set the parameters for each job
 
-plan(batchtools_torque)
+plan(batchtools_slurm)
 
 m = Hmsc(Y=Y, XData = XData, XFormula=XFormula, 
          phyloTree = phyloTree, TrData = TrData, 
@@ -1040,4 +1050,4 @@ The future package will offer the best performance when there are fewer iteratio
 
 <iframe class="carc-video" src="https://www.youtube-nocookie.com/embed/G5xGfF151Co" title="Parallel R with Future" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-<p class="carc-provenance" markdown>Migrated from [UNM-CARC QuickBytes](https://github.com/UNM-CARC/QuickBytes/blob/master/Parallel_R_with_Future.ipynb){target=_blank} (last source update 2021-08-11). Spotted a problem? [Open an issue or pull request](https://github.com/UNM-CARC/QuickBytes){target=_blank}.</p>
+<p class="carc-provenance" markdown>Migrated from [UNM-CARC QuickBytes](https://github.com/UNM-CARC/QuickBytes/blob/master/Parallel_R_with_Future.ipynb){target=_blank} (last source update 2026-08-03). Spotted a problem? [Open an issue or pull request](https://github.com/UNM-CARC/QuickBytes){target=_blank}.</p>

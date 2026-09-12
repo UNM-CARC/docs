@@ -13,7 +13,7 @@ sources:
     resource: "https://github.com/UNM-CARC/QuickBytes/blob/master/running_matlab_jobs.md"
     title: "UNM-CARC QuickBytes: running_matlab_jobs.md"
     author: "team:unm-carc"
-    last_modified: "2026-07-07T11:39:36-06:00"
+    last_modified: "2026-08-03T20:29:18-06:00"
 ---
 
 # Running MATLAB jobs
@@ -28,7 +28,7 @@ https://www.mathworks.com/products/matlab.html
 
 To view available MATLAB versions on a CARC system, run:
 
-```bash id="m1q8aa"
+```bash
 module avail matlab
 ```
 
@@ -54,7 +54,7 @@ Suppose you have a MATLAB script named `my_program.m` that generates a 3×3 matr
 
 Example:
 
-```matlab id="k8x2cn"
+```matlab
 % Generate a random 3x3 matrix
 rmatrix = rand(3);
 
@@ -75,13 +75,13 @@ Save this file in your home directory.
 
 If you want to test interactively, first request a compute node:
 
-```bash id="q7v1sp"
+```bash
 srun --pty bash
 ```
 
 Once on the compute node:
 
-```bash id="p0d8xy"
+```bash
 module load matlab
 matlab -batch "my_program"
 ```
@@ -94,11 +94,11 @@ This ensures MATLAB runs on a compute node, not the login node.
 
 Rather than requesting an interactive shell first, you can launch MATLAB on a compute node directly from the login node with a single command. Load the module in your login shell first — `srun` propagates your current environment to the compute node, so the module needs to already be loaded before you call `srun`, not after:
 
-```bash id="v3k8lp"
+```bash
 module load matlab
 ```
 
-```bash id="v3k9lm"
+```bash
 srun --partition general matlab -batch "my_program"
 ```
 
@@ -114,7 +114,7 @@ Notes:
 
 Create a submission script named `my_matlab_job.sbatch`.
 
-```bash id="x2n5ad"
+```bash
 #!/bin/bash
 
 #SBATCH --job-name=my_matlab_job
@@ -137,7 +137,7 @@ matlab -batch "my_program"
 
 Submit the job from your home directory:
 
-```bash id="c4w8pq"
+```bash
 sbatch my_matlab_job.sbatch
 ```
 
@@ -156,13 +156,13 @@ sbatch my_matlab_job.sbatch
 
 All output is written to:
 
-```text id="z1r8tt"
+```text
 slurm-<jobid>.out
 ```
 
 Monitor output live with:
 
-```bash id="t6v9gh"
+```bash
 tail -f slurm-<jobid>.out
 ```
 
@@ -170,42 +170,42 @@ tail -f slurm-<jobid>.out
 
 ## Commands Used (for Debugging)
 
-```bash id="a8m3kf"
+```bash
 module avail matlab
 ```
 
 List available MATLAB versions.
 
-```bash id="k2v9sd"
+```bash
 srun --pty bash
 ```
 
 Request an interactive compute node session.
 
-```bash id="u7p1wx"
+```bash
 module load matlab
 ```
 
 Load MATLAB module.
 
-```bash id="m9c2qa"
+```bash
 matlab -batch "my_program"
 ```
 
 Run MATLAB script in batch mode.
 
-```bash id="b5n7ld"
+```bash
 sbatch my_matlab_job.sbatch
 ```
 
 Submit job to Slurm.
 
-```bash id="r3q8yt"
+```bash
 tail -f slurm-<jobid>.out
 ```
 
 Monitor job output.
 
-*This QuickByte was validated on 6/23/2026*
+*This QuickByte was validated on 8/3/2026*
 
-<p class="carc-provenance" markdown>Migrated from [UNM-CARC QuickBytes](https://github.com/UNM-CARC/QuickBytes/blob/master/running_matlab_jobs.md){target=_blank} (last source update 2026-07-07). Spotted a problem? [Open an issue or pull request](https://github.com/UNM-CARC/QuickBytes){target=_blank}.</p>
+<p class="carc-provenance" markdown>Migrated from [UNM-CARC QuickBytes](https://github.com/UNM-CARC/QuickBytes/blob/master/running_matlab_jobs.md){target=_blank} (last source update 2026-08-03). Spotted a problem? [Open an issue or pull request](https://github.com/UNM-CARC/QuickBytes){target=_blank}.</p>
