@@ -57,7 +57,7 @@ controller and parallel workers use this launcher, so each gets the same
 server. See Wolfram's [kernel documentation](https://reference.wolfram.com/language/ref/program/WolframKernel.html){target=_blank}
 for `-pwfile` details.
 
-## The example: derive a beam-deflection formula
+## Example: Beam Deflection
 
 For a simply supported beam, the small-deflection model is:
 

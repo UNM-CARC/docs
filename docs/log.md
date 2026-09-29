@@ -2,6 +2,8 @@
 
 ## 2026-09-29
 
+* **Update**: Retitled the worked example in [Mathematica on Easley](software/mathematica.md)
+  as "Example: Beam Deflection."
 * **Update**: Published the [Mathematica on Easley](software/mathematica.md)
   examples as a ZIP archive containing the Slurm scripts, Wolfram Language
   inputs, and kernel launcher.
