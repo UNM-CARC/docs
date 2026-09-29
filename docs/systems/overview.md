@@ -67,9 +67,9 @@ Xena) are kept in the [legacy cluster reference](cluster-specifications.md).
 
 CARC provides multiple tiers of high-performance storage:
 
-* **720 TB** of all-flash IBM Storage Scale (GPFS) scratch
-* **2 PB** of BeeGFS working scratch
-* **2.4 PB** of NetApp enterprise storage, with automated hourly, daily,
+* **385 TB** of all-flash IBM Storage Scale (GPFS) scratch
+* **1.2 PB** of BeeGFS working scratch
+* **133 TB** of NetApp enterprise storage, with automated hourly, daily,
   weekly, and monthly snapshots retained up to four months for user-directed
   recovery
 

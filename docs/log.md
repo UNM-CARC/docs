@@ -10,6 +10,9 @@
   (67 scheduled compute nodes, 26 NVIDIA A100 GPUs, 2 NVIDIA V100 GPUs, and
   15.1 TB of compute-node RAM). The page now lists each cluster's
   heterogeneous node configurations and observed ConnectX interconnect.
+* **Update**: Corrected the storage capacities in the
+  [systems overview](systems/overview.md): 385 TB of GPFS scratch, 1.2 PB of
+  BeeGFS working scratch, and 133 TB of NetApp enterprise storage.
 
 ## 2026-09-12
 
