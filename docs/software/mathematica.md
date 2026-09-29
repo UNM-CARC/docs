@@ -61,19 +61,14 @@ for `-pwfile` details.
 
 For a simply supported beam, the small-deflection model is:
 
-\[
-E I \frac{d^4 y}{d x^4} = q_0 \left(\frac{x}{L}\right)^n
-\]
+> *EI* d⁴*y*/d*x*⁴ = *q*₀ (*x*/L)ⁿ
 
 with simply supported boundary conditions:
 
-\[
-y(0) = y(L) = 0, \qquad
-\frac{d^2 y}{d x^2}(0) = \frac{d^2 y}{d x^2}(L) = 0.
-\]
+> *y*(0) = *y*(L) = 0; d²*y*/d*x*²(0) = d²*y*/d*x*²(L) = 0
 
 Here, `y(x)` is downward deflection, `length` is the beam length, `load` is
-the load-intensity scale, and `rigidity` is the flexural rigidity (`E \times I`).
+the load-intensity scale, and `rigidity` is the flexural rigidity (`E × I`).
 The ends have zero deflection and zero bending moment. Setting `n = 0` gives a
 uniform load; `n = 1` gives a linearly increasing load.
 
@@ -96,9 +91,7 @@ beamDeflection[power_Integer] := Module[{y},
 `Factor` simplifies the resulting polynomial. For a uniform load, the exact
 midpoint deflection is:
 
-\[
-y\!\left(\frac{L}{2}\right) = \frac{5 q_0 L^4}{384 E I}.
-\]
+> *y*(L/2) = 5*q*₀L⁴/(384 *EI*)
 
 This formula describes a family of beams and loads rather than one numerical
 case.
