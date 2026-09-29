@@ -36,7 +36,7 @@ machine learning.
 CARC currently operates several high-performance computing clusters:
 
 **Easley Cluster** — 65 compute nodes with 4,160 total CPU cores and 23.3 TB
-of RAM. Easley includes 36 NVIDIA L40S GPUs for AI and machine learning
+of RAM. Easley includes 12 NVIDIA L40S GPUs for AI and machine learning
 workloads, along with 8 NVIDIA H100 GPUs for double-precision computing. The
 system is connected through an NVIDIA NDR 800 Gbps InfiniBand core network
 for high-speed communication between nodes.

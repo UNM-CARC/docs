@@ -90,7 +90,7 @@ Section listing  /running-jobs/              ->  https://raw.githubusercontent.c
 
 ### Mathematica
 
-- [Mathematica on Easley](https://carc.unm.edu/docs/software/mathematica/): Run Mathematica and WolframScript on Easley with interactive, serial, multicore, multinode, GPU, and license-server examples. Markdown twin: https://carc.unm.edu/docs/software/mathematica/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/mathematica.md
+- [Mathematica on Easley](https://carc.unm.edu/docs/software/mathematica/): Derive exact beam-deflection formulas with Mathematica, then run the examples across CPUs, nodes, and a GPU on Easley. Markdown twin: https://carc.unm.edu/docs/software/mathematica/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/mathematica.md
 
 ### AI and machine learning
 
@@ -161,7 +161,7 @@ Section listing  /running-jobs/              ->  https://raw.githubusercontent.c
 
 ## Meta
 
-- [Full corpus in one file](https://carc.unm.edu/docs/llms-full.txt): every page's Markdown with frontmatter, links made absolute; about 553 KB, roughly 142,000 tokens. Prefer it over fetching pages one at a time.
+- [Full corpus in one file](https://carc.unm.edu/docs/llms-full.txt): every page's Markdown with frontmatter, links made absolute; about 549 KB, roughly 141,000 tokens. Prefer it over fetching pages one at a time.
 - [Documentation update log](https://carc.unm.edu/docs/log/): dated history of changes to this bundle.
 - [For AI agents](https://carc.unm.edu/docs/about/ai-agents/): endpoints, trust signals, and how to answer questions from this corpus; includes what to do if you cannot fetch this site.
 - [Sitemap](https://carc.unm.edu/docs/sitemap.xml) and [robots.txt](https://carc.unm.edu/docs/robots.txt).

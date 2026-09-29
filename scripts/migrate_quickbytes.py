@@ -221,7 +221,7 @@ PAGES: list[Page] = [
 
     # ---- Software: Mathematica (curated from a post-migration QuickByte)
     Page("", "software/mathematica.md", "Mathematica on Easley",
-         "Run Mathematica and WolframScript on Easley with interactive, serial, multicore, multinode, GPU, and license-server examples.",
+         "Derive exact beam-deflection formulas with Mathematica, then run the examples across CPUs, nodes, and a GPU on Easley.",
          "Tutorial", ["Mathematica", "Wolfram Language", "Slurm", "Easley", "GPU"], repo="hand"),
 
     # ---- Software: AI & ML

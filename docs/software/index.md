@@ -41,7 +41,7 @@ Short, practical CARC guides for software, programming environments, and researc
 
 ## Mathematica
 
-* [Mathematica on Easley](mathematica.md) - Run Mathematica and WolframScript on Easley with interactive, serial, multicore, multinode, GPU, and license-server examples.
+* [Mathematica on Easley](mathematica.md) - Derive exact beam-deflection formulas with Mathematica, then run the examples across CPUs, nodes, and a GPU on Easley.
 
 ## AI and machine learning
 
