@@ -2,6 +2,9 @@
 
 ## 2026-09-29
 
+* **Update**: Added the complete `parallel.wl`, `distributed.wl`, and `gpu.wl`
+  sources to [Mathematica on Easley](software/mathematica.md), alongside the
+  existing beam model, launcher, Slurm scripts, and downloadable archive.
 * **Update**: Removed the duplicate page table of contents from
   [QuickByte Tutorials](software/index.md); its expandable sidebar groups are
   now the single navigation layer.

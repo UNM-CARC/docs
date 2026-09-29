@@ -33,6 +33,7 @@ extract it, and work in that directory on Easley. Keep it on a filesystem
 accessible from compute nodes.
 
 ```bash
+wget https://carc.unm.edu/docs/assets/files/mathematica/mathematica-examples.tar.gz
 tar -xzf mathematica-examples.tar.gz
 cd mathematica-examples
 module load mathematica/15.0.1
@@ -102,6 +103,27 @@ case.
 `beam-model.wl`. `ParallelTable` derives midpoint formulas for load powers 0,
 1, 2, and 3. It also prints each worker's hostname and license server.
 
+```wolfram title="parallel.wl"
+workers = ToExpression[Environment["SLURM_CPUS_PER_TASK"]] - 1;
+launcher = FileNameJoin[{Directory[], "math-kernel.sh"}];
+
+LaunchKernels[KernelConfiguration["Local",
+    "KernelCommand" -> ("\"" <> launcher <> "\""),
+    "KernelCount" -> workers]];
+If[Length[Kernels[]] != workers, Print["Worker launch failed"]; Exit[1]];
+
+Print["Workers: ", ParallelEvaluate[{$KernelID, $MachineName}]];
+Print["Worker license servers: ", ParallelEvaluate[$LicenseServer]];
+Get["beam-model.wl"];
+DistributeDefinitions[beamDeflection];
+midpoints = ParallelTable[
+    Factor[beamDeflection[n] /. x -> length/2], {n, 0, 3}];
+Print["Midpoint formulas (load powers 0 through 3): ",
+    ToString[midpoints, InputForm]];
+CloseKernels[];
+Exit[];
+```
+
 The supplied `mathematica_multicpu.sbatch` script is:
 
 ```bash
@@ -150,6 +172,48 @@ they are not intended as a scaling benchmark.
 `distributed.wl` performs the same four derivations with one worker on each
 of two nodes. It starts workers with Slurm and connects them to the controller
 through Mathematica's WSTP protocol; no SSH setup is needed.
+
+```wolfram title="distributed.wl"
+nodes = StringSplit[RunProcess[
+    {"scontrol", "show", "hostnames", Environment["SLURM_JOB_NODELIST"]},
+    "StandardOutput"]];
+launcher = FileNameJoin[{Directory[], "math-kernel.sh"}];
+
+links = Table[LinkCreate[LinkProtocol -> "TCPIP"], {Length[nodes]}];
+processes = Table[
+    StartProcess[{
+        "srun", "--exact", "--nodes=1", "--ntasks=1", "--cpus-per-task=1",
+        "--nodelist=" <> nodes[[i]],
+        "--output=worker-%j-%N.out", "--error=worker-%j-%N.err",
+        launcher, "-subkernel", "-noinit", "-wstp",
+        "-linkmode", "Connect", "-linkprotocol", "TCPIP",
+        "-linkname", First[links[[i]]]
+    }],
+    {i, Length[nodes]}
+];
+
+TimeConstrained[LaunchKernels[links], 90, Exit[1]];
+If[Length[Kernels[]] != Length[nodes], Exit[1]];
+
+Print["Workers: ", ParallelEvaluate[{$KernelID, $MachineName}]];
+Print["Worker license servers: ", ParallelEvaluate[$LicenseServer]];
+Get["beam-model.wl"];
+DistributeDefinitions[beamDeflection];
+midpoints = ParallelTable[
+    Factor[beamDeflection[n] /. x -> length/2], {n, 0, 3}];
+Print["Midpoint formulas (load powers 0 through 3): ",
+    ToString[midpoints, InputForm]];
+
+Scan[LinkWrite[#, Unevaluated[EvaluatePacket[Quit[0]]]] &, links];
+TimeConstrained[
+    While[AnyTrue[processes, ProcessStatus[#] === "Running" &], Pause[0.1]],
+    20, Exit[1]
+];
+codes = ProcessInformation[#, "ExitCode"] & /@ processes;
+CloseKernels[];
+If[codes =!= ConstantArray[0, Length[nodes]], Exit[1]];
+Exit[];
+```
 
 The supplied `mathematica_multinode.sbatch` script is:
 
@@ -202,6 +266,32 @@ This GPU matrix multiplication produces deflection at every position for every
 load combination. Superposition applies because the beam equation is linear.
 The example compares the GPU result with a CPU multiplication and prints the
 maximum difference. See Wolfram's [CUDADot documentation](https://reference.wolfram.com/language/CUDALink/ref/CUDADot.html){target=_blank}.
+
+```wolfram title="gpu.wl"
+Get["beam-model.wl"];
+Needs["CUDALink`"];
+If[!TrueQ[CUDAQ[]], Print["CUDA unavailable"]; Exit[1]];
+
+(* Derive exact responses for four polynomial loads, then normalize the units. *)
+shapes = Table[
+    beamDeflection[n] /. {length -> 1, load -> 1, rigidity -> 1},
+    {n, 0, 3}
+];
+Print["Uniform-load formula: ", ToString[shapes[[1]], InputForm]];
+
+(* Evaluate at 256 positions for 1024 combinations of the four loads. *)
+positions = N[Subdivide[0, 1, 255]];
+shapeMatrix = Table[shapes /. x -> position, {position, positions}];
+coefficients = N[Table[Sin[i j/100], {i, 1, 4}, {j, 1, 1024}]];
+
+gpuResult = CUDADot[shapeMatrix, coefficients];
+difference = Max[Abs[Flatten[gpuResult - shapeMatrix.coefficients]]];
+Print["License server: ", $LicenseServer];
+Print["Result dimensions: ", Dimensions[gpuResult]];
+Print["Maximum difference from CPU: ", difference];
+If[difference > 10^-10, Exit[1]];
+Exit[];
+```
 
 The supplied `mathematica_gpu.sbatch` script is:
 
