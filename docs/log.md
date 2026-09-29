@@ -2,6 +2,10 @@
 
 ## 2026-09-29
 
+* **Update**: Added rendered LaTeX notation for the governing equation,
+  boundary conditions, and uniform-load midpoint deflection in the
+  [Mathematica on Easley](software/mathematica.md) beam example, plus measured
+  Easley scaling results for 128 symbolic calculations.
 * **Update**: Retitled the worked example in [Mathematica on Easley](software/mathematica.md)
   as "Example: Beam Deflection."
 * **Update**: Published the [Mathematica on Easley](software/mathematica.md)
