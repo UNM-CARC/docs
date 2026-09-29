@@ -2,6 +2,13 @@
 
 ## 2026-09-29
 
+* **Update**: Split QuickByte Tutorials' programming-environment menu into
+  Conda, JupyterHub, Julia, R, and MATLAB headings. The Conda guide now uses
+  the current Miniconda name rather than the retired Anaconda module name.
+* **Update**: Split the scientific tutorial categories in
+  [QuickByte Tutorials](software/index.md) into Bioinformatics, Chemistry &
+  materials, Computational immunology, and Astronomy in both the sidebar and
+  the contents page.
 * **Update**: Merged the former Software and Tutorials navigation into
   [QuickByte tutorials](software/index.md). Its scrollable contents page now
   gives each active domain tutorial a home alongside the software guides.

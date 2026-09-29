@@ -1,6 +1,6 @@
 ---
-title: "Conda and Anaconda: introduction"
-description: "What conda is, how environments work, and how to use Anaconda/Miniconda on CARC systems."
+title: "Conda and Miniconda: introduction"
+description: "What conda is, how environments work, and how to use Miniconda on CARC systems."
 type: Guide
 tags:
   - Python
@@ -16,7 +16,7 @@ sources:
     last_modified: "2026-07-29T11:41:38-06:00"
 ---
 
-# Conda and Anaconda: introduction
+# Conda and Miniconda: introduction
 
 ### What is Miniconda?
 

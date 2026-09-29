@@ -152,8 +152,8 @@ PAGES: list[Page] = [
          "Guide", ["Interactive", "Jupyter", "New users"], repo="hand"),
 
     # ---- Software: Python & Jupyter
-    Page("anaconda_general_intro.md", "software/conda-intro.md", "Conda and Anaconda: introduction",
-         "What conda is, how environments work, and how to use Anaconda/Miniconda on CARC systems.",
+    Page("anaconda_general_intro.md", "software/conda-intro.md", "Conda and Miniconda: introduction",
+         "What conda is, how environments work, and how to use Miniconda on CARC systems.",
          "Guide", ["Python", "Conda"]),
     Page("anaconda_intro.md", "software/conda-environments.md", "Managing conda environments",
          "Create, activate, export, and remove conda environments on CARC clusters.",
@@ -360,37 +360,44 @@ SECTIONS = {
 
 # QuickByte groups for the combined software/tutorials contents page and nav.
 QUICKBYTE_GROUPS = [
-    ("Programming environments", [
+    ("Conda", [
         "software/conda-intro.md", "software/conda-environments.md",
-        "software/conda-channels-pip.md", "software/conda-jupyterhub.md",
-        "software/julia-jupyterhub.md", "software/jupyterhub-mpi.md",
+        "software/conda-channels-pip.md",
+    ]),
+    ("JupyterHub", [
+        "software/conda-jupyterhub.md", "software/jupyterhub-mpi.md",
+        "software/dask-scikit-learn.md",
+    ]),
+    ("Julia", ["software/julia-jupyterhub.md"]),
+    ("R", [
         "software/r-usage.md", "software/getting-r.md", "software/r-packages.md",
         "software/parallel-r-future.md", "software/gurobi-r.md",
+    ]),
+    ("Other programming languages", [
         "software/haskell.md", "software/perl-libraries.md",
     ]),
-    ("Mathematical and numerical computing", [
+    ("MATLAB", [
         "software/matlab-jobs.md", "software/parallel-matlab.md",
         "software/matlab-parallel-server.md", "software/matlab-gpu.md",
-        "software/matlab-deep-learning.md", "software/mathematica.md",
+        "software/matlab-deep-learning.md",
     ]),
+    ("Mathematica", ["software/mathematica.md"]),
     ("AI and machine learning", [
         "software/deep-learning-packages.md", "software/pytorch.md",
         "software/pytorch-classifier.md", "software/tensorflow.md",
         "software/tensorflow-multi-gpu.md", "software/alphafold.md",
     ]),
     ("Data, visualization, and parallel computing", [
-        "software/dask-scikit-learn.md", "software/spark.md",
-        "software/paraview.md", "software/cuda-aware-mpi.md",
+        "software/spark.md", "software/paraview.md", "software/cuda-aware-mpi.md",
     ]),
     ("Bioinformatics", [
         "tutorials/gatk.md", "tutorials/metabarcoding.md", "tutorials/stacks.md",
         "tutorials/genome-evaluation.md", "tutorials/msprime.md",
         "tutorials/psmc.md", "tutorials/beast.md",
     ]),
-    ("Domain science", [
-        "tutorials/vasp.md", "tutorials/orca.md", "tutorials/simcov.md",
-        "tutorials/mpi-casa.md",
-    ]),
+    ("Chemistry & materials", ["tutorials/vasp.md", "tutorials/orca.md"]),
+    ("Computational immunology", ["tutorials/simcov.md"]),
+    ("Astronomy", ["tutorials/mpi-casa.md"]),
     ("Containers", ["software/singularity.md"]),
 ]
 
