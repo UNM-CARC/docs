@@ -65,7 +65,7 @@ Xena) are kept in the [legacy cluster reference](cluster-specifications.md).
 
 ## Storage
 
-CARC provides multiple tiers of high-performance storage:
+CARC operates several high-performance storage systems:
 
 * **385 TB** of all-flash IBM Storage Scale (GPFS) scratch
 * **1.2 PB** of BeeGFS working scratch
