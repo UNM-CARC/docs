@@ -126,7 +126,7 @@ CloseKernels[];
 Exit[];
 ```
 
-The supplied `mathematica_multicpu.sbatch` script is:
+`mathematica_multicpu.sbatch` contains:
 
 ```bash
 #!/bin/bash -l
@@ -214,7 +214,7 @@ If[codes =!= ConstantArray[0, Length[nodes]], Exit[1]];
 Exit[];
 ```
 
-The supplied `mathematica_multinode.sbatch` script is:
+`mathematica_multinode.sbatch` contains:
 
 ```bash
 #!/bin/bash -l
@@ -292,7 +292,7 @@ If[difference > 10^-10, Exit[1]];
 Exit[];
 ```
 
-The supplied `mathematica_gpu.sbatch` script is:
+`mathematica_gpu.sbatch` contains:
 
 ```bash
 #!/bin/bash -l
