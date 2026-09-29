@@ -7159,12 +7159,14 @@ chmod +x math-kernel.sh
 The archive includes the three Slurm scripts, the Wolfram Language inputs, and
 the shared launcher. Run the jobs below one at a time.
 
-All kernels use `neutrino.phys.unm.edu`. The shared `math-kernel.sh` launcher
-contains:
+The examples use `neutrino.phys.unm.edu`. Please substitute the fully
+qualified hostname of your Mathematica license server. The shared
+`math-kernel.sh` launcher contains:
 
 ```bash
 #!/bin/bash
 # Use the same license server for the controller and every worker.
+# Replace neutrino.phys.unm.edu with your license server's FQDN.
 exec math -pwfile <(printf '!neutrino.phys.unm.edu\n') "$@"
 ```
 
