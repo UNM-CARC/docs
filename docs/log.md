@@ -2,6 +2,9 @@
 
 ## 2026-09-29
 
+* **Update**: Added a ZIP download alongside the tar.gz package for the
+  [Mathematica on Easley](software/mathematica.md) examples. Both archives
+  include the same Slurm scripts, Wolfram Language inputs, and kernel launcher.
 * **Correction**: Restored the `math-kernel.sh` helper to the
   [Mathematica on Easley](software/mathematica.md) examples. Its process-based
   license file is required by the Mathematica worker-launch workflow.

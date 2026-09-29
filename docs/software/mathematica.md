@@ -17,9 +17,8 @@ generated:
 # Mathematica on Easley
 
 Mathematica combines symbolic mathematics with numerical computing. This
-tutorial derives **exact beam-deflection formulas**, distributes the
-derivations across CPUs and nodes, and evaluates many load combinations on a
-GPU.
+tutorial distributes symbolic derivations across CPUs and nodes, then
+evaluates many load combinations on a GPU.
 
 The distinguishing feature is the workflow: solve differential equations with
 symbolic parameters, manipulate the resulting formulas, and then evaluate them
@@ -28,16 +27,24 @@ tools; this example highlights Mathematica's built-in symbolic solver.
 
 ## Files and setup
 
-Download [the complete example archive](../assets/files/mathematica/mathematica-examples.tar.gz),
+Download [the complete example archive (ZIP)](../assets/files/mathematica/mathematica-examples.zip)
+or [the tar.gz archive](../assets/files/mathematica/mathematica-examples.tar.gz),
 extract it, and work in that directory on Easley. Keep it on a filesystem
 accessible from compute nodes.
 
 ```bash
-wget https://carc.unm.edu/docs/assets/files/mathematica/mathematica-examples.tar.gz
-tar -xzf mathematica-examples.tar.gz
+wget https://carc.unm.edu/docs/assets/files/mathematica/mathematica-examples.zip
+unzip mathematica-examples.zip
 cd mathematica-examples
 module load mathematica/15.0.1
 chmod +x math-kernel.sh
+```
+
+For the tar.gz archive, replace the first two commands with:
+
+```bash
+wget https://carc.unm.edu/docs/assets/files/mathematica/mathematica-examples.tar.gz
+tar -xzf mathematica-examples.tar.gz
 ```
 
 The archive includes the three Slurm scripts, Wolfram Language inputs, and the
