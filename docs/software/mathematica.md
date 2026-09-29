@@ -37,27 +37,27 @@ wget https://carc.unm.edu/docs/assets/files/mathematica/mathematica-examples.tar
 tar -xzf mathematica-examples.tar.gz
 cd mathematica-examples
 module load mathematica/15.0.1
-chmod +x math-kernel.sh
 ```
 
-The archive includes the three Slurm scripts, the Wolfram Language inputs, and
-the shared launcher. Run the jobs below one at a time.
+The archive includes the three Slurm scripts and Wolfram Language inputs. Run
+the jobs below one at a time.
 
-The examples use `neutrino.phys.unm.edu`. Please substitute the fully
-qualified hostname of your Mathematica license server. The shared
-`math-kernel.sh` launcher contains:
+Each Slurm script sets its license server inline. The examples use
+`neutrino.phys.unm.edu`; please substitute the fully qualified hostname of
+your Mathematica license server.
 
 ```bash
-#!/bin/bash
-# Use the same license server for the controller and every worker.
-# Replace neutrino.phys.unm.edu with your license server's FQDN.
-exec math -pwfile <(printf '!neutrino.phys.unm.edu\n') "$@"
+# Replace this example FQDN with your Mathematica license server.
+export MMA_LICENSE_SERVER=neutrino.phys.unm.edu
+export MMA_LICENSE_FILE="$SLURM_SUBMIT_DIR/.mathematica-license-${SLURM_JOB_ID}"
+printf '!%s\n' "$MMA_LICENSE_SERVER" > "$MMA_LICENSE_FILE"
+trap 'rm -f "$MMA_LICENSE_FILE"' EXIT
 ```
 
-The Bash inline file supplies the license information without creating a
-persistent license file. `"$@"` forwards the kernel's arguments. Both the
-controller and parallel workers use this launcher, so each gets the same
-server. See Wolfram's [kernel documentation](https://reference.wolfram.com/language/ref/program/WolframKernel.html){target=_blank}
+This temporary file supplies the license information to both the controller
+and parallel workers, and the shell removes it when the job exits. Because it
+lives in the submit directory, it is accessible to multi-node workers. See
+Wolfram's [kernel documentation](https://reference.wolfram.com/language/ref/program/WolframKernel.html){target=_blank}
 for `-pwfile` details.
 
 ## The example: derive a beam-deflection formula
@@ -107,10 +107,10 @@ case.
 
 ```wolfram title="parallel.wl"
 workers = ToExpression[Environment["SLURM_CPUS_PER_TASK"]] - 1;
-launcher = FileNameJoin[{Directory[], "math-kernel.sh"}];
+licenseFile = Environment["MMA_LICENSE_FILE"];
 
 LaunchKernels[KernelConfiguration["Local",
-    "KernelCommand" -> ("\"" <> launcher <> "\""),
+    "KernelCommand" -> ("math -pwfile \"" <> licenseFile <> "\""),
     "KernelCount" -> workers]];
 If[Length[Kernels[]] != workers, Print["Worker launch failed"]; Exit[1]];
 
@@ -141,9 +141,13 @@ The supplied `mathematica_multicpu.sbatch` script is:
 
 module load mathematica/15.0.1
 cd "$SLURM_SUBMIT_DIR"
+export MMA_LICENSE_SERVER=neutrino.phys.unm.edu
+export MMA_LICENSE_FILE="$SLURM_SUBMIT_DIR/.mathematica-license-${SLURM_JOB_ID}"
+printf '!%s\n' "$MMA_LICENSE_SERVER" > "$MMA_LICENSE_FILE"
+trap 'rm -f "$MMA_LICENSE_FILE"' EXIT
 export OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1
 
-srun ./math-kernel.sh -script parallel.wl
+srun math -pwfile "$MMA_LICENSE_FILE" -script parallel.wl
 ```
 
 Submit it with:
@@ -179,7 +183,7 @@ through Mathematica's WSTP protocol; no SSH setup is needed.
 nodes = StringSplit[RunProcess[
     {"scontrol", "show", "hostnames", Environment["SLURM_JOB_NODELIST"]},
     "StandardOutput"]];
-launcher = FileNameJoin[{Directory[], "math-kernel.sh"}];
+licenseFile = Environment["MMA_LICENSE_FILE"];
 
 links = Table[LinkCreate[LinkProtocol -> "TCPIP"], {Length[nodes]}];
 processes = Table[
@@ -187,7 +191,7 @@ processes = Table[
         "srun", "--exact", "--nodes=1", "--ntasks=1", "--cpus-per-task=1",
         "--nodelist=" <> nodes[[i]],
         "--output=worker-%j-%N.out", "--error=worker-%j-%N.err",
-        launcher, "-subkernel", "-noinit", "-wstp",
+        "math", "-pwfile", licenseFile, "-subkernel", "-noinit", "-wstp",
         "-linkmode", "Connect", "-linkprotocol", "TCPIP",
         "-linkname", First[links[[i]]]
     }],
@@ -232,9 +236,13 @@ The supplied `mathematica_multinode.sbatch` script is:
 
 module load mathematica/15.0.1
 cd "$SLURM_SUBMIT_DIR"
+export MMA_LICENSE_SERVER=neutrino.phys.unm.edu
+export MMA_LICENSE_FILE="$SLURM_SUBMIT_DIR/.mathematica-license-${SLURM_JOB_ID}"
+printf '!%s\n' "$MMA_LICENSE_SERVER" > "$MMA_LICENSE_FILE"
+trap 'rm -f "$MMA_LICENSE_FILE"' EXIT
 export OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1
 
-./math-kernel.sh -script distributed.wl
+math -pwfile "$MMA_LICENSE_FILE" -script distributed.wl
 ```
 
 Submit it with:
@@ -245,7 +253,8 @@ sbatch mathematica_multinode.sbatch
 
 The controller runs directly in the batch step. The input starts separate
 `srun` steps for its workers; adding `srun` in front of the controller would
-start duplicate controllers. Each worker uses the same inline license launcher.
+start duplicate controllers. Each worker receives the same exported license-file
+path.
 
 Expect the same formulas as above, but worker hostnames on **two different
 nodes**. Worker messages are saved in `worker-*.out` and `worker-*.err`. The
@@ -311,8 +320,12 @@ The supplied `mathematica_gpu.sbatch` script is:
 
 module load mathematica/15.0.1
 cd "$SLURM_SUBMIT_DIR"
+export MMA_LICENSE_SERVER=neutrino.phys.unm.edu
+export MMA_LICENSE_FILE="$SLURM_SUBMIT_DIR/.mathematica-license-${SLURM_JOB_ID}"
+printf '!%s\n' "$MMA_LICENSE_SERVER" > "$MMA_LICENSE_FILE"
+trap 'rm -f "$MMA_LICENSE_FILE"' EXIT
 
-srun ./math-kernel.sh -script gpu.wl
+srun math -pwfile "$MMA_LICENSE_FILE" -script gpu.wl
 ```
 
 Submit it with:
@@ -344,8 +357,9 @@ cat mathematica-multicpu-1235085.out
 ```
 
 Use your own job number. If a job reports `No valid password found`, check the
-hostname in `math-kernel.sh` and license availability. If a two-node debug job
-is pending with `QOSMaxNodePerUserLimit`, let your other debug jobs finish.
+license-server hostname in the Slurm script and license availability. If a
+two-node debug job is pending with `QOSMaxNodePerUserLimit`, let your other
+debug jobs finish.
 
 ## Further reading
 
