@@ -27,8 +27,7 @@ tools; this example highlights Mathematica's built-in symbolic solver.
 
 ## Files and setup
 
-Download [the complete example archive (ZIP)](../assets/files/mathematica/mathematica-examples.zip)
-or [the tar.gz archive](../assets/files/mathematica/mathematica-examples.tar.gz),
+Download [the complete example archive (ZIP)](../assets/files/mathematica/mathematica-examples.zip),
 extract it, and work in that directory on Easley. Keep it on a filesystem
 accessible from compute nodes.
 
@@ -36,15 +35,6 @@ accessible from compute nodes.
 wget https://carc.unm.edu/docs/assets/files/mathematica/mathematica-examples.zip
 unzip mathematica-examples.zip
 cd mathematica-examples
-module load mathematica/15.0.1
-chmod +x math-kernel.sh
-```
-
-For the tar.gz archive, replace the first two commands with:
-
-```bash
-wget https://carc.unm.edu/docs/assets/files/mathematica/mathematica-examples.tar.gz
-tar -xzf mathematica-examples.tar.gz
 ```
 
 The archive includes the three Slurm scripts, Wolfram Language inputs, and the
@@ -148,6 +138,7 @@ Exit[];
 
 module load mathematica/15.0.1
 cd "$SLURM_SUBMIT_DIR"
+chmod +x math-kernel.sh
 export OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1
 
 srun ./math-kernel.sh -script parallel.wl
@@ -236,6 +227,7 @@ Exit[];
 
 module load mathematica/15.0.1
 cd "$SLURM_SUBMIT_DIR"
+chmod +x math-kernel.sh
 export OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1
 
 ./math-kernel.sh -script distributed.wl
@@ -315,6 +307,7 @@ Exit[];
 
 module load mathematica/15.0.1
 cd "$SLURM_SUBMIT_DIR"
+chmod +x math-kernel.sh
 
 srun ./math-kernel.sh -script gpu.wl
 ```
