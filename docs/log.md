@@ -9,7 +9,8 @@
   22.4 TB of compute-node RAM); Hopper has 68 total nodes and 2,176 CPU cores
   (67 scheduled compute nodes, 26 NVIDIA A100 GPUs, 2 NVIDIA V100 GPUs, and
   15.1 TB of compute-node RAM). The page now lists each cluster's
-  heterogeneous node configurations and observed ConnectX interconnect.
+  heterogeneous node configurations, ConnectX adapters, and switch-fabric
+  capacities.
 * **Update**: Corrected the storage capacities in the
   [systems overview](systems/overview.md): 385 TB of GPFS scratch, 1.2 PB of
   BeeGFS working scratch, and 133 TB of NetApp enterprise storage.

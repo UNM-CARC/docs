@@ -28,10 +28,10 @@ Hardware inventory was collected directly from Slurm on September 29, 2026.
 Partition availability changes continuously; see [resource limits](resource-limits.md)
 for partition policies and limits.
 
-| Cluster | All nodes | Scheduled compute nodes | CPU cores | GPUs | Compute-node RAM | Interconnect |
-| ------- | :-------: | :---------------------: | :-------: | ---- | ---------------- | ------------ |
-| **Easley** | 65 | 63 | 4,160 | 8 NVIDIA H100 + 36 NVIDIA L40S | 22.4 TB | ConnectX-7 at 200 Gb/sec |
-| **Hopper** | 68 | 67 | 2,176 | 26 NVIDIA A100 + 2 NVIDIA V100 | 15.1 TB | ConnectX-4 at 100 Gb/sec |
+| Cluster | All nodes | Scheduled compute nodes | CPU cores | GPUs | Compute-node RAM | Node interconnect | Switch fabric |
+| ------- | :-------: | :---------------------: | :-------: | ---- | ---------------- | ----------------- | ------------- |
+| **Easley** | 65 | 63 | 4,160 | 8 NVIDIA H100 + 36 NVIDIA L40S | 22.4 TB | ConnectX-7 at 200 Gbit/s | 800 Gbit/s |
+| **Hopper** | 68 | 67 | 2,176 | 26 NVIDIA A100 + 2 NVIDIA V100 | 15.1 TB | ConnectX-4 at 100 Gbit/s | 400 Gbit/s |
 
 The CPU totals include Easley's head and login nodes (128 additional cores) and
 Hopper's head node (32 additional cores). GPU and RAM totals describe the

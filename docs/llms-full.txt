@@ -766,10 +766,10 @@ Hardware inventory was collected directly from Slurm on September 29, 2026.
 Partition availability changes continuously; see [resource limits](https://carc.unm.edu/docs/systems/resource-limits/)
 for partition policies and limits.
 
-| Cluster | All nodes | Scheduled compute nodes | CPU cores | GPUs | Compute-node RAM | Interconnect |
-| ------- | :-------: | :---------------------: | :-------: | ---- | ---------------- | ------------ |
-| **Easley** | 65 | 63 | 4,160 | 8 NVIDIA H100 + 36 NVIDIA L40S | 22.4 TB | ConnectX-7 at 200 Gb/sec |
-| **Hopper** | 68 | 67 | 2,176 | 26 NVIDIA A100 + 2 NVIDIA V100 | 15.1 TB | ConnectX-4 at 100 Gb/sec |
+| Cluster | All nodes | Scheduled compute nodes | CPU cores | GPUs | Compute-node RAM | Node interconnect | Switch fabric |
+| ------- | :-------: | :---------------------: | :-------: | ---- | ---------------- | ----------------- | ------------- |
+| **Easley** | 65 | 63 | 4,160 | 8 NVIDIA H100 + 36 NVIDIA L40S | 22.4 TB | ConnectX-7 at 200 Gbit/s | 800 Gbit/s |
+| **Hopper** | 68 | 67 | 2,176 | 26 NVIDIA A100 + 2 NVIDIA V100 | 15.1 TB | ConnectX-4 at 100 Gbit/s | 400 Gbit/s |
 
 The CPU totals include Easley's head and login nodes (128 additional cores) and
 Hopper's head node (32 additional cores). GPU and RAM totals describe the
@@ -13086,7 +13086,8 @@ partition names, quotas, or module versions.
   22.4 TB of compute-node RAM); Hopper has 68 total nodes and 2,176 CPU cores
   (67 scheduled compute nodes, 26 NVIDIA A100 GPUs, 2 NVIDIA V100 GPUs, and
   15.1 TB of compute-node RAM). The page now lists each cluster's
-  heterogeneous node configurations and observed ConnectX interconnect.
+  heterogeneous node configurations, ConnectX adapters, and switch-fabric
+  capacities.
 * **Update**: Corrected the storage capacities in the
   [systems overview](https://carc.unm.edu/docs/systems/overview/): 385 TB of GPFS scratch, 1.2 PB of
   BeeGFS working scratch, and 133 TB of NetApp enterprise storage.
