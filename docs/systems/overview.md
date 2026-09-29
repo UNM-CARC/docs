@@ -30,7 +30,7 @@ for partition policies and limits.
 
 | Cluster | All nodes | Scheduled compute nodes | CPU cores | GPUs | Compute-node RAM | Node interconnect | Switch fabric |
 | ------- | :-------: | :---------------------: | :-------: | ---- | ---------------- | ----------------- | ------------- |
-| **Easley** | 65 | 63 | 4,160 | 8 NVIDIA H100 + 12 NVIDIA L40S | 22.4 TB | ConnectX-7 at 200 Gbit/s | 800 Gbit/s |
+| **Easley** | 65 | 63 | 4,160 | 8 NVIDIA H100 + 36 NVIDIA L40S | 22.4 TB | ConnectX-7 at 200 Gbit/s | 800 Gbit/s |
 | **Hopper** | 68 | 67 | 2,176 | 26 NVIDIA A100 + 2 NVIDIA V100 | 15.1 TB | ConnectX-4 at 100 Gbit/s | 400 Gbit/s |
 
 The CPU totals include Easley's head and login nodes (128 additional cores) and
@@ -41,9 +41,9 @@ All Easley nodes have 64-core Intel Xeon Gold 6438Y+ processors.
 
 | Nodes | GPUs per node | RAM per node |
 | ----: | ------------- | -----------: |
-| 54 | None | 252 GB |
+| 48 | None | 252 GB |
 | 4 | 2 NVIDIA H100 | 1,008 GB |
-| 3 | 4 NVIDIA L40S | 252 GB |
+| 9 | 4 NVIDIA L40S | 252 GB |
 | 2 | None | 2,016 GB |
 
 All Hopper nodes have 32-core Intel Xeon Gold 6226R processors.

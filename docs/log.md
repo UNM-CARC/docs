@@ -6,8 +6,8 @@
   the CARC beam-deflection tutorial and its complete, downloadable example
   archive: shared license launcher, Wolfram Language inputs, and single-node,
   multi-node, and GPU Slurm scripts.
-* **Correction**: Easley has 12 NVIDIA L40S GPUs, not 36. The systems overview
-  and facilities description now reflect its 20 GPUs in total.
+* **Correction**: Restored the confirmed Easley inventory: 9 L40S nodes,
+  providing 36 NVIDIA L40S GPUs (44 GPUs total with the H100 GPUs).
 * **Update**: Split QuickByte Tutorials' programming-environment menu into
   Conda, JupyterHub, Julia, R, and MATLAB headings. The Conda guide now uses
   the current Miniconda name rather than the retired Anaconda module name.
@@ -24,7 +24,7 @@
 * **Update**: Refreshed the [systems overview](systems/overview.md) from
   Slurm inventory collected on September 29. It distinguishes all nodes from
   scheduled compute nodes: Easley has 65 total nodes and 4,160 CPU cores
-  (63 scheduled compute nodes, 8 NVIDIA H100 GPUs, 12 NVIDIA L40S GPUs, and
+  (63 scheduled compute nodes, 8 NVIDIA H100 GPUs, 36 NVIDIA L40S GPUs, and
   22.4 TB of compute-node RAM); Hopper has 68 total nodes and 2,176 CPU cores
   (67 scheduled compute nodes, 26 NVIDIA A100 GPUs, 2 NVIDIA V100 GPUs, and
   15.1 TB of compute-node RAM). The page now lists each cluster's

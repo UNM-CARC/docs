@@ -768,7 +768,7 @@ for partition policies and limits.
 
 | Cluster | All nodes | Scheduled compute nodes | CPU cores | GPUs | Compute-node RAM | Node interconnect | Switch fabric |
 | ------- | :-------: | :---------------------: | :-------: | ---- | ---------------- | ----------------- | ------------- |
-| **Easley** | 65 | 63 | 4,160 | 8 NVIDIA H100 + 12 NVIDIA L40S | 22.4 TB | ConnectX-7 at 200 Gbit/s | 800 Gbit/s |
+| **Easley** | 65 | 63 | 4,160 | 8 NVIDIA H100 + 36 NVIDIA L40S | 22.4 TB | ConnectX-7 at 200 Gbit/s | 800 Gbit/s |
 | **Hopper** | 68 | 67 | 2,176 | 26 NVIDIA A100 + 2 NVIDIA V100 | 15.1 TB | ConnectX-4 at 100 Gbit/s | 400 Gbit/s |
 
 The CPU totals include Easley's head and login nodes (128 additional cores) and
@@ -779,9 +779,9 @@ All Easley nodes have 64-core Intel Xeon Gold 6438Y+ processors.
 
 | Nodes | GPUs per node | RAM per node |
 | ----: | ------------- | -----------: |
-| 54 | None | 252 GB |
+| 48 | None | 252 GB |
 | 4 | 2 NVIDIA H100 | 1,008 GB |
-| 3 | 4 NVIDIA L40S | 252 GB |
+| 9 | 4 NVIDIA L40S | 252 GB |
 | 2 | None | 2,016 GB |
 
 All Hopper nodes have 32-core Intel Xeon Gold 6226R processors.
@@ -12847,7 +12847,7 @@ machine learning.
 CARC currently operates several high-performance computing clusters:
 
 **Easley Cluster** — 65 compute nodes with 4,160 total CPU cores and 23.3 TB
-of RAM. Easley includes 12 NVIDIA L40S GPUs for AI and machine learning
+of RAM. Easley includes 36 NVIDIA L40S GPUs for AI and machine learning
 workloads, along with 8 NVIDIA H100 GPUs for double-precision computing. The
 system is connected through an NVIDIA NDR 800 Gbps InfiniBand core network
 for high-speed communication between nodes.
@@ -13349,8 +13349,8 @@ Rscript my_script.R
   the CARC beam-deflection tutorial and its complete, downloadable example
   archive: shared license launcher, Wolfram Language inputs, and single-node,
   multi-node, and GPU Slurm scripts.
-* **Correction**: Easley has 12 NVIDIA L40S GPUs, not 36. The systems overview
-  and facilities description now reflect its 20 GPUs in total.
+* **Correction**: Restored the confirmed Easley inventory: 9 L40S nodes,
+  providing 36 NVIDIA L40S GPUs (44 GPUs total with the H100 GPUs).
 * **Update**: Split QuickByte Tutorials' programming-environment menu into
   Conda, JupyterHub, Julia, R, and MATLAB headings. The Conda guide now uses
   the current Miniconda name rather than the retired Anaconda module name.
@@ -13367,7 +13367,7 @@ Rscript my_script.R
 * **Update**: Refreshed the [systems overview](https://carc.unm.edu/docs/systems/overview/) from
   Slurm inventory collected on September 29. It distinguishes all nodes from
   scheduled compute nodes: Easley has 65 total nodes and 4,160 CPU cores
-  (63 scheduled compute nodes, 8 NVIDIA H100 GPUs, 12 NVIDIA L40S GPUs, and
+  (63 scheduled compute nodes, 8 NVIDIA H100 GPUs, 36 NVIDIA L40S GPUs, and
   22.4 TB of compute-node RAM); Hopper has 68 total nodes and 2,176 CPU cores
   (67 scheduled compute nodes, 26 NVIDIA A100 GPUs, 2 NVIDIA V100 GPUs, and
   15.1 TB of compute-node RAM). The page now lists each cluster's
