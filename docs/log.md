@@ -2,6 +2,9 @@
 
 ## 2026-09-29
 
+* **Update**: Removed the duplicate page table of contents from
+  [QuickByte Tutorials](software/index.md); its expandable sidebar groups are
+  now the single navigation layer.
 * **Update**: Replaced [Mathematica on Easley](software/mathematica.md) with
   the CARC beam-deflection tutorial and its complete, downloadable example
   archive: shared license launcher, Wolfram Language inputs, and single-node,

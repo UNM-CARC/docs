@@ -50,7 +50,6 @@ features = [
   "search.highlight",
   "search.suggest",
   "toc.follow",
-  "toc.integrate",
 ]
 
 [project.theme.icon]

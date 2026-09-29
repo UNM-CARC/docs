@@ -13345,6 +13345,9 @@ Rscript my_script.R
 
 ## 2026-09-29
 
+* **Update**: Removed the duplicate page table of contents from
+  [QuickByte Tutorials](https://carc.unm.edu/docs/software/); its expandable sidebar groups are
+  now the single navigation layer.
 * **Update**: Replaced [Mathematica on Easley](https://carc.unm.edu/docs/software/mathematica/) with
   the CARC beam-deflection tutorial and its complete, downloadable example
   archive: shared license launcher, Wolfram Language inputs, and single-node,
