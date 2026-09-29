@@ -65,7 +65,11 @@ Xena) are kept in the [legacy cluster reference](cluster-specifications.md).
 
 ## Storage
 
-CARC operates several high-performance storage systems:
+CARC operates several high-performance storage systems, portions of which are
+subdivided into allocations for PIs and research projects:
+
+IBM Storage Scale (GPFS) and BeeGFS are parallel filesystems designed for
+high-performance computing workloads.
 
 * **385 TB** of all-flash IBM Storage Scale (GPFS) scratch
 * **1.2 PB** of BeeGFS working scratch
