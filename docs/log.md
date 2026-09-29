@@ -2,10 +2,9 @@
 
 ## 2026-09-29
 
-* **Update**: Simplified the [Mathematica on Easley](software/mathematica.md)
-  examples by removing the `math-kernel.sh` helper. Each Slurm script now
-  creates and removes its temporary license file inline, and the local and
-  distributed worker commands consume that shared path directly.
+* **Correction**: Restored the `math-kernel.sh` helper to the
+  [Mathematica on Easley](software/mathematica.md) examples. Its process-based
+  license file is required by the Mathematica worker-launch workflow.
 * **Update**: Added the complete `parallel.wl`, `distributed.wl`, and `gpu.wl`
   sources to [Mathematica on Easley](software/mathematica.md), alongside the
   existing beam model, Slurm scripts, and downloadable archive.
