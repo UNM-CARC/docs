@@ -24,10 +24,40 @@ intelligence, and machine learning.
 
 ## Compute clusters
 
-| Cluster | Nodes | CPU cores | GPUs | Interconnect | Notes |
-| ------- | :---: | :-------: | ---- | ------------ | ----- |
-| **Easley** | 65 | 4,160 | 36× NVIDIA L40S (AI/ML) + 8× NVIDIA H100 (double precision) | NVIDIA NDR 800 Gbps InfiniBand | Newest cluster; 23.3 TB total RAM |
-| **Hopper** | 61 | 2,176 | 37× NVIDIA A100 | NVIDIA HDR 400 Gbps InfiniBand | General and GPU-accelerated workloads |
+Hardware inventory was collected directly from Slurm on September 29, 2026.
+Partition availability changes continuously; see [resource limits](resource-limits.md)
+for partition policies and limits.
+
+| Cluster | All nodes | Scheduled compute nodes | CPU cores | GPUs | Compute-node RAM | Interconnect |
+| ------- | :-------: | :---------------------: | :-------: | ---- | ---------------- | ------------ |
+| **Easley** | 65 | 63 | 4,160 | 8 NVIDIA H100 + 36 NVIDIA L40S | 22.4 TB | ConnectX-7 at 200 Gb/sec |
+| **Hopper** | 68 | 67 | 2,176 | 26 NVIDIA A100 + 2 NVIDIA V100 | 15.1 TB | ConnectX-4 at 100 Gb/sec |
+
+The CPU totals include Easley's head and login nodes (128 additional cores) and
+Hopper's head node (32 additional cores). GPU and RAM totals describe the
+Slurm-scheduled compute nodes listed below.
+
+All Easley nodes have 64-core Intel Xeon Gold 6438Y+ processors.
+
+| Nodes | GPUs per node | RAM per node |
+| ----: | ------------- | -----------: |
+| 48 | None | 252 GB |
+| 4 | 2 NVIDIA H100 | 1,008 GB |
+| 9 | 4 NVIDIA L40S | 252 GB |
+| 2 | None | 2,016 GB |
+
+All Hopper nodes have 32-core Intel Xeon Gold 6226R processors.
+
+| Nodes | GPUs per node | RAM per node |
+| ----: | ------------- | -----------: |
+| 43 | None | 92 GB |
+| 6 | None | 504 GB |
+| 2 | None | 1,512 GB |
+| 1 | None | 376 GB |
+| 10 | 2 NVIDIA A100 | 376 GB |
+| 2 | 2 NVIDIA A100 | 188 GB |
+| 2 | 1 NVIDIA A100 | 188 GB |
+| 1 | 2 NVIDIA V100 | 188 GB |
 
 For queue limits and walltimes, see [resource limits](resource-limits.md).
 Historical specifications for retired systems (Wheeler, Taos, Gibbs, and

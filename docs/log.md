@@ -1,5 +1,16 @@
 # Documentation update log
 
+## 2026-09-29
+
+* **Update**: Refreshed the [systems overview](systems/overview.md) from
+  Slurm inventory collected on September 29. It distinguishes all nodes from
+  scheduled compute nodes: Easley has 65 total nodes and 4,160 CPU cores
+  (63 scheduled compute nodes, 8 NVIDIA H100 GPUs, 36 NVIDIA L40S GPUs, and
+  22.4 TB of compute-node RAM); Hopper has 68 total nodes and 2,176 CPU cores
+  (67 scheduled compute nodes, 26 NVIDIA A100 GPUs, 2 NVIDIA V100 GPUs, and
+  15.1 TB of compute-node RAM). The page now lists each cluster's
+  heterogeneous node configurations and observed ConnectX interconnect.
+
 ## 2026-09-12
 
 * **Update**: Made the Markdown behind every page easier for AI agents to find, following the conventions of the [DUST 2026](https://unm-carc.github.io/dust-2026/about/ai-agents/){target=_blank} site: each rendered page now carries a "View this page as Markdown" button beside the edit and view-source buttons and a "Machine-readable versions" line at the end of the article (Markdown twin, raw source on GitHub, `llms.txt`, `llms-full.txt`); the site footer links `llms.txt`, `llms-full.txt`, and the agent guide; `llms.txt` is now built from the site nav and lists the Markdown twin and raw GitHub source of every page plus the corpus size; `llms-full.txt` and the per-page Markdown mirror have relative links rewritten to absolute URLs; `robots.txt` names the raw-source convention; and the [agent guide](about/ai-agents.md) explains the raw-source fallback for sandboxes that cannot reach carc.unm.edu and warns that `<head>` tags are invisible to text-extracting fetchers. Scripts now share `scripts/okf_common.py`.
