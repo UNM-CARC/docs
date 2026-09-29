@@ -2,6 +2,12 @@
 
 ## 2026-09-29
 
+* **Update**: Merged the former Software and Tutorials navigation into
+  [QuickByte tutorials](software/index.md). Its scrollable contents page now
+  gives each active domain tutorial a home alongside the software guides.
+* **Creation**: Added [Mathematica on Easley](software/mathematica.md), a
+  curated QuickByte covering interactive, serial, multicore, multinode, GPU,
+  and license-server workflows with Mathematica 15.0.1 and WolframScript.
 * **Update**: Refreshed the [systems overview](systems/overview.md) from
   Slurm inventory collected on September 29. It distinguishes all nodes from
   scheduled compute nodes: Easley has 65 total nodes and 4,160 CPU cores

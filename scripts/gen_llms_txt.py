@@ -31,6 +31,11 @@ from okf_common import (DOCS, absolutize, frontmatter, is_external,  # noqa: E40
                         split_frontmatter)
 
 
+def clean_lines(text: str) -> str:
+    """Remove trailing whitespace carried over from source Markdown."""
+    return "\n".join(line.rstrip() for line in text.splitlines()).rstrip()
+
+
 def main() -> int:
     cfg = load_config()
     base = site_url(cfg)
@@ -110,7 +115,7 @@ def main() -> int:
         _, body = split_frontmatter(text)
         head = text[: len(text) - len(body)]
         body = rewrite_link_targets(body, lambda t, r=rel: absolutize(t, r, base))
-        full += [f"---8<--- {url}", "", (head + body).rstrip(), ""]
+        full += [f"---8<--- {url}", "", clean_lines(head + body), ""]
         n += 1
 
     # Safety net: a page that exists in docs/ but is missing from the nav is
@@ -140,7 +145,7 @@ def main() -> int:
         _, body = split_frontmatter(text)
         head = text[: len(text) - len(body)]
         body = rewrite_link_targets(body, lambda t, r=rel: absolutize(t, r, base))
-        full += [f"---8<--- {url}", "", (head + body).rstrip(), ""]
+        full += [f"---8<--- {url}", "", clean_lines(head + body), ""]
         n += 1
 
     for section, subs in groups.items():
@@ -154,7 +159,7 @@ def main() -> int:
     if log.exists():
         body = rewrite_link_targets(log.read_text(encoding="utf-8"),
                                     lambda t: absolutize(t, "log.md", base))
-        full += [f"---8<--- {base}log/", "", body.rstrip(), ""]
+        full += [f"---8<--- {base}log/", "", clean_lines(body), ""]
     full_text = "\n".join(full).rstrip() + "\n"
     nbytes = len(full_text.encode("utf-8"))
     ktok = max(1, round(nbytes / 4 / 1000))

@@ -219,6 +219,11 @@ PAGES: list[Page] = [
          "Train deep learning models in MATLAB using CARC GPU nodes.",
          "Tutorial", ["MATLAB", "GPU", "Machine learning"], status="draft"),
 
+    # ---- Software: Mathematica (curated from a post-migration QuickByte)
+    Page("", "software/mathematica.md", "Mathematica on Easley",
+         "Run Mathematica and WolframScript on Easley with interactive, serial, multicore, multinode, GPU, and license-server examples.",
+         "Tutorial", ["Mathematica", "Wolfram Language", "Slurm", "Easley", "GPU"], repo="hand"),
+
     # ---- Software: AI & ML
     Page("PyTorch_1.9_Xena.md", "software/pytorch.md", "PyTorch on CARC GPUs",
          "Install and run GPU-enabled PyTorch on CARC clusters.",
@@ -339,8 +344,8 @@ SECTIONS = {
         "Schedule and manage work on CARC clusters with Slurm."),
     "interactive": ("Interactive computing",
         "Point-and-click access to CARC clusters: Open OnDemand and JupyterHub."),
-    "software": ("Software",
-        "Language environments, machine learning frameworks, containers, and applications on CARC systems."),
+    "software": ("QuickByte Tutorials",
+        "Short, practical CARC guides for software, programming environments, and research workflows."),
     "tutorials": ("Tutorials",
         "Domain-science QuickBytes: complete worked examples from genomics to materials science."),
     "faq": ("FAQ & troubleshooting",
@@ -353,19 +358,40 @@ SECTIONS = {
         "Mission, facilities, partner cyberinfrastructure, and this documentation project."),
 }
 
-# Software section subgroups for the index page (mirrors zensical.toml nav)
-SOFTWARE_GROUPS = [
-    ("Python & Jupyter", ["conda-intro.md", "conda-environments.md", "conda-channels-pip.md",
-                          "conda-jupyterhub.md", "deep-learning-packages.md", "dask-scikit-learn.md",
-                          "jupyterhub-mpi.md", "julia-jupyterhub.md"]),
-    ("R", ["r-usage.md", "getting-r.md", "r-packages.md", "parallel-r-future.md", "gurobi-r.md",
-           "r-pbs-jobs.md"]),
-    ("MATLAB", ["matlab-jobs.md", "parallel-matlab.md", "matlab-parallel-server.md", "matlab-gpu.md",
-                "matlab-deep-learning.md"]),
-    ("AI & machine learning", ["pytorch.md", "pytorch-classifier.md", "tensorflow.md",
-                               "tensorflow-multi-gpu.md", "alphafold.md"]),
-    ("Containers & tools", ["singularity.md", "spark.md", "paraview.md", "cuda-aware-mpi.md",
-                            "perl-libraries.md", "haskell.md"]),
+# QuickByte groups for the combined software/tutorials contents page and nav.
+QUICKBYTE_GROUPS = [
+    ("Programming environments", [
+        "software/conda-intro.md", "software/conda-environments.md",
+        "software/conda-channels-pip.md", "software/conda-jupyterhub.md",
+        "software/julia-jupyterhub.md", "software/jupyterhub-mpi.md",
+        "software/r-usage.md", "software/getting-r.md", "software/r-packages.md",
+        "software/parallel-r-future.md", "software/gurobi-r.md",
+        "software/haskell.md", "software/perl-libraries.md",
+    ]),
+    ("Mathematical and numerical computing", [
+        "software/matlab-jobs.md", "software/parallel-matlab.md",
+        "software/matlab-parallel-server.md", "software/matlab-gpu.md",
+        "software/matlab-deep-learning.md", "software/mathematica.md",
+    ]),
+    ("AI and machine learning", [
+        "software/deep-learning-packages.md", "software/pytorch.md",
+        "software/pytorch-classifier.md", "software/tensorflow.md",
+        "software/tensorflow-multi-gpu.md", "software/alphafold.md",
+    ]),
+    ("Data, visualization, and parallel computing", [
+        "software/dask-scikit-learn.md", "software/spark.md",
+        "software/paraview.md", "software/cuda-aware-mpi.md",
+    ]),
+    ("Bioinformatics", [
+        "tutorials/gatk.md", "tutorials/metabarcoding.md", "tutorials/stacks.md",
+        "tutorials/genome-evaluation.md", "tutorials/msprime.md",
+        "tutorials/psmc.md", "tutorials/beast.md",
+    ]),
+    ("Domain science", [
+        "tutorials/vasp.md", "tutorials/orca.md", "tutorials/simcov.md",
+        "tutorials/mpi-casa.md",
+    ]),
+    ("Containers", ["software/singularity.md"]),
 ]
 
 # Extra downloadable assets: (repo-relative source, docs/assets/files-relative dest)
@@ -1221,19 +1247,20 @@ def write_index(section: str, pages_by_dest: dict):
     name, blurb = SECTIONS[section]
     lines = [f"# {name}", "", blurb, ""]
 
-    def entry(fname: str) -> str:
-        p = pages_by_dest[f"{section}/{fname}"]
+    def entry(dest: str) -> str:
+        p = pages_by_dest[dest]
         suffix = " *(legacy)*" if p.status == "deprecated" else ""
-        return f"* [{p.title}]({fname}) - {p.description}{suffix}"
+        href = dest.split("/", 1)[1] if dest.startswith(section + "/") else f"../{dest}"
+        return f"* [{p.title}]({href}) - {p.description}{suffix}"
 
     if section == "software":
-        for group, files in SOFTWARE_GROUPS:
+        for group, files in QUICKBYTE_GROUPS:
             lines += [f"## {group}", ""]
             lines += [entry(f) for f in files]
             lines.append("")
     else:
         ordered = [d for d in pages_by_dest if d.startswith(section + "/")]
-        lines += [entry(d.split("/", 1)[1]) for d in ordered]
+        lines += [entry(d) for d in ordered]
         lines.append("")
     if section == "about":
         lines += ["* [Documentation update log](../log.md) - Chronological history of changes to this documentation bundle.", ""]
