@@ -2,11 +2,14 @@
 
 ## 2026-10-10
 
+* **Update**: The [web archive](about/web-archive.md) pages are now stored as UTF-8 with LF line endings. 186 of the 1990s pages were Latin-1 or Windows-1252, which Cascade changes on upload, so the carc.unm.edu publish stopped at its read-back check. `scripts/build_web_archive.py` now writes UTF-8 itself.
+
 * **Update**: [History of CARC computing](about/history.md) now has a "Capacity over time" chart and table under The machines: total peak performance, CPU cores, memory and storage of every machine in service each year from 1995 to 2026, built by `scripts/build_capacity_timeline.py` (many inputs are estimates, listed under the chart). Tyson Swetnam's start date as Director is now Jul 1, 2026.
 
 * **Creation**: Added the [Web archive of the old center websites](about/web-archive.md) (draft): ten browsable snapshots of the HPCERC, AHPCC, Alliance Supercluster, HPC@UNM and first CARC websites (1998–2016), about 820 pages rebuilt from Internet Archive captures by `scripts/build_web_archive.py`. Pages keep their original HTML with an archive banner; links and images point at the local copies, and anything not saved points at the nearest Wayback Machine capture. The history page links to it.
 
 * **Creation**: Added [History of CARC computing](about/history.md) (draft), a sourced record of every supercomputer in the Galles Building machine room from Roadrunner and Los Lobos (1999–2000) through the HPC@UNM machines on the machine-room wall plaques (Pequin, Poblano, Ristra, Hammer, Yenta, Vista Azul, Delphi, Rio Bravo) to Easley. It covers install and retirement dates, manufacturers, grants, peak performance and costs (estimates and unknowns are marked), a timeline, past directors and associate directors, and the PIs who contributed hardware. The plaque photo and 17 logos and photos from Internet Archive snapshots of the old AHPCC, HPCERC, Alliance, HPC@UNM and CARC sites are in `assets/images/history/`; those snapshots also supplied the 1995–1998 IBM SP and SGI Origin machines, the 2000–2007 leadership and the 2008 and 2015 system tables.
+
 ## 2026-09-29
 
 * **Update**: Added static notation for the governing equation, boundary
