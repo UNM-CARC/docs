@@ -1,0 +1,979 @@
+<html><!-- #BeginTemplate "/Templates/Computing_Systems_Template.dwt" -->
+<head>
+<!-- #BeginEditable "doctitle" --> <!-- #EndEditable --> 
+<style type="text/css">
+<!--
+-->
+</style>
+<title>AHPCC Computing Systems</title>
+<link rel="stylesheet" href="https://web.archive.org/web/20000817235203cs_/http://ahpcc.unm.edu/Classes/AHPCC.css">
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+       <!--
+
+          NS4 = (document.layers);
+          IE4 = (document.all);
+         ver4 = (NS4 || IE4);   
+        isMac = (navigator.appVersion.indexOf("Mac") != -1);
+       isMenu = (NS4 || (IE4 && !isMac));
+
+       function popUp(){return};
+       function popDown(){return};
+
+       if (!ver4) event = null;
+
+       //-->
+       </SCRIPT>
+<SCRIPT LANGUAGE="JavaScript1.2" TYPE="text/javascript">
+       <!--
+
+       if (isMenu) {
+           menuVersion = 3;
+           
+           menuWidth = 150;
+           childOverlap = 50;
+           childOffset = 5;
+           perCentOver = null;
+           secondsVisible = .5;
+           
+           fntCol = "white";
+           fntSiz = "8";
+           fntBold = true;
+           fntItal = false;
+           fntFam = "Arial,Geneva,sans-serif";
+           
+           backCol = "#4a0239";
+           overCol = "#eaae69";
+           overFnt = "black";
+           
+           borWid = 1;
+           borCol = "white";
+           borSty = "solid";
+           itemPad = 3;
+           
+           imgSrc = "http://www.dhtmlab.com/hiermenus/tri.gif";
+           imgSiz = 10;
+           
+           separator = 1;
+           separatorCol = "white";
+           
+           isFrames = false;      // <-- IMPORTANT for full window
+           navFrLoc = "left";     // <-- display. see below
+           
+           keepHilite = true; 
+           NSfontOver = true;
+           clickStart = false;
+           clickKill = false;
+       }
+
+       //-->
+       </SCRIPT>
+<SCRIPT LANGUAGE="JavaScript1.2" TYPE="text/javascript">
+       <!--
+       if (isMenu) {
+       document.write("<SCRIPT LANGUAGE='JavaScript1.2' SRC="https://web.archive.org/web/20000817235203js_/http://ahpcc.unm.edu/JS/Computing_Systems_Menu.js"><\/SCRIPT>");
+       }
+       //-->
+       </SCRIPT>
+<SCRIPT LANGUAGE="JavaScript1.2" TYPE="text/javascript">
+       <!--
+       if (isMenu) {
+       document.write("<SCRIPT LANGUAGE='JavaScript1.2' SRC="https://web.archive.org/web/20000817235203js_/http://ahpcc.unm.edu/JS/hierMenus.js"><\/SCRIPT>");
+       }
+       //-->
+       </SCRIPT>
+<meta name="AHPCC Computing Systems high performance computing HPC" content="AHPCC Computing Systems">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#660066" vlink="#000000" alink="#CC6633" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">ahpcc.unm.edu/Systems/Customer_Service/Users_Guide/Chapter3_Software_files/Chapter3_Software.html</code> as captured by the Internet Archive on 17 August 2000. Links to pages that were not saved here go to the Wayback Machine. <a style="color:#0b5cad" href="https://web.archive.org/web/20000817235203/http://www.ahpcc.unm.edu:80/Systems/Customer_Service/Users_Guide/Chapter3_Software_files/Chapter3_Software.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../../../">Web archive index</a></div>
+
+<table width="660" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td colspan="5" align="right"> <img src="../../../../_img/Images/Header.jpg" width="660" height="81"><br>
+      <a href="../../../../index.html" onMouseOver="popUp('elMenu1',event)"
+          onMouseOut="popDown('elMenu1')"><img src="../../../../_img/Images/Tabs/Tab_AHPCC.jpg" width="61" height="25" border="0"></a><a href="../../../index.html" onMouseOver="popUp('elMenu2',event)"
+          onMouseOut="popDown('elMenu2')"><img src="../../../../_img/Images/Tabs/Tab_Computing_Systems.jpg" width="130" height="25" border="0"></a><a href="https://web.archive.org/web/20000817235203/http://ahpcc.unm.edu/Knowledge/index.html" onMouseOver="popUp('elMenu3',event)"
+          onMouseOut="popDown('elMenu3')"><img src="../../../../_img/Images/Tabs/Tab_Knowledge_Community.jpg" width="147" height="25" border="0"></a><a href="https://web.archive.org/web/20000817235203/http://ahpcc.unm.edu/Research" onMouseOver="popUp('elMenu4',event)"
+          onMouseOut="popDown('elMenu4')" ><img src="../../../../_img/Images/Tabs/Tab_Research_Activities.jpg" width="125" height="25" border="0"></a><a href="../../../../index.html"><img src="../../../../_img/Images/Tabs/Tab_Search.jpg" width="60" height="25" border="0"></a> 
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="1" cellpadding="0">
+  <tr valign="top"> 
+    <td colspan="3" bgcolor="#FFA618" rowspan="2"> 
+      <div align="left"> 
+        <p><font face="Arial, Helvetica, sans-serif"><a href="../../../Newsletters/index.html"><font size="-1"><font size="-2">News</font></font></a><font size="-2"><a href="../../../Allocations/index.html"><br>
+          Accounts &amp; Allocations</a><br>
+          <a href="../../../HPC_Systems.html">HPC Systems</a><br>
+          Systems Group<br>
+          <a href="../../index.html">Help Desk</a><br>
+          <a href="../../../Documentation/index.html">Documentation</a><br>
+          <a href="https://web.archive.org/web/20000817235203/http://ahpcc.unm.edu/EducationTraining/index.html">Training</a><br>
+          <a href="https://web.archive.org/web/20000817235203/http://ahpcc.unm.edu/Research/SysNet.html">Supercluster Research</a></font></font></p>
+        <table width="95%" cellspacing="0" cellpadding="0" border="1" align="center">
+          <tr bgcolor="#EFDBEF" valign="top"> 
+            <td> 
+              <div align="center"><font face="Arial, Helvetica, sans-serif" size="-2"><a href="https://web.archive.org/web/20000817235203/http://clumber.tc.cornell.edu/actc/Supercluster/index.html"><b>Register 
+                for<br>
+                Linux Supercluster Users Conference</b></a></font></div>
+            </td>
+          </tr>
+        </table>
+        <div align="left"></div>
+        <br>
+        <table width="95%" border="1" cellspacing="0" cellpadding="0" align="center">
+          <tr bgcolor="#FFFFCC" valign="top"> 
+            <td> 
+              <div align="left"> </div>
+              <div align="left"><font size="-2">Additional Info:</font><br>
+                <!-- #BeginEditable "info" -->{info}<!-- #EndEditable --></div>
+            </td>
+          </tr>
+        </table>
+        
+        <br>
+        <table width="95%" border="1" cellspacing="0" cellpadding="0" align="center">
+          <tr bgcolor="#E7C794" valign="top"> 
+            <td> 
+              <div align="center"><b><font size="-2"><a href="mailto:research@ahpcc.unm.edu;%20systems@ahpcc.unm.edu;%20staff@ahpcc.unm.edu">Ask 
+                other HPC users</a>?</font></b></div>
+            </td>
+          </tr>
+        </table>
+        
+      </div>
+    </td>
+    <td rowspan="2" colspan="2" width="83%"> 
+      <div align="left"></div>
+      <div align="left"><!-- #BeginEditable "Main" --> 
+      <h1 align=center> <B><FONT size=+2>Chapter 3 -- Software</FONT></B><BR>
+      </h1>
+      <HR align=center>
+      <P><IMG align=top alt=Bullet height=15 
+src="../../../../_img/Systems/Customer_Service/Users_Guide/Chapter3_Software_files/AHPCC_Bullet.gif" width=15 NATURALSIZEFLAG="3"> <B><A 
+href="https://web.archive.org/web/20000817235203/http://www.ahpcc.unm.edu//UserSupport/UG/Software.html#compilers">3.1 Compilers</A></B> 
+      </P>
+      <P><IMG align=top alt=Bullet height=15 
+src="../../../../_img/Systems/Customer_Service/Users_Guide/Chapter3_Software_files/AHPCC_Bullet.gif" width=15 NATURALSIZEFLAG="3"> <B><A 
+href="https://web.archive.org/web/20000817235203/http://www.ahpcc.unm.edu//UserSupport/UG/Software.html#serial_libs">3.2 
+        Serial Libraries</A></B></P>
+      <P><IMG align=top alt=Bullet height=15 
+src="../../../../_img/Systems/Customer_Service/Users_Guide/Chapter3_Software_files/AHPCC_Bullet.gif" width=15 NATURALSIZEFLAG="3"> <B><A 
+href="https://web.archive.org/web/20000817235203/http://www.ahpcc.unm.edu//UserSupport/UG/Software.html#parallel_soft">3.3 
+        Parallel Software</A></B></P>
+      <P><IMG align=top alt=Bullet height=15 
+src="../../../../_img/Systems/Customer_Service/Users_Guide/Chapter3_Software_files/AHPCC_Bullet.gif" width=15 NATURALSIZEFLAG="3"> <B><A href="https://web.archive.org/web/20000817235203/http://www.ahpcc.unm.edu//UserSupport/UG/Software.html#sci_viz">3.4 
+        Scientific Visualization Software</A></B></P>
+      <P><IMG align=top alt=Bullet height=15 
+src="../../../../_img/Systems/Customer_Service/Users_Guide/Chapter3_Software_files/AHPCC_Bullet.gif" width=15 NATURALSIZEFLAG="3"> <B><A 
+href="https://web.archive.org/web/20000817235203/http://www.ahpcc.unm.edu//UserSupport/UG/Software.html#math_soft">3.5 Mathematical 
+        Software</A></B></P>
+      <P><IMG align=top alt=Bullet height=15 
+src="../../../../_img/Systems/Customer_Service/Users_Guide/Chapter3_Software_files/AHPCC_Bullet.gif" width=15 NATURALSIZEFLAG="3"> <B><A 
+href="https://web.archive.org/web/20000817235203/http://www.ahpcc.unm.edu//UserSupport/UG/Software.html#image_soft">3.6 Image 
+        Processing Software</A></B></P>
+      <P><IMG align=top alt=Bullet height=15 
+src="../../../../_img/Systems/Customer_Service/Users_Guide/Chapter3_Software_files/AHPCC_Bullet.gif" width=15 NATURALSIZEFLAG="3"> <B><A 
+href="https://web.archive.org/web/20000817235203/http://www.ahpcc.unm.edu//UserSupport/UG/Software.html#comp_chem">3.7 Computational 
+        Chemistry Software</A></B></P>
+      <HR align=left>
+      <P><A name=compilers></A><B><FONT color=#800000 size=+1>3.1 Compilers</FONT></B></P>
+      <TABLE border=1 cols=5 width="100%" NOSAVE>
+        <TBODY> 
+        <TR bgColor=#ffffff NOSAVE> 
+          <TD rowSpan=2 NOSAVE> 
+            <CENTER>
+              <B>Language</B> 
+            </CENTER>
+          </TD>
+          <TD colSpan=4 NOSAVE> 
+            <CENTER>
+              <B>Platforms</B> 
+            </CENTER>
+          </TD>
+        </TR>
+        <TR bgColor=#ffffff NOSAVE> 
+          <TD NOSAVE> 
+            <CENTER>
+              <B>AIX</B> 
+            </CENTER>
+          </TD>
+          <TD> 
+            <CENTER>
+              <B>IRIX (SGI)</B> 
+            </CENTER>
+          </TD>
+          <TD> 
+            <CENTER>
+              <B>Linux</B> 
+            </CENTER>
+          </TD>
+          <TD> 
+            <CENTER>
+              <B>Notes</B> 
+            </CENTER>
+          </TD>
+        </TR>
+        <TR NOSAVE> 
+          <TD bgColor=#ffcc00 colSpan=5 NOSAVE> 
+            <CENTER>
+              Fortran 
+            </CENTER>
+          </TD>
+        </TR>
+        <TR> 
+          <TD>Fortran77</TD>
+          <TD> 
+            <CENTER>
+              xlf, f77 
+            </CENTER>
+          </TD>
+          <TD> 
+            <CENTER>
+              f77 
+            </CENTER>
+          </TD>
+          <TD> 
+            <CENTER>
+              g77 
+            </CENTER>
+          </TD>
+          <TD> 
+            <CENTER>
+              <A 
+      href="https://web.archive.org/web/20000817235203/http://www.ahpcc.unm.edu//UserSupport/UG/smake.html#f77mf">sample 
+              makefile</A> 
+            </CENTER>
+          </TD>
+        </TR>
+        <TR> 
+          <TD>Fortran90</TD>
+          <TD> 
+            <CENTER>
+              xlf90 
+            </CENTER>
+          </TD>
+          <TD> 
+            <CENTER>
+              f90 
+            </CENTER>
+          </TD>
+          <TD> 
+            <CENTER>
+              &nbsp; 
+            </CENTER>
+          </TD>
+          <TD> 
+            <CENTER>
+              <A 
+      href="https://web.archive.org/web/20000817235203/http://www.ahpcc.unm.edu//UserSupport/UG/smake.html#f90mf">sample 
+              makefile</A> 
+            </CENTER>
+          </TD>
+        </TR>
+        <TR> 
+          <TD>Fortran95</TD>
+          <TD> 
+            <CENTER>
+              &nbsp; 
+            </CENTER>
+          </TD>
+          <TD> 
+            <CENTER>
+              &nbsp; 
+            </CENTER>
+          </TD>
+          <TD> 
+            <CENTER>
+              f95 
+            </CENTER>
+          </TD>
+          <TD> 
+            <CENTER>
+              &nbsp; 
+            </CENTER>
+          </TD>
+        </TR>
+        <TR> 
+          <TD>HPF</TD>
+          <TD> 
+            <CENTER>
+              xlhpf 
+            </CENTER>
+          </TD>
+          <TD> 
+            <CENTER>
+              &nbsp; 
+            </CENTER>
+          </TD>
+          <TD> 
+            <CENTER>
+              &nbsp; 
+            </CENTER>
+          </TD>
+          <TD> 
+            <CENTER>
+              &nbsp; 
+            </CENTER>
+          </TD>
+        </TR>
+        <TR NOSAVE> 
+          <TD bgColor=#ffcc00 colSpan=5 NOSAVE> 
+            <CENTER>
+              C &amp; C++ 
+            </CENTER>
+          </TD>
+        </TR>
+        <TR> 
+          <TD>C</TD>
+          <TD> 
+            <CENTER>
+              xlc, cc, gcc 
+            </CENTER>
+          </TD>
+          <TD> 
+            <CENTER>
+              cc, gcc 
+            </CENTER>
+          </TD>
+          <TD> 
+            <CENTER>
+              cc, gcc 
+            </CENTER>
+          </TD>
+          <TD> 
+            <CENTER>
+              <A 
+      href="https://web.archive.org/web/20000817235203/http://www.ahpcc.unm.edu//UserSupport/UG/smake.html#cmf">sample makefile</A> 
+            </CENTER>
+          </TD>
+        </TR>
+        <TR> 
+          <TD>C++</TD>
+          <TD> 
+            <CENTER>
+              xlC 
+            </CENTER>
+          </TD>
+          <TD> 
+            <CENTER>
+              CC, g++ 
+            </CENTER>
+          </TD>
+          <TD> 
+            <CENTER>
+              g++ 
+            </CENTER>
+          </TD>
+          <TD> 
+            <CENTER>
+              <A 
+      href="https://web.archive.org/web/20000817235203/http://www.ahpcc.unm.edu//UserSupport/UG/smake.html#cppmf">sample 
+              makefile</A> 
+            </CENTER>
+          </TD>
+        </TR>
+        <TR NOSAVE> 
+          <TD bgColor=#ffcc00 colSpan=5 NOSAVE> 
+            <CENTER>
+              MPI 
+            </CENTER>
+          </TD>
+        </TR>
+        <TR> 
+          <TD>MPI (Fortran)</TD>
+          <TD> 
+            <CENTER>
+              mpxlf&nbsp; (SP/2) 
+            </CENTER>
+            <BR>
+            <CENTER>
+              mpif77&nbsp; (Grants, Gila) 
+            </CENTER>
+          </TD>
+          <TD> 
+            <CENTER>
+              mpif77 
+            </CENTER>
+          </TD>
+          <TD> 
+            <CENTER>
+              mpif77 
+            </CENTER>
+          </TD>
+          <TD> 
+            <CENTER>
+              <A 
+      href="https://web.archive.org/web/20000817235203/http://www.ahpcc.unm.edu//UserSupport/UG/smake.html#mpifmf">sample 
+              makefile</A> 
+            </CENTER>
+          </TD>
+        </TR>
+        <TR> 
+          <TD>MPI (C)</TD>
+          <TD> 
+            <CENTER>
+              mpxlc&nbsp; (SP/2) 
+            </CENTER>
+            <BR>
+            <CENTER>
+              mpifcc&nbsp; (Grants, Gila) 
+            </CENTER>
+          </TD>
+          <TD> 
+            <CENTER>
+              mpicc 
+            </CENTER>
+          </TD>
+          <TD> 
+            <CENTER>
+              mpicc 
+            </CENTER>
+          </TD>
+          <TD> 
+            <CENTER>
+              <A 
+      href="https://web.archive.org/web/20000817235203/http://www.ahpcc.unm.edu//UserSupport/UG/smake.html#mpicmf">sample 
+              makefile</A> 
+            </CENTER>
+          </TD>
+        </TR>
+        <TR> 
+          <TD>MPI (C++)</TD>
+          <TD> 
+            <CENTER>
+              mpxlC&nbsp; (SP/2) 
+            </CENTER>
+            <BR>
+            <CENTER>
+              mpifCC&nbsp; (Grants, Gila) 
+            </CENTER>
+          </TD>
+          <TD> 
+            <CENTER>
+              mpiCC 
+            </CENTER>
+          </TD>
+          <TD> 
+            <CENTER>
+              mpiCC 
+            </CENTER>
+          </TD>
+          <TD> 
+            <CENTER>
+              <A 
+      href="https://web.archive.org/web/20000817235203/http://www.ahpcc.unm.edu//UserSupport/UG/smake.html#mpicppmf">sample 
+              makefile</A> 
+            </CENTER>
+          </TD>
+        </TR>
+        <TR> 
+          <TD><a href="https://web.archive.org/web/20000817235203/http://www.debian.org/">GNU</a></TD>
+          <TD>&nbsp;</TD>
+          <TD>&nbsp;</TD>
+          <TD>&nbsp;</TD>
+          <TD>&nbsp;</TD>
+        </TR>
+        <TR> 
+          <TD>PGI</TD>
+          <TD>&nbsp;</TD>
+          <TD>&nbsp;</TD>
+          <TD>&nbsp;</TD>
+          <TD>&nbsp;</TD>
+        </TR>
+        <TR>
+          <TD><a href="https://web.archive.org/web/20000817235203/http://www.ncsa.uiuc.edu/Indices/Software/Category.html">Alliance 
+            compilers</a></TD>
+          <TD>&nbsp;</TD>
+          <TD>&nbsp;</TD>
+          <TD>&nbsp;</TD>
+          <TD>&nbsp;</TD>
+        </TR>
+        </TBODY> 
+      </TABLE>
+      <BR>
+      <BR>
+      <P><A name=serial_libs></A><B><FONT color=#800000 size=+1>3.2 Serial Libraries</FONT></B></P>
+      <TABLE border=1 cols=5 width="100%" NOSAVE>
+        <TBODY> 
+        <TR bgColor=#ffffff NOSAVE> 
+          <TD NOSAVE> 
+            <CENTER>
+              <B>Libraries</B>
+            </CENTER>
+          </TD>
+          <TD NOSAVE> 
+            <CENTER>
+              <B>Platforms</B>
+            </CENTER>
+          </TD>
+          <TD colSpan=3 Nosave> 
+            <CENTER>
+              <B>Notes</B>
+            </CENTER>
+          </TD>
+        </TR>
+        <TR> 
+          <TD>ESSL</TD>
+          <TD> 
+            <CENTER>
+              AIX
+            </CENTER>
+          </TD>
+          <TD colSpan=3 nosave>ESSL stands for Engineering and Scientific Subroutine 
+            Library. 
+            <LI><A 
+      href="https://web.archive.org/web/20000817235203/http://www.ahpcc.unm.edu//UserSupport/UG/essl_manual.pdf">Manual on 
+              ESSL</A> 
+            <LI><A 
+      href="https://web.archive.org/web/20000817235203/http://www.ahpcc.unm.edu//UserSupport/UG/make_essl_c.html">Sample 
+              Makefile</A> for C Programs 
+            <LI><A 
+      href="https://web.archive.org/web/20000817235203/http://www.ahpcc.unm.edu//UserSupport/UG/make_essl_f.html">Sample 
+              Makefile</A> for Fortran Programs<BR>
+            </LI>
+          </TD>
+        <TR> 
+          <TD>MASS</TD>
+          <TD> 
+            <CENTER>
+              AIX
+            </CENTER>
+          </TD>
+          <TD colSpan=3 nosave>This library can provide significantly faster transcendental 
+            functions with little impact on accuracy. To use the MASS library, 
+            link in the alternate mass library from the /usr/lib directory by 
+            adding the -lmass option to the compile/link line. Additional documentation 
+            is available at usr/lpp/mass/MASS.readme </TD>
+        <TR> 
+          <TD>GL</TD>
+          <TD> 
+            <CENTER>
+              SGI
+            </CENTER>
+          </TD>
+          <TD colSpan=3 nosave>A standard graphics library for high performance 
+            visualization. The GL software is system specific but a new emerging 
+            OpenGL promises to be system independent. /usr/lpp/OpenGL/README </TD>
+        <TR> 
+          <TD>Open Inventor</TD>
+          <TD> 
+            <CENTER>
+              SGI
+            </CENTER>
+          </TD>
+          <TD colSpan=3 nosave>A higher level interface on top of the GL software 
+          </TD>
+        <TR> 
+          <TD>Lapack</TD>
+          <TD> 
+            <CENTER>
+              AIX
+            </CENTER>
+          </TD>
+          <TD colSpan=3 nosave>&nbsp; </TD>
+        </TR>
+        </TBODY>
+      </TABLE>
+      <BR>
+      <BR>
+      <A 
+name=parallel_soft></A><B><FONT color=#800000 size=+1>3.3 Parallel Software</FONT></B> 
+      <P></P>
+      <UL>
+        <LI><B><FONT color=#800000>Message Passing:<BR>
+          </FONT></B><BR>
+          <TABLE border=1 cols=5 width="95%" NOSAVE>
+            <TBODY> 
+            <TR bgColor=#ffffff NOSAVE> 
+              <TD NOSAVE> 
+                <CENTER>
+                  <B>Libraries</B>
+                </CENTER>
+              </TD>
+              <TD NOSAVE> 
+                <CENTER>
+                  <B>Platforms</B>
+                </CENTER>
+              </TD>
+              <TD colSpan=3 Nosave> 
+                <CENTER>
+                  <B>Notes</B>
+                </CENTER>
+              </TD>
+            </TR>
+            <TR> 
+              <TD>MPICH</TD>
+              <TD> 
+                <CENTER>
+                  AIX, Linux, SGI
+                </CENTER>
+              </TD>
+              <TD colSpan=3 nosave>A public domain MPI from Argonne National Laboratory 
+                and Mississippi State University. The software can use the high 
+                speed switch. shared memory, or the ethernet. </TD>
+            <TR> 
+              <TD>IBM-MPI</TD>
+              <TD> 
+                <CENTER>
+                  SP/2
+                </CENTER>
+              </TD>
+              <TD colSpan=3 nosave>&nbsp;</TD>
+            <TR> 
+              <TD>PVM </TD>
+              <TD> 
+                <CENTER>
+                  AIX, Linux, SGI
+                </CENTER>
+              </TD>
+              <TD colSpan=3 nosave>It runs either shared memory or IP over the 
+                ethernet. Examples are located in /usr/local/makefiles/pvm </TD>
+            <TR> 
+              <TD>P4</TD>
+              <TD> 
+                <CENTER>
+                  AIX, Linux, SGI
+                </CENTER>
+              </TD>
+              <TD colSpan=3 nosave>A public domain message passing library from 
+                Argonne. It runs on the high speed switch, shared memory, or over 
+                the ethernet. Examples are located in /usr/local/makefiles/p4 
+              </TD>
+            <TR></TR>
+            </TBODY>
+          </TABLE>
+          <BR>
+          <BR>
+        <LI><B><FONT color=#800000>Data Parallel Compilers</font></B><BR>
+          <BR>
+          <TABLE border=1 cols=5 width="95%" NOSAVE>
+            <TBODY> 
+            <TR bgColor=#ffffff NOSAVE> 
+              <TD NOSAVE> 
+                <CENTER>
+                  <B>Libraries</B>
+                </CENTER>
+              </TD>
+              <TD NOSAVE> 
+                <CENTER>
+                  <B>Platforms</B>
+                </CENTER>
+              </TD>
+              <TD colSpan=3 Nosave> 
+                <CENTER>
+                  <B>Notes</B>
+                </CENTER>
+              </TD>
+            </TR>
+            <TR> 
+              <TD>IBM HPF</TD>
+              <TD> 
+                <CENTER>
+                  AIX
+                </CENTER>
+              </TD>
+              <TD colSpan=3 nosave>The AHPCC is running a pre-lease copy and cannot 
+                run the general release due to hardware incompatibility. Additional 
+                documentation is available in /usr/lpp/xlhpf/postscript </TD>
+            </TR>
+            </TBODY>
+          </TABLE>
+          <BR>
+          <BR>
+        <LI><B><FONT color=#800000>Parallel Libraries:</font></B> <BR>
+          <BR>
+          <TABLE border=1 cols=5 width="95%" NOSAVE>
+            <TBODY> 
+            <TR bgColor=#ffffff NOSAVE> 
+              <TD NOSAVE> 
+                <CENTER>
+                  <B>Libraries</B>
+                </CENTER>
+              </TD>
+              <TD NOSAVE> 
+                <CENTER>
+                  <B>Platforms</B>
+                </CENTER>
+              </TD>
+              <TD colSpan=3 Nosave> 
+                <CENTER>
+                  <B>Notes</B>
+                </CENTER>
+              </TD>
+            </TR>
+            <TR> 
+              <TD>PESSL</TD>
+              <TD> 
+                <CENTER>
+                  AIX
+                </CENTER>
+              </TD>
+              <TD colSpan=3 nosave>PESSL stands for Parallel Engineering and Scientific 
+                Subroutine Library. It is an IBM product, available only for RS6000 
+                and SP architectures. <BR>
+                <LI><A 
+        href="https://web.archive.org/web/20000817235203/http://www.ahpcc.unm.edu//UserSupport/UG/pessl_manual.pdf">PESSL 
+                  Manual</A> 
+                <LI><A 
+        href="https://web.archive.org/web/20000817235203/http://www.ahpcc.unm.edu//UserSupport/UG/make_pessl_c.html">Sample 
+                  Makefile</A> for C Programs 
+                <LI><A 
+        href="https://web.archive.org/web/20000817235203/http://www.ahpcc.unm.edu//UserSupport/UG/make_pessl_f.html">Sample 
+                  Makefile</A> for Fortran77 Programs 
+                <LI><A 
+        href="https://web.archive.org/web/20000817235203/http://www.ahpcc.unm.edu//UserSupport/UG/make_pessl_f90.html">Sample 
+                  Makefile</A> for Fortran90 Programs </LI>
+              </TD>
+            <TR> 
+              <TD>ScaLAPACK</TD>
+              <TD> 
+                <CENTER>
+                  AIX, Linux
+                </CENTER>
+              </TD>
+              <TD colSpan=3 nosave>A public domain library from University of 
+                Tennessee which implements parallel versions of many of the linear 
+                algebra routines from LAPACK. </TD>
+            <TR> 
+              <TD>PETSc</TD>
+              <TD> 
+                <CENTER>
+                  AIX
+                </CENTER>
+              </TD>
+              <TD colSpan=3 nosave>A public domain library of parallel linear 
+                algebra routines from Argonne. </TD>
+            <TR> 
+              <TD>NAG</TD>
+              <TD> 
+                <CENTER>
+                  AIX
+                </CENTER>
+              </TD>
+              <TD colSpan=3 nosave>A proprietary library of parallel linear algebra 
+                routines from NAG. Early implementations ran on top of PVM, but 
+                current versions based on MPI are being installed at the AHPCC 
+              </TD>
+            <TR> 
+              <TD>PIM</TD>
+              <TD> 
+                <CENTER>
+                  AIX
+                </CENTER>
+              </TD>
+              <TD colSpan=3 nosave>A public domain library of parallel iterative 
+                methods </TD>
+            <TR></TR>
+            </TBODY>
+          </TABLE>
+        </LI>
+      </UL>
+      <BR>
+      <P><A name=sci_viz></A><B><FONT color=#800000 size=+1>3.4 Scientific Visualization 
+        Software</FONT></B></P>
+      <UL>
+        <TABLE border=1 cols=5 width="95%" NOSAVE>
+          <TBODY> 
+          <TR bgColor=#ffffff NOSAVE> 
+            <TD NOSAVE> 
+              <CENTER>
+                <B>Libraries</B>
+              </CENTER>
+            </TD>
+            <TD NOSAVE> 
+              <CENTER>
+                <B>Platforms</B>
+              </CENTER>
+            </TD>
+            <TD colSpan=3 Nosave> 
+              <CENTER>
+                <B>Notes</B>
+              </CENTER>
+            </TD>
+          </TR>
+          <TR> 
+            <TD>Data Explorer</TD>
+            <TD> 
+              <CENTER>
+                SGI
+              </CENTER>
+            </TD>
+            <TD colSpan=3 nosave>&nbsp; </TD>
+          </TR>
+          </TBODY>
+        </TABLE>
+      </UL>
+      <BR>
+      <P><A name=math_soft></A><B><FONT color=#800000 size=+1>3.5 Mathematical 
+        Software</FONT></B></P>
+      <UL>
+        <TABLE border=1 cols=5 width="95%" NOSAVE>
+          <TBODY> 
+          <TR bgColor=#ffffff NOSAVE> 
+            <TD NOSAVE> 
+              <CENTER>
+                <B>Libraries</B>
+              </CENTER>
+            </TD>
+            <TD NOSAVE> 
+              <CENTER>
+                <B>Platforms</B>
+              </CENTER>
+            </TD>
+            <TD colSpan=3 Nosave> 
+              <CENTER>
+                <B>Notes</B>
+              </CENTER>
+            </TD>
+          </TR>
+          <TR> 
+            <TD>Matlab</TD>
+            <TD> 
+              <CENTER>
+                Linux
+              </CENTER>
+            </TD>
+            <TD colSpan=3 nosave>&nbsp; </TD>
+          </TR>
+          </TBODY>
+        </TABLE>
+      </UL>
+      <BR>
+      <P><A name=image_soft></A><B><FONT color=#800000 size=+1>3.6 Image Processing 
+        Software</FONT></B></P>
+      <UL>
+        <TABLE border=1 cols=5 width="95%" NOSAVE>
+          <TBODY> 
+          <TR bgColor=#ffffff NOSAVE> 
+            <TD NOSAVE> 
+              <CENTER>
+                <B>Libraries</B>
+              </CENTER>
+            </TD>
+            <TD NOSAVE> 
+              <CENTER>
+                <B>Platforms</B>
+              </CENTER>
+            </TD>
+            <TD colSpan=3 Nosave> 
+              <CENTER>
+                <B>Notes</B>
+              </CENTER>
+            </TD>
+          </TR>
+          <TR> 
+            <TD>Khoros</TD>
+            <TD> 
+              <CENTER>
+                SGI
+              </CENTER>
+            </TD>
+            <TD colSpan=3 nosave>&nbsp; </TD>
+          </TR>
+          </TBODY>
+        </TABLE>
+      </UL>
+      <BR>
+      <P><A name=comp_chem></A><B><FONT color=#800000 size=+1>3.7 Computational 
+        Chemistry Software</FONT></B></P>
+      <UL>
+        <TABLE border=1 cols=5 width="95%" NOSAVE>
+          <TBODY> 
+          <TR bgColor=#ffffff NOSAVE> 
+            <TD NOSAVE> 
+              <CENTER>
+                <B>Libraries</B>
+              </CENTER>
+            </TD>
+            <TD NOSAVE> 
+              <CENTER>
+                <B>Platforms</B>
+              </CENTER>
+            </TD>
+            <TD colSpan=3 Nosave> 
+              <CENTER>
+                <B>Notes</B>
+              </CENTER>
+            </TD>
+          </TR>
+          <TR> 
+            <TD>Gaussian</TD>
+            <TD> 
+              <CENTER>
+                &nbsp;
+              </CENTER>
+            </TD>
+            <TD colSpan=3 nosave>&nbsp; </TD>
+          <TR> 
+            <TD>NWChem</TD>
+            <TD> 
+              <CENTER>
+                &nbsp;
+              </CENTER>
+            </TD>
+            <TD colSpan=3 nosave>&nbsp; </TD>
+          <TR> 
+            <TD>GAMESS</TD>
+            <TD> 
+              <CENTER>
+                &nbsp;
+              </CENTER>
+            </TD>
+            <TD colSpan=3 nosave>&nbsp; </TD>
+          <TR> 
+            <TD>RASMOL</TD>
+            <TD> 
+              <CENTER>
+                &nbsp;
+              </CENTER>
+            </TD>
+            <TD colSpan=3 nosave>&nbsp; </TD>
+          </TR>
+          </TBODY>
+        </TABLE>
+      </UL>
+      <HR align=left>
+      <P> 
+        <CENTER>
+          <I><FONT size=-1>Copyright 1998, High Performance Computing Education 
+          and Research Center<BR>
+          June 1998 <A 
+href="mailto:editor@arc.unm.edu">editor@arc.unm.edu</A></FONT></I><BR>
+        </CENTER>
+      <!-- #EndEditable --></div>
+      </td>
+  </tr>
+  <tr valign="top"> </tr>
+</table>
+<p>&nbsp;</p>
+<table width="100%">
+  <tr> 
+    <td><img src="../../../../_img/Images/Footer.jpg" width="660" height="72" usemap="#Map" border="0"><map name="Map"><area shape="RECT" coords="575,47,645,62" href="mailto:%20editor@ahpcc.unm.edu" alt="Web Editor" title="Web Editor"></map></td>
+  </tr>
+  <tr> 
+    <td> 
+      <table border="0" width="100%">
+        <tr> 
+          <td bgcolor="#FFFFFF" bordercolor="#FFFFFF" width="46%" rowspan="2" class="footer"><font size="1" face="Arial, Helvetica, sans-serif">The 
+            University of New Mexico<br>
+            <b>Albuquerque High Performance Computing Center</b><br>
+            Galles Building - 1601 Central Avenue, NE<br>
+            Albuquerque, NM 87131<br>
+            Phone # 505.277.8249<font color="#FFFFFF">000000</font>Fax # 505.277.8235</font></td>
+          <td align="right" valign="top" width="54%"> 
+            <div align="right"><font face="Arial, Helvetica, sans-serif" size="1">Last 
+              Modified: <!-- #BeginDate format:Am1m -->August 2, 2000  18:08<!-- #EndDate --></font></div>
+          </td>
+        </tr>
+        <tr> 
+          <td align="right" valign="top" width="54%">&nbsp;</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+
+<!-- #EndTemplate --></html>

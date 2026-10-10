@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p1 release (March 2nd, 1998)
+originally by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Planned Systems</TITLE>
+<META NAME="description" CONTENT="Planned Systems">
+<META NAME="keywords" CONTENT="nprop">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="https://web.archive.org/web/20010222154011cs_/http://ahpcc.unm.edu/projects/vista-azul/proposal/nprop.css">
+<LINK REL="next" HREF="node3.html">
+<LINK REL="previous" HREF="node1.html">
+<LINK REL="up" HREF="nprop.html">
+<LINK REL="next" HREF="node3.html">
+</HEAD>
+<BODY >
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">ahpcc.unm.edu/projects/vista-azul/proposal/node2.html</code> as captured by the Internet Archive on 22 February 2001. Links to pages that were not saved here go to the Wayback Machine. Icons the Internet Archive did not save were redrawn for this copy and are not originals (hover over one to see). <a style="color:#0b5cad" href="https://web.archive.org/web/20010222154011/http://www.ahpcc.unm.edu:80/projects/vista-azul/proposal/node2.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../../">Web archive index</a></div>
+
+<!--Navigation Panel-->
+<A NAME="tex2html55"
+ HREF="node3.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="next (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/next_motif.gif" title="Modern recreation, not an archived original"></A> 
+<A NAME="tex2html53"
+ HREF="nprop.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="up (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/up_motif.gif" title="Modern recreation, not an archived original"></A> 
+<A NAME="tex2html47"
+ HREF="node1.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="previous (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/previous_motif.gif" title="Modern recreation, not an archived original"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html56"
+ HREF="node3.html">Planned Research And Development</A>
+<B> Up:</B> <A NAME="tex2html54"
+ HREF="nprop.html">Development and Investigation of</A>
+<B> Previous:</B> <A NAME="tex2html48"
+ HREF="node1.html">Introduction</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00020000000000000000">
+Planned Systems</A>
+</H1>
+
+<P>
+Under the IBM SUR award to UNM, we will acquire an 8-node Netfinity 5500 M20
+cluster (4 SMPs per node), SSA mass storage (approximately 360 Gbytes), 
+an IBM/ASCEND SP Switch/Router,
+an 8-node SP machine with 4 Winterhawk-II processors per node,
+and a Scalable Graphics Engine attached to the SP switch.
+The Netfinity cluster will be connected using both Fast and Gigabit Ethernet
+fabrics to support applications research, and a second Gigabit Ethernet fabric
+to support network research.  At a later time (propably phase III), the
+Netfinity nodes will be connected to the SP switch.
+The Netfinity cluster will provide
+access to Intel technology, a platform for experimentation
+with networking fabrics, and a development base for prototyping
+visualization software that will use the SGE.  The SSA disk will be supported
+by an IBM RS/6000 H70 running AIX and will eventually become the control
+workstation for the INM SP SMP.
+ 
+The Netfinity cluster will be equipped with 8 PCI-bus based 3-D graphics
+cards and connected to the SGE via the Ascend Switch/Router and the
+SP switch to allow for the display of visualization data on
+UNM's virtual reality display and on the Access Grid display
+projectors.  Thus the final
+configuration will include 8 Netfinity and 8 Winterhawk-II nodes linked by an
+SP switch, and supported by GPFS mass storage, an SGE, and suitable
+control workstations.
+
+<P>
+The SGE configuration includes
+4 adapters (8 ports) to the SP switch and 8 RGB output ports
+which will allow for the development of distributed rendering on a
+mosaic of 8 regions, demonstrating the benefits of high resolution,
+high quality visualization using distributed computational components.
+With this configuration, we could investigate the possibility of
+connecting the SGE adapter interfaces to different switches.
+A complete list of awarded equipment is given in Section&nbsp;<A HREF="node25.html#sec:equip">5</A>.
+
+<P>
+The 8 Winterhawk-II (Power 3) nodes will initially run the AIX operating
+system, moving to a suitable Linux operating system as soon as and if
+one is available.  For
+the Netfinity nodes, a Linux OS is planned when the equipment is acquired.
+Linux drivers for the SP switch adapters will have to be
+developed as they are not currently available.
+
+<P>
+We are interested in using a Linux-based operating system on the SMP
+SP as soon as it is available, although we understand that this may
+require the development of Linux switch drivers in collaboration with IBM.
+
+<P>
+In case Linux drivers are not available for the 3-D graphics
+cards in the Netfinity processors, it is likely that a
+driver for this card will have to be developed.  UNM has committed in
+collaboration with IBM to develop such drivers for the appropriate
+open Linux OS running on these processors.
+
+<P>
+The machines will be connected via the high performance switches using
+the SP switch connections in the final configuration.  AHPCC will
+acquire COTS interconnections (Myrinet, HIPPI, NGS, or gigabit
+ethernet, whatever is interesting and available and is expected to give
+adequate high performance) from the switches to the
+AHPCC Linux Superclusters.  These
+interconnects will likely use the IBM/Ascend gigarouter which is expected to
+provide the highest performance with least interference with
+computations on the nodes, but other interconnects will be investigated.
+As a development effort, AHPCC will
+investigate the installation of Myrinet PCI adaptors on the PCI bus of
+one or more of the Netfinity nodes and participate in the development
+of the appropriate drivers to support the full bandwidth of the Myrinet
+connection to the Linux Supercluster Myrinet switches.  This will permit a
+comparative study of the most effective way to connect the SP switched
+machines to Myrinet networks. 
+
+<P>
+The computations that we expect to run on the system are primarily
+modeling and simulation applications in which the computed results are
+to be displayed or visualized on screens using 3-D projections in the
+visualization laboratory or remotely visualized through the Access
+Grid.  The data to be visualized is expected to require heavy
+computation, say on the SMP SP, then the data is to be rendered on the
+Netfinity cluster, and then sent to the SGE frame buffer.  Such
+computations are expected to create large amounts of intermediate data
+that will probably be generated in parallel, reread in parallel for
+further computation, and reread by the rendering programs to generate
+data in parallel for the SGE frame buffer.
+
+<P>
+One way to visualize the final SP-based cluster is as a ``pipelined''
+cluster with I/O storage nodes (based on GPFS) providing data to
+computational nodes which then drive rendering nodes.  Initially, the
+storage nodes will be allocated from the Winterhawk-II SP nodes, the
+rendering nodes will be drawn from the Linux-based Netfinity nodes, and
+the computational nodes can be allocated to either type of node.
+
+<P>
+In the case of the Access Grid, which is expected to be a major application,
+the data will have to be compressed as well before transmitted over the
+Internet.  Whether the data is "sent on the fly" to the rendering programs
+on the cluster or stored as intermediate data to be reread later by the
+rendering programs on the  cluster is left to study and evaluate, and
+very dependent on the application.  We are very interested in evaluation of
+real-time local and remote steering of the simulation and thus desire that
+enough storage and bandwidth for intermediate data is available.
+Indeed, it is expected that for some applications it will be best to compute
+on the Winterhawk-II nodes, send the data in a stream to the Netfinity nodes
+with the graphic boards and then to the SGE frame buffer for immediate display.
+
+<P>
+The awarded equipment will allow UNM to experiment with and develop
+various communication mechanisms between SMP SPs, Netfinity SPs and
+commodity superclusters using the latest IBM's SP switch and other
+COTS interconnect mechanisms.  It will also allow us to develop systems
+for the effective processing of data-intensive applications for
+science and business.  The resulting research laboratory will become a
+showcase for network communication devices, leveraging IBM's
+computational and visualization machines with COTS interconnect
+hardware and COTS superclusters. 
+
+<P>
+The Maui High-Performance Computing Center is interested in augmenting
+their visualization capabilities by using an SGE on their SP in
+conjunction with COTS visualization components. This award supports
+their interest by including a second SGE frame buffer and collection
+of graphics cards.  AHPCC would provide the testbed and visualization
+consulting to MHPCC to make effective use of the SGE buffer for MHPCC
+projects.  The overall goal for MHPCC is to provide an effective visualization
+environment by transferring the relevant and appropriate virtual
+environment and virtual reality technology to MHPCC and DoD
+applications.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html55"
+ HREF="node3.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="next (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/next_motif.gif" title="Modern recreation, not an archived original"></A> 
+<A NAME="tex2html53"
+ HREF="nprop.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="up (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/up_motif.gif" title="Modern recreation, not an archived original"></A> 
+<A NAME="tex2html47"
+ HREF="node1.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="previous (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/previous_motif.gif" title="Modern recreation, not an archived original"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html56"
+ HREF="node3.html">Planned Research And Development</A>
+<B> Up:</B> <A NAME="tex2html54"
+ HREF="nprop.html">Development and Investigation of</A>
+<B> Previous:</B> <A NAME="tex2html48"
+ HREF="node1.html">Introduction</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I>Bob Ballance</I>
+<BR><I>1999-12-07</I>
+</ADDRESS>
+</BODY>
+</HTML>

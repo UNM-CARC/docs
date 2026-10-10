@@ -1,0 +1,303 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 FINAL//EN"> 
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<META NAME="Generator" CONTENT="NetObjects Fusion  3.0.1 for Windows">
+</HEAD>
+<BODY  BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#FF6666" TEXT="#000000" TOPMARGIN=0 LEFTMARGIN=0 MARGINWIDTH=0 MARGINHEIGHT=0>
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">alliance.unm.edu/Computing/AHPCC/Documentation/FAQ/faq.html</code> as captured by the Internet Archive on 9 July 2002. Links to pages that were not saved here go to the Wayback Machine. <a style="color:#0b5cad" href="https://web.archive.org/web/20020709105432/http://www.alliance.unm.edu:80/Computing/AHPCC/Documentation/FAQ/faq.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../../../">Web archive index</a></div>
+
+<h1 align="center">AHPCC FAQ</h1>
+<hr>
+<h1 align="center">&nbsp; </h1>
+<ul>
+  <li><a href="#Connecting">Connecting to AHPCC</a></li>
+  <li><a href="#Systems">AHPCC Systems</a></li>
+  <li><a href="#MPI">MPI</a> </li>
+  <li><a href="#Loadleveler">AIX</a></li>
+  <li><a href="#Compiling">AIX(2)</a></li>
+  <li><a href="#bb">Blackbear</a></li>
+  <li><a href="#ll">LosLobos</a></li>
+  <li><a href="#rcde">RCDE</a></li>
+  <li><a href="#rr">Roadrunner</a></li>
+  <li><a href="#NT-Linux">Switching Between Linux &amp; Windows NT</a></li>
+</ul>
+<hr>
+<h3 align="center"><strong><a name="Connecting">Connecting</a> to AHPCC</strong> 
+</h3>
+<ol>
+  <li>When connecting to a machine using &quot;ssh&quot; I get the following message:<br>
+    <font face="Fixedsys">Host key not found from the list of known hosts.<br>
+    Are you sure you want to continue connecting (yes/no)? <br>
+    </font> 
+    <ul>
+      <li>You will see this message the first time you login to a machine with 
+        ssh for the first time. Just reply &quot;yes&quot;.</li>
+    </ul>
+  </li>
+  <li>When connecting to a machine using &quot;ssh&quot; I get the following message:<br>
+    <font face="Fixedsys">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>
+    @ WARNING: HOST IDENTIFICATION HAS CHANGED! @<br>
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>
+    IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!<br>
+    Someone could be eavesdropping on you right now (man-in-the-middle attack)!<br>
+    It is also possible that the host key has just been changed.<br>
+    Please contact your system administrator.<br>
+    Add correct host key in /home/eawalth/.ssh/known_hosts to get rid of this 
+    message.<br>
+    Agent forwarding is disabled to avoid attacks by corrupted servers.<br>
+    X11 forwarding is disabled to avoid attacks by corrupted servers.<br>
+    Are you sure you want to continue connecting (yes/no)? <br>
+    </font> 
+    <ul>
+      <li>Reply &quot;yes&quot; and edit the file $HOME/.ssh/known_hosts and remove 
+        the line containing the hostname in question.</li>
+    </ul>
+  </li>
+  <li>I can't connect to AHPCC machines with FTP, Telnet, or rlogin.<br>
+    <ul>
+      <li>AHPCC no longer accepts insecure connections such as Telnet, rlogin 
+        or traditional FTP. Users must use secure shell (ssh) and secure ftp (sftp) 
+        to connect to AHPCC systems.</li>
+    </ul>
+  </li>
+</ol>
+<p><strong>AHPCC <a name="Systems">Systems</a></strong> 
+<ol>
+  <li>Where can I find out about your various systems and platforms (memory, disk 
+    space, CPU, etc.)? 
+    <ul>
+      <li>Check the <a href="../../../../Systems/Hardware/index.html">AHPCC System listing</a> 
+        under the User Support page.</li>
+    </ul>
+  </li>
+  <li>How can I tell if a system is up or down? 
+    <ul>
+      <li>There are &quot;Current Status&quot; pages for the IBM SP2 and the Alta 
+        cluster which are accessible from the AHPCC homepage.</li>
+    </ul>
+  </li>
+</ol>
+<p><strong><a name="MPI">MPI</a> Programs</strong> 
+<ol>
+  <li>How do I compile my MPI program on your machines? 
+    <ul>
+      <li>There are several guides for compiling MPI code on our various platforms: 
+        <a
+        href="https://web.archive.org/web/20020709105432/http://alliance.unm.edu/Computing/AHPCC/Customer_Service/turing.html">Linux cluster</a>, and <a
+        href="../../../../../ahpcc-2000/Systems/Hardware/Blackbear/index.html">Blackbear cluster</a>. Typically, 
+        you can use the MPI compile scripts (mpif77 and mpicc on the Alta and 
+        Linux clusters and mpxlf anf mpcc on the SP2). </li>
+    </ul>
+    <p>&nbsp;</p>
+  </li>
+</ol>
+<h3 align="center"><u>AIX (SP2)</u></h3>
+<p align="left"><a name="Loadleveler"><strong>Loadleveler</strong></a></p>
+<p align="left">I submitted a job and it just sits there in the queue in the idle 
+  (I) state. For example:</p>
+<p align="left"> Id &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  Owner &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Submitted&nbsp;&nbsp; ST PRI Class &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  Running On<br>
+  -------------- ---------- ----------- -- --- ------------ -----------<br>
+  fr1n08.147.0&nbsp;&nbsp; jsmith&nbsp;&nbsp;&nbsp;&nbsp; 4/20 10:56&nbsp; I&nbsp; 
+  50 &nbsp; batch </p>
+<ol>
+  <li> 
+    <p align="left">A number of reasons could cause this. The job command file 
+      you submitted could have incorrect settings. Check <a
+        href="https://web.archive.org/web/20020709105432/http://www.ahpcc.unm.edu/UserSupport/Guides/sp2_jobs.html">http://www.ahpcc.unm.edu/UserSupport/Guides/sp2_jobs.html</a> 
+      to see that your command file matches a correct one. Some possible errors 
+      could be:<br>
+      * Wrong directory path to the executable<br>
+      * Wrong class listed. It should be &quot;batch&quot;<br>
+      * Wrong combination of <em>environment</em> and <em>requirement</em> settings 
+      for High Performance Switch</p>
+    <ul>
+      <li> There could be a problem with the name service on the SP2 preventing 
+        Loadleveler from logging users on batch nodes. Send email to <a
+        href="mailto:help@ahpcc.unm.edu">help@ahpcc.unm.edu</a> .</li>
+    </ul>
+  </li>
+</ol>
+<hr>
+<font face="Fixedsys"><br>
+</font>
+<h3 align="center"><u>AIX</u></h3>
+<p><a name="Compiling"><strong>Compiling</strong></a> 
+<ol>
+  <li>When compiling with the xlf Fortran compiler, I get the following error:<br>
+    <font face="Fixedsys">NETLS: StartNetLS: Past expiration date on license (network 
+    license server/server)</font><br>
+  </li>
+  <ul>
+    <li>Use the &quot;<strong>-qnolm</strong>&quot; flag when compiling. For example: 
+      xlf -c -qnolm test.f<br>
+    </li>
+  </ul>
+</ol>
+<hr>
+<h3 align="center"><a name="bb"></a>Blackbear</h3>
+<p><b>1. How do I access the directory /nsf/scratch on BLACKBEAR?</b></p>
+<p>Redirect your output to /nfs/scratch instead of to your home directory. If 
+  you type $ df you will see that it's mounted everywhere. You can $ cd /nfs/scratch 
+  and treat it like a standard directory.</p>
+<hr>
+<h3 align="center"><a name="ll"></a>LosLobos </h3>
+<p>1. I cant seem to get anything to work using myranet on los lobos. I'm using 
+  the pgi compiler and the instructions from the web page. The problem is that 
+  the code gets into execution and then times out. The same thing works fine on 
+  roadrunner; however, the time doesn't get better the wallclock time just stays 
+  at around 120 seconds regardless of how many processors I use. If you could 
+  send me a sample pbs submit file and the .cshrc environment variable, I'd really 
+  appreciate it.</p>
+<p>What does your .rhosts (or .shosts) file look like? It should contain all 256 
+  nodes of LosLobos.</p>
+<p>&nbsp;</p>
+<hr>
+<h3 align="center"><a name="rcde"></a>RCDE</h3>
+<p><b>What is a &quot;RCDE&quot; Box?</b><br>
+  &quot;RCDE&quot; is the abbreviation for Research Common Desktop Environment 
+</p>
+<p><b>What is the specification of my &quot;RCDE&quot; box?<br>
+  </b>The RCDE boxes have: </p>
+<ul>
+  <li>Motherboard &quot;ASUS&quot; Dual Processor with P II 450 MHz processor 
+    (only one CPU for the moment)</li>
+  <li> Memory: 128Mb RAM PC100</li>
+  <li> Video card: Matrox Millennium 8MB VRAM</li>
+  <li> Hard disk: 6.3Gb (2.0Gb for NT; 4.2Gb for Linux)</li>
+  <li> ZIP drive (100MB capacity)</li>
+  <li> CD-ROM x 32</li>
+</ul>
+<p></p>
+<p><b>When I start my box, how can I switch between Windows NT and Linux?</b><br>
+  When you are under DOS (black screen), you will have &quot;LILO Boot:&quot; 
+  written. At this point, you have two options: </p>
+<ol>
+  <li> In order to boot on NT Session, type WIN + return</li>
+  <li> In order to boot on LINUX Session, type LINUX + return or just return</li>
+</ol>
+<p><b>How do I log on to the NT Session?</b><br>
+  You have to hit Ctrl + Alt + Delete. You will have a new screen &quot;NIS GINA&quot; 
+  at that moment. Type in your Login, Password, and be sure to be under NIS -Account. 
+  You have to use the same login name and password that you have for your E-mail 
+  or UNIX -Account.</p>
+<p><b>What kind of software is available on my NT &quot;RCDE&quot; Box?</b><br>
+</p>
+<ul>
+  <li>Linux </li>
+  <li>Office 97, 2000</li>
+  <li> Teraterm (Secure Shell)</li>
+  <li> WinZip</li>
+  <li> Ftp Explorer</li>
+  <li> Gs tools</li>
+  <li> Netscape</li>
+  <li> Internet Explorer</li>
+  <li>Macromedia Dreamweaver</li>
+  <li>Microsoft FrontPage</li>
+  <li>Adobe Photoshop</li>
+  <li>Adobe Premier</li>
+  <li> Adobe Acrobat Reader 4.0</li>
+  <li> Iomega tools</li>
+  <li> Norton Antivirus 5.0</li>
+  <li> QuickTime</li>
+  <li> Real player</li>
+</ul>
+<p></p>
+<p>&nbsp;</p>
+<p><b>Where can I print from my &quot;RCDE&quot; Box?</b><br>
+  From NT &amp; LINUX you are able to print to NETPRINT1 (front desk) or NETPRINT2 
+  (upstairs) <br>
+  PLEASE, DO NOT PRINT 100-300 pages on NET PRINT1 (Front desk) during peak hours. 
+  YOU ARE NOT THE ONLY ONE DOING WORK! MOREOVER when you do not come to pick them 
+  up&#133; </p>
+<p>&nbsp;</p>
+<p><b>How do I request additional software on my &quot;RCDE&quot; box for my personal 
+  use?</b><br>
+  You will need to fill out a &quot;Help Request Form&quot;; give your &quot;RCDE&quot; 
+  box number, the software you request and for what purpose it is needed.</p>
+<p><b>How can I secure my machine?</b><br>
+  Each time you leave alone your &quot;RCDE&quot; machine, you MUST lock your 
+  machine!!! <br>
+  In order to lock your machine: Hit Ctrl +Alt +Delete, you will then have a new 
+  screen where you have to hit &quot;Lock Workstation&quot; button.<br>
+  To unlock your machine: Hit Ctrl +Alt +Delete; type your password and return.</p>
+<p><b>Why does my monitor sporadically go to black? Is it normal?</b><br>
+  It is due to an auto demagnetization of the monitor plates. It is just for your 
+  eye comfort.</p>
+<p><b>How do I reboot my machine into LINUX mode?</b><br>
+  You have to hit &quot;Shut Down&quot; button on the start menu, you will then 
+  have a new screen. Then, click on &quot;Restart the computer&quot; button, hit 
+  &quot;Yes&quot; or return.</p>
+<p><b>How do I log out as a different user?</b><br>
+  You have to hit &quot;Shut Down&quot; button on the start menu, you will then 
+  have a new screen. Then, click &quot;Close all programs and log on as a different 
+  user&quot; button, hit &quot;Yes&quot; or return. PLEASE WAIT UNTIL IT IS TOTALLY 
+  SHUT DOWN. REMEMBER THAT NT HAS A SIMILAR OPERATING SYSTEM AS UNIX, SO YOU CANNOT 
+  TURN IT OFF LIKE WIN 95 OR WIN 98!!!!!</p>
+<p><b>How can I log on to LINUX?</b><br>
+  When you have a blue (cyan) background and a white window:<br>
+</p>
+<p>Type your login name and hit return,<br>
+  Type your password and hit return</p>
+<p> <b>How can I switch from graphic mode to text mode and reverse?</b><br>
+<ul>
+  <li>To go to text mode, type: Ctrl + Alt + F1 to F6</li>
+  <li> To go back to graphic mode, type: Ctrl + Alt + F7</li>
+</ul>
+<p></p>
+<p><b>How do I close my Linux session? How Do I reboot my &quot;RCDE&quot; box 
+  from LINUX to NT?</b><br>
+  To shut down Linux Properly there are 3 steps:<br>
+  1. Close all your applications and quit /close (for the lazy &quot;kill -9 -1&quot;) 
+  or logout with Ctrl + Alt + Backspace<br>
+  2. Hit Ctrl + Alt + F1 to F6, You now have a black screen and it is written 
+  &quot;RCDE XX Login:&quot;<br>
+  3. Hit Ctrl + Alt + Delete; wait until it is rebooting.</p>
+<p><b>Can I upload /download from LINUX to NT and reverse?</b><br>
+  On NT, FTP Explorer allows you to upload / download anything you want from NT 
+  to LINUX / LINUX to NT<br>
+  <br>
+  N.B.: Use ACOMA or ARC to transfer files<br>
+  Don't forget &quot;chmod &quot;for your folder and also your files if you want 
+  your work be seen by your colleagues or guests.</p>
+<p><b>How can I check my E-MAIL?</b><br>
+  You can check your E-mail from Netscape <br>
+  Or<br>
+  You can check your E-mail from NT thanks to Secure Shell <br>
+  <br>
+  N.B.: WE STRONGLY SUGGEST PEOPLE TO USE Secure Shell and ALWAYS CLICK on SSH 
+  instead of Telnet (Telnet IS NOT A SECURE COMMUNICATION!!!)</p>
+<p><b>How can I use the ZIP Drive?</b><br>
+  Under NT it is like an extra drive and it is auto detected by NT <br>
+  Under LINUX, you have to declare (&quot;mount&quot;) the floppy and/or the Zip 
+  drive. </p>
+<ul>
+  <li> Type &quot;mount/floppy&quot; to mount the floppy drive (only for LINUX),</li>
+  <li> Type &quot;mount/dosfloppy&quot; to mount the floppy drive (NT and LINUX),</li>
+  <li> Type &quot;mount/ZIP&quot; to mount the ZIP drive (only for LINUX),</li>
+  <li> Type &quot;mount/dosZIP&quot; to mount the ZIP drive (NT and LINUX),</li>
+  <li> When you have finished: Type &quot;umount/floppy&quot; or &quot;umount/dosfloppy&quot; 
+    or &quot;umount/ZIP&quot; or &quot;umount/dosZIP&quot; 
+    <ul>
+      <li>N.B.: The floppy or ZIP have to be formatted in FAT16 to be readable 
+        for both operating systems</li>
+    </ul>
+  </li>
+</ul>
+<p></p>
+<p><b>Can I change the resolution of my screen and the frequency?</b><br>
+  On LINUX, 3 different configurations are available:<br>
+  640 x 480<br>
+  800 x 600<br>
+  1024 x 768 </p>
+<hr>
+<h3 align="center"><b><a name="rr"></a>Roadrunner</b></h3>
+<p><b>1. How come the compiler is not able to find the mpif90 programs?</b></p>
+<p>You need to specify an mpihome in your .cshrc. See the following webpages for 
+  more information: <a href="../../../../../ahpcc-2002/Computing/AHPCC/Documentation/User_Guides/compile.html">http://www.ahpcc.unm.edu/Computing/AHPCC/Documentation/User_Guides/compile.html</a> 
+</p>
+<p>&nbsp;</p>
+</BODY>
+</HTML>

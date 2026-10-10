@@ -1,0 +1,1692 @@
+
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">ahpcc.unm.edu/Computing/AHPCC/Documentation/Emacs/emacs.html</code> as captured by the Internet Archive on 11 July 2002. Links to pages that were not saved here go to the Wayback Machine. Icons the Internet Archive did not save were redrawn for this copy and are not originals (hover over one to see). Grey boxes mark images that were never archived. <a style="color:#0b5cad" href="https://web.archive.org/web/20020711043807/http://www.ahpcc.unm.edu:80/Computing/AHPCC/Documentation/Emacs/emacs.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../../../">Web archive index</a></div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 FINAL//EN">
+
+<HTML>
+<HEAD><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+
+<TITLE>GNU Emacs Reference Card (for version 19)</TITLE>
+<LINK REL="stylesheet" HREF="https://web.archive.org/web/20020711043807cs_/http://ahpcc.unm.edu/ahpcc.css" TYPE="text/css">
+<META CONTENT="Adobe PageMill 2.0 Win" NAME="GENERATOR">
+
+<META NAME="Generator" CONTENT="NetObjects Fusion  3.0.1 for Windows">
+
+</HEAD>
+
+
+  <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=660>
+   <TR VALIGN="top" ALIGN="left">
+	<TD WIDTH=660 HEIGHT =81><IMG id="VerticalBanner2" HEIGHT=81 WIDTH=660 SRC="../../../../_img/standin/_not-archived.gif"  BORDER=0  alt=" refcard  (image not archived)" title="Image not archived"></TD>
+   </TR>
+  </TABLE>
+  <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=660>
+   <TR VALIGN="top" ALIGN="left">
+	<TD WIDTH=660 HEIGHT =20>
+	  <TABLE id="NavigationBar2" BORDER=0 CELLSPACING=0 CELLPADDING=0  WIDTH=660 >
+	 <TR VALIGN="top" ALIGN="left">
+		  <TD WIDTH=110><A HREF="../../../../index.html"><IMG id="NavigationButton1203" HEIGHT=20 WIDTH=110 SRC="../../../../_img/standin/home_tab.gif"  BORDER=0  alt=" Home  (modern recreation, not an archived original)" title="Modern recreation, not an archived original"></A></TD>
+		  <TD WIDTH=110><A HREF="https://web.archive.org/web/20020711043807/http://ahpcc.unm.edu/Intranet/intranet.html"><IMG id="NavigationButton1204" HEIGHT=20 WIDTH=110 SRC="../../../../_img/Images/Intranet_tab.gif"  BORDER=0  ALT=" Inside Us " ></A></TD>
+		  <TD WIDTH=110><A HREF="../../../computing.html"><IMG id="NavigationButton1205" HEIGHT=20 WIDTH=110 SRC="../../../../_img/standin/computing_tab_hi.gif"  BORDER=0  alt=" Computing  (modern recreation, not an archived original)" title="Modern recreation, not an archived original"></A></TD>
+		  <TD WIDTH=110><A HREF="https://web.archive.org/web/20020711043807/http://ahpcc.unm.edu/Research/index.html"><IMG id="NavigationButton1206" HEIGHT=20 WIDTH=110 SRC="../../../../_img/Images/Research_tab_2.gif"  BORDER=0  ALT=" Research " ></A></TD>
+		  <TD WIDTH=110><A HREF="https://web.archive.org/web/20020711043807/http://ahpcc.unm.edu/Education/education.html"><IMG id="NavigationButton1207" HEIGHT=20 WIDTH=110 SRC="../../../../_img/Images/Education_tab.gif"  BORDER=0  ALT=" Education " ></A></TD>
+		  <TD WIDTH=110 HEIGHT=20><A HREF="https://web.archive.org/web/20020711043807/http://ahpcc.unm.edu/SiteMap/sitemap.html"><IMG id="NavigationButton1208" HEIGHT=20 WIDTH=110 SRC="../../../../_img/Images/SiteMap_tab_2.gif"  BORDER=0  ALT=" SiteMap " ></A></TD>
+	 </TR>
+	  </TABLE></TD>
+   </TR>
+  </TABLE>
+  <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=622>
+   <TR VALIGN="top" ALIGN="left">
+	<TD WIDTH=21 HEIGHT =26><IMG SRC="../../../../_img/spacer.gif" WIDTH =21 HEIGHT=1 BORDER=0></TD>
+	<TD WIDTH=601><IMG SRC="../../../../_img/spacer.gif" WIDTH =601 HEIGHT=1 BORDER=0></TD>
+   </TR>
+   <TR VALIGN="top" ALIGN="left">
+	<TD></TD>
+	<TD WIDTH=601>
+      <P ALIGN="CENTER"> <B><FONT SIZE="+2">GNU Emacs Reference Card</font></b></P>
+      <B><P ALIGN="CENTER">
+<FONT SIZE="+2"></font><I>(for version 19)</i></P><I>
+<P ALIGN="CENTER"><HR ID="HRRule8" WIDTH=100% ALIGN=CENTER SIZE=2>&nbsp;<p></P>
+</I><P><I></i><FONT SIZE="+1">Starting Emacs</FONT></B>
+<DIV ALIGN=CENTER>
+<TABLE WIDTH=500 BORDER=0 CELLSPACING=0 CELLPADDING=0><TR>
+<TD>
+	  <TABLE id="Table4" BORDER=1 CELLSPACING=2 CELLPADDING=0  WIDTH=500 >
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=308 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"> To enter GNU Emacs 19, just type its name:</TD>
+		<TD WIDTH=181 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER">  <FONT FACE="Courier New,Courier">emacs</FONT></TD>
+	 </TR>
+	  </TABLE></TD></TR></TABLE>
+</DIV>
+<B><FONT SIZE="+1"><p></P>
+<P>&nbsp;</P>
+</FONT></B><P><B><FONT SIZE="+1"><BR></font></b>To read in a file to edit, see <A HREF="#files">Files</A>, below.</P>
+<P><B><FONT SIZE="+1">Leaving Emacs</FONT></B>
+<DIV ALIGN=CENTER>
+<TABLE WIDTH=497 BORDER=0 CELLSPACING=0 CELLPADDING=0><TR>
+<TD>
+	  <TABLE id="Table8" BORDER=1 CELLSPACING=2 CELLPADDING=0  WIDTH=497 >
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=308 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"> suspend Emacs (or iconify it under X)</TD>
+		<TD WIDTH=181 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"> <FONT FACE="Courier New,Courier">C-z</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=308 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"> exit Emacs permanently</TD>
+		<TD WIDTH=181 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"> <FONT FACE="Courier New,Courier">C-x C-c</FONT></TD>
+	 </TR>
+	  </TABLE></TD></TR></TABLE>
+</DIV>
+<B><FONT SIZE="+1"><p></P>
+<P>&nbsp;</P>
+<P>Files</FONT></B>
+<DIV ALIGN=CENTER>
+<TABLE WIDTH=500 BORDER=0 CELLSPACING=0 CELLPADDING=0><TR>
+<TD>
+	  <TABLE id="Table14" BORDER=1 CELLSPACING=2 CELLPADDING=0  WIDTH=500 >
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=309 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"><A NAME="files"></A> read a file into Emacs</TD>
+		<TD WIDTH=183 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"> <FONT FACE="Courier New,Courier">C-x C-f</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=309 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"> save a file back to disk</TD>
+		<TD WIDTH=183 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"> <FONT FACE="Courier New,Courier">C-x C-s</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=309 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"> save all files</TD>
+		<TD WIDTH=183 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"> <FONT FACE="Courier New,Courier">C-x s</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=309 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"> insert contents of another file into this buffer</TD>
+		<TD WIDTH=183 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"> <FONT FACE="Courier New,Courier">C-x i</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=309 BGCOLOR="#FFFFC8">
+<P> replace this file with the file you really want</TD>
+		<TD WIDTH=183 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"> <FONT FACE="Courier New,Courier">C-x C-v</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=309 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER">write buffer to a specified file</TD>
+		<TD WIDTH=183 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"> <FONT FACE="Courier New,Courier">C-x C-w</FONT></TD>
+	 </TR>
+	  </TABLE></TD></TR></TABLE>
+</DIV>
+<B><FONT SIZE="+1"><p></P>
+<P>&nbsp;</P>
+<P>Getting Help</P>
+</FONT></B><P><B><FONT SIZE="+1"></font></b>The Help system is simple. Type <FONT FACE="Courier New,Courier">C-h</FONT> and follow the directions. If you are a first-time user, type <FONT FACE="Courier New,Courier">C-h t</FONT> for a tutorial.<BR>
+<DIV ALIGN=CENTER>
+<TABLE WIDTH=492 BORDER=0 CELLSPACING=0 CELLPADDING=0><TR>
+<TD>
+	  <TABLE id="Table28" BORDER=1 CELLSPACING=2 CELLPADDING=0  WIDTH=492 >
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=300 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"> remove Help window</TD>
+		<TD WIDTH=184 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"> <FONT FACE="Courier New,Courier">C-x 1</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=300 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"> scroll Help window</TD>
+		<TD WIDTH=184 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"><FONT FACE="Courier New,Courier">ESC C-v</FONT></TD>
+	 </TR>
+	  </TABLE></TD></TR></TABLE>
+</DIV>
+&nbsp;<p></P>
+<P>
+<DIV ALIGN=CENTER>
+<TABLE WIDTH=499 BORDER=0 CELLSPACING=0 CELLPADDING=0><TR>
+<TD>
+	  <TABLE id="Table34" BORDER=1 CELLSPACING=2 CELLPADDING=0  WIDTH=499 >
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=297 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"> apropos: show commands matching a string</TD>
+		<TD WIDTH=191 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"> <FONT FACE="Courier New,Courier">C-h a</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=297 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER">show the function a key runs  </TD>
+		<TD WIDTH=191 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"><FONT FACE="Courier New,Courier">C-h c</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=297 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER">describe a function </TD>
+		<TD WIDTH=191 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"><FONT FACE="Courier New,Courier">C-h f</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=297 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER">get mode-specific information </TD>
+		<TD WIDTH=191 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"><FONT FACE="Courier New,Courier">C-h m</FONT> </TD>
+	 </TR>
+	  </TABLE></TD></TR></TABLE>
+</DIV>
+&nbsp;<p></P>
+<P>&nbsp;</P>
+<P><B><FONT SIZE="+1">Error Recovery</FONT></B>
+<DIV ALIGN=CENTER>
+<TABLE WIDTH=504 BORDER=0 CELLSPACING=0 CELLPADDING=0><TR>
+<TD>
+	  <TABLE id="Table44" BORDER=1 CELLSPACING=2 CELLPADDING=0  WIDTH=504 >
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=297 BGCOLOR="#FFFFC8">
+<P>abort partially typed or executing command  </TD>
+		<TD WIDTH=199 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">C-g</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=297 BGCOLOR="#FFFFC8">
+<P>recover a file lost by a system crash </TD>
+		<TD WIDTH=199 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">M-x recover-file</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=297 BGCOLOR="#FFFFC8">
+<P>undo an unwanted change </TD>
+		<TD WIDTH=199 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-x u or C-`</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=297 BGCOLOR="#FFFFC8">
+<P>restore a buffer to its original contents  </TD>
+		<TD WIDTH=199 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">M-x revert-buffer</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=297 BGCOLOR="#FFFFC8">
+<P>redraw garbaged screen </TD>
+		<TD WIDTH=199 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-l</FONT> </TD>
+	 </TR>
+	  </TABLE></TD></TR></TABLE>
+</DIV>
+<B><FONT SIZE="+1"><p></P>
+<P>&nbsp;</P>
+<P>Incremental Search</FONT></B>
+<DIV ALIGN=CENTER>
+<TABLE WIDTH=504 BORDER=0 CELLSPACING=0 CELLPADDING=0><TR>
+<TD>
+	  <TABLE id="Table56" BORDER=1 CELLSPACING=2 CELLPADDING=0  WIDTH=504 >
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=297 BGCOLOR="#FFFFC8">
+<P> search forward</TD>
+		<TD WIDTH=199 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-s</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=297 BGCOLOR="#FFFFC8">
+<P>search backward </TD>
+		<TD WIDTH=199 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-r</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=297 BGCOLOR="#FFFFC8">
+<P> regular expression search</TD>
+		<TD WIDTH=199 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-M-s</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=297 BGCOLOR="#FFFFC8">
+<P>reverse regular expression search </TD>
+		<TD WIDTH=199 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-M-r</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=297 BGCOLOR="#FFFFC8">
+<P>select previous search string </TD>
+		<TD WIDTH=199 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">M-p</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=297 BGCOLOR="#FFFFC8">
+<P>select next later search string  </TD>
+		<TD WIDTH=199 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">M-n</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=297 BGCOLOR="#FFFFC8">
+<P>exit incremental search </TD>
+		<TD WIDTH=199 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">RET</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=297 BGCOLOR="#FFFFC8">
+<P>undo effect of last character </TD>
+		<TD WIDTH=199 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">DEL</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=297 BGCOLOR="#FFFFC8">
+<P>abort current search </TD>
+		<TD WIDTH=199 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">C-g</FONT></TD>
+	 </TR>
+	  </TABLE></TD></TR></TABLE>
+</DIV>
+<B><FONT SIZE="+1"><p></P>
+<P>&nbsp;</P>
+</FONT></B><P><B><FONT SIZE="+1"></font></b>Use <FONT FACE="Courier New,Courier">C-s</FONT> or <FONT FACE="Courier New,Courier">C-r</FONT> again to repeat the search in either direction. If Emacs is still searching, <FONT FACE="Courier New,Courier">C-g</FONT> cancels only the part not done.</P>
+<P><B><FONT SIZE="+1">Motion</FONT></B>
+<DIV ALIGN=CENTER>
+<TABLE WIDTH=491 BORDER=0 CELLSPACING=0 CELLPADDING=0><TR>
+<TD>
+	  <TABLE id="Table76" BORDER=1 CELLSPACING=2 CELLPADDING=0  WIDTH=491 >
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=206 BGCOLOR="#FFFFC8">
+<P>entity to move over</TD>
+		<TD WIDTH=105 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"><FONT FACE="Courier New,Courier">backward</FONT> </TD>
+		<TD WIDTH=170 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"> <FONT FACE="Courier New,Courier">forward</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=206 BGCOLOR="#FFFFC8">
+<P>character</TD>
+		<TD WIDTH=105 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"><FONT FACE="Courier New,Courier">C-b</FONT></TD>
+		<TD WIDTH=170 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"> <FONT FACE="Courier New,Courier">C-f</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=206 BGCOLOR="#FFFFC8">
+<P>word</TD>
+		<TD WIDTH=105 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"><FONT FACE="Courier New,Courier">M-b</FONT></TD>
+		<TD WIDTH=170 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"><FONT FACE="Courier New,Courier">M-f</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=206 BGCOLOR="#FFFFC8">
+<P>line</TD>
+		<TD WIDTH=105 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"><FONT FACE="Courier New,Courier">C-p</FONT></TD>
+		<TD WIDTH=170 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"><FONT FACE="Courier New,Courier">C-n</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=206 BGCOLOR="#FFFFC8">
+<P>go to line beginning (or end)</TD>
+		<TD WIDTH=105 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"> <FONT FACE="Courier New,Courier">C-a</FONT></TD>
+		<TD WIDTH=170 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"><FONT FACE="Courier New,Courier">C-e</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=206 BGCOLOR="#FFFFC8">
+<P>sentence</TD>
+		<TD WIDTH=105 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"> <FONT FACE="Courier New,Courier">M-a</FONT></TD>
+		<TD WIDTH=170 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"><FONT FACE="Courier New,Courier">M-e</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=206 BGCOLOR="#FFFFC8">
+<P>paragraph</TD>
+		<TD WIDTH=105 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"><FONT FACE="Courier New,Courier">M--</FONT></TD>
+		<TD WIDTH=170 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"> <FONT FACE="Courier New,Courier">M-&quot;</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=206 BGCOLOR="#FFFFC8">
+<P>page</TD>
+		<TD WIDTH=105 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"><FONT FACE="Courier New,Courier">C-x [</FONT></TD>
+		<TD WIDTH=170 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"><FONT FACE="Courier New,Courier">C-x ]</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=206 BGCOLOR="#FFFFC8">
+<P>sexp</TD>
+		<TD WIDTH=105 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"><FONT FACE="Courier New,Courier">C-M-b</FONT></TD>
+		<TD WIDTH=170 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"><FONT FACE="Courier New,Courier">C-M-f</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=206 BGCOLOR="#FFFFC8">
+<P>function</TD>
+		<TD WIDTH=105 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"><FONT FACE="Courier New,Courier">C-M-a</FONT></TD>
+		<TD WIDTH=170 BGCOLOR="#FFFFC8">
+<P ALIGN="CENTER"><FONT FACE="Courier New,Courier">C-M-e</FONT></TD>
+	 </TR>
+	  </TABLE></TD></TR></TABLE>
+</DIV>
+<B><FONT SIZE="+1"><p></P>
+<P>&nbsp;</P>
+</FONT></B><P><B><FONT SIZE="+1"></font></b> 
+<DIV ALIGN=CENTER>
+<TABLE WIDTH=482 BORDER=0 CELLSPACING=0 CELLPADDING=0><TR>
+<TD>
+	  <TABLE id="Table108" BORDER=1 CELLSPACING=2 CELLPADDING=0  WIDTH=482 >
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=327 BGCOLOR="#FFFFC8">
+<P> go to buffer beginning (or end)</TD>
+		<TD WIDTH=147 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">M-&lt; M-&gt;</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=327 BGCOLOR="#FFFFC8">
+<P> scroll to next screen</TD>
+		<TD WIDTH=147 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">C-v</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=327 BGCOLOR="#FFFFC8">
+<P> scroll to previous screen</TD>
+		<TD WIDTH=147 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">M-v</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=327 BGCOLOR="#FFFFC8">
+<P> scroll left</TD>
+		<TD WIDTH=147 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-x &lt;</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=327 BGCOLOR="#FFFFC8">
+<P> scroll right</TD>
+		<TD WIDTH=147 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">C-x &gt;</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=327 BGCOLOR="#FFFFC8">
+<P> scroll current line to center of screen</TD>
+		<TD WIDTH=147 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">C-u C-l</FONT></TD>
+	 </TR>
+	  </TABLE></TD></TR></TABLE>
+</DIV>
+<p></P>
+<P>&nbsp;</P>
+<P><B><FONT SIZE="+1">Killing and Deleting</FONT></B>
+<DIV ALIGN=CENTER>
+<TABLE WIDTH=478 BORDER=0 CELLSPACING=0 CELLPADDING=0><TR>
+<TD>
+	  <TABLE id="Table122" BORDER=1 CELLSPACING=2 CELLPADDING=0  WIDTH=478 >
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=243 BGCOLOR="#FFFFC8">
+<P> entity to kill</TD>
+		<TD WIDTH=121 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier"> backward</FONT></TD>
+		<TD WIDTH=104 BGCOLOR="#FFFFC8">
+<P><FONT COLOR="#F75000" FACE="Courier New,Courier"> </FONT><FONT FACE="Courier New,Courier">forward</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=243 BGCOLOR="#FFFFC8">
+<P> character (delete, not kill)</TD>
+		<TD WIDTH=121 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">DEL</FONT> </TD>
+		<TD WIDTH=104 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-d</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=243 BGCOLOR="#FFFFC8">
+<P>word  </TD>
+		<TD WIDTH=121 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">M-DEL</FONT> </TD>
+		<TD WIDTH=104 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">M-d</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=243 BGCOLOR="#FFFFC8">
+<P>line (to end of) </TD>
+		<TD WIDTH=121 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">M-0 C-k</FONT> </TD>
+		<TD WIDTH=104 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-k</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=243 BGCOLOR="#FFFFC8">
+<P>sentence  </TD>
+		<TD WIDTH=121 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">C-x DEL</FONT></TD>
+		<TD WIDTH=104 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">M-k</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=243 BGCOLOR="#FFFFC8">
+<P>sexp </TD>
+		<TD WIDTH=121 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">M-- C-M-k</FONT></TD>
+		<TD WIDTH=104 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">C-M-k</FONT></TD>
+	 </TR>
+	  </TABLE></TD></TR></TABLE>
+</DIV>
+<B><FONT SIZE="+1"><p></P>
+<P></FONT></B>
+<DIV ALIGN=CENTER>
+<TABLE WIDTH=473 BORDER=0 CELLSPACING=0 CELLPADDING=0><TR>
+<TD>
+	  <TABLE id="Table142" BORDER=1 CELLSPACING=2 CELLPADDING=0  WIDTH=473 >
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=313 BGCOLOR="#FFFFC8">
+<P>kill region  </TD>
+		<TD WIDTH=152 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-w</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=313 BGCOLOR="#FFFFC8">
+<P> copy region to kill ring</TD>
+		<TD WIDTH=152 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">M-w</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=313 BGCOLOR="#FFFFC8">
+<P> kill through next occurrence of char</TD>
+		<TD WIDTH=152 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">M-z char</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=313 BGCOLOR="#FFFFC8">
+<P>yank back last thing killed </TD>
+		<TD WIDTH=152 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-y</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=313 BGCOLOR="#FFFFC8">
+<P>replace last yank with previous kill  </TD>
+		<TD WIDTH=152 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">M-y</FONT> </TD>
+	 </TR>
+	  </TABLE></TD></TR></TABLE>
+</DIV>
+<B><FONT SIZE="+1"><p></P>
+<P>&nbsp;</P>
+<P>Marking</FONT></B>
+<DIV ALIGN=CENTER>
+<TABLE WIDTH=482 BORDER=0 CELLSPACING=0 CELLPADDING=0><TR>
+<TD>
+	  <TABLE id="Table154" BORDER=1 CELLSPACING=2 CELLPADDING=0  WIDTH=482 >
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=331 BGCOLOR="#FFFFC8">
+<P> set mark here</TD>
+		<TD WIDTH=143 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-@ or C-SPC</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=331 BGCOLOR="#FFFFC8">
+<P>exchange point and mark </TD>
+		<TD WIDTH=143 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">C-x C-x</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=331 BGCOLOR="#FFFFC8">
+<P>set mark arg words away </TD>
+		<TD WIDTH=143 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">M-@</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=331 BGCOLOR="#FFFFC8">
+<P>mark paragraph  </TD>
+		<TD WIDTH=143 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">M-h</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=331 BGCOLOR="#FFFFC8">
+<P> mark page</TD>
+		<TD WIDTH=143 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">C-x C-p</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=331 BGCOLOR="#FFFFC8">
+<P>mark sexp </TD>
+		<TD WIDTH=143 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">C-M-@</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=331 BGCOLOR="#FFFFC8">
+<P> mark function</TD>
+		<TD WIDTH=143 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">C-M-h</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=331 BGCOLOR="#FFFFC8">
+<P> mark entire buffer</TD>
+		<TD WIDTH=143 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-x h</FONT></TD>
+	 </TR>
+	  </TABLE></TD></TR></TABLE>
+</DIV>
+<B><FONT SIZE="+1"><p></P>
+<P>&nbsp;</P>
+<P>Query Replace</FONT></B>
+<DIV ALIGN=CENTER>
+<TABLE WIDTH=523 BORDER=0 CELLSPACING=0 CELLPADDING=0><TR>
+<TD>
+	  <TABLE id="Table172" BORDER=1 CELLSPACING=2 CELLPADDING=0  WIDTH=523 >
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=245 BGCOLOR="#FFFFC8">
+<P>interactively replace a text string </TD>
+		<TD WIDTH=267 BGCOLOR="#FFFFC8">
+<P>  <FONT FACE="Courier New,Courier">M-%</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=245 BGCOLOR="#FFFFC8">
+<P>using regular expressions </TD>
+		<TD WIDTH=267 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">M-x query-replace-regexp</FONT></TD>
+	 </TR>
+	  </TABLE></TD></TR></TABLE>
+</DIV>
+<B><FONT SIZE="+1"><p></P>
+<P>&nbsp;</P>
+<P>Valid responses in query-replace mode are:</FONT></B>
+<DIV ALIGN=CENTER>
+<TABLE WIDTH=518 BORDER=0 CELLSPACING=0 CELLPADDING=0><TR>
+<TD>
+	  <TABLE id="Table178" BORDER=1 CELLSPACING=2 CELLPADDING=0  WIDTH=518 >
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=341 BGCOLOR="#FFFFC8">
+<P> replace this one, go on to next</TD>
+		<TD WIDTH=169 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">SPC</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=341 BGCOLOR="#FFFFC8">
+<P> replace this one, don't move</TD>
+		<TD WIDTH=169 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">,</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=341 BGCOLOR="#FFFFC8">
+<P> skip to next without replacing</TD>
+		<TD WIDTH=169 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">DEL</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=341 BGCOLOR="#FFFFC8">
+<P> replace all remaining matches</TD>
+		<TD WIDTH=169 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">!</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=341 BGCOLOR="#FFFFC8">
+<P> back up to the previous match</TD>
+		<TD WIDTH=169 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">^</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=341 BGCOLOR="#FFFFC8">
+<P> exit query-replace</TD>
+		<TD WIDTH=169 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">ESC</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=341 BGCOLOR="#FFFFC8">
+<P> enter recursive edit (C-M-c to exit)</TD>
+		<TD WIDTH=169 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">C-r</FONT></TD>
+	 </TR>
+	  </TABLE></TD></TR></TABLE>
+</DIV>
+<B><FONT SIZE="+1"><p></P>
+<P>&nbsp;</P>
+<P>Multiple Windows</FONT></B>
+<DIV ALIGN=CENTER>
+<TABLE WIDTH=512 BORDER=0 CELLSPACING=0 CELLPADDING=0><TR>
+<TD>
+	  <TABLE id="Table194" BORDER=1 CELLSPACING=2 CELLPADDING=0  WIDTH=512 >
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=322 BGCOLOR="#FFFFC8">
+<P>delete all other windows </TD>
+		<TD WIDTH=182 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-x 1</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=322 BGCOLOR="#FFFFC8">
+<P>delete this window </TD>
+		<TD WIDTH=182 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-x 0</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=322 BGCOLOR="#FFFFC8">
+<P>split window in two vertically </TD>
+		<TD WIDTH=182 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-x 2</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=322 BGCOLOR="#FFFFC8">
+<P>split window in two horizontally </TD>
+		<TD WIDTH=182 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-x 3</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=322 BGCOLOR="#FFFFC8">
+<P>scroll other window </TD>
+		<TD WIDTH=182 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-M-v</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=322 BGCOLOR="#FFFFC8">
+<P> switch cursor to another window</TD>
+		<TD WIDTH=182 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-x o</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=322 BGCOLOR="#FFFFC8">
+<P>shrink window shorter </TD>
+		<TD WIDTH=182 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">M-x shrink-window</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=322 BGCOLOR="#FFFFC8">
+<P>grow window taller </TD>
+		<TD WIDTH=182 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-x ^</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=322 BGCOLOR="#FFFFC8">
+<P>shrink window narrower </TD>
+		<TD WIDTH=182 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-x -</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=322 BGCOLOR="#FFFFC8">
+<P>grow window wider  </TD>
+		<TD WIDTH=182 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-x &quot;</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=322 BGCOLOR="#FFFFC8">
+<P>select buffer in other window </TD>
+		<TD WIDTH=182 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">C-x 4 b</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=322 BGCOLOR="#FFFFC8">
+<P>display buffer in other window </TD>
+		<TD WIDTH=182 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-x 4 C-o</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=322 BGCOLOR="#FFFFC8">
+<P>find file in other window </TD>
+		<TD WIDTH=182 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-x 4 f</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=322 BGCOLOR="#FFFFC8">
+<P>find file read-only in other window </TD>
+		<TD WIDTH=182 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-x 4 r</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=322 BGCOLOR="#FFFFC8">
+<P>run Dired in other window </TD>
+		<TD WIDTH=182 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-x 4 d</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=322 BGCOLOR="#FFFFC8">
+<P>find tag in other window </TD>
+		<TD WIDTH=182 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">C-x 4.</FONT></TD>
+	 </TR>
+	  </TABLE></TD></TR></TABLE>
+</DIV>
+<B><FONT SIZE="+1"><p></P>
+<P>&nbsp;</P>
+<P>Formatting</FONT></B>
+<DIV ALIGN=CENTER>
+<TABLE WIDTH=519 BORDER=0 CELLSPACING=0 CELLPADDING=0><TR>
+<TD>
+	  <TABLE id="Table228" BORDER=1 CELLSPACING=2 CELLPADDING=0  WIDTH=519 >
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=321 BGCOLOR="#FFFFC8">
+<P>indent current line (mode-dependent) </TD>
+		<TD WIDTH=190 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">TAB</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=321 BGCOLOR="#FFFFC8">
+<P>indent region (mode-dependent)</TD>
+		<TD WIDTH=190 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-M-&quot;</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=321 BGCOLOR="#FFFFC8">
+<P>indent sexp (mode-dependent) </TD>
+		<TD WIDTH=190 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-M-q</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=321 BGCOLOR="#FFFFC8">
+<P>indent region rigidly arg columns </TD>
+		<TD WIDTH=190 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">C-x TAB</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=321 BGCOLOR="#FFFFC8">
+<P>insert newline after point  </TD>
+		<TD WIDTH=190 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-o</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=321 BGCOLOR="#FFFFC8">
+<P>move rest of line vertically down </TD>
+		<TD WIDTH=190 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-M-o</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=321 BGCOLOR="#FFFFC8">
+<P>delete blank lines around point </TD>
+		<TD WIDTH=190 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-x C-o</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=321 BGCOLOR="#FFFFC8">
+<P>join line with previous (with arg, next) </TD>
+		<TD WIDTH=190 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">M-^</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=321 BGCOLOR="#FFFFC8">
+<P> delete all white space around point</TD>
+		<TD WIDTH=190 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">M-&quot;</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=321 BGCOLOR="#FFFFC8">
+<P>put exactly one space at point </TD>
+		<TD WIDTH=190 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">M-SPC</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=321 BGCOLOR="#FFFFC8">
+<P>fill paragraph </TD>
+		<TD WIDTH=190 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">M-q</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=321 BGCOLOR="#FFFFC8">
+<P>set fill column </TD>
+		<TD WIDTH=190 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-x f</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=321 BGCOLOR="#FFFFC8">
+<P>set prefix each line starts with </TD>
+		<TD WIDTH=190 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">C-x .</FONT></TD>
+	 </TR>
+	  </TABLE></TD></TR></TABLE>
+</DIV>
+<B><FONT SIZE="+1"><p></P>
+<P>&nbsp;</P>
+<P>Case Change</FONT></B>
+<DIV ALIGN=CENTER>
+<TABLE WIDTH=514 BORDER=0 CELLSPACING=0 CELLPADDING=0><TR>
+<TD>
+	  <TABLE id="Table256" BORDER=1 CELLSPACING=2 CELLPADDING=0  WIDTH=514 >
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=266 BGCOLOR="#FFFFC8">
+<P> uppercase word</TD>
+		<TD WIDTH=237 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">M-u</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=266 BGCOLOR="#FFFFC8">
+<P> lowercase word</TD>
+		<TD WIDTH=237 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">M-l</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=266 BGCOLOR="#FFFFC8">
+<P> capitalize word</TD>
+		<TD WIDTH=237 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">M-c</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=266 BGCOLOR="#FFFFC8">
+<P> uppercase region</TD>
+		<TD WIDTH=237 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">C-x C-u</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=266 BGCOLOR="#FFFFC8">
+<P> lowercase region</TD>
+		<TD WIDTH=237 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">C-x C-l</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=266 BGCOLOR="#FFFFC8">
+<P> capitalize region</TD>
+		<TD WIDTH=237 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">M-x capitalize-region</FONT></TD>
+	 </TR>
+	  </TABLE></TD></TR></TABLE>
+</DIV>
+<B><FONT SIZE="+1"><p></P>
+<P>&nbsp;</P>
+<P>The Minibuffer</P>
+</FONT></B><P><B><FONT SIZE="+1"></font></b>The following keys are defined in the minibuffer:
+<DIV ALIGN=CENTER>
+<TABLE WIDTH=502 BORDER=0 CELLSPACING=0 CELLPADDING=0><TR>
+<TD>
+	  <TABLE id="Table270" BORDER=1 CELLSPACING=2 CELLPADDING=0  WIDTH=502 >
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=281 BGCOLOR="#FFFFC8">
+<P>complete as much as possible </TD>
+		<TD WIDTH=213 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">TAB</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=281 BGCOLOR="#FFFFC8">
+<P>complete up to one word </TD>
+		<TD WIDTH=213 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">SPC</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=281 BGCOLOR="#FFFFC8">
+<P>complete and execute </TD>
+		<TD WIDTH=213 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">RET</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=281 BGCOLOR="#FFFFC8">
+<P>show possible completions </TD>
+		<TD WIDTH=213 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">?</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=281 BGCOLOR="#FFFFC8">
+<P>fetch previous minibuffer input </TD>
+		<TD WIDTH=213 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">M-p</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=281 BGCOLOR="#FFFFC8">
+<P>fetch next later minibuffer input </TD>
+		<TD WIDTH=213 BGCOLOR="#FFFFC8">
+<P><FONT COLOR="#000000" FACE="Courier New,Courier">M-n</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=281 BGCOLOR="#FFFFC8">
+<P>regexp search backward through history </TD>
+		<TD WIDTH=213 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">M-r</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=281 BGCOLOR="#FFFFC8">
+<P> regexp search forward through history</TD>
+		<TD WIDTH=213 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">M-s</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=281 BGCOLOR="#FFFFC8">
+<P> abort command</TD>
+		<TD WIDTH=213 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">C-g</FONT></TD>
+	 </TR>
+	  </TABLE></TD></TR></TABLE>
+</DIV>
+<p></P>
+<P>&nbsp;</P>
+<P>Type <FONT FACE="Courier New,Courier">C-x ESC ESC</FONT> to edit and repeat the last command that used the minibuffer. The following keys are then defined:
+<DIV ALIGN=CENTER>
+<TABLE WIDTH=488 BORDER=0 CELLSPACING=0 CELLPADDING=0><TR>
+<TD>
+	  <TABLE id="Table290" BORDER=1 CELLSPACING=2 CELLPADDING=0  WIDTH=488 >
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=276 BGCOLOR="#FFFFC8">
+<P>previous minibuffer command  </TD>
+		<TD WIDTH=201 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">M-p</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=276 BGCOLOR="#FFFFC8">
+<P>next minibuffer command  </TD>
+		<TD WIDTH=201 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">M-n</FONT> </TD>
+	 </TR>
+	  </TABLE></TD></TR></TABLE>
+</DIV>
+<p></P>
+<P>&nbsp;</P>
+<P><B><FONT SIZE="+1">Buffers</FONT></B>
+<DIV ALIGN=CENTER>
+<TABLE WIDTH=485 BORDER=0 CELLSPACING=0 CELLPADDING=0><TR>
+<TD>
+	  <TABLE id="Table296" BORDER=1 CELLSPACING=2 CELLPADDING=0  WIDTH=485 >
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=279 BGCOLOR="#FFFFC8">
+<P>select another buffer </TD>
+		<TD WIDTH=195 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-x b</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=279 BGCOLOR="#FFFFC8">
+<P> list all buffers</TD>
+		<TD WIDTH=195 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-x C-b</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=279 BGCOLOR="#FFFFC8">
+<P>kill a buffer </TD>
+		<TD WIDTH=195 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">C-x k</FONT></TD>
+	 </TR>
+	  </TABLE></TD></TR></TABLE>
+</DIV>
+<B><FONT SIZE="+1"><p></P>
+<P>&nbsp;</P>
+<P>Transposing</FONT></B>
+<DIV ALIGN=CENTER>
+<TABLE WIDTH=493 BORDER=0 CELLSPACING=0 CELLPADDING=0><TR>
+<TD>
+	  <TABLE id="Table304" BORDER=1 CELLSPACING=2 CELLPADDING=0  WIDTH=493 >
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=279 BGCOLOR="#FFFFC8">
+<P>transpose characters </TD>
+		<TD WIDTH=203 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-t</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=279 BGCOLOR="#FFFFC8">
+<P>transpose words </TD>
+		<TD WIDTH=203 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">M-t</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=279 BGCOLOR="#FFFFC8">
+<P>transpose lines </TD>
+		<TD WIDTH=203 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">C-x C-t</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=279 BGCOLOR="#FFFFC8">
+<P> transpose sexps</TD>
+		<TD WIDTH=203 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">C-M-t</FONT></TD>
+	 </TR>
+	  </TABLE></TD></TR></TABLE>
+</DIV>
+<B><FONT SIZE="+1"><p></P>
+<P>&nbsp;</P>
+<P>Spelling Check</FONT></B>
+<DIV ALIGN=CENTER>
+<TABLE WIDTH=490 BORDER=0 CELLSPACING=0 CELLPADDING=0><TR>
+<TD>
+	  <TABLE id="Table314" BORDER=1 CELLSPACING=2 CELLPADDING=0  WIDTH=490 >
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=274 BGCOLOR="#FFFFC8">
+<P>check spelling of current word </TD>
+		<TD WIDTH=208 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">M-$</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=274 BGCOLOR="#FFFFC8">
+<P>check spelling of all words in region </TD>
+		<TD WIDTH=208 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">M-x ispell-region</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=274 BGCOLOR="#FFFFC8">
+<P>check spelling of entire buffer</TD>
+		<TD WIDTH=208 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">M-x ispell-buffer</FONT></TD>
+	 </TR>
+	  </TABLE></TD></TR></TABLE>
+</DIV>
+<B><FONT SIZE="+1"><p></P>
+<P>&nbsp;</P>
+</FONT></B><P><B><FONT SIZE="+1"></font></b> <B><FONT SIZE="+1">Tags</FONT></B>
+<DIV ALIGN=CENTER>
+<TABLE WIDTH=544 BORDER=0 CELLSPACING=0 CELLPADDING=0><TR>
+<TD>
+	  <TABLE id="Table322" BORDER=1 CELLSPACING=2 CELLPADDING=0  WIDTH=544 >
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=300 BGCOLOR="#FFFFC8">
+<P>find a tag (a definition) </TD>
+		<TD WIDTH=236 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">M-.</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=300 BGCOLOR="#FFFFC8">
+<P>find next occurrence of tag  </TD>
+		<TD WIDTH=236 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-u M-.</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=300 BGCOLOR="#FFFFC8">
+<P>specify a new tags file </TD>
+		<TD WIDTH=236 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">M-x visit-tags-table</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=300 BGCOLOR="#FFFFC8">
+<P>regexp search on all files in tags table</TD>
+		<TD WIDTH=236 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">M-x tags-search</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=300 BGCOLOR="#FFFFC8">
+<P> run query-replace on all the files</TD>
+		<TD WIDTH=236 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">M-x tags-query-replace</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=300 BGCOLOR="#FFFFC8">
+<P>continue last tags search or query-replace </TD>
+		<TD WIDTH=236 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">M-,</FONT> </TD>
+	 </TR>
+	  </TABLE></TD></TR></TABLE>
+</DIV>
+<B><FONT SIZE="+1"><p></P>
+<P>&nbsp;</P>
+<P>Shells</FONT></B>
+<DIV ALIGN=CENTER>
+<TABLE WIDTH=543 BORDER=0 CELLSPACING=0 CELLPADDING=0><TR>
+<TD>
+	  <TABLE id="Table336" BORDER=1 CELLSPACING=2 CELLPADDING=0  WIDTH=543 >
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=303 BGCOLOR="#FFFFC8">
+<P> execute a shell command</TD>
+		<TD WIDTH=229 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">M-!</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=303 BGCOLOR="#FFFFC8">
+<P> run a shell command on the region</TD>
+		<TD WIDTH=229 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">M-_</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=303 BGCOLOR="#FFFFC8">
+<P> filter region through a shell command</TD>
+		<TD WIDTH=229 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">C-u M-_</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=303 BGCOLOR="#FFFFC8">
+<P> start a shell in window *shell*</TD>
+		<TD WIDTH=229 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">M-x shell</FONT></TD>
+	 </TR>
+	  </TABLE></TD></TR></TABLE>
+</DIV>
+<B><FONT SIZE="+1"><p></P>
+<P>&nbsp;</P>
+<P>Rectangles</FONT></B>
+<DIV ALIGN=CENTER>
+<TABLE WIDTH=536 BORDER=0 CELLSPACING=0 CELLPADDING=0><TR>
+<TD>
+	  <TABLE id="Table346" BORDER=1 CELLSPACING=2 CELLPADDING=0  WIDTH=536 >
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=299 BGCOLOR="#FFFFC8">
+<P>copy rectangle to register </TD>
+		<TD WIDTH=226 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-x r r</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=299 BGCOLOR="#FFFFC8">
+<P>kill rectangle </TD>
+		<TD WIDTH=226 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-x r k</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=299 BGCOLOR="#FFFFC8">
+<P>yank rectangle </TD>
+		<TD WIDTH=226 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-x r y</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=299 BGCOLOR="#FFFFC8">
+<P>open rectangle, shifting text right </TD>
+		<TD WIDTH=226 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">C-x r o</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=299 BGCOLOR="#FFFFC8">
+<P>blank out rectangle </TD>
+		<TD WIDTH=226 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">M-x clear-rectangle</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=299 BGCOLOR="#FFFFC8">
+<P>prefix each line with a string </TD>
+		<TD WIDTH=226 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">M-x string-rectangle</FONT> </TD>
+	 </TR>
+	  </TABLE></TD></TR></TABLE>
+</DIV>
+<B><FONT SIZE="+1"><p></P>
+<P>&nbsp;</P>
+<P>Abbrevs</FONT></B>
+<DIV ALIGN=CENTER>
+<TABLE WIDTH=531 BORDER=0 CELLSPACING=0 CELLPADDING=0><TR>
+<TD>
+	  <TABLE id="Table360" BORDER=1 CELLSPACING=2 CELLPADDING=0  WIDTH=531 >
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=303 BGCOLOR="#FFFFC8">
+<P>add global abbrev </TD>
+		<TD WIDTH=220 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-x a g</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=303 BGCOLOR="#FFFFC8">
+<P>add mode-local abbrev </TD>
+		<TD WIDTH=220 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">C-x a l</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=303 BGCOLOR="#FFFFC8">
+<P>add global expansion for this abbrev </TD>
+		<TD WIDTH=220 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-x a i g</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=303 BGCOLOR="#FFFFC8">
+<P>add mode-local expansion for this abbrev  </TD>
+		<TD WIDTH=220 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-x a i l</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=303 BGCOLOR="#FFFFC8">
+<P>explicitly expand abbrev  </TD>
+		<TD WIDTH=220 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-x a e</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=303 BGCOLOR="#FFFFC8">
+<P>expand previous word dynamically </TD>
+		<TD WIDTH=220 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">M-/</FONT></TD>
+	 </TR>
+	  </TABLE></TD></TR></TABLE>
+</DIV>
+<B><FONT SIZE="+1"><p></P>
+<P>&nbsp;</P>
+<P>Regular Expressions</FONT></B>
+<DIV ALIGN=CENTER>
+<TABLE WIDTH=527 BORDER=0 CELLSPACING=0 CELLPADDING=0><TR>
+<TD>
+	  <TABLE id="Table374" BORDER=1 CELLSPACING=2 CELLPADDING=0  WIDTH=527 >
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=311 BGCOLOR="#FFFFC8">
+<P> any single character except a newline</TD>
+		<TD WIDTH=208 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">.(dot)</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=311 BGCOLOR="#FFFFC8">
+<P> zero or more repeats</TD>
+		<TD WIDTH=208 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">*</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=311 BGCOLOR="#FFFFC8">
+<P> one or more repeats</TD>
+		<TD WIDTH=208 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">+</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=311 BGCOLOR="#FFFFC8">
+<P>zero or one repeat</TD>
+		<TD WIDTH=208 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">?</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=311 BGCOLOR="#FFFFC8">
+<P> any character in the set</TD>
+		<TD WIDTH=208 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">[ : : :]</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=311 BGCOLOR="#FFFFC8">
+<P> any character not in the set</TD>
+		<TD WIDTH=208 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">[^ : : :]</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=311 BGCOLOR="#FFFFC8">
+<P> beginning of line</TD>
+		<TD WIDTH=208 BGCOLOR="#FFFFC8">
+<P>  <FONT FACE="Courier New,Courier">^</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=311 BGCOLOR="#FFFFC8">
+<P> end of line</TD>
+		<TD WIDTH=208 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">$</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=311 BGCOLOR="#FFFFC8">
+<P> quote a special character c</TD>
+		<TD WIDTH=208 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">&quot;c</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=311 BGCOLOR="#FFFFC8">
+<P> alternative (&quot;or&quot;)</TD>
+		<TD WIDTH=208 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">&quot;_</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=311 BGCOLOR="#FFFFC8">
+<P> grouping</TD>
+		<TD WIDTH=208 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">&quot;( : : :&quot;)</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=311 BGCOLOR="#FFFFC8">
+<P> nth group</TD>
+		<TD WIDTH=208 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">&quot;n</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=311 BGCOLOR="#FFFFC8">
+<P>beginning of buffer</TD>
+		<TD WIDTH=208 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">&quot;`</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=311 BGCOLOR="#FFFFC8">
+<P> end of buffer</TD>
+		<TD WIDTH=208 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">&quot;'</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=311 BGCOLOR="#FFFFC8">
+<P> word break</TD>
+		<TD WIDTH=208 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">&quot;b</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=311 BGCOLOR="#FFFFC8">
+<P> not beginning or end of word</TD>
+		<TD WIDTH=208 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">&quot;B</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=311 BGCOLOR="#FFFFC8">
+<P> beginning of word</TD>
+		<TD WIDTH=208 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">&quot;&lt;</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=311 BGCOLOR="#FFFFC8">
+<P> end of word</TD>
+		<TD WIDTH=208 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">&quot;&gt;</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=311 BGCOLOR="#FFFFC8">
+<P> any word-syntax character</TD>
+		<TD WIDTH=208 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">&quot;w</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=311 BGCOLOR="#FFFFC8">
+<P> any non-word-syntax character</TD>
+		<TD WIDTH=208 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">&quot;W</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=311 BGCOLOR="#FFFFC8">
+<P> character with syntax c</TD>
+		<TD WIDTH=208 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">&quot;sc</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=311 BGCOLOR="#FFFFC8">
+<P> character with syntax not c</TD>
+		<TD WIDTH=208 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">&quot;Sc</FONT></TD>
+	 </TR>
+	  </TABLE></TD></TR></TABLE>
+</DIV>
+<B><FONT SIZE="+1"><p></P>
+<P>&nbsp;</P>
+<P>Registers</FONT></B>
+<DIV ALIGN=CENTER>
+<TABLE WIDTH=520 BORDER=0 CELLSPACING=0 CELLPADDING=0><TR>
+<TD>
+	  <TABLE id="Table420" BORDER=1 CELLSPACING=2 CELLPADDING=0  WIDTH=520 >
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=307 BGCOLOR="#FFFFC8">
+<P>save region in register </TD>
+		<TD WIDTH=205 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">C-x r s</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=307 BGCOLOR="#FFFFC8">
+<P>insert register contents into buffer </TD>
+		<TD WIDTH=205 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-x r i</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=307 BGCOLOR="#FFFFC8">
+<P>save value of point in register </TD>
+		<TD WIDTH=205 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-x r SPC</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=307 BGCOLOR="#FFFFC8">
+<P>jump to point saved in register  </TD>
+		<TD WIDTH=205 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">C-x r j</FONT></TD>
+	 </TR>
+	  </TABLE></TD></TR></TABLE>
+</DIV>
+<B><FONT SIZE="+1"><p></P>
+<P>&nbsp;</P>
+<P>Info</FONT></B>
+<DIV ALIGN=CENTER>
+<TABLE WIDTH=517 BORDER=0 CELLSPACING=0 CELLPADDING=0><TR>
+<TD>
+	  <TABLE id="Table430" BORDER=1 CELLSPACING=2 CELLPADDING=0  WIDTH=517 >
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=303 BGCOLOR="#FFFFC8">
+<P>enter the Info documentation reader  </TD>
+		<TD WIDTH=203 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-h i</FONT> </TD>
+	 </TR>
+	  </TABLE></TD></TR></TABLE>
+</DIV>
+<B><FONT SIZE="+1"><p></P>
+<P>&nbsp;</P>
+<P>Moving within a node:</FONT></B>
+<DIV ALIGN=CENTER>
+<TABLE WIDTH=516 BORDER=0 CELLSPACING=0 CELLPADDING=0><TR>
+<TD>
+	  <TABLE id="Table434" BORDER=1 CELLSPACING=2 CELLPADDING=0  WIDTH=516 >
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=303 BGCOLOR="#FFFFC8">
+<P>scroll forward </TD>
+		<TD WIDTH=202 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">SPC</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=303 BGCOLOR="#FFFFC8">
+<P>scroll reverse </TD>
+		<TD WIDTH=202 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">DEL</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=303 BGCOLOR="#FFFFC8">
+<P> beginning of node</TD>
+		<TD WIDTH=202 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">.(dot)</FONT></TD>
+	 </TR>
+	  </TABLE></TD></TR></TABLE>
+</DIV>
+<B><FONT SIZE="+1"><p></P>
+<P>&nbsp;</P>
+<P>Moving between nodes:</FONT></B>
+<DIV ALIGN=CENTER>
+<TABLE WIDTH=506 BORDER=0 CELLSPACING=0 CELLPADDING=0><TR>
+<TD>
+	  <TABLE id="Table442" BORDER=1 CELLSPACING=2 CELLPADDING=0  WIDTH=506 >
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=298 BGCOLOR="#FFFFC8">
+<P>next node </TD>
+		<TD WIDTH=200 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">n</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=298 BGCOLOR="#FFFFC8">
+<P> previous node</TD>
+		<TD WIDTH=200 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">p</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=298 BGCOLOR="#FFFFC8">
+<P> move up</TD>
+		<TD WIDTH=200 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">u</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=298 BGCOLOR="#FFFFC8">
+<P>select menu item by name </TD>
+		<TD WIDTH=200 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">m</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=298 BGCOLOR="#FFFFC8">
+<P>select nth menu item by number </TD>
+		<TD WIDTH=200 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">(1-5)n</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=298 BGCOLOR="#FFFFC8">
+<P>follow cross reference (return with l) </TD>
+		<TD WIDTH=200 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">f</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=298 BGCOLOR="#FFFFC8">
+<P>return to last node you saw </TD>
+		<TD WIDTH=200 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">l</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=298 BGCOLOR="#FFFFC8">
+<P>return to directory node </TD>
+		<TD WIDTH=200 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">d</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=298 BGCOLOR="#FFFFC8">
+<P>go to any node by name </TD>
+		<TD WIDTH=200 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">g</FONT></TD>
+	 </TR>
+	  </TABLE></TD></TR></TABLE>
+</DIV>
+<B><FONT SIZE="+1"><p></P>
+<P>&nbsp;</P>
+<P>Other:</FONT></B>
+<DIV ALIGN=CENTER>
+<TABLE WIDTH=499 BORDER=0 CELLSPACING=0 CELLPADDING=0><TR>
+<TD>
+	  <TABLE id="Table462" BORDER=1 CELLSPACING=2 CELLPADDING=0  WIDTH=499 >
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=299 BGCOLOR="#FFFFC8">
+<P>run Info tutorial </TD>
+		<TD WIDTH=192 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">h</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=299 BGCOLOR="#FFFFC8">
+<P>list Info commands  </TD>
+		<TD WIDTH=192 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">?</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=299 BGCOLOR="#FFFFC8">
+<P>quit Info </TD>
+		<TD WIDTH=192 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">q</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=299 BGCOLOR="#FFFFC8">
+<P> search nodes for regexp</TD>
+		<TD WIDTH=192 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">s</FONT> </TD>
+	 </TR>
+	  </TABLE></TD></TR></TABLE>
+</DIV>
+<B><FONT SIZE="+1"><p></P>
+<P>&nbsp;</P>
+<P>Keyboard Macros</FONT></B>
+<DIV ALIGN=CENTER>
+<TABLE WIDTH=575 BORDER=0 CELLSPACING=0 CELLPADDING=0><TR>
+<TD>
+	  <TABLE id="Table472" BORDER=1 CELLSPACING=2 CELLPADDING=0  WIDTH=575 >
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=306 BGCOLOR="#FFFFC8">
+<P>start defining a keyboard macro </TD>
+		<TD WIDTH=261 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-x (</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=306 BGCOLOR="#FFFFC8">
+<P>end keyboard macro definition  </TD>
+		<TD WIDTH=261 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">C-x )</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=306 BGCOLOR="#FFFFC8">
+<P>execute last-defined keyboard macro </TD>
+		<TD WIDTH=261 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-x e</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=306 BGCOLOR="#FFFFC8">
+<P>append to last keyboard macro </TD>
+		<TD WIDTH=261 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-u C-x (</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=306 BGCOLOR="#FFFFC8">
+<P>name last keyboard macro </TD>
+		<TD WIDTH=261 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">M-x name-last-kbd-macro</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=306 BGCOLOR="#FFFFC8">
+<P>insert Lisp definition in buffer </TD>
+		<TD WIDTH=261 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">M-x insert-kbd-macro</FONT></TD>
+	 </TR>
+	  </TABLE></TD></TR></TABLE>
+</DIV>
+<B><FONT SIZE="+1"><p></P>
+<P>&nbsp;</P>
+</FONT></B><P><B><FONT SIZE="+1"></font></b><FONT SIZE="+1">Commands Dealing with Emacs Lisp</FONT>
+<DIV ALIGN=CENTER>
+<TABLE WIDTH=557 BORDER=0 CELLSPACING=0 CELLPADDING=0><TR>
+<TD>
+	  <TABLE id="Table486" BORDER=1 CELLSPACING=2 CELLPADDING=0  WIDTH=557 >
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=289 BGCOLOR="#FFFFC8">
+<P>eval sexp before point </TD>
+		<TD WIDTH=257 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-x C-e</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=289 BGCOLOR="#FFFFC8">
+<P> eval current defun</TD>
+		<TD WIDTH=257 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-M-x</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=289 BGCOLOR="#FFFFC8">
+<P>eval region </TD>
+		<TD WIDTH=257 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">M-x eval-region</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=289 BGCOLOR="#FFFFC8">
+<P> eval entire buffer</TD>
+		<TD WIDTH=257 BGCOLOR="#FFFFC8">
+<P> <FONT FACE="Courier New,Courier">M-x eval-current-buffer</FONT></TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=289 BGCOLOR="#FFFFC8">
+<P>read and eval minibuffer </TD>
+		<TD WIDTH=257 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">M-ESC</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=289 BGCOLOR="#FFFFC8">
+<P>re-execute last minibuffer command </TD>
+		<TD WIDTH=257 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">C-x ESC ESC</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=289 BGCOLOR="#FFFFC8">
+<P> read and eval Emacs Lisp file</TD>
+		<TD WIDTH=257 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">M-x load-file</FONT> </TD>
+	 </TR>
+	 <TR VALIGN="top" ALIGN="left">
+		<TD WIDTH=289 BGCOLOR="#FFFFC8">
+<P>load from standard system directory </TD>
+		<TD WIDTH=257 BGCOLOR="#FFFFC8">
+<P><FONT FACE="Courier New,Courier">M-x load-library</FONT> </TD>
+	 </TR>
+	  </TABLE></TD></TR></TABLE>
+</DIV>
+<FONT SIZE="+1"><p></P>
+<P>&nbsp;</P>
+<P><B>Simple Customization</b></P></FONT><P><FONT SIZE="+1">
+<B></b></font>Here are some examples of binding global keys in Emacs Lisp. Note that you cannot say <FONT FACE="Courier New,Courier">&quot;&quot;M-#&quot;</FONT>; you must say <FONT FACE="Courier New,Courier">&quot;&quot;e#&quot;</FONT>.<BR><FONT FACE="Courier New,Courier">(global-set-key &quot;&quot;C-cg&quot; 'goto-line)<BR>(global-set-key &quot;&quot;C-x&quot;C-k&quot; 'kill-region)<BR>(global-set-key &quot;&quot;e#&quot; 'query-replace-regexp)</font></P><P>
+<FONT FACE="Courier New,Courier"></font>An example of setting a variable in Emacs Lisp:<BR><FONT FACE="Courier New,Courier">(setq backup-by-copying-when-linked t)</font></P><P>
+<FONT FACE="Courier New,Courier"></font><FONT SIZE="+1"><B>Writing Commands</b></font></P><P><FONT SIZE="+1">
+<B></b></font><FONT FACE="Courier New,Courier">(defun command-name (args) &quot;documentation&quot; (interactive &quot;template&quot;) body)</font></P><P>
+<FONT FACE="Courier New,Courier"></font>An example:<FONT FACE="Courier New,Courier"> (defun this-line-to-top-of-window (line) <BR>&quot;Reposition line point is on to top of window. With ARG, put point on line ARG. Negative counts from bottom.&quot;<BR>(interactive &quot;P&quot;)<BR>(recenter (if (null line)<BR>0<BR>(prefix-numeric-value line))))</font></P><P>
+<FONT FACE="Courier New,Courier"></font>The argument to interactive is a string specifying how to get the arguments when the function is called interactively. Type <FONT FACE="Courier New,Courier">C-h f</FONT> interactive for more information.</P>
+<P><B><I>Copyright c 1993 Free Software Foundation, Inc.<BR>designed by Stephen Gildea, May 1993 v2.0<BR>for GNU Emacs version 19 on Unix systems</i></b></P><P><B>
+<I></i></b>Permission is granted to make and distribute copies of this card provided the copyright notice and this permission notice are preserved on all copies.</P>
+<P>For copies of the GNU Emacs manual, write to the Free Software Foundation, Inc., 675 Massachusetts Ave, Cambridge MA 02139.</P>
+<P ALIGN="CENTER"><HR ID="HRRule476" WIDTH=100% ALIGN=CENTER SIZE=2><BR><I><FONT SIZE="-1">Copyright 1998, High Performance Computing Education and Research Center<BR>April 1998 </FONT></I><A HREF="mailto:editor@arc.unm.edu"><I><FONT SIZE="-1">editor@arc.unm.edu</FONT></I></A><I><FONT SIZE="-1"></FONT></I></TD>
+   </TR>
+  </TABLE><TABLE CELLPADDING=0 CELLSPACING=0 BORDER=0 WIDTH=656>
+<TR VALIGN="top" ALIGN="left">
+<TD>
+
+  <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+   <TR VALIGN="top" ALIGN="left">
+	<TD WIDTH=107 HEIGHT =195><IMG SRC="../../../../_img/spacer.gif" WIDTH =107 HEIGHT=1 BORDER=0></TD>
+	<TD></TD>
+   </TR>
+   <TR VALIGN="top" ALIGN="left">
+	<TD></TD>
+	      <TD NOWRAP> [<A HREF="../../../../index.html">Home</A>] [<A HREF="https://web.archive.org/web/20020711043807/http://ahpcc.unm.edu/Intranet/intranet.html">Inside&nbsp;Us</A>] 
+            [<A HREF="../../../computing.html">Computing</A>] [<A HREF="https://web.archive.org/web/20020711043807/http://ahpcc.unm.edu/Research/index.html">Research</A>] 
+            [<A HREF="https://web.archive.org/web/20020711043807/http://ahpcc.unm.edu/Education/education.html">Education</A>] [<A HREF="https://web.archive.org/web/20020711043807/http://ahpcc.unm.edu/sitemap/sitemap.html">SiteMap</A>] 
+          </TD>
+   </TR>
+  </TABLE>
+  <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+   <TR VALIGN="top" ALIGN="left">
+	<TD WIDTH=120 HEIGHT =10><IMG SRC="../../../../_img/spacer.gif" WIDTH =120 HEIGHT=1 BORDER=0></TD>
+	<TD WIDTH=399><IMG SRC="../../../../_img/spacer.gif" WIDTH =399 HEIGHT=1 BORDER=0></TD>
+   </TR>
+   <TR VALIGN="top" ALIGN="left">
+	<TD></TD>
+	<TD WIDTH=399>
+<P ALIGN="CENTER"><FONT SIZE="-1">Please contact our </FONT><A HREF="mailto:webmaster@ahpcc.unm.edu"><FONT SIZE="-1">Webmaster</FONT></A><FONT SIZE="-1"> with questions or comments. <BR></FONT><FONT SIZE="-2">© Copyright 2001 Albuquerque High Performance Computing Center.&nbsp; All rights reserved.</FONT></TD>
+   </TR>
+  </TABLE></TD>
+<TD>
+
+  <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=125>
+   <TR VALIGN="top" ALIGN="left">
+	<TD WIDTH=45 HEIGHT =194><IMG SRC="../../../../_img/spacer.gif" WIDTH =45 HEIGHT=1 BORDER=0></TD>
+	<TD></TD>
+   </TR>
+   <TR VALIGN="top" ALIGN="left">
+	<TD HEIGHT =58></TD>
+	      <TD WIDTH=80 ALIGN="left" VALIGN="top"><A HREF="https://web.archive.org/web/20020711043807/http://www.unm.edu/"><IMG id="Picture71" HEIGHT=58 WIDTH=80 SRC="../../../../_img/Images/UNM_Logo_Small.jpg"  BORDER=0 ></A></TD>
+   </TR>
+  </TABLE></TD>
+</TR>
+</TABLE>
+</BODY>
+</HTML>

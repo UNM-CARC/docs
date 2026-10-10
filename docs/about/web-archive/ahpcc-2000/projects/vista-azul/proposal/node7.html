@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p1 release (March 2nd, 1998)
+originally by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Visualization Research</TITLE>
+<META NAME="description" CONTENT="Visualization Research">
+<META NAME="keywords" CONTENT="nprop">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="https://web.archive.org/web/20010222130303cs_/http://ahpcc.unm.edu/projects/vista-azul/proposal/nprop.css">
+<LINK REL="next" HREF="node8.html">
+<LINK REL="previous" HREF="node6.html">
+<LINK REL="up" HREF="node4.html">
+<LINK REL="next" HREF="node8.html">
+</HEAD>
+<BODY >
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">ahpcc.unm.edu/projects/vista-azul/proposal/node7.html</code> as captured by the Internet Archive on 22 February 2001. Links to pages that were not saved here go to the Wayback Machine. Icons the Internet Archive did not save were redrawn for this copy and are not originals (hover over one to see). <a style="color:#0b5cad" href="https://web.archive.org/web/20010222130303/http://www.ahpcc.unm.edu:80/projects/vista-azul/proposal/node7.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../../">Web archive index</a></div>
+
+<!--Navigation Panel-->
+<A NAME="tex2html125"
+ HREF="node8.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="next (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/next_motif.gif" title="Modern recreation, not an archived original"></A> 
+<A NAME="tex2html123"
+ HREF="node4.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="up (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/up_motif.gif" title="Modern recreation, not an archived original"></A> 
+<A NAME="tex2html117"
+ HREF="node6.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="previous (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/previous_motif.gif" title="Modern recreation, not an archived original"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html126"
+ HREF="node8.html">Proposal To NSF CISE</A>
+<B> Up:</B> <A NAME="tex2html124"
+ HREF="node4.html">Network, Hybrid Programming, and</A>
+<B> Previous:</B> <A NAME="tex2html118"
+ HREF="node6.html">Hybrid High-Performance Computing Using</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00031300000000000000">
+Visualization Research</A>
+</H3>
+
+<P>
+The planned work will port, develop, and study a general virtual
+environment designed to facilitate the understanding of complex high
+performance software codes, coexecuting on a cluster-based machine.
+Our on-going project involves interfacing virtual reality (VR)
+environments to high performance parallel programs to provide program
+visualization as well as data visualization. We plan to move our
+existing virtual reality software system, Flatland, to the new
+parallel machine to blend Flatland's multi-threading architecture with
+the parallel rendering capabilities of the new machine. In this new
+setting, we will experiment with applications where both the VR code
+and the application code are running on the same cluster, but on
+different sets of processor nodes.  In addition, we will experiment
+with multiple virtual users within Flatland, again interacting with
+the application code.  We expect that the programmer's level of
+comprehension will greatly increase when allowed to work in this new
+domain. The final products will be a deeper understanding of how to
+improve our understanding of complex information and systems, a
+working virtual laboratory for high performance program development
+and testing, and a better educational environment for our students.
+
+<P>
+Flatland, named in honor of Edwin Abbott's 1884 book by the same name,
+was written in the first half of 1999 to serve as a platform for our
+virtual reality research.  It is currently installed at Los Alamos
+National Laboratory, Argonne National Laboratory, Sandia National
+Laboratories, The Phantom Works of The Boeing Company, and the Maui
+High Performance Computing Center. Flatland is a portable, cross
+platform Unix/Linux based multithreaded C/C++ based system that uses
+the graphics language OpenGL (or MESA) and associated libraries,
+including the GLUT library. A virtual environment (VE) is built from
+objects linked together in a world or scene graph, much like VRML or
+Open Inventor. Flatland has been designed to support a wide sensorium,
+including 3D graphics, 3D sound, 3D smell, simple haptics, and verbal
+conversations, both with artificial elements in the environment and
+other immersed workers.  Each user operates from within their personal
+workspace represented as a surrounding dodecahedral vessel, which is
+flown through the VE and contains customizable consoles, screens, and
+controls, as well as their personal tool chest.  The worker interacts
+with the vessel and environment through the use of custom hand held
+wands and the use of voice commands.
+
+<P>
+New programming models and new compiler technologies were required to
+easily and effectively program the MP-SMP machines, and at the same
+time, to produce efficient high performance programs.  The University
+of New Mexico has successfully combined message passing with threads
+and compiler directive based systems to solve linear algebra
+problems.  This work, which we call hybrid programming, is one of these
+new models.  Little work has been done on the visualization of these
+combined programming systems, and no work has been done in 3D
+representations of these types of programming systems. These systems
+by their combined nature lend themselves to a multi-dimensional
+hierarchical visualization structure.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html125"
+ HREF="node8.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="next (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/next_motif.gif" title="Modern recreation, not an archived original"></A> 
+<A NAME="tex2html123"
+ HREF="node4.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="up (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/up_motif.gif" title="Modern recreation, not an archived original"></A> 
+<A NAME="tex2html117"
+ HREF="node6.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="previous (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/previous_motif.gif" title="Modern recreation, not an archived original"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html126"
+ HREF="node8.html">Proposal To NSF CISE</A>
+<B> Up:</B> <A NAME="tex2html124"
+ HREF="node4.html">Network, Hybrid Programming, and</A>
+<B> Previous:</B> <A NAME="tex2html118"
+ HREF="node6.html">Hybrid High-Performance Computing Using</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I>Bob Ballance</I>
+<BR><I>1999-12-07</I>
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,421 @@
+<html>
+<head>
+<title>UNM-HPCERC: Comp Chemistry Workshop</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF">
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">hpc.unm.edu/events/ComputationalChemistryAtAHPCC/index.html</code> as captured by the Internet Archive on 25 July 2003. Links to pages that were not saved here go to the Wayback Machine. <a style="color:#0b5cad" href="https://web.archive.org/web/20030725193230/http://www.hpc.unm.edu:80/events/ComputationalChemistryAtAHPCC/index.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../">Web archive index</a></div>
+
+<p>
+  <center>
+  </center>
+<p></p>
+<p> 
+<center>
+  <font size="+2"><b>Computational Chemistry at the AHPCC</b></font> 
+</center>
+<p></p>
+<p> 
+<center>
+  <img align=bottom height=240 
+src="../../_img/events/ComputationalChemistryAtAHPCC/pov_C6H6.gif" width=151 
+naturalsizeflag="3"><img align=bottom height=240 
+src="../../_img/events/ComputationalChemistryAtAHPCC/pov_N3B3H6.gif" width=158 
+naturalsizeflag="3"><img align=bottom height=240 
+src="../../_img/events/ComputationalChemistryAtAHPCC/pov_P3N3H6.gif" width=169 
+naturalsizeflag="3"> 
+</center>
+<p></p>
+<h3>Table of Contents</h3>
+<p> 
+<table border=0 cellpadding=0 cellspacing=2>
+  <tbody> 
+  <tr valign="top"> 
+    <td height="27" width="28"> 
+      <p> 
+        <center>
+          <img align=top alt=Bullet height=15 
+      src="../../_img/events/ComputationalChemistryAtAHPCC/AHPCC_Bullet.gif" width=15 
+      naturalsizeflag="0"> 
+        </center>
+    </td>
+    <td height="27" width="334"><b><a 
+      href="#introduction">Introduction</a></b></td>
+  </tr>
+  <tr valign="top"> 
+    <td width="28"> 
+      <p> 
+        <center>
+          <img align=top alt=Bullet height=15 
+      src="../../_img/events/ComputationalChemistryAtAHPCC/AHPCC_Bullet.gif" width=15 
+      naturalsizeflag="0"> 
+        </center>
+    </td>
+    <td width="334"><b><a 
+      href="#starting">Getting Started</a></b></td>
+  </tr>
+  <tr valign="top"> 
+    <td width="28"> 
+      <p> 
+        <center>
+          <img align=top alt=Bullet height=15 
+      src="../../_img/events/ComputationalChemistryAtAHPCC/AHPCC_Bullet.gif" width=15 
+      naturalsizeflag="0"> 
+        </center>
+    </td>
+    <td width="334"><b><a 
+      href="#programs">Programs Available at the AHPCC</a></b></td>
+  </tr>
+  <tr valign="top"> 
+    <td width="28"> 
+      <p> 
+        <center>
+          <img align=top alt=Bullet height=15 
+      src="../../_img/events/ComputationalChemistryAtAHPCC/AHPCC_Bullet.gif" width=15 
+      naturalsizeflag="0"> 
+        </center>
+    </td>
+    <td width="334"><b><a 
+      href="#workshop">Computational Chemistry Workshop</a></b></td>
+  </tr>
+  </tbody> 
+</table>
+<p></p>
+<p>For best results, view using <a 
+href="https://web.archive.org/web/20030725193230/http://home.netscape.com/comprod/mirror/index.html">Netscape</a>, and make 
+  sure dithering is turned on.</p>
+<p> 
+<center>
+  <hr>
+</center>
+<p></p>
+<h3><a name=introduction></a>Introduction</h3>
+<p>Quantum chemical ab-initio programs attempt to use the principles of quantum 
+  mechanics to obtain molecular properties of interest to a chemist or physicist. 
+  Such calculations can obtain molecular geometries, vibrational frequencies and 
+  barriers to rotation, ionization potentials and electron affinities, and many 
+  other properties. Quantum chemistry calculations provide a rapid and inexpensive 
+  alternative to experimental techniques for obtaining such properties. They are 
+  widely used both as a predictive tool and to confirm or explain experimental 
+  results. Quantum chemistry calculations are applicable to a wide range of chemical 
+  problems, including enzymology, thermochemistry of combustion, homogeneous catalysis, 
+  cluster science, and organic reaction mechanisms.</p>
+<p>Many packages are available with varying capabilities, ease of use, and performance. 
+  These programs are often quite large and complex. Typical source code may be 
+  several hundred megabytes, while executable file(s) can be as large as several 
+  tens of megabytes. State of the art calculations using a typical workstation 
+  can require as much as a hundred or more megabytes of RAM, a gigabyte or more 
+  disk space, and take several days to several weeks to complete. Even larger 
+  calculations can be done with more powerful computers or clusters of workstations. 
+  Parallelization of these codes is an important step in increasing the capabilities 
+  and performance of the programs.</p>
+<p>Currently the Albuquerque High Performance Computing Center has the quantum 
+  chemistry packages GAMESS, Gaussian, and NWChem installed and available for 
+  public use. In addition, the molecular visualization programs MolDen, RasMol, 
+  and XMol and the utility program Babel are available.</p>
+<p> 
+<center>
+  <hr>
+</center>
+<p></p>
+<h3><a name=starting></a>Getting Started</h3>
+<p>It is assumed that you already have an account at the AHPCC. If not, go <a 
+href="https://web.archive.org/web/20030725193230/http://santafe.ahpcc.unm.edu/irs/">here.</a></p>
+<p>To use a particular program, you must add the executable path to your PATH 
+  variable. The easiest way to do this is to add the following lines in your .cshrc 
+  file. You will have to source your .cshrc file to make it active in the current 
+  session.</p>
+<pre><tt>set path = ($path /nfs/babel)</tt>
+<tt>set path = ($path /nfs/gamess)</tt>
+<tt>set path = ($path /nfs/gaussian)</tt>
+<tt>set path = ($path /nfs/molden)</tt>
+<tt>set path = ($path /nfs/nwchem)</tt>
+<tt>set path = ($path /nfs/rasmol)</tt>
+<tt>set path = ($path /nfs/xmol)</tt></pre>
+<p>The visualization software installed at the AHPCC are all window based programs. 
+  To use them from your own workstation or x-term follow these steps: 
+<table border=0 cellpadding=0 cellspacing=2>
+  <tbody> 
+  <tr valign="top"> 
+    <td> 
+      <p> 
+        <center>
+          <img align=top alt=Bullet height=15 
+      src="../../_img/events/ComputationalChemistryAtAHPCC/AHPCC_Bullet.gif" width=15 
+      naturalsizeflag="0"> 
+        </center>
+    </td>
+    <td>Log into your workstation or x-term.</td>
+  </tr>
+  <tr valign="top"> 
+    <td> 
+      <p> 
+        <center>
+          <img align=top alt=Bullet height=15 
+      src="../../_img/events/ComputationalChemistryAtAHPCC/AHPCC_Bullet.gif" width=15 
+      naturalsizeflag="0"> 
+        </center>
+    </td>
+    <td>Add an AHPCC machine to your xhost list. (<tt>xhost + ArcMachine.ahpcc.unm.edu</tt>)</td>
+  </tr>
+  <tr valign="top"> 
+    <td> 
+      <p> 
+        <center>
+          <img align=top alt=Bullet height=15 
+      src="../../_img/events/ComputationalChemistryAtAHPCC/AHPCC_Bullet.gif" width=15 
+      naturalsizeflag="0"> 
+        </center>
+    </td>
+    <td>Telnet to an AHPCC workstation. (<tt>telnet ArcMachine.ahpcc.unm.edu</tt>)</td>
+  </tr>
+  <tr valign="top"> 
+    <td> 
+      <p> 
+        <center>
+          <img align=top alt=Bullet height=15 
+      src="../../_img/events/ComputationalChemistryAtAHPCC/AHPCC_Bullet.gif" width=15 
+      naturalsizeflag="0">
+</center>
+    </td>
+    <td>Set the DISPLAY environmental variable to your machine name. (<tt>setenv 
+      DISPLAY MyMachine.unm.edu:0)</tt></td>
+  </tr>
+  </tbody> 
+</table>
+<p></p>
+<p> 
+<center>
+  <hr>
+</center>
+<p></p>
+<h3><a name=programs></a>Programs Available at the AHPCC</h3>
+<p><b>Installation Status</b></p>
+<p>The following table indicates program availability at the AHPCC. Click on a 
+  programs name for specific details about each program.</p>
+<p> 
+<center>
+  <table border=1 cellpadding=0 cellspacing=5 width="80%">
+    <tbody> 
+    <tr align=middle> 
+      <td bgcolor=#ffffc8></td>
+      <td bgcolor=#ffffc8>Version</td>
+      <td bgcolor=#ffffc8>HP</td>
+      <td bgcolor=#ffffc8>IBM</td>
+      <td bgcolor=#ffffc8>SGI</td>
+      <td bgcolor=#ffffc8>SP1</td>
+      <td bgcolor=#ffffc8>SUN</td>
+    </tr>
+    <tr align=middle> 
+      <td bgcolor=#ffffc8>Babel</td>
+      <td bgcolor=#ffffc8>1.5</td>
+      <td bgcolor=#ffffc8>-</td>
+      <td bgcolor=#ffffc8>S</td>
+      <td bgcolor=#ffffc8>S</td>
+      <td bgcolor=#ffffc8>-</td>
+      <td bgcolor=#ffffc8>S</td>
+    </tr>
+    <tr align=middle> 
+      <td bgcolor=#ffffc8>GAMESS</td>
+      <td bgcolor=#ffffc8>10-31-96</td>
+      <td bgcolor=#ffffc8>S</td>
+      <td bgcolor=#ffffc8>S</td>
+      <td bgcolor=#ffffc8>P</td>
+      <td bgcolor=#ffffc8>P</td>
+      <td bgcolor=#ffffc8>S</td>
+    </tr>
+    <tr align=middle> 
+      <td bgcolor=#ffffc8>Gaussian</td>
+      <td bgcolor=#ffffc8>94d3</td>
+      <td bgcolor=#ffffc8>S</td>
+      <td bgcolor=#ffffc8>S</td>
+      <td bgcolor=#ffffc8>P</td>
+      <td bgcolor=#ffffc8>P</td>
+      <td bgcolor=#ffffc8>S</td>
+    </tr>
+    <tr align=middle> 
+      <td bgcolor=#ffffc8>MolDen</td>
+      <td bgcolor=#ffffc8>3.2</td>
+      <td bgcolor=#ffffc8>-</td>
+      <td bgcolor=#ffffc8>S</td>
+      <td bgcolor=#ffffc8>S</td>
+      <td bgcolor=#ffffc8>-</td>
+      <td bgcolor=#ffffc8>S</td>
+    </tr>
+    <tr align=middle> 
+      <td bgcolor=#ffffc8>NWChem</td>
+      <td bgcolor=#ffffc8>2.0</td>
+      <td bgcolor=#ffffc8>-</td>
+      <td bgcolor=#ffffc8>S</td>
+      <td bgcolor=#ffffc8>P</td>
+      <td bgcolor=#ffffc8>P</td>
+      <td bgcolor=#ffffc8>-</td>
+    </tr>
+    <tr align=middle> 
+      <td bgcolor=#ffffc8>RasMol</td>
+      <td bgcolor=#ffffc8>2.6</td>
+      <td bgcolor=#ffffc8>S</td>
+      <td bgcolor=#ffffc8>S</td>
+      <td bgcolor=#ffffc8>S</td>
+      <td bgcolor=#ffffc8>-</td>
+      <td bgcolor=#ffffc8>S</td>
+    </tr>
+    <tr align=middle> 
+      <td bgcolor=#ffffc8>XMol</td>
+      <td bgcolor=#ffffc8>1.3.1</td>
+      <td bgcolor=#ffffc8>-</td>
+      <td bgcolor=#ffffc8>S</td>
+      <td bgcolor=#ffffc8>S</td>
+      <td bgcolor=#ffffc8>-</td>
+      <td bgcolor=#ffffc8>S</td>
+    </tr>
+    <tr align=middle> 
+      <td bgcolor=#ffffc8 colspan=7>S / P / - indicates serial / parallel / no 
+        version installed.</td>
+    </tr>
+    </tbody> 
+  </table>
+<p>&nbsp;</p></center>
+<p></p>
+<p><b>Program Speed Comparison</b></p>
+<p>It is often difficult to get a fair comparison of program speeds. Every program 
+  will have its own strengths and weaknesses. As a quick test a RHF/cc-pVDZ(6d) 
+  calculation for C<sub>6</sub>H<sub>6</sub> (Benzene) was run on our SP1. In 
+  all cases molecular symmetry was not used and the same convergence thresholds 
+  were used. Timing information is shown below.</p>
+<p> 
+<center>
+  <table border=1 cellpadding=0 cellspacing=5 width="60%">
+    <tbody> 
+    <tr align=middle> 
+      <td bgcolor=#ffffc8>Nodes</td>
+      <td bgcolor=#ffffc8>GAMESS</td>
+      <td bgcolor=#ffffc8>Gaussian</td>
+      <td bgcolor=#ffffc8>NWChem</td>
+    </tr>
+    <tr align=middle> 
+      <td bgcolor=#ffffc8>1</td>
+      <td bgcolor=#ffffc8>7000.2s</td>
+      <td bgcolor=#ffffc8>1522.80s</td>
+      <td bgcolor=#ffffc8>-</td>
+    </tr>
+    <tr align=middle> 
+      <td bgcolor=#ffffc8>2</td>
+      <td bgcolor=#ffffc8>3560.4s</td>
+      <td bgcolor=#ffffc8>933.18s</td>
+      <td bgcolor=#ffffc8>4195.5s</td>
+    </tr>
+    <tr align=middle> 
+      <td bgcolor=#ffffc8>4</td>
+      <td bgcolor=#ffffc8>1792.7s</td>
+      <td bgcolor=#ffffc8>552.68s</td>
+      <td bgcolor=#ffffc8>2125.3s</td>
+    </tr>
+    <tr align=middle> 
+      <td bgcolor=#ffffc8>8</td>
+      <td bgcolor=#ffffc8>927.6s</td>
+      <td bgcolor=#ffffc8>439.38s</td>
+      <td bgcolor=#ffffc8>1098.5s</td>
+    </tr>
+    </tbody> 
+  </table>
+</center>
+<p></p>
+<p>In this case Gaussian outperforms both GAMESS and NWChem. This does not mean 
+  that GAMESS or NWChem should never be used. Both may be able to do other types 
+  of calculations faster than Gaussian, and there are some things they can do 
+  that Gaussian can not do at all. However, for typical single point or geometry 
+  optimization calculations, Gaussian will almost always be the best choice.</p>
+<p><b>Which program should you use?</b></p>
+<p>All three programs are capable of doing typical self consistent field (SCF) 
+  geometry optimization and frequency calculations. If you wish to do a more elaborate 
+  calculation such as post SCF methods or property calculations then you should 
+  check each programs documentation to verify it meets your requirements. Try 
+  running a small calculation with each program. You may prefer the input or output 
+  format of one particular program. Remember that Gaussian has the greatest number 
+  of capabilities and is the faster program in most cases.</p>
+<p><b>Which machine should you use?</b></p>
+<p>You should run all but the smallest of calculations on the SP1. Do not request 
+  more than 32MB of RAM on a workstation. Do not run calculations that will require 
+  more than half an hour of CPU time on a workstation. Do not run calculations 
+  that require large amounts of disk space such as frequency or post SCF calculations 
+  on a workstation. Small calculations that meet these requirements can be run 
+  on any of the AHPCC workstations. You may wish to use the "<tt>ps -e</tt>" command 
+  to find the lesser used machines.</p>
+<p> 
+<center>
+  <hr>
+</center>
+<p></p>
+<h3><a name=workshop></a>Computational Chemistry Workshop</h3>
+<p>The AHPCC offers a workshop on computational chemistry approximately once a 
+  year. The workshop is designed to be an introduction to the parallel packages 
+  installed at the AHPCC. Topics include the following:</p>
+<p> 
+<table border=0 cellpadding=0 cellspacing=2>
+  <tbody> 
+  <tr valign="top"> 
+    <td width="23"> 
+      <p> 
+        <center>
+          <img align=top alt=Bullet height=15 
+      src="../../_img/events/ComputationalChemistryAtAHPCC/AHPCC_Bullet.gif" width=15 
+      naturalsizeflag="0"> 
+        </center>
+    </td>
+    <td width="446">An introduction to quantum chemistry and the goals of an ab-initio 
+      program.</td>
+  </tr>
+  <tr valign="top"> 
+    <td width="23"> 
+      <p> 
+        <center>
+          <img align=top alt=Bullet height=15 
+      src="../../_img/events/ComputationalChemistryAtAHPCC/AHPCC_Bullet.gif" width=15 
+      naturalsizeflag="0"> 
+        </center>
+    </td>
+    <td width="446">A comparison of the capabilities of selected programs.</td>
+  </tr>
+  <tr valign="top"> 
+    <td width="23"> 
+      <p> 
+        <center>
+          <img align=top alt=Bullet height=15 
+      src="../../_img/events/ComputationalChemistryAtAHPCC/AHPCC_Bullet.gif" width=15 
+      naturalsizeflag="0"> 
+        </center>
+    </td>
+    <td width="446">A description of installation, structure, and expandability 
+      of selected codes.</td>
+  </tr>
+  <tr valign="top"> 
+    <td width="23"> 
+      <p> 
+        <center>
+          <img align=top alt=Bullet height=15 
+      src="../../_img/events/ComputationalChemistryAtAHPCC/AHPCC_Bullet.gif" width=15 
+      naturalsizeflag="0"> 
+        </center>
+    </td>
+    <td width="446">An explanation of sample input and output files.</td>
+  </tr>
+  <tr valign="top"> 
+    <td width="23"> 
+      <p> 
+        <center>
+          <img align=top alt=Bullet height=15 
+      src="../../_img/events/ComputationalChemistryAtAHPCC/AHPCC_Bullet.gif" width=15 
+      naturalsizeflag="0"> 
+        </center>
+    </td>
+    <td width="446">Hands on experience creating input files and running calculations.</td>
+  </tr>
+  </tbody> 
+</table>
+<p></p>
+<p>A basic understanding of the UNIX operating system is highly recommended. Knowledge 
+  of basic physics and chemistry is also recommended.</p>
+</body>
+</html>

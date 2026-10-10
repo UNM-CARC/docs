@@ -1,0 +1,356 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF">
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">hpc.unm.edu/computing/refcard/index.html</code> as captured by the Internet Archive on 25 July 2003. Links to pages that were not saved here go to the Wayback Machine. <a style="color:#0b5cad" href="https://web.archive.org/web/20030725185945/http://www.hpc.unm.edu:80/computing/refcard/index.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../">Web archive index</a></div>
+
+<p><b><font size="+2">Linux Supercluster Reference Card</font></b></p>
+<p align="left"> <b>This page includes: </b> </p>
+<div align="left"> 
+  <ul type="disc">
+    <li><a href="#access">Access</a></li>
+    <li><a href="#mail">Mail</a></li>
+    <li><a href="#compliers">Compilers</a></li>
+    <li><a href="#account">Your Account</a></li>
+    <li><a href="#progtools">Programming Tools</a></li>
+    <li><a href="#selectingmpi">Selecting an MPI Library</a></li>
+    <li><a href="#compilingmpi">Compiling with MPI</a></li>
+    <li><a href="#jobmanagers">Submitting PBS Jobs</a></li>
+  </ul>
+</div>
+<p align="left">For assistance, please contact the Help Desk at help@hpc.unm.edu 
+  or (505)&nbsp; 277-8249 (Monday through Friday, 9 a.m. to 5 p.m. Mountain Time)</p>
+<p align="left"> </p>
+<hr id="HRRule2" width="99%" align="left" size="2"
+
+ noshade="noshade">
+<div align="left"> 
+  <h3><b><a name="access"></a>Access</b> </h3>
+</div>
+<p align="left"></p>
+<p align="left">Depending on your allocation, login to the appropriate Linux Supercluster&nbsp; 
+  using secure-shell (ssh):</p>
+<div align="left"> 
+  <ul>
+  </ul>
+</div>
+<ul>
+  <p align="left"><font color="#0000ff"
+
+ face="Courier New,Courier">%&nbsp; <b><font size="2">ssh roadrunner.alliance.unm.edu</font></b></font></p>
+  <p align="left"><font color="#0000ff"
+
+ face="Courier New,Courier">%&nbsp; <b><font size="2">ssh loslobos.alliance.unm.edu</font></b></font></p>
+</ul>
+<p align="left"> Transfer files <u>to</u> the Linux Superclusters from your home 
+  machine&nbsp; using secure copy protocol (scp): </p>
+<div align="left"> 
+  <ul>
+  </ul>
+</div>
+<ul>
+  <p align="left"><font color="#0000ff"
+
+ face="Courier New,Courier">%&nbsp; <b><font size="2">scp</font></b> <font size="2"><i>&lt;file&gt; 
+    &lt;user&gt;@&lt;Linux_Supercluster&gt;.alliance.unm.edu:dest</i></font></font></p>
+</ul>
+<p align="left"> </p>
+<hr id="HRRule4" width="99%" align="left" size="2"
+
+ noshade="noshade">
+<div align="left"> 
+  <h3><b><a name="account"></a>Your Account</b> </h3>
+</div>
+<p align="left"></p>
+<p align="left">Change password on the Linux Superclusters: </p>
+<div align="left"> 
+  <ul>
+  </ul>
+</div>
+<ul>
+  <p align="left"><font color="#0000ff"
+
+ face="Courier New,Courier">%&nbsp; <b><font size="2">yppasswd</font></b></font></p>
+</ul>
+<p align="left"> Change default shell on the Linux Superclusters: </p>
+<div align="left"> 
+  <ul>
+  </ul>
+</div>
+<ul>
+  <p align="left"><font color="#0000ff"
+
+ face="Courier New,Courier">%&nbsp; <b><font size="2">ypchsh</font></b></font></p>
+</ul>
+<p align="left"> </p>
+<hr id="HRRule6" width="99%" align="left" size="2"
+
+ noshade="noshade">
+<div align="left"> 
+  <h3><b><a name="mail"></a>Mail</b> </h3>
+</div>
+<p align="left"></p>
+<p align="left">You need to forward your mail to your local system. To forward 
+  mail,&nbsp; create or modify the <font
+
+ color="#0000ff" face="Courier New,Courier">.forward</font> file with: </p>
+<div align="left"> 
+  <ul>
+  </ul>
+</div>
+<ul>
+  <p align="left"><font color="#0000ff"
+
+ face="Courier New,Courier"><i><font size="2">&lt;username@host.domain&gt;</font></i></font></p>
+</ul>
+<p align="left"> </p>
+<hr id="HRRule8" width="99%" align="left" size="2"
+
+ noshade="noshade">
+<div align="left"> 
+  <h3><b><a name="compilers"></a>Compilers</b> </h3>
+</div>
+<p align="left"></p>
+<p align="left">If you are interested in debugging your Fortran program, try the 
+  NAG&nbsp; compiler first. If you are interested in performance, try all compilers&nbsp;since 
+  each are optimized differently. MPI C++ is only supported on Ethernet&nbsp;and 
+  may work on Myrinet. </p>
+<p align="left">C - GNU</p>
+<p align="left"><font color="#0000ff"
+
+ face="Courier New,Courier">%&nbsp; <b><font size="2">gcc &#8211;o exec [options]</font></b> 
+  <font size="2"><i>filename(s).c</i></font></font></p>
+<p align="left"> C - PGI</p>
+<p align="left"><font color="#0000ff"
+
+ face="Courier New,Courier">%&nbsp; <b><font size="2">pgcc &#8211;o exec [options]</font></b> 
+  <font size="2"><i>filename(s).c</i></font></font></p>
+<p align="left"> C++ - GNU</p>
+<p align="left"><font color="#0000ff"
+
+ face="Courier New,Courier">%&nbsp; <b><font size="2">g++ &#8211;o exec [options]</font></b> 
+  <font size="2"><i>filename(s).C</i></font></font></p>
+<p align="left"> C++ - PGI</p>
+<p align="left"><font color="#0000ff"
+
+ face="Courier New,Courier">%&nbsp; <b><font size="2">pgCC &#8211;o exec [options]</font></b> 
+  <font size="2"><i>filename(s).C</i></font></font></p>
+<p align="left"> Fortran77 - GNU</p>
+<p align="left"><font color="#0000ff"
+
+ face="Courier New,Courier">%&nbsp; <b><font size="2">f77 &#8211;o exec [options]</font></b> 
+  <font size="2"><i>filename(s).f</i></font></font></p>
+<p align="left"> Fortran77 - PGI</p>
+<p align="left"><font color="#0000ff"
+
+ face="Courier New,Courier">%&nbsp; <b><font size="2">pgf77 &#8211;o exec [options]</font></b> 
+  <font size="2"><i>filename(s).f</i></font></font></p>
+<p align="left"> Fortran90/95 - PGI</p>
+<p align="left"><font color="#0000ff"
+
+ face="Courier New,Courier">%&nbsp; <b><font size="2">pgf90 &#8211;o exec [options]</font></b> 
+  <font size="2"><i>filename(s).f90</i></font></font></p>
+<p align="left">Fortran90/95 - NAG</p>
+<p align="left"><font color="#0000ff"
+
+ face="Courier New,Courier">%&nbsp; <b><font size="2">f95 &#8211;o exec [options]</font></b> 
+  <font size="2"><i>filename(s).f95</i></font></font></p>
+<p align="left"> </p>
+<hr id="HRRule10" width="99%" align="left" size="2"
+
+ noshade="noshade">
+<div align="left"> 
+  <h3><b><a name="progtools"></a>Programming&nbsp; Tools</b> </h3>
+</div>
+<p align="left"></p>
+<p align="left"><b>Source code debuggers:</b></p>
+<p align="left">GNU </p>
+<p align="left"> <font color="#0000ff"
+
+ face="Courier New,Courier">%&nbsp; <b><font size="2">gdb</font></b></font></p>
+<p align="left"><font color="#0000ff"
+
+ face="Courier New,Courier">%&nbsp; <b><font size="2">xxgdb</font></b></font></p>
+<p align="left">PGI</p>
+<p align="left"> <font color="#0000ff"
+
+ face="Courier New,Courier">%&nbsp; <b><font size="2">pgdbg</font></b></font></p>
+<p align="left">&nbsp;</p>
+<p align="left"><b>Performance profiler:</b></p>
+<p align="left"> PGI</p>
+<p align="left"><font color="#0000ff"
+
+ face="Courier New,Courier">%&nbsp; <b><font size="2">pgprof</font></b></font></p>
+<p align="left">&nbsp;</p>
+<p align="left"> </p>
+<hr id="HRRule12" width="99%" align="left" size="2"
+
+ noshade="noshade">
+<div align="left"> 
+  <h3><b><a name="selectingmpi"></a>Selecting a MPI Library</b></h3>
+  <p><b> </b>There are several builds of the MPICH MPI library on the Linux Superclusters. 
+    &nbsp;Some use the special GM interface to the Myrinet high-speed network 
+    hardware and some use TCP/IP. Select&nbsp; an MPICH build by setting the MPIHOME 
+    environment variable in your .cshrc file (if your login shell is tcsh). You 
+    can set this&nbsp; variable by editing your .cshrc file and removing the comment 
+    sentinel (#) from the beginning of the&nbsp; line specifying the MPICH library 
+    build that you want to use. Be sure that the beginning&nbsp; of the lines 
+    for the other MPICH library builds start with the comment sentinel (#).&nbsp; 
+    Refer to your <font
+
+ color="#0000ff" face="Courier New,Courier">.cshrc</font> file for examples. Log 
+    out and log back in to load the new environment. &nbsp;Use the "which mpirun" 
+    command to verify the MPICH library build you have chosen. </p>
+</div>
+<p align="left"></p>
+<p align="left">For example:</p>
+<div align="left"> 
+  <ul>
+  </ul>
+</div>
+<ul>
+  <p align="left"><font color="#0000ff"
+
+ face="Courier New,Courier">%&nbsp; <b><font size="2">which mpirun</font></b></font></p>
+  <p align="left"><font size="2"><font color="#0000ff"
+
+ face="Courier New,Courier">/usr/parallel/mpich-gm.pgi/bin/mpirun</font></font></p>
+</ul>
+<p align="left"> shows that you are using MPICH with the GM interface, and the 
+  corresponding MPICH compiling scripts mpif77 and mpif90 will use the PGI Fortran 
+  compilers.</p>
+<p align="left"> </p>
+<hr id="HRRule14" width="99%" align="left" size="2"
+
+ noshade="noshade">
+<div align="left"> 
+  <h3><b><a name="compilingmpi"></a>Compiling with&nbsp; MPI</b> </h3>
+</div>
+<p align="left"></p>
+<p align="left">C</p>
+<p align="left"> <font color="#0000ff"
+
+ face="Courier New,Courier">%&nbsp; <b><font size="2">mpicc &#8211;o exec [options]</font></b> 
+  <font size="2"><i>filename(s).c</i></font></font></p>
+<p align="left">&nbsp;</p>
+<p align="left">C++ </p>
+<p align="left"> <font color="#0000ff"
+
+ face="Courier New,Courier">%&nbsp; <b><font size="2">mpiCC &#8211;o exec [options]</font></b> 
+  <font size="2"><i>filename(s).C</i></font></font></p>
+<p align="left">&nbsp;</p>
+<p align="left">Fortran77 </p>
+<p align="left"> <font color="#0000ff"
+
+ face="Courier New,Courier">%&nbsp; <b><font size="2">mpif77 &#8211;o exec [options]</font></b> 
+  <font size="2"><i>filename(s).f</i></font></font></p>
+<p align="left">&nbsp;</p>
+<p align="left">Fortran90 </p>
+<p align="left"> <font color="#0000ff"
+
+ face="Courier New,Courier">%&nbsp; <b><font size="2">mpif90 -o exec [options]</font></b> 
+  <font size="2"><i>filename(s).f90</i></font></font></p>
+<p align="left"> </p>
+<hr id="HRRule16" width="99%" align="left" size="2"
+
+ noshade="noshade">
+<div align="left"> 
+  <h3><b><a name="jobmanagers"></a>Submitting PBS Jobs</b> </h3>
+</div>
+<p align="left"></p>
+<p align="left">PBS supports two modes for running jobs &#8211; batch&nbsp; and 
+  interactive. With batch mode, a user submits a job, and the job is queued, scheduled 
+  and run without any further interaction. &nbsp;With interactive mode, a user 
+  submits a request for an interactive session on a set of compute nodes assigned 
+  by the PBS job manager. <br>
+</p>
+<p align="left">The following examples show simple scripts for batch mode jobs. 
+  &nbsp; </p>
+<p align="left"><b>Portable Batch System (PBS)</b></p>
+<p align="left"><b>PBS Batch Mode Sample Scripts:</b></p>
+<p align="left">Request 16 nodes and start one mpi process on each node:</p>
+<p><font face="Courier New, Courier, mono" color="#0000ff">#PBS -l nodes=16:ppn=2<br>
+  mpirun -machinefile $PBS_NODEFILE -np 16 myprog.exe</font></p>
+<p align="left"><br>
+  Request 8 nodes and start 2 mpi processes on each node:</p>
+<p><font face="Courier New, Courier, mono" color="#0000ff">#PBS -l nodes=8:ppn=2<br>
+  mpirun -machinefile $PBS_NODEFILE -np 16 myprog.exe</font></p>
+<br>
+<p align="left"></p>
+<p align="left">Standard output and error files will be written to your working 
+  directory.&nbsp; To submit the script to PBS, use the following command: </p>
+<div align="left"> 
+  <ul>
+  </ul>
+</div>
+<ul>
+  <p align="left"><font color="#0000ff"
+
+ face="Courier New,Courier">%&nbsp;<b><font size="2">qsub</font></b> <font size="2"><i>&lt;pbs_script_file&gt;</i></font></font></p>
+</ul>
+<p align="left">&nbsp;</p>
+<p align="left"><b>PBS Interactive Mode Sample Session:<br>
+  </b>Request an interactive session with 8 nodes: </p>
+<div align="left"> 
+  <ul>
+  </ul>
+</div>
+<ul>
+  <p align="left"><font color="#0000ff"
+
+ face="Courier New,Courier">%&nbsp;<b><font size="2">qsub &#8211;I &#8211;l nodes=8</font></b><font size="2"> 
+    </font></font></p>
+</ul>
+<ul>
+  <p align="left"></p>
+</ul>
+<p align="left">Run your program as follows:</p>
+<p align="left">Start one mpi process on each node:&nbsp;</p>
+<p align="left"> <font color="#0000ff"
+
+ face="Courier New,Courier"><b><font size="2"></font></b></font><font
+
+ color="#0000ff" face="Courier New,Courier">% <b><font
+
+ size="2">mpirun -machinefile $PBS_NODEFILE -np 8</font><font size="2"><prog><prog> 
+  myprog.exe</prog></prog></font></b></font></p>
+<p align="left">Start two mpi processes on each node:</p>
+<p align="left"><font color="#0000ff"
+
+ face="Courier New,Courier">% <b><font size="2">mpirun -machinefile $PBS_NODEFILE 
+  -np 16 myprog.exe</font></b></font></p>
+<p align="left"> Release your nodes when finished by typing: </p>
+<div align="left"> 
+  <ul>
+  </ul>
+</div>
+<ul>
+  <p align="left"><font color="#0000ff"
+
+ face="Courier New,Courier">% <b><font size="2">exit</font></b></font></p>
+</ul>
+<p align="left"> Display contents and status of queue: </p>
+<div align="left"> 
+  <ul>
+  </ul>
+</div>
+<ul>
+  <p align="left"><font color="#0000ff"
+
+ face="Courier New,Courier">% <b><font size="2">qstat -a</font></b></font></p>
+</ul>
+<p align="left"> Remove job from queue: </p>
+<div align="left"> 
+  <ul>
+  </ul>
+</div>
+<ul>
+  <p align="left"><font color="#0000ff"
+
+ face="Courier New,Courier">% <b><font size="2">qdel</font></b> <font size="2"><i>&lt;job_id&gt;</i></font></font></p>
+</ul>
+</body>
+</html>

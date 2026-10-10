@@ -1,0 +1,643 @@
+<html><head>
+
+
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+   <title>UNM-HPCERC: Black Bear Linux Cluster</title>
+</head>
+<body>
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">hpc.unm.edu/computing/blackbear/ug/index.html</code> as captured by the Internet Archive on 25 July 2003. Links to pages that were not saved here go to the Wayback Machine. <a style="color:#0b5cad" href="https://web.archive.org/web/20030725183321/http://www.hpc.unm.edu:80/computing/blackbear/ug/index.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../../">Web archive index</a></div>
+
+<center>
+  <h1 align="left"> <font size=+2>Black Bear Linux Supercluster</font></h1>
+</center>
+
+
+<p><b>System Facts:</b></p>
+
+<table border="0" width="100%">
+  <tr>
+    <td width="100%">
+      <ul>
+        <li>Nodes: 16</li>
+        <li>CPU: Dual Intel Pentium III 550 MHz</li>
+        <li>Cache: 512Kb ECC RAM</li>
+        <li>RAM: 512 MB SDRAM</li>
+        <li>Hard Disk: 9 GB SCSI II</li>
+        <li>Network (control): 10/100 BaseT</li>
+        <li>Network (data): Myrinet [GM v.1.1.3]</li>
+        <li>OS: VA Red Hat 6.0.4</li>
+        <li>Kernel: Linux 2.2.12smp</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+<p> <b>General User Information</b></p>
+
+<blockquote>
+<blockquote>
+  <p><b>1. <a href="#Access">Access</a></b>
+<br><b>2. <a href="#Your Account">Your Account</a></b>
+<br><b>3. <a href="#Environment">Environment</a></b>
+<br><b>4. Software:</b>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; <a href="#Compilers">Compilers</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; <a href="#Programming Tools">Programming Tools</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; <a href="#Message Passing">Programming for
+MPI</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; <a href="#Mathematic and Scientific Libraries">Mathematic
+and Scientific Libraries</a>
+<br><b>5. Running Jobs</b>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; <a href="#Selecting MPI Libraries">Selecting
+MPI Libraries</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; <a href="#Compiling">Compiling</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; <a href="#Running MPI jobs">Running MPI programs</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; <a href="#Using the Batch Scheduler">Using
+the Batch Scheduler (PBS)</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; <a href="#Submiting jobs to PBS">Submitting
+Jobs to PBS</a>
+<br>&nbsp;&nbsp;&nbsp;&nbsp; <a href="#Running Interactive Jobs">Running
+Interactive Jobs</a>
+<br><b>6. <a href="#Storage">Storage</a></b></p>
+</blockquote>
+</blockquote>
+
+<table BORDER=0 CELLSPACING=0 CELLPADDING=0 >
+<tr>
+<td BGCOLOR="#000000"><span></span></td>
+
+<td>
+<h3>
+<a NAME="Access"></a><b>Access</b></h3>
+The Black Bear Supercluster is accessed through one machine. This front-end
+system, named <b><i>blackbear.ahpcc.unm.edu</i></b>, is intended for
+code development and submitting jobs to the Black Bear compute nodes.&nbsp;
+<p><b>Logging in:</b>
+<br>Use a secure login utility such as secure shell (ssh) to login to the
+Black Bear systems.&nbsp;
+<br><font face="Courier" color="#008000">ssh blackbear.ahpcc.unm.edu</font>
+<br><font face="Courier" color="#008000">ssh bb.ahpcc.unm.edu</font>
+<br><font face="Courier" color="#008000">ssh osonegro.ahpcc.unm.edu</font>
+<br><br></td>
+</tr>
+
+<tr>
+<td COLSPAN="2" BGCOLOR="#000000"><span></span></td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td BGCOLOR="#000000"></td>
+
+<td>
+<h3>
+<a NAME="Your Account"></a>Your Account
+
+
+</h3>
+      <p>You can access Black Bear using your regular AHPCC account. If you don't 
+        have an AHPCC account, you can apply for one via: <a href="https://web.archive.org/web/20030725183321/http://santafe.hpcer.unm.edu/irs/">http://santafe.hpcerc.unm.edu/irs/</a><br>
+        &nbsp;</p>
+      </td>
+</tr>
+
+
+
+<tr>
+<td COLSPAN="2" BGCOLOR="#000000"><span></span></td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td BGCOLOR="#000000"><span></span></td>
+
+<td>
+<h3>
+<a NAME="Environment"></a>Environment</h3>
+<font color="#000000">Many environment variables needed for compilers and
+libraries are defined in certain config files. Users can run the <i>/nfs/linux/BLACKBEAR/scripts/setup_env.bb</i>
+script to setup your environment to run on Black Bear.</font>
+<ul>
+        <li> <a href="https://web.archive.org/web/20030725183321/http://hpc.unm.edu/computing/blackbear/scripts/setup_env.bb">setup_env.bb</a> (script to setup 
+          your environment to run on Black Bear)</li>
+
+        <li> <a href="https://web.archive.org/web/20030725183321/http://hpc.unm.edu/computing/blackbear/docs/test.pbs">test.pbs</a> (sample submit file)&nbsp;</li>
+
+        <li> <a href="https://web.archive.org/web/20030725183321/http://hpc.unm.edu/computing/blackbear/docs/rhosts">rhosts</a> (contains the hostnames of the 
+          Black Bear nodes)</li>
+
+        <li> <a href="https://web.archive.org/web/20030725183321/http://hpc.unm.edu/computing/blackbear/docs/cshrc.bb">cshrc_bb</a> (for csh and tcsh users)</li>
+
+        <li> <a href="https://web.archive.org/web/20030725183321/http://hpc.unm.edu/computing/blackbear/docs/bashrc.bb">bashrc_bb</a> (for ksh and bash users)</li>
+</ul>
+</td>
+</tr>
+
+<tr>
+<td COLSPAN="2" BGCOLOR="#000000"><span></span></td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td BGCOLOR="#000000"></td>
+
+<td>
+<h3>
+Software</h3>
+</td>
+</tr>
+
+<tr>
+<td WIDTH="1" BGCOLOR="#000000"></td>
+
+<td>Black Bear has a number of compilers (C, C++, Fortran 77/90, and HPF)
+including the GNU, NAGf95 and Portland Group suite. The tables below list
+the specific compiler commands and links to documentation when available.&nbsp;
+<center><table BORDER WIDTH="100%" >
+<tr>
+<td ALIGN=CENTER COLSPAN="5" WIDTH="501"><a NAME="Compilers"></a><b>Compilers</b></td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER WIDTH="85"><b>C</b></td>
+
+<td ALIGN=CENTER WIDTH="85"><b>C++</b></td>
+
+<td ALIGN=CENTER WIDTH="85"><b>Fortran77</b></td>
+
+<td ALIGN=CENTER WIDTH="86"><b>Fortran90/95</b></td>
+
+<td ALIGN=CENTER WIDTH="166"><b>High. Perf. Fortran</b>
+<br><b>(HPF)</b></td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER WIDTH="85"><font color="#008000">gcc</font>
+<br><font color="#008000"><a href="https://web.archive.org/web/20030725183321/http://www.alliance.unm.edu/documentation/PGI" target="new">pgcc</a></font></td>
+
+<td ALIGN=CENTER WIDTH="85"><font color="#008000">g++</font>
+<br><font color="#008000"><a href="https://web.archive.org/web/20030725183321/http://www.alliance.unm.edu/documentation/PGI" target="new">pgCC</a></font></td>
+
+<td ALIGN=CENTER WIDTH="85"><font color="#008000">g77</font>
+<br><font color="#008000"><a href="https://web.archive.org/web/20030725183321/http://www.alliance.unm.edu/documentation/PGI" target="new">pgf77</a></font></td>
+
+<td ALIGN=CENTER WIDTH="86"><font color="#008000"><a href="https://web.archive.org/web/20030725183321/http://www.alliance.unm.edu/documentation/VAST/vastf90.pdf" target="new">f90</a></font>
+<br><font color="#008000"><a href="https://web.archive.org/web/20030725183321/http://www.alliance.unm.edu/documentation/PGI" target="new">pgf90</a></font>
+<br><font color="#008000">f95</font></td>
+
+<td ALIGN=CENTER WIDTH="166"><font color="#008000"><a href="https://web.archive.org/web/20030725183321/http://www.alliance.unm.edu/documentation/PGI" target="new">pghpf</a></font></td>
+</tr>
+</table></center>
+Included in the Portland Group suite are two useful programming tools.
+The source code debugger and performance profiler is documented in the
+on-line PGI manual.&nbsp;
+<center><table BORDER HEIGHT="73" >
+<tr>
+<td ALIGN=CENTER COLSPAN="2" WIDTH="422" HEIGHT="20"><a NAME="Programming Tools"></a><b>Programming
+Tools</b></td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER WIDTH="222" HEIGHT="19"><b>Source Code Debugger</b></td>
+
+<td ALIGN=CENTER WIDTH="200" HEIGHT="19"><b>Performance Profiler</b></td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER WIDTH="222" HEIGHT="16"><a href="https://web.archive.org/web/20030725183321/http://www.alliance.unm.edu/documentation/PGI" target="new">pgdbg</a></td>
+
+<td ALIGN=CENTER WIDTH="200" HEIGHT="16"><a href="https://web.archive.org/web/20030725183321/http://www.alliance.unm.edu/documentation/PGI" target="new">pgprof</a></td>
+</tr>
+</table></center>
+Compile scripts are available for compiling MPI code. These scripts automatically
+link in all MPI libraries and include files.&nbsp;
+<center><table BORDER >
+<tr>
+<td COLSPAN="4" WIDTH="80%"><a NAME="Message Passing"></a><b><font color="#000000">Compiling
+for MPI</font></b></td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER WIDTH="20%"><b>C</b></td>
+
+<td ALIGN=CENTER WIDTH="20%"><b>C++</b></td>
+
+<td ALIGN=CENTER WIDTH="20%"><b>Fortran77</b></td>
+
+<td ALIGN=CENTER WIDTH="20%"><b>Fortran90</b></td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER WIDTH="20%"><font face="Courier"><font color="#008000">mpicc</font></font></td>
+
+<td ALIGN=CENTER WIDTH="20%"><font face="Courier"><font color="#008000">mpiCC</font></font></td>
+
+<td ALIGN=CENTER WIDTH="20%"><font face="Courier"><font color="#008000">mpif77</font></font></td>
+
+<td ALIGN=CENTER WIDTH="20%"><font face="Courier"><font color="#008000">mpif90</font></font></td>
+</tr>
+</table></center>
+
+<center><table BORDER WIDTH="508" >
+<tr>
+<td COLSPAN="3" WIDTH="502"><a NAME="Mathematic and Scientific Libraries"></a><b>Mathematic
+and Scientific Libraries</b></td>
+</tr>
+
+<tr>
+<td COLSPAN="3" WIDTH="490"><b>Linear Algebra</b></td>
+</tr>
+
+<tr>
+<td WIDTH="47">&nbsp;</td>
+
+<td WIDTH="199">BLAS&nbsp;
+<br>(Basic Linear Algebra Subroutines)</td>
+
+<td WIDTH="244"><b>/usr/lib/libblas.a</b>
+<br><b>/usr/pgi/linux86/lib/libblas.a</b>*&nbsp;
+<br>* (for PGI compilers only)</td>
+</tr>
+
+<tr>
+<td WIDTH="47">&nbsp;</td>
+
+<td WIDTH="199">LAPACK</td>
+
+<td WIDTH="244"><b>/usr/lib/liblapack.a</b>
+<br><b>/usr/pgi/linux86/lib/liblapack.a</b>*&nbsp;
+<br>* (for PGI compilers only)</td>
+</tr>
+
+<tr>
+<td COLSPAN="3" WIDTH="490"><b>FFT</b></td>
+</tr>
+
+<tr>
+<td WIDTH="47">&nbsp;</td>
+
+<td WIDTH="199"><a href="https://web.archive.org/web/20030725183321/http://www.fftw.org/doc/" target="_blank">FFTW</a></td>
+
+<td WIDTH="244"><b>/usr/local/lib/libfftw_mpi.a</b>
+<br><b>/usr/local/lib/librfftw_mpi.a</b></td>
+</tr>
+</table></center>
+
+<center>&nbsp;</center>
+</td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER COLSPAN="2" BGCOLOR="#000000"></td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td BGCOLOR="#000000"></td>
+
+<td>
+<h3>
+Running Jobs</h3>
+
+<h4>
+<a NAME="Selecting MPI Libraries"></a>Selecting MPI Libraries</h4>
+There are four MPI libraries on the Black Bear Supercluster, two using
+Myrinet (for PGI and GNU compilers) and two using Ethernet (for PGI and
+GNU). Select a library by setting the MPIHOME environment variable. Refer
+to your .cshrc file for examples.&nbsp;
+<p>Use the "which" command to verify your compile library. For example:
+<p><font face="Courier"><font color="#008000">% source $HOME/BLACKBEAR/cshrc_bb</font></font>
+<p><font face="Courier"><font color="#008000">% which mpicc</font></font>
+<br><font face="Courier"><font color="#008000">/usr/parallel/mpich-eth.gnu/bin/mpicc</font></font>
+<br>shows that you are using Ethernet with GNU compilers. And,&nbsp;
+<p><font face="Courier"><font color="#008000">% which mpicc</font></font>
+<br><font face="Courier"><font color="#008000">/usr/parallel/mpich-gm.pgi/bin/mpicc</font></font>
+<br>shows that you are using Myrinet with PGI compilers.&nbsp;
+<h4>
+<a NAME="Compiling"></a>Compiling</h4>
+Compile and link C code with MPI libraries&nbsp;
+<br><font face="Courier"><font color="#008000">% mpicc -o exec [options]
+filename(s).c</font></font>
+<p>Compile and link C++ code with MPI libraries&nbsp;
+<br><font face="Courier"><font color="#008000">% mpiCC -o exec [options]
+filename(s).C</font></font>
+<p>Compile and link Fortran77 code with MPI libraries&nbsp;
+<br><font face="Courier"><font color="#008000">% mpif77 -o exec [options]
+filename(s).f</font></font>
+<p>Compile and link Fortran90 code with MPI libraries&nbsp;
+<br><font face="Courier"><font color="#008000">% mpif90 -o exec [options]
+filename(s).f90</font></font></td>
+</tr>
+
+<tr>
+<td BGCOLOR="#000000"></td>
+
+<td>
+<h4>
+<a NAME="Running MPI jobs"></a>Running MPI jobs</h4>
+MPI can only be run on the Black Bear compute nodes through PBS. You can
+use the "mpirun" script to run an MPI job. The script has the following
+syntax&nbsp;
+<blockquote>mpirun -np <i>n </i>-machinefile $PBS_NODESFILE <i>full_path</i>/<i>executable</i>
+<blockquote><b>-np <i>n</i></b>&nbsp; - Number of nodes to start program
+on&nbsp;
+<br><b><i>full_path</i>/<i>executable</i></b>&nbsp; - Executable including
+full path name</blockquote>
+</blockquote>
+
+<h4>
+<a NAME="Using the Batch Scheduler"></a>Using the Batch Scheduler (PBS)</h4>
+Black Bear uses the Portable Batch System (PBS) to manage parallel job
+scheduling. Users can run batch or interactive jobs on the Black Bear Supercluster
+through PBS. Batch jobs are described in command files which are submitted
+to PBS for execution.&nbsp;
+<center><table BORDER=0 WIDTH="255" BGCOLOR="#C0C0C0" >
+<tr>
+<td ALIGN=CENTER COLSPAN="2" WIDTH="223">
+<h4>
+PBS Queue Limits</h4>
+</td>
+</tr>
+
+<tr>
+<td WIDTH="186">Maximum Job Length*:</td>
+
+<td WIDTH="61">6 hours</td>
+</tr>
+</table></center>
+<i>* Job length can be extended for special requests.</i>
+<br>
+      <i>Please contact <a href="mailto:help@hpcerc.unm.edu">help@hpcerc.unm.edu</a></i> 
+      <h4>
+PBS Command Files</h4>
+The PBS job command file defines the number of nodes you are requesting
+and contains the shell commands you wish to be executed. One or two processes
+per node can be started. Some samples are listed below for a job to run
+the executable <b><i>complete_path/test_prog</i> </b>on <b><i>N</i></b>
+nodes&nbsp;
+<br>(for a user using a (t)csh style shell):&nbsp;
+<blockquote><b>For Myrinet jobs (one process per node)</b>
+<pre>#PBS -l nodes=<i>N
+</i># source to get environment variables
+# cshrc_bb - for (t)csh users
+# bashrc_bb - for (ba)(k)sh users&nbsp;
+# uncomment the proper line based on your shell
+source $HOME/BLACKBEAR/cshrc_bb
+#. $HOME/BLACKBEAR/bashrc_bb
+gmpiconf $PBS_NODEFILE
+mpirun -np N -machinefile $PBS_NODEFILE &lt;full path to your executable&gt;</pre>
+For MPI jobs to run using Myrinet, the "gmpiconf" command must be used
+to create a configuration file ($HOME/.gmpi/conf). To run two processes
+per node, use the <b>gmpiconf2</b> command and double the number of processes
+(-np <i>2*n</i>) for the mpirun command as shown below:&nbsp;
+<p><b>For Myrinet jobs (two processes per node)</b>
+<pre>gmpiconf2 $PBS_NODEFILE
+mpirun -np <i>2*N</i> -machinefile $PBS_NODEFILE <i>complete_path/test_prog</i></pre>
+<b>For Ethernet jobs (one process per node)</b>
+<pre>mpirun -np <i>N</i> -machinefile $PBS_NODEFILE <i>complete_path/test_prog</i></pre>
+<b>For Ethernet jobs (two processes per node)</b>
+<pre>#PBS -l nodes=<i>N
+</i>mpirun -np <i>2*N</i> -machinefile $PBS_NODEFILE <i>complete_path/test_prog</i></pre>
+</blockquote>
+The "#PBS -l nodes=<i>N</i>" line defines how many nodes are being requested.
+The PBS environment variables which are used in the script above are defined
+below. These variables are set when PBS allocates nodes for a user.&nbsp;
+<blockquote>Example script (sample.cmd): 32-node Myrinet using two processes
+per node:&nbsp;
+<br>#PBS -l nodes=16
+<br># source to get environment variables
+<br># cshrc_bb - for (t)csh users
+<br># bashrc_bb - for (ba)(k)sh users&nbsp;
+<br># uncomment the proper line based on your shell
+<br>source $HOME/BLACKBEAR/cshrc_bb
+<br>#. $HOME/BLACKBEAR/bashrc_bb
+<br><b><font color="#804040">gmpiconf2 $PBS_NODEFILE</font></b>
+<br>mpirun <b>-np 32</b> /home/cashmont/test.exe
+<p><b>PBS Environment Variables</b></blockquote>
+
+<blockquote>
+<ul>
+<li>
+<b>PBS_O_WORKDIR</b> - user's current directory when "qsub" command was
+issued</li>
+
+<li>
+<b>PBS_NODEFILE</b> - file containing the list of nodes the user was allocated</li>
+</ul>
+</blockquote>
+<a NAME="Submiting jobs to PBS"></a><b>Submiting jobs to PBS</b>
+<br><font face="Courier"><font color="#008000">qsub [flags] (script_name)&nbsp;</font></font>
+<blockquote>Submit a batch job listed in scriptname.pbs file&nbsp;
+<br><font face="Courier"><font color="#008000">qsub scriptname.pbs&nbsp;</font></font></blockquote>
+<b>Displaying the queue contents and status&nbsp;</b>
+<br><font face="Courier"><font color="#008000">qstat [flags]</font></font>
+<blockquote>i.e., <font face="Courier"><font color="#008000">qstat -s </font></font>(displays
+status and elapsed time of job)&nbsp;
+<pre><font size=-1><font color="#800080">Job ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Username Queue&nbsp;&nbsp;&nbsp; Jobname&nbsp;&nbsp;&nbsp; SessID NDS TSK Memory Time&nbsp; S Time
+</font><font color="#008000">--------------- -------- -------- ---------- ------ --- --- ------ ----- - -----
+2534.bb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nestor12 rr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STDIN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 23483&nbsp; 16&nbsp; --&nbsp;&nbsp;&nbsp; --&nbsp; 06:00 R 01:04
+&nbsp;&nbsp; Job started on Fri Jul 09 at 15:53
+2554.bb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; corona&nbsp;&nbsp; rr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STDIN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 19704&nbsp;&nbsp; 2&nbsp; --&nbsp;&nbsp;&nbsp; --&nbsp; 06:00 R 00:44
+&nbsp;&nbsp; Job started on Fri Jul 09 at 16:14
+2557.bb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; corona&nbsp;&nbsp; rr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STDIN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 22012&nbsp;&nbsp; 2&nbsp; --&nbsp;&nbsp;&nbsp; --&nbsp; 06:00 R 00:42
+&nbsp;&nbsp; Job started on Fri Jul 09 at 16:15
+2559.bb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nestor12 rr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; alltoall.p&nbsp;&nbsp;&nbsp; --&nbsp;&nbsp; 64&nbsp; --&nbsp;&nbsp;&nbsp; --&nbsp; 06:00 Q&nbsp;&nbsp; --
+&nbsp;&nbsp; Not Running: Not enough of the right type of nodes are available
+2560.bb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nestor12 rr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; alltoall12&nbsp;&nbsp;&nbsp; --&nbsp;&nbsp; 64&nbsp; --&nbsp;&nbsp;&nbsp; --&nbsp; 06:00 Q&nbsp;&nbsp; --
+&nbsp;&nbsp; Not Running: Not enough of the right type of nodes are available</font></font></pre>
+
+<ul>
+<li>
+<b>Job ID: </b>ID for users' job in queue</li>
+
+<li>
+<b>Username:</b> job owner</li>
+
+<li>
+<b>Jobname:</b> name of script submitted to PBS or STDIN if user is in
+an interactive session</li>
+
+<li>
+<b>NDS:</b> number of nodes allocated</li>
+
+<li>
+<b>Time:</b> maximum wall clock run time&nbsp;</li>
+
+<li>
+<b>S (State): </b>R - Running; Q - Waiting in queue; E - Job is in error
+state</li>
+
+<li>
+<b>Time (last column):</b> job's elapsed time</li>
+</ul>
+</blockquote>
+<b>Remove job from queue</b>
+<br><font face="Courier"><font color="#008000">qdel (job_id)</font></font>
+<p>where job_id can be obtained from the queue listing using "qstat".&nbsp;
+<h4>
+<b>Output and Error files</b></h4>
+Standard error and output are contained in two files with the names:&nbsp;
+<blockquote>
+<pre><font color="#008000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i>Jobname</i>.<b>e</b><i>Job_ID
+</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i>Jobname</i>.<b>o</b><i>Job_ID</i></font></pre>
+</blockquote>
+using the Jobname and Job_ID from your job in the queue.&nbsp;
+<h4>
+<a NAME="Running Interactive Jobs"></a>Running Interactive Jobs</h4>
+You can initiate an interactive session on Black Bear nodes through PBS.
+This is the only case where a user has direct access to a compute node.&nbsp;
+<p>Initiate an interactive session using <b><i>n</i></b> nodes&nbsp;
+<br><font face="Courier"><font color="#008000">qsub -I -l nodes=n</font></font>
+<p>Once an interactive session is granted, you are placed in your home
+directory on one of the nodes you were allocated. Execute the code as described
+in MPIRUN section.</td>
+</tr>
+
+<tr>
+<td COLSPAN="2" BGCOLOR="#000000"></td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td BGCOLOR="#000000"></td>
+
+<td><a NAME="Storage"></a>
+<h3>
+Storage</h3>
+Approximately 3 GB of scratch space is available on each Black Bear compute
+node in<i> <b>/scratch</b></i>.&nbsp;
+<br><b><i>/scratch is for TEMPORARY storage only - All files in /scratch
+will be deleted when the job has finished</i></b></td>
+</tr>
+
+<tr>
+<td COLSPAN="2" BGCOLOR="#000000"></td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+
+<td>&nbsp;</td>
+</tr>
+</table>
+
+<p>
+<center>
+    <i><font size=-2></font></i>
+</center>
+
+
+bsp;&nbsp; 19704&nbsp;&nbsp; 2&nbsp; --&nbsp;&nbsp;&nbsp; --&nbsp; 06:00 R 00:44
+&nbsp;&nbsp; Job started on Fri Jul 09 at 16:14
+2557.bb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; corona&nbsp;&nbsp; rr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STDIN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 22012&nbsp;&nbsp; 2&nbsp; --&nbsp;&nbsp;&nbsp; --&nbsp; 06:00 R 00:42
+&nbsp;&nbsp; Job started on Fri Jul 09 at 16:15
+2559.bb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nestor12 rr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; alltoall.p&nbsp;&nbsp;&nbsp; --&nbsp;&nbsp; 64&nbsp; --&nbsp;&nbsp;&nbsp; --&nbsp; 06:00 Q&nbsp;&nbsp; --
+&nbsp;&nbsp; Not Running: Not enough of the right type of nodes are available
+2560.bb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nestor12 rr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; alltoall12&nbsp;&nbsp;&nbsp; --&nbsp;&nbsp; 64&nbsp; --&nbsp;&nbsp;&nbsp; --&nbsp; 06:00 Q&nbsp;&nbsp; --
+&nbsp;&nbsp; Not Running: Not enough of the right type of nodes are available
+
+<ul>
+<li>
+<b>Job ID: </b>ID for users' job in queue</li>
+
+<li>
+<b>Username:</b> job owner</li>
+
+<li>
+<b>Jobname:</b> name of script submitted to PBS or STDIN if user is in
+an interactive session</li>
+
+<li>
+<b>NDS:</b> number of nodes allocated</li>
+
+<li>
+<b>Time:</b> maximum wall clock run time&nbsp;</li>
+
+<li>
+<b>S (State): </b>R - Running; Q - Waiting in queue; E - Job is in error
+state</li>
+
+<li>
+<b>Time (last column):</b> job's elapsed time</li>
+</ul>
+
+<b>Remove job from queue</b>
+<br><font face="Courier"><font color="#008000">qdel (job_id)</font></font>
+<p>where job_id can be obtained from the queue listing using "qstat".&nbsp;
+<h4>
+<b>Output and Error files</b></h4>
+Standard error and output are contained in two files with the names:&nbsp;
+<blockquote>
+<pre><font color="#008000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i>Jobname</i>.<b>e</b><i>Job_ID
+</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i>Jobname</i>.<b>o</b><i>Job_ID</i></font></pre>
+</blockquote>
+using the Jobname and Job_ID from your job in the queue.&nbsp;
+<h4>
+<a NAME="Running Interactive Jobs"></a>Running Interactive Jobs</h4>
+You can initiate an interactive session on Black Bear nodes through PBS.
+This is the only case where a user has direct access to a compute node.&nbsp;
+<p>Initiate an interactive session using <b><i>n</i></b> nodes&nbsp;
+<br><font face="Courier"><font color="#008000">qsub -I -l nodes=n</font></font>
+<p>Once an interactive session is granted, you are placed in your home
+directory on one of the nodes you were allocated. Execute the code as described
+in MPIRUN section.
+
+
+<tr>
+<td COLSPAN="2" BGCOLOR="#000000"></td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td BGCOLOR="#000000"></td>
+
+<td><a NAME="Storage"></a>
+<h3>
+Storage</h3>
+Approximately 3 GB of scratch space is available on each Black Bear compute
+node in<i> <b>/scratch</b></i>.&nbsp;
+<br>
+  </td>
+</tr>
+<center>
+</center>
+
+</body>
+
+</html>

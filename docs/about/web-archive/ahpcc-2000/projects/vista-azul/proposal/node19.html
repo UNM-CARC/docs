@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p1 release (March 2nd, 1998)
+originally by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>The Interaction Between Computational Techniques And Physics Applications</TITLE>
+<META NAME="description" CONTENT="The Interaction Between Computational Techniques And Physics Applications">
+<META NAME="keywords" CONTENT="nprop">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="https://web.archive.org/web/20010222152547cs_/http://ahpcc.unm.edu/projects/vista-azul/proposal/nprop.css">
+<LINK REL="previous" HREF="node18.html">
+<LINK REL="up" HREF="node14.html">
+<LINK REL="next" HREF="node20.html">
+</HEAD>
+<BODY >
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">ahpcc.unm.edu/projects/vista-azul/proposal/node19.html</code> as captured by the Internet Archive on 22 February 2001. Links to pages that were not saved here go to the Wayback Machine. Icons the Internet Archive did not save were redrawn for this copy and are not originals (hover over one to see). <a style="color:#0b5cad" href="https://web.archive.org/web/20010222152547/http://www.ahpcc.unm.edu:80/projects/vista-azul/proposal/node19.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../../">Web archive index</a></div>
+
+<!--Navigation Panel-->
+<A NAME="tex2html246"
+ HREF="node20.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="next (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/next_motif.gif" title="Modern recreation, not an archived original"></A> 
+<A NAME="tex2html244"
+ HREF="node14.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="up (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/up_motif.gif" title="Modern recreation, not an archived original"></A> 
+<A NAME="tex2html240"
+ HREF="node18.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="previous (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/previous_motif.gif" title="Modern recreation, not an archived original"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html247"
+ HREF="node20.html">Supplementing and Complementing IBM's</A>
+<B> Up:</B> <A NAME="tex2html245"
+ HREF="node14.html">Scientific Applications Research</A>
+<B> Previous:</B> <A NAME="tex2html241"
+ HREF="node18.html">Computational Astrophysics</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00033500000000000000">
+The Interaction Between Computational Techniques And Physics Applications</A>
+</H3>
+
+<P>
+The awarded machine architecture and visualization hardware will
+provide an exceptional computational environment for addressing and
+potentially solving several important and outstanding problems in
+materials physics theory and simulation.  These include:
+
+<P>
+<DL COMPACT>
+<DT>1.
+<DD><B>Hybrid Programming Models.</B>
+We are currently engaged in research in the design and optimzation of
+hybrid (MPI/shared memory) programming models for application to
+several parallel materials physics codes developed in our group.
+These codes are used for large-scale calculations on metallic defects,
+and include VERNET, a solid state density functional electronic
+structure code, and pdQ, a molecular dynamics code designed
+specifically for materials science applications.  pdQ supports novel
+atomistic interaction potentials developed in collaboration with
+S. M. Valone (Los Alamos National Laboratory).  Under a SUR grant to
+UNM, we will work on extending these codes from Fortran90/MPI to a
+hybrid programming model (F90/MPI/pthreads, OpenMP), suitable for
+transparent execution on either the Power3 SMP SP or Netfinity architectures.
+The goal will be to extend the codes to make optimal use of the new
+architectures with their distinct memory hierarchies, while preserving
+portability and the ability for users to flexibly modify code physics
+as needed, without having to worry about the details of the underlying
+parallelism.
+<P>
+<DT>2.
+<DD><B>Materials Physics Applications.</B>
+The hybrid programming-model-enabled versions of VERNET and pdQ will
+be applied to ongoing fundamental research problems in our group on
+defect interactions and dynamics in metallic (Al, Cu) ultra
+large-scale integration (ULSI) interconnects.  These problems are of
+applied interest within the context of materials reliability in
+microelecronics, an area in which IBM has made pioneering
+technological contributions.  Benchmarking and production calculations
+will be performed on the SP SMP and Netfinity clusters, and compared to
+results on the MHPCC SP-2 and UNM Roadrunner architectures.
+
+<P>
+<DT>3.
+<DD><B>Large Data Set Visualization as an Algorithm Development Tool.</B>
+A continuing challenge in performing accurate electronic structure
+calculations with unit cells containing hundreds of atoms is the
+ability to understand and control the self-consistent convergence of
+the thousands of orbitals (electronic wavefunctions) that determine
+the electron density and ultimately all the properties of the
+material.  The evolution of the convergence is encoded within GB of
+data that characterize the orbitals via basis set expansion
+coefficients, and the convergence process is governed by complex
+nonlinearities.  The availability of the SGE framebuffer with its
+tight integration into the Netfinity cluster and Power3 SMP SP compute engines
+will enable us to investigate the novel use of visualization of large
+data sets as a tool for understanding and controlling the convergence
+process.  Typically, the aggregate of wavefunction data is simply
+reduced to a single scalar field (the electron density) for analysis
+purposes, and a vast amount of valuable data is simply discarded.  The
+specialized hardware of the SUR machine will allow us to capture,
+visualize, and analyze this 'lost' data, and hopefully enable us to
+optimize and accelerate the underlying self-consistency algorithm by
+utilizing visual clues from the evolution of individual orbitals.
+
+<P>
+<DT>4.
+<DD><B>Interactive Visualization of Optimized Effective Potentials and  Electron Densities.</B>
+We are developing non-traditional (orbital-dependent, nonlocal) energy
+density functionals for application to complex bonding environments in
+chemical and materials physics.  These functionals require an
+additional layer of self-consistency within the standard convergence
+loop to numerically compute the functional derivative of the
+orbital-dependent density functional exchange-correlation energy.  The
+SGE framebuffer will allow us to apply interactive visualization to
+explore and tune alternative optimization algorithms and their effect
+on the joint convergence of the density and potential fields.  This is
+a very active area of interest in the electronic structure community
+and has the potential to significantly impact the manner in which
+first-principles calculations are performed.
+</DL>
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html246"
+ HREF="node20.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="next (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/next_motif.gif" title="Modern recreation, not an archived original"></A> 
+<A NAME="tex2html244"
+ HREF="node14.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="up (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/up_motif.gif" title="Modern recreation, not an archived original"></A> 
+<A NAME="tex2html240"
+ HREF="node18.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="previous (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/previous_motif.gif" title="Modern recreation, not an archived original"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html247"
+ HREF="node20.html">Supplementing and Complementing IBM's</A>
+<B> Up:</B> <A NAME="tex2html245"
+ HREF="node14.html">Scientific Applications Research</A>
+<B> Previous:</B> <A NAME="tex2html241"
+ HREF="node18.html">Computational Astrophysics</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I>Bob Ballance</I>
+<BR><I>1999-12-07</I>
+</ADDRESS>
+</BODY>
+</HTML>

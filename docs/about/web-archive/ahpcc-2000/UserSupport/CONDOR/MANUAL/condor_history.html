@@ -1,0 +1,204 @@
+<LINK REL="stylesheet" TYPE="text/css" HREF="https://web.archive.org/web/20010303121356cs_/http://ahpcc.unm.edu/ahpcc.css">
+<LINK REL="stylesheet" TYPE="text/css" HREF="https://web.archive.org/web/20010303121356cs_/http://ahpcc.unm.edu/ahpcc.css">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p1 release (March 2nd, 1998)
+originally by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>condor_history</TITLE>
+<META NAME="description" CONTENT="condor_history">
+<META NAME="keywords" CONTENT="ref">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="https://web.archive.org/web/20010303121356cs_/http://ahpcc.unm.edu/UserSupport/CONDOR/MANUAL/ref.css">
+<LINK REL="next" HREF="https://web.archive.org/web/20010303121356/http://ahpcc.unm.edu/UserSupport/CONDOR/MANUAL/condor_hold.html">
+<LINK REL="previous" HREF="https://web.archive.org/web/20010303121356/http://ahpcc.unm.edu/UserSupport/CONDOR/MANUAL/condor_config_val.html">
+<LINK REL="up" HREF="https://web.archive.org/web/20010303121356/http://ahpcc.unm.edu/UserSupport/CONDOR/MANUAL/5_Command_Reference.html">
+<LINK REL="next" HREF="https://web.archive.org/web/20010303121356/http://ahpcc.unm.edu/UserSupport/CONDOR/MANUAL/condor_hold.html">
+</HEAD>
+<BODY  BGCOLOR=#FFFFFF >
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">ahpcc.unm.edu/UserSupport/CONDOR/MANUAL/condor_history.html</code> as captured by the Internet Archive on 3 March 2001. Links to pages that were not saved here go to the Wayback Machine. Icons the Internet Archive did not save were redrawn for this copy and are not originals (hover over one to see). Grey boxes mark images that were never archived. <a style="color:#0b5cad" href="https://web.archive.org/web/20010303121356/http://www.ahpcc.unm.edu:80/UserSupport/CONDOR/MANUAL/condor_history.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../../">Web archive index</a></div>
+
+<!--Navigation Panel-->
+<A NAME="tex2html1133"
+ HREF="https://web.archive.org/web/20010303121356/http://ahpcc.unm.edu/UserSupport/CONDOR/MANUAL/condor_hold.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="next (modern recreation, not an archived original)" SRC="../../../_img/standin/next_motif.gif" title="Modern recreation, not an archived original"></A> 
+<A NAME="tex2html1129"
+ HREF="https://web.archive.org/web/20010303121356/http://ahpcc.unm.edu/UserSupport/CONDOR/MANUAL/5_Command_Reference.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="up (modern recreation, not an archived original)" SRC="../../../_img/standin/up_motif.gif" title="Modern recreation, not an archived original"></A> 
+<A NAME="tex2html1123"
+ HREF="https://web.archive.org/web/20010303121356/http://ahpcc.unm.edu/UserSupport/CONDOR/MANUAL/condor_config_val.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="previous (modern recreation, not an archived original)" SRC="../../../_img/standin/previous_motif.gif" title="Modern recreation, not an archived original"></A> 
+<A NAME="tex2html1131"
+ HREF="https://web.archive.org/web/20010303121356/http://ahpcc.unm.edu/UserSupport/CONDOR/MANUAL/Contents.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="contents (image not archived)" SRC="../../../_img/standin/_not-archived.gif" title="Image not archived"></A> 
+<A NAME="tex2html1132"
+ HREF="https://web.archive.org/web/20010303121356/http://ahpcc.unm.edu/UserSupport/CONDOR/MANUAL/Index.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="index (image not archived)" SRC="../../../_img/standin/_not-archived.gif" title="Image not archived"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1134"
+ HREF="https://web.archive.org/web/20010303121356/http://ahpcc.unm.edu/UserSupport/CONDOR/MANUAL/condor_hold.html">condor_hold</A>
+<B> Up:</B> <A NAME="tex2html1130"
+ HREF="https://web.archive.org/web/20010303121356/http://ahpcc.unm.edu/UserSupport/CONDOR/MANUAL/5_Command_Reference.html">5. Command Reference Manual</A>
+<B> Previous:</B> <A NAME="tex2html1124"
+ HREF="https://web.archive.org/web/20010303121356/http://ahpcc.unm.edu/UserSupport/CONDOR/MANUAL/condor_config_val.html">condor_config_val</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><strong>Subsections</strong></A>
+<UL>
+<LI><A NAME="tex2html1135"
+ HREF="condor_history.html#SECTION00641000000000000000">Synopsis</A>
+<LI><A NAME="tex2html1136"
+ HREF="condor_history.html#SECTION00642000000000000000">Description</A>
+<LI><A NAME="tex2html1137"
+ HREF="condor_history.html#SECTION00643000000000000000">Options</A>
+<LI><A NAME="tex2html1138"
+ HREF="condor_history.html#SECTION00644000000000000000">Author</A>
+<LI><A NAME="tex2html1139"
+ HREF="condor_history.html#SECTION00645000000000000000">Copyright</A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+
+<H1><A NAME="SECTION00640000000000000000">&#160;</A><A NAME="man-condor-history">&#160;</A>
+<BR>
+<I>condor_history</I>
+</H1> View log of condor jobs completed to date
+
+<H2><A NAME="SECTION00641000000000000000">
+Synopsis</A>
+</H2><B><I>condor_history</I></B>
+[<B>-help</B>] [<B>-l</B>] [<B>-f  </B><I>filename</I>]
+[<I>-constraint expr | cluster | cluster.process | owner</I>]
+
+<P>
+
+<H2><A NAME="SECTION00642000000000000000">
+Description</A>
+</H2>
+<I>condor_history</I> displays a summary of all condor jobs listed in the
+specified history files.  If no history files are specified (with the <B>-f</B> option), the local
+history file as specified in Condor's configuration file
+(&nbsp;condor/spool/history by default) is read.  The default listing
+summarizes each job on a single line, and  contains the following items:
+
+<P>
+<A NAME="10088">&#160;</A>
+<A NAME="10089">&#160;</A>
+
+<P>
+<DL>
+<DT><STRONG>ID</STRONG>
+<DD>The cluster/process id of the condor job. 
+<DT><STRONG>OWNER</STRONG>
+<DD>The owner of the job. 
+<DT><STRONG>SUBMITTED</STRONG>
+<DD>The month, day, hour, and minute the job was submitted to the queue. 
+<DT><STRONG>CPU_USAGE</STRONG>
+<DD>Remote CPU time accumulated by the job to date in days, hours, minutes, and seconds.
+<DT><STRONG>ST</STRONG>
+<DD>Completion status of the job (C = completed and X = removed).
+<DT><STRONG>COMPLETED</STRONG>
+<DD>The time the job was completed.
+<DT><STRONG>PRI</STRONG>
+<DD>User specified priority of the job, ranges from -20 to +20, with higher numbers corresponding to greater priority. 
+<DT><STRONG>SIZE</STRONG>
+<DD>The virtual image size of the executable in megabytes. 
+<DT><STRONG>CMD</STRONG>
+<DD>The name of the executable. 
+</DL>
+<P>
+If a job ID (in the form of cluster_id or cluster_id.proc_id) or an
+owner is provided, output will be restricted to jobs with the
+specified IDs and/or submitted by the specified owner.  
+The -constraint option can be used to display jobs that satisfy a
+specified boolean expression.
+
+<P>
+
+<H2><A NAME="SECTION00643000000000000000">
+Options</A>
+</H2>
+Supported options are as follows:
+
+<P>
+<DL>
+<DT><STRONG><B>-help</B></STRONG>
+<DD>Get a brief description of the supported options
+<BR>
+<DT><STRONG><B>-f </B><I>filename</I></STRONG>
+<DD>Use the specified file instead of the default history file
+<BR>
+    <DT><STRONG><B>-constraint </B><I>expr</I></STRONG>
+<DD>Display jobs that satisfy the expression
+<BR>
+    <DT><STRONG><B>-l</B></STRONG>
+<DD>Display job ads in long format
+<BR></DL>
+<P>
+
+<P>
+
+<H2><A NAME="SECTION00644000000000000000">
+Author</A>
+</H2> Condor Team, University of Wisconsin-Madison
+
+<H2><A NAME="SECTION00645000000000000000">
+Copyright</A>
+</H2> Copyright &#169; 1990-1999 Condor Team, Computer Sciences Department, 
+  University of Wisconsin-Madison, Madison, WI.  All Rights Reserved.  
+  No use of the Condor Software Program is authorized 
+  without the express consent of the Condor Team.  For more information 
+  contact: Condor Team, Attention: Professor Miron Livny, 
+  7367 Computer Sciences, 1210 W. Dayton St., Madison, WI 53706-1685, 
+  (608) 262-0856 or miron@cs.wisc.edu.
+ 
+  U.S. Government Rights Restrictions: Use, duplication, or disclosure 
+  by the U.S. Government is subject to restrictions as set forth in 
+  subparagraph (c)(1)(ii) of The Rights in Technical Data and Computer 
+  Software clause at DFARS 252.227-7013 or subparagraphs (c)(1) and 
+  (2) of Commercial Computer Software-Restricted Rights at 48 CFR 
+  52.227-19, as applicable, Condor Team, Attention: Professor Miron 
+  Livny, 7367 Computer Sciences, 1210 W. Dayton St., Madison, 
+  WI 53706-1685, (608) 262-0856 or miron@cs.wisc.edu. 
+
+<P>
+See the <EM>Condor Version 6.1.7 Manual</EM> for
+  additional notices.  
+
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html1133"
+ HREF="https://web.archive.org/web/20010303121356/http://ahpcc.unm.edu/UserSupport/CONDOR/MANUAL/condor_hold.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="next (modern recreation, not an archived original)" SRC="../../../_img/standin/next_motif.gif" title="Modern recreation, not an archived original"></A> 
+<A NAME="tex2html1129"
+ HREF="https://web.archive.org/web/20010303121356/http://ahpcc.unm.edu/UserSupport/CONDOR/MANUAL/5_Command_Reference.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="up (modern recreation, not an archived original)" SRC="../../../_img/standin/up_motif.gif" title="Modern recreation, not an archived original"></A> 
+<A NAME="tex2html1123"
+ HREF="https://web.archive.org/web/20010303121356/http://ahpcc.unm.edu/UserSupport/CONDOR/MANUAL/condor_config_val.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="previous (modern recreation, not an archived original)" SRC="../../../_img/standin/previous_motif.gif" title="Modern recreation, not an archived original"></A> 
+<A NAME="tex2html1131"
+ HREF="https://web.archive.org/web/20010303121356/http://ahpcc.unm.edu/UserSupport/CONDOR/MANUAL/Contents.html">
+<IMG WIDTH="65" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="contents (image not archived)" SRC="../../../_img/standin/_not-archived.gif" title="Image not archived"></A> 
+<A NAME="tex2html1132"
+ HREF="https://web.archive.org/web/20010303121356/http://ahpcc.unm.edu/UserSupport/CONDOR/MANUAL/Index.html">
+<IMG WIDTH="43" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="index (image not archived)" SRC="../../../_img/standin/_not-archived.gif" title="Image not archived"></A> 
+<BR>
+<B> Next:</B> <A NAME="tex2html1134"
+ HREF="https://web.archive.org/web/20010303121356/http://ahpcc.unm.edu/UserSupport/CONDOR/MANUAL/condor_hold.html">condor_hold</A>
+<B> Up:</B> <A NAME="tex2html1130"
+ HREF="https://web.archive.org/web/20010303121356/http://ahpcc.unm.edu/UserSupport/CONDOR/MANUAL/5_Command_Reference.html">5. Command Reference Manual</A>
+<B> Previous:</B> <A NAME="tex2html1124"
+ HREF="https://web.archive.org/web/20010303121356/http://ahpcc.unm.edu/UserSupport/CONDOR/MANUAL/condor_config_val.html">condor_config_val</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+condor-admin@cs.wisc.edu
+</ADDRESS>
+</BODY>
+</HTML>

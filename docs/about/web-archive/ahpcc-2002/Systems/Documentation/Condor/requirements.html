@@ -1,0 +1,326 @@
+<html><!-- #BeginTemplate "/Templates/Computing_Systems_Template.dwt" -->
+<head>
+<!-- #BeginEditable "doctitle" --> <!-- #EndEditable --> 
+<style type="text/css">
+<!--
+-->
+</style>
+<title>AHPCC Computing Systems</title>
+<link rel="stylesheet" href="https://web.archive.org/web/20020722131558cs_/http://ahpcc.unm.edu/Classes/AHPCC.css">
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+       <!--
+
+          NS4 = (document.layers);
+          IE4 = (document.all);
+         ver4 = (NS4 || IE4);   
+        isMac = (navigator.appVersion.indexOf("Mac") != -1);
+       isMenu = (NS4 || (IE4 && !isMac));
+
+       function popUp(){return};
+       function popDown(){return};
+
+       if (!ver4) event = null;
+
+       //-->
+       </SCRIPT>
+<SCRIPT LANGUAGE="JavaScript1.2" TYPE="text/javascript">
+       <!--
+
+       if (isMenu) {
+           menuVersion = 3;
+           
+           menuWidth = 150;
+           childOverlap = 50;
+           childOffset = 5;
+           perCentOver = null;
+           secondsVisible = .5;
+           
+           fntCol = "white";
+           fntSiz = "8";
+           fntBold = true;
+           fntItal = false;
+           fntFam = "Arial,Geneva,sans-serif";
+           
+           backCol = "#4a0239";
+           overCol = "#eaae69";
+           overFnt = "black";
+           
+           borWid = 1;
+           borCol = "white";
+           borSty = "solid";
+           itemPad = 3;
+           
+           imgSrc = "http://www.dhtmlab.com/hiermenus/tri.gif";
+           imgSiz = 10;
+           
+           separator = 1;
+           separatorCol = "white";
+           
+           isFrames = false;      // <-- IMPORTANT for full window
+           navFrLoc = "left";     // <-- display. see below
+           
+           keepHilite = true; 
+           NSfontOver = true;
+           clickStart = false;
+           clickKill = false;
+       }
+
+       //-->
+       </SCRIPT>
+<SCRIPT LANGUAGE="JavaScript1.2" TYPE="text/javascript">
+       <!--
+       if (isMenu) {
+       document.write("<SCRIPT LANGUAGE='JavaScript1.2' SRC="https://web.archive.org/web/20020722131558js_/http://ahpcc.unm.edu/JS/Computing_Systems_Menu.js"><\/SCRIPT>");
+       }
+       //-->
+       </SCRIPT>
+<SCRIPT LANGUAGE="JavaScript1.2" TYPE="text/javascript">
+       <!--
+       if (isMenu) {
+       document.write("<SCRIPT LANGUAGE='JavaScript1.2' SRC="https://web.archive.org/web/20020722131558js_/http://ahpcc.unm.edu/JS/hierMenus.js"><\/SCRIPT>");
+       }
+       //-->
+       </SCRIPT>
+<meta name="AHPCC Computing Systems high performance computing HPC" content="AHPCC Computing Systems">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#660066" vlink="#000000" alink="#CC6633" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">ahpcc.unm.edu/Systems/Documentation/Condor/requirements.html</code> as captured by the Internet Archive on 22 July 2002. Links to pages that were not saved here go to the Wayback Machine. <a style="color:#0b5cad" href="https://web.archive.org/web/20020722131558/http://www.ahpcc.unm.edu:80/Systems/Documentation/Condor/requirements.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../../">Web archive index</a></div>
+
+<table width="660" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td colspan="5" align="right"> <img src="../../../_img/Images/Header.jpg" width="660" height="81"><br>
+      <a href="../../../index.html" onMouseOver="popUp('elMenu1',event)"
+          onMouseOut="popDown('elMenu1')"><img src="../../../_img/Images/Tabs/Tab_AHPCC.jpg" width="61" height="25" border="0"></a><a href="../../../../ahpcc-2000/Systems/index.html" onMouseOver="popUp('elMenu2',event)"
+          onMouseOut="popDown('elMenu2')"><img src="../../../_img/Images/Tabs/Tab_Computing_Systems.jpg" width="130" height="25" border="0"></a><a href="https://web.archive.org/web/20020722131558/http://ahpcc.unm.edu/Knowledge/index.html" onMouseOver="popUp('elMenu3',event)"
+          onMouseOut="popDown('elMenu3')"><img src="../../../_img/Images/Tabs/Tab_Knowledge_Community.jpg" width="147" height="25" border="0"></a><a href="https://web.archive.org/web/20020722131558/http://ahpcc.unm.edu/Research" onMouseOver="popUp('elMenu4',event)"
+          onMouseOut="popDown('elMenu4')" ><img src="../../../_img/Images/Tabs/Tab_Research_Activities.jpg" width="125" height="25" border="0"></a><a href="../../../index.html"><img src="../../../_img/Images/Tabs/Tab_Search.jpg" width="60" height="25" border="0"></a> 
+    </td>
+  </tr>
+</table>
+<table width="660" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td rowspan="11" height="275" valign="top" align="left"> 
+      <table width="132" border="1" cellspacing="0" cellpadding="0" align="left">
+        <tr> 
+          <td width="132" height="23"><a href="../LinuxSupercluster/RefCard/index.html"><font size="-1"><b>Linux 
+            Supercluster Reference Card</b></font></a> </td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="../../../NewsPress/index.html">News</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="../../../../ahpcc-2000/Systems/Allocations/index.html">Accounts-Allocations</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="../../Hardware/index.html">All 
+            Machines</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="../../../../ahpcc-2000/Systems/help/index.html">Help 
+            Desk</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="../../../../ahpcc-2000/Systems/Documentation/index.html">Documentation</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="https://web.archive.org/web/20020722131558/http://ahpcc.unm.edu/EducationTraining/">Training</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="https://web.archive.org/web/20020722131558/http://ahpcc.unm.edu/Research/">Research</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font size="-1"><a href="../../Downloads/index.html">Downloads</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font size="-2"><a href="mailto:research@ahpcc.unm.edu,systems@ahpcc.unm.edu,staff@ahpcc.unm.edu"><font size="-1">Ask 
+            Users</font></a></font></td>
+        </tr>
+      </table>
+    </td>
+    <td width="528" rowspan="11" valign="top"><!-- #BeginEditable "Main" --> 
+      <H1 align="center"><font size="4">Submitting Jobs with Requirements and 
+        Rank</font></H1>
+      <HR NOSHADE>
+      <p> In this section we will learn how to leverage the flexibility of the 
+        ClassAd mechanism to attach sophisticated requirements and preferences 
+        to jobs so that they find the "best possible machine" to run on. 
+      <p> In this examples section, we will express constraints that users generally 
+        desire to give a flavor of Condor's mechanisms. However, keep in mind 
+        that Condor's flexibility lies in the fact that ClassAds can contain arbitrary 
+        expressions: feel free to be creative and try out expressions of your 
+        own! 
+      <HR NOSHADE>
+      <P>First, change into a directory where we will build and link a job for 
+        Condor that we will use in all the following examples: 
+      <PRE>
+% cd ~/examples/requirements/common
+</PRE>
+      <P>Now, let us compile the loop.C program and link it for Condor: 
+      <PRE>
+% condor_compile g++ loop.C -o loop.remote
+</PRE>
+      <P>Now we can look at some specific examples. 
+      <HR NOSHADE>
+      <h3>Job 1: Explicitly choosing machines to run on</h3>
+      <P>First, change into a directory with an example job: 
+      <PRE>
+% cd ~/examples/requirements/example1
+</PRE>
+      <p> We will now place some constraints on where the job will run. Users 
+        sometimes want their jobs to only run on specific machines that they choose. 
+        Assume that you want your job to run only on your neighbors' machines. 
+      <p> Load the submit command file <tt>example1.cmd</tt> into your favorite 
+        editor. 
+      <PRE>
+% emacs example1.cmd
+</PRE>
+      or 
+      <PRE>
+% pico example1.cmd
+</PRE>
+      or 
+      <PRE>
+% vi example1.cmd
+</PRE>
+      <P>You will see the following <tt>Requirements</tt> expression: 
+      <PRE>
+Requirements =  Name=="machine_LL.ahpcc.unm.edu" || \
+                Name=="machine_RR.ahpcc.unm.edu"
+</PRE>
+      <P>(Use <tt>condor_status</tt> to determine the format of the names and 
+        the names of the machines available in the current cluster.) 
+      <P>Edit the <tt>Requirements</tt> line and change <tt>machine_LL</tt> and 
+        <tt>machine_RR</tt> to the machine names of your left and right neighbors. 
+      <p> Now submit <tt>example1</tt> by typing: 
+      <pre>
+% condor_submit example1.cmd
+</pre>
+      <p> You can view the ClassAd of the submitted job by typing (it will be 
+        at the end of the output because the ClassAd you want to see is the ClassAd 
+        of the last job submitted) 
+      <pre>
+% condor_q -long
+</pre>
+      Find out where your job is running by typing 
+      <pre>
+% condor_status -run
+</pre>
+      and viewing the entry where your username is listed as the <tt>RemoteUser</tt> 
+      of a machine. 
+      <HR NOSHADE>
+      <h3>Example 2: Qualitatively choosing machines</h3>
+      <P>First, change into a directory with an example job: 
+      <PRE>
+% cd ~/examples/requirements/example2
+</PRE>
+      <P> In this exercise, we will choose machines to run on not by their names, 
+        but by their attributes. 
+      <p>View the contents of the <tt>example2a</tt> submit command file. 
+      <PRE>
+% cat example2a.cmd
+</PRE>
+      <P> The requirements expression asks for any machine with more than 32Mb 
+        of physical memory and more than 100 Mb of virtual memory. Notice that 
+        (RAM) memory is measured in megabytes and virtual memory is measured in 
+        kilobytes. 
+      <P>Submit this example by typing: 
+      <pre>
+% condor_submit example2a.cmd
+</pre>
+      <P>You can find the machine your job runs on by typing: 
+      <pre>
+% condor_status -run
+</pre>
+      If you find that your job is running on machine_XX, type 
+      <pre>
+% condor_status -long machine_XX
+</pre>
+      and view the ClassAd of machine_XX to verify that it does indeed satisfy 
+      the job's constraints. 
+      <p>Similarly, <tt>example2b</tt> (in the same directory), asks for machines 
+        which have a certain MIPS (Million Instructions Per Second) and KFLOPS 
+        (Kilo Floating point Operations Per Second) rating. Feel free to edit 
+        the command file and edit the expression to include other criteria, and 
+        submit it by typing: 
+      <pre>
+% condor_submit example2b.cmd
+</pre>
+      If you'd like, use <tt>condor_status</tt> to find the machine your job is 
+      running on and view the ClassAd of the machine. 
+      <HR NOSHADE>
+      <h3>Example 3: Weighted preferences</h3>
+      <P>First, change into a directory with an example job: 
+      <PRE>
+% cd ~/examples/requirements/example3
+</PRE>
+      The flexibility of the <tt>Rank</tt> mechanism allows submitters to specify 
+      arbitrary values over machines. For example, they can place weights on machine 
+      attributes as in <tt>example3</tt>. Let us look at the submit file: 
+      <PRE>
+% cat example3.cmd
+</PRE>
+      <P>Notice the Rank expression: 
+      <pre>
+Rank = ( Memory>=32 ) * \
+       ( 10*Mips + 2*KFlops + 100*Memory + 8*VirtualMemory )
+</pre>
+      The <tt>Rank</tt> expression states that all machines will less than 32 
+      Mb of memory are weighted equally (at zero), and machines with 32 Mb or 
+      more memory are weighted according to their Mips, KFlops, Memory and VirtualMemory. 
+      <p>Submit this example by typing: 
+      <pre>
+% condor_submit example3.cmd
+</pre>
+      and find the machine which is running your job with: 
+      <pre>
+% condor_status -run
+</pre>
+      <HR NOSHADE>
+      <P>That's it, we're done! 
+       
+                
+      <p><a href="../../../../ahpcc-2000/Systems/Documentation/Condor/index.html"><font size="-2">Condor 
+        Scheduling</font></a><br>
+                  <font size="-2"><a href="https://web.archive.org/web/20020722131558/http://maui-scheduler.mhpcc.edu/new_doc/">Maui 
+                  Scheduling</a><br>
+                  </font><font size="-2"><a href="https://web.archive.org/web/20020722131558/http://www.cs.wisc.edu/condor">Condor 
+                  @ U of Wisconsin</a></font></p>
+                <!-- #EndEditable --></td>
+  </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> 
+    <td colspan="2" valign="top"><font size="1" face="Arial, Helvetica, sans-serif"><img src="../../../_img/Images/Footer.jpg" width="660" height="72" usemap="#Map2" border="0"><map name="Map2"><area shape="rect" coords="573,45,650,61" href="mailto:webmaster@ahpcc.unm.edu"><area shape="rect" coords="496,13,562,60" href="https://web.archive.org/web/20020722131558/http://www.unm.edu/"></map></font></td>
+  </tr>
+  <tr> 
+    <td colspan="2" valign="top"> 
+      <div align="left"> 
+        <table width="660" border="0" cellspacing="0" cellpadding="0">
+          <tr> 
+            <td width="268"><font size="1" face="Arial, Helvetica, sans-serif">The 
+              University of New Mexico<br>
+              <b>Albuquerque High Performance Computing Center</b><br>
+              Galles Building - 1601 Central Avenue, NE<br>
+              Albuquerque, NM 87131<map name="Map"><area shape="RECT" coords="497,11,561,62" href="https://web.archive.org/web/20020722131558/http://www.unm.edu" alt="UNM" title="UNM"></map><br>
+              Phone # 505.277.8249<font color="#FFFFFF">000000</font>Fax # 505.277.8235</font></td>
+            <td width="392" valign="top"> 
+              <div align="right"><font size="1">Last Modified: December 1, 2000</font></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </td>
+  </tr>
+</table>
+</body>
+
+<!-- #EndTemplate --></html>

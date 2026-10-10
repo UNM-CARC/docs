@@ -1,0 +1,292 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p1 release (March 2nd, 1998)
+originally by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Development and Investigation of an Interoperable, Hybrid Technology System for
+Local/Remote Scientific and Visual Computing
+An Award From IBM's Shared University Research (SUR) Program</TITLE>
+<META NAME="description" CONTENT="Development and Investigation of an Interoperable, Hybrid Technology System for
+Local/Remote Scientific and Visual Computing
+An Award From IBM's Shared University Research (SUR) Program">
+<META NAME="keywords" CONTENT="nprop">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="https://web.archive.org/web/20010213223155cs_/http://ahpcc.unm.edu/projects/vista-azul/proposal/nprop.css">
+<LINK REL="next" HREF="node1.html">
+</HEAD>
+<BODY >
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">ahpcc.unm.edu/projects/vista-azul/proposal/index.html</code> as captured by the Internet Archive on 13 February 2001. Links to pages that were not saved here go to the Wayback Machine. Icons the Internet Archive did not save were redrawn for this copy and are not originals (hover over one to see). <a style="color:#0b5cad" href="https://web.archive.org/web/20010213223155/http://www.ahpcc.unm.edu:80/projects/vista-azul/proposal/index.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../../">Web archive index</a></div>
+
+<!--Navigation Panel-->
+<A NAME="tex2html2"
+ HREF="node1.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="next (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/next_motif.gif" title="Modern recreation, not an archived original"></A> 
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="up (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/up_motif_gr.gif" title="Modern recreation, not an archived original"> 
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="previous (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/previous_motif_gr.gif" title="Modern recreation, not an archived original">   
+<BR>
+<B> Next:</B> <A NAME="tex2html3"
+ HREF="node1.html">Introduction</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<H1 ALIGN="CENTER">Development and Investigation of an Interoperable,
+ Hybrid Technology System for
+<BR>
+Local/Remote Scientific and Visual Computing
+<BR>
+<FONT SIZE="+1">An Award From IBM's Shared University Research (SUR) Program</FONT></H1>
+<P ALIGN="CENTER"><STRONG>The University Of New Mexico
+<BR>
+Principal Investigators
+<BR>
+Susan R. Atlas, AHPCC and Physics &amp; Astronomy
+<BR>
+David A. Bader, Electrical &amp; Computer Engineering
+<BR>
+Robert A. Ballance, AHPCC<A NAME="tex2html1"
+ HREF="footnode.html#foot81"><SUP>1</SUP></A>, AHPCC and Computer Science
+<BR>
+Thomas P. Caudell, Electrical &amp; Computer Engineering
+<BR>
+Brian T. Smith, AHPCC and Computer Science
+<BR>
+John S. Sobolewski, CIRT, AHPCC, and Electrical &amp; Computer Engineering
+<BR>
+Co-Investigators
+<BR>
+Paul Alsing, AHPCC and Physics &amp; Astronomy
+<BR>
+John Barnes, AHPCC
+<BR>
+John Greenfield, AHPCC and Electrical &amp; Computer Engineering
+<BR>
+Marc Ingber, Mechanical Engineering
+<BR>
+Steve Karwoski, MHPCC
+<BR>
+Patricia Kovatch, AHPCC
+<BR>
+Arthur B. Maccabe, Computer Science
+<BR>
+Mitch Murphy, MHPCC
+<BR>
+Andy Pineda, AHPCC
+<BR>
+Ken Summers, AHPCC and Computer Science
+</STRONG></P>
+<P ALIGN="CENTER"><STRONG>December 1, 1999</STRONG></P>
+<P ALIGN="LEFT"></P>
+
+<P>
+<BLOCKQUOTE>
+This document represents a research statement of the planned work for an IBM
+for a SUR award to
+investigate, evaluate, and enhance the interoperability of hybrid
+computational and visualization platforms while exploring both
+numerically and data intensive operations. The hybrid platforms will
+combine IBM hardware with open operating systems (Linux-based
+systems) to provide a unique research environment.
+The research environment is based on two major
+IBM computing platforms: a Power3 SP (Winterhawk-II nodes) supporting an IBM Scalable
+Graphics Engine; and a Netfinity cluster with two high performance
+interconnections among the nodes, to the SP2, and to one of UNM's
+production Linux SuperCluster machines.  The accompanying research
+includes active collaboration with members of IBM's research
+laboratories and concentrates on the integrated interoperability and
+performance of the two platforms to perform scientific computation and
+visualization, emphasizing applications with large computational, visualization, or data management aspects. 
+
+<P>
+The award is given to the High-Performance Computing,
+Education, and Research Center (HPCERC) of the University of New
+Mexico.  The Albuquerque High Performance Computing Center (AHPCC)
+and the Maui High-Performance Computing Center (MHPCC) are both
+centers of HPCERC.
+
+<P>
+This project seeks to develop and investigate a multi-technology environment
+that is hybrid in its networking, storage, operating systems, programming and
+computing platforms, and seeks to address issues of interoperability so as to
+create a productive environment for scientific and visual computing.  The
+overall project objective is to integrate heterogeneous information systems
+into a workable solution that may usefully be replicated at other IBM science
+and technology sites and to potentially identify new commercial opportunities
+for the comprising IBM hardware and software.  It is anticipated that the
+resulting composite of public domain software, commercial software, commodity
+hardware, and high-end, specialized hardware would become a leading center for
+the investigation of hybrid technologies to solve a wide array of computational
+science applications, which would serve to highlight IBM's diverse product
+technologies working seamlessly and effectively and strengthen IBM's perceived
+commitment to friendly engagement with open standards and public domain systems.
+To this end, UNM researchers, in collaboration with researchers at Sandia
+National Laboratory, Los Alamos National Laboratory and IBM Research, plan to
+develop and port a number of computational applications to this computing
+environment and to investigate real scientific problems in areas which include
+the biophysics of protein folding, the quantum mechanics of materials
+engineering, the dynamics of atom-ion collisions, the physics of multiphase
+flows, and the data mining and optimization of workloads in high performance
+computing.   The UNM team further seeks to investigate the problem of
+concurrent, distributed visualization of data intensive applications using IBM
+hardware, including the Scalable Graphics Engine(SGE), an IBM Research prototype
+technology.  Results from this investigation should prove invaluable to other
+IBM high technology customers, especially those concerned with nuclear energy
+and defense.  UNM also plans to connect this composite technology to one of its
+existing Linux Superclusters or to the RoadRunner Linux Supercluster -
+a shared resource on the National
+Computational Grid - to demonstrate complete interoperability in Next
+Generation Internet applications such as portal-based supercomputing, remote
+graphics delivery and rendering, and Internet multicasting for scientific
+collaboration.  Using software developed for the SGE and hardware/software
+currently used by UNM for connectivity to the National Computational Science
+Alliance (NCSA) Access Grid, high resolution graphical data would be shared in
+real-time with other scientific institutions throughout the country.  In short,
+the planned hybrid environment would function to prototype an
+integrated "spectrum of services", ranging from relatively few local clients
+to potentially numerous web-connected systems that would highlight the
+use of clusters supporting and working in concert with the IBM SP and its
+attached graphics and storage systems.
+
+<P>
+The system will evolve in stages as determined by product
+availability.
+
+<P>
+PHASE 1: This phase would involve the construction of a 32 processor Gigabit
+Ethernet Linux Cluster using PCI based adapters.
+This phase would seek to study processor and network performance,
+interoperability with the Linux Supercluster machines via an SP Switch Router,
+and would initiate a comparison study of distributed visualization using
+software rendering versus hardware accelerated rendering.
+
+<P>
+PHASE 2: This phase commences with the installation of an SP Winterhawk-II
+system and attachment of SGEs to the Trailblazer switch
+at both MHPCC and AHPCC.  At this point, issues such as workload
+characterization, scheduling, remote access, hybrid programming, and parallel
+I/O performance would be investigated.  Scientific applications would be ported
+to exploit the mixed-mode parallelism and the capability for doing large-scale
+computation and concurrent,  immersive visualization to steer and track,  using
+both the SGE and the cluster,  would be developed.
+
+<P>
+PHASE 3: Finally, the entire system would be migrated, as much as possible,
+toward complete MPI interoperability through switch-attached interconnection and
+the HPGN.  Issues such as remote visualization, web-based access and
+applications,  would round out this technically challenging award.
+
+<P>
+</BLOCKQUOTE>
+
+<P>
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS">&#160;</A>
+<UL>
+<LI><A NAME="tex2html4"
+ HREF="node1.html">Introduction</A>
+<LI><A NAME="tex2html5"
+ HREF="node2.html">Planned Systems</A>
+<LI><A NAME="tex2html6"
+ HREF="node3.html">Planned Research And Development</A>
+<UL>
+<LI><A NAME="tex2html7"
+ HREF="node4.html">Network, Hybrid Programming, and Visualization</A>
+<UL>
+<LI><A NAME="tex2html8"
+ HREF="node5.html">Network Research</A>
+<LI><A NAME="tex2html9"
+ HREF="node6.html">Hybrid High-Performance Computing Using Clusters of SMP nodes</A>
+<LI><A NAME="tex2html10"
+ HREF="node7.html">Visualization Research</A>
+<LI><A NAME="tex2html11"
+ HREF="node8.html">Proposal To NSF CISE ACR On Visualization And Advanced Data Management</A>
+</UL>
+<LI><A NAME="tex2html12"
+ HREF="node9.html">Data Intensive Applications Research</A>
+<UL>
+<LI><A NAME="tex2html13"
+ HREF="node10.html">Goals And Objectives</A>
+<LI><A NAME="tex2html14"
+ HREF="node11.html">I/O Workload Characteristics</A>
+<LI><A NAME="tex2html15"
+ HREF="node12.html">I/O Performance</A>
+<LI><A NAME="tex2html16"
+ HREF="node13.html">Data Mining Primitives</A>
+</UL>
+<LI><A NAME="tex2html17"
+ HREF="node14.html">Scientific Applications Research</A>
+<UL>
+<LI><A NAME="tex2html18"
+ HREF="node15.html">Computational Chemistry</A>
+<LI><A NAME="tex2html19"
+ HREF="node16.html">Computational Biophysics</A>
+<LI><A NAME="tex2html20"
+ HREF="node17.html">Computational Atomic Physics</A>
+<LI><A NAME="tex2html21"
+ HREF="node18.html">Computational Astrophysics</A>
+<LI><A NAME="tex2html22"
+ HREF="node19.html">The Interaction Between Computational Techniques And Physics Applications</A>
+</UL>
+</UL>
+<LI><A NAME="tex2html23"
+ HREF="node20.html">Supplementing and Complementing IBM's Research Interests</A>
+<UL>
+<LI><A NAME="tex2html24"
+ HREF="node21.html">Computing in a Heterogenous Cluster Environment</A>
+<LI><A NAME="tex2html25"
+ HREF="node22.html">Visualization</A>
+<LI><A NAME="tex2html26"
+ HREF="node23.html">Support for large data set mining and manipulation</A>
+<LI><A NAME="tex2html27"
+ HREF="node24.html">Cluster interconnection and architecture</A>
+</UL>
+<LI><A NAME="tex2html28"
+ HREF="node25.html">Summary Of IBM Equipment Requested</A>
+<UL>
+<LI><A NAME="tex2html29"
+ HREF="node26.html">Netfinity Commodity Cluster, 4Q 1999</A>
+<LI><A NAME="tex2html30"
+ HREF="node27.html">SP Winterhawk-II Cluster, 2Q 2000</A>
+<LI><A NAME="tex2html31"
+ HREF="node28.html">Final configuration, 3Q 2000</A>
+</UL>
+<LI><A NAME="tex2html32"
+ HREF="node29.html">Summary Of IBM Provided Software</A>
+<LI><A NAME="tex2html33"
+ HREF="node30.html">Software Provided by UNM</A>
+<LI><A NAME="tex2html34"
+ HREF="node31.html">Planned Software And Tools To Be Developed</A>
+<LI><A NAME="tex2html35"
+ HREF="node32.html">UNM Participants And Responsibilities</A>
+<LI><A NAME="tex2html36"
+ HREF="node33.html">About this document ... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html2"
+ HREF="node1.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="next (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/next_motif.gif" title="Modern recreation, not an archived original"></A> 
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="up (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/up_motif_gr.gif" title="Modern recreation, not an archived original"> 
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="previous (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/previous_motif_gr.gif" title="Modern recreation, not an archived original">   
+<BR>
+<B> Next:</B> <A NAME="tex2html3"
+ HREF="node1.html">Introduction</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I>Bob Ballance</I>
+<BR><I>1999-12-07</I>
+</ADDRESS>
+</BODY>
+</HTML>

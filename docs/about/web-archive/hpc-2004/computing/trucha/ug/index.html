@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>UNM-HPCERC: Trucha Cluster User Guide</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF">
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">hpc.unm.edu/computing/trucha/ug/index.html</code> as captured by the Internet Archive on 9 September 2003. Links to pages that were not saved here go to the Wayback Machine. <a style="color:#0b5cad" href="https://web.archive.org/web/20030909014522/http://www.hpc.unm.edu:80/computing/trucha/ug/index.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../../">Web archive index</a></div>
+
+<p><b><font size="+2">Running Parallel Programs on Truchas Cluster</font></b></p>
+<p> 
+<hr id="HRRule2" width=100% align=LEFT size=2>
+&nbsp; 
+<p></p>
+<ol>
+  <li><b><a href="#compilation">Compilation</a></b></li>
+  <li><b><a href="#execution">Execution</a></b></li>
+  <li><b><a href="#example">Example</a></b></li>
+</ol>
+<p> 
+<hr id="HRRule4" width=100% align=LEFT size=2>
+&nbsp; 
+<p></p>
+<p><b><font color="#800000" size="+2"><a name="compilation"></a>Compilation</font></b></p>
+<p><b> <font color="#800000" size="+2"></font></b>To compile and link your MPI 
+  code in one step, use the appropriate&nbsp; command from the following:</p>
+<p><font face="Courier New,Courier">mpif77 -i mpich -c ch_p4 -- -o <i>&lt;progname&gt; 
+  &lt;filename&gt;.f</i></font></p>
+<p> <font face="Courier New,Courier">mpif90 -i mpich -c ch_p4 -- -o <i>&lt;progname&gt; 
+  &lt;filename&gt;.f90</i></font></p>
+<p> <font face="Courier New,Courier">mpicc -i mpich -c ch_p4 -- -o <i>&lt;progname&gt; 
+  &lt;filename&gt;.f</i></font></p>
+<p> <font face="Courier New,Courier">mpiCC -i mpich -c ch_p4 -- -o <i>&lt;progname&gt; 
+  &lt;filename&gt;.f</i></font></p>
+<p> <font face="Courier New,Courier">Arguments after the double dash are passed 
+  to gcc, g77, or f95&nbsp; directly and can be anything accepted by those compilers. 
+  The mpif90&nbsp; script compiles both FORTRAN 90 and FORTRAN 95 programs. </font></p>
+<p> 
+<hr id="HRRule6" width=100% align=LEFT size=2>
+<a name="execution"></a>&nbsp; 
+<p></p>
+<p><font face="Courier New,Courier"></font><font color="#800000" size="+2"><b>Execution</b></font></p>
+<p>Before running the program you must construct a process group file&nbsp; in 
+  the directory where your executable is. This file is called <i>&lt;progname&gt;.pg&nbsp; 
+  and should look something like this:</i></p>
+<p> <font face="Courier New,Courier">local 0</font></p>
+<p><font face="Courier New,Courier">trucha01 1 /complete/path/to/your/executable</font></p>
+<p><font face="Courier New,Courier">trucha02 1 /complete/path/to/your/executable</font></p>
+<p><font face="Courier New,Courier">trucha03 1 /complete/path/to/your/executable</font></p>
+<p>The first line specifies the number of processes on the local processor&nbsp; 
+  (in addition to the one that runs there by default). Each subsiquent&nbsp; line 
+  specifies the machines to use for the other processes, the&nbsp; number of processes 
+  on that processor, and the path to use to find&nbsp; the executable. It is advisable 
+  to use the ruptime command&nbsp; to choose the machines with the lightest load 
+  to use for your job.</p>
+<p><b>Note:</b> A similar file is constructed automatically by the&nbsp; mpirun 
+  script on the IBM machines; this isn't yet set up on the&nbsp; cluster.</p>
+<p>Now run the executable. MPICH uses secure shell to launch a copy&nbsp; on each 
+  machine listed in the .pg file.</p>
+<p> 
+<hr id="HRRule8" width=100% align=LEFT size=2>
+&nbsp;<a name="example"></a> 
+<p></p>
+<p><font color="#800000" size="+2"><b>Example</b></font></p>
+<p>Suppose that the program hello.c is in the directory /linux.</p>
+<p>Compile:</p>
+<p><font face="Courier New,Courier">mpicc -i mpich -c ch_p4 -- -o hello hello.c</font></p>
+<p>The file hello.pg:</p>
+<p><font face="Courier New,Courier">local 0</font></p>
+<p><font face="Courier New,Courier">trucha01 1 /linux/hello</font></p>
+<p><font face="Courier New,Courier">trucha02 1 /linux/hello</font></p>
+<p><font face="Courier New,Courier">truchag03 1 /linux/hello</font></p>
+<p>Run the program by typing &quot;hello&quot;</p>
+</body>
+</html>

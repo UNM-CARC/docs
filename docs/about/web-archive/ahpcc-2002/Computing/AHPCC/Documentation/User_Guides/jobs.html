@@ -1,0 +1,452 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 FINAL//EN">
+
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<TITLE>education</TITLE>
+<META NAME="Generator" CONTENT="NetObjects Fusion  3.0.1 for Windows">
+</HEAD>
+<BODY  BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#FF6666" TEXT="#000000" TOPMARGIN=0 LEFTMARGIN=0 MARGINWIDTH=0 MARGINHEIGHT=0>
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">ahpcc.unm.edu/Computing/AHPCC/Documentation/User_Guides/jobs.html</code> as captured by the Internet Archive on 20 November 2002. Links to pages that were not saved here go to the Wayback Machine. Icons the Internet Archive did not save were redrawn for this copy and are not originals (hover over one to see). Grey boxes mark images that were never archived. <a style="color:#0b5cad" href="https://web.archive.org/web/20021120061032/http://www.ahpcc.unm.edu:80/Computing/AHPCC/Documentation/User_Guides/jobs.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../../../">Web archive index</a></div>
+
+<table border=0 cellspacing=0 cellpadding=0 width=660>
+  <tr valign="top" align="left"> 
+    <td width=660 height =81><img id="VerticalBanner2" height=81 width=660 src="../../../../_img/standin/_not-archived.gif"  border=0  alt=" Access  (image not archived)" title="Image not archived"></td>
+  </tr>
+  <tr valign="top" align="left"> 
+    <td width=660 height =20> 
+      <table id="NavigationBar2" border=0 cellspacing=0 cellpadding=0  width=660 >
+        <tr valign="top" align="left"> 
+          <td width=110><a href="../../../../index.html"><img id="NavigationButton1137" height=20 width=110 src="../../../../_img/standin/home_tab.gif"  border=0  alt=" Home  (modern recreation, not an archived original)" title="Modern recreation, not an archived original"></a></td>
+          <td width=110><a href="https://web.archive.org/web/20021120061032/http://ahpcc.unm.edu/Intranet/intranet.html"><img id="NavigationButton1138" height=20 width=110 src="../../../../_img/Images/Intranet_tab.gif"  border=0  alt=" Inside Us " ></a></td>
+          <td width=110><a href="../../../computing.html"><img id="NavigationButton1139" height=20 width=110 src="../../../../_img/standin/computing_tab_hi.gif"  border=0  alt=" Computing  (modern recreation, not an archived original)" title="Modern recreation, not an archived original"></a></td>
+          <td width=110><a href="https://web.archive.org/web/20021120061032/http://ahpcc.unm.edu/Research/index.html"><img id="NavigationButton1140" height=20 width=110 src="../../../../_img/Images/Research_tab_2.gif"  border=0  alt=" Research " ></a></td>
+          <td width=110><a href="https://web.archive.org/web/20021120061032/http://ahpcc.unm.edu/Education/education.html"><img id="NavigationButton1141" height=20 width=110 src="../../../../_img/Images/Education_tab.gif"  border=0  alt=" Education " ></a></td>
+          <td width=110 height=20><a href="https://web.archive.org/web/20021120061032/http://ahpcc.unm.edu/SiteMap/sitemap.html"><img id="NavigationButton1142" height=20 width=110 src="../../../../_img/Images/SiteMap_tab_2.gif"  border=0  alt=" SiteMap " ></a></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=657 height="22">
+  <tr valign="top" align="left"> 
+    <td width=666 height =27>&nbsp; </td>
+  </tr>
+</TABLE>
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=660>
+  <TR VALIGN="top" ALIGN="left"> 
+    <TD></TD>
+    <TD WIDTH=655> <!--  MAIN BODY ENDS #include virtual="Standards/FooterAHPCC.html"  --> 
+      <p><a name="33"></a> <b><font size="+3">Running Jobs on LosLobos </font></b> 
+      <ol type="1">
+        <b><font size="+3"></font></b> 
+        <li><a href="jobs.html">Overview</a></li>
+        <li><a href="#2">Interactive jobs</a></li>
+        <ol type="1">
+          <li><a href="#21">Overview</a></li>
+          <li><a href="#22">Requesting nodes for interactive jobs</a></li>
+          <li><a href="#23">Running Myrinet interactive jobs</a></li>
+          <li><a href="#24">Running Ethernet interactive jobs</a></li>
+        </ol>
+        <li><a href="#3">Batch jobs</a></li>
+        <ol type="1">
+          <li><a href="#31">Using PBS scripts to submit your job</a></li>
+          <li><a href="#32">Monitoring your job</a></li>
+          <li><a href="#33">Monitoring the queue</a></li>
+          <li><a href="#34">Removing your job from the queue</a></li>
+        </ol>
+      </ol>
+      <p> 
+      <hr id="HRRule7" width=100% align=CENTER size=2>
+      <b><font size="+2">1.0 Overview </font></b> 
+      <p></p>
+      <p><b><font size="+2"></font></b>The LosLobos Linux Supercluster runs the 
+        <a href="https://web.archive.org/web/20021120061032/http://www.openpbs.org/">Portable Batch System (PBS)</a> as a 
+        resource manager and a batch scheduler.</p>
+      <p><a name="2"></a><b><font size="+2">2.0 Interactive jobs</font></b></p>
+      <p> <b><font size="+2"><a name="21"></a></font><font size="+1">2.1 Overview</font></b></p>
+      <p><b> <font size="+1"></font></b>The interactive or login nodes are not 
+        actually part of the compute cluster. Please do <b>not</b> try to run 
+        your executable on the login nodes. </p>
+      <p>You run your executable interactively by first requesting interactive 
+        access to a compute cluster node. Your request for interactive access 
+        to a node or nodes will be scheduled and you will be automatically connected 
+        to one of the nodes when your request is processed. Once you are connected 
+        to one of the compute nodes you may run your job as detailed below.</p>
+      <p><a name="22"></a><b><font size="+1">2.2 Requesting nodes for interactive 
+        jobs</font></b></p>
+      <p>To request <i>n</i> nodes for your interactive job enter:</p>
+      <p> <font face="Courier New, Courier, mono">$ <font color="#0000FF"><b><font color="#000000">qsub 
+        </font></b><font color="#000000"><b>–I –l </b></font></font></font><font color="#000000" face="Courier New, Courier, mono"><b>nodes=</b><i><i>n</i></i></font><font face="Courier New, Courier, mono"><i><br>
+        </i></font></p>
+      <p><i> <font face="Courier New,Courier"></font></i>The default time limit 
+        for interactive jobs is 15 minutes. To increase the time limit for your 
+        interactive job use the <font face="Courier New,Courier"><b>walltime</b></font> 
+        argument:</p>
+      <p><font face="Courier New, Courier, mono">$ </font><font color="#0000FF" face="Courier New, Courier, mono"><b><font color="#000000">qsub 
+        </font></b><font color="#000000"><b>–I –l</b></font></font><font color="#000000" face="Courier New, Courier, mono"><b> 
+        nodes=</b><i>n</i><b>,walltime=</b><i>hh:mm:ss</i></font><i><font face="Courier New,Courier"><br>
+        &nbsp;</font></i></p>
+      <p><i> <font face="Courier New,Courier"></font></i>where <font face="Courier New,Courier"><i>hh</i></font> 
+        is hours, <font face="Courier New,Courier"><i>mm</i></font> is minutes, 
+        and <font face="Courier New,Courier"><i>ss</i></font> is seconds. For 
+        example</p>
+      <p><br>
+        <font face="Courier New,Courier">$ <b>qsub -I -l nodes=</b></font><i><font face="Courier New,Courier">2,walltime=1:00:00 
+        <br>
+        &nbsp;</font></i></p>
+      <p><i> <font face="Courier New,Courier"></font></i>will request two nodes 
+        for one hour of interactive use.</p>
+      <p>You will be notified that your interactive job request has been submitted 
+        and you will be asked to wait until the requested nodes have been allocated:</p>
+      <p><font size="2"><i><font face="Courier New, Courier, mono">$ qsub -I -l 
+        nodes=4,walltime=10:10:10<br>
+        qsub: waiting for job 251.ll03.alliance.unm.edu to start<br>
+        qsub: job 251.ll03.alliance.unm.edu ready</font></i></font></p>
+      <p><font face="Courier New, Courier, mono"><i><font size="2">LosLobos Portable 
+        Batch System<br>
+        Job Id: 251.ll03.alliance.unm.edu<br>
+        Username: janeuser</font></i></font></p>
+      <p><font face="Courier New, Courier, mono"><i><font size="2">[janeuser@l001 
+        ~]$</font></i></font></p>
+      <p><i> <font face="Courier New,Courier"></font></i>After a short time (depending 
+        on the number of nodes and the time requested) you will be connected or 
+        logged into one of the allocated nodes in the compute cluster. </p>
+      <p><a name="23"></a><b><font size="+1">2.3 Myrinet interactive jobs</font></b></p>
+      <p><b> <font size="+1"></font></b>To run your executable using the Myrinet 
+        communication protocol follow these steps: 
+      <ol type="1">
+        <li>To run your executable using <b>one</b> processor per node enter:<br>
+          <br>
+          <font face="Courier New, Courier, mono">$<b> gmpiconf </b><i>$PBS_NODEFILE<br>
+          </i> $ <b>mpirun </b><i>-np </i><i>n &lt;executable&gt;<executable> 
+          </i></font><i><executable><executable></i><br>
+          where n is the number of nodes you requested for your interactive job.<br>
+          <br>
+        </li>
+        <li><i> <font face="Courier New,Courier"></font></i>To run your executable 
+          using <b>two</b> processors per node enter<br>
+          <br>
+          <font face="Courier New,Courier">$ <b>gmpiconf2</b> </font><i><font face="Courier New,Courier">$PBS_NODEFILE<br>
+          </font></i><font face="Courier New,Courier">$ <b>mpirun</b> </font><i><font face="Courier New,Courier">-np 
+          2*n &lt;executable&gt;<br>
+          </font></i>where n is the number of nodes you requested for your interactive 
+          job.<br>
+          <br>
+        </li>
+        <li>When you are finished running your job interactively release the nodes:<br>
+          <font face="Courier New, Courier, mono"><br>
+          $ <b>exit</b></font><i><font face="Courier New,Courier"><br>
+          <br>
+          </font></i>You will be disconnected from the allocated compute node 
+          and connected again to the login node.</li>
+      </ol>
+      <p><a name="24"></a><b><font size="+1">2.4 Ethernet interactive jobs</font></b></p>
+      <p><b> <font size="+1"></font></b>To run your executable using the Ethernet 
+        communication protocol follow these steps: 
+      <ol type="1">
+        <li><font face="Courier New,Courier">To run your executable using one 
+          processor per node enter:</font><i><font face="Courier New,Courier"><br>
+          <br>
+          </font></i><font face="Courier New,Courier">$ <b>mpirun</b> <i>-machinefile 
+          $PBS_NODEFILE -np n</i> <executable></font><font face="Courier New, Courier, mono"><i>&lt;executable&gt;</i></font><i><font face="Courier New,Courier"></font></i><font face="Courier New,Courier"><br>
+          </font>where n is the number of nodes you requested for your interactive 
+          job.<i><font face="Courier New,Courier"><br>
+          &nbsp;</font></i></li>
+        <li><i> <font face="Courier New,Courier"></font></i>To run your executable 
+          using <b>two</b> processors per node enter:<br>
+          <font face="Courier New, Courier, mono"><br>
+          $ <b>mpirun </b></font><font face="Courier New,Courier"><i>-machinefile 
+          $PBS_NODEFILE </i></font><i><font face="Courier New, Courier, mono">-np 
+          2*n</font><font face="Courier New, Courier, mono"></font></i><font face="Courier New, Courier, mono"><i> 
+          &lt;executable&gt;</i></font><i><font face="Courier New,Courier"><br>
+          </font></i>where n is the number of nodes you requested for your interactive 
+          job. <br>
+          <br>
+        </li>
+        <li>When you are finished running your job interactively release the nodes:<br>
+          <br>
+          <font face="Courier New,Courier">$ <b>exit</b></font><i><font face="Courier New,Courier"><br>
+          &nbsp;</font></i></li>
+        <li><i> <font face="Courier New,Courier"></font></i>You will be disconnected 
+          from the allocated compute node and connected again to the login node.</li>
+      </ol>
+      <p><a href="jobs.html">back to Top</a></p>
+      <p><a name="3"></a><b><font size="+2">3.0 Batch jobs</font></b></p>
+      <p><i><font face="Courier New,Courier"><a name="31"></a></font><font size="+1"></font></i><font size="+1"><b>3.1 
+        Using PBS scripts to submit your job</b></font></p>
+      <p><font size="+1"> <b></b></font><a href="https://web.archive.org/web/20021120061032/http://www.openpbs.org/"><font size="+1"><b></b></font>Portable 
+        Batch System</a> (PBS).<br>
+        The qsub command is also used to submit batch jobs for non-interactive 
+        execution under the control of a batch script. Batch scripts include both 
+        qsub options and ordinary shell commands. Some qsub options are: 
+      <ul type="DISC">
+        <li> <font face="Courier New,Courier">-l</font> resource name=resource[,...]</li>
+        <li><font face="Courier New,Courier">-o</font> output filename</li>
+        <li><font face="Courier New,Courier">-e</font> error filename</li>
+        <li><font face="Courier New,Courier">-v</font> envname=value[,...]</li>
+        <li><font face="Courier New,Courier">-S</font> shell command</li>
+      </ul>
+      <p>The resource names supported using the '-l' option are 
+      <ul type="DISC">
+        <li> <font face="Courier New,Courier">nodes=</font>node number</li>
+        <li><font face="Courier New,Courier">walltime=</font>time in format days:hours:minutes:seconds</li>
+      </ul>
+      <p>Your PBS script should include lines that begin with "#PBS" followed 
+        by one or more qsub options.</p>
+      <p><b>Important</b>: If you are using the Myrinet protocol for message passing, 
+        your PBS script must execute the <font face="Courier New,Courier"><b>gmpiconf</b></font> 
+        (for one processor per node) command or the <font face="Courier New,Courier"> 
+        <b>gmpiconf2</b></font> (for two processors per node) command before running 
+        your job using <font face="Courier New,Courier"><b>mpirun</b></font>.</p>
+      <p>Below is an example PBS script for submitting jobs on LosLobos using 
+        the <font face="Courier New,Courier"><b>qsub </b></font>command:</p>
+      <p> <i><font face="Courier New,Courier" size="2"># sample PBS script for 
+        use with 'qsub' on LosLobos and RoadRunner <br>
+        #<br>
+        # supported options to PBS command 'qsub' include<br>
+        # -l resourcename=resource[,...]<br>
+        # -o output filename<br>
+        # -e error filename<br>
+        # -v envname=vale[,...]<br>
+        # -S shell command<br>
+        #<br>
+        # supported resourcenames include<br>
+        # nodes=number of nodes<br>
+        # walltime=time in days:hours:minutes:seconds<br>
+        #<br>
+        #PBS -l nodes=4,walltime=10:00:00 -e myerror -o myout<br>
+        gmpiconf2 $PBS_NODEFILE # use for Myrinet and 2 ppn<br>
+        #gmpiconf $PBS_NODEFILE # use for Myrinet and 1 ppn<br>
+        mpirun -np 8 ./a.out</font><font face="Courier New,Courier"></font></i></p>
+      <p> <b><font size="+2"><a name="32"></a></font><font size="+1">3.2 Monitoring 
+        your job</font></b></p>
+      <p><b> <font size="+1"></font></b>To monitor your job use the <font face="Courier New,Courier"><b><font face="Courier New, Courier, mono">qstat</font></b></font> 
+        command:</p>
+      <p> <font face="Courier New,Courier">$ <b>qstat</b> </font><i><font face="Courier New,Courier">&lt;jobID&gt;<br>
+        &nbsp;</font></i></p>
+      <p><i> <font face="Courier New,Courier"></font></i>where <font face="Courier New,Courier"><i>&lt;jobID&gt; 
+        </i></font>is the job ID for your job returned when you submitted the 
+        job. For example:<font face="Courier New, Courier, mono" size="2"><i> 
+        <br>
+        </i></font></p>
+      <table width="649" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td colspan="6"><font face="Courier New, Courier, mono" size="2"><i>[janeuser@ll03 
+            ~]$ qstat 225</i></font></td>
+        </tr>
+        <tr> 
+          <td width="97"><font face="Courier New, Courier, mono" size="2"><i>Job 
+            id</i></font></td>
+          <td width="142"><font face="Courier New, Courier, mono" size="2"><i>Name</i></font></td>
+          <td width="100"><font face="Courier New, Courier, mono" size="2"><i>User</i></font></td>
+          <td width="103"><font face="Courier New, Courier, mono" size="2"><i>Time 
+            Use</i></font></td>
+          <td width="18"><font face="Courier New, Courier, mono" size="2"><i>S</i></font></td>
+          <td width="189"><font face="Courier New, Courier, mono" size="2"><i>Queue</i></font></td>
+        </tr>
+        <tr> 
+          <td width="97">---------------</td>
+          <td width="142">---------------</td>
+          <td width="100">---------------</td>
+          <td width="103">---------------</td>
+          <td width="18">-</td>
+          <td width="189">---------------</td>
+        </tr>
+        <tr> 
+          <td width="97"><font face="Courier New, Courier, mono" size="2"><i>225.ll03</i></font></td>
+          <td width="142"><font face="Courier New, Courier, mono" size="2"><i><font face="Courier New,Courier"><font size="2">superscript.x.pbs</font></font></i></font></td>
+          <td width="100"><font face="Courier New, Courier, mono" size="2"><i>janeuser</i></font></td>
+          <td width="103"><font face="Courier New, Courier, mono" size="2"><i>37:39:28</i></font></td>
+          <td width="18"><font face="Courier New, Courier, mono" size="2"><i>R</i></font></td>
+          <td width="189"><font face="Courier New, Courier, mono" size="2"><i>ll-main</i></font></td>
+        </tr>
+        <tr> 
+          <td colspan="6"><font face="Courier New, Courier, mono" size="2"><i>[janeuser@ll03 
+            ~]$</i></font></td>
+        </tr>
+      </table>
+      <p>For more detailed information about your job use the '<b>-rn</b>' option 
+        to the <b><font face="Courier New, Courier, mono">qstat</font></b> command.</p>
+      <p>To list all jobs currently in the queue use the <b><font face="Courier New, Courier, mono">qstat</font></b> 
+        command with no job ID:</p>
+      <p><br>
+        <font face="Courier New,Courier">$ <b>qstat</b></font><i><font face="Courier New,Courier"><br>
+        </font></i></p>
+      <table width="649" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td width="108"><i><font face="Courier New,Courier"><font size="2">Job 
+            id</font></font></i></td>
+          <td width="158"><i><font face="Courier New,Courier"><font size="2">Name</font></font></i></td>
+          <td width="105"><i><font face="Courier New,Courier"><font size="2">User</font></font></i></td>
+          <td width="74"><i><font face="Courier New,Courier"><font size="2">Time 
+            Use</font></font></i></td>
+          <td width="17"><i><font face="Courier New,Courier"><font size="2">S</font></font></i></td>
+          <td width="187"><i><font face="Courier New,Courier"><font size="2">Queue</font></font></i></td>
+        </tr>
+        <tr> 
+          <td width="108">---------------</td>
+          <td width="158">---------------</td>
+          <td width="105">---------------</td>
+          <td width="74">--------</td>
+          <td width="17">-</td>
+          <td width="187">-----</td>
+        </tr>
+        <tr> 
+          <td width="108"><i><font face="Courier New,Courier"><font size="2">225.ll03</font></font></i></td>
+          <td width="158"><i><font size="2"><i><font face="Courier New,Courier">p7895ball</font></i></font><font face="Courier New,Courier"></font></i></td>
+          <td width="105"><i><font face="Courier New,Courier"><font size="2">jimuser</font></font></i></td>
+          <td width="74"><i><font face="Courier New,Courier"><font size="2">37:43:28</font></font></i></td>
+          <td width="17"><i><font face="Courier New,Courier"><font size="2">R</font></font></i></td>
+          <td width="187"><i><font face="Courier New,Courier"><font size="2">ll-main</font></font></i></td>
+        </tr>
+        <tr> 
+          <td width="108"><i><font face="Courier New,Courier"><font size="2">245.ll03</font></font></i></td>
+          <td width="158"><i><font face="Courier New,Courier"><font size="2">superscript2.x.pbs</font></font></i></td>
+          <td width="105"><i><font face="Courier New,Courier"><font size="2">johnuser</font></font></i></td>
+          <td width="74"><i><font face="Courier New,Courier"><font size="2">02:47:21</font></font></i></td>
+          <td width="17"><i><font face="Courier New,Courier"><font size="2">R</font></font></i></td>
+          <td width="187"><i><font face="Courier New,Courier"><font size="2">ll-main</font></font></i></td>
+        </tr>
+        <tr> 
+          <td width="108"><i><font face="Courier New,Courier"><font size="2">250.ll03</font></font></i></td>
+          <td width="158"><i><font face="Courier New,Courier"><font size="2">superscript.x.pbs</font></font></i></td>
+          <td width="105"><i><font face="Courier New,Courier"><font size="2">johnuser</font></font></i></td>
+          <td width="74"><i><font face="Courier New,Courier"><font size="2">00:31:48</font></font></i></td>
+          <td width="17"><i><font face="Courier New,Courier"><font size="2">R</font></font></i></td>
+          <td width="187"><i><font face="Courier New,Courier"><font size="2">ll-main</font></font></i></td>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+      <p><i> <font face="Courier New,Courier"><a name="33"></a></font><font size="+1"></font></i><font size="+1"><b>3.3 
+        Monitoring the queue</b></font></p>
+      <p>To see all currently active and idle jobs, use the <b>qstat</b> command:</p>
+      <p> <font face="Courier New,Courier">$ <b>qstat</b></font><i><font face="Courier New,Courier"><br>
+        <br>
+        </font></i></p>
+      <table width="649" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td colspan="6"><font size="2"><i><font face="Courier New,Courier">[janeuser@ll03 
+            ~]$ qstat</font></i></font></td>
+        </tr>
+        <tr> 
+          <td width="159"><font size="2"><i><font face="Courier New,Courier">Job 
+            id</font></i></font></td>
+          <td width="159"><font size="2"><i><font face="Courier New,Courier"> 
+            Name</font></i></font></td>
+          <td width="142"><font size="2"><i><font face="Courier New,Courier">User</font></i></font></td>
+          <td width="88"><font size="2"><i><font face="Courier New,Courier">Time 
+            Use</font></i></font></td>
+          <td width="17"><font size="2"><i><font face="Courier New,Courier">S</font></i></font></td>
+          <td width="84"><font size="2"><i><font face="Courier New,Courier">Queue</font></i></font></td>
+        </tr>
+        <tr> 
+          <td width="159"><font size="2"><i><font face="Courier New,Courier">----------------</font></i></font></td>
+          <td width="159"><font size="2"><i><font face="Courier New,Courier">----------------</font></i></font></td>
+          <td width="142"><font size="2"><i><font face="Courier New,Courier">----------------</font></i></font></td>
+          <td width="88"><font size="2"><i><font face="Courier New,Courier">--------</font></i></font></td>
+          <td width="17"><font size="2"><i><font face="Courier New,Courier">-</font></i></font></td>
+          <td width="84"><font size="2"><i><font face="Courier New,Courier">-----</font></i></font></td>
+        </tr>
+        <tr> 
+          <td width="159"><font size="2"><i><font face="Courier New,Courier">518.ll03</font></i></font></td>
+          <td width="159"><font size="2"><i><font face="Courier New,Courier">p7895ball</font></i></font></td>
+          <td width="142"><font size="2"><i><font face="Courier New,Courier">jimuser</font></i></font></td>
+          <td width="88"><font size="2"><i><font face="Courier New,Courier">21:10:50</font></i></font></td>
+          <td width="17"><font size="2"><i><font face="Courier New,Courier">R</font></i></font></td>
+          <td width="84"><font size="2"><i><font face="Courier New,Courier">ll-main</font></i></font></td>
+        </tr>
+        <tr> 
+          <td width="159"><font size="2"><i><font face="Courier New,Courier">520.ll03</font></i></font></td>
+          <td width="159"><font size="2"><i><font face="Courier New,Courier">p7897cat</font></i></font></td>
+          <td width="142"><font size="2"><i><font face="Courier New,Courier">jimuser</font></i></font></td>
+          <td width="88"><font size="2"><i><font face="Courier New,Courier">21:07:31</font></i></font></td>
+          <td width="17"><font size="2"><i><font face="Courier New,Courier">R</font></i></font></td>
+          <td width="84"><font size="2"><i><font face="Courier New,Courier">ll-main</font></i></font></td>
+        </tr>
+        <tr> 
+          <td width="159"><font size="2"><i><font face="Courier New,Courier">526.ll03</font></i></font></td>
+          <td width="159"><font size="2"><i><font face="Courier New,Courier">p7896dog</font></i></font></td>
+          <td width="142"><font size="2"><i><font face="Courier New,Courier">jimuser</font></i></font></td>
+          <td width="88"><font size="2"><i><font face="Courier New,Courier">20:00:46</font></i></font></td>
+          <td width="17"><font size="2"><i><font face="Courier New,Courier">R</font></i></font></td>
+          <td width="84"><font size="2"><i><font face="Courier New,Courier">ll-main</font></i></font></td>
+        </tr>
+        <tr> 
+          <td width="159"><font size="2"><i><font face="Courier New,Courier">544.ll03</font></i></font></td>
+          <td width="159"><font size="2"><i><font face="Courier New,Courier">dizout</font></i></font></td>
+          <td width="142"><font size="2"><i><font face="Courier New,Courier">janeuser</font></i></font></td>
+          <td width="88"><font size="2"><i><font face="Courier New,Courier">27:32:30</font></i></font></td>
+          <td width="17"><font size="2"><i><font face="Courier New,Courier">R</font></i></font></td>
+          <td width="84"><font size="2"><i><font face="Courier New,Courier">ll-main 
+            </font></i></font></td>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+      <p><i> <font face="Courier New,Courier"><a name="34"></a></font><font size="+1"></font></i><font size="+1"><b>3.4 
+        Removing your job from the queue</b></font></p>
+      <p><font size="+1"> <b></b></font>To remove your job from the queue or cancel 
+        a running job use the <font face="Courier New,Courier"><b>qdel</b></font> 
+        command:</p>
+      <p> <font face="Courier New, Courier, mono">$ <b>qdel</b> <i>252.ll03</i></font><i><font face="Courier New,Courier"><br>
+        </font></i></p>
+      <p>To verify that your job was removed from the queue, use the <font face="Courier New, Courier, mono"><b>qstat</b></font> 
+        command:</p>
+      <p><font face="Courier New, Courier, mono">$ <b>qstat</b></font></p>
+      <p><i><font face="Courier New,Courier"><br>
+        </font></i></p>
+      <p><i> <font face="Courier New,Courier"></font></i><a href="jobs.html"><i><font face="Courier New,Courier"></font></i>back 
+        to Top</a> 
+      </TD>
+  </TR>
+</TABLE>
+<TABLE CELLPADDING=0 CELLSPACING=0 BORDER=0 WIDTH=642>
+  <TR VALIGN="top" ALIGN="left"> 
+    <TD> 
+      <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+        <TR VALIGN="top" ALIGN="left"> 
+          <TD WIDTH=85 HEIGHT =49><IMG SRC="../../../../_img/spacer.gif" WIDTH =85 HEIGHT=1 BORDER=0></TD>
+          <TD></TD>
+        </TR>
+        <TR VALIGN="top" ALIGN="left"> 
+          <TD></TD>
+          <TD NOWRAP> [<A HREF="../../../../index.html">Home</A>] [<A HREF="https://web.archive.org/web/20021120061032/http://www.ahpcc.unm.edu/intranet/index.html">Inside&nbsp;Us</A>] 
+            [<A HREF="../../../../../hpcerc-2002/Computing/index.html">Computing</A>] 
+            [<A HREF="https://web.archive.org/web/20021120061032/http://www.ahpcc.unm.edu/Research/index.html">Research</A>] 
+            [<A HREF="https://web.archive.org/web/20021120061032/http://www.ahpcc.unm.edu/Education/education.html">Education</A>] 
+            [<A HREF="https://web.archive.org/web/20021120061032/http://www.ahpcc.unm.edu/SiteMap/sitemap.html">SiteMap</A>] 
+          </TD>
+        </TR>
+      </TABLE>
+      <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+        <TR VALIGN="top" ALIGN="left"> 
+          <TD WIDTH=98 HEIGHT =10><IMG SRC="../../../../_img/spacer.gif" WIDTH =98 HEIGHT=1 BORDER=0></TD>
+          <TD WIDTH=399><IMG SRC="../../../../_img/spacer.gif" WIDTH =399 HEIGHT=1 BORDER=0></TD>
+        </TR>
+        <TR VALIGN="top" ALIGN="left"> 
+          <TD></TD>
+          <TD WIDTH=399> 
+            <P ALIGN="CENTER"><FONT SIZE="-1">Please contact our </FONT><A HREF="mailto:webmaster@ahpcc.unm.edu"><FONT SIZE="-1">Webmaster</FONT></A><FONT SIZE="-1"> 
+              with questions or comments. <BR>
+              </FONT><FONT SIZE="-2">© Copyright 2001 Albuquerque High Performance 
+              Computing Center.&nbsp; All rights reserved.</FONT>
+          </TD>
+        </TR>
+      </TABLE>
+    </TD>
+    <TD> 
+      <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=133>
+        <TR VALIGN="top" ALIGN="left"> 
+          <TD WIDTH=53 HEIGHT =47><IMG SRC="../../../../_img/spacer.gif" WIDTH =53 HEIGHT=1 BORDER=0></TD>
+          <TD></TD>
+        </TR>
+        <TR VALIGN="top" ALIGN="left"> 
+          <TD HEIGHT =58></TD>
+          <TD WIDTH=80 ALIGN="left" VALIGN="top"><A HREF="https://web.archive.org/web/20021120061032/http://www.unm.edu/"><IMG id="Picture72" HEIGHT=58 WIDTH=80 SRC="../../../../_img/Computing/AHPCC/Images/UNM_Logo_Small.jpg"  BORDER=0 ></A></TD>
+        </TR>
+      </TABLE>
+    </TD>
+  </TR>
+</TABLE>
+</BODY>
+</HTML>

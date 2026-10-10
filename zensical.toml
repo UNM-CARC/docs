@@ -22,7 +22,7 @@ nav = [
   { "FAQ" = [ { "Contents" = "faq/index.md" }, "faq/general.md", "faq/troubleshooting.md" ] },
   { "Training" = [ { "Contents" = "training/index.md" }, "training/videos.md", "training/workshops.md" ] },
   { "Support" = [ { "Contents" = "support/index.md" }, "support/help.md", "support/acknowledging-carc.md" ] },
-  { "About" = [ { "Contents" = "about/index.md" }, "about/mission.md", "about/facilities.md", "about/partners.md", "about/contributing.md", "about/ai-agents.md", "log.md" ] },
+  { "About" = [ { "Contents" = "about/index.md" }, "about/mission.md", "about/facilities.md", "about/history.md", "about/web-archive.md", "about/partners.md", "about/contributing.md", "about/ai-agents.md", "log.md" ] },
 ]
 
 [project.theme]

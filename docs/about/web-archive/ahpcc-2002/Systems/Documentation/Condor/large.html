@@ -1,0 +1,311 @@
+<html><!-- #BeginTemplate "/Templates/Computing_Systems_Template.dwt" -->
+<head>
+<!-- #BeginEditable "doctitle" --> <!-- #EndEditable --> 
+<style type="text/css">
+<!--
+-->
+</style>
+<title>AHPCC Computing Systems</title>
+<link rel="stylesheet" href="https://web.archive.org/web/20020722131355cs_/http://ahpcc.unm.edu/Classes/AHPCC.css">
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+       <!--
+
+          NS4 = (document.layers);
+          IE4 = (document.all);
+         ver4 = (NS4 || IE4);   
+        isMac = (navigator.appVersion.indexOf("Mac") != -1);
+       isMenu = (NS4 || (IE4 && !isMac));
+
+       function popUp(){return};
+       function popDown(){return};
+
+       if (!ver4) event = null;
+
+       //-->
+       </SCRIPT>
+<SCRIPT LANGUAGE="JavaScript1.2" TYPE="text/javascript">
+       <!--
+
+       if (isMenu) {
+           menuVersion = 3;
+           
+           menuWidth = 150;
+           childOverlap = 50;
+           childOffset = 5;
+           perCentOver = null;
+           secondsVisible = .5;
+           
+           fntCol = "white";
+           fntSiz = "8";
+           fntBold = true;
+           fntItal = false;
+           fntFam = "Arial,Geneva,sans-serif";
+           
+           backCol = "#4a0239";
+           overCol = "#eaae69";
+           overFnt = "black";
+           
+           borWid = 1;
+           borCol = "white";
+           borSty = "solid";
+           itemPad = 3;
+           
+           imgSrc = "http://www.dhtmlab.com/hiermenus/tri.gif";
+           imgSiz = 10;
+           
+           separator = 1;
+           separatorCol = "white";
+           
+           isFrames = false;      // <-- IMPORTANT for full window
+           navFrLoc = "left";     // <-- display. see below
+           
+           keepHilite = true; 
+           NSfontOver = true;
+           clickStart = false;
+           clickKill = false;
+       }
+
+       //-->
+       </SCRIPT>
+<SCRIPT LANGUAGE="JavaScript1.2" TYPE="text/javascript">
+       <!--
+       if (isMenu) {
+       document.write("<SCRIPT LANGUAGE='JavaScript1.2' SRC="https://web.archive.org/web/20020722131355js_/http://ahpcc.unm.edu/JS/Computing_Systems_Menu.js"><\/SCRIPT>");
+       }
+       //-->
+       </SCRIPT>
+<SCRIPT LANGUAGE="JavaScript1.2" TYPE="text/javascript">
+       <!--
+       if (isMenu) {
+       document.write("<SCRIPT LANGUAGE='JavaScript1.2' SRC="https://web.archive.org/web/20020722131355js_/http://ahpcc.unm.edu/JS/hierMenus.js"><\/SCRIPT>");
+       }
+       //-->
+       </SCRIPT>
+<meta name="AHPCC Computing Systems high performance computing HPC" content="AHPCC Computing Systems">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#660066" vlink="#000000" alink="#CC6633" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">ahpcc.unm.edu/Systems/Documentation/Condor/large.html</code> as captured by the Internet Archive on 22 July 2002. Links to pages that were not saved here go to the Wayback Machine. <a style="color:#0b5cad" href="https://web.archive.org/web/20020722131355/http://www.ahpcc.unm.edu:80/Systems/Documentation/Condor/large.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../../">Web archive index</a></div>
+
+<table width="660" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td colspan="5" align="right"> <img src="../../../_img/Images/Header.jpg" width="660" height="81"><br>
+      <a href="../../../index.html" onMouseOver="popUp('elMenu1',event)"
+          onMouseOut="popDown('elMenu1')"><img src="../../../_img/Images/Tabs/Tab_AHPCC.jpg" width="61" height="25" border="0"></a><a href="../../../../ahpcc-2000/Systems/index.html" onMouseOver="popUp('elMenu2',event)"
+          onMouseOut="popDown('elMenu2')"><img src="../../../_img/Images/Tabs/Tab_Computing_Systems.jpg" width="130" height="25" border="0"></a><a href="https://web.archive.org/web/20020722131355/http://ahpcc.unm.edu/Knowledge/index.html" onMouseOver="popUp('elMenu3',event)"
+          onMouseOut="popDown('elMenu3')"><img src="../../../_img/Images/Tabs/Tab_Knowledge_Community.jpg" width="147" height="25" border="0"></a><a href="https://web.archive.org/web/20020722131355/http://ahpcc.unm.edu/Research" onMouseOver="popUp('elMenu4',event)"
+          onMouseOut="popDown('elMenu4')" ><img src="../../../_img/Images/Tabs/Tab_Research_Activities.jpg" width="125" height="25" border="0"></a><a href="../../../index.html"><img src="../../../_img/Images/Tabs/Tab_Search.jpg" width="60" height="25" border="0"></a> 
+    </td>
+  </tr>
+</table>
+<table width="660" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td rowspan="11" height="275" valign="top" align="left"> 
+      <table width="132" border="1" cellspacing="0" cellpadding="0" align="left">
+        <tr> 
+          <td width="132" height="23"><a href="../LinuxSupercluster/RefCard/index.html"><font size="-1"><b>Linux 
+            Supercluster Reference Card</b></font></a> </td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="../../../NewsPress/index.html">News</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="../../../../ahpcc-2000/Systems/Allocations/index.html">Accounts-Allocations</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="../../Hardware/index.html">All 
+            Machines</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="../../../../ahpcc-2000/Systems/help/index.html">Help 
+            Desk</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="../../../../ahpcc-2000/Systems/Documentation/index.html">Documentation</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="https://web.archive.org/web/20020722131355/http://ahpcc.unm.edu/EducationTraining/">Training</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="https://web.archive.org/web/20020722131355/http://ahpcc.unm.edu/Research/">Research</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font size="-1"><a href="../../Downloads/index.html">Downloads</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font size="-2"><a href="mailto:research@ahpcc.unm.edu,systems@ahpcc.unm.edu,staff@ahpcc.unm.edu"><font size="-1">Ask 
+            Users</font></a></font></td>
+        </tr>
+      </table>
+    </td>
+    <td width="528" rowspan="11" valign="top"><!-- #BeginEditable "Main" --> 
+      <H1 align="center"><font size="4">Submitting a Large Cluster</font></H1>
+      <HR NOSHADE>
+      We will now use some of the more advanced features of the submit description 
+      file to submit a large cluster of jobs. 
+      <HR NOSHADE>
+      <P>First, change into a directory with an example job: 
+      <PRE>
+% cd ~/examples/large/one_dir
+</PRE>
+      <P>This example will use a cluster of 50 jobs, each with a different command 
+        line argument and a different output file. First, take a look at the submit 
+        file: 
+      <PRE>
+% cat one_dir.submit
+</PRE>
+      <P>There are a couple of interesting things in the file: 
+      <OL>
+        <LI>We are using a single log file for the entire cluster 
+        <LI>The use of "$(Process)" in specifying the filename for STDOUT 
+        <LI>The use of "$(Process)" in specifying the command-line argument for 
+          each job 
+        <LI>The use of "Notification = Never" to disable email for this cluster 
+        <LI>The "Queue 50" line to specify we want 50 jobs 
+      </OL>
+      <P>Now, build the large.condor program using make: 
+      <PRE>
+% make
+</PRE>
+      <P>This will compile large.condor and link it with condor_compile. This 
+        program just prints out the command line argument it is given to STDOUT. 
+      <P>Now, we can submit the cluster: 
+      <PRE>
+% condor_submit one_dir.submit
+</PRE>
+      <P>You will see that 50 jobs were submitted to your cluster. Remember the 
+        cluster number it tells you, you'll need this number in a little while. 
+        Now, you can monitor the progress of your jobs with condor_q and by viewing 
+        the User Log. 
+      <PRE>
+% condor_q
+% less large.log
+</PRE>
+      <P>Now, we'll change the job priority of some jobs to see them executed 
+        faster: <em>(Note: You must change each instance of "cluster" in the command 
+        below to be the number of the cluster you actually submitted -- you can 
+        determine this number by remembering the cluster number in response to 
+        the <tt>condor_submit</tt> command or can obtain it from the first column 
+        of the response from the <tt>condor_q</tt> command for the particular 
+        job).</em> 
+      <PRE>
+% condor_prio -p 19 cluster_number.48 cluster_number.49 
+</PRE>
+      <P>This will give processes 48 and 49 a higher priority, so they should 
+        be the next ones to run. You can see the higher priority and watch them 
+        execute faster with condor_q: 
+      <PRE>
+% condor_q
+</PRE>
+      <P>As jobs complete, you can examine their output in the appropriate large.out.* 
+        file. In each one, the data in the file should be the same as the number 
+        in the filename. 
+      <PRE>
+% cat large.out.48
+</PRE>
+      <P>Keep running condor_q until all the jobs in your cluster complete. If 
+        you're tired of waiting, you can remove the remaining jobs in your cluster 
+        with "condor_rm -a". 
+      <P>You might notice there are a lot of files in your directory. This can 
+        be hard to manage particularly with hundreds or thousands of jobs, instead 
+        of just 50. The next example will solve this. 
+      <HR NOSHADE>
+      <P>Now, we'll submit another large cluster, this time using a directory 
+        hierarchy to make things more manageable, instead of one big directory. 
+        Each job will run in its own directory. 
+      <P>First, change into the new example directory: 
+      <PRE>
+% cd ~/examples/large/many_dirs
+</PRE>
+      <P>Now, examine the new submit file: 
+      <PRE>
+% cat many_dirs.submit
+</PRE>
+      <P>There are a couple of interesting things in the file: 
+      <OL>
+        <LI>The use of "$(Process)" in specifying the Initialdir, or the directory 
+          that each jobs uses when it starts up. 
+        <LI>Once again, we are using a single log file for the entire cluster, 
+          but notice that we have to use "../" because each job is running in 
+          its own subdirectory 
+        <LI>We are using the exact same large.condor program from before. Notice 
+          that we have to use two levels of "../" because Executable is found 
+          relative to Initialdir, so we must use "../" once to get to the "many_dirs" 
+          directory, and another to get to the "large" directory, from which "one_dir/large.condor" 
+          is the right path. 
+        <LI>We don't have to specify separate filenames for the output files, 
+          since a large.out file will appear in each subdirectory. 
+      </OL>
+      <P>Next, we must create the directory tree for all the jobs. Someday, Condor 
+        will be able to do this for you, but for now, you must do it yourself. 
+        There's a simple perl script that will create the 50 directories: 
+      <PRE>
+% cat setup_directories
+</PRE>
+      <P>Now, just run this script: 
+      <PRE>
+% ./setup_directories
+</PRE>
+      <P>Finally, we can submit the cluster to Condor: 
+      <PRE>
+% condor_submit many_dirs.submit
+</PRE>
+      <P>Again, you can monitor the progress of your cluster with condor_q: 
+      <PRE>
+% condor_q
+</PRE>
+      <P>As jobs complete, you can examine the output in each subdirectory: 
+      <PRE>
+% cat 0/large.out
+% cat 1/large.out
+...
+</PRE>
+      <P>You can leave the cluster running while we continue with the presentation, 
+        or you can remove all your jobs "condor_rm -a". 
+      <P>That's it, we're done! 
+       
+                
+      <p><a href="../../../../ahpcc-2000/Systems/Documentation/Condor/index.html"><font size="-2">Condor 
+        Scheduling</font></a><br>
+                  <font size="-2"><a href="https://web.archive.org/web/20020722131355/http://maui-scheduler.mhpcc.edu/new_doc/">Maui 
+                  Scheduling</a><br>
+                  </font><font size="-2"><a href="https://web.archive.org/web/20020722131355/http://www.cs.wisc.edu/condor">Condor 
+                  @ U of Wisconsin</a></font></p>
+                <!-- #EndEditable --></td>
+  </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> 
+    <td colspan="2" valign="top"><font size="1" face="Arial, Helvetica, sans-serif"><img src="../../../_img/Images/Footer.jpg" width="660" height="72" usemap="#Map2" border="0"><map name="Map2"><area shape="rect" coords="573,45,650,61" href="mailto:webmaster@ahpcc.unm.edu"><area shape="rect" coords="496,13,562,60" href="https://web.archive.org/web/20020722131355/http://www.unm.edu/"></map></font></td>
+  </tr>
+  <tr> 
+    <td colspan="2" valign="top"> 
+      <div align="left"> 
+        <table width="660" border="0" cellspacing="0" cellpadding="0">
+          <tr> 
+            <td width="268"><font size="1" face="Arial, Helvetica, sans-serif">The 
+              University of New Mexico<br>
+              <b>Albuquerque High Performance Computing Center</b><br>
+              Galles Building - 1601 Central Avenue, NE<br>
+              Albuquerque, NM 87131<map name="Map"><area shape="RECT" coords="497,11,561,62" href="https://web.archive.org/web/20020722131355/http://www.unm.edu" alt="UNM" title="UNM"></map><br>
+              Phone # 505.277.8249<font color="#FFFFFF">000000</font>Fax # 505.277.8235</font></td>
+            <td width="392" valign="top"> 
+              <div align="right"><font size="1">Last Modified: December 1, 2000</font></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </td>
+  </tr>
+</table>
+</body>
+
+<!-- #EndTemplate --></html>

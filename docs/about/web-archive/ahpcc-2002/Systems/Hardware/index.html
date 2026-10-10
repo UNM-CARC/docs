@@ -1,0 +1,892 @@
+<html><!-- #BeginTemplate "/Templates/Computing_Systems_Template.dwt" -->
+<head>
+<!-- #BeginEditable "doctitle" --> <!-- #EndEditable --> 
+<style type="text/css">
+<!--
+-->
+</style>
+<title>AHPCC Computing Systems</title>
+<link rel="stylesheet" href="https://web.archive.org/web/20020704002814cs_/http://ahpcc.unm.edu/Classes/AHPCC.css">
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+       <!--
+
+          NS4 = (document.layers);
+          IE4 = (document.all);
+         ver4 = (NS4 || IE4);   
+        isMac = (navigator.appVersion.indexOf("Mac") != -1);
+       isMenu = (NS4 || (IE4 && !isMac));
+
+       function popUp(){return};
+       function popDown(){return};
+
+       if (!ver4) event = null;
+
+       //-->
+       </SCRIPT>
+<SCRIPT LANGUAGE="JavaScript1.2" TYPE="text/javascript">
+       <!--
+
+       if (isMenu) {
+           menuVersion = 3;
+           
+           menuWidth = 150;
+           childOverlap = 50;
+           childOffset = 5;
+           perCentOver = null;
+           secondsVisible = .5;
+           
+           fntCol = "white";
+           fntSiz = "8";
+           fntBold = true;
+           fntItal = false;
+           fntFam = "Arial,Geneva,sans-serif";
+           
+           backCol = "#4a0239";
+           overCol = "#eaae69";
+           overFnt = "black";
+           
+           borWid = 1;
+           borCol = "white";
+           borSty = "solid";
+           itemPad = 3;
+           
+           imgSrc = "http://www.dhtmlab.com/hiermenus/tri.gif";
+           imgSiz = 10;
+           
+           separator = 1;
+           separatorCol = "white";
+           
+           isFrames = false;      // <-- IMPORTANT for full window
+           navFrLoc = "left";     // <-- display. see below
+           
+           keepHilite = true; 
+           NSfontOver = true;
+           clickStart = false;
+           clickKill = false;
+       }
+
+       //-->
+       </SCRIPT>
+<SCRIPT LANGUAGE="JavaScript1.2" TYPE="text/javascript">
+       <!--
+       if (isMenu) {
+       document.write("<SCRIPT LANGUAGE='JavaScript1.2' SRC="https://web.archive.org/web/20020704002814js_/http://ahpcc.unm.edu/JS/Computing_Systems_Menu.js"><\/SCRIPT>");
+       }
+       //-->
+       </SCRIPT>
+<SCRIPT LANGUAGE="JavaScript1.2" TYPE="text/javascript">
+       <!--
+       if (isMenu) {
+       document.write("<SCRIPT LANGUAGE='JavaScript1.2' SRC="https://web.archive.org/web/20020704002814js_/http://ahpcc.unm.edu/JS/hierMenus.js"><\/SCRIPT>");
+       }
+       //-->
+       </SCRIPT>
+<meta name="AHPCC Computing Systems high performance computing HPC" content="AHPCC Computing Systems">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#660066" vlink="#000000" alink="#CC6633" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">ahpcc.unm.edu/Systems/Hardware/</code> as captured by the Internet Archive on 4 July 2002. Links to pages that were not saved here go to the Wayback Machine. <a style="color:#0b5cad" href="https://web.archive.org/web/20020704002814/http://www.ahpcc.unm.edu:80/Systems/Hardware/">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../">Web archive index</a></div>
+
+<table width="660" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td colspan="5" align="right"> <img src="../../_img/Images/Header.jpg" width="660" height="81"><br>
+      <a href="../../index.html" onMouseOver="popUp('elMenu1',event)"
+          onMouseOut="popDown('elMenu1')"><img src="../../_img/Images/Tabs/Tab_AHPCC.jpg" width="61" height="25" border="0"></a><a href="../../../ahpcc-2000/Systems/index.html" onMouseOver="popUp('elMenu2',event)"
+          onMouseOut="popDown('elMenu2')"><img src="../../_img/Images/Tabs/Tab_Computing_Systems.jpg" width="130" height="25" border="0"></a><a href="https://web.archive.org/web/20020704002814/http://ahpcc.unm.edu/Knowledge/index.html" onMouseOver="popUp('elMenu3',event)"
+          onMouseOut="popDown('elMenu3')"><img src="../../_img/Images/Tabs/Tab_Knowledge_Community.jpg" width="147" height="25" border="0"></a><a href="https://web.archive.org/web/20020704002814/http://ahpcc.unm.edu/Research" onMouseOver="popUp('elMenu4',event)"
+          onMouseOut="popDown('elMenu4')" ><img src="../../_img/Images/Tabs/Tab_Research_Activities.jpg" width="125" height="25" border="0"></a><a href="../../index.html"><img src="../../_img/Images/Tabs/Tab_Search.jpg" width="60" height="25" border="0"></a> 
+    </td>
+  </tr>
+</table>
+<table width="660" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td rowspan="11" height="275" valign="top" align="left"> 
+      <table width="132" border="1" cellspacing="0" cellpadding="0" align="left">
+        <tr> 
+          <td width="132" height="23"><a href="../Documentation/LinuxSupercluster/RefCard/index.html"><font size="-1"><b>Linux 
+            Supercluster Reference Card</b></font></a> </td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="../../NewsPress/index.html">News</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="../../../ahpcc-2000/Systems/Allocations/index.html">Accounts-Allocations</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="index.html">All 
+            Machines</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="../../../ahpcc-2000/Systems/help/index.html">Help 
+            Desk</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="../../../ahpcc-2000/Systems/Documentation/index.html">Documentation</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="https://web.archive.org/web/20020704002814/http://ahpcc.unm.edu/EducationTraining/">Training</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="https://web.archive.org/web/20020704002814/http://ahpcc.unm.edu/Research/">Research</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font size="-1"><a href="../Downloads/index.html">Downloads</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font size="-2"><a href="mailto:research@ahpcc.unm.edu,systems@ahpcc.unm.edu,staff@ahpcc.unm.edu"><font size="-1">Ask 
+            Users</font></a></font></td>
+        </tr>
+      </table>
+    </td>
+    <td width="528" rowspan="11" valign="top"><!-- #BeginEditable "Main" --> 
+      <h2 align="center">Overview of HPC and Other Systems at the AHPCC</h2>
+      <p>The HPC Systems Group at the AHPCC is responsible for the design, installation, 
+        configuration and maintenance of hardware systems located at the AHPCC. 
+        Please follow the links below to find the home pages for each system.</p>
+      <table border="1" align="center" width="528">
+        <tr align="center" bgcolor="#FF3333"> 
+          <td width="63" align="center" height="44" bordercolor="1"> 
+            <div align="center"><font color="#FFFFFF" size="-2"><b>Name</b></font></div>
+          </td>
+          <td width="46" height="44" bordercolor="1"> 
+            <div align="center"><font size="-2" color="#FFFFFF"><b>Access</b></font></div>
+          </td>
+          <td width="51" height="44" bordercolor="1"> 
+            <div align="center"><font color="#FFFFFF" size="-2"><b>Number of Processors</b></font></div>
+          </td>
+          <td width="29" height="44" bordercolor="1"> 
+            <div align="center"><font color="#FFFFFF" size="-2"><b>Nodes</b></font></div>
+          </td>
+          <td width="19" height="44" bordercolor="1"> 
+            <div align="center"><font color="#FFFFFF" size="-2"><b>MHz</b></font></div>
+          </td>
+          <td width="49" height="44" bordercolor="1"> 
+            <div align="center"><font color="#FFFFFF" size="-2"><b>Processor Type</b></font></div>
+          </td>
+          <td width="54" align="center" height="44" bordercolor="1"> 
+            <div align="center"><font color="#FFFFFF" size="-2"><b>Vendor</b></font></div>
+          </td>
+          <td width="46" align="center" height="44" bordercolor="1"> 
+            <div align="center"><font color="#FFFFFF" size="-2"><b>Type</b></font></div>
+          </td>
+          <td width="43" height="44" bordercolor="1"> 
+            <div align="center"><font size="-2" color="#FFFFFF">RAM /node</font></div>
+          </td>
+          <td width="48" height="44" bordercolor="1"> 
+            <div align="center"><font color="#FFFFFF" size="-2"><b>Mass /node</b></font></div>
+          </td>
+          <td width="35" height="44" bordercolor="1"> 
+            <div align="center"><font color="#FFFFFF" size="-2"><b>Mass Storage</b></font></div>
+          </td>
+          <td width="40" height="44" bordercolor="1"> 
+            <p align="center"><font color="#FFFFFF" size="-2"><b>OS</b></font></p>
+          </td>
+          <td width="57" align="center" height="44" bordercolor="1"> 
+            <div align="center"><font color="#FFFFFF" size="-2"><b>Interconnect</b></font></div>
+          </td>
+          <td width="37" align="center" height="44" bordercolor="1"> 
+            <div align="center"><font color="#FFFFFF" size="-2"><b>Network</b></font></div>
+          </td>
+        </tr>
+        <tr> 
+          <td width="63" align="center" bgcolor="#CCCCCC"> 
+            <div align="center"><font size="-2"><a href="LosLobos/index.html">LosLobos</a></font></div>
+          </td>
+          <td width="46"> 
+            <div align="center"><font size="-2"> AHPCC &amp; Alliance</font></div>
+          </td>
+          <td width="51"> 
+            <div align="center"><font size="-2">512</font></div>
+          </td>
+          <td width="29"> 
+            <div align="center"><font size="-2">256</font></div>
+          </td>
+          <td width="19"> 
+            <div align="center"><font size="-2">733</font></div>
+          </td>
+          <td width="49"> 
+            <div align="center"><font size="-2">Intel Pentium III</font></div>
+          </td>
+          <td width="54"> 
+            <div align="center"><font size="-2"><a href="https://web.archive.org/web/20020704002814/http://www.ibm.com">IBM</a></font></div>
+          </td>
+          <td width="46"> 
+            <div align="center"><font size="-2">Netfinity 4500R</font></div>
+          </td>
+          <td width="43"> 
+            <div align="center"><font size="-2">1 G</font></div>
+          </td>
+          <td width="48"> 
+            <div align="center"><font size="-2">5 GB</font></div>
+          </td>
+          <td width="35"> 
+            <div align="center"><font size="-2">2 TB</font></div>
+          </td>
+          <td width="40"> 
+            <div align="center"><font size="-2">Linux</font></div>
+          </td>
+          <td width="57"> 
+            <div align="center"><font size="-2">Myrinet</font></div>
+          </td>
+          <td width="37"> 
+            <div align="center"><font size="-2">Fast Ethernet</font></div>
+          </td>
+        </tr>
+        <tr> 
+          <td width="63" align="center" bgcolor="#CCCCCC"> 
+            <div align="center"><font size="-2"><a href="Roadrunner/index.html">Roadrunner</a></font></div>
+          </td>
+          <td width="46"> 
+            <div align="center"><font size="-2">AHPCC &amp; Alliance</font></div>
+          </td>
+          <td width="51"> 
+            <div align="center"><font size="-2">128</font></div>
+          </td>
+          <td width="29"> 
+            <div align="center"><font size="-2">64</font></div>
+          </td>
+          <td width="19"> 
+            <div align="center"><font size="-2">450</font></div>
+          </td>
+          <td width="49"> 
+            <div align="center"><font size="-2">Intel Pentium II</font></div>
+          </td>
+          <td width="54"> 
+            <div align="center"><font size="-2"><a href="https://web.archive.org/web/20020704002814/http://www.altatech.com/index.html">Alta 
+              Technologies</a></font></div>
+          </td>
+          <td width="46"> 
+            <div align="center"><font size="-2">AltaCluster</font></div>
+          </td>
+          <td width="43"> 
+            <div align="center"><font size="-2">.5 G</font></div>
+          </td>
+          <td width="48"> 
+            <div align="center"><font size="-2">4 GB</font></div>
+          </td>
+          <td width="35"> 
+            <div align="center"><font size="-3"><font size="-4"><font size="-2">2 
+              TB </font></font></font></div>
+          </td>
+          <td width="40"> 
+            <div align="center"><font size="-2">Linux</font></div>
+          </td>
+          <td width="57"> 
+            <div align="center"><font size="-2">Myrinet</font></div>
+          </td>
+          <td width="37"> 
+            <div align="center"><font size="-2">Fast Ethernet</font></div>
+          </td>
+        </tr>
+        <tr> 
+          <td width="63" align="center" bgcolor="#CCCCCC"> 
+            <div align="center"><font size="-2"><a href="Vista/index.html">Vista</a></font></div>
+          </td>
+          <td width="46"> 
+            <div align="center"><font size="-2">Restricted to AHPCC &amp; IBM</font></div>
+          </td>
+          <td width="51"> 
+            <div align="center"><font size="-2">32</font></div>
+          </td>
+          <td width="29"> 
+            <div align="center"><font size="-2">8</font></div>
+          </td>
+          <td width="19"> 
+            <div align="center"><font size="-2">332</font></div>
+          </td>
+          <td width="49"> 
+            <div align="center"><font size="-2">IBM PowerPC</font></div>
+          </td>
+          <td width="54"> 
+            <div align="center"><font size="-2"><a href="https://web.archive.org/web/20020704002814/http://www.ibm.com">IBM</a></font></div>
+          </td>
+          <td width="46"> 
+            <div align="center"><font size="-2">RS/6000 SP3</font></div>
+          </td>
+          <td width="43"> 
+            <div align="center"><font size="-2">2 G</font></div>
+          </td>
+          <td width="48"> 
+            <div align="center"><font size="-2">18.2 GB</font></div>
+          </td>
+          <td width="35"> 
+            <div align="center"><font size="-3"><font size="-4">360 GB</font></font></div>
+          </td>
+          <td width="40"> 
+            <div align="center"><font size="-2">AIX</font></div>
+          </td>
+          <td width="57"> 
+            <div align="center"><font size="-2">Gigabit Ethernet, SP-Switch</font></div>
+          </td>
+          <td width="37"> 
+            <div align="center"><font size="-2">Fast Ethernet</font></div>
+          </td>
+        </tr>
+        <tr> 
+          <td width="63" align="center" bgcolor="#CCCCCC"> 
+            <div align="center"><font size="-2"><a href="Azul/index.html">Azul</a></font></div>
+          </td>
+          <td width="46"> 
+            <div align="center"><font size="-2">Restricted to AHPCC &amp; IBM</font></div>
+          </td>
+          <td width="51"> 
+            <div align="center"><font size="-2">32</font></div>
+          </td>
+          <td width="29"> 
+            <div align="center"><font size="-2">8</font></div>
+          </td>
+          <td width="19"> 
+            <div align="center"><font size="-2">550</font></div>
+          </td>
+          <td width="49"> 
+            <div align="center"><font size="-2">Intel Xeon</font></div>
+          </td>
+          <td width="54"> 
+            <div align="center"><font size="-2"><a href="https://web.archive.org/web/20020704002814/http://www.ibm.com">IBM</a></font></div>
+          </td>
+          <td width="46"> 
+            <div align="center"><font size="-2">Netfinity 5500</font></div>
+          </td>
+          <td width="43"> 
+            <div align="center"><font size="-2">2 G</font></div>
+          </td>
+          <td width="48"> 
+            <div align="center"><font size="-3"><font size="-4"><font size="-2">18.2 
+              GB </font></font></font></div>
+          </td>
+          <td width="35"> 
+            <div align="center"><font size="-2">360 GB</font></div>
+          </td>
+          <td width="40"> 
+            <div align="center"><font size="-2">Linux</font></div>
+          </td>
+          <td width="57"> 
+            <div align="center"><font size="-2">Gigabit Ethernet</font></div>
+          </td>
+          <td width="37"> 
+            <div align="center"><font size="-2">Fast Ethernet</font></div>
+          </td>
+        </tr>
+        <tr> 
+          <td width="63" align="center" height="22" bgcolor="#CCCCCC"> 
+            <div align="center"><font size="-2"><a href="Nambe/index.html">Nambe</a></font></div>
+          </td>
+          <td width="46" height="22"> 
+            <div align="center"><font size="-2">AHPCC</font></div>
+          </td>
+          <td width="51" height="22"> 
+            <div align="center"><font size="-2">8</font></div>
+          </td>
+          <td width="29" height="22"> 
+            <div align="center"><font size="-2">N/A</font></div>
+          </td>
+          <td width="19" height="22"> 
+            <div align="center"><font size="-2">195</font></div>
+          </td>
+          <td width="49" height="22"> 
+            <div align="center"><font size="-2">SGI R10000</font></div>
+          </td>
+          <td width="54" height="22"> 
+            <div align="center"><font size="-2"><a href="https://web.archive.org/web/20020704002814/http://www.sgi.com">SGI</a></font></div>
+          </td>
+          <td width="46" height="22"> 
+            <div align="center"><font size="-2">Onyx/2</font></div>
+          </td>
+          <td width="43" height="22"> 
+            <div align="center"><font size="-2">1 G</font></div>
+          </td>
+          <td width="48" height="22"> 
+            <div align="center"><font size="-2">N/A</font></div>
+          </td>
+          <td width="35" height="22"> 
+            <div align="center"><font size="-2">26 GB</font></div>
+          </td>
+          <td width="40" height="22"> 
+            <div align="center"><font size="-2">IRIX</font></div>
+          </td>
+          <td width="57" height="22"> 
+            <div align="center"><font size="-2">SMP</font></div>
+          </td>
+          <td width="37" height="22"> 
+            <div align="center"><font size="-2">Fast Ethernet</font></div>
+          </td>
+        </tr>
+        <tr> 
+          <td width="63" align="center" height="22" bgcolor="#CCCCCC"> 
+            <div align="center"><font size="-2">Cochiti</font></div>
+          </td>
+          <td width="46" height="22"> 
+            <div align="center"><font size="-2">AHPCC</font></div>
+          </td>
+          <td width="51" height="22"> 
+            <div align="center"><font size="-2">4</font></div>
+          </td>
+          <td width="29" height="22"> 
+            <div align="center"><font size="-2">N/A</font></div>
+          </td>
+          <td width="19" height="22"> 
+            <div align="center"><font size="-2">100</font></div>
+          </td>
+          <td width="49" height="22"> 
+            <div align="center"><font size="-2">SGI R4400</font></div>
+          </td>
+          <td width="54" height="22"> 
+            <div align="center"><font size="-2"><a href="https://web.archive.org/web/20020704002814/http://www.sgi.com">SGI</a></font></div>
+          </td>
+          <td width="46" height="22"> 
+            <div align="center"><font size="-2">Onyx</font></div>
+          </td>
+          <td width="43" height="22"> 
+            <div align="center"><font size="-2"></font></div>
+          </td>
+          <td width="48" height="22"> 
+            <div align="center"><font size="-2">N/A</font></div>
+          </td>
+          <td width="35" height="22"> 
+            <div align="center"><font size="-2">26 GB</font></div>
+          </td>
+          <td width="40" height="22"> 
+            <div align="center"><font size="-2">IRIX</font></div>
+          </td>
+          <td width="57" height="22"> 
+            <div align="center"><font size="-2">SMP</font></div>
+          </td>
+          <td width="37" height="22"> 
+            <div align="center"><font size="-2">Fast Ethernet</font></div>
+          </td>
+        </tr>
+        <tr> 
+          <td width="63" align="center" bgcolor="#CCCCCC"> 
+            <div align="center"><font size="-2">Grants</font></div>
+          </td>
+          <td width="46"> 
+            <div align="center"><font size="-2">AHPCC</font></div>
+          </td>
+          <td width="51"> 
+            <div align="center"><font size="-2">1</font></div>
+          </td>
+          <td width="29"> 
+            <div align="center"><font size="-2">N/A</font></div>
+          </td>
+          <td width="19"> 
+            <div align="center"><font size="-2">166</font></div>
+          </td>
+          <td width="49"> 
+            <div align="center"><font size="-2">PowerPC 604</font></div>
+          </td>
+          <td width="54"> 
+            <div align="center"><font size="-2"><a href="https://web.archive.org/web/20020704002814/http://www.ibm.com">IBM</a></font></div>
+          </td>
+          <td width="46"> 
+            <div align="center"><font size="-2">AIX</font></div>
+          </td>
+          <td width="43"> 
+            <div align="center"><font size="-2"></font></div>
+          </td>
+          <td width="48"> 
+            <div align="center"><font size="-2">N/A</font></div>
+          </td>
+          <td width="35"> 
+            <div align="center"><font size="-2">N/A</font></div>
+          </td>
+          <td width="40"> 
+            <div align="center"><font size="-2">N/A</font></div>
+          </td>
+          <td width="57"> 
+            <div align="center"><font size="-2">SMP/Ethernet</font></div>
+          </td>
+          <td width="37"> 
+            <div align="center"><font size="-2">Fast Etherne</font></div>
+          </td>
+        </tr>
+        <tr> 
+          <td width="63" align="center" bgcolor="#CCCCCC"> 
+            <div align="center"><font size="-2">Desktops</font></div>
+          </td>
+          <td width="46"> 
+            <div align="center"><font size="-2">AHPCC</font></div>
+          </td>
+          <td width="51"> 
+            <div align="center"><font size="-2">35</font></div>
+          </td>
+          <td width="29"> 
+            <div align="center"><font size="-2">N/A</font></div>
+          </td>
+          <td width="19"> 
+            <div align="center"><font size="-2">333</font></div>
+          </td>
+          <td width="49"> 
+            <div align="center"><font size="-2">Intel Pentium II</font></div>
+          </td>
+          <td width="54"> 
+            <div align="center"><font size="-2">N/A</font></div>
+          </td>
+          <td width="46"> 
+            <div align="center"><font size="-2">Windows NT &amp; Linux</font></div>
+          </td>
+          <td width="43"> 
+            <div align="center"><font size="-2"></font></div>
+          </td>
+          <td width="48"> 
+            <div align="center"><font size="-2">N/A</font></div>
+          </td>
+          <td width="35"> 
+            <div align="center"><font size="-2">N/A</font></div>
+          </td>
+          <td width="40"> 
+            <div align="center"><font size="-2"><font size="-2">WinNT &amp; Linux</font></font></div>
+          </td>
+          <td width="57"> 
+            <div align="center"><font size="-2">N/A</font></div>
+          </td>
+          <td width="37"> 
+            <div align="center"><font size="-2"><font size="-2">Fast Etherne</font></font></div>
+          </td>
+        </tr>
+        <tr> 
+          <td width="63" align="center" bgcolor="#CCCCCC"> 
+            <div align="center"><font size="-2">Belen</font></div>
+          </td>
+          <td width="46"> 
+            <div align="center"><font size="-2">AHPCC</font></div>
+          </td>
+          <td width="51"> 
+            <div align="center"><font size="-2">2</font></div>
+          </td>
+          <td width="29"> 
+            <div align="center"><font size="-2">N/A</font></div>
+          </td>
+          <td width="19"> 
+            <div align="center"><font size="-2">195</font></div>
+          </td>
+          <td width="49"> 
+            <div align="center"><font size="-2">SGI R10000</font></div>
+          </td>
+          <td width="54"> 
+            <div align="center"><font size="-2"><a href="https://web.archive.org/web/20020704002814/http://www.sgi.com">SGI</a></font></div>
+          </td>
+          <td width="46"> 
+            <div align="center"><font size="-2">Octane</font></div>
+          </td>
+          <td width="43"> 
+            <div align="center"><font size="-2"></font></div>
+          </td>
+          <td width="48"> 
+            <div align="center"><font size="-2">N/A</font></div>
+          </td>
+          <td width="35"> 
+            <div align="center"><font size="-2">N/A</font></div>
+          </td>
+          <td width="40"> 
+            <div align="center"><font size="-2">IRIX</font></div>
+          </td>
+          <td width="57"> 
+            <div align="center"><font size="-2">SMP</font></div>
+          </td>
+          <td width="37"> 
+            <div align="center"><font size="-2">Fast Etherne</font></div>
+          </td>
+        </tr>
+        <tr> 
+          <td width="63" align="center" bgcolor="#CCCCCC"> 
+            <div align="center"><font size="-2">Isleta</font></div>
+          </td>
+          <td width="46"> 
+            <div align="center"><font size="-2">AHPCC</font></div>
+          </td>
+          <td width="51"> 
+            <div align="center"><font size="-2">4</font></div>
+          </td>
+          <td width="29"> 
+            <div align="center"><font size="-2">N/A</font></div>
+          </td>
+          <td width="19"> 
+            <div align="center"><font size="-2">N/A</font></div>
+          </td>
+          <td width="49"> 
+            <div align="center"><font size="-2">N/A</font></div>
+          </td>
+          <td width="54"> 
+            <div align="center"><font size="-2"><a href="https://web.archive.org/web/20020704002814/http://www.sgi.com">SGI</a></font></div>
+          </td>
+          <td width="46"> 
+            <div align="center"><font size="-2">Onyx</font></div>
+          </td>
+          <td width="43"> 
+            <div align="center"><font size="-2"></font></div>
+          </td>
+          <td width="48"> 
+            <div align="center"><font size="-2">N/A</font></div>
+          </td>
+          <td width="35"> 
+            <div align="center"><font size="-2">N/A</font></div>
+          </td>
+          <td width="40"> 
+            <div align="center"><font size="-2">IRIX</font></div>
+          </td>
+          <td width="57"> 
+            <div align="center"><font size="-2">SMP</font></div>
+          </td>
+          <td width="37"> 
+            <div align="center"><font size="-2">Fast Etherne</font></div>
+          </td>
+        </tr>
+        <tr> 
+          <td width="63" align="center" bgcolor="#CCCCCC"> 
+            <div align="center"><font size="-2">Quemado</font></div>
+          </td>
+          <td width="46"> 
+            <div align="center"><font size="-2">AHPCC</font></div>
+          </td>
+          <td width="51"> 
+            <div align="center"><font size="-2">1</font></div>
+          </td>
+          <td width="29"> 
+            <div align="center"><font size="-2">N/A</font></div>
+          </td>
+          <td width="19"> 
+            <div align="center"><font size="-2">166</font></div>
+          </td>
+          <td width="49"> 
+            <div align="center"><font size="-2">PowerPC 604</font></div>
+          </td>
+          <td width="54"> 
+            <div align="center"><font size="-2"><a href="https://web.archive.org/web/20020704002814/http://www.ibm.com">IBM</a></font></div>
+          </td>
+          <td width="46"> 
+            <div align="center"><font size="-2">AIX</font></div>
+          </td>
+          <td width="43"> 
+            <div align="center"><font size="-2"></font></div>
+          </td>
+          <td width="48"> 
+            <div align="center"><font size="-2">N/A</font></div>
+          </td>
+          <td width="35"> 
+            <div align="center"><font size="-2">N/A</font></div>
+          </td>
+          <td width="40"> 
+            <div align="center"><font size="-2">N/A</font></div>
+          </td>
+          <td width="57"> 
+            <div align="center"><font size="-2">N/A</font></div>
+          </td>
+          <td width="37"> 
+            <div align="center"><font size="-2">Fast Etherne</font></div>
+          </td>
+        </tr>
+        <tr> 
+          <td width="63" align="center" bgcolor="#CCCCCC"> 
+            <div align="center"><font size="-2"><a href="Truchas/index.html">Truchas<br>
+              Cluster</a></font></div>
+          </td>
+          <td width="46"> 
+            <div align="center"><font size="-2">AHPCC</font></div>
+          </td>
+          <td width="51"> 
+            <div align="center"><font size="-2">24</font></div>
+          </td>
+          <td width="29"> 
+            <div align="center"><font size="-2">12</font></div>
+          </td>
+          <td width="19"> 
+            <div align="center"><font size="-2">650</font></div>
+          </td>
+          <td width="49"> 
+            <div align="center"><font size="-2">Intel Pentium III</font></div>
+          </td>
+          <td width="54"> 
+            <div align="center"><font size="-2">N/A</font></div>
+          </td>
+          <td width="46"> 
+            <div align="center"><font size="-2">Linux Cluster</font></div>
+          </td>
+          <td width="43"> 
+            <div align="center"><font size="-2">1 G</font></div>
+          </td>
+          <td width="48"> 
+            <div align="center"><font size="-2">20 GB</font></div>
+          </td>
+          <td width="35"> 
+            <div align="center"><font size="-2">240 GB</font></div>
+          </td>
+          <td width="40"> 
+            <div align="center"><font size="-2">Windows NT &amp; Linux</font></div>
+          </td>
+          <td width="57"> 
+            <div align="center"><font size="-2">SMP/Ethernet</font></div>
+          </td>
+          <td width="37"> 
+            <div align="center"><font size="-2">Fast Etherne</font></div>
+          </td>
+        </tr>
+        <tr> 
+          <td width="63" align="center" bgcolor="#CCCCCC"> 
+            <div align="center"><font size="-2"><a href="../../../ahpcc-2000/Systems/Hardware/Blackbear/index.html">Blackbear</a></font></div>
+          </td>
+          <td width="46"> 
+            <div align="center"><font size="-2">AHPCC</font></div>
+          </td>
+          <td width="51"> 
+            <div align="center"><font size="-2">32</font></div>
+          </td>
+          <td width="29"> 
+            <div align="center"><font size="-2">16</font></div>
+          </td>
+          <td width="19"> 
+            <div align="center"><font size="-2">550</font></div>
+          </td>
+          <td width="49"> 
+            <div align="center"><font size="-2">Intel Pentium III</font></div>
+          </td>
+          <td width="54"> 
+            <div align="center"><font size="-2"><a href="https://web.archive.org/web/20020704002814/http://www.valinux.com/">VA 
+              Linux Systems</a></font></div>
+          </td>
+          <td width="46"> 
+            <div align="center"><font size="-1"><font size="-2"><font size="-3"><font size="-4"><font size="-2">VA 
+              Linux 501</font></font></font></font></font></div>
+          </td>
+          <td width="43"> 
+            <div align="center"><font size="-2">.5 G</font></div>
+          </td>
+          <td width="48"> 
+            <div align="center"><font size="-3"><font size="-4"><font size="-2">5 
+              GB </font></font></font></div>
+          </td>
+          <td width="35"> 
+            <div align="center"><font size="-2">144 GB</font></div>
+          </td>
+          <td width="40"> 
+            <div align="center"><font size="-2">Linux</font></div>
+          </td>
+          <td width="57"> 
+            <div align="center"><font size="-2">Myrinet</font></div>
+          </td>
+          <td width="37"> 
+            <div align="center"><font size="-2">Fast Ethernet</font></div>
+          </td>
+        </tr>
+        <tr> 
+          <td width="63" align="center" height="21" bgcolor="#CCCCCC"> 
+            <div align="center"><font size="-2"><a href="AccessGrid/index.html">Access 
+              Grid</a></font></div>
+          </td>
+          <td colspan="13" height="21"> 
+            <div align="center"><font size="-2"><a href="https://web.archive.org/web/20020704002814/http://www-fp.mcs.anl.gov/fl/accessgrid/">Videoconference 
+              and collaboration tools over the Internet2</a></font></div>
+          </td>
+        </tr>
+        <tr> 
+          <td width="63" align="center" height="32" bgcolor="#CCCCCC"> 
+            <div align="center"><font size="-2">Computational Grids</font></div>
+          </td>
+          <td colspan="13" height="32"> 
+            <div align="center"><font size="-2"><a href="https://web.archive.org/web/20020704002814/http://www.globus.org/">Globus</a>, 
+              <a href="RAVE/index.html">Virtual Machine Room</a></font></div>
+          </td>
+        </tr>
+      </table>
+      <h3 align="center">&nbsp;</h3>
+      <h3 align="center">Downloads</h3>
+      <p><b>The AHPCC is collaborating in the development of the following applications. 
+        You must agree to the respective application's licensing requirements 
+        before downloading.</b><br>
+      </p>
+      <table width="528" border="0" cellspacing="2" cellpadding="3" align="left">
+        <tr bgcolor="#CC99CC"> 
+          <td width="17%"><b>Software</b></td>
+          <td width="22%"><b>AHPCC Contact</b></td>
+          <td width="61%"><b>Download URL</b></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="17%" bgcolor="#FFFFCE"><font size="-1"><a href="https://web.archive.org/web/20020704002814/http://www.ahpcc.unm.edu/homunculus/">Flatland</a></font></td>
+          <td width="22%"><font size="-1">Dr. Tom Caudell</font></td>
+          <td width="61%"><font size="-1">(temporarily unavailable) http://www.ahpcc.unm.edu/homunculus/download.html</font></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="17%" bgcolor="#FFFFCE"><font size="-1"><a href="https://web.archive.org/web/20020704002814/http://www.cs.wisc.edu/condor/">Condor</a></font></td>
+          <td width="22%"><font size="-1">Prof. Brian T. Smith</font></td>
+          <td width="61%"><font size="-1"><a href="https://web.archive.org/web/20020704002814/http://www.cs.wisc.edu/condor/downloads/">http://www.cs.wisc.edu/condor/downloads/</a></font></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="17%" bgcolor="#FFFFCE"><font size="-1"><a href="https://web.archive.org/web/20020704002814/http://ahpcc.unm.edu/Systems/Hardware/%3Ca%20href=%22http:/www.mhpcc.edu/maui/%22%3Ehttp:/www.mhpcc.edu/maui/%3C/a%3E">Maui 
+            Scheduler</a></font></td>
+          <td width="22%"><font size="-1">Prof. Bob Ballance</font></td>
+          <td width="61%"><font size="-1"><a href="https://web.archive.org/web/20020704002814/http://maui-scheduler.mhpcc.edu/cgi-bin/license.pl">http://maui-scheduler.mhpcc.edu/cgi-bin/license.pl</a></font></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="17%" bgcolor="#FFFFCE"><font size="-1"><a href="https://web.archive.org/web/20020704002814/http://www.zip.com.au/%7Eroca/ttssh.html">TTSSH</a></font></td>
+          <td width="22%"> 
+            <p><font size="-1">Chris Maestas &amp;<br>
+              </font><font size="-1">John Barnes</font></p>
+          </td>
+          <td width="61%"><font size="-1"><a href="https://web.archive.org/web/20020704002814/http://www.zip.com.au/%7Eroca/download.html">http://www.zip.com.au/~roca/download.html</a></font></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="17%" bgcolor="#FFFFCE"><font size="-1"><a href="AccessGrid/index.html">Access 
+            Grid</a></font></td>
+          <td width="22%"> 
+            <p><font size="-1">Prof. Bob Ballance</font></p>
+          </td>
+          <td width="61%"> 
+            <p><font size="-1"><a href="https://web.archive.org/web/20020704002814/http://www-fp.mcs.anl.gov/fl/accessgrid/softdownload.htm">http://www-fp.mcs.anl.gov/fl/accessgrid/softdownload.htm</a></font></p>
+          </td>
+        </tr>
+        <tr valign="top"> 
+          <td width="17%" bgcolor="#FFFFCE"><font size="-1"><a href="https://web.archive.org/web/20020704002814/http://www.ahpcc.unm.edu/%7Ecara/DX/tutorial/opendxtut.html">Sockets 
+            for OpenDX</a></font></td>
+          <td width="22%"> 
+            <p><font size="-1">Prof. Paul Alsing</font></p>
+          </td>
+          <td width="61%"><font size="-1">(temporarily unavailable) <a href="https://web.archive.org/web/20020704002814/http://ahpcc.unm.edu/Systems/Hardware/%3Cfont%20size=%22-1%22%3Ehttp:/www.ahpcc.unm.edu/%7Ecara/DX/tutorial/opendxtut.html%3C/font%3E">http://www.ahpcc.unm.edu/%7Ecara/DX/tutorial/opendxtut.html</a></font></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="17%" bgcolor="#FFFFCE"><font size="-1"><a href="https://web.archive.org/web/20020704002814/http://hpc.eece.unm.edu/">SIMPLE</a></font></td>
+          <td width="22%"><font size="-1">Prof. David Bater</font></td>
+          <td width="61%"><font size="-1">(temporarily unavailable)</font></td>
+        </tr>
+        <tr valign="top"> 
+          <td width="17%" bgcolor="#FFFFCE"><font size="-1">VERNET</font></td>
+          <td width="22%"><font size="-1">Prof. Susan Atlas</font></td>
+          <td width="61%"><font size="-1">(temporarily unavailable)</font></td>
+        </tr>
+      </table>
+      <!-- #EndEditable --></td>
+  </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> 
+    <td colspan="2" valign="top"><font size="1" face="Arial, Helvetica, sans-serif"><img src="../../_img/Images/Footer.jpg" width="660" height="72" usemap="#Map2" border="0"><map name="Map2"><area shape="rect" coords="573,45,650,61" href="mailto:webmaster@ahpcc.unm.edu"><area shape="rect" coords="496,13,562,60" href="https://web.archive.org/web/20020704002814/http://www.unm.edu/"></map></font></td>
+  </tr>
+  <tr> 
+    <td colspan="2" valign="top"> 
+      <div align="left"> 
+        <table width="660" border="0" cellspacing="0" cellpadding="0">
+          <tr> 
+            <td width="268"><font size="1" face="Arial, Helvetica, sans-serif">The 
+              University of New Mexico<br>
+              <b>Albuquerque High Performance Computing Center</b><br>
+              Galles Building - 1601 Central Avenue, NE<br>
+              Albuquerque, NM 87131<map name="Map"><area shape="RECT" coords="497,11,561,62" href="https://web.archive.org/web/20020704002814/http://www.unm.edu" alt="UNM" title="UNM"></map><br>
+              Phone # 505.277.8249<font color="#FFFFFF">000000</font>Fax # 505.277.8235</font></td>
+            <td width="392" valign="top"> 
+              <div align="right"><font size="1">Last Modified: December 1, 2000</font></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </td>
+  </tr>
+</table>
+</body>
+
+<!-- #EndTemplate --></html>

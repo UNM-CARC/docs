@@ -1,0 +1,692 @@
+<html><!-- #BeginTemplate "/Templates/Computing_Systems_Template.dwt" -->
+<head>
+<!-- #BeginEditable "doctitle" --> <!-- #EndEditable --> 
+<style type="text/css">
+<!--
+-->
+</style>
+<title>AHPCC Computing Systems</title>
+<link rel="stylesheet" href="https://web.archive.org/web/20000903054155cs_/http://ahpcc.unm.edu/Classes/AHPCC.css">
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+       <!--
+
+          NS4 = (document.layers);
+          IE4 = (document.all);
+         ver4 = (NS4 || IE4);   
+        isMac = (navigator.appVersion.indexOf("Mac") != -1);
+       isMenu = (NS4 || (IE4 && !isMac));
+
+       function popUp(){return};
+       function popDown(){return};
+
+       if (!ver4) event = null;
+
+       //-->
+       </SCRIPT>
+<SCRIPT LANGUAGE="JavaScript1.2" TYPE="text/javascript">
+       <!--
+
+       if (isMenu) {
+           menuVersion = 3;
+           
+           menuWidth = 150;
+           childOverlap = 50;
+           childOffset = 5;
+           perCentOver = null;
+           secondsVisible = .5;
+           
+           fntCol = "white";
+           fntSiz = "8";
+           fntBold = true;
+           fntItal = false;
+           fntFam = "Arial,Geneva,sans-serif";
+           
+           backCol = "#4a0239";
+           overCol = "#eaae69";
+           overFnt = "black";
+           
+           borWid = 1;
+           borCol = "white";
+           borSty = "solid";
+           itemPad = 3;
+           
+           imgSrc = "http://www.dhtmlab.com/hiermenus/tri.gif";
+           imgSiz = 10;
+           
+           separator = 1;
+           separatorCol = "white";
+           
+           isFrames = false;      // <-- IMPORTANT for full window
+           navFrLoc = "left";     // <-- display. see below
+           
+           keepHilite = true; 
+           NSfontOver = true;
+           clickStart = false;
+           clickKill = false;
+       }
+
+       //-->
+       </SCRIPT>
+<SCRIPT LANGUAGE="JavaScript1.2" TYPE="text/javascript">
+       <!--
+       if (isMenu) {
+       document.write("<SCRIPT LANGUAGE='JavaScript1.2' SRC="https://web.archive.org/web/20000903054155js_/http://ahpcc.unm.edu/JS/Computing_Systems_Menu.js"><\/SCRIPT>");
+       }
+       //-->
+       </SCRIPT>
+<SCRIPT LANGUAGE="JavaScript1.2" TYPE="text/javascript">
+       <!--
+       if (isMenu) {
+       document.write("<SCRIPT LANGUAGE='JavaScript1.2' SRC="https://web.archive.org/web/20000903054155js_/http://ahpcc.unm.edu/JS/hierMenus.js"><\/SCRIPT>");
+       }
+       //-->
+       </SCRIPT>
+<meta name="AHPCC Computing Systems high performance computing HPC" content="AHPCC Computing Systems">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#660066" vlink="#000000" alink="#CC6633" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">ahpcc.unm.edu/Systems/Documentation/BB-UG.html</code> as captured by the Internet Archive on 3 September 2000. Links to pages that were not saved here go to the Wayback Machine. <a style="color:#0b5cad" href="https://web.archive.org/web/20000903054155/http://www.ahpcc.unm.edu:80/Systems/Documentation/BB-UG.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../">Web archive index</a></div>
+
+<table width="660" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td colspan="5" align="right"> <img src="../../_img/Images/Header.jpg" width="660" height="81"><br>
+      <a href="../../index.html" onMouseOver="popUp('elMenu1',event)"
+          onMouseOut="popDown('elMenu1')"><img src="../../_img/Images/Tabs/Tab_AHPCC.jpg" width="61" height="25" border="0"></a><a href="../index.html" onMouseOver="popUp('elMenu2',event)"
+          onMouseOut="popDown('elMenu2')"><img src="../../_img/Images/Tabs/Tab_Computing_Systems.jpg" width="130" height="25" border="0"></a><a href="https://web.archive.org/web/20000903054155/http://ahpcc.unm.edu/Knowledge/index.html" onMouseOver="popUp('elMenu3',event)"
+          onMouseOut="popDown('elMenu3')"><img src="../../_img/Images/Tabs/Tab_Knowledge_Community.jpg" width="147" height="25" border="0"></a><a href="https://web.archive.org/web/20000903054155/http://ahpcc.unm.edu/Research" onMouseOver="popUp('elMenu4',event)"
+          onMouseOut="popDown('elMenu4')" ><img src="../../_img/Images/Tabs/Tab_Research_Activities.jpg" width="125" height="25" border="0"></a><a href="../../index.html"><img src="../../_img/Images/Tabs/Tab_Search.jpg" width="60" height="25" border="0"></a> 
+    </td>
+  </tr>
+</table>
+<table width="100%" border="0" cellspacing="1" cellpadding="0">
+  <tr valign="top"> 
+    <td colspan="3" bgcolor="#FFA618" rowspan="2"> 
+      <div align="left"><br>
+        <table width="95%" border="0" cellspacing="0" cellpadding="0" align="center">
+          <tr bgcolor="#FFFFCC"> 
+            <td><font face="Arial, Helvetica, sans-serif"><a href="../Newsletters/index.html"><font size="-1"><font size="-2">News</font></font></a><font size="-2"><a href="../Allocations/index.html"></a></font></font></td>
+          </tr>
+          <tr bgcolor="#FFFFCC"> 
+            <td><font face="Arial, Helvetica, sans-serif"><font size="-2"><a href="../Allocations/index.html">Accounts 
+              &amp; Allocations</a></font></font></td>
+          </tr>
+          <tr bgcolor="#FFFFCC"> 
+            <td><font face="Arial, Helvetica, sans-serif"><font size="-2"><a href="../index.html">Hardware</a></font></font></td>
+          </tr>
+          <tr bgcolor="#FFFFCC"> 
+            <td><font face="Arial, Helvetica, sans-serif"><font size="-2"><a href="../Customer_Service/index.html">Help 
+              Desk</a></font></font></td>
+          </tr>
+          <tr bgcolor="#FFFFCC"> 
+            <td><font face="Arial, Helvetica, sans-serif"><font size="-2"><a href="index.html">Documentation</a></font></font></td>
+          </tr>
+          <tr bgcolor="#FFFFCC"> 
+            <td><font face="Arial, Helvetica, sans-serif"><font size="-2"><a href="https://web.archive.org/web/20000903054155/http://ahpcc.unm.edu/EducationTraining/index.html">Training</a></font></font></td>
+          </tr>
+          <tr bgcolor="#FFFFCC"> 
+            <td><font face="Arial, Helvetica, sans-serif"><font size="-2"><a href="https://web.archive.org/web/20000903054155/http://ahpcc.unm.edu/Research/SysNet.html">Supercluster 
+              Research</a></font></font></td>
+          </tr>
+        </table>
+        <br>
+        <table width="95%" cellspacing="0" cellpadding="0" border="1" align="center">
+          <tr bgcolor="#EFDBEF" valign="top"> 
+            <td> 
+              <div align="center"><font face="Arial, Helvetica, sans-serif" size="-2"><a href="https://web.archive.org/web/20000903054155/http://clumber.tc.cornell.edu/actc/Supercluster/index.html"><b>Register 
+                for<br>
+                Linux Supercluster Users Conference</b></a></font></div>
+            </td>
+          </tr>
+        </table>
+        <div align="left"></div>
+        <br>
+        <table width="95%" border="0" cellspacing="0" cellpadding="0" align="center">
+          <tr bgcolor="#FFFFCC" valign="top"> 
+            <td> 
+              <div align="left"> </div>
+              <div align="left"><font size="-2">Additional Info:</font><br>
+                <!-- #BeginEditable "info" -->{info}<!-- #EndEditable --></div>
+            </td>
+          </tr>
+        </table>
+        
+        <br>
+        <table width="95%" border="0" cellspacing="0" cellpadding="0" align="center">
+          <tr bgcolor="#FFFFCC" valign="top"> 
+            <td> 
+              <div align="center"><b><font size="-2"><a href="mailto:research@ahpcc.unm.edu,systems@ahpcc.unm.edu,staff@ahpcc.unm.edu">Ask 
+                other HPC users?</a></font></b></div>
+            </td>
+          </tr>
+        </table>
+        
+        <br>
+      </div>
+    </td>
+    <td rowspan="2" colspan="2" width="83%"> 
+      <div align="left"></div>
+      <div align="left"><!-- #BeginEditable "Main" -->
+      <h1 align="center">Blackbear General User's Guide</h1>
+      <h3 align="left"><b><a href="https://web.archive.org/web/20000903054155/http://www.ahpcc.unm.edu/help">0. AHPCC Request 
+        Form</a></b> </h3>
+      <h3 align="left"><b>1. <a href="#Access">Access</a></b> </h3>
+      <h3 align="left"> <b>2. <a href="#Your Account">Your Account</a></b> </h3>
+      <h3 align="left"><b>3. <a href="#Environment">Environment</a></b> </h3>
+      <h3 align="left">4. Software Libraries:</h3>
+      <p align="left"> 
+      <div align="left"> 
+        <ul>
+          <li><a href="#Mathematic%20and%20Scientific%20Libraries">Compilers</a></li>
+          <li><a href="#Mathematic%20and%20Scientific%20Libraries">Programming 
+            Tools</a></li>
+          <li><a href="#Mathematic%20and%20Scientific%20Libraries">Programming 
+            for MPI</a></li>
+          <li><a href="#Mathematic%20and%20Scientific%20Libraries">Mathematic 
+            and Scientific Libraries</a></li>
+        </ul>
+        <a href="#Mathematic%20and%20Scientific%20Libraries"></a> </div>
+      <p align="left"></p>
+      <h3 align="left"><b>5. Running Jobs</b></h3>
+      <p align="left"> 
+      <div align="left"> 
+        <ul>
+          <li>S<a href="#Selecting MPI Libraries">electing MPI Libraries</a> </li>
+          <li><a href="#Compiling">Compiling</a></li>
+          <li><a href="#Running MPI jobs">Running MPI programs</a> </li>
+          <li><a href="#Using the Batch Scheduler">Using the Batch Scheduler (PBS)</a> 
+          </li>
+          <li> <a href="#Submiting jobs to PBS">Submitting Jobs to PBS</a> </li>
+          <li><a href="#Running Interactive Jobs">Running Interactive Jobs</a> 
+          </li>
+        </ul>
+      </div>
+      <p align="left"></p>
+      <h3 align="left"><a href="#Storage">6. Storage</a></h3>
+      <p align="left">&nbsp;</p>
+      <div align="left"> 
+        <table border=0 cellpadding=0 cellspacing=0>
+          <tbody> 
+          <tr> 
+            <td> 
+              <h3><a name=Access></a><b>Access</b></h3>
+              The Black Bear Supercluster is accessed through one machine. This 
+              front-end system, named <b><i>blackbear.ahpcc.unm.edu</i></b>, is 
+              intended for code development and submitting jobs to the Black Bear 
+              compute nodes.&nbsp; 
+              <p><b>Logging in:</b> <br>
+                Use a secure login utility such as secure shell (ssh) to login 
+                to the Black Bear systems.&nbsp; <br>
+                <font 
+      face=Courier><font color=#008000>ssh blackbear.ahpcc.unm.edu</font></font> 
+                <br>
+                <font face=Courier><font color=#008000>ssh bb.ahpcc.unm.edu</font></font> 
+                <br>
+                <font face=Courier><font 
+      color=#008000>ssh osonegro.ahpcc.unm.edu</font></font> 
+              <p><font face=Courier><font color=#008000>&nbsp;</font></font></p>
+            </td>
+          </tr>
+          <tr> </tr>
+          <tr> 
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td> 
+              <h3><a name="Your Account"></a>Your Account</h3>
+              You can change your password using the "yppasswd" command. You will 
+              be prompted for your current password in order to change it.&nbsp; 
+              <br>
+              <font face=Courier><font 
+      color=#008000>yppasswd</font></font> 
+              <p>Changing your default shell is similar to changing your password. 
+                Use the "ypchsh" command and you will be prompted for your password 
+                and then the new shell you wish to use (including full path - 
+                e.g., /usr/local/bin/tcsh)&nbsp; <br>
+                <font face=Courier><font 
+      color=#008000>ypchsh</font></font> <br>
+                &nbsp;</p>
+            </td>
+          </tr>
+          <tr> </tr>
+          <tr> 
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td> 
+              <h3><a name=Environment></a>Environment</h3>
+              <font color=#000000>Many environment variables needed for compilers 
+              and libraries are defined in certain config files. Users can run 
+              the <i>/nfs/linux/BLACKBEAR/scripts/setup_env.bb</i> script to setup 
+              your environment to run on Black Bear.</font> 
+              <ul>
+                <li><a 
+        href="https://web.archive.org/web/20000903054155/http://www.ahpcc.unm.edu/blackbear/scripts/setup_env.bb">setup_env.bb</a> 
+                  (script to setup your environment to run on Black Bear) 
+                <li><a 
+        href="https://web.archive.org/web/20000903054155/http://www.ahpcc.unm.edu/blackbear/docs/test.pbs">test.pbs</a> (sample 
+                  submit file)&nbsp; 
+                <li><a href="https://web.archive.org/web/20000903054155/http://www.ahpcc.unm.edu/blackbear/docs/rhosts">rhosts</a> 
+                  (contains the hostnames of the Black Bear nodes) 
+                <li><a 
+        href="https://web.archive.org/web/20000903054155/http://www.ahpcc.unm.edu/blackbear/docs/cshrc_bb">cshrc_bb</a> (for 
+                  csh and tcsh users) 
+                <li><a 
+        href="https://web.archive.org/web/20000903054155/http://www.ahpcc.unm.edu/blackbear/docs/bashrc_bb">bashrc_bb</a> 
+                  (for ksh and bash users) </li>
+              </ul>
+            </td>
+          </tr>
+          <tr> </tr>
+          <tr> 
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td> 
+              <h3>Software</h3>
+            </td>
+          </tr>
+          <tr> 
+            <td>Black Bear has a number of compilers (C, C++, Fortran 77/90, and 
+              HPF) including the GNU, NAGf95 and Portland Group suite. The tables 
+              below list the specific compiler commands and links to documentation 
+              when available.&nbsp; 
+              <center>
+                <table border=1 width="100%">
+                  <tbody> 
+                  <tr> 
+                    <td align=middle colspan=5 width=501><a 
+            name=Compilers></a><b>Compilers</b></td>
+                  </tr>
+                  <tr> 
+                    <td align=middle width=85><b>C</b></td>
+                    <td align=middle width=85><b>C++</b></td>
+                    <td align=middle width=85><b>Fortran77</b></td>
+                    <td align=middle width=86><b>Fortran90/95</b></td>
+                    <td align=middle width=166><b>High. Perf. Fortran</b> <br>
+                      <b>(HPF)</b></td>
+                  </tr>
+                  <tr> 
+                    <td align=middle width=85><font color=#008000>gcc</font> <br>
+                      <font 
+            color=#008000><a 
+            href="https://web.archive.org/web/20000903054155/http://www.alliance.unm.edu/documentation/PGI" 
+            target=new>pgcc</a></font></td>
+                    <td align=middle width=85><font color=#008000>g++</font> <br>
+                      <font 
+            color=#008000><a 
+            href="https://web.archive.org/web/20000903054155/http://www.alliance.unm.edu/documentation/PGI" 
+            target=new>pgCC</a></font></td>
+                    <td align=middle width=85><font color=#008000>g77</font> <br>
+                      <font 
+            color=#008000><a 
+            href="https://web.archive.org/web/20000903054155/http://www.alliance.unm.edu/documentation/PGI" 
+            target=new>pgf77</a></font></td>
+                    <td align=middle width=86><font color=#008000><a 
+            href="https://web.archive.org/web/20000903054155/http://www.alliance.unm.edu/documentation/VAST/vastf90.pdf" 
+            target=new>f90</a></font> <br>
+                      <font color=#008000><a 
+            href="https://web.archive.org/web/20000903054155/http://www.alliance.unm.edu/documentation/PGI" 
+            target=new>pgf90</a></font> <br>
+                      <font color=#008000>f95</font></td>
+                    <td align=middle width=166><font color=#008000><a 
+            href="https://web.archive.org/web/20000903054155/http://www.alliance.unm.edu/documentation/PGI" 
+            target=new>pghpf</a></font></td>
+                  </tr>
+                  </tbody> 
+                </table>
+              </center>
+              Included in the Portland Group suite are two useful programming 
+              tools. The source code debugger and performance profiler is documented 
+              in the on-line PGI manual.&nbsp; 
+              <center>
+                <table border=1 height=73>
+                  <tbody> 
+                  <tr> 
+                    <td align=middle colspan=2 height=20 width=422><a 
+            name="Programming Tools"></a><b>Programming Tools</b></td>
+                  </tr>
+                  <tr> 
+                    <td align=middle height=19 width=222><b>Source Code Debugger</b></td>
+                    <td align=middle height=19 width=200><b>Performance Profiler</b></td>
+                  </tr>
+                  <tr> 
+                    <td align=middle height=16 width=222><a 
+            href="https://web.archive.org/web/20000903054155/http://www.alliance.unm.edu/documentation/PGI" 
+            target=new>pgdbg</a></td>
+                    <td align=middle height=16 width=200><a 
+            href="https://web.archive.org/web/20000903054155/http://www.alliance.unm.edu/documentation/PGI" 
+            target=new>pgprof</a></td>
+                  </tr>
+                  </tbody> 
+                </table>
+              </center>
+              Compile scripts are available for compiling MPI code. These scripts 
+              automatically link in all MPI libraries and include files.&nbsp; 
+              <center>
+                <table border=1>
+                  <tbody> 
+                  <tr> 
+                    <td colspan=4 width="80%"><a name="Message Passing"></a><b><font 
+            color=#000000>Compiling for MPI</font></b></td>
+                  </tr>
+                  <tr> 
+                    <td align=middle width="20%"><b>C</b></td>
+                    <td align=middle width="20%"><b>C++</b></td>
+                    <td align=middle width="20%"><b>Fortran77</b></td>
+                    <td align=middle width="20%"><b>Fortran90</b></td>
+                  </tr>
+                  <tr> 
+                    <td align=middle width="20%"><font face=Courier><font 
+            color=#008000>mpicc</font></font></td>
+                    <td align=middle width="20%"><font face=Courier><font 
+            color=#008000>mpiCC</font></font></td>
+                    <td align=middle width="20%"><font face=Courier><font 
+            color=#008000>mpif77</font></font></td>
+                    <td align=middle width="20%"><font face=Courier><font 
+            color=#008000>mpif90</font></font></td>
+                  </tr>
+                  </tbody> 
+                </table>
+              </center>
+              <center>
+                <table border=1 width=508>
+                  <tbody> 
+                  <tr> 
+                    <td colspan=3 width=502><a 
+            name="Mathematic and Scientific Libraries"></a><b>Mathematic and Scientific 
+                      Libraries</b></td>
+                  </tr>
+                  <tr> 
+                    <td colspan=3 width=490><b>Linear Algebra</b></td>
+                  </tr>
+                  <tr> 
+                    <td width=47>&nbsp;</td>
+                    <td width=199>BLAS&nbsp; <br>
+                      (Basic Linear Algebra Subroutines)</td>
+                    <td width=244><b>/usr/lib/libblas.a</b> <br>
+                      <b>/usr/pgi/linux86/lib/libblas.a</b>*&nbsp; <br>
+                      * (for PGI compilers only)</td>
+                  </tr>
+                  <tr> 
+                    <td width=47>&nbsp;</td>
+                    <td width=199>LAPACK</td>
+                    <td width=244><b>/usr/lib/liblapack.a</b> <br>
+                      <b>/usr/pgi/linux86/lib/liblapack.a</b>*&nbsp; <br>
+                      * (for PGI compilers only)</td>
+                  </tr>
+                  <tr> 
+                    <td colspan=3 width=490><b>FFT</b></td>
+                  </tr>
+                  <tr> 
+                    <td width=47>&nbsp;</td>
+                    <td width=199><a href="https://web.archive.org/web/20000903054155/http://www.fftw.org/doc/" 
+            target=_blank>FFTW</a></td>
+                    <td width=244><b>/usr/local/lib/libfftw_mpi.a</b> <br>
+                      <b>/usr/local/lib/librfftw_mpi.a</b></td>
+                  </tr>
+                  </tbody> 
+                </table>
+              </center>
+              <center>
+                &nbsp; 
+              </center>
+            </td>
+          </tr>
+          <tr> 
+            <td align=middle bgcolor=#000000 colspan=2><img height=1 src="" 
+  width=1></td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td> 
+              <h3>Running Jobs</h3>
+              <h4><a name="Selecting MPI Libraries"></a>Selecting MPI Libraries</h4>
+              There are four MPI libraries on the Black Bear Supercluster, two 
+              using Myrinet (for PGI and GNU compilers) and two using Ethernet 
+              (for PGI and GNU). Select a library by setting the MPIHOME environment 
+              variable. Refer to your .cshrc file for examples.&nbsp; 
+              <p>Use the "which" command to verify your compile library. For example: 
+              <p><font face=Courier><font color=#008000>% source $HOME/BLACKBEAR/cshrc_bb</font></font> 
+              <p><font face=Courier><font color=#008000>% which mpicc</font></font> 
+                <br>
+                <font face=Courier><font 
+      color=#008000>/usr/parallel/mpich-eth.gnu/bin/mpicc</font></font> <br>
+                shows that you are using Ethernet with GNU compilers. And,&nbsp; 
+              <p><font face=Courier><font color=#008000>% which mpicc</font></font> 
+                <br>
+                <font face=Courier><font 
+      color=#008000>/usr/parallel/mpich-gm.pgi/bin/mpicc</font></font> <br>
+                shows that you are using Myrinet with PGI compilers.&nbsp; 
+              <h4><a name=Compiling></a>Compiling</h4>
+              Compile and link C code with MPI libraries&nbsp; <br>
+              <font face=Courier><font color=#008000>% mpicc -o exec [options] 
+              filename(s).c</font></font> 
+              <p>Compile and link C++ code with MPI libraries&nbsp; <br>
+                <font 
+      face=Courier><font color=#008000>% mpiCC -o exec [options] filename(s).C</font></font> 
+              <p>Compile and link Fortran77 code with MPI libraries&nbsp; <br>
+                <font 
+      face=Courier><font color=#008000>% mpif77 -o exec [options] filename(s).f</font></font> 
+              <p>Compile and link Fortran90 code with MPI libraries&nbsp; <br>
+                <font 
+      face=Courier><font color=#008000>% mpif90 -o exec [options] filename(s).f90</font></font></p>
+            </td>
+          </tr>
+          <tr> 
+            <td> 
+              <h4><a name="Running MPI jobs"></a>Running MPI jobs</h4>
+              MPI can only be run on the Black Bear compute nodes through PBS. 
+              You can use the "mpirun" script to run an MPI job. The script has 
+              the following syntax&nbsp; 
+              <blockquote>mpirun -np <i>n </i>-machinefile $PBS_NODESFILE <i>full_path</i>/<i>executable</i> 
+                <blockquote><b>-np <i>n</i></b>&nbsp; - Number of nodes to start 
+                  program on&nbsp; <br>
+                  <b><i>full_path</i>/<i>executable</i></b>&nbsp; - Executable 
+                  including full path name</blockquote>
+              </blockquote>
+              <h4><a name="Using the Batch Scheduler"></a>Using the Batch Scheduler 
+                (PBS)</h4>
+              Black Bear uses the Portable Batch System (PBS) to manage parallel 
+              job scheduling. Users can run batch or interactive jobs on the Black 
+              Bear Supercluster through PBS. Batch jobs are described in command 
+              files which are submitted to PBS for execution.&nbsp; 
+              <center>
+                <table bgcolor=#c0c0c0 border=0 width=255>
+                  <tbody> 
+                  <tr> 
+                    <td align=middle colspan=2 width=223> 
+                      <h4>PBS Queue Limits</h4>
+                    </td>
+                  </tr>
+                  <tr> 
+                    <td width=186>Maximum Job Length*:</td>
+                    <td width=61>6 hours</td>
+                  </tr>
+                  </tbody> 
+                </table>
+              </center>
+              <i>* Job length can be extended for special requests.</i> <br>
+              <i>Please contact <a 
+      href="mailto:help@ahpcc.unm.edu">help@ahpcc.unm.edu</a></i> 
+              <h4>PBS Command Files</h4>
+              The PBS job command file defines the number of nodes you are requesting 
+              and contains the shell commands you wish to be executed. One or 
+              two processes per node can be started. Some samples are listed below 
+              for a job to run the executable <b><i>complete_path/test_prog</i> 
+              </b>on <b><i>N</i></b> nodes&nbsp; <br>
+              (for a user using a (t)csh style shell):&nbsp; 
+              <blockquote><b>For Myrinet jobs (one process per node)</b> 
+                <pre>#PBS -l nodes=<i>N
+</i># source to get environment variables
+# cshrc_bb - for (t)csh users
+# bashrc_bb - for (ba)(k)sh users&nbsp;
+# uncomment the proper line based on your shell
+source $HOME/BLACKBEAR/cshrc_bb
+#. $HOME/BLACKBEAR/bashrc_bb
+gmpiconf $PBS_NODEFILE
+mpirun -np N -machinefile $PBS_NODEFILE &lt;full path to your executable&gt;</pre>
+                For MPI jobs to run using Myrinet, the "gmpiconf" command must 
+                be used to create a configuration file ($HOME/.gmpi/conf). To 
+                run two processes per node, use the <b>gmpiconf2</b> command and 
+                double the number of processes (-np <i>2*n</i>) for the mpirun 
+                command as shown below:&nbsp; 
+                <p><b>For Myrinet jobs (two processes per node)</b> 
+                <pre>gmpiconf2 $PBS_NODEFILE
+mpirun -np <i>2*N</i> -machinefile $PBS_NODEFILE <i>complete_path/test_prog</i></pre>
+                <b>For Ethernet jobs (one process per node)</b> 
+                <pre>mpirun -np <i>N</i> -machinefile $PBS_NODEFILE <i>complete_path/test_prog</i></pre>
+                <b>For Ethernet jobs (two processes per node)</b> 
+                <pre>#PBS -l nodes=<i>N
+</i>mpirun -np <i>2*N</i> -machinefile $PBS_NODEFILE <i>complete_path/test_prog</i></pre>
+              </blockquote>
+              The "#PBS -l nodes=<i>N</i>" line defines how many nodes are being 
+              requested. The PBS environment variables which are used in the script 
+              above are defined below. These variables are set when PBS allocates 
+              nodes for a user.&nbsp; 
+              <blockquote>Example script (sample.cmd): 32-node Myrinet using two 
+                processes per node:&nbsp; <br>
+                #PBS -l nodes=16 <br>
+                # source to get environment variables <br>
+                # cshrc_bb - for (t)csh users <br>
+                # bashrc_bb - for (ba)(k)sh users&nbsp; <br>
+                # uncomment the proper line based on your shell <br>
+                source $HOME/BLACKBEAR/cshrc_bb <br>
+                #. $HOME/BLACKBEAR/bashrc_bb <br>
+                <b><font color=#804040>gmpiconf2 $PBS_NODEFILE</font></b> <br>
+                mpirun <b>-np 32</b> /home/cashmont/test.exe 
+                <p><b>PBS Environment Variables</b></p>
+              </blockquote>
+              <blockquote> 
+                <ul>
+                  <li><b>PBS_O_WORKDIR</b> - user's current directory when "qsub" 
+                    command was issued 
+                  <li><b>PBS_NODEFILE</b> - file containing the list of nodes 
+                    the user was allocated </li>
+                </ul>
+              </blockquote>
+              <a 
+      name="Submiting jobs to PBS"></a><b>Submiting jobs to PBS</b> <br>
+              <font 
+      face=Courier><font color=#008000>qsub [flags] (script_name)&nbsp;</font></font> 
+              <blockquote>Submit a batch job listed in scriptname.pbs file&nbsp; 
+                <br>
+                <font face=Courier><font color=#008000>qsub scriptname.pbs&nbsp;</font></font></blockquote>
+              <b>Displaying the queue contents and status&nbsp;</b> <br>
+              <font face=Courier><font 
+      color=#008000>qstat [flags]</font></font> 
+              <blockquote>i.e., <font face=Courier><font color=#008000>qstat -s 
+                </font></font>(displays status and elapsed time of job)&nbsp; 
+                <pre><font size=-1><font color=#800080>Job ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Username Queue&nbsp;&nbsp;&nbsp; Jobname&nbsp;&nbsp;&nbsp; SessID NDS TSK Memory Time&nbsp; S Time
+</font><font color=#008000>--------------- -------- -------- ---------- ------ --- --- ------ ----- - -----
+2534.bb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nestor12 rr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STDIN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 23483&nbsp; 16&nbsp; --&nbsp;&nbsp;&nbsp; --&nbsp; 06:00 R 01:04
+&nbsp;&nbsp; Job started on Fri Jul 09 at 15:53
+2554.bb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; corona&nbsp;&nbsp; rr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STDIN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 19704&nbsp;&nbsp; 2&nbsp; --&nbsp;&nbsp;&nbsp; --&nbsp; 06:00 R 00:44
+&nbsp;&nbsp; Job started on Fri Jul 09 at 16:14
+2557.bb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; corona&nbsp;&nbsp; rr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STDIN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 22012&nbsp;&nbsp; 2&nbsp; --&nbsp;&nbsp;&nbsp; --&nbsp; 06:00 R 00:42
+&nbsp;&nbsp; Job started on Fri Jul 09 at 16:15
+2559.bb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nestor12 rr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; alltoall.p&nbsp;&nbsp;&nbsp; --&nbsp;&nbsp; 64&nbsp; --&nbsp;&nbsp;&nbsp; --&nbsp; 06:00 Q&nbsp;&nbsp; --
+&nbsp;&nbsp; Not Running: Not enough of the right type of nodes are available
+2560.bb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; nestor12 rr&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; alltoall12&nbsp;&nbsp;&nbsp; --&nbsp;&nbsp; 64&nbsp; --&nbsp;&nbsp;&nbsp; --&nbsp; 06:00 Q&nbsp;&nbsp; --
+&nbsp;&nbsp; Not Running: Not enough of the right type of nodes are available</font></font></pre>
+                <ul>
+                  <li><b>Job ID: </b>ID for users' job in queue 
+                  <li><b>Username:</b> job owner 
+                  <li><b>Jobname:</b> name of script submitted to PBS or STDIN 
+                    if user is in an interactive session 
+                  <li><b>NDS:</b> number of nodes allocated 
+                  <li><b>Time:</b> maximum wall clock run time&nbsp; 
+                  <li><b>S (State): </b>R - Running; Q - Waiting in queue; E - 
+                    Job is in error state 
+                  <li><b>Time (last column):</b> job's elapsed time </li>
+                </ul>
+              </blockquote>
+              <b>Remove job from queue</b> <br>
+              <font 
+      face=Courier><font color=#008000>qdel (job_id)</font></font> 
+              <p>where job_id can be obtained from the queue listing using "qstat".&nbsp; 
+              <h4><b>Output and Error files</b></h4>
+              Standard error and output are contained in two files with the names:&nbsp; 
+              <blockquote> 
+                <pre><font color=#008000>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i>Jobname</i>.<b>e</b><i>Job_ID
+</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i>Jobname</i>.<b>o</b><i>Job_ID</i></font></pre>
+              </blockquote>
+              using the Jobname and Job_ID from your job in the queue.&nbsp; 
+              <h4><a name="Running Interactive Jobs"></a>Running Interactive Jobs</h4>
+              You can initiate an interactive session on Black Bear nodes through 
+              PBS. This is the only case where a user has direct access to a compute 
+              node.&nbsp; 
+              <p>Initiate an interactive session using <b><i>n</i></b> nodes&nbsp; 
+                <br>
+                <font face=Courier><font color=#008000>qsub -I -l nodes=n</font></font> 
+              <p>Once an interactive session is granted, you are placed in your 
+                home directory on one of the nodes you were allocated. Execute 
+                the code as described in MPIRUN section.</p>
+            </td>
+          </tr>
+          <tr> </tr>
+          <tr> 
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td><a name=Storage></a> 
+              <h3>Storage</h3>
+              Approximately 3 GB of scratch space is available on each Black Bear 
+              compute node in<i> <b>/scratch</b></i>.&nbsp; <br>
+              <b><i>/scratch is for TEMPORARY storage only - All files in /scratch 
+              will be deleted when the job has finished</i></b></td>
+          </tr>
+          <tr> </tr>
+          <tr> 
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          </tbody> 
+        </table>
+      </div>
+      <!-- #EndEditable --></div>
+      </td>
+  </tr>
+  <tr valign="top"> </tr>
+</table>
+<p>&nbsp;</p>
+<table width="100%">
+  <tr> 
+    <td><img src="../../_img/Images/Footer.jpg" width="660" height="72" usemap="#Map" border="0"><map name="Map"><area shape="RECT" coords="575,47,645,62" href="mailto:%20editor@ahpcc.unm.edu" alt="Web Editor" title="Web Editor"></map></td>
+  </tr>
+  <tr> 
+    <td> 
+      <table border="0" width="100%">
+        <tr> 
+          <td bgcolor="#FFFFFF" bordercolor="#FFFFFF" width="46%" rowspan="2" class="footer"><font size="1" face="Arial, Helvetica, sans-serif">The 
+            University of New Mexico<br>
+            <b>Albuquerque High Performance Computing Center</b><br>
+            Galles Building - 1601 Central Avenue, NE<br>
+            Albuquerque, NM 87131<br>
+            Phone # 505.277.8249<font color="#FFFFFF">000000</font>Fax # 505.277.8235</font></td>
+          <td align="right" valign="top" width="54%"> 
+            <div align="right"><font face="Arial, Helvetica, sans-serif" size="1">Last 
+              Modified: <!-- #BeginDate format:Am1m -->August 23, 2000  12:43<!-- #EndDate --></font></div>
+          </td>
+        </tr>
+        <tr> 
+          <td align="right" valign="top" width="54%">&nbsp;</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</body>
+
+<!-- #EndTemplate --></html>

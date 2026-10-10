@@ -1,0 +1,970 @@
+<LINK REL="stylesheet" TYPE="text/css" HREF="https://web.archive.org/web/20000708131042cs_/http://ahpcc.unm.edu/ahpcc.css">
+<HTML>
+<HEAD>
+  <META NAME="GENERATOR" CONTENT="Adobe PageMill 2.0 Win">
+  <TITLE>Introduction to PVM</TITLE>
+</HEAD>
+<BODY LINK="#800000" ALINK="#ffff00" VLINK="#0460a4" BACKGROUND="../../../_img/Images/background/AHPCC_Background.gif">
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">ahpcc.unm.edu/Workshop/System-subroutine/pvm/pvm.html</code> as captured by the Internet Archive on 8 July 2000. Links to pages that were not saved here go to the Wayback Machine. <a style="color:#0b5cad" href="https://web.archive.org/web/20000708131042/http://www.ahpcc.unm.edu:80/Workshop/System-subroutine/pvm/pvm.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../../">Web archive index</a></div>
+
+
+<P><CENTER><IMG SRC="../../../_img/Images/logos/ahpcc_logo.gif" WIDTH="300" 
+HEIGHT="75" ALIGN="BOTTOM" NATURALSIZEFLAG="3" ALT="AHPCC Logo"></CENTER></P>
+
+<P><CENTER><BR>
+<B><FONT SIZE=+2>Introduction to PVM</FONT></B></CENTER></P>
+
+<P><CENTER><B>John Greenfield green@arc.unm.edu<BR>
+Amy Stevenson amy@arc.unm.edu<BR>
+Georgi Yanakiev yanakiev@arc.unm.edu<BR>
+Anish Malanthara anishm@arc.unm.edu<BR>
+</B></CENTER></P>
+
+<P><HR ALIGN=LEFT><BR>
+<IMG SRC="../../../_img/Images/icons/AHPCC_Bullet.gif" WIDTH="15" HEIGHT="15"
+ALIGN="TOP" NATURALSIZEFLAG="3" ALT="Bullet"> <B><A HREF="https://web.archive.org/web/20000708131042/http://ahpcc.unm.edu/Workshop/System-subroutine/pvm/pvmframe.html">Click
+here for a frame enabled version of this document.</A> </B><HR ALIGN=LEFT></P>
+
+<P><A NAME="Contents"></A><B><FONT SIZE=+1>Contents</FONT></B></P>
+
+<UL>
+  <LI><A HREF="#Overview">Overview</A>
+  <UL>
+    <LI><A HREF="#Parallel Environments">Parallel Environments</A>
+    <LI><A HREF="#Message Passing">Message Passing</A>
+    <LI><A HREF="#Message Passing Systems">Message Passing Systems</A>
+    <LI><A HREF="#PVM Terms">PVM Terms</A>
+  </UL>
+  <LI><A HREF="#PVM Overview">PVM Overview</A>
+  <UL>
+    <LI><A HREF="#Heterogeneity">Heterogeneity</A>
+    <LI><A HREF="#Major Features">Major Features</A>
+    <LI><A HREF="#Portability">Portability</A>
+    <LI><A HREF="#PVM System">PVM System</A>
+    <UL>
+      <LI><A HREF="#PVM Library">PVM Library</A>
+      <LI><A HREF="#Fortran Library">Fortran Library</A>
+      <LI><A HREF="#Fortran Library - Message Passing">Fortran Library - Message
+      Passing</A>
+      <LI><A HREF="#Fortran Library - Group Routines">Fortran Library - Group
+      Routines</A>
+      <LI><A HREF="#PVM Console">PVM Console</A>
+    </UL>
+  </UL>
+  <LI><A HREF="#Visualization with Upshot">Visualization with Upshot</A>
+  <LI><A HREF="#A Basic Parallel Problem">A Basic Parallel Problem</A>
+  <LI><A HREF="#Parallel Strategies">Parallel Strategies</A>
+  <LI><A HREF="#PVM setup">PVM setup</A>
+  <UL>
+    <LI><A HREF="#PVM hostfile">PVM hostfile</A>
+    <LI><A HREF="#PVM examples">PVM examples</A>
+  </UL>
+  <LI><A HREF="#Troubleshooting PVM3.3.x">Troubleshooting PVM3.3.x</A>
+  <LI><A HREF="#Parallel Strategies II">Parallel Strategies II</A>
+  <LI><A HREF="#Example II">Example II</A>
+  <LI><A HREF="#Other Examples">Other Examples</A>
+  <UL>
+    <LI><A HREF="#Matrix Multiply">Matrix Multiply</A>
+    <LI><A HREF="#pi Calculation">pi Calculation</A>
+    <LI><A HREF="#Concurrent Wave Equation">Concurrent Wave Equation</A>
+    <LI><A HREF="#2D Heat Equation">2D Heat Equation</A>
+    <LI><A HREF="#Timing Example">Timing Example</A>
+    <LI><A HREF="#Load Balancing">Load Balancing</A>
+  </UL>
+  <LI><A HREF="#Closing">Closing</A>
+</UL>
+
+<P><HR ALIGN=LEFT></P>
+
+<P><A NAME="Overview"></A><B><FONT SIZE=+1>Overview</FONT></B></P>
+
+<UL>
+  <LI>Parallel Environments
+  <LI>Message Passing
+  <LI>PVM Overview
+  <LI>Examples
+</UL>
+
+<P><HR ALIGN=LEFT></P>
+
+<P><A NAME="Parallel Environments"></A><B><FONT SIZE=+1>Parallel Environments</FONT></B></P>
+
+<UL>
+  <LI>IBM SP1, SP2 and workstation clusters are examples of distributed memory
+  MIMD machines
+  <LI>MIMD - Multiple Instruction, Multiple Data - each processor runs independently
+  on its portion of the data
+  <LI>distributed memory - each processor has its own memory that only it
+  can directly access
+  <LI>Goal: coordinate the operations of the various processors on a problem
+  in a way that improves the performance of a code and that scales to increases
+  in numbers of processors, amount of memory and I/O capacity
+</UL>
+
+<P><HR ALIGN=LEFT></P>
+
+<P><A NAME="Message Passing"></A><B><FONT SIZE=+1>Message Passing</FONT></B></P>
+
+<P><B>Coordination of tasks in a distributed memory MIMD environment involves</B></P>
+
+<OL>
+  <LI>synchronizing tasks - do the right thing at the right time
+  <LI>sharing data - a task may need data assigned to or produced by another
+  task, or may need to give data to other tasks
+</OL>
+
+<P><B>Message passing is the mechanism to achieve these requirements</B></P>
+
+<P><A HREF="https://web.archive.org/web/20000708131042/http://ahpcc.unm.edu/Workshop/System-subroutine/pvm/pvm_details/message_pvm.html">( Click here for more information
+on message passing in PVM. )</A> <HR ALIGN=LEFT><A NAME="Message Passing Systems"></A><B><FONT
+ SIZE=+1>Message Passing Systems</FONT></B></P>
+
+<P><B>Message passing library </B>Software package to initiate and coordinate
+tasks on a distributed memory machine.</P>
+
+<UL>
+  <LI>machine dependent - MPL (EUI), ...
+  <LI>portable - PVM, P4, MPI, chameleon
+</UL>
+
+<P><HR ALIGN=LEFT></P>
+
+<P><A NAME="PVM Terms"></A><B><FONT SIZE=+1>PVM Terms</FONT></B></P>
+
+<P><B>Host</B> : a physical machine (or nodes of a parallel machine)</P>
+
+<P><B>Virtual Machine</B> : meta-machine composed of one or more hosts</P>
+
+<P><B>Task</B> : a PVM process - smallest unit of computation</P>
+
+<P><B>TID</B> : unique identifier associated with each task</P>
+
+<P><B>PVMD</B> : the PVM daemon, 'pvm3/lib/ARCH/pvmd3'</P>
+
+<P><B>Message</B> : ordered list of data sent between tasks</P>
+
+<P><B>Group</B> : set of tasks assigned a symbolic name, each task has a
+unique index in the group and a task can belong to zero or more groups</P>
+
+<P><HR ALIGN=LEFT></P>
+
+<P><A NAME="PVM Overview"></A><B><FONT SIZE=+1>PVM Overview</FONT></B></P>
+
+<DL>
+  <P><B>PVM (Parallel Virtual Machine)</B>
+  <DD>A software package that permits a heterogeneous collection of computers
+  on a network to appear as one parallel machine.
+</DL>
+
+<UL>
+  <LI>a collection of workstations with ethernet connections
+  <LI>a collection of computers with internet connections
+  <LI>the nodes of an IBM SP1 or SP2
+  <LI>hybrids of differing machines with various connections
+</UL>
+
+<P><HR ALIGN=LEFT></P>
+
+<P><A NAME="Heterogeneity"></A><B><FONT SIZE=+1>Heterogeneity</FONT></B></P>
+
+<P><B>PVM exploits heterogeneity at three levels: </B>Application, Machine
+and Network</P>
+
+<DL>
+  <P><B>Application</B>
+  <DD>subtasks can be written for the architecture best suited to their solution
+  (serial, vector, massively parallel)
+  <P><B>Machine</B>
+  <DD>machines with different architectures, operating systems and data formats
+  can be collected together to form a single virtual machine
+  <P><B>Network</B>
+  <DD>the machines can be connected by different networks (FDDI, token ring,
+  ethernet, high performance switch)
+</DL>
+
+<P><HR ALIGN=LEFT></P>
+
+<P><A NAME="Major Features"></A><B><FONT SIZE=+1>Major Features</FONT></B></P>
+
+<UL>
+  <LI>any user can install PVM under his home directory
+  <LI>easy to configure virtual machine using host files
+  <LI>easy to write programs - fairly small number of routines
+  <LI>C and Fortran routines
+  <LI>multiple applications can run simultaneously on one VM
+  <LI>PVM package is small - a few Mb of disk space
+</UL>
+
+<P><HR ALIGN=LEFT></P>
+
+<P><A NAME="Portability"></A><B><FONT SIZE=+1>Portability</FONT></B></P>
+
+<UL>
+  <LI>PVM source code is very portable across Unix machines
+  <LI>PVM currently runs on
+  <UL>
+    <LI>80386/486 with BSDI
+    <LI>DEC Alpha/OSF-1
+    <LI>DEC Micorvax
+    <LI>DECstation
+    <LI>DG Aviion
+    <LI>HP 9000/300
+    <LI>IBM RS/6000
+    <LI>Silicon Graphics IRIS
+    <LI>Sun4, Sparc
+    <LI>and on 17 more different computer architectures
+  </UL>
+  <LI>version 3 portable to non-Unix machines
+</UL>
+
+<P><HR ALIGN=LEFT></P>
+
+<P><A NAME="PVM System"></A><B><FONT SIZE=+1>PVM System</FONT></B></P>
+
+<P>The PVM System is composed of:</P>
+
+<P>a daemon program <B><A HREF="https://web.archive.org/web/20000708131042/http://ahpcc.unm.edu/Workshop/System-subroutine/pvm/pvm_details/daemon.html">pvmd3</A></B></P>
+
+<UL>
+  <LI><B>libpvm </B>programming library
+  <LI>user applications
+</UL>
+
+<P>A console ( either GUI based or character mode) is available for controlling
+the virtual machine. It may be started up by typing <B>pvm</B> or <B>xpvm</B>
+at the unix prompt ( assuming the paths have been set correctly ). The console
+maybe used to add hosts, spawn tasks, delete hosts etc. ( more details to
+follow) <BR>
+<A HREF="https://web.archive.org/web/20000708131042/http://ahpcc.unm.edu/Workshop/System-subroutine/pvm/pvm_details/console.html">( Click here for more information. )</A><BR>
+<BR>
+A virtual machine is configured by starting the daemon program on all of
+the intended hosts, one daemon runs on each host for each user.</P>
+
+<P>The daemon program:</P>
+
+<UL>
+  <LI>provides inter-host point of contact
+  <LI>authenticates tasks
+  <LI>executes processes on host
+  <LI>provides fault detection
+  <LI>is mainly a message router
+</UL>
+
+<P>The libpvm programming library:</P>
+
+<UL>
+  <LI>linked with each application
+  <LI>small number of routines (simplicity)
+</UL>
+
+<P>Applications:</P>
+
+<UL>
+  <LI>written by user in PVM message-passing calls
+  <LI>executed as PVM ``tasks''
+</UL>
+
+<P><HR ALIGN=LEFT></P>
+
+<P><A NAME="PVM Library"></A><B><FONT SIZE=+1>PVM Library</FONT></B></P>
+
+<UL>
+  <LI>routines in both Fortran and C
+  <LI>C programs: include pvm3.h and link to library libpvm3.a
+  <LI>Fortran programs: include fpvm3.h and link to libraries libpvm3.a and
+  libfpvm3.a
+  <LI>if group routines are used, link to libgpvm3.a
+  <LI>see makefile accompanying examples
+</UL>
+
+<P><HR ALIGN=LEFT></P>
+
+<P><A NAME="Fortran Library"></A><B><FONT SIZE=+1>Fortran Library</FONT></B></P>
+
+<P>all programs should have</P>
+
+<UL>
+  <LI><B>pvmfmytid()</B> - first PVM statement, enrolls program in PVM, gets
+  tid of the program Equivalent C function: <CODE>pvm_mytid()</CODE> <BR>
+  This function returns the task identifier number (tid) of the calling PVM
+  process. This value, if less than 0, indicates an error.<BR>
+  <CODE>tid</CODE>: is a 32 bit integer created by local pvmd, encoding much
+  information about the process.
+  <LI><B>pvmfexit()</B> - last PVM statement, disenrolls program from PVM,
+  program may continue with further computations. All programs should call
+  this.<BR>
+  Equivalent C function: <CODE>pvm_exit()</CODE> This function <EM>must</EM>
+  be called by processes not started by <CODE>pvm_spawn() </CODE>( pvmfspawn()
+  in Fortran ) - otherwise, PVM has no way of knowing if the process has
+  stopped normally or crashed. A status code is returned by this function,
+  and values less than zero indicate an error.
+</UL>
+
+<P>Additionally, PVM programs perform process control by starting and stopping
+tasks</P>
+
+<UL>
+  <LI><B>pvmfspawn()</B>- start tasks and assign each task a unique tid<BR>
+  Equivalent function in C: <CODE>pvm_spawn() </CODE><BR>
+  A number of arguments are taken in, including the executable filename for
+  the PVM process to be started, and an integer indicating the number of
+  PVM tasks started is returned. A negative return value indicates an error.
+  <LI><B>pvmfparent()</B> - get tid of parent task<BR>
+  Equivalent function in C: <CODE>pvm_parent() </CODE><BR>
+  The <CODE>tid</CODE> of the process that spawned the calling process is
+  returned. If the calling process was not created with <CODE>pvm_spawn</CODE>,
+  the the returned value is set to <CODE>PvmNoParent</CODE>.
+  <LI><B>pvmfkill()</B> - stop a PVM task<BR>
+  Equivalent function in C: <CODE>pvm_kill( int tid ) </CODE><BR>
+  The function takes as input the <CODE>tid</CODE> of the PVM process to
+  be killed and returns a status code. A negative status code indicates an
+  error.
+</UL>
+
+<P><HR ALIGN=LEFT></P>
+
+<P><A NAME="Fortran Library - Message Passing"></A><B><FONT SIZE=+1>Fortran
+Library - Message Passing</FONT></B></P>
+
+<P>Sending is a three step process:</P>
+
+<OL>
+  <LI><B>pvmfinitsend()</B> - initialize send buffer<BR>
+  Equivalent C function: <CODE>pvm_initsend(int encoding) <BR>
+  encoding </CODE>specifies the message encoding scheme to be used. An integer
+  id to the buffer for packing the data into is returned.
+  <LI><B>pvmfpack()</B> - pack data into buffer (any number of times)<BR>
+  Equivalent C function: <CODE>pvm_pk*()</CODE>C has many functions according
+  to the data type to be packed in. The functions, in Fortran or C, take
+  a number of arguments, and return a status code. A negative return value
+  would indicate an error.
+  <LI><B>pvmfsend()</B> - send message to desired process<BR>
+  Equivalent C function: <CODE>pvm_send()</CODE> The function takes in a
+  <CODE>tid</CODE> to the destination process and a positive integer message
+  tag supplied by the user,allowing the program to distinguish between different
+  messages. The function returns an integer status code, and a negative value
+  indicates an error.
+</OL>
+
+<P><STRONG>Note: pvmfsend</STRONG> can be replaced by any other send routine
+such as <B>pvmfmcast</B>, see User Guide</P>
+
+<P>Receiving: for every send there should be a receive, and for every pack
+there should be a matching unpack</P>
+
+<OL>
+  <LI><B>pvmfrecv()</B> - receive a message (blocking receive) Equivalent
+  C function: <CODE>pvm_recv()</CODE>The function takes in as input a <CODE>tid</CODE>
+  of the sending process, and a positive integer message tag supplied by
+  the user. The function returns an id for the new active receive buffer.
+  A negative value signals an error.
+  <LI><B>pvmfunpack()</B> - unpack data from buffer Equivalent C function:
+  <CODE>pvm_upk*()</CODE>C has a number of functions to match the type of
+  data to be unpacked. The function takes in a number of arguments, and returns
+  a status code, which, if negative, signals an error.
+</OL>
+
+<P><STRONG>Note:</STRONG>there are nonblocking as well as blocking receives,
+see User Guide</P>
+
+<P>Once composed, a message can be:</P>
+
+<OL>
+  <LI>sent to another task, multicast to a list of tasks or broadcast to
+  a group
+  <LI>sent any number of times without repacking
+</OL>
+
+<UL>
+  <LI>PVM sends are non-blocking, returns ASAP, does not imply receipt
+  <LI>messages are downloaded to receiving task and queued
+  <LI>receive operation searches queue for match and removes it from the
+  queue
+  <LI>messages sent between two tasks arrive in order sent
+</UL>
+
+<P><HR ALIGN=LEFT></P>
+
+<P><A NAME="Fortran Library - Group Routines"></A><B><FONT SIZE=+1>Fortran
+Library - Group Routines</FONT></B></P>
+
+<UL>
+  <LI>optional library to provide naming structure
+  <LI>tasks can enroll in a group and can be addressed by the group name
+  and an index
+  <LI>group routines:
+  <UL>
+    <LI>join, leave groups
+    <LI>lookup group member
+    <LI>broadcast to group
+    <LI>perform barrier synchronization within group
+  </UL>
+</UL>
+
+<P><HR ALIGN=LEFT></P>
+
+<P><A NAME="PVM Console"></A><B><FONT SIZE=+1>PVM Console</FONT></B></P>
+
+<UL>
+  <LI><A HREF="https://web.archive.org/web/20000708131042/http://ahpcc.unm.edu/Workshop/System-subroutine/pvm/pvm_details/console.html">PVM console</A> - add/delete hosts,
+  spawn tasks, reset, etc.
+  <LI>XPVM - graphical console with functions of
+  <UL>
+    <LI>PVM console
+    <LI>Real-time performance analyzer
+    <LI>call level debugger
+    <LI>post-mortem analysis tool
+  </UL>
+</UL>
+
+<P><HR ALIGN=LEFT></P>
+
+<P><A NAME="Visualization with Upshot"></A><B><FONT SIZE=+1>Visualization
+with Upshot</FONT></B></P>
+
+<UL>
+  <LI><B>Upshot</B> - X Window System-based visualization tool (ANL)
+  <LI>graphical display of parallel execution behavior as a series of timelines
+  for each process and event types associated with those processes
+  <LI>displays user-defined ``states'' associated with certain events
+  <LI>see documentation in <B>/usr/local/upshot/doc</B>
+  <LI>to use must set path variable and link to library
+</UL>
+
+<P><HR ALIGN=LEFT></P>
+
+<P><A NAME="A Basic Parallel Problem"></A><B><FONT SIZE=+1>A Basic Parallel
+Problem</FONT></B></P>
+
+<P><B>Problem:</B> Compute the entries of a matrix where</P>
+
+<UL>
+  <LI>the computation is CPU intensive
+  <LI>the entries can be computed independently of one another
+</UL>
+
+<P><B>Goal:</B> parallelize this problem, along the way, consider the issues
+of load balancing and task granularity <HR ALIGN=LEFT></P>
+
+<P><A NAME="A Basic Parallel Problem"></A><B><FONT SIZE=+1>A Basic Parallel
+Problem</FONT></B></P>
+
+<P>The serial code <B>sermat.f</B> contains the lines</P>
+
+<PRE>do 10 i = 1,n
+do 10 j = 1,n
+mat(i,j) = setmat(i,j)
+10   continue</PRE>
+
+<P>To parallelize, we will divide up this calculation into tasks, and assign
+the computation to the various processors <HR ALIGN=LEFT></P>
+
+<P><A NAME="Parallel Strategies"></A><B><FONT SIZE=+1>Parallel Strategies</FONT></B></P>
+
+<UL>
+  <LI>strategy 1, <B>static load balance</B>: given <I>N</I> processors,
+  divide matrix into <I>N</I> equal parts, have each processor compute one
+  of the parts
+</UL>
+
+<P>in this strategy, the speedup is limited by the slowest processor we
+want the faster processors to get more jobs</P>
+
+<UL>
+  <LI>strategy 2, <B>dynamic load balance</B>: each processor computes an
+  entry of the matrix at a time, when it completes this task, it determines
+  the next entry to be computed and repeats until all entries are completed
+</UL>
+
+<P>still have a problem here, the task granularity is too small, the speedup
+is limited by the communications <HR ALIGN=LEFT></P>
+
+<P><A NAME="PVM setup"></A><B><FONT SIZE=+1>PVM setup</FONT></B></P>
+
+<P>New accounts should already be set up correctly. Older accounts may need
+to be updated by one of the following methods:</P>
+
+<UL>
+  <LI>Run the system environment update script <BR>
+  <TT>%/usr/local/bin/reset_environment</TT> <BR>
+  This will remove any custom changes you have made to your environment.
+  <LI>You can make the following changes to your set up manually.
+  <LI>if you do not have the file <B>.pvmrc</B> then get it by <BR>
+  <TT>% cp /usr/local/environment/.pvmrc .pvmrc</TT>
+  <LI>check for <B>.rhosts </B>file with contents <TT>gila.arc.unm.edu raton.arc.unm.edu
+  acoma.arc.unm.edu taos.arc.unm.edu cochiti.arc.unm.edu isleta.arc.unm.edu
+  laguna.arc.unm.edu</TT>
+  <LI>make sure <B>.rhosts</B> has correct permissions<TT> % chmod 644 .rhosts</TT>
+</UL>
+
+<P>in your home directory</P>
+
+<UL>
+  <LI>check for <B>.xpvm_hosts</B> file with contents <PRE>&gila
+   &raton
+   &acoma
+   &taos
+   &cochiti
+   &isleta
+   &laguna
+   </PRE>
+</UL>
+
+<P>check that file <B>.cshrc </B>contains the following lines</P>
+
+<PRE>setenv PVM_ROOT    /usr/local/pvm3
+setenv XPVM_ROOT   $PVM_ROOT/xpvm
+setenv PVM_LOCAL   $HOME/pvm3
+setenv TCL_LIBRARY $XPVM_ROOT/src/tcl
+setenv TK_LIBRARY  $XPVM_ROOT/src/tcl
+if ( $OSNAME == AIX ) then
+setenv PVM_ARCH RS6K
+else if ( $OSNAME == IRIX ) then
+setenv PVM_ARCH SGIMP
+else if ( $OSNAME == HP-UX ) then
+setenv PVM_ARCH HPPA
+else if ( $OSNAME == SunOS ) then
+setenv PVM_ARCH SUNMP
+endif</PRE>
+
+<P>check that file <B>.cshrc</B> contains the following lines {tiny</P>
+
+<PRE>set path=($path $PVM_LOCAL/bin/$PVM_ARCH)
+set path=($path $PVM_ROOT/lib/$PVM_ARCH)
+set path=($path $PVM_ROOT/bin/$PVM_ARCH)
+set path=($path $XPVM_ROOT/src/$PVM_ARCH)</PRE>
+
+<P>create your PVM directories and files {small</P>
+
+<PRE>% cd
+% mkdir pvm3
+% mkdir pvm3/bin pvm3/src
+% mkdir pvm3/bin/RS6K pvm3/bin/SGIMP pvm3/bin/HPPA pvm3/bin/SUNMP
+% cd pvm3</PRE>
+
+<UL>
+  <LI>create the file <B>hostfile3</B> with contents <PRE>&gila
+   &raton
+   &acoma
+   &taos
+   &cochiti
+   &isleta  &laguna
+   </PRE>
+</UL>
+
+<P><HR ALIGN=LEFT></P>
+
+<P><A NAME="PVM hostfile"></A><B><FONT SIZE=+1>PVM hostfile</FONT></B></P>
+
+<P>Your PVM hostfile defines your parallel virtual machine. It contains
+the names of all desired machines, one per line, and only needs to reside
+on the machine where you start PVM</P>
+
+<UL>
+  <LI>The filename can be whatever you like (eg. hostfile3)
+  <LI>Comment lines start with &quot;#&quot;
+  <LI>Options include:
+  <UL>
+    <LI>& = must precede hostname if the host is to be added dynamically later
+    <LI>ep = executable program component paths if not using default
+    <LI>dx = daemon path if not using default ~/pvm3/bin/PVM_ARCH
+    <LI>lo = login userid
+    <LI>pw = password entry required
+    <LI>* = apply to all following hosts in hostfile
+  </UL>
+</UL>
+
+<P>&nbsp;</P>
+
+<PRE>########################################################
+# FILENAME:  hostfile.2
+# DESCRIPTION: PVM hostfile with a few options
+########################################################
+
+fr29s01.mhpcc.edu
+fr29s02.mhpcc.edu
+fr29s03.mhpcc.edu
+fr29s04.mhpcc.edu
+
+#
+# 	next two hosts will be may be added dynamically later
+#
+
+&amp;fr10n12.mhpcc.edu
+&amp;fr12n14.mhpcc.edu
+
+#
+# next host has different path for its PVM executables
+#
+
+beech.tc.cornell.edu  ep=/u/user02/pvm/testing/bin
+
+#
+# next line applies to all hosts which follow it
+#
+
+* lo=user02 pw
+
+kanaha.mhpcc.edu
+makena.mhpcc.edu
+littleb.mhpcc.edu</PRE>
+
+<P><HR ALIGN=LEFT></P>
+
+<P><A NAME="PVM examples"></A><B><FONT SIZE=+1>PVM examples</FONT></B></P>
+
+<P>first login into taos or acoma (set DISPLAY variable) copy examples,
+compile and run</P>
+
+<PRE>% mkdir -p $HOME/pvm3/src
+% cp -R $PVM_ROOT/examples/workshop/* $HOME/pvm3/src
+% cd $HOME/pvm3/src
+% make all
+% cp dlb1 dlb2 slb $HOME/pvm3/bin/RS6K
+% xpvm</PRE>
+
+<P>once xpvm window appears, configure virtual machine consisting of taos
+and acoma, then spawn the process <B>slb</B></P>
+
+<P><B><FONT COLOR="#ff0000">DO NOT spawn the process `dlb1'</FONT></B></P>
+
+<P><HR ALIGN=LEFT></P>
+
+<P><A NAME="Troubleshooting PVM3.3.x"></A><B><FONT SIZE=+1>Troubleshooting
+PVM3.3.x</FONT></B></P>
+
+<P>The following is a troubleshooting list for the setup of PVM:</P>
+
+<OL>
+  <LI>pvmgs file from earlier version still in $HOME/pvm3/bin/RS6K. Delete
+  it. (Causes mksocs connect error?)
+  <LI>.rhost file write able by others. rw-r--r-- is correct. To identify
+  this problem, try rlogin to another AHPCC machine. If it prompts you for
+  a password, .rhosts is setup incorrectly.
+  <LI>Path not set before &quot;not interactive shell&quot; exit in the .cshrc
+  file. Test with rsh <machine> pvmd3. If it cannot find pvmd3, the path
+  is not set before the &quot;not interactive shell&quot; exit.
+  <LI>Path not set up or environment not set up properly in .cshrc file.
+  Use printenv to check path and environment. They should all show pvm3 (or
+  the version of pvm being used).
+  <LI>pvmd.xxx files. Pvmd's cannot startup if a pvmd.xxx file exists in
+  the /tmp directory. Since /tmp filesystems exist on each machine, you should
+  check on each machine.
+  <LI>Xpvm does not come up with list of hosts. .xpvm_hosts file does not
+  exist or is set up improperly.
+  <LI>Old programs don't run. Programs must be recompiled under the new pvm
+  to run. Note that the include files have also changed.
+  <LI>Korn shell. Korn shell does not read the .cshrc file on startup. In
+  order to run under the korn shell the following statement is necessary
+  in your .profile: <BR>
+  export PVM_DPATH=$PVM_ROOT/lib/pvmd
+  <LI>Interactive statements in the .cshrc. The interactive statements block
+  the running of the .cshrc on the remote system when it is started up. If
+  interactive commands are needed, put them in the .login or after the &quot;if
+  not interactive shell&quot; exit in the .cshrc.
+  <LI>Be careful of concurrent I/O to the same files in a shared filesystem!
+  For concurrent I/O (writing) in a shared filesystem, you may want to implement
+  a scheme to assign unique names to output files.
+  <LI>For the most recent PVM versions, stdout and stderr from spawned processes
+  are written to your /tmp/pvml.uid file. Only stdout and stderr from parent
+  process will appear on your screen. This will be &quot;fixed&quot; in future
+  releases of PVM. A workaround is to use the PVM interactive console and
+  the &quot;-&gt;&quot; option with the spawn command, or to use XPVM.
+  <LI>On independent file systems, you must maintain all of the different
+  versions of your executables on multiple machines.
+  <LI>Make sure all pvmd3s and PVM libraries are the same PVM version.
+  <LI>Always use full domain names in .rhosts and PVM hostfiles.
+</OL>
+
+<P><HR ALIGN=LEFT></P>
+
+<P><A NAME="Parallel Strategies II"></A><B><FONT SIZE=+1>Parallel Strategies
+II</FONT></B></P>
+
+<P>Adjust the comm/comp ratio in strategy 2 by computing rows instead of
+elements</P>
+
+<OL>
+  <LI>strategy 3, <B>dynamic load balance</B>: each processor computes a
+  row of the matrix at a time, when it completes this task, it determines
+  the next row to be computed and repeats until all rows are completed
+</OL>
+
+<P><HR ALIGN=LEFT></P>
+
+<P><A NAME="Example II"></A><B><FONT SIZE=+1>Example II</FONT></B></P>
+
+<P>Implement strategy 3 <BR>
+code and makefile should be in working directory</P>
+
+<PRE>% cd
+% cd pvm3/src
+% ls</PRE>
+
+<P>you should see the Fortran files, sermat.f, spmddlb2.f and matdlb2.f
+along with a makefile <BR>
+We will go over the code found in spmddlb2.f and matdlb2.f first run this
+code under xpvm and process through upshot</P>
+
+<PRE>% make dlb2
+% xpvm</PRE>
+
+<P>spawn the process <B>dlb2</B> after completion, use upshot</P>
+
+<PRE>% cd
+% cp /usr/local/ftp/pub/pvm3/states.dlb2
+% mergelogs alogfile.p* &gt; alogfile.dlb2
+% upshot -l alogfile.dlb2 -s states.dlb2</PRE>
+
+<P><HR ALIGN=LEFT><B>SPMD driver</B></P>
+
+<P><B>part 1</B> include file fpvm3.h</P>
+
+<PRE>	include 'fpvm3.h'</PRE>
+
+<P><B>part 2</B> declare PVM variables</P>
+
+<PRE>	integer mytid,ptid,me,info,inst,igrpsize
+	integer numt,nhosts,njobs,narch,dtid,speed
+	character host,arch
+	parameter (mnproc = 4)
+	integer tids(0:mnproc)</PRE>
+
+<P><B>part 3</B> enroll in PVM</P>
+
+<PRE>	call pvmfparent(ptid)
+	call pvmfmytid(mytid)</PRE>
+
+<P><B>part 4</B> determine number of jobs running</P>
+
+<PRE>	call pvmfconfig(nhosts,narch,dtid,host,arch,speed,info)
+	njobs = nhosts + 1</PRE>
+
+<P><B>part 5</B> find out if parent or child</P>
+
+<PRE>	call pvmfjoingroup('strat3grp',inst)
+	call pvmfgsize('strat3grp',igrpsize)</PRE>
+
+<P><B>part 6</B> parent process</P>
+
+<PRE>	tids(0) = mytid
+	me = 0
+c start copies ...
+	call pvmfspawn('strat3',PVMDEFAULT,'*',njobs-1,tids(1),numt)</PRE>
+
+<P><B>part 7</B> child process</P>
+
+<PRE>	me = inst
+	tids(me) = mytid
+	tids(0) = ptid</PRE>
+
+<P><B>part 8</B> synchronize processes</P>
+
+<PRE>	call pvmfbarrier('strat3grp',njobs,info)
+	call pvmflvgroup('strat3grp',info)</PRE>
+
+<P><B>part 9</B> exit pvm</P>
+
+<PRE>	call pvmfexit()</PRE>
+
+<P><HR ALIGN=LEFT><B>work subroutine</B></P>
+
+<P><B>part 1</B> subroutine header and include</P>
+
+<PRE>	subroutine parmat(me,tids,mnproc,njobs)
+	include 'fpvm3.h'</PRE>
+
+<P><B>part 2</B> declare PVM variables</P>
+
+<PRE>	integer me,mnproc,njobs,mytid,ctid,irow
+	integer tids(0:mnproc)</PRE>
+
+<P><B>part 3</B> child computes rows</P>
+
+<PRE>	if (me .gt. 0) then
+  	   mytid = tids(me)
+ 	   irow = me
+5      	continue</PRE>
+
+<P><B>part 4</B> send results to parent</P>
+
+<PRE>	call pvmfinitsend(0,info)
+	call pvmfpack(INTEGER4,mytid,1,1,info)
+	call pvmfpack(INTEGER4,irow,1,1,info)
+	call pvmfpack(REAL4,mat(irow,1),n,nmax,info)
+	call pvmfsend(tids(0),2,info)</PRE>
+
+<P><B>part 5</B> receive next job from parent</P>
+
+<PRE>	call pvmfrecv(tids(0),3,info)
+	call pvmfunpack(INTEGER4,irow,1,1,info)
+	if (irow .le. n) goto 5</PRE>
+
+<P><B>part 6</B> receive results from child</P>
+
+<PRE>	else
+	do 6 icnt = 1,n
+ 	  call pvmfrecv(-1,2,info)
+	  call pvmfunpack(INTEGER4,ctid,1,1,info)
+	  call pvmfunpack(INTEGER4,irow,1,1,info)
+	  call pvmfunpack(REAL4,mat(irow,1),n,nmax,info)</PRE>
+
+<P><B>part 7</B> send next job to child</P>
+
+<PRE>	  irow = icnt + njobs - 1
+ 	  call pvmfinitsend(0,info)
+ 	  call pvmfpack(INTEGER4,irow,1,1,info)
+ 	  call pvmfsend(ctid,3,info)
+6 	continue</PRE>
+
+<P><HR ALIGN=LEFT></P>
+
+<P><A NAME="Other Examples"></A><B><FONT SIZE=+1>Other Examples</FONT></B></P>
+
+<UL>
+  <LI>Matrix Multiply
+  <LI>pi Calculation
+  <LI>Concurrent Wave Equation
+  <LI>2D Heat Equation Domain Decomposition
+  <LI>Timing Performance
+  <LI>Load Balancing
+</UL>
+
+<P><HR ALIGN=LEFT></P>
+
+<P><A NAME="Matrix Multiply"></A><B><FONT SIZE=+1>Matrix Multiply</FONT></B></P>
+
+<P>This example is a simple matrix multiply program. In the parallel version,
+the data is distributed among the worker tasks who perform the actual multiplication
+and send back their respective results to the master task.</P>
+
+<UL>
+  <LI>Serial Files:
+  <UL>
+    <LI>FORTRAN: ser_mm.f and make.ser_mm.f
+    <LI>C: ser_mm.c and make.ser_mm.c
+  </UL>
+  <LI>PVM Files:
+  <UL>
+    <LI>FORTRAN: pvm_mm.master.f, pvm_mm.worker.f, make.pvm_mm.f
+    <LI>C: pvm_mm.master.c, pvm_mm.worker.c, make.pvm_mm.c
+  </UL>
+</UL>
+
+<P><HR ALIGN=LEFT></P>
+
+<P><A NAME="pi Calculation"></A><B><FONT SIZE=+1>pi Calculation</FONT></B></P>
+
+<P>This program calculates pi using a &quot;dart board&quot; algorithm.
+See Fox et al.(1988) Solving Problems on Concurrent Processors, vol.1 page
+207. In the parallel version, all processes contribute to the calculation,
+with the master averaging the values for pi.</P>
+
+<UL>
+  <LI>Serial Files:
+  <UL>
+    <LI>FORTRAN: ser_pi_calc.f and make.ser_pi_calc.f
+    <LI>C: ser_pi_calc.c and make.ser_pi_calc.c
+  </UL>
+  <LI>PVM Files:
+  <UL>
+    <LI>FORTRAN: pvm_pi_calc.f, dboard.f, make.pvm_pi_calc.f
+    <LI>C: pvm_pi_calc.c, dboard.c, make.pvm_pi_calc.c
+  </UL>
+</UL>
+
+<P><HR ALIGN=LEFT></P>
+
+<P><A NAME="Concurrent Wave Equation"></A><B><FONT SIZE=+1>Concurrent Wave
+Equation</FONT></B></P>
+
+<P>This program implements the concurrent wave equation described in Chapter
+5 of Fox et al., 1988, Solving Problems on Concurrent Processors, vol 1.</P>
+
+<P>A vibrating string is decomposed into points. Each processor is responsible
+for updating the amplitude of a number of points over time. At each iteration,
+each processor exchanges boundary points with their nearest neighbors.</P>
+
+<P>An X based display of the final wave is provided.</P>
+
+<P>PVM Files:</P>
+
+<UL>
+  <LI>FORTRAN: pvm_wave.f, pvm_wave.h, draw_wave.c, make.pvm_wave.f
+  <LI>C: pvm_wave.c, draw_wave.c, make.pvm_wave.c
+</UL>
+
+<P><HR ALIGN=LEFT></P>
+
+<P><A NAME="2D Heat Equation"></A><B><FONT SIZE=+1>2D Heat Equation</FONT></B></P>
+
+<P>This example is based on a simplified two-dimensional heat equation domain
+decomposition. The initial temperature is computed to be high in the middle
+of the domain and zero at the boundaries. The boundaries are held at zero
+throughout the simulation. During the time-stepping, an array containing
+two domains is used; these domains alternate between old data and new data.</P>
+
+<UL>
+  <LI>Serial Files:
+  <UL>
+    <LI>FORTRAN: ser_heat2D.f and make.ser_heat2D.f
+    <LI>C: ser_heat2D.c and make.ser_heat2D.c
+  </UL>
+  <LI>PVM Files:
+  <UL>
+    <LI>FORTRAN: pvm_heat2D.f, pvm_heat2D.h, draw_heat.c, make.pvm_heat2D.f
+    <LI>C: pvm_heat2D.c, draw_heat.c, make.pvm_heat2D.c
+  </UL>
+</UL>
+
+<P><HR ALIGN=LEFT></P>
+
+<P><A NAME="Timing Example"></A><B><FONT SIZE=+1>Timing Example</FONT></B></P>
+
+<P>This example is a communication timing test for PVM.</P>
+
+<P>A set number of messages are sent between the master and worker tasks.
+Before and after timings are made for each message and an average is calculated
+when completed.</P>
+
+<P>PVM Files:</P>
+
+<UL>
+  <LI>FORTRAN: pvm_timing.master.f, pvm_timing.worker.f, make.pvm_timing.f
+  <LI>C: pvm_timing.master.c, pvm_timing.worker.c, make.pvm_timing.c
+</UL>
+
+<P><HR ALIGN=LEFT></P>
+
+<P><A NAME="Load Balancing"></A><B><FONT SIZE=+1>Load Balancing</FONT></B></P>
+
+<P>This example demonstrates simple load balancing for PVM.</P>
+
+<P>A matrix is sent by the master to each worker task. Each worker task
+computes the inverse of its matrix and returns the result to the master.
+As the master receives each result it sends a new matrix to that worker.</P>
+
+<P>PVM Files:</P>
+
+<UL>
+  <LI>FORTRAN: hitc.f, hitc_worker.f, make.hitc.f
+</UL>
+
+<P><HR ALIGN=LEFT></P>
+
+<P><A NAME="Closing"></A><B><FONT SIZE=+1>Closing</FONT></B></P>
+
+<UL>
+  <LI>slides available by ftp from: <B>ftp.arc.unm.edu in pub/workshop/PVM</B>
+  <LI>PVM code and documentation available in <B>pub/pvm3</B>
+  <LI>Workshop materials offered by MHPCC : <A HREF="https://web.archive.org/web/20000708131042/http://www.mhpcc.edu/training/workshop/html/pvm/PvmIntro.html">Introduction
+  to PVM </A><!---->
+  <LI><A HREF="https://web.archive.org/web/20000708131042/http://ahpcc.unm.edu/Workshop/System-subroutine/pvm/pvm_tutorial.html">A tutorial on PVM by Lon Waters </A>
+</UL>
+
+<P><CENTER><HR><BR>
+<I><FONT SIZE=-1>Copyright 1996, The High Performance Computing Education
+and Research Center<BR>
+July 1998, <A HREF="mailto:editor@arc.unm.edu">editor@arc.unm.edu</A></FONT></I></CENTER>
+</BODY>
+</HTML>

@@ -104,8 +104,10 @@ Every page's Markdown source (OKF frontmatter included) is served at its URL plu
 - [For AI agents](https://unm-carc.github.io/docs/about/ai-agents/): How agents and harnesses should consume this documentation: llms.txt, per-page Markdown with OKF frontmatter, and trust signals.
 - [Contributing to these docs](https://unm-carc.github.io/docs/about/contributing/): How to edit pages, the OKF frontmatter contract, verifying migrated content, and building the site locally.
 - [Facilities description](https://unm-carc.github.io/docs/about/facilities/): Boilerplate facilities description for grant proposals: clusters, storage, networking, and the data center.
+- [History of CARC computing](https://unm-carc.github.io/docs/about/history/): Historical record of the supercomputers in the Galles Building machine room, 1994 to today: machines, funding, processing power, costs, directors, and the PIs who contributed hardware. (draft)
 - [Mission and vision](https://unm-carc.github.io/docs/about/mission/): CARC's vision and mission: leading and growing the computational research community at UNM.
 - [Partner cyberinfrastructure](https://unm-carc.github.io/docs/about/partners/): National and regional platforms CARC users can reach: ACCESS-CI, Jetstream2, CyVerse, and MESA.
+- [Web archive of the old center websites](https://unm-carc.github.io/docs/about/web-archive/): Browsable copies of the HPCERC, AHPCC, Alliance Supercluster, HPC@UNM and early CARC websites, 1998 to 2016, rebuilt from Internet Archive captures with working local links and images. (draft)
 
 ## Meta
 

@@ -1,0 +1,359 @@
+<LINK REL="stylesheet" TYPE="text/css" HREF="https://web.archive.org/web/20000604035600cs_/http://ahpcc.unm.edu/ahpcc.css">
+<HTML>
+<HEAD>
+  <META NAME="GENERATOR" CONTENT="Adobe PageMill 2.0 Win">
+  <TITLE>An Introduction to Chameleon</TITLE>
+</HEAD>
+<BODY LINK="#800000" ALINK="#ffff00" VLINK="#0460a4" BACKGROUND="../../../_img/Images/background/AHPCC_Background.gif">
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">ahpcc.unm.edu/Workshop/System-subroutine/chameleon/chameleon.html</code> as captured by the Internet Archive on 4 June 2000. Links to pages that were not saved here go to the Wayback Machine. <a style="color:#0b5cad" href="https://web.archive.org/web/20000604035600/http://www.ahpcc.unm.edu:80/Workshop/System-subroutine/chameleon/chameleon.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../../">Web archive index</a></div>
+
+
+<H1><CENTER><IMG SRC="../../../_img/Images/logos/ahpcc_logo.gif" WIDTH="300"
+HEIGHT="75" ALIGN="BOTTOM" NATURALSIZEFLAG="3" ALT="AHPCC Logo"></CENTER></H1>
+
+<P><CENTER><B><FONT SIZE=+2>An Introduction to Chameleon</FONT></B></CENTER></P>
+
+<P><CENTER><HR></CENTER></P>
+
+<P><B><FONT SIZE=+1>Origination of Chameleon</FONT></B></P>
+
+<UL>
+  <LI>Argonne National Laboratory, Mathematics and Computer Science Division
+  <LI>Contact: William Gropp, gropp@mcs.anl.gov
+  <LI>Primary Resources: <BR>
+  FTP: info.mcs.anl.gov under pub/pdetools<BR>
+  WWW: http://www.mcs.anl.gov<BR>
+  User's Manual -- hard copy at AHPCC or get from AHPCC or ANL anonymous
+  ftp server
+  <LI>Additional Resources<BR>
+  WWW: MHPCC http://www.mhpcc.edu/mhpcc.html <BR>
+  WWW: ARC http://www.arc.unm.edu<BR>
+  FTP: ARC ftp.arc.unm.edu
+</UL>
+
+<P><CENTER><HR></CENTER></P>
+
+<P><B><FONT SIZE=+1>Chameleon Concept</FONT></B></P>
+
+<P><B>Second Generation Parallel Programming System</B></P>
+
+<UL>
+  <LI>Message Passing System
+  <LI>Uses existing parallel programming systems rather than replacing them
+  <LI>Stable interface to changing parallel programming system
+  <LI>Runs on homogeneous and heterogeneous systems of computers
+  <LI>Provides access to a wide variety of debugging and profiling aids
+  <LI>C and Fortran
+</UL>
+
+<P><CENTER><HR></CENTER></P>
+
+<P><B><FONT SIZE=+1>Goals of Chameleon</FONT></B></P>
+
+<OL>
+  <LI>Be very lightweight (low overhead)
+  <LI>Be highly portable
+  <LI>Help standardize program startup and the use of emerging message passing
+  operations such as collective operations on subsets of processors
+</OL>
+
+<P><CENTER><HR></CENTER></P>
+
+<P><B><FONT SIZE=+1>Current Compatibility of Chameleon</FONT></B></P>
+
+<UL>
+  <LI>Sun
+  <LI>DEC
+  <LI>IBM RS/6000
+  <LI>IBM SP1 and SP2
+  <LI>BBN TC-2000
+  <LI>Intel iPSC/860
+  <LI>DELTA
+  <LI>Paragon
+</UL>
+
+<P><CENTER><HR></CENTER></P>
+
+<P><B><FONT SIZE=+1>Reverse Compatibility</FONT></B></P>
+
+<UL>
+  <LI>Programs written using PCL, NX, or MPI can be ported to any system
+  that Chameleon runs on
+</UL>
+
+<P>Figure to be inserted later</P>
+
+<P><CENTER><HR></CENTER></P>
+
+<P><B><FONT SIZE=+1>How does Chameleon Change its Colors?</FONT></B></P>
+
+<UL>
+  <LI>In C, Chameleon uses <U>macros</U> to translate Chameleon functions
+  to functions used by P4, PVM, EUI, etc.
+  <LI>In Fortran, <U>translation functions</U> are used.
+  <LI>Makefile macros critical (ARCH, COMM, BOPT environment variables)
+</UL>
+
+<P>Based on macros, the Makefile</P>
+
+<OL>
+  <LI>Sets architecture specific variables<BR>
+  Sets flags for production, debugging, or profiling libraries<BR>
+  Sets libraries and include files for target communication package
+  <LI>Preprocesses or translates Chameleon functions to target parallel programming
+  system
+  <LI>Compiles code
+  <LI>Links in Chameleon specific control functions and
+  <LI>Links in target parallel programming system library
+</OL>
+
+<P><CENTER><HR></CENTER></P>
+
+<P><B><FONT SIZE=+1>A Simple Example</FONT></B></P>
+
+<UL>
+  <LI>md ~/chameleon
+  <LI>cd ~/chameleon
+  <LI>cp /usr/local/ftp/pub/chameleon/workshop/* .
+</UL>
+
+<P>This example uses the Makefile and ring2.c program</P>
+
+<P><TT>/* This is a simple ring program */</TT></P>
+
+<P><TT>#include &quot;tools.h&quot;</TT></P>
+
+<P><TT>#include &quot;comm/comm.h&quot;</TT></P>
+
+<P><TT>int worker(argc, argv)</TT></P>
+
+<P><TT>int argc;</TT></P>
+
+<P><TT>char ** argv;</TT></P>
+
+<P><TT>{</TT></P>
+
+<P><TT>int buf, size = sizeof(int);</TT></P>
+
+<P><TT>if (PImytid ==0) {</TT></P>
+
+<P><TT>buf = 1;</TT></P>
+
+<P><TT>PIbsend( 1, &amp;buf, siz, PSNbrRing( 1, 1, PSAllProcs),MSG_INT);</TT></P>
+
+<P><TT>PIbrecv( 1, &amp;buf, siz, MSG_INT);</TT></P>
+
+<P><TT>}</TT></P>
+
+<P><TT>else{</TT></P>
+
+<P><TT>PIbrecv( 1, &amp;buf, siz, MSG_INT);</TT></P>
+
+<P><TT>PIbsend( 1, &amp;buf, siz, PSNbrRing( 1, 1, PSAllProcs), MSG_INT);</TT></P>
+
+<P><TT>}</TT></P>
+
+<P><TT>return 0;</TT></P>
+
+<P><TT>}</TT></P>
+
+<P><TT>Makefile</TT></P>
+
+<P><TT></TT>&nbsp;</P>
+
+<P><TT>#All</TT></P>
+
+<P><TT>#Run examples</TT></P>
+
+<P><TT>ALL: sgi_build rs6000_build</TT></P>
+
+<P><TT></TT>&nbsp;</P>
+
+<P><TT>ITOOLSDIR = /usr/local/chameleon-1.2</TT></P>
+
+<P><TT></TT>&nbsp;</P>
+
+<P><TT>ARCH = rs6000</TT></P>
+
+<P><TT>#COMM = pvm3</TT></P>
+
+<P><TT>COMM = p4</TT></P>
+
+<P><TT>#BOPT = Opg</TT></P>
+
+<P><TT>#BOPT = O</TT></P>
+
+<P><TT>BOPT = g</TT></P>
+
+<P><TT>CFLAGS = -I$(ITOOLSDIR) $(OPT) $(COPT)</TT></P>
+
+<P><TT>FFLAGS = -I$(ITOOLSDIR)</TT></P>
+
+<P><TT>LDIR = $(ITOOLSDIR)/libs/libs$(BOPT)/$(ARCH)</TT></P>
+
+<P><TT>LIBS = -L$(LDIR) -lpecomm$(COMM) -lpetsc -lpecore -lpecomm$(COMM)</TT></P>
+
+<P><TT>FLIBS = -L$(LDIR) -lpetscfort$(COMM)</TT></P>
+
+<P><TT>FMAIN = $(LDIR)/fmain$(COMM).o</TT></P>
+
+<P><TT>CMAIN = $(LDIR)/cmain$(COMM).o</TT></P>
+
+<P><TT>LXLIBS = -L$(LDIR) -lpetscgrf$(COMM) -lpetscgrf</TT></P>
+
+<P><TT>WORK_DIR = chameleon</TT></P>
+
+<P><TT>LIBNAME = dummy</TT></P>
+
+<P><TT>programs: $(ARCH)/ring2</TT></P>
+
+<P>&nbsp;</P>
+
+<P>#There are four include file in the standard Makefile. It is informative
+to</P>
+
+<P>#look at samples of what these files include:</P>
+
+<P><A HREF="https://web.archive.org/web/20000604035600/http://ahpcc.unm.edu/Workshop/System-subroutine/chameleon/rs6000.g.html">include $(ITOOLSDIR)/bmake/$(ARCH).$(BOPT)</A></P>
+
+<P><A HREF="https://web.archive.org/web/20000604035600/http://ahpcc.unm.edu/Workshop/System-subroutine/chameleon/rs6000.html">include $(ITOOLSDIR)/bmake/$(ARCH)</A></P>
+
+<P><A HREF="https://web.archive.org/web/20000604035600/http://ahpcc.unm.edu/Workshop/System-subroutine/chameleon/rs6000.pvm3.html">include $(ITOOLSDIR)/bmake/$(ARCH).$(COMM)</A></P>
+
+<P><A HREF="https://web.archive.org/web/20000604035600/http://ahpcc.unm.edu/Workshop/System-subroutine/chameleon/rs6000.x11.html">include $(ITOOLSDIR)/bmake/$(ARCH).x11</A></P>
+
+<P>rs6000_build:</P>
+
+<P>rsh acoma <TT>&quot;cd chameleon; make -e ARCH=rs6000 programs &quot;</TT></P>
+
+<P>sgi_build:</P>
+
+<P>rsh cochiti <TT>&quot;cd chameleon; make -e ARCH=IRIX programs&quot;</TT></P>
+
+<P>hp_build:</P>
+
+<P>rsh isleta <TT>&quot;cd chameleon; make -e ARCH=hp programs&quot;</TT></P>
+
+<P><TT>ring2.i: ring2.c</TT></P>
+
+<P><TT>$(CC) -E $(CFLAGS) $(BASEOPT) ring2.c |cb -s -l 70 &gt;ring2.i</TT></P>
+
+<P><TT>$(ARCH)/ring2: $(ARCH)/ring2.o</TT></P>
+
+<P><TT>$(CLINKER) -o $(ARCH)/ring2 $(CFLAGS) $(BASEOPT) $(CMAIN) \</TT></P>
+
+<P><TT>$(ARCH)/ring2.o $(LIBS) $(CLIB) $(SLIB) -lm</TT></P>
+
+<P><TT>$(ARCH)/ring2.o: ring2.c</TT></P>
+
+<P><TT>cd $(ARCH); $(CC) -c $(CFLAGS) $(BASEOPT) ../ring2.c</TT></P>
+
+<P><TT>clean:</TT></P>
+
+<P><TT>$(RM) -f ring2.i</TT></P>
+
+<P><TT>$(RM) -f rs6000/*</TT></P>
+
+<P><TT>$(RM) -f IRIX/*</TT></P>
+
+<P><TT>$(RM) -f sun/*</TT></P>
+
+<P><TT>$(RM) -f hp/*</TT></P>
+
+<P><CENTER><HR></CENTER></P>
+
+<P><B><FONT SIZE=+1>To See How Chameleon Translates the Program</FONT></B></P>
+
+<UL>
+  <LI>In the Makefile, add the following line (should already be done) <TT>ring2.i:
+  ring2.c $(CC) -E $(CFLAGS) $(BASEOPT) ring2.c | cb -s -l 70 &gt;ring2.i
+  </TT>
+  <LI>set COMM to pvm3, p4, or eui
+  <LI>Type: <TT>make ring2.i more ring2.i /worker look at how the send and
+  receives are translated</TT> 
+</UL>
+
+<P><CENTER><HR></CENTER></P>
+
+<P><B><FONT SIZE=+1>Another Simple Example</FONT></B></P>
+
+<UL>
+  <LI>make ring2
+  <LI>ring2 -np 3
+  <LI>try changing the communication package and run it again (the program
+  must be recompiled).
+</UL>
+
+<P><CENTER><HR></CENTER></P>
+
+<P><B><FONT SIZE=+1>More Examples</FONT></B></P>
+
+<UL>
+  <P>md ~/chameleon
+  <LI>cd ~/chameleon
+  <LI>cp /usr/local/ftp/pub/chameleon/workshop/* .
+  <UL>
+    <LI>C examples
+    <DL>
+      <DT><TT>ringc.c</TT>
+      <DD><TT>integer passed and incremented around a ring</TT>
+      <DT><TT>example1.c</TT>
+      <DD><TT>2D domain decomposition</TT>
+      <DT><TT>lapc.c</TT>
+      <DD><TT>linear algebra example (not working yet)</TT>
+      <DT><TT>wavec.c</TT>
+      <DD><TT>explicit finite difference (not working yet)</TT>
+      <DT><TT>exscat.c</TT>
+      <DD><TT>scatter</TT>
+      <DT><TT>long.c</TT>
+      <DD><TT>test message passing</TT>
+      <DT><TT>ring2.c</TT>
+      <DD><TT>simple ring program</TT>
+    </DL>
+    <LI>Fortran examples
+    <DL>
+      <DT><TT>pi.f</TT>
+      <DD><TT>pi calculation</TT>
+      <DT><TT>example2.f</TT>
+      <DT><TT>expicl.f</TT>
+      <DD><TT>picl code translation example</TT>
+      <DT><TT>wavef.f</TT>
+      <DD><TT>explicit finite difference (not working yet)</TT>
+      <DT><TT>lapf.f</TT>
+      <DD><TT>linear algebra example (not working yet</TT>)
+    </DL>
+  </UL>
+  <LI>Compile and Run Examples
+  <UL>
+    <LI><TT>make <I>program_name</I></TT>
+    <LI><I><TT>program_name</TT></I><TT> -np <I>x</I></TT>
+  </UL>
+</UL>
+
+<P><CENTER><HR></CENTER></P>
+
+<P><B><FONT SIZE=+1>Additional Exercises</FONT></B></P>
+
+<UL>
+  <LI>Exercises on your own
+  <OL>
+    <LI>Try preprocessing C example of your choice to see how the code is translated
+  </OL>
+  <LI>Environment Option Examples (some of these may not work as documented)
+  <OL>
+    <LI>Add -trace to command line when running program
+    <LI>Add -summary to command line when running program
+  </OL>
+  <LI>Visualization Examples
+  <OL>
+    <LI>Add logging functions and visualize using upshot
+    <LI>Use vt (only on RS6000s with the Parallel Operating Environment) to
+    visualize program execution
+  </OL>
+</UL>
+
+<P><CENTER><HR><I><FONT SIZE=-1>Copyright 1997 High Performance Computing
+Education and Research Center<BR>
+November 1997, <A HREF="mailto:editor@arc.unm.edu">editor@arc.unm.edu</A></FONT></I></CENTER>
+</BODY>
+</HTML>

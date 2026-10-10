@@ -1,0 +1,317 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta content="text/html; charset=iso-8859-1"
+ http-equiv="Content-Type">
+<title>Running Jobs on the HPC@UNM Condor Flock</title>
+</head>
+<body bgcolor="#ffffff" leftmargin="0" topmargin="0" marginwidth="0"
+ marginheight="0">
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">alliance.unm.edu/computing_resources/systems/docs/condor/condor_jobs.html</code> as captured by the Internet Archive on 6 September 2006. Links to pages that were not saved here go to the Wayback Machine. <a style="color:#0b5cad" href="https://web.archive.org/web/20060906175658/http://www.alliance.unm.edu/computing_resources/systems/docs/condor/condor_jobs.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../../../">Web archive index</a></div>
+
+<h1 align="center"><font face="Arial, Helvetica, sans-serif">Running Jobs on the 
+  HPC@UNM Condor Flock</font></h1>
+<h3><font face="Arial, Helvetica, sans-serif"><a name="toc"></a>Table of Contents</font></h3>
+<ul>
+  <li><font face="Arial, Helvetica, sans-serif"><a href="#whatis">What Is Condor?</a></font></li>
+  <li><font face="Arial, Helvetica, sans-serif"><a
+ href="#whereis">Where Is The HPC@UNM Condor Flock?</a></font></li>
+  <li><font face="Arial, Helvetica, sans-serif"><a href="#Availability">Availability</a></font></li>
+  <li><font face="Arial, Helvetica, sans-serif"><a href="#howto">How To Use Condor</a> 
+    </font>
+    <ul>
+      <li><font face="Arial, Helvetica, sans-serif"><a href="#batchjobs">Running 
+        Condor Batch Jobs</a></font></li>
+      <li><font face="Arial, Helvetica, sans-serif"><a
+ href="#commandfiles">Condor Job Command Files</a></font></li>
+      <li><font face="Arial, Helvetica, sans-serif"><a href="#commands">Condor 
+        Commands</a></font></li>
+    </ul>
+  </li>
+  <li><font face="Arial, Helvetica, sans-serif"><a href="#Documentation">Documentation</a></font></li>
+  <li><font face="Arial, Helvetica, sans-serif"><a
+ href="https://web.archive.org/web/20060906175658/http://www.hpc.unm.edu/help/index.html" target="_blank">Questions</a></font></li>
+</ul>
+<hr width="100%">
+<h3><font face="Arial, Helvetica, sans-serif"><a name="whatis"></a>What Is Condor?</font></h3>
+<ul>
+  <p><font face="Arial, Helvetica, sans-serif">Condor is a mechanism that supports 
+    High Throughput Computing (HTC). High Throughput Computing supports a large 
+    amount of processing capacity sustained over a very long period of time. Condor, 
+    in focusing HTC, allows users to submit jobs which are then executed using 
+    idle cycles on machines otherwise not being used. Whenever the load on the 
+    machine exceeds a certain pre-defined level or the mouse or keyboard is activated, 
+    Condor will remove any processes on that machine and not schedule it further. 
+    Condor programs are linked with checkpoint code that allows them to be unloaded 
+    from one machine and restarted, from where they left off, on another. Probably 
+    the best way to describe how Condor implements HTC is to use the terms "bottom 
+    feeder" or "cycle stealing" system.</font></p>
+  <p><font face="Arial, Helvetica, sans-serif">Condor supports both parallel as 
+    well as serial jobs, but currently the only parallel paradigm available is 
+    PVM. At this time, Condor is on the Linux cluster machines and PVM is not 
+    supported on these machines, because these machines are not dedicated to computation 
+    but are used for workshops and HPC@UNM staff computers during normal working 
+    hours.</font></p>
+</ul>
+<p> <font face="Arial, Helvetica, sans-serif"><a href="#toc">[Back to TOP]</a> 
+  <br>
+  </font></p>
+<hr width="100%">
+<h3><font face="Arial, Helvetica, sans-serif"><a name="whereis"></a>Where Is The 
+  HPC@UNM Condor Flock?</font></h3>
+<ul>
+  <p><font face="Arial, Helvetica, sans-serif">Currently, Condor is running on 
+    the HPC@UNM's Linux platforms including the Trucha Cluster. Condor can be 
+    implemented on other platforms and operating systems (AIX, Sun, HP, SGI), 
+    including NT. At this time, we are limiting our Condor pool to the Linux machines, 
+    but may in the future expand it to other machines. </font></p>
+  <p><font face="Arial, Helvetica, sans-serif">The Condor version currently (as 
+    of 6/16/03) installed at HPC@UNM is the production version 6.4.7. This version 
+    will be updated when appropriate. </font></p>
+</ul>
+<p> <font face="Arial, Helvetica, sans-serif"><a href="#toc">[Back to TOP]</a> 
+  <br>
+  </font></p>
+<hr width="100%">
+<h3><font face="Arial, Helvetica, sans-serif"><a name="Availability"></a>Availability</font></h3>
+<ul>
+  <p><font face="Arial, Helvetica, sans-serif">Currently, the HPC@UNM policy is 
+    to leave Condor running all the time. As Condor introduces very little overhead 
+    in a machine it has a minimal impact on machines being used for other purposes. 
+    When any Linux Cluster machine is in dedicated use mode, Condor may be shut 
+    down on that machines (for example, many of these machines are used for presenting 
+    workshops and are placed in dedicated mode for such purposes). For Condor 
+    job submission and job preparation, the Linux control workstation <b><i>lcws.hpc.unm.edu</i></b> 
+    will be available at all times (barring, of course, the need to bring it down 
+    for maintenance of the Linux cluster). </font></p>
+</ul>
+<p> <font face="Arial, Helvetica, sans-serif"><a href="#toc">[Back to TOP]</a> 
+  <br>
+  </font></p>
+<hr width="100%">
+<h3><font face="Arial, Helvetica, sans-serif"><a name="howto"></a>How To Use Condor</font></h3>
+<ul>
+  <p><font face="Arial, Helvetica, sans-serif">Condor jobs can be submitted in 
+    two ways: Standard or Vanilla; that is, the HPC@UNM Condor flock supports 
+    these two universes. Specifying these universes is shown below. </font></p>
+  <p><font face="Arial, Helvetica, sans-serif">Standard Condor jobs must be linked 
+    using the <a
+ href="https://web.archive.org/web/20060906175658/http://alliance.unm.edu/computing_resources/systems/docs/condor/MANUAL/condor_compile.html">condor_compile</a> command. Recompilation is 
+    not necessary, only relinking. This installs the checkpointing code required 
+    for a standard job. The <b>condor_compile</b> command can be used on the final 
+    link step on any of the publicly available HPC@UNM Linux boxes. <b><i>lcws.hpc.unm.edu</i></b> 
+    has a full Condor install, and can be used to execute all Condor commands 
+    such as <b>condor_compile</b> and <b>condor_submit</b> when used in makefiles, 
+    scripts, etc. (see the man pages).</font></p>
+  <p><font face="Arial, Helvetica, sans-serif">Vanilla Condor jobs do not use 
+    the Condor remote system or checkpoint services, but can be submitted and 
+    scheduled as a regular Condor job. Any Unix executable or script may be submitted 
+    to Condor as a vanilla job. They will not, however, perform remote system 
+    calls (not really a problem in our environment... see the man pages) or checkpoint. 
+    This means when a job is kicked off of a machine, it must be started over 
+    from scratch.</font></p>
+  <h3><font face="Arial, Helvetica, sans-serif"><a name="batchjobs"></a>Running 
+    Batch Jobs</font></h3>
+  <ul>
+    <p><font face="Arial, Helvetica, sans-serif">Condor batch jobs on the AHPCC 
+      Condor flock must be submitted from one of the Turing machines (workshop 
+      machines sucu as turing01, turing02, ..., turing12), other Linux machines 
+      such as rcde.., or the Linux control workstation <b>lcws</b> using the Condor 
+      submit command <b>condor_submit</b> (see the manual page for <a href="https://web.archive.org/web/20060906175658/http://alliance.unm.edu/computing_resources/systems/docs/condor/MANUAL/condor_submit.html">condor_submit</a>). 
+      </font></p>
+    <p> </p>
+    <ol>
+      <li><font face="Arial, Helvetica, sans-serif">Login to one of the Condor 
+        machines using 'ssh', say the Linux control workstation <b>lcws</b>:</font></li>
+      <li><font face="Arial, Helvetica, sans-serif">Type: <br>
+        &nbsp;&nbsp;&nbsp; ssh lcws.hpc.unm.edu</font> </li>
+      <font face="Arial, Helvetica, sans-serif"><br>
+      <li>Compile code if necessary:</li>
+      </font>
+      <li><font face="Arial, Helvetica, sans-serif">Type:<br>
+        <font size="+1" color="#008000">&nbsp;&nbsp; gcc -c </font></font> <font size="+1" face="Arial, Helvetica, sans-serif"><font color="#008000"><i>filename.c</i></font> 
+        </font> <font face="Arial, Helvetica, sans-serif"><br>
+        or<br>
+        </font> <font
+ color="#008000" size="+1" face="Arial, Helvetica, sans-serif">&nbsp;&nbsp;&nbsp;f77 
+        -c </font> <font color="#008000" size="+1" face="Arial, Helvetica, sans-serif"><i>filename.f</i></font> 
+        <font face="Arial, Helvetica, sans-serif"><br>
+        or<br>
+        </font> <font
+ color="#008000" size="+1" face="Arial, Helvetica, sans-serif">&nbsp;&nbsp;&nbsp;f90 
+        -c </font> <font color="#008000" size="+1" face="Arial, Helvetica, sans-serif"><i>filename.f90</i></font> 
+        <font face="Arial, Helvetica, sans-serif"><br>
+        <br>
+        (Compiles programs for C or Fortran respectively creating object files 
+        only) </font></li>
+      <font face="Arial, Helvetica, sans-serif"><br>
+      <li>Create a Condor executable:</li>
+      </font>
+      <li><font face="Arial, Helvetica, sans-serif">Type:<br>
+        for vanilla-universe jobs: <br>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;</font><font
+ size="+1" color="#008000" face="Arial, Helvetica, sans-serif">gcc </font> <font
+ size="+1" face="Arial, Helvetica, sans-serif"><font color="#008000"><i>object_files.o 
+        -llibraries</i></font> </font> <font face="Arial, Helvetica, sans-serif"><br>
+        or<br>
+        <font size="+1">&nbsp;&nbsp; &nbsp;</font></font><font
+ color="#008000" size="+1" face="Arial, Helvetica, sans-serif">f77 </font> <font
+ color="#008000" size="+1" face="Arial, Helvetica, sans-serif"><i>object_files.o 
+        -llibraries</i></font> <font face="Arial, Helvetica, sans-serif"><br>
+        or<br>
+        <font size="+1">&nbsp;&nbsp;&nbsp; </font></font> <font color="#008000" size="+1" face="Arial, Helvetica, sans-serif">f90 
+        </font> <font color="#008000" size="+1" face="Arial, Helvetica, sans-serif"><i>object_files.o 
+        -llibraries</i></font> <font face="Arial, Helvetica, sans-serif"><br>
+        <br>
+        or for vanilla-universe jobs:<font
+ size="+1"> </font></font> <font face="Arial, Helvetica, sans-serif"><br>
+        <br>
+        &nbsp;&nbsp;&nbsp; </font> <font
+ size="+1" color="#008000" face="Arial, Helvetica, sans-serif">condor_compile 
+        gcc </font><font
+ size="+1" face="Arial, Helvetica, sans-serif"> <font color="#008000"><i>object_files.o 
+        -llibraries</i></font> </font> <font face="Arial, Helvetica, sans-serif"><br>
+        or<br>
+        &nbsp;&nbsp;&nbsp; </font> <font
+ color="#008000" size="+1" face="Arial, Helvetica, sans-serif">condor_compile 
+        f77 </font> <font color="#008000" size="+1" face="Arial, Helvetica, sans-serif"><i>object_files.o 
+        -llibraries</i></font> <font face="Arial, Helvetica, sans-serif"><br>
+        or<br>
+        &nbsp;&nbsp;&nbsp; </font> <font
+ color="#008000" size="+1" face="Arial, Helvetica, sans-serif">condor_compile 
+        f90 </font> <font color="#008000" size="+1" face="Arial, Helvetica, sans-serif"><i>object_files.o 
+        -llibraries</i></font> <font face="Arial, Helvetica, sans-serif"><br>
+        <br>
+        (Links programs for C or Fortran respectively) <br>
+        </font></li>
+      <li><font face="Arial, Helvetica, sans-serif">Create a Condor job command 
+        file (e.g., see file test_run.cmd below)</font></li>
+      <li><font face="Arial, Helvetica, sans-serif">Submit the job using "condor_submit" 
+        command</font></li>
+      <li><font face="Arial, Helvetica, sans-serif">Type:<br>
+        &nbsp;&nbsp;&nbsp; <font
+ size="+1" color="#008000"> condor_submit test_run.cmd</font> </font></li>
+      <li><font face="Arial, Helvetica, sans-serif">View job status in queue using 
+        "condor_q" and wait for completion</font></li>
+      <li><font face="Arial, Helvetica, sans-serif">Type:<br>
+        &nbsp;&nbsp;&nbsp; <font
+ size="+1" color="#008000"> condor_q</font></font></li>
+    </ol>
+  </ul>
+  <p> <font face="Arial, Helvetica, sans-serif"><a href="#toc">[Back to TOP]</a> 
+    <br>
+    </font></p>
+  <hr width="100%">
+  <h3><font face="Arial, Helvetica, sans-serif"><a name="commandfiles"></a><b>Condor 
+    Job Command Files:</b></font></h3>
+  <ul>
+    <p><font face="Arial, Helvetica, sans-serif">Command files describe the requirements 
+      and parameters for the job to be executed, such as; input/output, error, 
+      and log files needed, memory/hardware requirements, etc.&nbsp; Comment lines 
+      begin with '#'. Valid Condor keywords are any initial word (no blanks) followed 
+      by an equal (=) sign. </font></p>
+    <p><font face="Arial, Helvetica, sans-serif">Below is an sample Condor command 
+      file. The file executes a program named "test_run" which resides in the 
+      directory "/home/joebloe/condor_example". The name of the executable program 
+      is specified in line with keyword "Executable". Email will always notify 
+      the user about the status of the job. This is specified in the lines with 
+      the keyword "Notification" with the option "always" and with the keyword 
+      "Notify_user" with the option "joebloe@ahpcc.unm.edu". Standard error, standard 
+      output, and the job log file are captured in&nbsp; files "test.err", "test.out", 
+      and "test.log" respectively as described by the "Error", "Output", and "Log" 
+      keywords. The "Universe" line identifies the type of universe for the Condor 
+      job (either vanilla, standard, pvm, or scheduler). If the executable has 
+      command line arguments, then they are specified in the line with the keyword 
+      "Arguments". Finally, the directory in which the standard input, output, 
+      and log files are to be placed is specified in the line with keyword "InitialDir". 
+      </font></p>
+    <p><font face="Arial, Helvetica, sans-serif">The program may have further 
+      requirements such as minimum RAM, minimum scratch disk storage, and so on. 
+      These and essentially any arbitrary requirements that are specified by the 
+      characteristics of the machines pool can be specified in a line with the 
+      keyword "Requirements". In addition, the user can rank preferences for machines 
+      so that machines with the highest rank will be checked first to see if they 
+      are available to run the job. For example, the machine with the largest 
+      available RAM exceeding some limit can be specified. Please refer to the 
+      <a
+ href="https://web.archive.org/web/20060906175658/http://alliance.unm.edu/computing_resources/systems/docs/condor/TUTORIAL/html/requirements.html"> tutorial on requirements and rank</a> 
+      or Condor manual for more details on the topics of specifying <a href="https://web.archive.org/web/20060906175658/http://alliance.unm.edu/computing_resources/systems/docs/condor/MANUAL/2_6Submitting_Job.html"> 
+      requirements and rank</a>. </font></p>
+    <p><font face="Arial, Helvetica, sans-serif"> A tutorial giving and explaining 
+      more sophisticated Condor command files can be found here: . The examples 
+      for this tutorial can be found in the directory: . The tutorial assumes 
+      you have copied this directory to your home directory and called it "examples". 
+      </font></p>
+    <p><font face="Arial, Helvetica, sans-serif">A sample Condor job command file 
+      at HPC@UNM is:</font></p>
+    <ul>
+      <pre><font face="Arial, Helvetica, sans-serif"># Example Condor job command file <br># (Lines beginning with # are comments) <br># NOTE: words on the left side of an equal sign are <br># not case sensitive, but some items such as file names are. <br><br>Job_Type        = "job" <br>Universe        = standard <br>Executable      = /home/joebloe/condor_example/test_run <br>InitialDir      = /home/joebloe/condor_example <br>Notification    = complete <br>Notify_user     = joebloe@hpc.unm.edu <br>Error           = test.err <br>Output          = test.out <br>Log             = test.log <br>requirements    = (Arch == "INTEL") <br><br>queue <br></font></pre>
+    </ul>
+    <p><font face="Arial, Helvetica, sans-serif">For additional keyword information, 
+      check out Condor's manual at HPC@UNM <a href="https://web.archive.org/web/20060906175658/http://alliance.unm.edu/computing_resources/systems/docs/condor/MANUAL/Index.html">(HPC@UNM's 
+      reference copy)</a> or for the latest Condor manual from Wisconsin <a href="https://web.archive.org/web/20060906175658/http://www.cs.wisc.edu/condor/manual/v6.4/">(Wisconsin's 
+      reference copy)</a>. <br>
+      </font></p>
+  </ul>
+  <font face="Arial, Helvetica, sans-serif"><br>
+  <a href="#toc">[Back to TOP]</a> 
+  <h3><a name="commands"></a><b>Condor Commands:</b> </h3>
+  </font> 
+  <ul>
+    <blockquote> 
+      <h4><font face="Arial, Helvetica, sans-serif"><a href="https://web.archive.org/web/20060906175658/http://alliance.unm.edu/computing_resources/systems/docs/condor/MANUAL/condor_submit.html"> 
+        condor_submit</a>&nbsp; <i><font color="#009900">job_command_file</font> 
+        </i></font></h4>
+      <p><font face="Arial, Helvetica, sans-serif">Submits a job into the job 
+        queue. <br>
+        </font></p>
+      <hr width="100%">
+      <h4><font face="Arial, Helvetica, sans-serif"><a href="https://web.archive.org/web/20060906175658/http://alliance.unm.edu/computing_resources/systems/docs/condor/MANUAL/condor_q.html">condor_q</a></font></h4>
+      <p><font face="Arial, Helvetica, sans-serif">Obtains information about jobs 
+        in the job queue <br>
+        </font></p>
+      <hr width="100%">
+      <h4><font face="Arial, Helvetica, sans-serif"><a href="https://web.archive.org/web/20060906175658/http://alliance.unm.edu/computing_resources/systems/docs/condor/MANUAL/condor_rm.html">condor_rm</a>&nbsp; 
+        <i><font color="#009900">job_id</font></i></font></h4>
+      <p><font color="#000000" face="Arial, Helvetica, sans-serif">Removes the 
+        specified job from the queue. The job is identified by its job-id which 
+        is made up from its cluster number and task identifier which can be obtained 
+        from the <b>condor_q</b> command.</font> <font face="Arial, Helvetica, sans-serif"><br>
+        </font></p>
+      <hr width="100%">
+    </blockquote>
+    <blockquote> 
+      <h4><font face="Arial, Helvetica, sans-serif"><a href="https://web.archive.org/web/20060906175658/http://alliance.unm.edu/computing_resources/systems/docs/condor/MANUAL/condor_status.html">condor_status</a></font></h4>
+      <p><font face="Arial, Helvetica, sans-serif">Displays how many machines 
+        are available for immediate use on the system. <br>
+        </font></p>
+      <hr width="100%">
+    </blockquote>
+    <blockquote> 
+      <h4><font face="Arial, Helvetica, sans-serif"><a href="https://web.archive.org/web/20060906175658/http://alliance.unm.edu/computing_resources/systems/docs/condor/MANUAL/condor_history.html">condor_history</a></font></h4>
+      <p><font face="Arial, Helvetica, sans-serif">Displays a history of your 
+        jobs, indicating whether they are still running, completed, or were cancelled. 
+        <br>
+        </font></p>
+      <hr width="100%">
+    </blockquote>
+  </ul>
+</ul>
+<h3><font face="Arial, Helvetica, sans-serif"><a name="Documentation"></a>Documentation</font></h3>
+<ul>
+  <p><font face="Arial, Helvetica, sans-serif">The Wisconsin Condor manual at: 
+    <a
+ href="https://web.archive.org/web/20060906175658/http://www.cs.wisc.edu/condor/manual/v6.4/">http://www.cs.wisc.edu/condor/manual/v6.4/</a> 
+    is the ultimate source; make sure you are referencing the version of the manual 
+    for our implementation. At HPC@UNM, we are currently using Condor production 
+    version 6.4.7. </font></p>
+  <p><font face="Arial, Helvetica, sans-serif">The man pages for the various commands 
+    are available at: <a
+ href="https://web.archive.org/web/20060906175658/http://www.cs.wisc.edu/condor/manual/v6.4/9_Command_Reference.html">http://www.cs.wisc.edu/condor/manual/v6.4/9_Command_Reference.html<br>
+    </a></font></p>
+</ul>
+<p><font face="Arial, Helvetica, sans-serif"><br>
+  <a href="#toc">[Back to TOP]</a> </font></p>
+</body>
+</html>

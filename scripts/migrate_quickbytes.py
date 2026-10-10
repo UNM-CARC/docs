@@ -302,6 +302,12 @@ PAGES: list[Page] = [
     Page("", "about/facilities.md", "Facilities description",
          "Boilerplate facilities description for grant proposals: clusters, storage, networking, and the data center.",
          "Reference", ["About", "Grants"], stale_after=HW_STALE, repo="hand"),
+    Page("", "about/history.md", "History of CARC computing",
+         "Historical record of the supercomputers in the Galles Building machine room, 1994 to today: machines, funding, processing power, costs, directors, and the PIs who contributed hardware.",
+         "Reference", ["About", "History", "Hardware"], status="draft", repo="hand"),
+    Page("", "about/web-archive.md", "Web archive of the old center websites",
+         "Browsable copies of the HPCERC, AHPCC, Alliance Supercluster, HPC@UNM and early CARC websites, 1998 to 2016, rebuilt from Internet Archive captures with working local links and images.",
+         "Reference", ["About", "History"], status="draft", repo="hand"),
     Page("", "about/partners.md", "Partner cyberinfrastructure",
          "National and regional platforms CARC users can reach: ACCESS-CI, Jetstream2, CyVerse, and MESA.",
          "Reference", ["About", "Partners"], repo="hand"),
@@ -861,6 +867,8 @@ LEGACY_OK = {
     "systems/overview.md",                # pointer to the legacy reference
     "systems/index.md",                   # lists the legacy reference page
     "about/ai-agents.md",                 # tells agents these systems are retired
+    "about/history.md",                   # history of every machine CARC has run
+    "about/web-archive.md",               # index of the archived center websites
     "log.md",                             # history (documents the retirement)
 }
 

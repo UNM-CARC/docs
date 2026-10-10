@@ -1,0 +1,221 @@
+<html><!-- #BeginTemplate "/Templates/Computing_Systems_Template.dwt" -->
+<head>
+<!-- #BeginEditable "doctitle" --> <!-- #EndEditable --> 
+<style type="text/css">
+<!--
+-->
+</style>
+<title>AHPCC Computing Systems</title>
+<link rel="stylesheet" href="https://web.archive.org/web/20010303002925cs_/http://ahpcc.unm.edu/Classes/AHPCC.css">
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+       <!--
+
+          NS4 = (document.layers);
+          IE4 = (document.all);
+         ver4 = (NS4 || IE4);   
+        isMac = (navigator.appVersion.indexOf("Mac") != -1);
+       isMenu = (NS4 || (IE4 && !isMac));
+
+       function popUp(){return};
+       function popDown(){return};
+
+       if (!ver4) event = null;
+
+       //-->
+       </SCRIPT>
+<SCRIPT LANGUAGE="JavaScript1.2" TYPE="text/javascript">
+       <!--
+
+       if (isMenu) {
+           menuVersion = 3;
+           
+           menuWidth = 150;
+           childOverlap = 50;
+           childOffset = 5;
+           perCentOver = null;
+           secondsVisible = .5;
+           
+           fntCol = "white";
+           fntSiz = "8";
+           fntBold = true;
+           fntItal = false;
+           fntFam = "Arial,Geneva,sans-serif";
+           
+           backCol = "#4a0239";
+           overCol = "#eaae69";
+           overFnt = "black";
+           
+           borWid = 1;
+           borCol = "white";
+           borSty = "solid";
+           itemPad = 3;
+           
+           imgSrc = "http://www.dhtmlab.com/hiermenus/tri.gif";
+           imgSiz = 10;
+           
+           separator = 1;
+           separatorCol = "white";
+           
+           isFrames = false;      // <-- IMPORTANT for full window
+           navFrLoc = "left";     // <-- display. see below
+           
+           keepHilite = true; 
+           NSfontOver = true;
+           clickStart = false;
+           clickKill = false;
+       }
+
+       //-->
+       </SCRIPT>
+<SCRIPT LANGUAGE="JavaScript1.2" TYPE="text/javascript">
+       <!--
+       if (isMenu) {
+       document.write("<SCRIPT LANGUAGE='JavaScript1.2' SRC="https://web.archive.org/web/20010303002925js_/http://ahpcc.unm.edu/JS/Computing_Systems_Menu.js"><\/SCRIPT>");
+       }
+       //-->
+       </SCRIPT>
+<SCRIPT LANGUAGE="JavaScript1.2" TYPE="text/javascript">
+       <!--
+       if (isMenu) {
+       document.write("<SCRIPT LANGUAGE='JavaScript1.2' SRC="https://web.archive.org/web/20010303002925js_/http://ahpcc.unm.edu/JS/hierMenus.js"><\/SCRIPT>");
+       }
+       //-->
+       </SCRIPT>
+<meta name="AHPCC Computing Systems high performance computing HPC" content="AHPCC Computing Systems">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#660066" vlink="#000000" alink="#CC6633" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">ahpcc.unm.edu/Systems/Documentation/Condor/CondorTutorial.html</code> as captured by the Internet Archive on 3 March 2001. Links to pages that were not saved here go to the Wayback Machine. Grey boxes mark images that were never archived. <a style="color:#0b5cad" href="https://web.archive.org/web/20010303002925/http://www.ahpcc.unm.edu:80/Systems/Documentation/Condor/CondorTutorial.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../../">Web archive index</a></div>
+
+<table width="660" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td colspan="5" align="right"> <img src="../../../_img/Images/Header.jpg" width="660" height="81"><br>
+      <a href="../../../index.html" onMouseOver="popUp('elMenu1',event)"
+          onMouseOut="popDown('elMenu1')"><img src="../../../_img/Images/Tabs/Tab_AHPCC.jpg" width="61" height="25" border="0"></a><a href="../../index.html" onMouseOver="popUp('elMenu2',event)"
+          onMouseOut="popDown('elMenu2')"><img src="../../../_img/Images/Tabs/Tab_Computing_Systems.jpg" width="130" height="25" border="0"></a><a href="https://web.archive.org/web/20010303002925/http://ahpcc.unm.edu/Knowledge/index.html" onMouseOver="popUp('elMenu3',event)"
+          onMouseOut="popDown('elMenu3')"><img src="../../../_img/Images/Tabs/Tab_Knowledge_Community.jpg" width="147" height="25" border="0"></a><a href="https://web.archive.org/web/20010303002925/http://ahpcc.unm.edu/Research" onMouseOver="popUp('elMenu4',event)"
+          onMouseOut="popDown('elMenu4')" ><img src="../../../_img/Images/Tabs/Tab_Research_Activities.jpg" width="125" height="25" border="0"></a><a href="../../../index.html"><img src="../../../_img/Images/Tabs/Tab_Search.jpg" width="60" height="25" border="0"></a> 
+    </td>
+  </tr>
+</table>
+<table width="660" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td rowspan="11" height="275" valign="top" align="left"> 
+      <table width="132" border="1" cellspacing="0" cellpadding="0" align="left">
+        <tr> 
+          <td width="132" height="23"><a href="../LinuxSupercluster/RefCard/index.html"><font size="-1"><b>Linux 
+            Supercluster Reference Card</b></font></a> </td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="../../../NewsPress/index.html">News</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="../../Allocations/index.html">Accounts-Allocations</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="../../Hardware/index.html">All 
+            Machines</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="../../help/index.html">Help 
+            Desk</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="../index.html">Documentation</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="https://web.archive.org/web/20010303002925/http://ahpcc.unm.edu/EducationTraining/">Training</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="https://web.archive.org/web/20010303002925/http://ahpcc.unm.edu/Research/">Research</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font size="-1"><a href="../../Downloads/index.html">Downloads</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font size="-2"><a href="mailto:research@ahpcc.unm.edu,systems@ahpcc.unm.edu,staff@ahpcc.unm.edu"><font size="-1">Ask 
+            Users</font></a></font></td>
+        </tr>
+      </table>
+    </td>
+    <td width="528" rowspan="11" valign="top"><!-- #BeginEditable "Main" --> 
+      <CENTER>
+        <IMG SRC="../../../_img/standin/_not-archived.gif" width="179" height="93" alt="Image not archived" title="Image not archived"><IMG SRC="../../../_img/standin/_not-archived.gif" width="281" height="58" alt="Image not archived" title="Image not archived"> 
+      </CENTER>
+      <H1 align="center"><font size="4">The Condor User Tutorial Workbook</font></H1>
+      <HR NOSHADE>
+      In order to give you a hands on tutorial of Condor, we have built a set 
+      of excercies to go through. 
+      <p> Each example has its own web page. Please read the instructions carefully. 
+        Any lines that begin with "% " are commands that you should execute in 
+        your command window (the xterm on the left-hand side of your screen). 
+        <p> If you have any questions <i><b>specifically</b> </i>relating to Condor 
+          at the AHPCC, please ask <a href="mailto:bsmith@ahpcc.unm.edu"> Prof. 
+          Brian T. Smith</a>. 
+        <HR NOSHADE>
+      <p> Please click on the appropriate link below to find instructions for 
+        the desired excercise. - 
+      <OL>
+        <LI>Submitting and Monitoring a <A HREF="simple.html">Simple 
+          Test Job</A> 
+        <LI>Submitting Jobs With <A HREF="requirements.html">Requirements 
+          and Rank</A> 
+        <LI>Submitting a <A HREF="large.html">Large 
+          Clusters</A> 
+        <LI><A HREF="https://web.archive.org/web/20010303002925/http://ahpcc.unm.edu/Systems/Documentation/Condor/dagman.html">Using DAGMan</A> 
+      </OL>
+      <h3>For More Information</h3>
+      <P>More information about Condor including the <A
+HREF="https://web.archive.org/web/20010303002925/http://www.cs.wisc.edu/condor/manual">Condor Manual</A> is available off of 
+        the Condor web site:<A
+HREF="https://web.archive.org/web/20010303002925/http://www.cs.wisc.edu/condor"> http://www.cs.wisc.edu/condor</A>. If you 
+        have any problems with Condor, you can ask us about it by sending mail 
+        to <A
+HREF="mailto:condor-admin@cs.wisc.edu">condor-admin@cs.wisc.edu</A> <A
+></a> 
+       
+                
+      <p><a href="Condor.html"><font size="-2">Condor 
+        Scheduling</font></a></p>
+                <p><font size="-2"><a href="https://web.archive.org/web/20010303002925/http://maui-scheduler.mhpcc.edu/new_doc/">Maui 
+                  Scheduling</a></font></p>
+                <p><font size="-2"><a href="https://web.archive.org/web/20010303002925/http://www.cs.wisc.edu/condor">Condor 
+                  @ U of Wisconsin</a></font></p>
+                <!-- #EndEditable --></td>
+  </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> 
+    <td colspan="2" valign="top"><font size="1" face="Arial, Helvetica, sans-serif"><img src="../../../_img/Images/Footer.jpg" width="660" height="72" usemap="#Map2" border="0"><map name="Map2"><area shape="rect" coords="573,45,650,61" href="mailto:webmaster@ahpcc.unm.edu"><area shape="rect" coords="496,13,562,60" href="https://web.archive.org/web/20010303002925/http://www.unm.edu/"></map></font></td>
+  </tr>
+  <tr> 
+    <td colspan="2" valign="top"> 
+      <div align="left"> 
+        <table width="660" border="0" cellspacing="0" cellpadding="0">
+          <tr> 
+            <td width="268"><font size="1" face="Arial, Helvetica, sans-serif">The 
+              University of New Mexico<br>
+              <b>Albuquerque High Performance Computing Center</b><br>
+              Galles Building - 1601 Central Avenue, NE<br>
+              Albuquerque, NM 87131<map name="Map"><area shape="RECT" coords="497,11,561,62" href="https://web.archive.org/web/20010303002925/http://www.unm.edu" alt="UNM" title="UNM"></map><br>
+              Phone # 505.277.8249<font color="#FFFFFF">000000</font>Fax # 505.277.8235</font></td>
+            <td width="392" valign="top"> 
+              <div align="right"><font size="1">Last Modified: December 1, 2000</font></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </td>
+  </tr>
+</table>
+</body>
+
+<!-- #EndTemplate --></html>

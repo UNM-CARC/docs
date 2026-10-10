@@ -1,0 +1,916 @@
+<html><!-- #BeginTemplate "/Templates/Computing_Systems_Template.dwt" -->
+<head>
+<!-- #BeginEditable "doctitle" --> <!-- #EndEditable --> 
+<style type="text/css">
+<!--
+-->
+</style>
+<title>AHPCC Computing Systems</title>
+<link rel="stylesheet" href="https://web.archive.org/web/20010128160300cs_/http://ahpcc.unm.edu/Classes/AHPCC.css">
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+       <!--
+
+          NS4 = (document.layers);
+          IE4 = (document.all);
+         ver4 = (NS4 || IE4);   
+        isMac = (navigator.appVersion.indexOf("Mac") != -1);
+       isMenu = (NS4 || (IE4 && !isMac));
+
+       function popUp(){return};
+       function popDown(){return};
+
+       if (!ver4) event = null;
+
+       //-->
+       </SCRIPT>
+<SCRIPT LANGUAGE="JavaScript1.2" TYPE="text/javascript">
+       <!--
+
+       if (isMenu) {
+           menuVersion = 3;
+           
+           menuWidth = 150;
+           childOverlap = 50;
+           childOffset = 5;
+           perCentOver = null;
+           secondsVisible = .5;
+           
+           fntCol = "white";
+           fntSiz = "8";
+           fntBold = true;
+           fntItal = false;
+           fntFam = "Arial,Geneva,sans-serif";
+           
+           backCol = "#4a0239";
+           overCol = "#eaae69";
+           overFnt = "black";
+           
+           borWid = 1;
+           borCol = "white";
+           borSty = "solid";
+           itemPad = 3;
+           
+           imgSrc = "http://www.dhtmlab.com/hiermenus/tri.gif";
+           imgSiz = 10;
+           
+           separator = 1;
+           separatorCol = "white";
+           
+           isFrames = false;      // <-- IMPORTANT for full window
+           navFrLoc = "left";     // <-- display. see below
+           
+           keepHilite = true; 
+           NSfontOver = true;
+           clickStart = false;
+           clickKill = false;
+       }
+
+       //-->
+       </SCRIPT>
+<SCRIPT LANGUAGE="JavaScript1.2" TYPE="text/javascript">
+       <!--
+       if (isMenu) {
+       document.write("<SCRIPT LANGUAGE='JavaScript1.2' SRC="https://web.archive.org/web/20010128160300js_/http://ahpcc.unm.edu/JS/Computing_Systems_Menu.js"><\/SCRIPT>");
+       }
+       //-->
+       </SCRIPT>
+<SCRIPT LANGUAGE="JavaScript1.2" TYPE="text/javascript">
+       <!--
+       if (isMenu) {
+       document.write("<SCRIPT LANGUAGE='JavaScript1.2' SRC="https://web.archive.org/web/20010128160300js_/http://ahpcc.unm.edu/JS/hierMenus.js"><\/SCRIPT>");
+       }
+       //-->
+       </SCRIPT>
+<meta name="AHPCC Computing Systems high performance computing HPC" content="AHPCC Computing Systems">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#660066" vlink="#000000" alink="#CC6633" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">ahpcc.unm.edu/Systems/Documentation/LinuxSupercluster/RefCard/index.html</code> as captured by the Internet Archive on 28 January 2001. Links to pages that were not saved here go to the Wayback Machine. <a style="color:#0b5cad" href="https://web.archive.org/web/20010128160300/http://www.ahpcc.unm.edu:80/Systems/Documentation/LinuxSupercluster/RefCard/index.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../../../">Web archive index</a></div>
+
+<table width="660" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td colspan="5" align="right"> <img src="../../../../_img/Images/Header.jpg" width="660" height="81"><br>
+      <a href="../../../../index.html" onMouseOver="popUp('elMenu1',event)"
+          onMouseOut="popDown('elMenu1')"><img src="../../../../_img/Images/Tabs/Tab_AHPCC.jpg" width="61" height="25" border="0"></a><a href="../../../index.html" onMouseOver="popUp('elMenu2',event)"
+          onMouseOut="popDown('elMenu2')"><img src="../../../../_img/Images/Tabs/Tab_Computing_Systems.jpg" width="130" height="25" border="0"></a><a href="https://web.archive.org/web/20010128160300/http://ahpcc.unm.edu/Knowledge/index.html" onMouseOver="popUp('elMenu3',event)"
+          onMouseOut="popDown('elMenu3')"><img src="../../../../_img/Images/Tabs/Tab_Knowledge_Community.jpg" width="147" height="25" border="0"></a><a href="https://web.archive.org/web/20010128160300/http://ahpcc.unm.edu/Research" onMouseOver="popUp('elMenu4',event)"
+          onMouseOut="popDown('elMenu4')" ><img src="../../../../_img/Images/Tabs/Tab_Research_Activities.jpg" width="125" height="25" border="0"></a><a href="../../../../index.html"><img src="../../../../_img/Images/Tabs/Tab_Search.jpg" width="60" height="25" border="0"></a> 
+    </td>
+  </tr>
+</table>
+<table width="660" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td rowspan="11" height="275" valign="top" align="left"> 
+      <table width="132" border="1" cellspacing="0" cellpadding="0" align="left">
+        <tr> 
+          <td width="132" height="23"><a href="index.html"><font size="-1"><b>Linux 
+            Supercluster Reference Card</b></font></a> </td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="../../../../NewsPress/index.html">News</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="../../../Allocations/index.html">Accounts-Allocations</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="../../../Hardware/index.html">All 
+            Machines</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="../../../help/index.html">Help 
+            Desk</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="../../index.html">Documentation</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="https://web.archive.org/web/20010128160300/http://ahpcc.unm.edu/EducationTraining/">Training</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="https://web.archive.org/web/20010128160300/http://ahpcc.unm.edu/Research/">Research</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font size="-1"><a href="../../../Downloads/index.html">Downloads</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font size="-2"><a href="mailto:research@ahpcc.unm.edu,systems@ahpcc.unm.edu,staff@ahpcc.unm.edu"><font size="-1">Ask 
+            Users</font></a></font></td>
+        </tr>
+      </table>
+    </td>
+    <td width="528" rowspan="11" valign="top"><!-- #BeginEditable "Main" --> <B><FONT SIZE=5> 
+      </FONT></B> 
+      <P align="center"><b><font size="5">Linux Supercluster Reference Card</font> 
+        </b></P>
+      <P align="center"><b><font size="3">The University of New Mexic</font></b><b><font size="3">o 
+        &amp; National Computational Science Alliance</font></b></P>
+      <table width="528" border="0" cellspacing="0" cellpadding="0">
+        <tr valign="top"> 
+          <td width="309" height="154"> 
+            <p align="left"><font size="-1">This page includes:</font></p>
+            <p align="left"> 
+            <ul>
+              <li><font size="-1"><a href="#access">Access</a> </font></li>
+              <li><font size="-1"><a href="#mail">Mail</a> </font></li>
+              <li><font size="-1"><a href="#compilers">Compilers</a> </font></li>
+              <li><font size="-1"><a href="#account">Your Account</a></font></li>
+              <li><font size="-1"><a href="#programming_tools">Programming Tools</a> 
+                </font></li>
+              <li><font size="-1"><a href="#mpi_library">Selecting a MPI Library</a> 
+                </font></li>
+              <li><font size="-1"><a href="#compiling_mpi">Compiling with MPI</a> 
+                </font></li>
+              <li><font size="-1"><a href="#job_managers">Job Managers</a></font></li>
+            </ul>
+          </td>
+          <td width="219" height="154"> 
+            <p><font size="-1">For assistance, please contact the Help Desk at 
+              <a href="mailto:help@ahpcc.unm.edu">help@ahpcc.unm.edu</a> or (505) 
+              277-8249 (Monday through Friday, 9 a.m. to 5 p.m. Mountain Time)</font></p>
+            <p><font size="-1">For additional documentation, please see: <a href="https://web.archive.org/web/20010128160300/http://www.ncsa.uiuc.edu/SCD/Info/MoreHelp.html">http://www.ncsa.uiuc.edu/SCD/Info/MoreHelp.html</a></font> 
+            </p>
+            <p align="left">&nbsp;</p>
+          </td>
+        </tr>
+      </table>
+      <hr align=left width="528" noshade>
+      <h3><font size="2"><b><font size="4"><a name="access"></a></font></b></font><b>Access 
+        </b> </h3>
+      <p>Depending on your allocation, login to the appropriate Linux Supercluster 
+        using secure-shell (ssh):<B><FONT SIZE=2></FONT></B> 
+      <p> 
+      <blockquote> 
+        <p><font size="-1" color="#0000FF" face="Courier New, Courier, mono">% 
+          ssh roadrunner.alliance.unm.edu</font></p>
+        <p> <font color="#0000FF" size="-1"><font face="Courier New"><font face="Courier New, Courier, mono">% 
+          ssh loslobos.alliance.unm.edu</font></font></font></p>
+      </blockquote>
+      <font face="Courier New, Courier, mono" color="#0000FF" size="-1"></font> 
+      <p></p>
+      <P>&nbsp; 
+      <P>Transfer files <U>to</U> the Linux Superclusters from your home machine 
+        using secure copy protocol (scp): 
+      <P> 
+      <blockquote> 
+        <p><font color="#0000FF" size="-1" face="Courier New, Courier, mono">% 
+          scp &lt;file&gt; &lt;user&gt;@&lt;Linux_Superluster&gt;.alliance.unm.edu:dest</font></p>
+        <p>&nbsp;</p>
+      </blockquote>
+      <font face="Courier New, Courier, mono" color="#0000FF" size="-1"></font><font face="Courier New, Courier, mono"><B><font color="#0000FF" size="-1"></font></b></font> 
+      <p></P>
+      <hr align=left width="528" noshade>
+      <h3><B><font size="4"><a name="account"></a></font>Your Account</b> </h3>
+      <p>Change password on the Linux Superclusters: 
+      <p> 
+      <blockquote><font size="-1" face="Courier New, Courier, mono" color="#0000FF">% 
+        yppasswd</font></blockquote>
+      <font color="#0000FF" face="Courier New, Courier, mono" size="-1"></font> 
+      <p></p>
+      <P>&nbsp; 
+      <P>Change default shell on the Linux Superclusters: 
+      <P> 
+      <blockquote><font size="-1" face="Courier New, Courier, mono" color="#0000FF">% 
+        ypchsh</font></blockquote>
+      <font color="#0000FF" size="-1" face="Courier New, Courier, mono"></font> 
+      <p></p>
+      <p>&nbsp;</p>
+      <font color="#0000FF" face="Courier New, Courier, mono" size="-1"></font> 
+      <p></P>
+      <p></P>
+      <p></P>
+      <hr align=left width="528" noshade>
+      <h3><B><font size="4"><a name="mail"></a></font>Mail</b> </h3>
+      <p>You need to forward your mail to your local system. To forward mail, 
+        create or modify the <font size="-1" color="#0000FF" face="Courier New, Courier, mono">.forward</font> 
+        file with: 
+      <p> 
+      <blockquote> 
+        <p><font color="#0000FF" face="Courier New, Courier, mono" size="-1">&lt;username@host.domain&gt;</font></p>
+        <p>&nbsp;</p>
+      </blockquote>
+      <font color="#0000FF" size="-1" face="Courier New, Courier, mono"></font> 
+      <p></p>
+      <hr align=left noshade width="528">
+      <h3><B><font size="4"><a name="compilers"></a></font>Compilers</b> </h3>
+      <p>If you are interested in debugging your Fortran program, try the NAG 
+        compiler first. If you are interested in performance, try all compilers 
+        since each are optimized differently. MPI C++ is only supported on Ethernet 
+        and may work on Myrinet. </p>
+      <TABLE BORDER CELLSPACING=1 CELLPADDING=7 WIDTH=528>
+        <TR> 
+          <TD WIDTH="15%" VALIGN="TOP" ROWSPAN=2 BGCOLOR="#ffffff" HEIGHT=17> 
+            <P>C 
+          </TD>
+          <TD WIDTH="73%" VALIGN="TOP" HEIGHT=17> 
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">% 
+              gcc –o exec [options] filename(s).c</font> 
+          </TD>
+          <TD WIDTH="12%" VALIGN="TOP" HEIGHT=17> 
+            <P>GNU 
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="73%" VALIGN="TOP" HEIGHT=17> 
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">% 
+              pgcc –o exec [options] filename(s).c</font> 
+          </TD>
+          <TD WIDTH="12%" VALIGN="TOP" HEIGHT=17> 
+            <P>PGI 
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="15%" VALIGN="TOP" ROWSPAN=2 BGCOLOR="#ffffff" HEIGHT=16> 
+            <P>C++ 
+          </TD>
+          <TD WIDTH="73%" VALIGN="TOP" HEIGHT=16> 
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">% 
+              g++ –o exec [options] filename(s).C</font> 
+          </TD>
+          <TD WIDTH="12%" VALIGN="TOP" HEIGHT=16> 
+            <P>GNU 
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="73%" VALIGN="TOP" HEIGHT=17> 
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">% 
+              pgCC –o exec [options] filename(s).C</font> 
+          </TD>
+          <TD WIDTH="12%" VALIGN="TOP" HEIGHT=17> 
+            <P>PGI 
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="15%" VALIGN="TOP" ROWSPAN=2 BGCOLOR="#ffffff" HEIGHT=17> 
+            <P>Fortran77 
+          </TD>
+          <TD WIDTH="73%" VALIGN="TOP" HEIGHT=17> 
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">% 
+              f77 –o exec [options] filename(s).f</font> 
+          </TD>
+          <TD WIDTH="12%" VALIGN="TOP" HEIGHT=17> 
+            <P>GNU 
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="73%" VALIGN="TOP" HEIGHT=17> 
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">% 
+              pgf77 –o exec [options] filename(s).f</font> 
+          </TD>
+          <TD WIDTH="12%" VALIGN="TOP" HEIGHT=17> 
+            <P>PGI 
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="15%" VALIGN="TOP" ROWSPAN=5 BGCOLOR="#ffffff" HEIGHT=17> 
+            <P>Fortran90/95 
+          </TD>
+          <TD WIDTH="73%" VALIGN="TOP" HEIGHT=17> 
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">% 
+              f90 –o exec [options] filename(s).f90</font> 
+          </TD>
+          <TD WIDTH="12%" VALIGN="TOP" HEIGHT=17> 
+            <P>VAST 
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="73%" VALIGN="TOP" HEIGHT=17> 
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">% 
+              pgf90 –o exec [options] filename(s).f90</font> 
+          </TD>
+          <TD WIDTH="12%" VALIGN="TOP" HEIGHT=17> 
+            <P>PGI 
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="73%" VALIGN="TOP" HEIGHT=17> 
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">% 
+              pghpf –o exec [options] filename(s).hpf</font> 
+          </TD>
+          <TD WIDTH="12%" VALIGN="TOP" HEIGHT=17> 
+            <P>PGI 
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="73%" VALIGN="TOP" HEIGHT=17> 
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">% 
+              f95 –o exec [options] filename(s).f95</font> 
+          </TD>
+          <TD WIDTH="12%" VALIGN="TOP" HEIGHT=17> 
+            <P>NAG 
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="73%" VALIGN="TOP" HEIGHT=17> 
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">% 
+              f90 –YEXT_NAMES=LCS –YEXT_SFX=_ –o exec [options] filename(s).hpf</font> 
+          </TD>
+          <TD WIDTH="12%" VALIGN="TOP" HEIGHT=17> 
+            <P>Absoft 
+          </TD>
+        </TR>
+      </TABLE>
+      <p>&nbsp;</p>
+      <p><b> </b></p>
+      <hr align=left noshade width="528">
+      <h3><b><font size="4"><a name="programming_tools"></a></font>Programming 
+        Tools </b></h3>
+      <TABLE BORDER CELLSPACING=1 CELLPADDING=7 WIDTH=528>
+        <TR> 
+          <TD WIDTH="36%" VALIGN="TOP" ROWSPAN=3 BGCOLOR="#ffffff" HEIGHT=17> 
+            <P><FONT SIZE=2>Source code debuggers</FONT> 
+          </TD>
+          <TD WIDTH="31%" VALIGN="TOP" HEIGHT=17> <FONT FACE="Courier New" SIZE=1> 
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">% 
+              gdb</font> 
+            </font></TD>
+          <TD WIDTH="33%" VALIGN="TOP" HEIGHT=17> <FONT SIZE=2> 
+            <P>GNU 
+            </FONT></TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="31%" VALIGN="TOP" HEIGHT=17> <FONT FACE="Courier New" SIZE=1> 
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">% 
+              pgdbg</font> 
+            </font></TD>
+          <TD WIDTH="33%" VALIGN="TOP" HEIGHT=17> <FONT SIZE=2> 
+            <P>PGI 
+            </FONT></TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="31%" VALIGN="TOP" HEIGHT=17> <FONT FACE="Courier New" SIZE=1> 
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">% 
+              xxgdb</font> 
+            </font></TD>
+          <TD WIDTH="33%" VALIGN="TOP" HEIGHT=17> <FONT SIZE=2> 
+            <P>GNU 
+            </FONT></TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="36%" VALIGN="TOP" BGCOLOR="#ffffff" HEIGHT=17> <FONT SIZE=2> 
+            <P>Performance profiler 
+            </FONT></TD>
+          <TD WIDTH="31%" VALIGN="TOP" HEIGHT=17> <FONT FACE="Courier New" SIZE=1> 
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">% 
+              pgprof</font> 
+            </font></TD>
+          <TD WIDTH="33%" VALIGN="TOP" HEIGHT=17> <FONT SIZE=2> 
+            <P>PGI 
+            </FONT></TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="36%" VALIGN="TOP" BGCOLOR="#ffffff" HEIGHT=17> <FONT SIZE=2> 
+            <P>TotalView MPI Debugger 
+            </FONT></TD>
+          <TD WIDTH="31%" VALIGN="TOP" HEIGHT=17> <FONT FACE="Courier New" SIZE=1> 
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">% 
+              totalview</font> 
+            </font></TD>
+          <TD WIDTH="33%" VALIGN="TOP" HEIGHT=17> <FONT SIZE=2> 
+            <P>Etnus 
+            </FONT></TD>
+        </TR>
+      </TABLE>
+      <B><FONT SIZE=2> 
+      <P>&nbsp;</P>
+      <P>&nbsp;</P>
+      </FONT></B> 
+      <hr align=left noshade width="528">
+      <h3><B><font size="4"><a name="mpi_library"></a></font>Selecting a MPI Library<BR>
+        </b> </h3>
+      <p>There are 16 MPI libraries on the Linux Superclusters, a set of four 
+        using Myrinet and four using Ethernet for each Linux Supercluster. Select 
+        a library by setting the MPIHOME environment variable. You can set this 
+        variable by removing the comment sentinel (#) from the beginning of the 
+        line specifying the library that you want to use. Be sure that the beginning 
+        of the lines for the other libraries start with the comment sentinel (#). 
+        Refer to your <font face="Courier New, Courier, mono" size="-1" color="#0000FF">.cshrc</font> 
+        file for examples. Use the "which" command to verify your compile library. 
+      </p>
+      <P>For example:</P>
+      <P> 
+      <blockquote> 
+        <p><font color="#0000FF" size="-1" face="Courier New, Courier, mono">% 
+          which mpicc</font></p>
+        <p> <font face="Courier New, Courier, mono" size="-1"><font color="#0000FF">/usr/parallel/ll/mpich-gm.pgi/bin/mpicc</font></font></p>
+      </blockquote>
+      <p></P>
+      <font color="#0000FF"><font face="Courier New, Courier, mono"><font size="-1"></font></font></font> 
+      <p></P>
+      <P>shows that you are using GM with PGI compilers.</P>
+      <P>&nbsp;</P>
+      <P>&nbsp; </P>
+      <hr align=left width="528" noshade>
+      <h3><b><font size="4"><a name="#compiling_mpi"></a></font>Compiling with 
+        MPI</b></h3>
+      <TABLE BORDER CELLSPACING=1 CELLPADDING=7 WIDTH=528>
+        <TR> 
+          <TD WIDTH="23%" VALIGN="TOP" BGCOLOR="#ffffff" HEIGHT=17> 
+            <P><FONT SIZE=2>C</FONT> 
+          </TD>
+          <TD WIDTH="77%" VALIGN="TOP" HEIGHT=17> 
+            <P><font face="Courier New, Courier, mono" size="-1" color="#0000FF">% 
+              mpicc –o exec [options] filename(s).c</font> 
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="23%" VALIGN="TOP" BGCOLOR="#ffffff" HEIGHT=17> <FONT SIZE=2> 
+            <P>C++ 
+            </FONT></TD>
+          <TD WIDTH="77%" VALIGN="TOP" HEIGHT=17> 
+            <P><font face="Courier New, Courier, mono" size="-1" color="#0000FF">% 
+              mpiCC –o exec [options] filename(s).C</font> 
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="23%" VALIGN="TOP" BGCOLOR="#ffffff" HEIGHT=17> <FONT SIZE=2> 
+            <P>Fortran77 
+            </FONT></TD>
+          <TD WIDTH="77%" VALIGN="TOP" HEIGHT=17> 
+            <P><font face="Courier New, Courier, mono" size="-1" color="#0000FF">% 
+              mpif77 –o exec [options] filename(s).f</font> 
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="23%" VALIGN="TOP" BGCOLOR="#ffffff" HEIGHT=17> <FONT SIZE=2> 
+            <P>Fortran90 
+            </FONT></TD>
+          <TD WIDTH="77%" VALIGN="TOP" HEIGHT=17> 
+            <P><font face="Courier New, Courier, mono" size="-1" color="#0000FF">% 
+              mpif90 -o exec [options] filename(s).f90</font> 
+          </TD>
+        </TR>
+      </TABLE>
+      <p>&nbsp;</p>
+      <p><B><FONT SIZE=2> </FONT></B> </p>
+      <hr align=left width="528" noshade>
+      <h3><B><font size="4"><a name="#job_managers"></a></font>Job Managers</b> 
+      </h3>
+      <p>PBS and LRM/Maui support two types of modes for running your job – batch 
+        and interactive. With interactive, a session is automatically started 
+        on one of the compute nodes assigned to you through the Job Manager. In 
+        the following scripts, <font face="Courier New, Courier, mono" color="#0000FF" size="-1">ppn</font> 
+        = process(es) per node and <B><I><font face="Courier New, Courier, mono" size="-1" color="#0000FF">n</font></i></B> 
+        = number of nodes requested. </p>
+      <P align="left"><b>Portable Batch System (PBS)</b></P>
+      <TABLE BORDER CELLSPACING=1 CELLPADDING=7 WIDTH=528>
+        <TR> 
+          <TD VALIGN="TOP" COLSPAN=3> 
+            <P ALIGN="CENTER"><B><FONT SIZE=2>PBS Batch Mode Sample Scripts:</font></B> 
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="10%" VALIGN="TOP"> 
+            <P>&nbsp; 
+          </TD>
+          <TD WIDTH="45%" VALIGN="TOP"> <FONT SIZE=2> 
+            <P>Myrinet 
+            </FONT></TD>
+          <TD WIDTH="45%" VALIGN="TOP"> <FONT SIZE=2> 
+            <P>Ethernet 
+            </FONT></TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="10%" VALIGN="TOP"> <FONT SIZE=2> 
+            <P>1 ppn 
+            </FONT></TD>
+          <TD WIDTH="45%" VALIGN="TOP"> <FONT FACE="Courier New" SIZE=1> 
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">#PBS 
+              –l nodes=<I>n</i></font></P>
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">gmpiconf 
+              $PBS_NODEFILE</font></P>
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">mpirun 
+              -np <i>n</i> <prog>.exec</font> 
+            </font></TD>
+          <TD WIDTH="45%" VALIGN="TOP"> <FONT FACE="Courier New" SIZE=1> 
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">#PBS 
+              –l nodes=<I>n</i></font></P>
+            <font size="-1" face="Courier New, Courier, mono" color="#0000FF">mpirun 
+            -np <i>n</i> <prog>.exec</font> 
+            <P>&nbsp; 
+            </font></TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="10%" VALIGN="TOP"> <FONT SIZE=2> 
+            <P>2 ppn 
+            </FONT></TD>
+          <TD WIDTH="45%" VALIGN="TOP"> <FONT FACE="Courier New" SIZE=1> 
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">#PBS 
+              –l nodes=<I>n</i></font></P>
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">gmpiconf2 
+              $PBS_NODEFILE</font></P>
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">mpirun 
+              –np <I>2*n</I> &lt;prog&gt;.exec</font> 
+            </font></TD>
+          <TD WIDTH="45%" VALIGN="TOP"> <FONT FACE="Courier New" SIZE=1> 
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">#PBS 
+              –l nodes=<I>n</i></font></P>
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">mpirun 
+              –np <I>2*n</I> &lt;prog&gt;.exec</font> 
+            </font></TD>
+        </TR>
+      </TABLE>
+      <P>Standard output and error files will be written to your working directory. 
+        To submit the script to PBS, use the following command: 
+      <P> 
+      <blockquote><font size="-1" color="#0000FF" face="Courier New, Courier, mono">% 
+        qsub &lt;pbs_script&gt;</font></blockquote>
+      <font color="#0000FF" face="Courier New" size="-1"></font> 
+      <p></P>
+      <P>&nbsp; 
+      <P><B>PBS Interactive Mode Sample Session:<BR>
+        </b>Request an interactive session with <I><font face="Courier New, Courier, mono" color="#0000FF">n</font></i> 
+        nodes: 
+      <P> 
+      <blockquote><font size="-1" face="Courier New, Courier, mono" color="#0000FF">% 
+        qsub –I –l nodes=<I>n</I> &lt;pbs_script&gt; </font></blockquote>
+      <font color="#0000FF" face="Courier New"><font size="-1" face="Courier New, Courier, mono"></font></font> 
+      <p></P>
+      <P>&nbsp; 
+      <P>Change directory to: 
+      <P> 
+      <blockquote><font face="Courier New, Courier, mono" size="-1" color="#0000FF">$PBS_O_WORKDIR</font><FONT FACE="Courier New" SIZE=2> 
+        </font>(your working directory).</blockquote>
+      <p></P>
+      <P>&nbsp; 
+      <P>Run your program as follows: 
+      <table width="528" border="1" cellspacing="1" cellpadding="7">
+        <tr align="left" valign="top"> 
+          <td width="36"><font size="2"></font></td>
+          <td width="217"><font size="2">Myrinet</font></td>
+          <td width="218"><font size="2">Ethernet</font></td>
+        </tr>
+        <tr align="left" valign="top"> 
+          <td width="36"><font size="2">1 ppn</font></td>
+          <td width="217"> If Myrinet 1 ppn: 
+            <p> 
+            <p><font face="Courier New" size=1><font size="-1" face="Courier New, Courier, mono" color="#0000FF">% 
+              gmpiconf $PBS_NODEFILE</font></font></p>
+            <p><font face="Courier New" size=1><font size="-1" face="Courier New, Courier, mono" color="#0000FF">% 
+              </font><font face="Courier New" size=1><font size="-1" face="Courier New, Courier, mono" color="#0000FF">mpirun 
+              -np <i>n</i> <prog>.exec</font></font></font></p>
+          </td>
+          <td width="218"> 
+            <p>If Ethernet 1 ppn</p>
+            <p> <font face="Courier New" size=1><font size="-1" face="Courier New, Courier, mono" color="#0000FF">% 
+              </font><font face="Courier New" size=1><font size="-1" face="Courier New, Courier, mono" color="#0000FF">mpirun 
+              -np <i>n</i> <prog>.exec</font></font></font></p>
+            <p>&nbsp;</p>
+          </td>
+        </tr>
+        <tr align="left" valign="top"> 
+          <td width="36"><font size="2">2 ppn</font></td>
+          <td width="217"> 
+            <p>If Myrinet 2 ppn:</p>
+            <p> <font face="Courier New" size=1><font size="-1" face="Courier New, Courier, mono" color="#0000FF">% 
+              gmpiconf2 $PBS_NODEFILE</font></font></p>
+            <p><font face="Courier New" size=1><font size="-1" face="Courier New, Courier, mono" color="#0000FF">% 
+              mpirun –np <i>2*n</i> &lt;prog&gt;.exec</font></font></p>
+          </td>
+          <td width="218"> 
+            <p>If Ethernet 2 ppn</p>
+            <p><font face="Courier New" size=1><b><font size="-1" face="Courier New, Courier, mono" color="#0000FF"> 
+              </font></b><font size="-1" face="Courier New, Courier, mono" color="#0000FF">% 
+              mpirun –np <i>2*n</i> &lt;prog&gt;.exec</font></font> </p>
+          </td>
+        </tr>
+      </table>
+      <P>Release your nodes when finished by typing: 
+      <p> 
+      <blockquote><font size="-1" face="Courier New, Courier, mono" color="#0000FF">% 
+        exit</font></blockquote>
+      <font face="Courier New" color="#0000FF" size="-1"></font> 
+      <p></p>
+      <P>&nbsp; 
+      <P>Display contents and status of queue: 
+      <P> 
+      <blockquote><font color="#0000FF" face="Courier New, Courier, mono" size="-1">% 
+        qstat</font></blockquote>
+      <font face="Courier New" color="#0000FF" size="-1"></font> 
+      <p></P>
+      <P>&nbsp; 
+      <P>Remove job from queue: 
+      <P> 
+      <blockquote><font face="Courier New, Courier, mono" size="-1" color="#0000FF">% 
+        qdel &lt;job_id&gt;</font></blockquote>
+      <font face="Courier New" color="#0000FF" size="-1"></font> 
+      <p></P>
+      <P>&nbsp;</P>
+      <P><B>Linux Resource Manager (LRM) and Maui Scheduler - LosLobos<BR>
+        </b>If you want to run an executable only, compose a script like the following 
+        table:</P>
+      <TABLE BORDER CELLSPACING=1 CELLPADDING=7 WIDTH=528>
+        <TR> 
+          <TD VALIGN="TOP" COLSPAN=3> 
+            <P ALIGN="CENTER"><B>LRM Batch Mode Sample Scripts:</B> 
+          </TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="12%" VALIGN="TOP"> 
+            <P>&nbsp; 
+          </TD>
+          <TD WIDTH="45%" VALIGN="TOP"> <FONT SIZE=2> 
+            <P>Myrinet 
+            </FONT></TD>
+          <TD WIDTH="43%" VALIGN="TOP"> <FONT SIZE=2> 
+            <P>Ethernet 
+            </FONT></TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="12%" VALIGN="TOP"> <FONT SIZE=2> 
+            <P>1 ppn 
+            </FONT></TD>
+          <TD WIDTH="45%" VALIGN="TOP"> <FONT FACE="Courier New" SIZE=1> 
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">WCLimit 
+              == &lt;WCLimit&gt;</font></P>
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">JobType 
+              == mpi.ch_gm</font></P>
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">Tasks 
+              == <I>n</i></font></P>
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">Nodes 
+              == <I>n</i></font></P>
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">TaskPerNode 
+              == 1</font></P>
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">Output 
+              == &lt;script&gt;.out</font></P>
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">Err 
+              == &lt;script&gt;.err</font></P>
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">Log 
+              == &lt;script&gt;.log</font></P>
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">Exec 
+              == &lt;prog&gt;.exec</font> 
+            </font></TD>
+          <TD WIDTH="43%" VALIGN="TOP"> <FONT FACE="Courier New" SIZE=1> 
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">WCLimit 
+              == &lt;WCLimit&gt;</font></P>
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">JobType 
+              == mpi.ch_p4</font></P>
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">Tasks 
+              == <I>n</i></font></P>
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">Nodes 
+              == <I>n</i></font></P>
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">TaskPerNode 
+              == 1</font></P>
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">Output 
+              == &lt;script&gt;.out</font></P>
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">Err 
+              == &lt;script&gt;.err</font></P>
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">Log 
+              == &lt;script&gt;.log</font></P>
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">Exec 
+              == &lt;prog&gt;.exec</font> 
+            </font></TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="12%" VALIGN="TOP"> <FONT SIZE=2> 
+            <P>2 ppn 
+            </FONT></TD>
+          <TD WIDTH="45%" VALIGN="TOP"> <FONT FACE="Courier New" SIZE=1> 
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">WCLimit 
+              == &lt;WCLimit&gt;</font></P>
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">JobType 
+              == mpi.ch_gm</font></P>
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">Tasks 
+              == <I>2*n</i></font></P>
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">Nodes 
+              == <I>n</i></font></P>
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">TaskPerNode 
+              == 2</font></P>
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">Output 
+              == &lt;script&gt;.out</font></P>
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">Err 
+              == &lt;script&gt;.err</font></P>
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">Log 
+              == &lt;script&gt;.log</font></P>
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">Exec 
+              == &lt;prog&gt;.exec</font> 
+            </font></TD>
+          <TD WIDTH="43%" VALIGN="TOP"> <FONT FACE="Courier New" SIZE=1> 
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">WCLimit 
+              == &lt;WCLimit&gt;</font></P>
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">JobType 
+              == mpi.ch_p4</font></P>
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">Tasks 
+              == <I>2*n</i></font></P>
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">Nodes 
+              == <I>n</i></font></P>
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">TaskPerNode 
+              == 2</font></P>
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">Output 
+              == &lt;script&gt;.out</font></P>
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">Err 
+              == &lt;script&gt;.err</font></P>
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">Log 
+              == &lt;script&gt;.log</font></P>
+            <P><font size="-1" face="Courier New, Courier, mono" color="#0000FF">Exec 
+              == &lt;prog&gt;.exec</font> 
+            </font></TD>
+        </TR>
+      </TABLE>
+      <P align="center"><b>*WCLimit (Wall Clock Limit) is in seconds.</b></P>
+      <P>Standard output and error files will be written to your working directory. 
+        To submit the script to LRM/Maui, use the following command: 
+      <P> 
+      <blockquote><font face="Courier New, Courier, mono" size="-1" color="#0000FF">% 
+        submitjob &lt;lrm_script&gt;</font></blockquote>
+      <font face="Courier New, Courier, mono" color="#0000FF" size="-1"></font> 
+      <p>&nbsp;</p>
+      <p></P>
+      <TABLE BORDER CELLSPACING=1 CELLPADDING=7 WIDTH=528 align="center">
+        <TR> 
+          <TD VALIGN="TOP"> 
+            <P>*If you want to execute your program inside of a secondary script 
+              (that would allow running of multiple executables, setup other environmental 
+              variables, etc.), in your LRM script use the following:</P>
+            <blockquote> 
+              <p><font face="Courier New, Courier, mono" size="-1" color="#0000FF">JobType 
+                == mpi</font></p>
+              <p><font face="Courier New, Courier, mono" color="#0000FF" size="-1">Exec 
+                == &lt;secondary_lrm_script&gt;</font></p>
+            </blockquote>
+            <p>&nbsp;</p>
+            <p>To submit your job:</p>
+            <blockquote> 
+              <p><font color="#0000FF" face="Courier New, Courier, mono" size="-1">% 
+                submitjob &lt;lrm_script&gt;</font></p>
+            </blockquote>
+            <P>&nbsp;</P>
+            <P>Sample secondary LRM script:</P>
+            <blockquote> 
+              <p><font color="#0000FF"><font face="Courier New, Courier, mono" size="-1">#!/bin/csh</font></font></p>
+              <p><font color="#0000FF" size="-1" face="Courier New, Courier, mono"># 
+                gmpiconf ${ NODE_FILE} &#9;# uncomment this line for 1 ppn</font></p>
+              <p><font color="#0000FF" size="-1" face="Courier New, Courier, mono">gmpiconf2 
+                ${ NODE_FILE} &#9;# 2 ppn</font></p>
+              <p><font color="#0000FF" size="-1" face="Courier New, Courier, mono">mpirun 
+                –np ${ WIKI_TASKCOUNT} -machinefile ${ NODE_FILE} &lt;prog&gt;.exe</font></p>
+            </blockquote>
+          </TD>
+        </TR>
+      </TABLE>
+      <B><FONT SIZE=2> 
+      <P>&nbsp;</P>
+      </font></B> 
+      <P>&nbsp; 
+      <P><B>LRM/Maui Interactive Mode Sample Session:<BR>
+        </b>Request an interactive session with <B><I><font face="Courier New" color="#0000FF" size="-1">n</font></i> 
+        </B>nodes: 
+      <P> 
+      <blockquote><font face="Courier New, Courier, mono" size="-1" color="#0000FF">% 
+        submitjob –I nodes = <I>n</i></font></blockquote>
+      <font face="Courier New" color="#0000FF" size="-1"></font> 
+      <p></P>
+      <P>&nbsp;</P>
+      <P>Run your program as follows:</P>
+      <TABLE BORDER CELLSPACING=1 CELLPADDING=7 WIDTH=528>
+        <TR> 
+          <TD WIDTH="10%" VALIGN="TOP"> 
+            <P>&nbsp; 
+          </TD>
+          <TD WIDTH="47%" VALIGN="TOP"> <FONT SIZE=2> 
+            <P>Myrinet 
+            </FONT></TD>
+          <TD WIDTH="42%" VALIGN="TOP"> <FONT SIZE=2> 
+            <P>Ethernet 
+            </FONT></TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="10%" VALIGN="TOP"> <FONT SIZE=2> 
+            <P>1 ppn 
+            </FONT></TD>
+          <TD WIDTH="47%" VALIGN="TOP"> <FONT FACE="Courier New" SIZE=1> 
+            <P><font size="-1" color="#0000FF" face="Courier New, Courier, mono">% 
+              gmpiconf $NODEFILE<br>
+              % </font><font face="Courier New" size=1><font size="-1" face="Courier New, Courier, mono" color="#0000FF">mpirun 
+              -np <i>n</i> <prog>.exec</font></font></P>
+            </font></TD>
+          <TD WIDTH="42%" VALIGN="TOP"> <FONT FACE="Courier New" SIZE=1> 
+            <P><font size="-1" color="#0000FF" face="Courier New, Courier, mono">% 
+              </font><font size="-1" face="Courier New, Courier, mono" color="#0000FF">mpirun 
+              -np <i>n</i> <prog>.exec</font> 
+            </font></TD>
+        </TR>
+        <TR> 
+          <TD WIDTH="10%" VALIGN="TOP"> <FONT SIZE=2> 
+            <P>2 ppn 
+            </FONT></TD>
+          <TD WIDTH="47%" VALIGN="TOP"> <FONT FACE="Courier New" SIZE=1> 
+            <P><font size="-1" color="#0000FF" face="Courier New, Courier, mono">% 
+              gmpiconf2 $NODEFILE<br>
+              % mpirun –np <I>2*n</I> &lt;prog&gt;.exec </font></P>
+            </font></TD>
+          <TD WIDTH="42%" VALIGN="TOP"> <FONT FACE="Courier New" SIZE=1> 
+            <P><font size="-1" color="#0000FF" face="Courier New, Courier, mono">% 
+              mpirun –np <I>2*n</I> &lt;prog&gt;.exec</font> 
+            </font></TD>
+        </TR>
+      </TABLE>
+      <p>&nbsp; 
+      <p>Release your nodes when finished by typing: 
+      <p> 
+      <blockquote><font face="Courier New, Courier, mono" size="-1" color="#0000FF">% 
+        exit</font></blockquote>
+      <font color="#0000FF"><font face="Courier New" size="-1"></font></font> 
+      <p></p>
+      <TABLE BORDER CELLSPACING=1 CELLPADDING=7 WIDTH=480 align="center">
+        <TR> 
+          <TD VALIGN="TOP"> 
+            <p>*You can submit jobs to LRM with a LRM script or with a PBS script 
+              and specify a PBS job type. Submit PBS scripts to LRM with the following 
+              command:</p>
+            <blockquote> 
+              <p> <font face="Courier New" color="#0000FF" size="-1">% submitjob 
+                –P &lt;pbs_script&gt;</font> </p>
+            </blockquote>
+          </TD>
+        </TR>
+      </TABLE>
+      <P>&nbsp; 
+      <P>Display contents and status of queue: 
+      <P> 
+      <blockquote><font face="Courier New, Courier, mono" size="-1" color="#0000FF">% 
+        showq</font></blockquote>
+      <font face="Courier New" color="#0000FF" size="-1"></font> 
+      <p></P>
+      <P>&nbsp; 
+      <P>Remove job from queue: 
+      <P> 
+      <blockquote><font face="Courier New, Courier, mono" size="-1" color="#0000FF">% 
+        canceljob &lt;job_id&gt;</font></blockquote>
+      <!-- #EndEditable --></td>
+  </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> 
+    <td colspan="2" valign="top"><font size="1" face="Arial, Helvetica, sans-serif"><img src="../../../../_img/Images/Footer.jpg" width="660" height="72" usemap="#Map2" border="0"><map name="Map2"><area shape="rect" coords="573,45,650,61" href="mailto:webmaster@ahpcc.unm.edu"><area shape="rect" coords="496,13,562,60" href="https://web.archive.org/web/20010128160300/http://www.unm.edu/"></map></font></td>
+  </tr>
+  <tr> 
+    <td colspan="2" valign="top"> 
+      <div align="left"> 
+        <table width="660" border="0" cellspacing="0" cellpadding="0">
+          <tr> 
+            <td width="268"><font size="1" face="Arial, Helvetica, sans-serif">The 
+              University of New Mexico<br>
+              <b>Albuquerque High Performance Computing Center</b><br>
+              Galles Building - 1601 Central Avenue, NE<br>
+              Albuquerque, NM 87131<map name="Map"><area shape="RECT" coords="497,11,561,62" href="https://web.archive.org/web/20010128160300/http://www.unm.edu" alt="UNM" title="UNM"></map><br>
+              Phone # 505.277.8249<font color="#FFFFFF">000000</font>Fax # 505.277.8235</font></td>
+            <td width="392" valign="top"> 
+              <div align="right"><font size="1">Last Modified: December 1, 2000</font></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </td>
+  </tr>
+</table>
+</body>
+
+<!-- #EndTemplate --></html>

@@ -1,0 +1,91 @@
+<html>
+<head>
+<title>UNM-HPCERC: mpich</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF">
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">hpc.unm.edu/computing/docs/mpich-gm.html</code> as captured by the Internet Archive on 25 July 2003. Links to pages that were not saved here go to the Wayback Machine. <a style="color:#0b5cad" href="https://web.archive.org/web/20030725184946/http://www.hpc.unm.edu:80/computing/docs/mpich-gm.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../">Web archive index</a></div>
+
+<p><font size="+1"><b>MPICH-GM</b></font></p>
+<p><b>Description</b></p>
+<p> This is an entirely new ch_gm device written for the MPICH 1.2.1 release by 
+  Patrick Geoffray at <br>
+  Myricom, in close coordination with the systems group at HPCERC. It is architecturally 
+  different from<br>
+  previous implementations of GM devices for MPICH, and is believed to be both 
+  faster and more reliable.</p>
+<p>&nbsp;</p>
+<p><b>Locations and Compilers</b></p>
+<p> Currently, only Gnu and PGI versions of this MPICH are available. </p>
+<p> The standard, most-tested version of MPICH-GM will always be installed in:<br>
+  /usr/parallel/ll/mpich-gm.&lt;compiler&gt; </p>
+<p> The following information is for those wanting to use specific versions of 
+  the software.</p>
+<p> For each of the compilers, there is both a highly optimized version and a 
+  version with debugging symbols and no optimization. </p>
+<p>All versions are in /usr/parallel/ll/&lt;version&gt; </p>
+<p>GNU Optimized: <br>
+  &lt;version&gt; = mpich-gm.gnu-4<br>
+  GNU Debugging:<br>
+  &lt;version&gt; = mpich-gm.gnu-4g</p>
+<p>PGI Optimized:<br>
+  &lt;version&gt; = mpich-gm.pgi-4<br>
+  PGI Debugging:<br>
+  &lt;version&gt; = mpich-gm.pgi-4g</p>
+<p>For example, to use the optimized pgcc version, set:</p>
+<p><font face="Courier New, Courier, mono">MPIHOME=/usr/parallel/ll/mpich-gm.pgi-4<br>
+  PATH=$MPIHOME/bin:$PATH<br>
+  CC=$MPIHOME/bin/mpicc</font></p>
+<p>&nbsp;</p>
+<p><b>Running Programs</b></p>
+<p> There are several specialized options for the ch_gm device which are not accessible 
+  through mpirun; for this reason, we recommend running with: </p>
+<p> {gmpiconf or gmpiconf2}<br>
+  $MPIHOME/bin/mpirun.ch_gm &lt;args&gt; &lt;program&gt; &lt;program-args&gt;</p>
+<p>Important arguments to the ch_gm device follow, along with information on their 
+  functionality.</p>
+<p>GMPI_EAGER_SIZE=&lt;number of bytes&gt;<br>
+  This sets both the threshold for small messages, and the buffer size for messages. 
+  <br>
+  There are two ways that GM sends packets to another node - Eager(small packets) 
+  and Rendez-vous(large packets). The small packet mode simply puts the packet 
+  on the card and sends it, w/o any negotiation - the receiving end must buffer 
+  the packet if it is not expected. The large packet mode first buffers the packet, 
+  then queries the receiving end - the receiving end then allocates a buffer for 
+  the packet, and signals the sender to go ahead. By default, the threshold for 
+  large packets is set at 16K - if your application send many small packets, it 
+  is more efficient to set the threshold lower, so that MPICH_GM allocates smaller 
+  buffers for these packets.</p>
+<p>--gm-recv &lt;mode&gt; {blocking, polling, hybrid}<br>
+  This selects the mode used for all MPI calls which receive messages. Polling 
+  is the default mode, and is the most reliable. You would only want to change 
+  this option if you are running with more than one process per CPU, in which 
+  case the blocking mode will allow other processes to take CPU time while one 
+  waits for communication. </p>
+<p>-np &lt;number of processors&gt; (This is unneccesary with gmpiconf)</p>
+<p>--gm-v (Turns on verbose operation)</p>
+<p><br>
+  Note: Because we are working so closely with Myricom on this release, bugs in 
+  the device code are being addressed with unusual speed. Therefore we request 
+  that you copy all MPI or GM errors to the help desk, along with your MPIHOME 
+  and PBS_NODEFILE.</p>
+<p><br>
+  <b>GMPICONF Usage</b></p>
+<p>Before running an mpich-gm program, you must run the &quot;gmpiconf&quot; program 
+  to prepare a process group file for mpich. The standard versions of gmpiconf 
+  are:</p>
+<p>/usr/local/bin/gmpiconf for one processor per node<br>
+  /usr/local/bin/gmpicnf2 for 2 processors per node</p>
+<p>However, there may be situations, for example when processes spend a lot of 
+  time waiting on communication, in which you would want to run more than one 
+  process per CPU. In this case, you can use:</p>
+<p><br>
+  <font face="Courier New, Courier, mono">/usr/local/bin/gmpiconf3 for 3 processes 
+  per node<br>
+  /usr/local/bin/gmpiconf4 for 4 processes per node</font></p>
+<p>In any situation, the command:</p>
+<p><font face="Courier New, Courier, mono">gmpiconf[n] $PBS_NODEFILE</font></p>
+<p>Will work within PBS to prepare your process group file.</p>
+</body>
+</html>

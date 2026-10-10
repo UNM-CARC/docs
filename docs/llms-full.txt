@@ -11850,6 +11850,765 @@ Network through the Albuquerque Gigapop.
 Physical access to the machine room is restricted and managed through UNM's
 Electronic Network Access Control system.
 
+---8<--- https://unm-carc.github.io/docs/about/history/
+
+---
+title: "History of CARC computing"
+description: "Historical record of the supercomputers in the Galles Building machine room, 1994 to today: machines, funding, processing power, costs, directors, and the PIs who contributed hardware."
+type: Reference
+tags:
+  - About
+  - History
+  - Hardware
+status: draft
+generated:
+  by: "process:claude-code"
+  at: "2026-10-10T00:00:00Z"
+sources:
+  - id: carc-history
+    resource: "https://carc.unm.edu/about/history/"
+    title: "CARC history (carc.unm.edu)"
+    author: "team:unm-carc"
+  - id: machine-room-plaques
+    resource: "assets/images/history/machine-room-plaques.jpg"
+    title: "HPC@UNM machine-room wall plaques, Galles Building (photo, 2026-07-01)"
+    author: "human:tswetnam"
+  - id: nsf-dbi-0420513
+    resource: "https://api.nsf.gov/services/v1/awards/0420513.json"
+    title: "NSF MRI DBI-0420513: High Performance Shared-Memory Computer (Pequin and Poblano)"
+    author: "team:nsf"
+  - id: nsf-aci-1040530
+    resource: "https://api.nsf.gov/services/v1/awards/1040530.json"
+    title: "NSF MRI ACI-1040530: GPU-Accelerated Parallel Supercomputer (Xena)"
+    author: "team:nsf"
+  - id: nsf-2511915
+    resource: "https://api.nsf.gov/services/v1/awards/2511915.json"
+    title: "NSF MRI 2511915: High-Performance GPU Compute Cluster for Quantum- and AI-driven Chemistry"
+    author: "team:nsf"
+  - id: internet-archive
+    resource: "https://web.archive.org/web/2000/http://www.ahpcc.unm.edu/"
+    title: "Internet Archive snapshots of the AHPCC, HPCERC, Alliance, HPC@UNM and CARC websites, 2000–2016"
+    author: "team:internet-archive"
+  - id: top500-los-lobos
+    resource: "https://www.top500.org/system/167391"
+    title: "TOP500: Los Lobos"
+    author: "team:top500"
+---
+
+# History of CARC computing
+
+!!! note "Draft historical record"
+
+    This page was compiled in October 2026 from CARC's own
+    [history page](https://carc.unm.edu/about/history/){target=_blank}, the
+    machine-room wall plaques, NSF award records, TOP500, press releases,
+    news coverage, and Internet Archive (Wayback Machine) snapshots of the
+    old `ahpcc.unm.edu`, `hpcerc.unm.edu`, `alliance.unm.edu`,
+    `hpc.unm.edu` and `carc.unm.edu` sites, which are also the source of
+    the historical logos and photos. Those old sites can be browsed again
+    in the [web archive](web-archive.md). Every figure carries a source. Values marked
+    **(est.)** are estimates worked out from published processor
+    specifications, and **unknown** means no source could be found.
+    Corrections from people who ran these machines are very welcome; see
+    [contributing](contributing.md).
+
+Since 1994, UNM's research supercomputers have lived in the machine room
+of the **Galles Building** (the former Galles Motor Company showroom at
+1601 Central Ave NE, on Route 66).[^bader-1999] The center that runs them
+has had four names:
+
+| Years | Name |
+| ----- | ---- |
+| 1994–2003 | Albuquerque Resource Center, renamed the **Albuquerque High Performance Computing Center (AHPCC)**, part of the High Performance Computing, Education and Research Center (HPCERC)[^carc-history] |
+| 2003–2009 | **HPC@UNM**, the Center for High Performance Computing[^carc-history] |
+| 2009–today | **UNM Center for Advanced Research Computing (CARC)**[^carc-history] |
+
+[![HPCERC logo, 2000](../assets/images/history/2000-hpcerc-logo.gif){ width="200" }](https://web.archive.org/web/20000823213206/http://hpcerc.unm.edu:80/HPCERC_Images/logos/hpcerc_logo.gif){target=_blank}
+[![AHPCC logo, 2000](../assets/images/history/2000-ahpcc-logo.gif){ width="240" }](https://web.archive.org/web/20000815231546/http://www.ahpcc.unm.edu:80/Images/logos/ahpcc_logo.gif){target=_blank}
+[![HPC@UNM logo, 2003](../assets/images/history/2003-hpc-unm-logo.png){ width="240" }](https://web.archive.org/web/20031008214254/http://www.hpc.unm.edu:80/images/HPC@UNM_Logo%20Cyan%20Mtns.png){target=_blank}
+
+[![UNM CARC logo, 2015](../assets/images/history/2015-unm-carc-logo.gif)](https://web.archive.org/web/20150909133742/http://www.ahpcc.unm.edu/common/images/unm-carc-logo.gif){target=_blank}
+
+*The center's logos over the years: HPCERC and AHPCC (2000), HPC@UNM
+(2003) and UNM CARC (2015). Each image links to its Wayback Machine
+capture.*
+
+The AHPCC's own 2000 history describes the building as "an old Cadillac
+dealership built in the mid-1950s", and says the center opened there in
+1994 with 10 students and one research scientist.[^ahpcc-2000] The
+building was expanded between November 1998 and April 1999.[^ahpcc-2000]
+
+[![The CARC entrance on the Galles Building](../assets/images/history/carc-entrance.jpg)](https://web.archive.org/web/20151001083235/http://www.hpcerc.unm.edu/common/images/carcfront.jpg){target=_blank}
+
+*The CARC entrance at the Galles Building, from the center's website
+(captured 2015).*
+
+The current machine room was dedicated in **2005** as part of a renovation
+of the Galles Building that also created space for the ARTS Lab. CARC's
+history page gives its size as 1,500 sq ft; the current
+[facilities description](facilities.md) gives 1,200 sq ft.[^carc-history]
+A cooling, UPS and hot-aisle containment upgrade costing just over
+**$250,000** (paid by CARC, the Provost and the Office of the Vice
+President for Research) was finished around March 2015 so that all of
+Ulam could run.[^lobo-2015]
+
+[![Staff at work on the 2015 machine-room upgrade](../assets/images/history/2015-machine-room-upgrade.jpg)](https://web.archive.org/web/20150909122553/http://www.ahpcc.unm.edu/common/images/slide_mmr.jpg){target=_blank}
+
+*The 2015 machine-room upgrade, from the CARC website (captured Sep
+2015).*
+
+[![Network cabling in the machine room](../assets/images/history/machine-room-cabling.jpg)](https://web.archive.org/web/20150926095013/http://www.ahpcc.unm.edu/common/images/blue.jpg){target=_blank}
+
+*Machine-room cabling, from the CARC website (captured Sep 2015).*
+
+![Eight HPC@UNM plaques on the machine-room wall: Pequin, Poblano, Ristra, Hammer, Yenta, Vista and Azul, Delphi, and Rio Bravo](../assets/images/history/machine-room-plaques.jpg)
+
+*The HPC@UNM machine plaques that still hang on the Galles Building
+machine-room wall (photo, July 2026).*
+
+## Timeline
+
+Bars show the years each system was in service. Where an install or
+retirement year is not documented, the bar uses the estimate given in the
+machine tables below, and the label ends in "est.".
+
+```mermaid
+gantt
+    title Supercomputers in the Galles Building machine room
+    dateFormat YYYY
+    axisFormat %Y
+    section AHPCC
+    IBM SP1 from MHPCC (end est.)    :1995, 2000
+    IBM SP2 nodes (dates est.)       :1997, 2001
+    SGI Origin (end est.)            :1997, 2001
+    Roadrunner (end est.)            :1999, 2004
+    BlackBear (dates est.)           :1999, 2004
+    Nambe SGI Onyx2 (dates est.)     :1998, 2004
+    Vista Azul (end est.)            :2000, 2005
+    Los Lobos (end est.)             :2000, 2004
+    section HPC@UNM
+    Delphi (end est.)                :2003, 2008
+    Rio Bravo / CREATE               :2004, 2021
+    Pequin and Poblano (dates est.)  :2005, 2011
+    Ristra (dates est.)              :2005, 2011
+    Hammer (dates est.)              :2005, 2011
+    Yenta (dates est.)               :2006, 2010
+    Nano (dates est.)                :2007, 2016
+    Pequeña (start est.)             :2008, 2017
+    section CARC
+    HP X9000 storage (end est.)      :2010, 2017
+    Metropolis                       :2012, 2017
+    Galles Beowulf                   :2013, 2019
+    Ulam                             :2014, 2017
+    Xena (start est.)                :2014, 2026
+    Gibbs (dates est.)               :2013, 2025
+    Wheeler                          :2017, 2025
+    Taos (dates est.)                :2017, 2025
+    Hopper                           :2022, 2026
+    Easley                           :2025, 2026
+```
+
+| Year | Event |
+| ---- | ----- |
+| 1993 | Frank Gilfeather, Brian T. Smith and John S. Sobolewski found the Maui High Performance Computing Center (MHPCC) for the DoD, with about $21M of initial Air Force/ARPA funding.[^carc-history][^top500-1995] |
+| 1994 | The Albuquerque Resource Center (ARC), later AHPCC, opens in the Galles Building under the new HPCERC umbrella, with 10 students and one research scientist.[^carc-history][^ahpcc-2000] |
+| Late 1995 | The original IBM SP1 from MHPCC is installed in Albuquerque, the first supercomputer in the Galles Building.[^ahpcc-2000] A 1998 HPCERC page describes it as a 32-node SP1.[^hpcerc-1998] |
+| 1996 | The ARC is formally chartered. AHPCC hosts an NSF Chautauqua meeting.[^ahpcc-2000][^carc-history] |
+| Mid-1997 | The ARC is renamed the Albuquerque High Performance Computing Center (AHPCC). It prepares to receive 128 IBM SP2 nodes from MHPCC and gets an 8-node SGI Origin SMP.[^ahpcc-2000] |
+| 1998 | A Jan 1998 release says AHPCC was "establishing a 128-node IBM SP system", which matches the SP2 nodes from MHPCC.[^newswise-1998][^ahpcc-2000] The 16-CPU Roadrunner prototype is running by April. The building expansion starts in November.[^arxiv-linux][^ahpcc-2000] |
+| Jan 1999 | The NCSA Alliance funds a 128-processor Linux supercluster, which becomes Roadrunner.[^ahpcc-2000] |
+| Mar–Jul 1999 | **Roadrunner** arrives (Mar 17 and 31), is dedicated Apr 8 with Sen. Pete Domenici and NCSA's Larry Smarr, and opens to national users Jul 1, the first Linux cluster available through NSF national allocation.[^arxiv-linux][^bader-ncsa-1999][^carc-history] |
+| 1999 | The Access Grid teleconferencing system is installed; UNM hosts the first-ever Access Grid session and Alliance Chautauqua '99 (Aug 9–10).[^carc-history][^evl-1999] |
+| Dec 1999 | IBM announces the **Vista Azul** Shared University Research (SUR) award.[^bader-ibm-1999] |
+| 2000 | **Los Lobos** (512 processors, IBM) is announced Mar 21, delivered in April and formally opened Sep 13. IBM opens its Linux Supercluster Briefing Center at AHPCC on Sep 15.[^bader-lobos-2000][^bader-opening-2000][^bader-briefing-2000] |
+| 2000 | **Vista Azul** is deployed (PI Brian T. Smith).[^carc-history] |
+| Nov 2000 | Los Lobos enters the TOP500 at **#80**; it drops off after Nov 2002 (#297).[^top500] |
+| Sep 2001 | UNM's operation of MHPCC ends, and AHPCC is folded into HPCERC.[^hpcerc-2003-about] |
+| 2003 | Marc Ingber is named Executive Director in January (Interim Director in the April staff directory) and the center becomes HPC@UNM.[^hpcerc-2003-about][^hpcerc-2003-dir] The **Delphi** parallel Oracle server hosts the UNM Cancer Center's GenomeDW genomics data warehouse.[^carc-history][^bader-hpc-2003] |
+| Sep 2003 | NASA awards $1.78M (secured by Sen. Jeff Bingaman) for CREATE's satellite receiving and processing system, the origin of **Rio Bravo**.[^lobo-2003] |
+| 2004 | Barney Maccabe is named Director and Tim Thomas Deputy Director (from June 1). NSF awards MRI **DBI-0420513** ($350,378), the shared-memory computer the plaques identify as **Pequin** and **Poblano**.[^carc-history][^physics-2004][^nsf-0420513] |
+| 2005 | The new Galles Building machine room is dedicated; the ARTS Lab opens in December.[^carc-history][^lobo-2005] |
+| 2005–2006 (est.) | The Army-funded **Ristra** and **Hammer** clusters and the ARTS Lab's **Yenta** are installed (dates unknown; see the machine notes). |
+| Feb 2007 | Tom Caudell becomes Director.[^engr-2007] |
+| 2008 | The HPC@UNM systems table lists **Pequin**, **Poblano**, **Ristra**, **Hammer**, **Nano** (Dell) and **Pequeña** (SGI Altix ICE) in service.[^hpc-systems-2008] |
+| Jun 2009 | Susan R. Atlas becomes Director; the center is renamed CARC.[^physics-2009] |
+| 2010 | The UNM Research Storage Consortium installs a **281 TB HP X9000** storage system. NSF awards MRI **ACI-1040530** ($435,077) for the GPU cluster later named **Xena**.[^carc-history][^nsf-1040530] |
+| 2012 | **Metropolis**, a repurposed LANL machine, is donated by the New Mexico Consortium under NSF's PRObE project.[^carc-history] |
+| 2013 | The 200-node "green" **Galles** Beowulf cluster, built from used campus Dell desktops, is commissioned with a Hadoop subsystem.[^carc-history] |
+| 2014 | **Ulam** (120 nodes, 960 cores) arrives from the New Mexico Consortium (shipments Dec 2013 and Jan 16, 2014); CARC's aggregate reaches 2,200 cores and 15 TFLOPS peak. A dedicated 10 Gbps Science DMZ link is established.[^unm-ulam-2014][^carc-history] |
+| 2015 | CARC's systems page lists Nano, Pequeña, Gibbs, a new Poblano, Metropolis, Ulam and Galles, plus 381 TB of Research Storage Consortium disk.[^carc-systems-2015] |
+| 2016 | Patrick Bridges is named Interim Director.[^carc-history] The systems page now counts more than 3,000 cores, adds Xena, and gives the storage as about 1.5 PB raw.[^carc-systems-2016] |
+| Mar 2017 | LANL/NMC donate **Wheeler**. Phase 1 replaces Metropolis and Pequeña; Phase 2 (Fall 2017) replaces Ulam.[^hpcwire-2017][^carc-wheeler] |
+| 2018 | Bridges is named Director.[^carc-history] |
+| 2019 | The Galles Beowulf cluster is retired after the late-May 2019 downtime; NetApp "Chama" replaces the Serrano fileserver.[^carc-history][^carc-upgrades-2019] |
+| 2020 | CARC and several PIs begin buying condo hardware to expand **Taos**.[^iab-2020] |
+| 2021 | CREATE ends after 17 years at CARC. Ylva Pihlström becomes Associate Director. A Hopper condo base system is ordered from Dell.[^carc-history][^carc-assoc-2021][^iab-2021] |
+| 2022 | **Hopper** launches as a condo cluster (53 nodes at launch).[^carc-hopper] |
+| 2025 | **Easley** (Dell, NVIDIA, IBM storage) replaces Wheeler.[^carc-easley] |
+| 2026 | Wheeler, Taos, Gibbs and Xena are recorded as retired (exact decommission dates unknown).[^legacy-specs] NSF awards MRI **2511915** ($1,399,999) for a new GPU cluster for quantum- and AI-driven chemistry (start Mar 15, 2026).[^nsf-2511915] Tyson L. Swetnam becomes Director on Jul 1, 2026.[^carc-swetnam] |
+
+## Leadership
+
+### Directors
+
+| Years | Name | Notes |
+| ----- | ---- | ----- |
+| 1994–c. 2003 | **Frank L. Gilfeather** (Mathematics) | Executive Director of HPCERC, which managed AHPCC and MHPCC.[^bader-1999][^newswise-1998] |
+| c. 2000 | **Brian T. Smith** (Computer Science) | AHPCC Director on the 2000 organization chart; later Chief Scientist of HPCERC (2003) and HPC@UNM (2007).[^ahpcc-org-2000][^hpcerc-2003-dir][^hpc-org-2007] Start and end dates as AHPCC Director: unknown. |
+| 2003–2004 | **Marc S. Ingber** (Mechanical Engineering) | Named HPCERC Executive Director in Jan 2003 and listed as Interim Director in April; first director of HPC@UNM.[^hpcerc-2003-about][^hpcerc-2003-dir][^carc-history][^bader-hpc-2003] |
+| 2004–Jan 2007 | **Arthur B. (Barney) Maccabe** (Computer Science) | Left to become UNM's interim CIO.[^carc-history][^engr-2007] |
+| Feb 2007–May 2009 | **Thomas P. Caudell** (Electrical and Computer Engineering) | Moved on to ARTS Lab initiatives.[^engr-2007][^physics-2009] |
+| Jun 2009–2016 | **Susan R. Atlas** (Physics and Astronomy) | Center renamed CARC on her appointment.[^physics-2009] |
+| 2016–2018 | **Patrick G. Bridges** (Computer Science) | Interim Director.[^carc-history] |
+| 2018–2026 | **Patrick G. Bridges** | Director.[^carc-history] |
+| 2026–present | **Tyson L. Swetnam** | Director from Jul 1, 2026.[^carc-swetnam] |
+
+Founders of the predecessor centers: **Frank Gilfeather, Brian T. Smith and
+John S. Sobolewski** (MHPCC, 1993).[^carc-history]
+
+### Associate and deputy directors
+
+| Years | Name | Role |
+| ----- | ---- | ---- |
+| c. 2000–2003 | Ernest D. Herrera | Associate Director, Administration and Operations (AHPCC, then HPCERC)[^ahpcc-org-2000][^hpcerc-2003-dir] |
+| c. 2000–2003 | Susan R. Atlas (Physics and Astronomy) | Associate Director, Science and Engineering Research (AHPCC, then HPCERC)[^ahpcc-org-2000][^hpcerc-2003-dir] |
+| c. 2000–2003 | Robert A. Ballance (Computer Science) | Associate Director, Computer Systems Research (AHPCC, then HPCERC)[^ahpcc-org-2000][^hpcerc-2003-dir] |
+| 2003 | John S. Sobolewski | Chief Technologist, HPCERC[^hpcerc-2003-dir] |
+| 2003–2004 | Arthur B. (Barney) Maccabe | Associate Director, HPC@UNM[^bader-hpc-2003] |
+| Jun 2004–unknown | Timothy L. Thomas (Physics and Astronomy) | Deputy Director[^physics-2004] |
+| 2021–unknown | Ylva Pihlström (Physics and Astronomy) | Associate Director[^carc-assoc-2021] |
+| unknown–present | Matthew Fricke (Computer Science) | Associate Director[^carc-personnel] |
+
+Program directors named on the plaques: **Edward Angel** (Director, ARTS
+Lab, for Yenta), **Louis Scuderi** (Director, CREATE, for Rio Bravo) and
+**Richard P. Watson** (Associate Director, CREATE).[^plaques]
+
+[![AHPCC organization chart, 2000](../assets/images/history/2000-ahpcc-org-chart.gif)](https://web.archive.org/web/20000817235734/http://www.ahpcc.unm.edu:80/Images/Graphics/AHPCC_Org_Chart.gif){target=_blank}
+
+*AHPCC organization chart, 2000: Director Brian T. Smith with Associate
+Directors Ernest Herrera, Susan Atlas and Robert Ballance, and Patricia
+Kovatch as systems manager.[^ahpcc-org-2000]*
+
+[![HPC@UNM organization chart, 2007](../assets/images/history/2007-hpc-unm-org-chart.png)](https://web.archive.org/web/20070313102152/http://www.hpc.unm.edu:80/info/staff-information/OrgChart.png){target=_blank}
+
+*HPC@UNM organization chart, 2007: Director Barney Maccabe, Chief
+Scientist Brian Smith and Deputy Director Tim Thomas. It was captured in
+March 2007 but had not yet been updated for Tom Caudell's February 2007
+appointment.[^hpc-org-2007][^engr-2007]*
+
+### Systems staff named in the record
+
+Patricia Kovatch (Roadrunner project engineer, 1999; manager of the HPC
+Systems Group, 2000),[^bader-hpcwire-1999] James E. Prewett (HPC systems
+lead; retired c. 2026),[^carc-departures] Susan Wilson and Ben Archuleta
+(CARC systems, 2014),[^ladp-2014] Hussein Al-Azzawi (network and storage
+specialist, then HPC IT Manager, who led the Easley acquisition; left
+June 2026).[^charlotte-2026]
+
+## PIs who contributed hardware
+
+| PI | Department | Systems | Funding |
+| -- | ---------- | ------- | ------- |
+| Brian T. Smith | Computer Science | Vista Azul (lead PI) | IBM SUR award[^carc-history] |
+| Edward Angel | Computer Science / ARTS Lab | Vista Azul; Yenta (director) | IBM SUR; ARTS Lab (state Media Industries Strategic Project)[^plaques][^cs-2005] |
+| Susan R. Atlas | Physics and Astronomy / PANDA | Vista Azul; Pequin and Poblano; Xena (lead PI); 2026 MRI (lead PI) | IBM SUR; NSF DBI-0420513, ACI-1040530, 2511915[^plaques][^nsf-0420513][^nsf-1040530][^nsf-2511915] |
+| David A. Bader | Electrical and Computer Engineering | Vista Azul; Pequin and Poblano; Roadrunner performance evaluation | IBM SUR; NSF DBI-0420513[^plaques][^nsf-0420513] |
+| Robert A. Ballance | Computer Science | Vista Azul | IBM SUR[^plaques] |
+| Thomas P. Caudell | Electrical and Computer Engineering | Vista Azul | IBM SUR[^plaques] |
+| John S. Sobolewski | CIRT and ECE | Vista Azul | IBM SUR[^plaques] |
+| Hua Guo | Chemistry | Pequin and Poblano (lead PI); Xena; 2026 MRI | NSF DBI-0420513, ACI-1040530, 2511915[^nsf-0420513][^nsf-1040530][^nsf-2511915] |
+| Marc S. Ingber | Mechanical Engineering | Pequin and Poblano; Ristra; Hammer | NSF DBI-0420513; US Army[^plaques][^nsf-0420513] |
+| Tudor I. Oprea | Biocomputing | Pequin and Poblano | NSF DBI-0420513[^nsf-0420513] |
+| C. Randall Truman | Mechanical Engineering | Ristra; Hammer | US Army[^plaques] |
+| Louis Scuderi | Earth and Planetary Sciences | Rio Bravo / CREATE | NASA[^plaques][^lobo-2003] |
+| Richard P. Watson | Geography | Rio Bravo / CREATE | NASA[^plaques] |
+| Timothy L. Thomas | Physics and Astronomy | Xena | NSF ACI-1040530[^nsf-1040530] |
+| Lydia Tapia | Computer Science | Xena | NSF ACI-1040530[^nsf-1040530] |
+| Pradeep Sen; Jamesina Simpson | ECE | Xena (former co-PIs) | NSF ACI-1040530[^nsf-1040530] |
+| Melanie Moses | Computer Science | Hopper condo nodes | PI-purchased priority nodes[^carc-hopper] |
+| Ivan Deutsch; Patrick G. Bridges; Yi He | Physics; Computer Science; Chemistry | 2026 MRI GPU cluster (co-PIs) | NSF 2511915[^nsf-2511915] |
+
+The other condo PIs on Taos (2020) and Hopper (2021–22) are not named in
+any public record found, and neither are the units behind the Delphi
+"Shared Resource for Bioinformatics and Computational Biology".[^iab-2020][^iab-2021]
+
+## The machines
+
+Peak performance is theoretical double-precision peak (Rpeak) unless noted.
+"(est.)" peaks are computed as cores × clock × floating-point operations
+per cycle, using the usual clock speeds for that processor; the clocks are
+not on record. "2003+" means the machine was still listed in the April 2003
+HPCERC systems inventory.
+
+### Summary
+
+| Machine | In service | Maker / model | Cores | Peak | Funding | Cost |
+| ------- | ---------- | ------------- | ----: | ---- | ------- | ---- |
+| Roadrunner | 1999–2003+ | Alta Technology AltaCluster | 128 | 63 GFLOPS | NSF / NCSA Alliance | < $6,500 per node (< ~$416K est.); $400K NSF for Phase 2 |
+| BlackBear | unknown–2003+ | VA Linux 501 | 32 | ~18 GFLOPS (est.) | unknown | unknown |
+| Vista Azul | 2000–unknown | IBM RS/6000 SP + Netfinity 5500 | 32 + 32 | ~40 GFLOPS (est.) | IBM SUR award | unknown |
+| Los Lobos | 2000–2003+ (end c. 2004 est.) | IBM Netfinity 4500R cluster | 512 | 375.3 GFLOPS (Rmax 237) | NSF via NCSA Alliance | unknown |
+| Delphi | 2003–unknown | IBM xSeries 342 | 8 | ~8 GFLOPS (est.) | unknown | unknown |
+| Rio Bravo | 2004–c. 2021 | TeraScan (SeaSpace) on a 5-node Xeon cluster | 10 CPUs | ~50 GFLOPS (est.) | NASA (congressional appropriation) | part of $1.78M award |
+| Pequin | c. 2005 (est.)–2008+ | IBM eServer p5 550 | 4 | ~24 GFLOPS (est.) | NSF MRI DBI-0420513 | $350,378 award (both machines) |
+| Poblano | c. 2005 (est.)–2008+ | IBM eServer p5 570 | 16 | ~122 GFLOPS (est.) | NSF MRI DBI-0420513 | (see Pequin) |
+| Ristra | c. 2005 (est.)–2008+ | IBM BladeCenter JS20 | 192 | ~1.2 TFLOPS (est.) | US Army | unknown |
+| Hammer | c. 2005 (est.)–2010+ | Apple Xserve G5 | 32 | ~0.26 TFLOPS (est.) | US Army (same grant as Ristra) | unknown |
+| Yenta | c. 2006 (est.)–unknown | Apple Xserve G5 | 32 | ~0.26–0.29 TFLOPS (est.) | ARTS Lab (State of New Mexico) | unknown |
+| Nano | by 2008–2015+ | Dell PowerEdge 1950 | 140 (2015) | 1.288 TFLOPS | unknown | unknown |
+| Pequeña | by 2008–2017 | SGI Altix ICE | 176 | 2.1 TFLOPS | unknown | unknown |
+| HP X9000 | 2010–unknown | HP StorageWorks X9000 | storage | 281 TB usable | UNM Research Storage Consortium | unknown |
+| Metropolis | 2012–2017 | Linux Networx Evolocity (ex-LANL) | 140 | 0.728 TFLOPS | donated (NSF PRObE / NMC) | donated |
+| Galles | 2013–2019 | 200 used Dell OptiPlex desktops | 400 | 2.2 TFLOPS | reused campus hardware | ~$0 hardware |
+| Ulam | 2014–2017 | IBM System x3755 (ex-LANL) | 960 | 4.2 TFLOPS | donated (NSF PRObE / NMC) | donated; $250K+ room upgrade |
+| Gibbs | by 2015–c. 2025 | Dell PowerEdge R620 | 384 | 3.996 TFLOPS | unknown | unknown |
+| Xena | c. 2014 (est.)–2026 | Dell PowerEdge R730 / R930 + K40M GPUs | 576 | 18 TFLOPS | NSF MRI ACI-1040530 | $435,077 award |
+| Wheeler | 2017–c. 2025 | SGI Altix XE (ex-LANL) | 2,432 | 25 TFLOPS | donated (NSF PRObE / NMC) | donated |
+| Taos | unknown–c. 2025 | Dell PowerEdge R630 (condo) | 180 | ~6 TFLOPS (est.) | CARC + PI condo | unknown |
+| Hopper | 2022–present | Dell PowerEdge R640 / R740 + A100 | 2,176 | ~0.5 PFLOPS incl. GPUs (est.) | OVPR + PI condo (50/50 for the base) | unknown |
+| Easley | 2025–present | Dell, NVIDIA NDR, IBM Storage Scale | 4,160 | ~0.5 PFLOPS incl. GPUs (est.) | UNM institutional (no external grant found) | unknown |
+
+### Capacity over time
+
+The chart adds up every machine in service at the end of each year. It
+counts CPU cores only (GPUs count toward peak performance but not cores),
+and storage means disk attached to the machines plus the center's shared
+file systems where a source gives a size.
+
+<!-- capacity-timeline:start -->
+<div class="cc-figure" markdown="0">
+<style>
+.cc-figure{--cc-series:#ba0c2f;margin:1em 0}
+[data-md-color-scheme="slate"] .cc-figure{--cc-series:#f2557a}
+.cc-svg{width:100%;height:auto;font-family:var(--md-text-font-family,sans-serif)}
+.cc-title{font-size:13px;font-weight:600;fill:var(--md-default-fg-color)}
+.cc-axis{font-size:10px;fill:var(--md-default-fg-color--light)}
+.cc-label{font-size:11px;font-weight:600;fill:var(--md-default-fg-color)}
+.cc-grid{stroke:var(--md-default-fg-color--lightest);stroke-width:1}
+.cc-line{fill:none;stroke:var(--cc-series);stroke-width:2;stroke-linejoin:round}
+.cc-dot{fill:var(--cc-series);stroke:var(--md-default-bg-color);stroke-width:2}
+.cc-hit{fill:transparent}
+.cc-hit:hover{fill:var(--md-default-fg-color--lightest)}
+</style>
+<svg class="cc-svg" viewBox="0 0 760 460" role="img" aria-labelledby="cc-t cc-d" xmlns="http://www.w3.org/2000/svg"><title id="cc-t">CARC computing capacity by year, 1995–2026</title><desc id="cc-d">Four log-scale step charts of the total peak performance, CPU cores, memory and storage of all machines in service each year. The table below the chart gives the same totals.</desc><text class="cc-title" x="4" y="14">Peak performance</text><line class="cc-grid" x1="76" x2="304.0" y1="202.0" y2="202.0"/><text class="cc-axis" x="70" y="206.0" text-anchor="end">1&#160;GFLOPS</text><line class="cc-grid" x1="76" x2="304.0" y1="176.9" y2="176.9"/><text class="cc-axis" x="70" y="180.9" text-anchor="end">10&#160;GFLOPS</text><line class="cc-grid" x1="76" x2="304.0" y1="151.7" y2="151.7"/><text class="cc-axis" x="70" y="155.7" text-anchor="end">100&#160;GFLOPS</text><line class="cc-grid" x1="76" x2="304.0" y1="126.6" y2="126.6"/><text class="cc-axis" x="70" y="130.6" text-anchor="end">1&#160;TFLOPS</text><line class="cc-grid" x1="76" x2="304.0" y1="101.4" y2="101.4"/><text class="cc-axis" x="70" y="105.4" text-anchor="end">10&#160;TFLOPS</text><line class="cc-grid" x1="76" x2="304.0" y1="76.3" y2="76.3"/><text class="cc-axis" x="70" y="80.3" text-anchor="end">100&#160;TFLOPS</text><line class="cc-grid" x1="76" x2="304.0" y1="51.1" y2="51.1"/><text class="cc-axis" x="70" y="55.1" text-anchor="end">1&#160;PFLOPS</text><line class="cc-grid" x1="76" x2="304.0" y1="26.0" y2="26.0"/><text class="cc-axis" x="70" y="30.0" text-anchor="end">10&#160;PFLOPS</text><text class="cc-axis" x="115.2" y="218.0" text-anchor="middle">2000</text><text class="cc-axis" x="186.4" y="218.0" text-anchor="middle">2010</text><text class="cc-axis" x="257.7" y="218.0" text-anchor="middle">2020</text><path class="cc-line" d="M76.0,186.9 L83.1,186.9 L83.1,186.9 L90.2,186.9 L90.2,160.7 L97.4,160.7 L97.4,160.7 L104.5,160.7 L104.5,151.4 L111.6,151.4 L111.6,134.1 L118.8,134.1 L118.8,133.4 L125.9,133.4 L125.9,133.4 L133.0,133.4 L133.0,133.2 L140.1,133.2 L140.1,134.8 L147.2,134.8 L147.2,121.0 L154.4,121.0 L154.4,119.4 L161.5,119.4 L161.5,119.4 L168.6,119.4 L168.6,108.3 L175.8,108.3 L175.8,108.3 L182.9,108.3 L182.9,108.3 L190.0,108.3 L190.0,113.1 L197.1,113.1 L197.1,111.0 L204.2,111.0 L204.2,106.4 L211.4,106.4 L211.4,90.0 L218.5,90.0 L218.5,88.5 L225.6,88.5 L225.6,89.0 L232.8,89.0 L232.8,84.0 L239.9,84.0 L239.9,82.8 L247.0,82.8 L247.0,83.2 L254.1,83.2 L254.1,83.2 L261.2,83.2 L261.2,83.2 L268.4,83.2 L268.4,56.5 L275.5,56.5 L275.5,56.5 L282.6,56.5 L282.6,56.5 L289.8,56.5 L289.8,50.3 L296.9,50.3 L296.9,50.5 L304.0,50.5"/><rect class="cc-hit" x="76.0" y="26" width="7.1" height="176.0"><title>1995: 4 GFLOPS</title></rect><rect class="cc-hit" x="83.1" y="26" width="7.1" height="176.0"><title>1996: 4 GFLOPS</title></rect><rect class="cc-hit" x="90.2" y="26" width="7.1" height="176.0"><title>1997: 44 GFLOPS</title></rect><rect class="cc-hit" x="97.4" y="26" width="7.1" height="176.0"><title>1998: 44 GFLOPS</title></rect><rect class="cc-hit" x="104.5" y="26" width="7.1" height="176.0"><title>1999: 103 GFLOPS</title></rect><rect class="cc-hit" x="111.6" y="26" width="7.1" height="176.0"><title>2000: 501 GFLOPS</title></rect><rect class="cc-hit" x="118.8" y="26" width="7.1" height="176.0"><title>2001: 535 GFLOPS</title></rect><rect class="cc-hit" x="125.9" y="26" width="7.1" height="176.0"><title>2002: 535 GFLOPS</title></rect><rect class="cc-hit" x="133.0" y="26" width="7.1" height="176.0"><title>2003: 543 GFLOPS</title></rect><rect class="cc-hit" x="140.1" y="26" width="7.1" height="176.0"><title>2004: 472 GFLOPS</title></rect><rect class="cc-hit" x="147.2" y="26" width="7.1" height="176.0"><title>2005: 1.66 TFLOPS</title></rect><rect class="cc-hit" x="154.4" y="26" width="7.1" height="176.0"><title>2006: 1.93 TFLOPS</title></rect><rect class="cc-hit" x="161.5" y="26" width="7.1" height="176.0"><title>2007: 1.93 TFLOPS</title></rect><rect class="cc-hit" x="168.6" y="26" width="7.1" height="176.0"><title>2008: 5.31 TFLOPS</title></rect><rect class="cc-hit" x="175.8" y="26" width="7.1" height="176.0"><title>2009: 5.31 TFLOPS</title></rect><rect class="cc-hit" x="182.9" y="26" width="7.1" height="176.0"><title>2010: 5.31 TFLOPS</title></rect><rect class="cc-hit" x="190.0" y="26" width="7.1" height="176.0"><title>2011: 3.44 TFLOPS</title></rect><rect class="cc-hit" x="197.1" y="26" width="7.1" height="176.0"><title>2012: 4.17 TFLOPS</title></rect><rect class="cc-hit" x="204.2" y="26" width="7.1" height="176.0"><title>2013: 6.37 TFLOPS</title></rect><rect class="cc-hit" x="211.4" y="26" width="7.1" height="176.0"><title>2014: 28.6 TFLOPS</title></rect><rect class="cc-hit" x="218.5" y="26" width="7.1" height="176.0"><title>2015: 32.6 TFLOPS</title></rect><rect class="cc-hit" x="225.6" y="26" width="7.1" height="176.0"><title>2016: 31.3 TFLOPS</title></rect><rect class="cc-hit" x="232.8" y="26" width="7.1" height="176.0"><title>2017: 49.2 TFLOPS</title></rect><rect class="cc-hit" x="239.9" y="26" width="7.1" height="176.0"><title>2018: 55.2 TFLOPS</title></rect><rect class="cc-hit" x="247.0" y="26" width="7.1" height="176.0"><title>2019: 53 TFLOPS</title></rect><rect class="cc-hit" x="254.1" y="26" width="7.1" height="176.0"><title>2020: 53 TFLOPS</title></rect><rect class="cc-hit" x="261.2" y="26" width="7.1" height="176.0"><title>2021: 53 TFLOPS</title></rect><rect class="cc-hit" x="268.4" y="26" width="7.1" height="176.0"><title>2022: 613 TFLOPS</title></rect><rect class="cc-hit" x="275.5" y="26" width="7.1" height="176.0"><title>2023: 613 TFLOPS</title></rect><rect class="cc-hit" x="282.6" y="26" width="7.1" height="176.0"><title>2024: 613 TFLOPS</title></rect><rect class="cc-hit" x="289.8" y="26" width="7.1" height="176.0"><title>2025: 1.1 PFLOPS</title></rect><rect class="cc-hit" x="296.9" y="26" width="7.1" height="176.0"><title>2026: 1.1 PFLOPS</title></rect><circle class="cc-dot" cx="304.0" cy="50.5" r="4"/><text class="cc-label" x="311.0" y="54.5">1.1 PFLOPS</text><text class="cc-title" x="390.0" y="14">CPU cores</text><line class="cc-grid" x1="462.0" x2="690.0" y1="202.0" y2="202.0"/><text class="cc-axis" x="456.0" y="206.0" text-anchor="end">10</text><line class="cc-grid" x1="462.0" x2="690.0" y1="143.3" y2="143.3"/><text class="cc-axis" x="456.0" y="147.3" text-anchor="end">100</text><line class="cc-grid" x1="462.0" x2="690.0" y1="84.7" y2="84.7"/><text class="cc-axis" x="456.0" y="88.7" text-anchor="end">1,000</text><line class="cc-grid" x1="462.0" x2="690.0" y1="26.0" y2="26.0"/><text class="cc-axis" x="456.0" y="30.0" text-anchor="end">10,000</text><text class="cc-axis" x="501.2" y="218.0" text-anchor="middle">2000</text><text class="cc-axis" x="572.4" y="218.0" text-anchor="middle">2010</text><text class="cc-axis" x="643.7" y="218.0" text-anchor="middle">2020</text><path class="cc-line" d="M462.0,172.4 L469.1,172.4 L469.1,172.4 L476.2,172.4 L476.2,128.9 L483.4,128.9 L483.4,128.9 L490.5,128.9 L490.5,117.8 L497.6,117.8 L497.6,91.9 L504.8,91.9 L504.8,89.4 L511.9,89.4 L511.9,89.4 L519.0,89.4 L519.0,89.1 L526.1,89.1 L526.1,97.9 L533.2,97.9 L533.2,118.8 L540.4,118.8 L540.4,115.9 L547.5,115.9 L547.5,115.9 L554.6,115.9 L554.6,97.6 L561.8,97.6 L561.8,97.6 L568.9,97.6 L568.9,97.6 L576.0,97.6 L576.0,113.2 L583.1,113.2 L583.1,104.1 L590.2,104.1 L590.2,88.3 L597.4,88.3 L597.4,62.3 L604.5,62.3 L604.5,58.6 L611.6,58.6 L611.6,59.9 L618.8,59.9 L618.8,50.6 L625.9,50.6 L625.9,49.5 L633.0,49.5 L633.0,52.2 L640.1,52.2 L640.1,52.2 L647.2,52.2 L647.2,52.2 L654.4,52.2 L654.4,40.1 L661.5,40.1 L661.5,40.1 L668.6,40.1 L668.6,40.1 L675.8,40.1 L675.8,35.4 L682.9,35.4 L682.9,37.6 L690.0,37.6"/><rect class="cc-hit" x="462.0" y="26" width="7.1" height="176.0"><title>1995: 32</title></rect><rect class="cc-hit" x="469.1" y="26" width="7.1" height="176.0"><title>1996: 32</title></rect><rect class="cc-hit" x="476.2" y="26" width="7.1" height="176.0"><title>1997: 176</title></rect><rect class="cc-hit" x="483.4" y="26" width="7.1" height="176.0"><title>1998: 176</title></rect><rect class="cc-hit" x="490.5" y="26" width="7.1" height="176.0"><title>1999: 272</title></rect><rect class="cc-hit" x="497.6" y="26" width="7.1" height="176.0"><title>2000: 752</title></rect><rect class="cc-hit" x="504.8" y="26" width="7.1" height="176.0"><title>2001: 832</title></rect><rect class="cc-hit" x="511.9" y="26" width="7.1" height="176.0"><title>2002: 832</title></rect><rect class="cc-hit" x="519.0" y="26" width="7.1" height="176.0"><title>2003: 840</title></rect><rect class="cc-hit" x="526.1" y="26" width="7.1" height="176.0"><title>2004: 594</title></rect><rect class="cc-hit" x="533.2" y="26" width="7.1" height="176.0"><title>2005: 262</title></rect><rect class="cc-hit" x="540.4" y="26" width="7.1" height="176.0"><title>2006: 294</title></rect><rect class="cc-hit" x="547.5" y="26" width="7.1" height="176.0"><title>2007: 294</title></rect><rect class="cc-hit" x="554.6" y="26" width="7.1" height="176.0"><title>2008: 602</title></rect><rect class="cc-hit" x="561.8" y="26" width="7.1" height="176.0"><title>2009: 602</title></rect><rect class="cc-hit" x="568.9" y="26" width="7.1" height="176.0"><title>2010: 602</title></rect><rect class="cc-hit" x="576.0" y="26" width="7.1" height="176.0"><title>2011: 326</title></rect><rect class="cc-hit" x="583.1" y="26" width="7.1" height="176.0"><title>2012: 466</title></rect><rect class="cc-hit" x="590.2" y="26" width="7.1" height="176.0"><title>2013: 866</title></rect><rect class="cc-hit" x="597.4" y="26" width="7.1" height="176.0"><title>2014: 2,402</title></rect><rect class="cc-hit" x="604.5" y="26" width="7.1" height="176.0"><title>2015: 2,786</title></rect><rect class="cc-hit" x="611.6" y="26" width="7.1" height="176.0"><title>2016: 2,646</title></rect><rect class="cc-hit" x="618.8" y="26" width="7.1" height="176.0"><title>2017: 3,802</title></rect><rect class="cc-hit" x="625.9" y="26" width="7.1" height="176.0"><title>2018: 3,982</title></rect><rect class="cc-hit" x="633.0" y="26" width="7.1" height="176.0"><title>2019: 3,582</title></rect><rect class="cc-hit" x="640.1" y="26" width="7.1" height="176.0"><title>2020: 3,582</title></rect><rect class="cc-hit" x="647.2" y="26" width="7.1" height="176.0"><title>2021: 3,572</title></rect><rect class="cc-hit" x="654.4" y="26" width="7.1" height="176.0"><title>2022: 5,748</title></rect><rect class="cc-hit" x="661.5" y="26" width="7.1" height="176.0"><title>2023: 5,748</title></rect><rect class="cc-hit" x="668.6" y="26" width="7.1" height="176.0"><title>2024: 5,748</title></rect><rect class="cc-hit" x="675.8" y="26" width="7.1" height="176.0"><title>2025: 6,912</title></rect><rect class="cc-hit" x="682.9" y="26" width="7.1" height="176.0"><title>2026: 6,336</title></rect><circle class="cc-dot" cx="690.0" cy="37.6" r="4"/><text class="cc-label" x="697.0" y="41.6">6,336</text><text class="cc-title" x="4" y="250.0">Memory (RAM)</text><line class="cc-grid" x1="76" x2="304.0" y1="438.0" y2="438.0"/><text class="cc-axis" x="70" y="442.0" text-anchor="end">1&#160;GB</text><line class="cc-grid" x1="76" x2="304.0" y1="402.8" y2="402.8"/><text class="cc-axis" x="70" y="406.8" text-anchor="end">10&#160;GB</text><line class="cc-grid" x1="76" x2="304.0" y1="367.6" y2="367.6"/><text class="cc-axis" x="70" y="371.6" text-anchor="end">100&#160;GB</text><line class="cc-grid" x1="76" x2="304.0" y1="332.4" y2="332.4"/><text class="cc-axis" x="70" y="336.4" text-anchor="end">1&#160;TB</text><line class="cc-grid" x1="76" x2="304.0" y1="297.2" y2="297.2"/><text class="cc-axis" x="70" y="301.2" text-anchor="end">10&#160;TB</text><line class="cc-grid" x1="76" x2="304.0" y1="262.0" y2="262.0"/><text class="cc-axis" x="70" y="266.0" text-anchor="end">100&#160;TB</text><text class="cc-axis" x="115.2" y="454.0" text-anchor="middle">2000</text><text class="cc-axis" x="186.4" y="454.0" text-anchor="middle">2010</text><text class="cc-axis" x="257.7" y="454.0" text-anchor="middle">2020</text><path class="cc-line" d="M76.0,416.8 L83.1,416.8 L83.1,416.8 L90.2,416.8 L90.2,390.7 L97.4,390.7 L97.4,390.7 L104.5,390.7 L104.5,378.2 L111.6,378.2 L111.6,349.3 L118.8,349.3 L118.8,348.5 L125.9,348.5 L125.9,348.5 L133.0,348.5 L133.0,348.1 L140.1,348.1 L140.1,350.5 L147.2,350.5 L147.2,337.7 L154.4,337.7 L154.4,337.0 L161.5,337.0 L161.5,337.0 L168.6,337.0 L168.6,327.7 L175.8,327.7 L175.8,327.7 L182.9,327.7 L182.9,327.7 L190.0,327.7 L190.0,339.2 L197.1,339.2 L197.1,333.7 L204.2,333.7 L204.2,324.1 L211.4,324.1 L211.4,292.7 L218.5,292.7 L218.5,291.0 L225.6,291.0 L225.6,291.3 L232.8,291.3 L232.8,282.2 L239.9,282.2 L239.9,280.9 L247.0,280.9 L247.0,281.3 L254.1,281.3 L254.1,281.3 L261.2,281.3 L261.2,281.3 L268.4,281.3 L268.4,276.7 L275.5,276.7 L275.5,276.7 L282.6,276.7 L282.6,276.7 L289.8,276.7 L289.8,274.8 L296.9,274.8 L296.9,278.8 L304.0,278.8"/><rect class="cc-hit" x="76.0" y="262.0" width="7.1" height="176.0"><title>1995: 4 GB</title></rect><rect class="cc-hit" x="83.1" y="262.0" width="7.1" height="176.0"><title>1996: 4 GB</title></rect><rect class="cc-hit" x="90.2" y="262.0" width="7.1" height="176.0"><title>1997: 22 GB</title></rect><rect class="cc-hit" x="97.4" y="262.0" width="7.1" height="176.0"><title>1998: 22 GB</title></rect><rect class="cc-hit" x="104.5" y="262.0" width="7.1" height="176.0"><title>1999: 50 GB</title></rect><rect class="cc-hit" x="111.6" y="262.0" width="7.1" height="176.0"><title>2000: 330 GB</title></rect><rect class="cc-hit" x="118.8" y="262.0" width="7.1" height="176.0"><title>2001: 349 GB</title></rect><rect class="cc-hit" x="125.9" y="262.0" width="7.1" height="176.0"><title>2002: 349 GB</title></rect><rect class="cc-hit" x="133.0" y="262.0" width="7.1" height="176.0"><title>2003: 357 GB</title></rect><rect class="cc-hit" x="140.1" y="262.0" width="7.1" height="176.0"><title>2004: 306 GB</title></rect><rect class="cc-hit" x="147.2" y="262.0" width="7.1" height="176.0"><title>2005: 706 GB</title></rect><rect class="cc-hit" x="154.4" y="262.0" width="7.1" height="176.0"><title>2006: 738 GB</title></rect><rect class="cc-hit" x="161.5" y="262.0" width="7.1" height="176.0"><title>2007: 738 GB</title></rect><rect class="cc-hit" x="168.6" y="262.0" width="7.1" height="176.0"><title>2008: 1.36 TB</title></rect><rect class="cc-hit" x="175.8" y="262.0" width="7.1" height="176.0"><title>2009: 1.36 TB</title></rect><rect class="cc-hit" x="182.9" y="262.0" width="7.1" height="176.0"><title>2010: 1.36 TB</title></rect><rect class="cc-hit" x="190.0" y="262.0" width="7.1" height="176.0"><title>2011: 640 GB</title></rect><rect class="cc-hit" x="197.1" y="262.0" width="7.1" height="176.0"><title>2012: 920 GB</title></rect><rect class="cc-hit" x="204.2" y="262.0" width="7.1" height="176.0"><title>2013: 1.72 TB</title></rect><rect class="cc-hit" x="211.4" y="262.0" width="7.1" height="176.0"><title>2014: 13.4 TB</title></rect><rect class="cc-hit" x="218.5" y="262.0" width="7.1" height="176.0"><title>2015: 15 TB</title></rect><rect class="cc-hit" x="225.6" y="262.0" width="7.1" height="176.0"><title>2016: 14.7 TB</title></rect><rect class="cc-hit" x="232.8" y="262.0" width="7.1" height="176.0"><title>2017: 26.7 TB</title></rect><rect class="cc-hit" x="239.9" y="262.0" width="7.1" height="176.0"><title>2018: 29 TB</title></rect><rect class="cc-hit" x="247.0" y="262.0" width="7.1" height="176.0"><title>2019: 28.2 TB</title></rect><rect class="cc-hit" x="254.1" y="262.0" width="7.1" height="176.0"><title>2020: 28.2 TB</title></rect><rect class="cc-hit" x="261.2" y="262.0" width="7.1" height="176.0"><title>2021: 28.2 TB</title></rect><rect class="cc-hit" x="268.4" y="262.0" width="7.1" height="176.0"><title>2022: 38.3 TB</title></rect><rect class="cc-hit" x="275.5" y="262.0" width="7.1" height="176.0"><title>2023: 38.3 TB</title></rect><rect class="cc-hit" x="282.6" y="262.0" width="7.1" height="176.0"><title>2024: 38.3 TB</title></rect><rect class="cc-hit" x="289.8" y="262.0" width="7.1" height="176.0"><title>2025: 43.2 TB</title></rect><rect class="cc-hit" x="296.9" y="262.0" width="7.1" height="176.0"><title>2026: 33.4 TB</title></rect><circle class="cc-dot" cx="304.0" cy="278.8" r="4"/><text class="cc-label" x="311.0" y="282.8">33.4 TB</text><text class="cc-title" x="390.0" y="250.0">Storage</text><line class="cc-grid" x1="462.0" x2="690.0" y1="438.0" y2="438.0"/><text class="cc-axis" x="456.0" y="442.0" text-anchor="end">100&#160;GB</text><line class="cc-grid" x1="462.0" x2="690.0" y1="402.8" y2="402.8"/><text class="cc-axis" x="456.0" y="406.8" text-anchor="end">1&#160;TB</text><line class="cc-grid" x1="462.0" x2="690.0" y1="367.6" y2="367.6"/><text class="cc-axis" x="456.0" y="371.6" text-anchor="end">10&#160;TB</text><line class="cc-grid" x1="462.0" x2="690.0" y1="332.4" y2="332.4"/><text class="cc-axis" x="456.0" y="336.4" text-anchor="end">100&#160;TB</text><line class="cc-grid" x1="462.0" x2="690.0" y1="297.2" y2="297.2"/><text class="cc-axis" x="456.0" y="301.2" text-anchor="end">1&#160;PB</text><line class="cc-grid" x1="462.0" x2="690.0" y1="262.0" y2="262.0"/><text class="cc-axis" x="456.0" y="266.0" text-anchor="end">10&#160;PB</text><text class="cc-axis" x="501.2" y="454.0" text-anchor="middle">2000</text><text class="cc-axis" x="572.4" y="454.0" text-anchor="middle">2010</text><text class="cc-axis" x="643.7" y="454.0" text-anchor="middle">2020</text><path class="cc-line" d="M490.5,416.4 L497.6,416.4 L497.6,389.4 L504.8,389.4 L504.8,389.4 L511.9,389.4 L511.9,389.4 L519.0,389.4 L519.0,380.1 L526.1,380.1 L526.1,354.2 L533.2,354.2 L533.2,355.5 L540.4,355.5 L540.4,345.7 L547.5,345.7 L547.5,345.7 L554.6,345.7 L554.6,346.4 L561.8,346.4 L561.8,346.4 L568.9,346.4 L568.9,314.6 L576.0,314.6 L576.0,315.6 L583.1,315.6 L583.1,315.6 L590.2,315.6 L590.2,315.6 L597.4,315.6 L597.4,312.2 L604.5,312.2 L604.5,312.0 L611.6,312.0 L611.6,312.0 L618.8,312.0 L618.8,327.3 L625.9,327.3 L625.9,324.6 L633.0,324.6 L633.0,324.6 L640.1,324.6 L640.1,324.6 L647.2,324.6 L647.2,326.6 L654.4,326.6 L654.4,299.8 L661.5,299.8 L661.5,299.8 L668.6,299.8 L668.6,299.8 L675.8,299.8 L675.8,272.0 L682.9,272.0 L682.9,272.2 L690.0,272.2"/><rect class="cc-hit" x="490.5" y="262.0" width="7.1" height="176.0"><title>1999: 410 GB</title></rect><rect class="cc-hit" x="497.6" y="262.0" width="7.1" height="176.0"><title>2000: 2.41 TB</title></rect><rect class="cc-hit" x="504.8" y="262.0" width="7.1" height="176.0"><title>2001: 2.41 TB</title></rect><rect class="cc-hit" x="511.9" y="262.0" width="7.1" height="176.0"><title>2002: 2.41 TB</title></rect><rect class="cc-hit" x="519.0" y="262.0" width="7.1" height="176.0"><title>2003: 4.41 TB</title></rect><rect class="cc-hit" x="526.1" y="262.0" width="7.1" height="176.0"><title>2004: 24 TB</title></rect><rect class="cc-hit" x="533.2" y="262.0" width="7.1" height="176.0"><title>2005: 22 TB</title></rect><rect class="cc-hit" x="540.4" y="262.0" width="7.1" height="176.0"><title>2006: 42 TB</title></rect><rect class="cc-hit" x="547.5" y="262.0" width="7.1" height="176.0"><title>2007: 42 TB</title></rect><rect class="cc-hit" x="554.6" y="262.0" width="7.1" height="176.0"><title>2008: 40 TB</title></rect><rect class="cc-hit" x="561.8" y="262.0" width="7.1" height="176.0"><title>2009: 40 TB</title></rect><rect class="cc-hit" x="568.9" y="262.0" width="7.1" height="176.0"><title>2010: 321 TB</title></rect><rect class="cc-hit" x="576.0" y="262.0" width="7.1" height="176.0"><title>2011: 301 TB</title></rect><rect class="cc-hit" x="583.1" y="262.0" width="7.1" height="176.0"><title>2012: 301 TB</title></rect><rect class="cc-hit" x="590.2" y="262.0" width="7.1" height="176.0"><title>2013: 301 TB</title></rect><rect class="cc-hit" x="597.4" y="262.0" width="7.1" height="176.0"><title>2014: 374 TB</title></rect><rect class="cc-hit" x="604.5" y="262.0" width="7.1" height="176.0"><title>2015: 380 TB</title></rect><rect class="cc-hit" x="611.6" y="262.0" width="7.1" height="176.0"><title>2016: 380 TB</title></rect><rect class="cc-hit" x="618.8" y="262.0" width="7.1" height="176.0"><title>2017: 139 TB</title></rect><rect class="cc-hit" x="625.9" y="262.0" width="7.1" height="176.0"><title>2018: 166 TB</title></rect><rect class="cc-hit" x="633.0" y="262.0" width="7.1" height="176.0"><title>2019: 166 TB</title></rect><rect class="cc-hit" x="640.1" y="262.0" width="7.1" height="176.0"><title>2020: 166 TB</title></rect><rect class="cc-hit" x="647.2" y="262.0" width="7.1" height="176.0"><title>2021: 146 TB</title></rect><rect class="cc-hit" x="654.4" y="262.0" width="7.1" height="176.0"><title>2022: 846 TB</title></rect><rect class="cc-hit" x="661.5" y="262.0" width="7.1" height="176.0"><title>2023: 846 TB</title></rect><rect class="cc-hit" x="668.6" y="262.0" width="7.1" height="176.0"><title>2024: 846 TB</title></rect><rect class="cc-hit" x="675.8" y="262.0" width="7.1" height="176.0"><title>2025: 5.19 PB</title></rect><rect class="cc-hit" x="682.9" y="262.0" width="7.1" height="176.0"><title>2026: 5.12 PB</title></rect><circle class="cc-dot" cx="690.0" cy="272.2" r="4"/><text class="cc-label" x="697.0" y="276.2">5.12 PB</text></svg>
+</div>
+
+*Totals for all machines in service at the end of each year, on log scales. Hover a year for its value.*
+
+| Year | Peak performance | CPU cores | Memory | Storage |
+| ---- | ---------------: | --------: | -----: | ------: |
+| 1995 | 4 GFLOPS | 32 | 4 GB | unknown |
+| 1997 | 44 GFLOPS | 176 | 22 GB | unknown |
+| 1999 | 103 GFLOPS | 272 | 50 GB | 410 GB |
+| 2000 | 501 GFLOPS | 752 | 330 GB | 2.41 TB |
+| 2003 | 543 GFLOPS | 840 | 357 GB | 4.41 TB |
+| 2005 | 1.66 TFLOPS | 262 | 706 GB | 22 TB |
+| 2008 | 5.31 TFLOPS | 602 | 1.36 TB | 40 TB |
+| 2010 | 5.31 TFLOPS | 602 | 1.36 TB | 321 TB |
+| 2012 | 4.17 TFLOPS | 466 | 920 GB | 301 TB |
+| 2014 | 28.6 TFLOPS | 2,402 | 13.4 TB | 374 TB |
+| 2015 | 32.6 TFLOPS | 2,786 | 15 TB | 380 TB |
+| 2017 | 49.2 TFLOPS | 3,802 | 26.7 TB | 139 TB |
+| 2018 | 55.2 TFLOPS | 3,982 | 29 TB | 166 TB |
+| 2020 | 53 TFLOPS | 3,582 | 28.2 TB | 166 TB |
+| 2022 | 613 TFLOPS | 5,748 | 38.3 TB | 846 TB |
+| 2025 | 1.1 PFLOPS | 6,912 | 43.2 TB | 5.19 PB |
+| 2026 | 1.1 PFLOPS | 6,336 | 33.4 TB | 5.12 PB |
+<!-- capacity-timeline:end -->
+
+These totals lean on estimates, so read them as orders of magnitude.
+
+* **Peak performance** uses the estimated peaks in the summary table.
+  Hopper (~0.56 PFLOPS) and Easley (~0.5 PFLOPS) dominate after 2022, and
+  most of their peak comes from GPUs.
+* **Memory** is from the sources where given (Roadrunner, Los Lobos,
+  Vista Azul, Poblano, Ristra, Gibbs, Xena, Wheeler, Easley). For Nano,
+  Pequeña, Metropolis, Galles, Ulam, Taos and Hopper it is estimated from
+  typical configurations for those servers, and it is a rough guess for the
+  1990s machines.
+* **Storage** has gaps. No sizes were found for the 1990s machines or for
+  shared storage between 2017 and 2021. The 2025–2026 figure is the shared
+  storage on the facilities page (720 TB GPFS, 2 PB BeeGFS and 2.4 PB
+  NetApp), and its start year is assumed. Tape is not counted.
+* **Years in service** are assumed where the dates are unknown. The SP1
+  and SP2 run to 1998–1999; the 2003 inventory machines to 2003; Vista
+  Azul and Los Lobos to 2004; Delphi to 2007; Pequin, Poblano, Ristra, Hammer and Yenta
+  to 2010; the HP X9000 to 2016; and Taos from 2018. Xena counts through
+  2025, and Gibbs, Taos and Wheeler through 2024.
+
+The per-machine figures behind the chart are in
+`scripts/build_capacity_timeline.py`.
+
+### AHPCC era (1994–2003)
+
+**IBM SP1 and SP2 (1995–1998).** The first supercomputer in the Galles
+Building was the original IBM SP1 from MHPCC, installed late in
+1995.[^ahpcc-2000] A 1998 HPCERC page describes the AHPCC lab as including
+"a 32-node IBM SP1".[^hpcerc-1998] In mid-1997 AHPCC prepared for 128 SP2
+nodes from MHPCC, which matches the "128-node IBM SP system" in a January
+1998 release, and it also received an 8-node SGI Origin
+SMP.[^ahpcc-2000][^newswise-1998] Peak, cost and retirement dates: unknown.
+
+[![Alliance/UNM Linux Supercluster banner](../assets/images/history/2000-supercluster-banner.jpg)](https://web.archive.org/web/20000517155459/http://www.alliance.unm.edu:80/Images/Supercluster_Banner.jpg){target=_blank}
+
+*Banner of the Alliance/UNM Roadrunner Linux supercluster site, 2000.*
+
+**Roadrunner (1999).** An Alta Technology "AltaCluster" (Alta Tech of
+Sandy, Utah, later Linux Networx): 64 nodes of dual 450 MHz Pentium II,
+512 MB ECC SDRAM and a 6.4 GB disk per node, a Myrinet data network and a
+Fast Ethernet control network. Peak was 63 GFLOPS and nodes cost under
+$6,500 each.[^bader-alliance-1999] Nodes arrived Mar 17 and Mar 31, 1999;
+users got access Jun 1 and national allocations started Jul 1. NCSA
+allocated $400,000 for Phase 2.[^arxiv-linux] It ran Linux, PBS and
+Globus,[^bader-iwcc-1999] and was the first Linux cluster available
+through NSF national allocation.[^carc-history] AHPCC's 2000 history dates
+the Alliance funding to January 1999 and the unveiling to April
+1999.[^ahpcc-2000] Retirement date: unknown.
+
+[![Roadrunner machine specifications graphic](../assets/images/history/2000-roadrunner-specs.jpg)](https://web.archive.org/web/20000516203849/http://www.alliance.unm.edu:80/Images/Machine_Specs.jpg){target=_blank}
+
+*Roadrunner's specifications as the Alliance site showed them in 2000: 64
+dual SMP nodes, 128 Pentium II 450 MHz processors, Fast Ethernet and
+Myrinet, Red Hat Linux 6.1.*
+
+**BlackBear.** A 16-node VA Linux cluster of dual 550 MHz Pentium III with
+512 MB per node, Myrinet and Ethernet. AHPCC's hardware page says it was
+"named in honor of Smokey the Bear", the New Mexico native who became the
+fire-prevention mascot; the black bear is also the state
+animal.[^arxiv-linux][^ahpcc-blackbear] The April 2003 HPCERC inventory lists it as a VA
+Linux 501 cluster with a Pentium II 450 MHz head node and 16 dual Pentium
+III 550 MHz compute nodes.[^hpcerc-2003] Peak (est.): about 18 GFLOPS.
+Install date and funding: unknown.
+
+**Vista Azul (2000).** Announced Dec 13, 1999 as an IBM Shared University
+Research award: an AIX RS/6000 SP (**Vista**) coupled to a Linux Netfinity
+cluster (**Azul**), with parallel storage, a prototype IBM Research
+Scalable Graphics Engine and links to Roadrunner.[^bader-ibm-1999] The
+plaque gives Vista as 8 four-way SMP nodes with 2 GB each, AIX 4.3 and an
+SP Switch, and Azul as 8 four-way Netfinity nodes with 2 GB each, Debian
+Linux and Gigabit Ethernet.[^plaques] The April 2003 HPCERC inventory
+adds that Vista's nodes used 332 MHz PowerPC processors and ran the LSF
+scheduler (access for "HPCERC & IBM"), and that Azul was IBM Netfinity
+5500 servers with 550 MHz Xeon compute processors and a 700 MHz Xeon head
+node with 4 GB.[^hpcerc-2003] Lead PI Brian T. Smith.[^carc-history] Peak
+(est.): about 21 GFLOPS for Vista (32 × 332 MHz × 2 flops per cycle) plus
+about 18 GFLOPS for Azul (32 × 550 MHz). SUR dollar value and retirement:
+unknown.
+
+**Los Lobos (2000).** 256 IBM Netfinity 4500R servers with dual 733 MHz
+Pentium III (512 processors), 1 GB per node, Myrinet, the Maui scheduler,
+1 TB of SSA RAID and 2 TB of tape.[^bader-lobos-2000][^bader-concurrency-2000]
+[![Los Lobos sign on the machine](../assets/images/history/los-lobos-sign.jpg)](https://web.archive.org/web/20150926122508/http://www.ahpcc.unm.edu/common/images/loslobos.jpg){target=_blank}
+
+*The Los Lobos sign, from the center's website (captured 2015).*
+
+It was IBM's first Linux production system and the top open Linux cluster
+on the TOP500.[^carc-history] TOP500 lists Rpeak 375.3 GFLOPS and Rmax 237
+GFLOPS, ranked #80 (Nov 2000), #101, #125, #228 and #297 (Nov
+2002).[^top500] A Reuters projection of "No. 24" was based on peak, not a
+listed rank.[^bader-reuters-2000] Funded and supported by NSF through the
+National Computational Science Alliance.[^bader-opening-2000] Cost, grant
+number and retirement: unknown (it left the TOP500 after Nov 2002). The
+April 2003 HPCERC inventory still lists it: 4 head and 256 compute nodes,
+730 MHz Pentium III, 1 GB per node, Myrinet, 2 TB NFS and PBS Pro, open to
+"HPCERC & Alliance" users.[^hpcerc-2003]
+
+**Other 2003 systems.** The same inventory lists three smaller
+machines:[^hpcerc-2003]
+
+* **Truchas**: 12 home-built Linux workstations with dual 650 MHz Pentium
+  III and 1 GB each, running Condor. It was an upgrade of an older AHPCC
+  cluster called Turing.[^ahpcc-turing]
+* **RCDE**: 64 VA Linux 501 workstations (single 330 MHz Pentium II, 128
+  MB) running Linux and Windows 2000.
+* **Nambe**: an SGI Onyx2 visualization engine with 8 MIPS R10000 195 MHz
+  processors and 1 GB, running IRIX.
+
+The inventory's description column ("used for UNM classes", "joint project
+with the UNM Center for Particle Physics", "staff desktops and Condor")
+does not line up cleanly with the machine columns, so which use belongs to
+which machine is not certain. Install and retirement dates: unknown.
+
+**Access Grid (1999).** UNM installed an Access Grid node and hosted the
+first-ever Access Grid session.[^carc-history] Hardware and cost: unknown.
+
+[![The RAVE visualization system at AHPCC](../assets/images/history/2000-rave.jpg)](https://web.archive.org/web/20000903054128/http://www.ahpcc.unm.edu:80/Images/Photos/RAVE.jpg){target=_blank}
+[![An Access Grid node at Diné College](../assets/images/history/2002-access-grid-dine-college.jpg){ width="240" }](https://web.archive.org/web/20020401140109/http://www.ahpcc.unm.edu:80/Images/Photos/DineNode.JPG){target=_blank}
+
+*Left: the RAVE visualization system pictured on the AHPCC site in 2000.
+Right: an Access Grid node at Diné College, pictured on the AHPCC site in
+2002.*
+
+**Conflicting dates in the sources.** The archived pages do not always
+agree. Roadrunner's arrival is given as January 1999 (when funded) or
+April 1999 (when unveiled); Los Lobos's processors as 733 MHz or 730 MHz,
+and its start as summer or August 2000; and HPCERC's founding as 1994 or
+1995.[^ahpcc-2000][^hpcerc-2003][^carc-history] This page uses the
+earliest dated primary source for each.
+
+### HPC@UNM era (2003–2009)
+
+**Delphi (2003).** An IBM xSeries 342 parallel Oracle server: four 2-way
+1 GHz Pentium III nodes, FAStT500 Fibre Channel storage with 2 TB raw, and
+Red Hat Linux Advanced Server 2.1, for the Shared Resource for
+Bioinformatics and Computational Biology.[^plaques] It hosted the UNM
+Cancer Center's GenomeDW genomics data warehouse.[^carc-history] Peak
+(est.): about 8 GFLOPS. Funding, cost and retirement: unknown.
+
+**Rio Bravo (CREATE, 2004).** A TeraScan MODIS and AVHRR processing system
+on a 5-node dual-Xeon cluster with 10 GB RAM and 20 TB NAS RAID, for the
+Center for Rapid Environmental Assessment and Terrain Evaluation (CREATE),
+with EDAC.[^plaques] NASA awarded $1.78M in Sep 2003, mostly for the
+satellite receiving dish, with operations expected by April 2004; another
+$1.2M was being sought.[^lobo-2003] CREATE ran at CARC for 17 years and
+ended in 2021; NASA's LANCE now provides a similar service.[^carc-history]
+Peak (est.): about 50 GFLOPS. When the processing cluster itself was
+replaced is unknown. CARC's 2015 systems page also lists two CREATE
+machines, **Fluvial** and **Ubik**, running TeraScan for Louis Scuderi's
+group.[^carc-systems-2015]
+
+**Pequin and Poblano (c. 2005).** NSF MRI award **DBI-0420513**,
+"Acquisition of a High Performance Shared-Memory Computer for
+Computational Science and Engineering at the University of New Mexico":
+$350,378, awarded Aug 24, 2004 for Sep 2004–Aug 2007. PI Hua Guo; co-PIs
+Marc Ingber, Susan Atlas, David Bader and Tudor Oprea, the same five PIs
+named on both plaques.[^nsf-0420513][^bader-mri-2004] **Pequin** was an
+IBM p550, a 4-processor dual-core POWER5 SMP with 16 GB RAM, and
+**Poblano** an IBM p570, a 16-processor dual-core POWER5 SMP with 256 GB
+RAM, both running AIX 5.3.[^plaques] Only the plaques link these two
+machines to the award. The 2008 HPC@UNM systems table lists Pequin with
+4 POWER5 processors at 1.5 GHz and Poblano with 16 at 1.9 GHz and 256
+GB.[^hpc-systems-2008] Peak (est., 4 flops per cycle): about 24 GFLOPS
+(Pequin) and 122 GFLOPS (Poblano). POWER5 systems shipped from mid-2004;
+both were still in service in 2008. Retirement dates: unknown. The name
+Poblano was later reused for a 64-core Silicon Mechanics AMD Opteron 6272
+server (0.179 TFLOPS) listed in 2015.[^carc-systems-2015]
+
+**Ristra (c. 2005).** An IBM BladeCenter JS20 with 96 blades, each with two
+PowerPC 970 processors and 4 GB RAM, over Myrinet 2000 and Gigabit
+Ethernet. Funded by the US Army; PIs Marc Ingber and C. Randall Truman
+(Mechanical Engineering).[^plaques] The 2008 systems table lists one head
+node and 95 compute blades with 1.6 GHz PowerPC 970
+processors.[^hpc-systems-2008] Peak (est.): about 1.2 TFLOPS (192
+processors × 1.6 GHz × 4 flops per cycle), likely UNM's first
+teraflop-class machine. Tim Thomas "completed negotiations for the next
+large MPI cluster" in 2004, which may be Ristra (inferred).[^physics-2004]
+Army award number, cost and dates: unknown.
+
+**Hammer (c. 2005).** An Apple Xserve G5 cluster of 16 dual-G5 nodes with
+2 GB per node, InfiniBand and Mac OS X 10.4 "Tiger". Funded by the US
+Army; PIs Ingber and Truman.[^plaques] HPC@UNM's 2010 description says it
+was bought "on the same grant as Ristra" and that "the primary PI is Marc
+Ingber".[^hpc-hammer-2010] The 2008 systems table lists 2 GHz G5
+processors.[^hpc-systems-2008] Tiger shipped in April 2005, so it was
+installed no earlier than then (inferred). Peak (est.): about 256 GFLOPS.
+It was still described in 2010. Cost and retirement: unknown.
+
+**Yenta (c. 2006).** An Apple Xserve G5 cluster of 16 dual-G5 nodes with 2
+GB per node and a 20 TB SAN RAID, running Mac OS X Tiger, for the ARTS Lab
+(Director Edward Angel).[^plaques] The ARTS Lab opened in Dec 2005 with
+about $2.5–3M from the state's Media Industries Strategic
+Project.[^lobo-2005][^cs-2005] Peak (est.): 256–294 GFLOPS. Cost and dates:
+unknown.
+
+**Nano (by 2008).** A Dell PowerEdge 1950 cluster with one head node and
+36 compute nodes of Xeon 5140 (2.33 GHz dual-core) and
+Myrinet.[^hpc-systems-2008] The 2015 systems page lists 35 nodes, 140
+cores and 1.288 TFLOPS peak.[^carc-systems-2015] Funding, cost and
+retirement: unknown.
+
+**Pequeña (by 2008).** An SGI Altix ICE with one head node and 22 compute
+nodes of quad-core Xeon X5355/X5365 and InfiniBand.[^hpc-systems-2008] In
+2015 it had 176 cores and 2.1 TFLOPS peak.[^carc-systems-2015] Replaced by
+Wheeler Phase 1 in 2017.[^carc-wheeler] Funding and cost: unknown.
+
+### CARC era (2009–today)
+
+**HP X9000 storage (2010).** 281 TB (RAID 5 usable), bought by the UNM
+Research Storage Consortium (four NSF projects plus University Libraries).
+It was then the most densely populated HP storage system in the
+world.[^carc-history][^atlas-deck]
+
+**Metropolis (2012–2017).** A repurposed LANL supercomputer donated by the
+New Mexico Consortium (NMC) under the NSF PRObE project (NMC award
+CNS-1042537).[^carc-history][^nsf-probe] The 2015 systems page lists it
+as a Linux Networx Evolocity cluster of 70 nodes with AMD Opteron 252
+processors (140 cores, 0.728 TFLOPS).[^carc-systems-2015] Replaced by
+Wheeler Phase 1 in 2017.[^carc-wheeler]
+
+**Galles (2013–2019).** A 200-node "green" Beowulf cluster with a Hadoop
+subsystem, built from more than 200 used Dell desktops collected across
+campus with UNM IT and University Libraries. It was retired after the
+late-May 2019 downtime because it had become hard to
+maintain.[^carc-history][^carc-upgrades-2019] The 2015 systems page lists
+200 Dell OptiPlex nodes, 400 cores and 2.2 TFLOPS.[^carc-systems-2015]
+
+**Ulam (2014–2017).** 120 AMD nodes (960 cores) with InfiniBand in 12–13
+racks, donated by NMC. Shipments arrived Dec 2013 and Jan 16, 2014, and
+the first two racks (144 cores) came up in early 2014.[^unm-ulam-2014]
+CARC's aggregate reached 2,200 cores and 15 TFLOPS peak.[^carc-history]
+The 2015 systems page lists it as IBM System x3755 nodes with AMD 8214
+processors and 4.2 TFLOPS peak.[^carc-systems-2015]
+The rest of Ulam waited on the 2015 machine-room upgrade (just over
+$250K).[^lobo-2015] Replaced by Wheeler Phase 2 in Fall
+2017.[^carc-wheeler]
+
+**Gibbs.** 24 Dell PowerEdge R620 nodes with Xeon E5-2670 2.6 GHz (384
+cores), QDR InfiniBand and Scientific Linux; 3.996 TFLOPS
+peak.[^legacy-specs] It is first listed on the 2015 systems page, with
+the same 3.996 TFLOPS.[^carc-systems-2015] Install date and funding:
+unknown. Retired by 2026.
+
+**Xena (c. 2014–2026).** NSF MRI **ACI-1040530**, "MRI: Acquisition of a
+GPU-Accelerated Parallel Supercomputer": $435,077 for Sep 2010–Aug 2015.
+PI Susan Atlas; co-PIs Hua Guo, Timothy Thomas and Lydia Tapia; former
+co-PIs Pradeep Sen and Jamesina Simpson. The award was meant to raise
+CARC's peak from 5 to 41 TFLOPS.[^nsf-1040530] As built: 32 Dell
+PowerEdge R730/R930 nodes (576 cores) with Xeon E5-2640 and E7-4809, 24
+single-K40M and 4 dual-K40M GPU nodes, two 1 TB and two 3 TB big-memory
+nodes, FDR InfiniBand and 18 TFLOPS peak.[^legacy-specs] Tesla K40 GPUs
+date from late 2013, so it went into service around 2014 (inferred).
+Retired in 2026. Xena first appears on CARC's systems page in
+2016.[^carc-systems-2016]
+
+[![Xena postcard](../assets/images/history/2011-xena-postcard.jpg){ width="320" }](https://web.archive.org/web/20110718031120/http://www.hpc.unm.edu/images/xena-4-x-6-bradley-hand.png){target=_blank}
+
+*A Xena postcard from the center's website (captured July 2011). It shows
+the name was in use by mid-2011, earlier than the c. 2014 service date
+inferred above, so an earlier first phase of Xena is possible.*
+
+[![SC12 GridJam performance](../assets/images/history/2012-sc12-gridjam.jpg)](https://web.archive.org/web/20151001114149/http://www.hpcerc.unm.edu/common/images/sc12-gridjam.jpg){target=_blank}
+
+*GridJam at the SC12 conference (2012), from the CARC website.*
+
+[![A ribbon cutting at CARC](../assets/images/history/ribbon-cutting.jpg)](https://web.archive.org/web/20151001023939/http://www.hpcerc.unm.edu/common/images/ribboncutting.jpg){target=_blank}
+
+*A ribbon cutting at CARC, from the center's website (captured 2015; the
+event and date are not captioned there).*
+
+**Wheeler (2017–c. 2025).** Donated by LANL through NMC and PRObE,
+announced Mar 16, 2017 as more than 500 nodes of dual quad-core Xeon 5550
+(45–50 TFLOPS), "nine times" the four machines it
+replaced.[^hpcwire-2017] Named for Wheeler Peak; Phase 1 (144 nodes)
+replaced Metropolis and Pequeña and Phase 2 (Fall 2017) replaced
+Ulam.[^carc-wheeler] As deployed: 304 diskless SGI Altix XE nodes (2,432
+cores), QDR InfiniBand, 25 TFLOPS peak.[^legacy-specs] Replaced by
+Easley.[^carc-easley]
+
+**Taos (condo).** 9 Dell PowerEdge R630 nodes with Xeon E5-2698 v4 (180
+cores) and FDR InfiniBand.[^legacy-specs] In Oct 2020 "CARC and several UNM
+PIs began acquiring new hardware to expand the Taos compute
+cluster."[^iab-2020] Peak (est.): about 6 TFLOPS. Dates and PIs: unknown.
+
+**Hopper (2022–present).** CARC's first large condo cluster. The base
+system (14 nodes of 32 cores and 700 TB of storage) was ordered from Dell
+in late 2021, its cost split half PIs and half OVPR.[^iab-2021] It
+launched with 53 nodes, about 1,760 cores and 8.2 TB RAM; OVPR funded the
+free nodes and PIs such as Melanie Moses bought priority
+nodes.[^carc-hopper] Today: Dell PowerEdge R640/R740 with Xeon Gold
+6226R/6242, 61 nodes, 2,176 cores, 37 NVIDIA A100 GPUs and HDR
+InfiniBand.[^facilities] Peak (est.): about 0.2 PFLOPS CPU plus about
+0.36 PFLOPS FP64 from the A100s. Cost: unknown.
+
+**Easley (2025–present).** Named for NASA mathematician and programmer
+Annie Easley. A Dell CPU/GPU cluster with NVIDIA networking and IBM
+storage that replaced Wheeler with "7–10×" the performance in a fifth of
+the racks.[^carc-easley] It has 65 nodes, 4,160 cores and 23.3 TB RAM,
+with 36 NVIDIA L40S and 8 NVIDIA H100 GPUs, an NDR 800 Gbps InfiniBand
+core, and 720 TB of all-flash IBM Storage Scale.[^facilities] CARC
+described it as a purchase of "next-generation computing systems"; no
+external grant was found.[^carc-director-2025] Peak (est.): about 0.27
+PFLOPS CPU (Xeon Gold 6438Y+) plus about 0.2–0.5 PFLOPS FP64 from the
+H100s. Cost: unknown.
+
+**Next system (2026).** NSF MRI **2511915**, "Equipment: MRI: Track 1
+Acquisition of a High-Performance GPU Compute Cluster for Quantum- and
+AI-driven Chemistry and Materials Research": $1,399,999 starting Mar 15,
+2026. PI Susan Atlas; co-PIs Hua Guo, Ivan Deutsch, Patrick Bridges and
+Yi He.[^nsf-2511915] Name and specs: not yet published.
+
+## Open questions
+
+These gaps need someone with first-hand knowledge. The 1997–2005
+snapshots of `arc.unm.edu` in the Internet Archive have not been checked
+yet and may help with the earliest machines.
+
+* Retirement dates for the SP1, SP2 and SGI Origin, Roadrunner, Los Lobos,
+  Vista Azul, Delphi and all of the HPC@UNM-era machines.
+* The Army award numbers and costs for Ristra and Hammer, and Yenta's
+  cost.
+* When Xena first went into service (a 2011 postcard predates its K40
+  GPUs), and when Nano, Pequeña and Gibbs were installed.
+* The actual decommission dates of Wheeler, Taos, Gibbs and Xena.
+* Purchase costs for Hopper, Easley and the BeeGFS, IBM and NetApp storage.
+* Condo PIs on Taos and Hopper beyond those named here.
+* Term end dates for the associate and deputy directors.
+
+## Sources
+
+[^carc-history]: UNM CARC, [History](https://carc.unm.edu/about/history/){target=_blank} (also at [carc.unm.edu/about-carc/history.html](https://carc.unm.edu/about-carc/history.html){target=_blank}).
+[^plaques]: HPC@UNM machine plaques, Galles Building machine room, photographed Jul 1, 2026 (image above).
+[^bader-1999]: UNM, "UNM dedicates Roadrunner" (Apr 5, 1999), [davidbader.net/post/19990405-unm](https://davidbader.net/post/19990405-unm/){target=_blank}.
+[^top500-1995]: TOP500 1995 report, MHPCC center description, [netlib.org](https://netlib.org/benchmark/top500/reports/report95/Centers/node14.html){target=_blank}.
+[^newswise-1998]: UNM, "Maui High Performance Computing Center to increase computing capacity by 50 percent" (Jan 12, 1998), [newswise.com](https://www.newswise.com/articles/maui-high-performance-computing-center-to-increase-computing-capacity-by-50-percent-with-new-technology){target=_blank}.
+[^arxiv-linux]: "Linux and High-Performance Computing", [arXiv:2603.22495](https://arxiv.org/pdf/2603.22495){target=_blank}.
+[^bader-ncsa-1999]: NCSA Access (Apr 20, 1999), [davidbader.net/post/19990420-ncsaaccess](https://davidbader.net/post/19990420-ncsaaccess/){target=_blank}.
+[^evl-1999]: EVL, Alliance Chautauqua '99, [evl.uic.edu/events/346](https://www.evl.uic.edu/events/346){target=_blank}.
+[^bader-ibm-1999]: IBM, Vista Azul SUR announcement (Dec 13, 1999), [davidbader.net/post/19991213-ibm](https://davidbader.net/post/19991213-ibm/){target=_blank}.
+[^bader-lobos-2000]: UNM, Los Lobos announcement (Mar 21, 2000), [davidbader.net/post/20000321-unm](https://davidbader.net/post/20000321-unm/){target=_blank}.
+[^bader-concurrency-2000]: IEEE Concurrency (Apr 2000), [davidbader.net/post/20000401-ieeeconcurrency](https://davidbader.net/post/20000401-ieeeconcurrency/){target=_blank}.
+[^bader-opening-2000]: HPCERC, Los Lobos grand opening invitation (Sep 13, 2000), [davidbader.net/post/20000808-hpcerc](https://davidbader.net/post/20000808-hpcerc/){target=_blank}.
+[^bader-briefing-2000]: HPCwire, IBM Linux Supercluster Briefing Center (Sep 15, 2000), [davidbader.net/post/20000915-hpcwire](https://davidbader.net/post/20000915-hpcwire/){target=_blank}.
+[^bader-reuters-2000]: Reuters (Mar 23, 2000), [davidbader.net/post/20000323-reuters](https://davidbader.net/post/20000323-reuters/){target=_blank}.
+[^hpcerc-2003]: HPCERC, "Technical Summary & Software Inventory" (captured Apr 16, 2003), [web.archive.org](https://web.archive.org/web/20030416160312/http://www.hpcerc.unm.edu/computing/docs/systems.html){target=_blank}.
+[^ahpcc-2000]: AHPCC, "History" (captured Aug 17, 2000), [web.archive.org](https://web.archive.org/web/20000817235728/http://www.ahpcc.unm.edu:80/About/History.html){target=_blank}.
+[^hpcerc-1998]: HPCERC, "About HPCERC" (captured Mar 1, 2000), [web.archive.org](https://web.archive.org/web/20000301011731/http://hpcerc.unm.edu:80/about_hpcerc.html){target=_blank}.
+[^hpcerc-2003-about]: HPCERC, "About" (captured Feb 12, 2003), [web.archive.org](https://web.archive.org/web/20030212103056/http://www.hpcerc.unm.edu:80/about/index.html){target=_blank}.
+[^hpcerc-2003-dir]: HPCERC, staff directory (captured Apr 16, 2003), [web.archive.org](https://web.archive.org/web/20030416154123/http://www.hpcerc.unm.edu:80/about/contacts/directory.htm){target=_blank}.
+[^ahpcc-org-2000]: AHPCC, organization chart (captured Aug 17, 2000), [web.archive.org](https://web.archive.org/web/20000817235734/http://www.ahpcc.unm.edu:80/Images/Graphics/AHPCC_Org_Chart.gif){target=_blank}.
+[^hpc-org-2007]: HPC@UNM, organization chart (captured Mar 13, 2007), [web.archive.org](https://web.archive.org/web/20070313102152/http://www.hpc.unm.edu:80/info/staff-information/OrgChart.png){target=_blank}.
+[^ahpcc-blackbear]: AHPCC, BlackBear hardware page (captured Jan 28, 2001), [web.archive.org](https://web.archive.org/web/20010128194600/http://www.ahpcc.unm.edu:80/Systems/Hardware/Blackbear/index.html){target=_blank}.
+[^ahpcc-turing]: AHPCC, Turing hardware page (captured Aug 17, 2000), [web.archive.org](https://web.archive.org/web/20000817235151/http://www.ahpcc.unm.edu:80/Hardware/Turing.html){target=_blank}.
+[^hpc-systems-2008]: HPC@UNM, systems table (captured Aug 20, 2008), [web.archive.org](https://web.archive.org/web/20080820064512/http://www.hpc.unm.edu/systems-table){target=_blank}.
+[^hpc-hammer-2010]: HPC@UNM, Hammer description (captured Jun 11, 2010), [web.archive.org](https://web.archive.org/web/20100611023154/http://www.hpc.unm.edu/services/machines/hammer/hammer-descripition){target=_blank}.
+[^carc-systems-2015]: CARC, "Systems" (captured Apr 20, 2015), [web.archive.org](https://web.archive.org/web/20150420043138/http://www.carc.unm.edu:80/systems-software/systems.html){target=_blank}.
+[^carc-systems-2016]: CARC, "Systems" (captured Sep 20, 2016), [web.archive.org](https://web.archive.org/web/20160920212936/http://www.carc.unm.edu:80/systems-software/systems.html){target=_blank}.
+[^top500]: TOP500, [Los Lobos system page](https://www.top500.org/system/167391){target=_blank}.
+[^bader-alliance-1999]: Roadrunner presentation to the Alliance (May 12, 1999), [PDF](https://davidbader.net/events/19990512-alliance/19990512-Alliance.pdf){target=_blank}.
+[^bader-iwcc-1999]: Bader, Maccabe, Mastaler, McIver and Kovatch, "Design and analysis of the Alliance/University of New Mexico Roadrunner Linux SMP SuperCluster", IWCC 1999, [doi:10.1109/IWCC.1999.810804](https://doi.org/10.1109/IWCC.1999.810804){target=_blank}.
+[^bader-hpcwire-1999]: HPCwire (Jul 23, 1999), [davidbader.net/post/19990723-hpcwire](https://davidbader.net/post/19990723-hpcwire/){target=_blank}.
+[^bader-hpc-2003]: UNM, HPC@UNM leadership announcement (Sep 5, 2003), [davidbader.net/post/20030905-unm-hpc](https://davidbader.net/post/20030905-unm-hpc/){target=_blank}.
+[^lobo-2003]: Daily Lobo, "Grant will bring project to UNM" (Sep 25, 2003), [dailylobo.com](https://www.dailylobo.com/article/2003/09/grant_will_bring_project_to_unm){target=_blank}.
+[^physics-2004]: UNM Physics and Astronomy, Tim Thomas named Deputy Director (Oct 26, 2004), [physics.unm.edu](https://physics.unm.edu/news/2004/10/thomas_20041026.html){target=_blank}.
+[^nsf-0420513]: NSF award [DBI-0420513](https://api.nsf.gov/services/v1/awards/0420513.json){target=_blank}.
+[^bader-mri-2004]: UNM, MRI award release (Sep 21, 2004), [davidbader.net/post/20040921-unm-mri](https://davidbader.net/post/20040921-unm-mri/){target=_blank}.
+[^lobo-2005]: Daily Lobo, ARTS Lab opening (Dec 2005), [dailylobo.com](https://www.dailylobo.com/article/2005/12/25_million_arts_lab_opens_doors){target=_blank}.
+[^cs-2005]: UNM Computer Science, ARTS Lab (Sep 2005), [cs.unm.edu](https://www.cs.unm.edu/news/2005/09/arts-lab.html){target=_blank}.
+[^engr-2007]: UNM Engineering, "Prof. Caudell to direct Center for High Performance Computing" (Jan 2007), [engineering.unm.edu](https://engineering.unm.edu/news/2007/01/prof.-caudell-to-direct-center-for-high-performance-computing.html){target=_blank}.
+[^physics-2009]: UNM Physics and Astronomy, Atlas named CARC Director (Jun 1, 2009), [physics.unm.edu](https://physics.unm.edu/news/2009/06/advanced_research_20090601.html){target=_blank}.
+[^nsf-1040530]: NSF award [ACI-1040530](https://api.nsf.gov/services/v1/awards/1040530.json){target=_blank}, including the project outcomes report.
+[^atlas-deck]: S. R. Atlas, CARC overview slides, [srccii.cac.cornell.edu](https://srccii.cac.cornell.edu/Decks/Atlas.pdf){target=_blank}.
+[^nsf-probe]: NSF PRObE awards CNS-1042537 (New Mexico Consortium) and CNS-1042543 (Carnegie Mellon), [api.nsf.gov](https://api.nsf.gov/services/v1/awards.json?keyword=%22Parallel%20Reconfigurable%20Observational%20Environment%22){target=_blank}.
+[^unm-ulam-2014]: UNM Engineering, "UNM gains supercomputer from the New Mexico Consortium" (Feb 24, 2014), [engineering.unm.edu](https://engineering.unm.edu/news/2014/02/unm-gains-supercomputer-from-the-new-mexico-consortium.html){target=_blank}.
+[^ladp-2014]: Los Alamos Daily Post, "NMC gives UNM large-scale computer system", [ladailypost.com](https://ladailypost.com/%ef%bb%bfnmc-gives-unm-large-scale-computer-system-for-science-and-engineering-research/){target=_blank}.
+[^lobo-2015]: Daily Lobo, "New supercomputer" (Jan 22, 2015), [dailylobo.com](https://www.dailylobo.com/article/2015/01/2015-01-22-new-supercomputer){target=_blank}.
+[^hpcwire-2017]: HPCwire, LANL donates Wheeler to UNM (Mar 16, 2017), [hpcwire.com](https://www.hpcwire.com/?p=34676){target=_blank}.
+[^carc-wheeler]: CARC, "CARC system gets a name" (2017), [carc.unm.edu/news/wheeler-named](https://carc.unm.edu/news/wheeler-named/){target=_blank}.
+[^carc-upgrades-2019]: CARC, "Upgrades at CARC" (Jun 2019), [GitHub](https://github.com/UNM-CARC/unm-carc.github.io/blob/main/docs/news/carc-upgrades.md){target=_blank}.
+[^iab-2020]: CARC Internal Advisory Board minutes (Oct 29, 2020), [PDF](https://carc.unm.edu/about-carc/minutes-iab-10-29-20.pdf){target=_blank}.
+[^iab-2021]: CARC Internal Advisory Board minutes (Oct 28, 2021), [PDF](https://carc.unm.edu/about-carc/minutes-iab-10-28-2021.pdf){target=_blank}.
+[^carc-assoc-2021]: CARC, associate director announcement (2021), [carc-temp.unm.edu](https://carc-temp.unm.edu/news--events/News/carc-announces-associate-director.html){target=_blank}.
+[^carc-hopper]: CARC, Hopper launch (2022), [carc.unm.edu/news/hopper-launch](https://carc.unm.edu/news/hopper-launch/){target=_blank}.
+[^carc-easley]: CARC, Easley cluster announcement (2025), [carc.unm.edu/news/easley-cluster](https://carc.unm.edu/news/easley-cluster/){target=_blank}.
+[^carc-director-2025]: CARC, director's message (2025), [carc-temp.unm.edu/news/director-message](https://carc-temp.unm.edu/news/director-message/){target=_blank}.
+[^legacy-specs]: [Cluster specifications (legacy reference)](../systems/cluster-specifications.md).
+[^facilities]: [Facilities description](facilities.md).
+[^nsf-2511915]: NSF award [2511915](https://api.nsf.gov/services/v1/awards/2511915.json){target=_blank}.
+[^carc-swetnam]: CARC, welcome to Director Swetnam, [carc.unm.edu/news/welcome-director-swetnam](https://carc.unm.edu/news/welcome-director-swetnam/){target=_blank}.
+[^carc-personnel]: CARC personnel, [carc-temp.unm.edu/contact/personnel](https://carc-temp.unm.edu/contact/personnel/){target=_blank}.
+[^carc-departures]: CARC, departures and retirements, [carc.unm.edu/news/departures-retirements](https://carc.unm.edu/news/departures-retirements/){target=_blank}.
+[^charlotte-2026]: UNC Charlotte OneIT, new Director of Research Computing (Jun 2, 2026), [oneit.charlotte.edu](https://oneit.charlotte.edu/2026/06/02/new-director-of-research-computing/){target=_blank}.
+
 ---8<--- https://unm-carc.github.io/docs/about/mission/
 
 ---
@@ -11974,9 +12733,106 @@ data management (iRODS) services that interoperate with these national
 platforms. If you are unsure which platform fits your project, come to
 [office hours](../support/help.md) and we'll map it out together.
 
+---8<--- https://unm-carc.github.io/docs/about/web-archive/
+
+---
+title: "Web archive of the old center websites"
+description: "Browsable copies of the HPCERC, AHPCC, Alliance Supercluster, HPC@UNM and early CARC websites, 1998 to 2016, rebuilt from Internet Archive captures with working local links and images."
+type: Reference
+tags:
+  - About
+  - History
+status: draft
+generated:
+  by: "process:claude-code"
+  at: "2026-10-10T00:00:00Z"
+sources:
+  - id: internet-archive
+    resource: "https://web.archive.org/web/2000/http://www.ahpcc.unm.edu/"
+    title: "Internet Archive captures of hpcerc.unm.edu, ahpcc.unm.edu, alliance.unm.edu, hpc.unm.edu and carc.unm.edu, 1998–2016"
+    author: "team:internet-archive"
+  - id: build-script
+    resource: "scripts/build_web_archive.py"
+    title: "Script that rebuilds the archive from the staged Wayback captures"
+    author: "team:unm-carc"
+---
+
+# Web archive of the old center websites
+
+!!! note "Archived pages, not current information"
+
+    These are copies of web pages as they were between 1998 and 2016.
+    Accounts, machines, people, phone numbers and policies on them are long
+    out of date. For the story of the machines, see the
+    [History of CARC computing](history.md).
+
+Before it was CARC, the center ran websites under its earlier names: the
+High Performance Computing, Education & Research Center (**HPCERC**), the
+Albuquerque High Performance Computing Center (**AHPCC**) with its NCSA
+Alliance Linux supercluster site, and **HPC@UNM**.
+None of those sites survive on UNM servers. The Internet Archive's
+Wayback Machine captured many of their pages, and this section rebuilds
+them from those captures so they can be browsed again from CARC's own
+site.
+
+## Snapshots
+
+Each snapshot is one era of one site. Open a snapshot's name for its home
+page, or its page count for a list of every page it holds.
+
+<!-- archive-table:start -->
+| Snapshot | Pages | What it shows |
+| --- | --- | --- |
+| [HPCERC, 1998–2000](web-archive/hpcerc-1998/index.html) | [3](web-archive/hpcerc-1998/archive-contents.html) | The earliest captures of hpcerc.unm.edu (the High Performance Computing, Education & Research Center), which shared its pages with AHPCC. |
+| [HPCERC, 2002–2003](web-archive/hpcerc-2002/index.html) | [35](web-archive/hpcerc-2002/archive-contents.html) | HPCERC after its 2002 redesign, with machine pages for Los Lobos, Roadrunner, BlackBear, Vista Azul and the Access Grid. |
+| [AHPCC, 1999–2001](web-archive/ahpcc-2000/index.html) | [141](web-archive/ahpcc-2000/archive-contents.html) | The Albuquerque High Performance Computing Center in the Los Lobos and Roadrunner era. |
+| [AHPCC, 2001–2003](web-archive/ahpcc-2002/index.html) | [150](web-archive/ahpcc-2002/archive-contents.html) | The AHPCC site after its 2001 reorganisation into the Computing/ section, through its 2003 rename to HPC@UNM. |
+| [Alliance Supercluster, 2000](web-archive/alliance-2000/index.html) | [4](web-archive/alliance-2000/archive-contents.html) | alliance.unm.edu as the home of the NCSA Alliance Linux supercluster (Roadrunner) run by AHPCC. |
+| [alliance.unm.edu, 2001–2003](web-archive/alliance-2002/index.html) | [79](web-archive/alliance-2002/archive-contents.html) | alliance.unm.edu once it served the AHPCC and HPCERC site, with the Alliance account and user-guide pages. |
+| [alliance.unm.edu, 2004–2006](web-archive/alliance-2006/index.html) | [62](web-archive/alliance-2006/archive-contents.html) | Later captures of alliance.unm.edu, which by then served the HPC@UNM site. |
+| [HPC@UNM, 2003–2005](web-archive/hpc-2004/index.html) | [121](web-archive/hpc-2004/archive-contents.html) | The Center for High Performance Computing at UNM before its move to Plone. |
+| [HPC@UNM and CARC, 2006–2013](web-archive/hpc-2010/index.html) | [148](web-archive/hpc-2010/archive-contents.html) | The Plone site on hpc.unm.edu, retitled UNM Center for Advanced Research Computing around 2010, in the Encanto, Nano and Xena era. |
+| [CARC, 2015–2016](web-archive/carc-2015/index.html) | [76](web-archive/carc-2015/archive-contents.html) | The first Center for Advanced Research Computing site, also served under the old AHPCC and HPCERC hostnames. |
+<!-- archive-table:end -->
+
+## How the copies were made
+
+- **Source.** Pages and images were downloaded from the Wayback Machine in
+  October 2026 (the home page once a year, plus every page whose address
+  matched keywords about machines, people, accounts, documentation and
+  news). Within a snapshot, each page is the capture nearest that
+  snapshot's reference date, so neighbouring pages can be a few months
+  apart.
+- **Unchanged content.** Each page's HTML is kept byte for byte as it was
+  captured. Only addresses were changed, and a small yellow banner was
+  added at the top naming the capture date with a link to the original
+  Wayback copy.
+- **Links.** A link to a page that was saved goes to the local copy, in the
+  same snapshot or the nearest other one. A link to a page that was not
+  saved, or to any outside site, goes to the Wayback Machine's capture
+  nearest the date of the page you are on.
+- **Images.** Images that were downloaded are served locally. The rest,
+  and all stylesheets and scripts, load from the Wayback Machine, so some
+  pages look plainer when the Internet Archive cannot be reached.
+- **Left out.** Personal home directories (`/~user`), intranet and
+  timesheet pages, and SSH host-key listings.
+
+To rebuild after adding captures, run `python3 scripts/build_web_archive.py`
+with the staged captures in `.wayback/` (kept out of `.cache/`, which
+`zensical build --clean` empties). Corrections and missing
+pages are welcome; see [contributing](contributing.md).
+
 ---8<--- https://unm-carc.github.io/docs/log/
 
 # Documentation update log
+
+## 2026-10-10
+
+* **Update**: [History of CARC computing](about/history.md) now has a "Capacity over time" chart and table under The machines: total peak performance, CPU cores, memory and storage of every machine in service each year from 1995 to 2026, built by `scripts/build_capacity_timeline.py` (many inputs are estimates, listed under the chart). Tyson Swetnam's start date as Director is now Jul 1, 2026.
+
+* **Creation**: Added the [Web archive of the old center websites](about/web-archive.md) (draft): ten browsable snapshots of the HPCERC, AHPCC, Alliance Supercluster, HPC@UNM and first CARC websites (1998–2016), about 820 pages rebuilt from Internet Archive captures by `scripts/build_web_archive.py`. Pages keep their original HTML with an archive banner; links and images point at the local copies, and anything not saved points at the nearest Wayback Machine capture. The history page links to it.
+
+* **Creation**: Added [History of CARC computing](about/history.md) (draft), a sourced record of every supercomputer in the Galles Building machine room from Roadrunner and Los Lobos (1999–2000) through the HPC@UNM machines on the machine-room wall plaques (Pequin, Poblano, Ristra, Hammer, Yenta, Vista Azul, Delphi, Rio Bravo) to Easley. It covers install and retirement dates, manufacturers, grants, peak performance and costs (estimates and unknowns are marked), a timeline, past directors and associate directors, and the PIs who contributed hardware. The plaque photo and 17 logos and photos from Internet Archive snapshots of the old AHPCC, HPCERC, Alliance, HPC@UNM and CARC sites are in `assets/images/history/`; those snapshots also supplied the 1995–1998 IBM SP and SGI Origin machines, the 2000–2007 leadership and the 2008 and 2015 system tables.
 
 ## 2026-08-30
 
