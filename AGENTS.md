@@ -12,8 +12,12 @@ listings (no frontmatter); `docs/log.md` is the OKF §9 dated change log.
 
 ## Reading the corpus
 
-- `docs/llms.txt` — linked outline of every page with descriptions.
-- `docs/llms-full.txt` — the entire corpus in one file, frontmatter included.
+- `docs/llms.txt` — linked outline of every page with descriptions, plus
+  each page's Markdown twin (URL + `index.md`) and raw GitHub source.
+- `docs/llms-full.txt` — the entire corpus in one file, frontmatter included,
+  relative links rewritten to absolute URLs.
+- Deployed pages carry a "View this page as Markdown" button and a
+  "Machine-readable versions" line; `docs/about/ai-agents.md` is the guide.
 - Trust: pages without a `verified:` key are **unverified** (OKF §5.3);
   `status: deprecated` pages are history, `status: draft` pages need review
   against current systems. Retired clusters: Wheeler, Taos, Gibbs, Xena.
@@ -27,7 +31,8 @@ zensical serve                              # live preview at localhost:8000
 zensical build --clean                      # static site -> site/
 python3 scripts/okf_validate.py docs        # OKF conformance (CI-enforced)
 python3 scripts/gen_llms_txt.py             # regenerate llms.txt indexes (CI checks drift)
-python3 scripts/postbuild_agent_surface.py  # after build: md mirror + meta + robots.txt
+python3 scripts/postbuild_agent_surface.py  # after build: md mirror (absolute links), meta,
+                                            #   Markdown button + machine-readable line, robots.txt
 python3 scripts/migrate_quickbytes.py       # reproducible content pipeline (see below)
 python3 scripts/find_unfenced_code.py       # report code not annotated as code
 ```
@@ -55,3 +60,6 @@ python3 scripts/find_unfenced_code.py       # report code not annotated as code
    descriptive message (this repo's history documents the why).
 7. Never mark a page `verified:` — only CARC staff do that, as
    `verified: { by: "human:<netid>", at: <ISO 8601> }`.
+8. `scripts/okf_common.py` holds the shared helpers (config loading, nav
+   walking, link absolutizing) and is kept in step with the copies in
+   UNM-CARC/dust-2026 and UNM-CARC/foss; change it there too.

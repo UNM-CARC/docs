@@ -28,7 +28,7 @@ First, set up your ssh key. To do this type in the terminal prompt:
 
 You will then be asked which file you would like to save your new key under. Press enter here so it will be saved at the default location.
 
-Next, it will ask you to enter a passphrase. We rcommend you add a passphrase. You'll enter your password here, and then confirm it by entering that same password a second time. 
+Next, it will ask you to enter a passphrase. We recommend you add a passphrase. You'll enter your password here, and then confirm it by entering that same password a second time. 
 
 After this point, your ssh key has been created. You should see the randomart image for your key:
 
@@ -64,17 +64,19 @@ Since your home directory is shared across all machines at CARC you only need to
 To make logging in to CARC even easier we also recommend setting up a ssh config file which allows you to simply type `ssh machinename` instead of your username at the machine address. To set up this file simply copy the example below and save it to a text document in your `ssh` folder, which is found at `~/.ssh/`. Change the user to your CARC username and you are set to log in quickly and efficiently. You can add machines based on which ones you have access to. 
 
 
+    Host easley
+```bash
+hostname easley.alliance.unm.edu
+user CHANGEME
+ForwardX11 yes
+port 22
 ```
-Host hopper
-    hostname hopper.alliance.unm.edu
-    user CHANGEME
-    port 22
-
-Host easley
-    hostname easley.alliance.unm.edu
-    user CHANGEME
-    ForwardX11 yes
-    port 22
+    Host hopper
+```bash
+hostname hopper.alliance.unm.edu
+user CHANGEME
+ForwardX11 yes
+port 22
 ```
 
 
@@ -98,7 +100,7 @@ You should then edit your `~/.ssh/config` file as mentioned above, and change th
     IdentityFile ~/.ssh/cluster
     StrictHostKeyChecking=no
 
-This will ensure git will use the default key on the system when cloning with ssh (which will be the new one you just created), and will properly verify your credentials after adding the new public key to your github account. If you do not do this step, you will recevie a permision error when trying to clone or push to a git repo using ssh.
+This will ensure git will use the default key on the system when cloning with ssh (which will be the new one you just created), and will properly verify your credentials after adding the new public key to your github account. If you do not do this step, you will receive a permission error when trying to clone or push to a git repo using ssh.
 
 *This quickbyte was validated on 3/27/2025*
 

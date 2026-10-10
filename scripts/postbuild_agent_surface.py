@@ -9,13 +9,23 @@ Run AFTER `zensical build`. It:
        docs/a/index.md    -> site/a/index.md
        docs/index.md      -> site/index.md
    so any agent can turn a page URL into its canonical Markdown by appending
-   `index.md`.
+   `index.md`. Relative links in the mirror are rewritten to absolute URLs
+   (the mirror sits one directory deeper than its source, so relative paths
+   would otherwise resolve wrongly). Source files are never modified.
 2. Injects agent-discoverable metadata into each page's <head>:
        <link rel="alternate" type="text/markdown" href="index.md">
        <meta name="okf:type" | okf:status | okf:trust-tier | okf:generated-at
-             | okf:stale-after>
-3. Writes robots.txt advertising sitemap.xml, /llms.txt, /llms-full.txt, and
-   the Markdown mirror convention.
+             | okf:generated-by | okf:stale-after>
+3. Adds two *visible* pointers to every page, because text-extracting
+   fetch tools and link-derived URL allowlists never see <head>: a
+   "View this page as Markdown" button beside "View source", and a
+   "Machine-readable" line at the end of the article linking the Markdown
+   twin, the raw GitHub source, llms.txt, and llms-full.txt.
+4. Writes robots.txt advertising sitemap.xml, llms.txt, llms-full.txt, and
+   the Markdown mirror and raw-source conventions. Note: crawlers only
+   honour robots.txt at a host root; when this site is published under a
+   path prefix (carc.unm.edu/docs/) the host's root robots.txt must list
+   this site's sitemap for the file to take effect.
 
 Usage: python3 scripts/postbuild_agent_surface.py [site_dir]
 """
@@ -23,35 +33,19 @@ Usage: python3 scripts/postbuild_agent_surface.py [site_dir]
 from __future__ import annotations
 
 import html
-import re
-import shutil
 import sys
 from pathlib import Path
 
-import yaml
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from okf_common import (DOCS, ROOT, absolutize, load_config,  # noqa: E402
+                        page_url, raw_source_url, rewrite_link_targets,
+                        site_url, split_frontmatter)
 
-ROOT = Path(__file__).resolve().parent.parent
-DOCS = ROOT / "docs"
-
-
-def site_url() -> str:
-    text = (ROOT / "zensical.toml").read_text(encoding="utf-8")
-    m = re.search(r'^site_url\s*=\s*"([^"]+)"', text, re.MULTILINE)
-    return (m.group(1) if m else "/").rstrip("/") + "/"
-
-
-def frontmatter(path: Path) -> dict:
-    text = path.read_text(encoding="utf-8")
-    if not text.startswith("---"):
-        return {}
-    m = re.match(r"^---\s*\n(.*?)\n---\s*\n?", text, re.DOTALL)
-    if not m:
-        return {}
-    try:
-        data = yaml.safe_load(m.group(1))
-    except yaml.YAMLError:
-        return {}
-    return data if isinstance(data, dict) else {}
+AI_AGENTS = ["Googlebot", "Google-Extended", "GoogleOther", "Google-CloudVertexBot",
+             "GPTBot", "OAI-SearchBot", "ChatGPT-User",
+             "ClaudeBot", "Claude-User", "Claude-SearchBot", "PerplexityBot",
+             "cohere-ai", "Applebot-Extended", "CCBot", "meta-externalagent",
+             "Amazonbot", "DuckAssistBot", "MistralAI-User"]
 
 
 def trust_tier(fm: dict) -> str:
@@ -71,9 +65,11 @@ def head_block(fm: dict) -> str:
              'max-image-preview:large, max-video-preview:-1">',
              '<link rel="alternate" type="text/markdown" '
              'title="Markdown source (OKF v0.2 frontmatter)" href="index.md">']
+
     def meta(name, value):
         if value:
             lines.append(f'<meta name="{name}" content="{html.escape(str(value), quote=True)}">')
+
     meta("okf:type", fm.get("type"))
     meta("okf:status", fm.get("status", "stable") if fm else None)
     meta("okf:trust-tier", trust_tier(fm) if fm else None)
@@ -83,6 +79,29 @@ def head_block(fm: dict) -> str:
         meta("okf:generated-by", gen.get("by"))
     meta("okf:stale-after", fm.get("stale_after"))
     return "\n".join(lines) + "\n"
+
+
+MD_ICON = ('<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" '
+           'stroke-linecap="round" stroke-linejoin="round" stroke-width="2" '
+           'class="lucide lucide-file-text" viewBox="0 0 24 24" aria-hidden="true">'
+           '<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/>'
+           '<path d="M14 2v4a2 2 0 0 0 2 2h4M10 9H8M16 13H8M16 17H8"/></svg>')
+
+
+def markdown_button() -> str:
+    return ('<a href="index.md" title="View this page as Markdown (for AI agents and '
+            'screen readers)" class="md-content__button md-icon" '
+            'type="text/markdown">' + MD_ICON + '</a>\n')
+
+
+def machine_readable_line(url: str, raw: str | None, base: str) -> str:
+    parts = [f'<a href="{url}index.md" type="text/markdown">Markdown twin</a>']
+    if raw:
+        parts.append(f'<a href="{raw}">raw source on GitHub</a>')
+    parts += [f'<a href="{base}llms.txt">llms.txt</a>',
+              f'<a href="{base}llms-full.txt">llms-full.txt (whole site)</a>']
+    return ('<p class="carc-machine-readable">Machine-readable versions of this page: '
+            + " · ".join(parts) + '. See <a href="' + base + 'about/ai-agents/">For AI agents</a>.</p>\n')
 
 
 def dest_for(rel: Path, site: Path) -> Path:
@@ -96,23 +115,44 @@ def main():
     if not site.is_dir():
         print(f"error: {site} not found — run `zensical build` first", file=sys.stderr)
         sys.exit(2)
-    base = site_url()
+    cfg = load_config()
+    base = site_url(cfg)
+    name = cfg.get("site_name", "Documentation")
 
-    # 1. Mirror Markdown sources at pretty URLs.
+    # 0. Zensical writes an empty objects.inv (a Sphinx inventory stub); Cascade
+    # cannot store a zero-byte file and no consumer reads it, so drop it.
+    inv = site / "objects.inv"
+    if inv.exists() and inv.stat().st_size == 0:
+        inv.unlink()
+
+    # 1. Mirror Markdown sources at pretty URLs, with absolute links.
     mirrored = 0
     fms: dict[Path, dict] = {}
+    by_rel: dict[str, dict] = {}
     for path in sorted(DOCS.rglob("*.md")):
         rel = path.relative_to(DOCS)
         if rel.parts[0] == "assets":
             continue
+        text = path.read_text(encoding="utf-8")
+        try:
+            fm, body = split_frontmatter(text)
+        except ValueError:
+            fm, body = None, text
+        head = text[: len(text) - len(body)]
+        rel_posix = rel.as_posix()
+        body = rewrite_link_targets(body, lambda t: absolutize(t, rel_posix, base))
         dest = dest_for(rel, site)
         dest.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(path, dest)
-        fms[dest.parent.resolve()] = frontmatter(path)
+        dest.write_text(head + body, encoding="utf-8")
+        fms[dest.parent.resolve()] = fm or {}
+        by_rel[rel_posix] = fm or {}
         mirrored += 1
 
     # 2. Inject <head> metadata into each page whose directory has a mirror.
     injected = 0
+    rel_of = {}
+    for rel_posix in by_rel:
+        rel_of[dest_for(Path(rel_posix), site).parent.resolve()] = rel_posix
     for htmlfile in sorted(site.rglob("index.html")):
         fm = fms.get(htmlfile.parent.resolve())
         if fm is None:
@@ -120,19 +160,27 @@ def main():
         text = htmlfile.read_text(encoding="utf-8")
         if 'rel="alternate" type="text/markdown"' in text:
             continue  # idempotent
+        rel_posix = rel_of.get(htmlfile.parent.resolve(), "")
         text = text.replace("</head>", head_block(fm) + "</head>", 1)
+        # Visible pointers (body text survives extraction; <head> does not).
+        marker = 'title="View source of this page" class="md-content__button md-icon">'
+        if marker in text:
+            end = text.index("</a>", text.index(marker)) + len("</a>")
+            text = text[:end] + "\n" + markdown_button() + text[end:]
+        if rel_posix and "</article>" in text:
+            line = machine_readable_line(page_url(base, rel_posix),
+                                         raw_source_url(cfg, rel_posix), base)
+            text = text.replace("</article>", line + "</article>", 1)
         htmlfile.write_text(text, encoding="utf-8")
         injected += 1
 
     # 3. robots.txt — explicitly welcome AI fetchers alongside the blanket allow.
-    ai_agents = ["Googlebot", "Google-Extended", "GoogleOther", "Google-CloudVertexBot",
-                 "GPTBot", "OAI-SearchBot", "ChatGPT-User",
-                 "ClaudeBot", "Claude-User", "Claude-SearchBot", "PerplexityBot",
-                 "cohere-ai", "Applebot-Extended", "CCBot", "meta-externalagent",
-                 "Amazonbot", "DuckAssistBot", "MistralAI-User"]
-    ai_block = "".join(f"User-agent: {a}\nAllow: /\n\n" for a in ai_agents)
+    ai_block = "".join(f"User-agent: {a}\nAllow: /\n\n" for a in AI_AGENTS)
+    raw_root = raw_source_url(cfg, "")
+    raw_line = (f"#   Raw source on GitHub:      {raw_root}<path>.md\n"
+                if raw_root else "")
     (site / "robots.txt").write_text(
-        "# CARC Documentation — https://carc.unm.edu\n"
+        f"# {name} — {base}\n"
         "# This documentation is published for people AND for AI agents.\n"
         "User-agent: *\n"
         "Allow: /\n"
@@ -145,6 +193,7 @@ def main():
         f"#   Full corpus (one file):    {base}llms-full.txt\n"
         "#   Markdown source of any page (OKF v0.2 frontmatter: type, provenance,\n"
         "#   trust, lifecycle): append `index.md` to the page URL.\n"
+        + raw_line +
         f"#   Agent guide:               {base}about/ai-agents/\n",
         encoding="utf-8")
 

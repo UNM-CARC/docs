@@ -30,10 +30,11 @@ learning tools in a [conda environment](conda-intro.md) on CARC systems.
 
 ## Set up the conda environment
 
-1. Load the Anaconda module to get the `conda` command:
+1. Load the conda module to get the `conda` command (the old `anaconda3`
+   module has been retired — use `miniconda3`):
 
     ```bash
-    module load anaconda3
+    module load miniconda3
     ```
 
 2. Create a conda environment with a name:

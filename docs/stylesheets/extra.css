@@ -229,3 +229,10 @@ iframe.carc-video {
 .md-typeset table:not([class]) th {
   background-color: var(--md-accent-fg-color--transparent);
 }
+
+/* Body-level machine-readable pointers injected by postbuild_agent_surface.py */
+.md-typeset .carc-machine-readable {
+  margin-top: 1.2rem;
+  font-size: 0.64rem;
+  color: var(--md-default-fg-color--light);
+}

@@ -1,105 +1,157 @@
 # CARC Documentation
 
-> User and researcher documentation for the UNM Center for Advanced Research Computing (CARC): high-performance computing clusters (Easley and Hopper), storage, Slurm scheduling, research software, tutorials, and training. The source repository is an Open Knowledge Format (OKF v0.2) bundle: every page carries YAML frontmatter with type, provenance (generated/sources), and lifecycle (status/stale_after) fields.
+> User and researcher documentation for the UNM Center for Advanced Research Computing (CARC): high-performance computing, storage, software, tutorials, and training. The source repository is an Open Knowledge Format (OKF v0.2) bundle: every page carries YAML frontmatter with type, provenance (generated/sources), and lifecycle (status/stale_after) fields.
 
-Full corpus for ingestion: https://unm-carc.github.io/docs/llms-full.txt
+Every page below is listed with three addresses that all return the same content: the rendered HTML page, its Markdown twin (page URL + `index.md`, served as text/markdown with the OKF frontmatter), and the raw source file on GitHub. Fetch whichever your tool is allowed to reach; many sandboxes permit github.com and raw.githubusercontent.com but not every documentation host.
 
-Every page's Markdown source (OKF frontmatter included) is served at its URL plus `index.md` — for example https://unm-carc.github.io/docs/running-jobs/slurm-intro/index.md. Agent guide: https://unm-carc.github.io/docs/about/ai-agents/
+```
+Site page        https://carc.unm.edu/docs/<path>/
+Markdown twin    https://carc.unm.edu/docs/<path>/index.md
+Raw source       https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/<path>.md      (branch main; a moving target)
+
+Content page     /running-jobs/slurm-intro/  ->  https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/running-jobs/slurm-intro.md
+Section listing  /running-jobs/              ->  https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/running-jobs/index.md
+```
 
 ## Getting started
 
-- [Good Neighbor Use Policy](https://unm-carc.github.io/docs/getting-started/good-neighbor-policy/): Acceptable-use rules that all CARC users agree to: account sharing, data restrictions, job monitoring, and security.
-- [Learning Linux resources](https://unm-carc.github.io/docs/getting-started/learning-linux/): Curated external resources for learning the Linux command line.
-- [Introduction to Linux](https://unm-carc.github.io/docs/getting-started/linux-intro/): A first tour of the Linux command line for new HPC users.
-- [Logging in to CARC systems](https://unm-carc.github.io/docs/getting-started/logging-in/): Connect to CARC clusters with SSH from Linux, macOS, or Windows.
-- [Getting started at CARC](https://unm-carc.github.io/docs/getting-started/overview/): Create a CARC account, join a project in ColdFront, and find support.
-- [Password reset and one-time passwords](https://unm-carc.github.io/docs/getting-started/password-reset/): Reset your CARC password and manage one-time-password (OTP) settings.
-- [SSH keys and client configuration](https://unm-carc.github.io/docs/getting-started/ssh-keys/): Generate SSH key pairs and configure your SSH client for convenient, secure logins.
-- [Transferring data](https://unm-carc.github.io/docs/getting-started/transferring-data/): Move data to and from CARC systems with scp, rsync, sftp, and Globus.
-- [X11 forwarding](https://unm-carc.github.io/docs/getting-started/x11-forwarding/): Display graphical applications from CARC machines on your local screen with X11 forwarding.
+- [Getting started at CARC](https://carc.unm.edu/docs/getting-started/overview/): Create a CARC account, join a project in ColdFront, and find support. Markdown twin: https://carc.unm.edu/docs/getting-started/overview/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/getting-started/overview.md
+- [Good Neighbor Use Policy](https://carc.unm.edu/docs/getting-started/good-neighbor-policy/): Acceptable-use rules that all CARC users agree to: account sharing, data restrictions, job monitoring, and security. Markdown twin: https://carc.unm.edu/docs/getting-started/good-neighbor-policy/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/getting-started/good-neighbor-policy.md
+- [Logging in to CARC systems](https://carc.unm.edu/docs/getting-started/logging-in/): Connect to CARC clusters with SSH from Linux, macOS, or Windows. Markdown twin: https://carc.unm.edu/docs/getting-started/logging-in/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/getting-started/logging-in.md
+- [Password reset and one-time passwords](https://carc.unm.edu/docs/getting-started/password-reset/): Reset your CARC password and manage one-time-password (OTP) settings. Markdown twin: https://carc.unm.edu/docs/getting-started/password-reset/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/getting-started/password-reset.md
+- [SSH keys and client configuration](https://carc.unm.edu/docs/getting-started/ssh-keys/): Generate SSH key pairs and configure your SSH client for convenient, secure logins. Markdown twin: https://carc.unm.edu/docs/getting-started/ssh-keys/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/getting-started/ssh-keys.md
+- [X11 forwarding](https://carc.unm.edu/docs/getting-started/x11-forwarding/): Display graphical applications from CARC machines on your local screen with X11 forwarding. Markdown twin: https://carc.unm.edu/docs/getting-started/x11-forwarding/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/getting-started/x11-forwarding.md
+- [Transferring data](https://carc.unm.edu/docs/getting-started/transferring-data/): Move data to and from CARC systems with scp, rsync, sftp, and Globus. Markdown twin: https://carc.unm.edu/docs/getting-started/transferring-data/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/getting-started/transferring-data.md
+- [Introduction to Linux](https://carc.unm.edu/docs/getting-started/linux-intro/): A first tour of the Linux command line for new HPC users. Markdown twin: https://carc.unm.edu/docs/getting-started/linux-intro/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/getting-started/linux-intro.md
+- [Learning Linux resources](https://carc.unm.edu/docs/getting-started/learning-linux/): Curated external resources for learning the Linux command line. Markdown twin: https://carc.unm.edu/docs/getting-started/learning-linux/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/getting-started/learning-linux.md
 
 ## Systems & storage
 
-- [Cluster specifications (legacy reference)](https://unm-carc.github.io/docs/systems/cluster-specifications/): Historical hardware tables for CARC clusters, including retired systems such as Wheeler, Taos, Gibbs, and Xena. (deprecated; kept for history)
-- [Systems overview](https://unm-carc.github.io/docs/systems/overview/): Current CARC clusters (Easley and Hopper), storage tiers, and web portals such as JupyterHub, Open OnDemand, and XDMoD.
-- [Storage and compute usage policies](https://unm-carc.github.io/docs/systems/resource-limits/): Storage quotas, Slurm fairshare policy, and per-cluster queue limits.
-- [Storage permissions on BeeGFS](https://unm-carc.github.io/docs/systems/storage-permissions/): Manage file and directory permissions, including ACLs, on CARC BeeGFS scratch storage.
-- [Storage and backups](https://unm-carc.github.io/docs/systems/storage/): CARC storage spaces (home, project, scratch), where to compute from, and what is backed up.
+- [Systems overview](https://carc.unm.edu/docs/systems/overview/): Current CARC clusters (Easley and Hopper), storage tiers, and web portals such as JupyterHub, Open OnDemand, and XDMoD. Markdown twin: https://carc.unm.edu/docs/systems/overview/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/systems/overview.md
+- [Storage and compute usage policies](https://carc.unm.edu/docs/systems/resource-limits/): Storage quotas, per-cluster partition and walltime limits, Slurm fairshare policy, and the job time-limit extension policy. Markdown twin: https://carc.unm.edu/docs/systems/resource-limits/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/systems/resource-limits.md
+- [Storage and backups](https://carc.unm.edu/docs/systems/storage/): CARC storage spaces (home, project, scratch), the real filesystem paths, retention windows, and what is backed up. Markdown twin: https://carc.unm.edu/docs/systems/storage/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/systems/storage.md
+- [Storage permissions on BeeGFS](https://carc.unm.edu/docs/systems/storage-permissions/): Manage file and directory permissions, including ACLs, on CARC BeeGFS scratch storage. Markdown twin: https://carc.unm.edu/docs/systems/storage-permissions/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/systems/storage-permissions.md
+- [Cluster specifications (legacy reference)](https://carc.unm.edu/docs/systems/cluster-specifications/): Historical hardware tables for CARC clusters, including retired systems such as Wheeler, Taos, Gibbs, and Xena. (deprecated; kept for history) Markdown twin: https://carc.unm.edu/docs/systems/cluster-specifications/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/systems/cluster-specifications.md
 
 ## Running jobs
 
-- [Example Slurm scripts](https://unm-carc.github.io/docs/running-jobs/example-slurm-scripts/): Ready-to-adapt sbatch scripts for serial, parallel, and GPU jobs.
-- [GNU Parallel](https://unm-carc.github.io/docs/running-jobs/gnu-parallel/): Run many small tasks efficiently inside a single Slurm job with GNU Parallel.
-- [Environment modules](https://unm-carc.github.io/docs/running-jobs/modules/): Find, load, and manage software with environment modules on CARC clusters.
-- [PBS to Slurm migration](https://unm-carc.github.io/docs/running-jobs/pbs-to-slurm/): Translate PBS/Torque commands and scripts to their Slurm equivalents.
-- [Slurm accounting and fairshare](https://unm-carc.github.io/docs/running-jobs/slurm-accounting/): How Slurm accounts, job accounting, and the fairshare system work at CARC.
-- [Introduction to Slurm](https://unm-carc.github.io/docs/running-jobs/slurm-intro/): Slurm basics on CARC clusters: partitions, interactive jobs, and your first batch script.
-- [Slurm command reference](https://unm-carc.github.io/docs/running-jobs/slurm-reference/): Common Slurm commands and sbatch directives with examples.
-- [Submitting jobs](https://unm-carc.github.io/docs/running-jobs/submitting-jobs/): Submit, monitor, and cancel batch and interactive jobs with Slurm.
+- [Introduction to Slurm](https://carc.unm.edu/docs/running-jobs/slurm-intro/): Slurm basics on CARC clusters: partitions, interactive jobs, and your first batch script. Markdown twin: https://carc.unm.edu/docs/running-jobs/slurm-intro/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/running-jobs/slurm-intro.md
+- [Submitting jobs](https://carc.unm.edu/docs/running-jobs/submitting-jobs/): Submit, monitor, and cancel batch and interactive jobs with Slurm. Markdown twin: https://carc.unm.edu/docs/running-jobs/submitting-jobs/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/running-jobs/submitting-jobs.md
+- [Slurm command reference](https://carc.unm.edu/docs/running-jobs/slurm-reference/): Common Slurm commands and sbatch directives with examples. Markdown twin: https://carc.unm.edu/docs/running-jobs/slurm-reference/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/running-jobs/slurm-reference.md
+- [Example Slurm scripts](https://carc.unm.edu/docs/running-jobs/example-slurm-scripts/): Ready-to-adapt sbatch scripts for serial, parallel, and GPU jobs. Markdown twin: https://carc.unm.edu/docs/running-jobs/example-slurm-scripts/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/running-jobs/example-slurm-scripts.md
+- [Slurm accounting and fairshare](https://carc.unm.edu/docs/running-jobs/slurm-accounting/): How Slurm accounts, job accounting, and the fairshare system work at CARC. Markdown twin: https://carc.unm.edu/docs/running-jobs/slurm-accounting/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/running-jobs/slurm-accounting.md
+- [PBS to Slurm migration](https://carc.unm.edu/docs/running-jobs/pbs-to-slurm/): Translate PBS/Torque commands and scripts to their Slurm equivalents. Markdown twin: https://carc.unm.edu/docs/running-jobs/pbs-to-slurm/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/running-jobs/pbs-to-slurm.md
+- [Environment modules](https://carc.unm.edu/docs/running-jobs/modules/): Find, load, and manage software with environment modules on CARC clusters. Markdown twin: https://carc.unm.edu/docs/running-jobs/modules/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/running-jobs/modules.md
+- [GNU Parallel](https://carc.unm.edu/docs/running-jobs/gnu-parallel/): Run many small tasks efficiently inside a single Slurm job with GNU Parallel. Markdown twin: https://carc.unm.edu/docs/running-jobs/gnu-parallel/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/running-jobs/gnu-parallel.md
 
-## Interactive computing
+## Interactive
 
-- [JupyterHub](https://unm-carc.github.io/docs/interactive/jupyterhub/): Run Jupyter notebooks on Hopper and Easley compute nodes through CARC JupyterHub.
-- [Open OnDemand](https://unm-carc.github.io/docs/interactive/open-ondemand/): Use CARC clusters from your browser: files, shells, job management, and interactive apps.
+- [Open OnDemand](https://carc.unm.edu/docs/interactive/open-ondemand/): Use CARC clusters from your browser: files, shells, job management, and interactive apps. Markdown twin: https://carc.unm.edu/docs/interactive/open-ondemand/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/interactive/open-ondemand.md
+- [JupyterHub](https://carc.unm.edu/docs/interactive/jupyterhub/): Run Jupyter notebooks on Hopper and Easley compute nodes through CARC JupyterHub. Markdown twin: https://carc.unm.edu/docs/interactive/jupyterhub/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/interactive/jupyterhub.md
 
-## Software
+## QuickByte Tutorials
 
-- [AlphaFold](https://unm-carc.github.io/docs/software/alphafold/): Run AlphaFold protein structure prediction on CARC systems.
-- [Conda channels and pip](https://unm-carc.github.io/docs/software/conda-channels-pip/): Use conda channels (conda-forge, bioconda) and mix pip installs safely inside environments.
-- [Managing conda environments](https://unm-carc.github.io/docs/software/conda-environments/): Create, activate, export, and remove conda environments on CARC clusters.
-- [Conda and Anaconda: introduction](https://unm-carc.github.io/docs/software/conda-intro/): What conda is, how environments work, and how to use Anaconda/Miniconda on CARC systems.
-- [Conda environments in JupyterHub](https://unm-carc.github.io/docs/software/conda-jupyterhub/): Make your conda environments available as kernels in CARC JupyterHub.
-- [Parallel Python with Dask and scikit-learn](https://unm-carc.github.io/docs/software/dask-scikit-learn/): Scale scikit-learn workloads across cluster nodes from JupyterHub using Dask.
-- [Installing deep learning packages](https://unm-carc.github.io/docs/software/deep-learning-packages/): Install GPU-enabled deep learning frameworks (PyTorch, TensorFlow) into conda environments. (draft)
-- [Getting R software](https://unm-carc.github.io/docs/software/getting-r/): Available R versions and how to load them with environment modules.
-- [Gurobi optimizer with R](https://unm-carc.github.io/docs/software/gurobi-r/): Use the Gurobi optimization solver from R on CARC clusters.
-- [MPI parallelization from JupyterHub](https://unm-carc.github.io/docs/software/jupyterhub-mpi/): Run MPI-parallel Python (mpi4py/ipyparallel) from CARC JupyterHub sessions.
-- [MATLAB deep learning](https://unm-carc.github.io/docs/software/matlab-deep-learning/): Train deep learning models in MATLAB using CARC GPU nodes. (draft)
-- [MATLAB on GPUs](https://unm-carc.github.io/docs/software/matlab-gpu/): Accelerate MATLAB computations with GPUs on CARC clusters. (draft)
-- [Running MATLAB jobs](https://unm-carc.github.io/docs/software/matlab-jobs/): Run MATLAB non-interactively in Slurm batch jobs on CARC clusters.
-- [MATLAB Parallel Server](https://unm-carc.github.io/docs/software/matlab-parallel-server/): Use MATLAB Parallel Server to scale parpool jobs across multiple nodes.
-- [Parallel MATLAB: profile setup and batch submission](https://unm-carc.github.io/docs/software/parallel-matlab/): Configure a cluster profile and submit parallel MATLAB jobs.
-- [Parallel R with the future package](https://unm-carc.github.io/docs/software/parallel-r-future/): Parallelize R code across cores and nodes using the future framework.
-- [ParaView remote visualization](https://unm-carc.github.io/docs/software/paraview/): Run the ParaView server on CARC compute nodes and connect from your desktop client.
-- [PyTorch image classifier walkthrough](https://unm-carc.github.io/docs/software/pytorch-classifier/): End-to-end example: train an image classifier with PyTorch on a CARC GPU node. (draft)
-- [PyTorch on CARC GPUs](https://unm-carc.github.io/docs/software/pytorch/): Install and run GPU-enabled PyTorch on CARC clusters. (draft)
-- [Installing R packages](https://unm-carc.github.io/docs/software/r-packages/): Install R packages into your user library on CARC systems.
-- [R batch jobs with PBS (retired)](https://unm-carc.github.io/docs/software/r-pbs-jobs/): Historical instructions for submitting R jobs with PBS/Torque, which CARC has replaced with Slurm. (deprecated; kept for history)
-- [R on CARC systems](https://unm-carc.github.io/docs/software/r-usage/): Load R, run scripts in batch jobs, and use R interactively on CARC clusters.
-- [Singularity / Apptainer containers](https://unm-carc.github.io/docs/software/singularity/): Build, pull, and run software containers on CARC clusters.
-- [Apache Spark](https://unm-carc.github.io/docs/software/spark/): Launch Apache Spark clusters inside Slurm allocations for large-scale data analysis.
-- [Multi-GPU TensorFlow](https://unm-carc.github.io/docs/software/tensorflow-multi-gpu/): Distribute TensorFlow training across multiple GPUs on a CARC node.
-- [TensorFlow on CARC GPUs](https://unm-carc.github.io/docs/software/tensorflow/): Install and run GPU-enabled TensorFlow on CARC clusters.
+### Conda
 
-## Tutorials
+- [Conda and Miniconda: introduction](https://carc.unm.edu/docs/software/conda-intro/): What conda is, how environments work, and how to use Miniconda on CARC systems. Markdown twin: https://carc.unm.edu/docs/software/conda-intro/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/conda-intro.md
+- [Managing conda environments](https://carc.unm.edu/docs/software/conda-environments/): Create, activate, export, and remove conda environments on CARC clusters. Markdown twin: https://carc.unm.edu/docs/software/conda-environments/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/conda-environments.md
+- [Conda channels and pip](https://carc.unm.edu/docs/software/conda-channels-pip/): Use conda channels (conda-forge, bioconda) and mix pip installs safely inside environments. Markdown twin: https://carc.unm.edu/docs/software/conda-channels-pip/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/conda-channels-pip.md
 
-- [Bayesian phylogenetics with BEAST](https://unm-carc.github.io/docs/tutorials/beast/): Run BEAST Bayesian evolutionary analyses on CARC clusters.
-- [Variant calling with GATK](https://unm-carc.github.io/docs/tutorials/gatk/): A genomics variant-calling workflow using GATK best practices on CARC systems.
-- [Metabarcoding analysis](https://unm-carc.github.io/docs/tutorials/metabarcoding/): Process environmental DNA metabarcoding data on CARC clusters.
-- [Parallel CASA for radio astronomy](https://unm-carc.github.io/docs/tutorials/mpi-casa/): Run mpiCASA for parallel radio astronomy imaging on CARC clusters.
-- [Coalescent simulation with msprime](https://unm-carc.github.io/docs/tutorials/msprime/): Simulate genealogical histories and genome sequences with msprime.
-- [ORCA quantum chemistry](https://unm-carc.github.io/docs/tutorials/orca/): Run ORCA quantum chemistry calculations in parallel on CARC clusters. (draft)
-- [Demographic inference with PSMC](https://unm-carc.github.io/docs/tutorials/psmc/): Infer population size history from diploid genomes using PSMC.
-- [SimCov epidemiological simulation](https://unm-carc.github.io/docs/tutorials/simcov/): Run the SimCov agent-based model of SARS-CoV-2 infection dynamics in lung tissue.
-- [RAD-seq analysis with Stacks](https://unm-carc.github.io/docs/tutorials/stacks/): Analyze restriction-site associated DNA sequencing (RAD-seq) data with Stacks.
-- [VASP materials simulation](https://unm-carc.github.io/docs/tutorials/vasp/): Set up and run VASP density-functional-theory calculations on CARC clusters.
+### JupyterHub
 
-## FAQ & troubleshooting
+- [Conda environments in JupyterHub](https://carc.unm.edu/docs/software/conda-jupyterhub/): Make your conda environments available as kernels in CARC JupyterHub. Markdown twin: https://carc.unm.edu/docs/software/conda-jupyterhub/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/conda-jupyterhub.md
+- [MPI parallelization from JupyterHub](https://carc.unm.edu/docs/software/jupyterhub-mpi/): Run MPI-parallel Python (mpi4py/ipyparallel) from CARC JupyterHub sessions. Markdown twin: https://carc.unm.edu/docs/software/jupyterhub-mpi/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/jupyterhub-mpi.md
+- [Parallel Python with Dask and scikit-learn](https://carc.unm.edu/docs/software/dask-scikit-learn/): Scale scikit-learn workloads across cluster nodes from JupyterHub using Dask. Markdown twin: https://carc.unm.edu/docs/software/dask-scikit-learn/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/dask-scikit-learn.md
 
-- [General FAQ](https://unm-carc.github.io/docs/faq/general/): Quick answers about accounts, projects, cost, storage, software, and GPUs at CARC.
-- [Troubleshooting](https://unm-carc.github.io/docs/faq/troubleshooting/): Diagnose the most common problems: login failures, quota errors, pending or failing jobs, and module conflicts.
+### Julia
+
+- [Julia in JupyterHub](https://carc.unm.edu/docs/software/julia-jupyterhub/): Register a Julia kernel and use Julia notebooks in CARC JupyterHub. Markdown twin: https://carc.unm.edu/docs/software/julia-jupyterhub/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/julia-jupyterhub.md
+
+### R
+
+- [R on CARC systems](https://carc.unm.edu/docs/software/r-usage/): Load R, run scripts in batch jobs, and use R interactively on CARC clusters. Markdown twin: https://carc.unm.edu/docs/software/r-usage/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/r-usage.md
+- [Getting R software](https://carc.unm.edu/docs/software/getting-r/): Available R versions and how to load them with environment modules. Markdown twin: https://carc.unm.edu/docs/software/getting-r/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/getting-r.md
+- [Installing R packages](https://carc.unm.edu/docs/software/r-packages/): Install R packages into your user library on CARC systems. Markdown twin: https://carc.unm.edu/docs/software/r-packages/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/r-packages.md
+- [Parallel R with the future package](https://carc.unm.edu/docs/software/parallel-r-future/): Parallelize R code across cores and nodes using the future framework. Markdown twin: https://carc.unm.edu/docs/software/parallel-r-future/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/parallel-r-future.md
+- [Gurobi optimizer with R](https://carc.unm.edu/docs/software/gurobi-r/): Use the Gurobi optimization solver from R on CARC clusters. Markdown twin: https://carc.unm.edu/docs/software/gurobi-r/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/gurobi-r.md
+
+### Other programming languages
+
+- [Haskell at CARC](https://carc.unm.edu/docs/software/haskell/): Install GHC with ghcup and build a Stack project on CARC clusters. Markdown twin: https://carc.unm.edu/docs/software/haskell/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/haskell.md
+- [Installing Perl libraries](https://carc.unm.edu/docs/software/perl-libraries/): Install Perl modules into your own home directory with cpan. Markdown twin: https://carc.unm.edu/docs/software/perl-libraries/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/perl-libraries.md
+
+### MATLAB
+
+- [Running MATLAB jobs](https://carc.unm.edu/docs/software/matlab-jobs/): Run MATLAB non-interactively in Slurm batch jobs on CARC clusters. Markdown twin: https://carc.unm.edu/docs/software/matlab-jobs/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/matlab-jobs.md
+- [Parallel MATLAB: profile setup and batch submission](https://carc.unm.edu/docs/software/parallel-matlab/): Configure a cluster profile and submit parallel MATLAB jobs. Markdown twin: https://carc.unm.edu/docs/software/parallel-matlab/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/parallel-matlab.md
+- [MATLAB Parallel Server](https://carc.unm.edu/docs/software/matlab-parallel-server/): Use MATLAB Parallel Server to scale parpool jobs across multiple nodes. Markdown twin: https://carc.unm.edu/docs/software/matlab-parallel-server/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/matlab-parallel-server.md
+- [MATLAB on GPUs](https://carc.unm.edu/docs/software/matlab-gpu/): Accelerate MATLAB computations with GPUs on CARC clusters. (draft) Markdown twin: https://carc.unm.edu/docs/software/matlab-gpu/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/matlab-gpu.md
+- [MATLAB deep learning](https://carc.unm.edu/docs/software/matlab-deep-learning/): Train deep learning models in MATLAB using CARC GPU nodes. (draft) Markdown twin: https://carc.unm.edu/docs/software/matlab-deep-learning/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/matlab-deep-learning.md
+
+### Mathematica
+
+- [Mathematica on Easley](https://carc.unm.edu/docs/software/mathematica/): Derive exact beam-deflection formulas with Mathematica, then run the examples across CPUs, nodes, and a GPU on Easley. Markdown twin: https://carc.unm.edu/docs/software/mathematica/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/mathematica.md
+
+### AI and machine learning
+
+- [Installing deep learning packages](https://carc.unm.edu/docs/software/deep-learning-packages/): Install GPU-enabled deep learning frameworks (PyTorch, TensorFlow) into conda environments. (draft) Markdown twin: https://carc.unm.edu/docs/software/deep-learning-packages/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/deep-learning-packages.md
+- [PyTorch on CARC GPUs](https://carc.unm.edu/docs/software/pytorch/): Install and run GPU-enabled PyTorch on CARC clusters. (draft) Markdown twin: https://carc.unm.edu/docs/software/pytorch/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/pytorch.md
+- [PyTorch image classifier walkthrough](https://carc.unm.edu/docs/software/pytorch-classifier/): End-to-end example: train an image classifier with PyTorch on a CARC GPU node. (draft) Markdown twin: https://carc.unm.edu/docs/software/pytorch-classifier/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/pytorch-classifier.md
+- [TensorFlow on CARC GPUs](https://carc.unm.edu/docs/software/tensorflow/): Install and run GPU-enabled TensorFlow on CARC clusters. Markdown twin: https://carc.unm.edu/docs/software/tensorflow/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/tensorflow.md
+- [Multi-GPU TensorFlow](https://carc.unm.edu/docs/software/tensorflow-multi-gpu/): Distribute TensorFlow training across multiple GPUs on a CARC node. Markdown twin: https://carc.unm.edu/docs/software/tensorflow-multi-gpu/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/tensorflow-multi-gpu.md
+- [AlphaFold](https://carc.unm.edu/docs/software/alphafold/): Run AlphaFold protein structure prediction on CARC systems. Markdown twin: https://carc.unm.edu/docs/software/alphafold/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/alphafold.md
+
+### Data, visualization, and parallel computing
+
+- [Apache Spark](https://carc.unm.edu/docs/software/spark/): Launch Apache Spark clusters inside Slurm allocations for large-scale data analysis. Markdown twin: https://carc.unm.edu/docs/software/spark/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/spark.md
+- [ParaView remote visualization](https://carc.unm.edu/docs/software/paraview/): Run the ParaView server on CARC compute nodes and connect from your desktop client. Markdown twin: https://carc.unm.edu/docs/software/paraview/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/paraview.md
+- [CUDA-aware MPI](https://carc.unm.edu/docs/software/cuda-aware-mpi/): Pass GPU device pointers directly to MPI calls with the CUDA-aware OpenMPI/UCX stack, and fix the mixed-environment segfault. Markdown twin: https://carc.unm.edu/docs/software/cuda-aware-mpi/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/cuda-aware-mpi.md
+
+### Bioinformatics
+
+- [Variant calling with GATK](https://carc.unm.edu/docs/tutorials/gatk/): A genomics variant-calling workflow using GATK best practices on CARC systems. Markdown twin: https://carc.unm.edu/docs/tutorials/gatk/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/tutorials/gatk.md
+- [Metabarcoding analysis](https://carc.unm.edu/docs/tutorials/metabarcoding/): Process environmental DNA metabarcoding data on CARC clusters. Markdown twin: https://carc.unm.edu/docs/tutorials/metabarcoding/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/tutorials/metabarcoding.md
+- [RAD-seq analysis with Stacks](https://carc.unm.edu/docs/tutorials/stacks/): Analyze restriction-site associated DNA sequencing (RAD-seq) data with Stacks. Markdown twin: https://carc.unm.edu/docs/tutorials/stacks/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/tutorials/stacks.md
+- [Genome assembly evaluation with QUAST and BUSCO](https://carc.unm.edu/docs/tutorials/genome-evaluation/): Evaluate genome assembly quality and completeness with QUAST and BUSCO. Markdown twin: https://carc.unm.edu/docs/tutorials/genome-evaluation/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/tutorials/genome-evaluation.md
+- [Coalescent simulation with msprime](https://carc.unm.edu/docs/tutorials/msprime/): Simulate genealogical histories and genome sequences with msprime. Markdown twin: https://carc.unm.edu/docs/tutorials/msprime/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/tutorials/msprime.md
+- [Demographic inference with PSMC](https://carc.unm.edu/docs/tutorials/psmc/): Infer population size history from diploid genomes using PSMC. Markdown twin: https://carc.unm.edu/docs/tutorials/psmc/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/tutorials/psmc.md
+- [Bayesian phylogenetics with BEAST](https://carc.unm.edu/docs/tutorials/beast/): Run BEAST Bayesian evolutionary analyses on CARC clusters. Markdown twin: https://carc.unm.edu/docs/tutorials/beast/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/tutorials/beast.md
+
+### Chemistry & materials
+
+- [VASP materials simulation](https://carc.unm.edu/docs/tutorials/vasp/): Set up and run VASP density-functional-theory calculations on CARC clusters. Markdown twin: https://carc.unm.edu/docs/tutorials/vasp/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/tutorials/vasp.md
+- [ORCA quantum chemistry](https://carc.unm.edu/docs/tutorials/orca/): Run ORCA quantum chemistry calculations in parallel on CARC clusters. Markdown twin: https://carc.unm.edu/docs/tutorials/orca/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/tutorials/orca.md
+
+### Computational immunology
+
+- [SimCov epidemiological simulation](https://carc.unm.edu/docs/tutorials/simcov/): Run the SimCov agent-based model of SARS-CoV-2 infection dynamics in lung tissue. Markdown twin: https://carc.unm.edu/docs/tutorials/simcov/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/tutorials/simcov.md
+
+### Astronomy
+
+- [Parallel CASA for radio astronomy](https://carc.unm.edu/docs/tutorials/mpi-casa/): Run mpiCASA for parallel radio astronomy imaging on CARC clusters. Markdown twin: https://carc.unm.edu/docs/tutorials/mpi-casa/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/tutorials/mpi-casa.md
+
+### Containers
+
+- [Singularity / Apptainer containers](https://carc.unm.edu/docs/software/singularity/): Build, pull, and run software containers on CARC clusters. Markdown twin: https://carc.unm.edu/docs/software/singularity/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/singularity.md
+
+- [R batch jobs with PBS (retired)](https://carc.unm.edu/docs/software/r-pbs-jobs/): Historical instructions for submitting R jobs with PBS/Torque, which CARC has replaced with Slurm. Markdown twin: https://carc.unm.edu/docs/software/r-pbs-jobs/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/software/r-pbs-jobs.md
+
+## FAQ
+
+- [General FAQ](https://carc.unm.edu/docs/faq/general/): Quick answers about accounts, projects, cost, storage, software, and GPUs at CARC. Markdown twin: https://carc.unm.edu/docs/faq/general/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/faq/general.md
+- [Troubleshooting](https://carc.unm.edu/docs/faq/troubleshooting/): Diagnose the most common problems: login failures, quota errors, pending or failing jobs, and module conflicts. Markdown twin: https://carc.unm.edu/docs/faq/troubleshooting/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/faq/troubleshooting.md
 
 ## Training
 
-- [Video tutorials](https://unm-carc.github.io/docs/training/videos/): Embedded CARC recordings: the QuickBytes tutorial series, CARC Annual Meeting talks, and research presentations from the UNMCARC YouTube channel.
-- [Workshops and slides](https://unm-carc.github.io/docs/training/workshops/): Slide decks from CARC workshops and university courses, organized by series, plus how to hear about upcoming sessions.
+- [Video tutorials](https://carc.unm.edu/docs/training/videos/): Embedded CARC recordings: the QuickBytes tutorial series, CARC Annual Meeting talks, and research presentations from the UNMCARC YouTube channel. Markdown twin: https://carc.unm.edu/docs/training/videos/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/training/videos.md
+- [Workshops and slides](https://carc.unm.edu/docs/training/workshops/): Slide decks from CARC workshops and university courses, organized by series, plus how to hear about upcoming sessions. Markdown twin: https://carc.unm.edu/docs/training/workshops/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/training/workshops.md
 
 ## Support
 
-- [Acknowledging CARC](https://unm-carc.github.io/docs/support/acknowledging-carc/): The acknowledgement statement to include in publications that used CARC resources.
-- [Getting help](https://unm-carc.github.io/docs/support/help/): Open a help ticket, email CARC support, or drop into office and consultation hours.
+- [Getting help](https://carc.unm.edu/docs/support/help/): Open a help ticket, email CARC support, or drop into office and consultation hours. Markdown twin: https://carc.unm.edu/docs/support/help/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/support/help.md
+- [Acknowledging CARC](https://carc.unm.edu/docs/support/acknowledging-carc/): The acknowledgement statement to include in publications that used CARC resources. Markdown twin: https://carc.unm.edu/docs/support/acknowledging-carc/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/support/acknowledging-carc.md
 
-## About CARC
+## About
 
 - [For AI agents](https://unm-carc.github.io/docs/about/ai-agents/): How agents and harnesses should consume this documentation: llms.txt, per-page Markdown with OKF frontmatter, and trust signals.
 - [Contributing to these docs](https://unm-carc.github.io/docs/about/contributing/): How to edit pages, the OKF frontmatter contract, verifying migrated content, and building the site locally.
@@ -108,7 +160,16 @@ Every page's Markdown source (OKF frontmatter included) is served at its URL plu
 - [Mission and vision](https://unm-carc.github.io/docs/about/mission/): CARC's vision and mission: leading and growing the computational research community at UNM.
 - [Partner cyberinfrastructure](https://unm-carc.github.io/docs/about/partners/): National and regional platforms CARC users can reach: ACCESS-CI, Jetstream2, CyVerse, and MESA.
 - [Web archive of the old center websites](https://unm-carc.github.io/docs/about/web-archive/): Browsable copies of the HPCERC, AHPCC, Alliance Supercluster, HPC@UNM and early CARC websites, 1998 to 2016, rebuilt from Internet Archive captures with working local links and images. (draft)
+- [Mission and vision](https://carc.unm.edu/docs/about/mission/): CARC's vision and mission: leading and growing the computational research community at UNM. Markdown twin: https://carc.unm.edu/docs/about/mission/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/about/mission.md
+- [Facilities description](https://carc.unm.edu/docs/about/facilities/): Boilerplate facilities description for grant proposals: clusters, storage, networking, and the data center. Markdown twin: https://carc.unm.edu/docs/about/facilities/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/about/facilities.md
+- [Partner cyberinfrastructure](https://carc.unm.edu/docs/about/partners/): National and regional platforms CARC users can reach: ACCESS-CI, Jetstream2, CyVerse, and MESA. Markdown twin: https://carc.unm.edu/docs/about/partners/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/about/partners.md
+- [Contributing to these docs](https://carc.unm.edu/docs/about/contributing/): How to edit pages, the OKF frontmatter contract, verifying migrated content, and building the site locally. Markdown twin: https://carc.unm.edu/docs/about/contributing/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/about/contributing.md
+- [For AI agents](https://carc.unm.edu/docs/about/ai-agents/): How agents and harnesses should consume this documentation: llms.txt, per-page Markdown with OKF frontmatter, raw source on GitHub, trust signals, and what to do if you cannot fetch this site. Markdown twin: https://carc.unm.edu/docs/about/ai-agents/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/about/ai-agents.md
 
 ## Meta
 
-- [Documentation update log](https://unm-carc.github.io/docs/log/): dated history of changes to this bundle.
+- [Full corpus in one file](https://carc.unm.edu/docs/llms-full.txt): every page's Markdown with frontmatter, links made absolute; about 554 KB, roughly 142,000 tokens. Prefer it over fetching pages one at a time.
+- [Documentation update log](https://carc.unm.edu/docs/log/): dated history of changes to this bundle.
+- [For AI agents](https://carc.unm.edu/docs/about/ai-agents/): endpoints, trust signals, and how to answer questions from this corpus; includes what to do if you cannot fetch this site.
+- [Sitemap](https://carc.unm.edu/docs/sitemap.xml) and [robots.txt](https://carc.unm.edu/docs/robots.txt).
+- [Source repository](https://github.com/UNM-CARC/docs): the bundle itself; `docs/` mirrors the site paths one to one.

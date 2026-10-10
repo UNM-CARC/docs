@@ -102,11 +102,13 @@ PAGES: list[Page] = [
          "Current CARC clusters (Easley and Hopper), storage tiers, and web portals such as JupyterHub, Open OnDemand, and XDMoD.",
          "Reference", ["Systems", "Hardware"], stale_after=HW_STALE, repo="hand"),
     Page("resource_limits.md", "systems/resource-limits.md", "Storage and compute usage policies",
-         "Storage quotas, Slurm fairshare policy, and per-cluster queue limits.",
-         "Policy", ["Policy", "Storage", "Slurm"], stale_after=HW_STALE, repo="webinfo"),
+         "Storage quotas, per-cluster partition and walltime limits, Slurm fairshare policy, and the job time-limit extension policy.",
+         "Policy", ["Policy", "Storage", "Slurm"], stale_after=HW_STALE, repo="webinfo",
+         frozen=True),  # 2026-09-01: curated against CARC-knowledge-store observed facts
     Page("storage_and_backup.md", "systems/storage.md", "Storage and backups",
-         "CARC storage spaces (home, project, scratch), where to compute from, and what is backed up.",
-         "Guide", ["Storage", "Data"], videos=[("WwsbLyl7d1A", "Storage Systems")]),
+         "CARC storage spaces (home, project, scratch), the real filesystem paths, retention windows, and what is backed up.",
+         "Guide", ["Storage", "Data"], videos=[("WwsbLyl7d1A", "Storage Systems")],
+         frozen=True),  # 2026-09-01: curated against CARC-knowledge-store observed facts
     Page("storage_permissions_BeeGFS.md", "systems/storage-permissions.md", "Storage permissions on BeeGFS",
          "Manage file and directory permissions, including ACLs, on CARC BeeGFS scratch storage.",
          "Guide", ["Storage", "Security"]),
@@ -150,8 +152,8 @@ PAGES: list[Page] = [
          "Guide", ["Interactive", "Jupyter", "New users"], repo="hand"),
 
     # ---- Software: Python & Jupyter
-    Page("anaconda_general_intro.md", "software/conda-intro.md", "Conda and Anaconda: introduction",
-         "What conda is, how environments work, and how to use Anaconda/Miniconda on CARC systems.",
+    Page("anaconda_general_intro.md", "software/conda-intro.md", "Conda and Miniconda: introduction",
+         "What conda is, how environments work, and how to use Miniconda on CARC systems.",
          "Guide", ["Python", "Conda"]),
     Page("anaconda_intro.md", "software/conda-environments.md", "Managing conda environments",
          "Create, activate, export, and remove conda environments on CARC clusters.",
@@ -162,12 +164,18 @@ PAGES: list[Page] = [
     Page("Conda_JupyterHub.md", "software/conda-jupyterhub.md", "Conda environments in JupyterHub",
          "Make your conda environments available as kernels in CARC JupyterHub.",
          "Guide", ["Python", "Conda", "Jupyter"]),
+    Page("julia_with_jupyterhub.md", "software/julia-jupyterhub.md", "Julia in JupyterHub",
+         "Register a Julia kernel and use Julia notebooks in CARC JupyterHub.",
+         "Guide", ["Julia", "Jupyter"]),
     Page("Install deep learning packages.md", "software/deep-learning-packages.md", "Installing deep learning packages",
          "Install GPU-enabled deep learning frameworks (PyTorch, TensorFlow) into conda environments.",
          "Guide", ["Python", "GPU", "Machine learning"], frozen=True),
     Page("parallel_jupyterhub_with_dask_and_scikit-learn.md", "software/dask-scikit-learn.md", "Parallel Python with Dask and scikit-learn",
          "Scale scikit-learn workloads across cluster nodes from JupyterHub using Dask.",
          "Tutorial", ["Python", "Jupyter", "Parallel", "Dask"]),
+    Page("", "software/cuda-aware-mpi.md", "CUDA-aware MPI",
+         "Pass GPU device pointers directly to MPI calls with the CUDA-aware OpenMPI/UCX stack, and fix the mixed-environment segfault.",
+         "Guide", ["MPI", "GPU", "CUDA"], repo="hand"),
     Page("parallelization_with Jupyterhub_using_mpi.md", "software/jupyterhub-mpi.md", "MPI parallelization from JupyterHub",
          "Run MPI-parallel Python (mpi4py/ipyparallel) from CARC JupyterHub sessions.",
          "Tutorial", ["Python", "Jupyter", "MPI", "Parallel"]),
@@ -211,6 +219,11 @@ PAGES: list[Page] = [
          "Train deep learning models in MATLAB using CARC GPU nodes.",
          "Tutorial", ["MATLAB", "GPU", "Machine learning"], status="draft"),
 
+    # ---- Software: Mathematica (curated from a post-migration QuickByte)
+    Page("", "software/mathematica.md", "Mathematica on Easley",
+         "Derive exact beam-deflection formulas with Mathematica, then run the examples across CPUs, nodes, and a GPU on Easley.",
+         "Tutorial", ["Mathematica", "Wolfram Language", "Slurm", "Easley", "GPU"], repo="hand"),
+
     # ---- Software: AI & ML
     Page("PyTorch_1.9_Xena.md", "software/pytorch.md", "PyTorch on CARC GPUs",
          "Install and run GPU-enabled PyTorch on CARC clusters.",
@@ -238,6 +251,12 @@ PAGES: list[Page] = [
     Page("paraview.md", "software/paraview.md", "ParaView remote visualization",
          "Run the ParaView server on CARC compute nodes and connect from your desktop client.",
          "Guide", ["Visualization", "ParaView"]),
+    Page("install_perl_libraries.md", "software/perl-libraries.md", "Installing Perl libraries",
+         "Install Perl modules into your own home directory with cpan.",
+         "Guide", ["Perl"]),
+    Page("haskell.md", "software/haskell.md", "Haskell at CARC",
+         "Install GHC with ghcup and build a Stack project on CARC clusters.",
+         "Guide", ["Haskell"]),
 
     # ---- Tutorials (domain applications)
     Page("GATK_QuickByte.md", "tutorials/gatk.md", "Variant calling with GATK",
@@ -248,6 +267,9 @@ PAGES: list[Page] = [
          "Tutorial", ["Bioinformatics", "Ecology"]),
     Page("Stacks_quickbyte.md", "tutorials/stacks.md", "RAD-seq analysis with Stacks",
          "Analyze restriction-site associated DNA sequencing (RAD-seq) data with Stacks.",
+         "Tutorial", ["Bioinformatics", "Genomics"]),
+    Page("genome_evaluation.md", "tutorials/genome-evaluation.md", "Genome assembly evaluation with QUAST and BUSCO",
+         "Evaluate genome assembly quality and completeness with QUAST and BUSCO.",
          "Tutorial", ["Bioinformatics", "Genomics"]),
     Page("msprime_quickbyte.md", "tutorials/msprime.md", "Coalescent simulation with msprime",
          "Simulate genealogical histories and genome sequences with msprime.",
@@ -264,9 +286,9 @@ PAGES: list[Page] = [
     Page("test_vasp_quickbyte.md", "tutorials/vasp.md", "VASP materials simulation",
          "Set up and run VASP density-functional-theory calculations on CARC clusters.",
          "Tutorial", ["Materials science", "Chemistry"]),
-    Page("orca_wheeler_taos.md", "tutorials/orca.md", "ORCA quantum chemistry",
+    Page("orca_easley_hopper.md", "tutorials/orca.md", "ORCA quantum chemistry",
          "Run ORCA quantum chemistry calculations in parallel on CARC clusters.",
-         "Tutorial", ["Chemistry"], status="draft"),
+         "Tutorial", ["Chemistry"]),
     Page("mpiCASA.md", "tutorials/mpi-casa.md", "Parallel CASA for radio astronomy",
          "Run mpiCASA for parallel radio astronomy imaging on CARC clusters.",
          "Tutorial", ["Astronomy", "MPI"]),
@@ -328,8 +350,8 @@ SECTIONS = {
         "Schedule and manage work on CARC clusters with Slurm."),
     "interactive": ("Interactive computing",
         "Point-and-click access to CARC clusters: Open OnDemand and JupyterHub."),
-    "software": ("Software",
-        "Language environments, machine learning frameworks, containers, and applications on CARC systems."),
+    "software": ("QuickByte Tutorials",
+        "Short, practical CARC guides for software, programming environments, and research workflows."),
     "tutorials": ("Tutorials",
         "Domain-science QuickBytes: complete worked examples from genomics to materials science."),
     "faq": ("FAQ & troubleshooting",
@@ -342,18 +364,47 @@ SECTIONS = {
         "Mission, facilities, partner cyberinfrastructure, and this documentation project."),
 }
 
-# Software section subgroups for the index page (mirrors zensical.toml nav)
-SOFTWARE_GROUPS = [
-    ("Python & Jupyter", ["conda-intro.md", "conda-environments.md", "conda-channels-pip.md",
-                          "conda-jupyterhub.md", "deep-learning-packages.md", "dask-scikit-learn.md",
-                          "jupyterhub-mpi.md"]),
-    ("R", ["r-usage.md", "getting-r.md", "r-packages.md", "parallel-r-future.md", "gurobi-r.md",
-           "r-pbs-jobs.md"]),
-    ("MATLAB", ["matlab-jobs.md", "parallel-matlab.md", "matlab-parallel-server.md", "matlab-gpu.md",
-                "matlab-deep-learning.md"]),
-    ("AI & machine learning", ["pytorch.md", "pytorch-classifier.md", "tensorflow.md",
-                               "tensorflow-multi-gpu.md", "alphafold.md"]),
-    ("Containers & tools", ["singularity.md", "spark.md", "paraview.md"]),
+# QuickByte groups for the combined software/tutorials contents page and nav.
+QUICKBYTE_GROUPS = [
+    ("Conda", [
+        "software/conda-intro.md", "software/conda-environments.md",
+        "software/conda-channels-pip.md",
+    ]),
+    ("JupyterHub", [
+        "software/conda-jupyterhub.md", "software/jupyterhub-mpi.md",
+        "software/dask-scikit-learn.md",
+    ]),
+    ("Julia", ["software/julia-jupyterhub.md"]),
+    ("R", [
+        "software/r-usage.md", "software/getting-r.md", "software/r-packages.md",
+        "software/parallel-r-future.md", "software/gurobi-r.md",
+    ]),
+    ("Other programming languages", [
+        "software/haskell.md", "software/perl-libraries.md",
+    ]),
+    ("MATLAB", [
+        "software/matlab-jobs.md", "software/parallel-matlab.md",
+        "software/matlab-parallel-server.md", "software/matlab-gpu.md",
+        "software/matlab-deep-learning.md",
+    ]),
+    ("Mathematica", ["software/mathematica.md"]),
+    ("AI and machine learning", [
+        "software/deep-learning-packages.md", "software/pytorch.md",
+        "software/pytorch-classifier.md", "software/tensorflow.md",
+        "software/tensorflow-multi-gpu.md", "software/alphafold.md",
+    ]),
+    ("Data, visualization, and parallel computing", [
+        "software/spark.md", "software/paraview.md", "software/cuda-aware-mpi.md",
+    ]),
+    ("Bioinformatics", [
+        "tutorials/gatk.md", "tutorials/metabarcoding.md", "tutorials/stacks.md",
+        "tutorials/genome-evaluation.md", "tutorials/msprime.md",
+        "tutorials/psmc.md", "tutorials/beast.md",
+    ]),
+    ("Chemistry & materials", ["tutorials/vasp.md", "tutorials/orca.md"]),
+    ("Computational immunology", ["tutorials/simcov.md"]),
+    ("Astronomy", ["tutorials/mpi-casa.md"]),
+    ("Containers", ["software/singularity.md"]),
 ]
 
 # Extra downloadable assets: (repo-relative source, docs/assets/files-relative dest)
@@ -430,6 +481,80 @@ PATCHES = {
          "    - create temporary files elsewhere and then move them into place\n"
          "    - use transfer behavior that bypasses the expected destination ownership\n\n"
          "    Because of this, always verify group ownership after large transfers."),
+    ],
+    # 2026-09-01 knowledge-store reconciliation: partition list corrected against
+    # observed cluster state (CARC-knowledge-store facts/raw/easley/2026-07-25 —
+    # debug is 1 hour, Easley has no "condo" partition) and the ticket-derived
+    # GPU-partition access path documented.
+    "running-jobs/slurm-intro.md": [
+        ("Key partitions you may have access to:\n\n"
+         "- **general** — The default community partition. Maximum wall time of 2 days. Use this if you are not a member of a specific condo group.\n"
+         "- **debug** — Short jobs only (4-hour limit). Useful for testing scripts before submitting long runs.\n"
+         "- **condo** — Purchased nodes available to specific research groups. If you are a member of a condo group, you likely already know your partition name. Check with your PI if you are unsure.\n"
+         "- **scavenger** - Whenever a purchased/reserved node is not in use, this partition grabs them and allows them to be used by the public, but be warned you will be kicked off if the owner begins a job on it.",
+         "Key partitions on Easley (limits as observed 2026-07-25 — `sinfo` or\n"
+         "`scontrol show partition <name>` always shows the current values):\n\n"
+         "- **general** — The default community partition. Maximum wall time of 2 days.\n"
+         "- **bigmem** — Two large-memory nodes (about 2 TB of RAM each) for jobs that need far more memory than a general node provides. Maximum wall time of 2 days.\n"
+         "- **h100** — GPU nodes with 2× NVIDIA H100 per node. Maximum wall time of 2 days.\n"
+         "- **l40s** — GPU nodes with 4× NVIDIA L40S per node. Maximum wall time of 2 days.\n"
+         "- **interactive** — Interactive sessions of up to 4 hours, scheduled at elevated priority.\n"
+         "- **debug** — Short test jobs only (1-hour limit — note the `1:00:00` in the `sinfo` output above). Useful for checking scripts before submitting long runs.\n"
+         "- **scavenger** — Runs on reserved nodes whenever they sit idle. Open to everyone, but preemptible: your job is killed if the owner submits work.\n"
+         "- **liulab** — A lab-restricted partition (7-day limit) belonging to a specific research group.\n\n"
+         "!!! warning \"GPU partitions are group-gated\"\n\n"
+         "    The `h100` and `l40s` partitions are restricted by group membership.\n"
+         "    Access is provisioned through a ColdFront allocation for the specific\n"
+         "    partition, requested by your project's PI — support cannot simply add\n"
+         "    you to the group on request. If a submission is rejected with\n"
+         "    `uid not in group permitted to use this partition`, see the\n"
+         "    [troubleshooting FAQ](../faq/troubleshooting.md#my-job-wont-start)."),
+        ("- Time limits use the format `D-HH:MM:SS` (e.g., `1-12:00:00` for 1 day and 12 hours) or `MM:SS` / `HH:MM:SS` for shorter jobs.",
+         "- Time limits use the format `D-HH:MM:SS` (e.g., `1-12:00:00` for 1 day and 12 hours) or `MM:SS` / `HH:MM:SS` for shorter jobs.\n"
+         "- If you omit `--time`, you do **not** get the partition maximum: `general` applies a default of 8 hours (`DefaultTime=08:00:00`). Check `scontrol show partition <name>` for the partition you use.\n"
+         "- If you omit `--mem`/`--mem-per-cpu`, memory defaults to an amount proportional to the CPUs you request (`DefMemPerCPU` — observed ≈3.7 GB per CPU on Easley's `general` partition, ≈2.9 GB on Hopper's). A small `--cpus-per-task` therefore caps your memory well below what the node physically has — the usual cause of jobs killed `OUT_OF_MEMORY` on nodes with plenty of free RAM. See [troubleshooting](../faq/troubleshooting.md#my-job-failed-or-was-killed)."),
+    ],
+    # 2026-09-01: plain intel/18–20 modules do exist on Easley
+    # (observed in module avail under /opt/local/modules).
+    "running-jobs/modules.md": [
+        ("Note that there's no plain `intel` module on Easley — `module load intel` fails with \"The following module(s) are unknown.\" Easley's Intel software all lives under the `intel-oneapi-*` family instead (`intel-oneapi-compilers`, `intel-oneapi-mkl`, `intel-oneapi-mpi`, etc.).",
+         "The current Intel toolchain on Easley lives under the `intel-oneapi-*` family (`intel-oneapi-compilers`, `intel-oneapi-mkl`, `intel-oneapi-mpi`, etc.). Older `intel/18.x`–`intel/20.x` compiler modules also remain available for rebuilding legacy software — `module avail intel` shows both families."),
+    ],
+    # 2026-09-01: ticket-derived login-failure guidance (knowledge store,
+    # fix-login-failure-password-reset).
+    "getting-started/password-reset.md": [
+        ("You can also log in with the above link to find other information about your CARC account",
+         "!!! tip \"If the reset doesn't seem to take\"\n\n"
+         "    - \"Forgot password\" needs your **exact CARC username** — confirm it first,\n"
+         "      and [open a ticket](../support/help.md) if you are unsure of your login name.\n"
+         "    - A freshly reset password can fail on the first attempt: Easley and Hopper\n"
+         "      share one authentication backend and the new password can take a little\n"
+         "      while to propagate. Try again shortly — and if needed, simply run the\n"
+         "      reset a second time.\n"
+         "    - If you can log into one cluster but not the other after a reset, SSH to\n"
+         "      the affected cluster *from* the working cluster's login node (e.g.\n"
+         "      `ssh easley` from a Hopper session) as a workaround, and\n"
+         "      [open a ticket](../support/help.md) if direct login keeps failing.\n\n"
+         "You can also log in with the above link to find other information about your CARC account"),
+    ],
+    # 2026-09-01: ticket-derived transfer-hang guidance (knowledge store,
+    # fix-large-rsync-transfer-hangs).
+    "getting-started/transferring-data.md": [
+        ("The `-vhatP` flags instruct rsync to print the progress of the transfer verbosely and in a human-readable format.",
+         "The `-vhatP` flags instruct rsync to print the progress of the transfer verbosely and in a human-readable format.\n\n"
+         "!!! tip \"Large transfer keeps hanging or timing out?\"\n\n"
+         "    A single huge `rsync` that repeatedly stalls usually points to network\n"
+         "    stability on the client side (wireless, VPN, off-campus path) rather than\n"
+         "    a problem at CARC:\n\n"
+         "    - **Chunk the transfer** — loop over subdirectories with separate `rsync`\n"
+         "      calls instead of one massive invocation. Since `rsync` skips files that\n"
+         "      have already arrived, re-running after a failure resumes where it left off.\n"
+         "    - Note whether it dies at the same file each run or at random, your client\n"
+         "      OS, wired vs. wireless, and on- vs. off-campus. Those details make a\n"
+         "      [support ticket](../support/help.md) much faster to resolve — support can\n"
+         "      also try reproducing the transfer to rule out a CARC-side issue.\n"
+         "    - Increase verbosity (`-v`/`-vv`) only on a **small subset** of the data\n"
+         "      while diagnosing, not on the full transfer."),
     ],
 }
 
@@ -519,6 +644,29 @@ LEGACY_FIXES = {
     "software/conda-environments.md": [
         ("environment on Wheeler to run", "environment on Hopper to run"),
         ("log in to Wheeler using `ssh`", "log in to Hopper using `ssh`"),
+        # 2026-09-01 knowledge-store reconciliation: the anaconda3 module is
+        # retired (only miniconda3 exists — observed module avail, both
+        # clusters); base-env limitation and interactive-session guidance from
+        # the ticket-derived python-conda-environment-slurm runbook.
+        ("load the anaconda software module with the command:\n\n`module load anaconda3`",
+         "load the conda software module with the command:\n\n`module load miniconda3`\n\n"
+         "!!! warning \"anaconda3 is retired, and the module only gives you `base`\"\n\n"
+         "    Old scripts that call `module load anaconda3` no longer work — that\n"
+         "    module has been retired; use `miniconda3` instead. Loading the module\n"
+         "    provides only conda's *base* environment, which does **not** include\n"
+         "    numpy, scipy, or other analysis packages: a Python `ModuleNotFoundError`\n"
+         "    right after loading the module means you need to create (and activate)\n"
+         "    your own environment, as shown below."),
+        ("We use `conda` to create new environments and install/upgrade packages within environments.",
+         "Build and test environments from an interactive compute session rather than a\n"
+         "login node — for example `srun --ntasks=1 --cpus-per-task=4 --time=01:00:00 --pty bash`\n"
+         "first ([interactive jobs](../running-jobs/submitting-jobs.md)); package installs are\n"
+         "exactly the kind of heavier work login nodes are not meant for.\n\n"
+         "We use `conda` to create new environments and install/upgrade packages within environments."),
+        ("Remember to include the lines below in your PBS script when working with Anaconda environments:\n\n"
+         "```bash\n# load anaconda software module\nmodule load anaconda3",
+         "Remember to include the lines below in your Slurm batch script when working with conda environments:\n\n"
+         "```bash\n# load conda software module\nmodule load miniconda3"),
     ],
     "software/pytorch.md": [
         ("### SSH in to Xena\nTo connect to the Xena machine,",
@@ -539,6 +687,43 @@ LEGACY_FIXES = {
          "direct your browser to https://hopper.alliance.unm.edu and log in"),
         ("R session running on Wheeler through JupyterHub",
          "R session running on the cluster through JupyterHub"),
+        # 2026-09-01 knowledge-store reconciliation: the r-3.x centos7 Spack
+        # tree is gone; current clusters serve r/4.x Lmod modules (observed
+        # module avail, Hopper 2026-07-25), and anaconda3 is retired.
+        ("module avail r-", "module avail r/"),
+        ("----------------------- /opt/spack/share/spack/modules/linux-centos7-x86_64 ------------------------\n"
+         "   ...\n"
+         "   r-3.4.1-gcc-4.8.5-python2-gzeg24m\n"
+         "   r-3.4.1-gcc-4.8.5-python2-zpkgqap\n"
+         "   r-3.4.1-intel-17.0.4-mkl-python2-67zsm3b\n"
+         "   r-3.4.1-intel-17.0.4-mkl-python2-gygkoab\n"
+         "   r-3.4.2-intel-18.0.2-python2-xsxuxwx\n"
+         "   r-3.4.3-gcc-4.8.5-python2-gk66fni\n"
+         "   r-3.4.3-gcc-4.8.5-python2-qv6gwz6\n"
+         "   r-3.4.3-gcc-6.1.0-python2-lyqiytq\n"
+         "   r-3.4.3-gcc-7.3.0-python2-zhxbajj\n"
+         "   r-3.4.3-intel-18.0.1-python2-3l4dkgz\n"
+         "   r-3.4.3-intel-18.0.1-python2-lr24ix6\n"
+         "   r-3.4.3-intel-18.0.2-python2-q3covk7\n"
+         "   r-3.5.0-gcc-4.8.5-python2-khqxja7\n"
+         "   r-3.5.0-gcc-7.3.0-python2-rvq3qk5\n"
+         "   r-3.5.0-intel-18.0.2-python2-mkl-r6lx6yy\n"
+         "   r-3.5.3-gcc-7.3.0-python2-ziiolp5\n"
+         "   r-3.6.0-gcc-4.8.5-python2-i4uimtp\n"
+         "   r-3.6.0-gcc-7.3.0-python2-7akol5t",
+         "-------------- /opt/spack/share/spack/lmod/linux-rocky8-x86_64/Core --------------\n"
+         "   ...\n"
+         "   r/4.2.0-vq7z\n"
+         "   r/4.2.2-oemu\n"
+         "   r/4.3.0-g353\n"
+         "   r/4.4.0-fyqw\n"
+         "   r/4.4.0-ytj2 (D)"),
+        ("Will load R-3.6.0 that has been compiled with GCC-7.3.0.",
+         "```\nyourusername@hopper$ module load r/4.4.0\n```\n\n"
+         "This will load R 4.4.0 — plain `module load r` loads the cluster's default R version."),
+        ("in your PBS script, but we will get to that later.",
+         "in your Slurm batch script, but we will get to that later."),
+        ("module load anaconda3", "module load miniconda3"),
     ],
     "software/jupyterhub-mpi.md": [
         ("wheeler-sn.alli", "hopper.alli"),
@@ -621,6 +806,9 @@ LEGACY_FIXES = {
         ("There are modules for both Gurobi and R on the wheeler cluster.",
          "There are modules for both Gurobi and R on the CARC clusters."),
         ("username@wheeler-sn:~$", "username@hopper:~$"),
+        # 2026-09-01: the r-3.x centos7 Spack tree is gone; r/4.x Lmod modules
+        # are current (observed module avail, Hopper 2026-07-25).
+        ("module load r-3.6.0-gcc-7.3.0-python2-7akol5t", "module load r"),
     ],
     "software/tensorflow.md": [
         ("benchmarks run on the Xena system at CARC using",
@@ -1074,19 +1262,20 @@ def write_index(section: str, pages_by_dest: dict):
     name, blurb = SECTIONS[section]
     lines = [f"# {name}", "", blurb, ""]
 
-    def entry(fname: str) -> str:
-        p = pages_by_dest[f"{section}/{fname}"]
+    def entry(dest: str) -> str:
+        p = pages_by_dest[dest]
         suffix = " *(legacy)*" if p.status == "deprecated" else ""
-        return f"* [{p.title}]({fname}) - {p.description}{suffix}"
+        href = dest.split("/", 1)[1] if dest.startswith(section + "/") else f"../{dest}"
+        return f"* [{p.title}]({href}) - {p.description}{suffix}"
 
     if section == "software":
-        for group, files in SOFTWARE_GROUPS:
+        for group, files in QUICKBYTE_GROUPS:
             lines += [f"## {group}", ""]
             lines += [entry(f) for f in files]
             lines.append("")
     else:
         ordered = [d for d in pages_by_dest if d.startswith(section + "/")]
-        lines += [entry(d.split("/", 1)[1]) for d in ordered]
+        lines += [entry(d) for d in ordered]
         lines.append("")
     if section == "about":
         lines += ["* [Documentation update log](../log.md) - Chronological history of changes to this documentation bundle.", ""]

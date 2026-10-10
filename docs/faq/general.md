@@ -62,6 +62,21 @@ sources:
     opportunity. See [resource limits](../systems/resource-limits.md) and
     [Slurm accounting](../running-jobs/slurm-accounting.md).
 
+??? question "Do allocations expire? How do I renew?"
+
+    Yes — ColdFront allocations have end dates, and ColdFront emails
+    automated `[coldfront]` notices as they approach: renewal reminders and
+    expiration warnings need action from the PI (or a project manager),
+    while request confirmations ("allocation request submitted", "quota
+    increase request submitted") are informational. Renewals, like new
+    requests, are handled in
+    [ColdFront](https://coldfront.alliance.unm.edu){ target=_blank } —
+    renew before the end date so the resources an allocation grants don't
+    lapse. The
+    [Annual Project Review walkthrough](https://www.youtube.com/watch?v=MGxMfmShVWk){ target=_blank }
+    video covers the yearly review; unsure what a notice means?
+    [Open a ticket](../support/help.md).
+
 ??? question "What if I need more than CARC can provide?"
 
     National platforms are the next step — ACCESS-CI allocations, the
@@ -77,6 +92,32 @@ sources:
     for active job I/O. Quotas and the `quotas` command are covered in
     [resource limits](../systems/resource-limits.md), and the layout in
     [storage and backups](../systems/storage.md).
+
+??? question "Where is my project's scratch space?"
+
+    Easley-local project scratch follows
+    `/easley/scratch/projects/<pi-username>/<pi-username><project-id>`.
+    Center-wide project scratch usually follows
+    `/carc/scratch/projects/<pi-username>/<pi-username><project-id>`, but
+    is **not consistently nested** — some allocations sit directly under
+    `projects/`. If a newly approved allocation's path doesn't exist yet,
+    check its status in
+    [ColdFront](https://coldfront.alliance.unm.edu){ target=_blank } (it may
+    still be provisioning), and [open a ticket](../support/help.md) to get
+    the exact path. See [storage and backups](../systems/storage.md).
+
+??? question "How do I keep data longer than scratch allows?"
+
+    Scratch is sized for active job I/O, not retention — files on
+    Easley-local scratch are auto-deleted after 180 days without access.
+    For data that must persist, ask your PI (or a project **manager** the
+    PI has designated) to request **project storage** in
+    [ColdFront](https://coldfront.alliance.unm.edu){ target=_blank },
+    choosing between the backed-up flavor (protected against loss) and
+    non-backed-up project scratch (larger, unprotected). Estimate your
+    current and projected size first — it's the first thing support will
+    ask. Urgent need that can't wait for approval?
+    [Open a ticket](../support/help.md).
 
 ??? question "Is my data backed up?"
 
@@ -102,10 +143,16 @@ sources:
 
 ??? question "What GPUs are available?"
 
-    Easley has NVIDIA L40S and H100 GPUs, and Hopper has A100s — see the
-    [systems overview](../systems/overview.md). Request GPU partitions in
-    your job script; examples are in
+    Easley has NVIDIA L40S and H100 GPUs, and Hopper has A100s (and some
+    V100s) — see the [systems overview](../systems/overview.md). Request GPU
+    partitions in your job script; examples are in
     [example Slurm scripts](../running-jobs/example-slurm-scripts.md).
+
+    Note that Easley's `h100` and `l40s` partitions are **group-gated**:
+    access comes from an approved ColdFront allocation for the specific
+    partition, requested by your PI. If a submission is rejected with
+    `uid not in group permitted to use this partition`, see
+    [troubleshooting](troubleshooting.md#my-job-wont-start).
 
 ??? question "Can I use CARC from my browser?"
 

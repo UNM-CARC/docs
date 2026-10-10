@@ -25,7 +25,7 @@ sources:
 
 # Video tutorials
 
-All CARC recordings live on the
+All [CARC Video Tutorials](https://www.youtube.com/watch?v=98lCb6A5uu4&list=PLvr5gRBLi7VAzEB_t5aXOLHLfdIu2s1hZ){target=_blank} live on the
 [UNMCARC YouTube channel](https://www.youtube.com/@UNMCARC){target=_blank}.
 The essentials are embedded below, and the most-watched tutorials are also
 embedded directly on their matching guide pages.

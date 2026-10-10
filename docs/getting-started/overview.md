@@ -64,6 +64,11 @@ project, you can use every resource allocated to it.
    through ColdFront.
 3. **Add accounts** — the PI is responsible for adding collaborators' and
    students' accounts to the project.
+4. **Keep allocations current** — allocations have end dates, and ColdFront
+   emails automated renewal reminders and expiration warnings as they
+   approach. Renew in ColdFront (the PI or a designated project manager)
+   before the end date so the resources an allocation grants don't lapse —
+   see the [allocation FAQ](../faq/general.md#cost-and-allocations).
 
 For walkthroughs of project management and the annual review process, see the
 [video tutorials](../training/videos.md).

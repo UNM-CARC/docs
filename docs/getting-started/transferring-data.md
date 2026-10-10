@@ -13,14 +13,14 @@ sources:
     resource: "https://github.com/UNM-CARC/QuickBytes/blob/master/transfer_data.md"
     title: "UNM-CARC QuickBytes: transfer_data.md"
     author: "team:unm-carc"
-    last_modified: "2026-06-22T11:18:55-06:00"
+    last_modified: "2026-08-03T20:10:33-06:00"
 ---
 
 # Transferring data
 
 ### Where is your data?
 
-Your home directory, `/users/your-user-name/`, is shared across all CARC machines, meaning that once your data has been uploaded to your home directory, it is accessible regardless of which machine you are logged in to. Refer to our [CARC Systems documentation page](#) for details on CARC systems.
+Your home directory, `/users/your-user-name/`, is shared across all CARC machines, meaning that once your data has been uploaded to your home directory, it is accessible regardless of which machine you are logged in to.
 
 ### Graphical User Interface (GUI) options
 
@@ -63,6 +63,22 @@ rsync -vhatP your-username@easley.alliance.unm.edu:your-file /target-directory/
 
 The `-vhatP` flags instruct rsync to print the progress of the transfer verbosely and in a human-readable format.
 
+!!! tip "Large transfer keeps hanging or timing out?"
+
+    A single huge `rsync` that repeatedly stalls usually points to network
+    stability on the client side (wireless, VPN, off-campus path) rather than
+    a problem at CARC:
+
+    - **Chunk the transfer** — loop over subdirectories with separate `rsync`
+      calls instead of one massive invocation. Since `rsync` skips files that
+      have already arrived, re-running after a failure resumes where it left off.
+    - Note whether it dies at the same file each run or at random, your client
+      OS, wired vs. wireless, and on- vs. off-campus. Those details make a
+      [support ticket](../support/help.md) much faster to resolve — support can
+      also try reproducing the transfer to rule out a CARC-side issue.
+    - Increase verbosity (`-v`/`-vv`) only on a **small subset** of the data
+      while diagnosing, not on the full transfer.
+
 As you can see, the syntax for these two programs is very similar; however, the options for advanced usage are unique to each one. The examples above cover only basic data transfers — refer to the links provided, or use `man programname` for the CLI options, to optimize each tool for maximum data transfer efficiency and speed.
 
 *This quickbyte was validated on 6/22/2026*
@@ -73,4 +89,4 @@ As you can see, the syntax for these two programs is very similar; however, the 
 
 <iframe class="carc-video" src="https://www.youtube-nocookie.com/embed/2UphEzHOHGM" title="Transferring data" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-<p class="carc-provenance" markdown>Migrated from [UNM-CARC QuickBytes](https://github.com/UNM-CARC/QuickBytes/blob/master/transfer_data.md){target=_blank} (last source update 2026-06-22). Spotted a problem? [Open an issue or pull request](https://github.com/UNM-CARC/QuickBytes){target=_blank}.</p>
+<p class="carc-provenance" markdown>Migrated from [UNM-CARC QuickBytes](https://github.com/UNM-CARC/QuickBytes/blob/master/transfer_data.md){target=_blank} (last source update 2026-08-03). Spotted a problem? [Open an issue or pull request](https://github.com/UNM-CARC/QuickBytes){target=_blank}.</p>

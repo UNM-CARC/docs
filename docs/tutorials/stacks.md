@@ -18,9 +18,9 @@ sources:
 
 # RAD-seq analysis with Stacks
 
-Stacks is a common and [well documented](https://catchenlab.life.illinois.edu/stacks/){target=_blank} pipeline for processing RADseq data. RADseq data is a method of reduced representation genomic sequencing, where genomic DNA is cut up with restriction enzymes, which are then targeted by sequencing adapters. This allows a researcher to get thousands of loci randomly scattered across the genome, which can be sequenced at moderate depths for low prices. This is sufficient for many population genomic analyses, such as tests of population structure, phylogenetics, gene flow, and even coarse attempts to locate regions of the genome that are under selection. Stacks can be run with or without a reference genome, but using a reference genome is reccomended for improved accuracy.
+Stacks is a common and [well documented](https://catchenlab.life.illinois.edu/stacks/){target=_blank} pipeline for processing RADseq data. RADseq data is a method of reduced representation genomic sequencing, where genomic DNA is cut up with restriction enzymes, which are then targeted by sequencing adapters. This allows a researcher to get thousands of loci randomly scattered across the genome, which can be sequenced at moderate depths for low prices. This is sufficient for many population genomic analyses, such as tests of population structure, phylogenetics, gene flow, and even coarse attempts to locate regions of the genome that are under selection. Stacks can be run with or without a reference genome, but using a reference genome is recommended for improved accuracy.
 
-Stacks can easily be run on CARC systems with installed modules, and here we outline how with some simple "quality of life" adjustments and tips. We'll be focused on the reference based method, as the non-reference-based is sufficiently run through a driver script provided by the developers of Stacks (denovo_map.pl). We'll quickly mention it at the end. This can often be run on a single node, as the only intense step tends to be alignment, which is quick due to the small size of RADseq data. For example, a dataset of ~90 bird individuals with an average of 1 million reads/sample took four hours on one node. Organisms with larger genomes will take more time and memory.
+Stacks can easily be run on Easley with installed modules, and here we outline how with some simple "quality of life" adjustments and tips. We'll be focused on the reference based method, as the non-reference-based is sufficiently run through a driver script provided by the developers of Stacks (denovo_map.pl). We'll quickly mention it at the end. This can often be run on a single node on Easley, as the only intense step tends to be alignment, which is quick due to the small size of RADseq data. For example, a dataset of ~90 bird individuals with an average of 1 million reads/sample took four hours on one node. Organisms with larger genomes will take more time and memory.
 
 ## Preliminaries ##
 
@@ -35,7 +35,7 @@ M_americana_NM_MSBBIRD39487
 ......
 ```
 
-Then, key to many pieces of population genetics software, Stacks needs a population map (popmap) for calculating metrics like F<sub>st</sub> and genetic dviersity. It will also allow the creation of certain imput files. It is simply a tab delimited file with one line per individual, with the first column representing the sample name and the second its population. Note that reduced versions of the popmaps can be made for running _gstacks_ and _populations_ for only a subset of your dataset.
+Then, key to many pieces of population genetics software, Stacks needs a population map (popmap) for calculating metrics like F<sub>st</sub> and genetic diversity. It will also allow the creation of certain input files. It is simply a tab delimited file with one line per individual, with the first column representing the sample name and the second its population. Note that reduced versions of the popmaps can be made for running _gstacks_ and _populations_ for only a subset of your dataset.
 
 ```bash
 <SAMPLE NAME>\t<SAMPLE POPULATION>
@@ -46,7 +46,7 @@ M_americana_NewMexico_MSBBIRD39487	WestBlackScoter
 
 ### Demultiplexing with process_radtags ###
 
-Demultiplexing with Stacks is comparatively easy. You just need a file of barcode information (we'll call it BARCODES.file) and your raw, multiplexed reads. The barcode information file can be paired or unapired, and should look like:
+Demultiplexing with Stacks is comparatively easy. You just need a file of barcode information (we'll call it BARCODES.file) and your raw, multiplexed reads. The barcode information file can be paired or unpaired, and should look like:
 
 ```bash
 <BARCODE1>\t<BARCODE2>\t<SAMPLE NAME>
@@ -62,7 +62,7 @@ process_radtags -p /path/to/MULTIPLEXED_READS/ -b /path/to/BARCODES.file -o /pat
 	-i gzfastq -e ndeI -c -q -r -E phred33 
 ```
 
-The command is different for single end reads. You must specify each fastq input indiviually with the -f flag, as shown below. The rest is the same:
+The command is different for single end reads. You must specify each fastq input individually with the -f flag, as shown below. The rest is the same:
 
 ```bash
 process_radtags -f /path/to/MULTIPLEXED_READS/RAW_READS_01.fastq.gz -b /path/to/BARCODES.file -o /path/to/raw_reads/ \
@@ -86,18 +86,30 @@ mkdir stacks_out
 mkdir populations_out
 ```
 
-The modules you need are stacks, bwa, and samtools. All are availible on Conda, but you will almost certainly be running this on a CARC cluster, which has recent versions of all three installed:
+The modules you need are stacks, bwa, and samtools. All are available on Conda, and conda is the recommended way to get all three on both Easley and Hopper:
 
 ```bash
-module load stacks-2.41-gcc-7.4.0-7r6auk7
-module load bwa-0.7.17-intel-18.0.2-7jvpfu2
-module load samtools-1.10-gcc-9.3.0-python3-ikifznw
+module load miniconda3/latest
+conda create -n stacks_env -c bioconda -c conda-forge stacks bwa samtools
+source activate stacks_env
 ```
 
-We'll also set some variables for refering to paths to stuff. We assume that the reference names (ReferenceBaseName):
+On Easley, `stacks` and `bwa` are also available as modules (`samtools` isn't), but the `stacks/2.53-ftxb` module's `gstacks` currently crashes on real input with a zlib-ng/htslib incompatibility, so conda is the reliable option there for now:
 
 ```bash
-src=$PBS_O_WORKDIR
+module load stacks/2.53-ftxb
+module load bwa/0.7.17-zvtr
+module load miniconda3/latest
+conda create -n samtools_env -c bioconda -c conda-forge samtools
+source activate samtools_env
+```
+
+On Hopper, only `samtools` is available as a module (`samtools/1.16.1-3ojn`). `stacks` has no Hopper module at all, and `bwa` is only reachable through an `intel/20.0.4` prerequisite chain under a different version hash, so conda is the simplest way to get all three tools together there too.
+
+We'll also set a few variables for the paths we'll need. We assume the reference name is ReferenceBaseName:
+
+```bash
+src=$SLURM_SUBMIT_DIR
 bwa_ref=$src/ReferenceBaseName
 threads=[number of threads]
 ```
@@ -108,7 +120,7 @@ Next, we need to index our reference:
 bwa index -p $bwa_ref $bwa_ref.fa
 ```
 
-This is the big step, which uses the Burroughs-Wheeler Aligner to align our reads to our reference. Note that this should be able to be done using pipes, but I've had issues with that, so we just remove the files at the end of each loop.
+This is the big step, which uses the Burrows-Wheeler Aligner to align our reads to our reference. Note that this should be able to be done using pipes, but I've had issues with that, so we just remove the files at the end of each loop.
 
 ```bash
 while read indiv
@@ -142,7 +154,7 @@ populations -P $src/stacks_out/ -M $src/popmap -O $src/populations_out/ \
 A quick note, if you want input for RAxML or similar phylogenetic programs, you can get a interleaved phylip file by making a popmap file with each individual having its own population and specifying you want a phylip output. Please note that this is strict phylip format, meaning you want a maximum of 9 letters in your "population" column of the popmap (10 works, but will cause errors when input to certain programs). Also, this assumes you have a directory "populations_individual":
 
 ```bash
-populations -P $src/stacks_out/ -M $src/popmap_individual -O $src/popualtions_individual/ \
+populations -P $src/stacks_out/ -M $src/popmap_individual -O $src/populations_individual/ \
 	-R .75 --phylip-var-all -t $threads
 ```
 
@@ -156,8 +168,8 @@ First, you only need the Stacks module and one new directory (assumes reads are 
 
 ```bash
 mkdir stacks_denovo
-module load stacks-2.41-gcc-7.4.0-7r6auk7
-src=$PBS_O_WORKDIR
+module load stacks/2.53-ftxb
+src=$SLURM_SUBMIT_DIR
 threads=[number of threads]
 ```
 

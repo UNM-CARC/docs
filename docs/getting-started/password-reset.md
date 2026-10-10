@@ -22,6 +22,19 @@ To reset your password, you can use the link [here](https://mokey.alliance.unm.e
 
 After entering your CARC username, you can follow the prompts and reset your password. 
 
+!!! tip "If the reset doesn't seem to take"
+
+    - "Forgot password" needs your **exact CARC username** — confirm it first,
+      and [open a ticket](../support/help.md) if you are unsure of your login name.
+    - A freshly reset password can fail on the first attempt: Easley and Hopper
+      share one authentication backend and the new password can take a little
+      while to propagate. Try again shortly — and if needed, simply run the
+      reset a second time.
+    - If you can log into one cluster but not the other after a reset, SSH to
+      the affected cluster *from* the working cluster's login node (e.g.
+      `ssh easley` from a Hopper session) as a workaround, and
+      [open a ticket](../support/help.md) if direct login keeps failing.
+
 You can also log in with the above link to find other information about your CARC account, see which groups you are a part of, activate two-factor authentication, and add SSH keys to your account.
 
 *This quickbyte was validated on 6/22/2026*

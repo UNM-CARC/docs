@@ -7,6 +7,75 @@
 * **Creation**: Added the [Web archive of the old center websites](about/web-archive.md) (draft): ten browsable snapshots of the HPCERC, AHPCC, Alliance Supercluster, HPC@UNM and first CARC websites (1998–2016), about 820 pages rebuilt from Internet Archive captures by `scripts/build_web_archive.py`. Pages keep their original HTML with an archive banner; links and images point at the local copies, and anything not saved points at the nearest Wayback Machine capture. The history page links to it.
 
 * **Creation**: Added [History of CARC computing](about/history.md) (draft), a sourced record of every supercomputer in the Galles Building machine room from Roadrunner and Los Lobos (1999–2000) through the HPC@UNM machines on the machine-room wall plaques (Pequin, Poblano, Ristra, Hammer, Yenta, Vista Azul, Delphi, Rio Bravo) to Easley. It covers install and retirement dates, manufacturers, grants, peak performance and costs (estimates and unknowns are marked), a timeline, past directors and associate directors, and the PIs who contributed hardware. The plaque photo and 17 logos and photos from Internet Archive snapshots of the old AHPCC, HPCERC, Alliance, HPC@UNM and CARC sites are in `assets/images/history/`; those snapshots also supplied the 1995–1998 IBM SP and SGI Origin machines, the 2000–2007 leadership and the 2008 and 2015 system tables.
+## 2026-09-29
+
+* **Update**: Added static notation for the governing equation, boundary
+  conditions, and uniform-load midpoint deflection in the [Mathematica on
+  Easley](software/mathematica.md) beam example, plus measured Easley scaling
+  results for 128 symbolic calculations.
+* **Update**: Retitled the worked example in [Mathematica on Easley](software/mathematica.md)
+  as "Example: Beam Deflection."
+* **Update**: Published the [Mathematica on Easley](software/mathematica.md)
+  examples as a ZIP archive containing the Slurm scripts, Wolfram Language
+  inputs, and kernel launcher.
+* **Update**: Moved the Mathematica launcher permission check into each Slurm
+  script. The archive setup now only downloads and extracts the ZIP.
+* **Correction**: Restored the `math-kernel.sh` helper to the
+  [Mathematica on Easley](software/mathematica.md) examples. Its process-based
+  license file is required by the Mathematica worker-launch workflow.
+* **Update**: Added the complete `parallel.wl`, `distributed.wl`, and `gpu.wl`
+  sources to [Mathematica on Easley](software/mathematica.md), alongside the
+  existing beam model, Slurm scripts, and downloadable archive.
+* **Update**: Removed the duplicate page table of contents from
+  [QuickByte Tutorials](software/index.md); its expandable sidebar groups are
+  now the single navigation layer.
+* **Update**: Replaced [Mathematica on Easley](software/mathematica.md) with
+  the CARC beam-deflection tutorial and its complete, downloadable example
+  archive: shared license launcher, Wolfram Language inputs, and single-node,
+  multi-node, and GPU Slurm scripts.
+* **Correction**: Restored the confirmed Easley inventory: 9 L40S nodes,
+  providing 36 NVIDIA L40S GPUs (44 GPUs total with the H100 GPUs).
+* **Update**: Split QuickByte Tutorials' programming-environment menu into
+  Conda, JupyterHub, Julia, R, and MATLAB headings. The Conda guide now uses
+  the current Miniconda name rather than the retired Anaconda module name.
+* **Update**: Split the scientific tutorial categories in
+  [QuickByte Tutorials](software/index.md) into Bioinformatics, Chemistry &
+  materials, Computational immunology, and Astronomy in both the sidebar and
+  the contents page.
+* **Update**: Merged the former Software and Tutorials navigation into
+  [QuickByte tutorials](software/index.md). Its scrollable contents page now
+  gives each active domain tutorial a home alongside the software guides.
+* **Creation**: Added [Mathematica on Easley](software/mathematica.md), a
+  curated QuickByte covering interactive, serial, multicore, multinode, GPU,
+  and license-server workflows with Mathematica 15.0.1 and WolframScript.
+* **Update**: Refreshed the [systems overview](systems/overview.md) from
+  Slurm inventory collected on September 29. It distinguishes all nodes from
+  scheduled compute nodes: Easley has 65 total nodes and 4,160 CPU cores
+  (63 scheduled compute nodes, 8 NVIDIA H100 GPUs, 36 NVIDIA L40S GPUs, and
+  22.4 TB of compute-node RAM); Hopper has 68 total nodes and 2,176 CPU cores
+  (67 scheduled compute nodes, 26 NVIDIA A100 GPUs, 2 NVIDIA V100 GPUs, and
+  15.1 TB of compute-node RAM). The page now lists each cluster's
+  heterogeneous node configurations, ConnectX adapters, and switch-fabric
+  capacities.
+* **Update**: Corrected the storage capacities in the
+  [systems overview](systems/overview.md): 385 TB of GPFS scratch, 1.2 PB of
+  BeeGFS working scratch, and 133 TB of NetApp enterprise storage.
+
+## 2026-09-12
+
+* **Update**: Made the Markdown behind every page easier for AI agents to find, following the conventions of the [DUST 2026](https://unm-carc.github.io/dust-2026/about/ai-agents/){target=_blank} site: each rendered page now carries a "View this page as Markdown" button beside the edit and view-source buttons and a "Machine-readable versions" line at the end of the article (Markdown twin, raw source on GitHub, `llms.txt`, `llms-full.txt`); the site footer links `llms.txt`, `llms-full.txt`, and the agent guide; `llms.txt` is now built from the site nav and lists the Markdown twin and raw GitHub source of every page plus the corpus size; `llms-full.txt` and the per-page Markdown mirror have relative links rewritten to absolute URLs; `robots.txt` names the raw-source convention; and the [agent guide](about/ai-agents.md) explains the raw-source fallback for sandboxes that cannot reach carc.unm.edu and warns that `<head>` tags are invisible to text-extracting fetchers. Scripts now share `scripts/okf_common.py`.
+
+## 2026-09-08
+
+* **Update**: Linked [CARC Video Tutorials](training/videos.md) directly to the QuickBytes playlist.
+
+## 2026-09-01
+
+* **Update**: Reconciled the corpus against the [CARC knowledge store](https://git.repo.alliance.unm.edu/CARC/CARC-knowledge-store){target=_blank} — staff-reviewed articles distilled from real support tickets plus cluster state observed directly over SSH on 2026-07-25. Corrected stale facts: [Slurm intro](running-jobs/slurm-intro.md) now lists Easley's real partitions (debug is 1 hour, not 4; there is no Easley `condo` partition) plus the group-gated `h100`/`l40s` GPU partitions and the default time/memory behavior; [resource limits](systems/resource-limits.md) (now curated in-repo) carries observed per-cluster partition tables — the old Hopper table was a hardware generation stale — full storage quotas with file-count limits, and the job time-limit extension policy; [storage and backups](systems/storage.md) (now curated in-repo) documents the real paths (`/carc/scratch`, `/easley/scratch`, `/projects`), the 180-day Easley scratch cleanup, that Hopper has no machine-local scratch, and how to find a project's path; the retired `anaconda3` module was replaced with `miniconda3` across [conda environments](software/conda-environments.md), [getting R](software/getting-r.md), and [deep-learning packages](software/deep-learning-packages.md); [getting R](software/getting-r.md) and [Gurobi with R](software/gurobi-r.md) now show the current `r/4.x` module tree; and [modules](running-jobs/modules.md) no longer claims plain `intel` modules don't exist.
+* **Creation**: Added [CUDA-aware MPI](software/cuda-aware-mpi.md) — passing GPU device pointers directly to MPI and fixing the mixed OpenMPI/UCX environment segfault, distilled from a staff-reviewed, user-confirmed ticket resolution.
+* **Update**: Folded ticket-derived answers into the FAQ and guides: [troubleshooting](faq/troubleshooting.md) covers the `uid not in group permitted to use this partition` rejection and the ColdFront path to GPU-partition access, jobs stuck in `CG`, a full out-of-memory diagnosis (per-job memory enforcement, `DefMemPerCPU` defaults, calibrating with `seff`), Python `ModuleNotFoundError` after loading `miniconda3`, quota surprises (group-ownership accounting, stale warnings), hanging transfers, and password-reset propagation; the [general FAQ](faq/general.md) answers where project scratch lives, how to keep data past scratch retention, GPU-partition gating, and allocation expiration/renewal; [password reset](getting-started/password-reset.md) and [transferring data](getting-started/transferring-data.md) carry the matching tips; [getting started](getting-started/overview.md) tells PIs to keep allocations current.
+
+* **Update**: The [agent guide](about/ai-agents.md) now cross-links the [GPT 101 generative-AI workshop](https://tyson-swetnam.github.io/intro-gpt/){target=_blank} — an OKF v0.2 bundle with the same llms.txt conventions, maintained and taught by CARC.
 
 ## 2026-08-30
 

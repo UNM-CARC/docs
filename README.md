@@ -63,15 +63,24 @@ python scripts/okf_validate.py docs
 
 The deployed site is directly consumable by AI agents:
 
-- `/llms.txt` ([convention](https://llmstxt.org)) — linked outline;
-  `/llms-full.txt` — the full corpus with frontmatter in one file.
+- `/llms.txt` ([convention](https://llmstxt.org)) — linked outline built
+  from the nav in `zensical.toml`; every entry lists the page, its Markdown
+  twin, and its raw GitHub source. `/llms-full.txt` — the full corpus with
+  frontmatter in one file, relative links made absolute.
 - **Markdown mirror**: any page URL + `index.md` returns that page's source
-  with OKF frontmatter (e.g. `/running-jobs/slurm-intro/index.md`).
+  with OKF frontmatter (e.g. `/running-jobs/slurm-intro/index.md`). Every
+  rendered page links it visibly: a "View this page as Markdown" button
+  beside edit/view-source, and a "Machine-readable versions" line at the
+  end of the article (Markdown twin, raw source on GitHub, llms.txt,
+  llms-full.txt). The footer links llms.txt, llms-full.txt, and the guide.
+- **Raw source on GitHub**: `raw.githubusercontent.com/UNM-CARC/docs/main/docs/<path>.md`
+  for sandboxes that can reach github.com but not carc.unm.edu.
 - Rendered pages carry `<link rel="alternate" type="text/markdown">` and
   `okf:*` meta tags (type, status, trust tier, generated-at, stale-after).
 - `robots.txt` advertises all of the above; `docs/about/ai-agents.md` is the
   human/agent-readable guide, and `AGENTS.md` guides coding agents working
-  in this repository.
+  in this repository. The scripts share helpers in `scripts/okf_common.py`
+  and read every site setting from `zensical.toml`.
 
 Regenerate the llms indexes after content changes (CI fails on drift), and
 run the agent-surface step after every build:
@@ -94,7 +103,7 @@ zensical build --clean && python scripts/postbuild_agent_surface.py
 Pushing to `main` on [UNM-CARC/docs](https://github.com/UNM-CARC/docs) runs
 OKF validation, checks the llms.txt indexes for drift, builds the site, adds
 the agent surface, and deploys to GitHub Pages at
-<https://unm-carc.github.io/docs/> via `.github/workflows/docs.yml`. The
+<https://carc.unm.edu/docs/> via `.github/workflows/docs.yml`. The
 workflow enables Pages automatically (`configure-pages` with
 `enablement: true`); if the first deploy fails on permissions, set
 Settings → Pages → Source to "GitHub Actions" once.

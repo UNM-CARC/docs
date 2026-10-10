@@ -135,3 +135,4 @@ hide:
 * [Training](training/index.md) - Workshops, courses, and video tutorials.
 * [Support](support/index.md) - Help tickets, office hours, and acknowledging CARC.
 * [About CARC](about/index.md) - Mission, facilities, partners, and the documentation log.
+* [llms.txt](https://carc.unm.edu/docs/llms.txt) - Linked outline of every page for AI agents, with the Markdown twin and raw GitHub source of each; [llms-full.txt](https://carc.unm.edu/docs/llms-full.txt) is the whole site in one file. Add `index.md` to any page address, or use the "View this page as Markdown" button, for that page's source; see [For AI agents](about/ai-agents.md).

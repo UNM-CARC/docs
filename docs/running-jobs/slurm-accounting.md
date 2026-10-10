@@ -37,10 +37,10 @@ Example:
 ```bash
 [yourUsername@easley ~]$ myaccounts
 ```
-```bash
-User            Account
-yourUsername    systems
-yourUsername    yourIdNumber
+```
+   Account      Description            PI 
+---------- -------------------- ---------- 
+yourIdNumber       yourIdNumber   yourIdNumber
 ```
 
 The account name corresponds to the project ID.
@@ -146,6 +146,6 @@ sacctmgr show account yourIdNumber
 
 ---
 
-*This QuickByte was validated on June 22, 2026.*
+*This QuickByte was validated on July 30, 2026.*
 
 <p class="carc-provenance" markdown>Migrated from [UNM-CARC QuickBytes](https://github.com/UNM-CARC/QuickBytes/blob/master/slurm_accounting.md){target=_blank} (last source update 2026-06-24). Spotted a problem? [Open an issue or pull request](https://github.com/UNM-CARC/QuickBytes){target=_blank}.</p>

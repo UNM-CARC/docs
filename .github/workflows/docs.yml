@@ -4,7 +4,16 @@ on:
   push:
     branches:
       - main
+  # Validation (incl. the llms.txt drift check) and a trial build on PRs,
+  # so problems surface before merge rather than after.
+  pull_request:
   workflow_dispatch:
+    inputs:
+      mode:
+        description: 'plan (dry run) or sync'
+        type: choice
+        options: [plan, sync]
+        default: plan
 
 permissions:
   contents: read
@@ -33,6 +42,7 @@ jobs:
 
   deploy:
     needs: okf-conformance
+    if: github.event_name != 'pull_request'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -54,3 +64,58 @@ jobs:
           path: site
       - uses: actions/deploy-pages@v5
         id: deployment
+
+  # Publish into Cascade CMS at /docs/ on carc.unm.edu. Cascade then delivers
+  # it by SFTP — the only route into that host from GitHub's runners. The sync
+  # tool is the main site's, checked out at a pinned commit; the documentation
+  # keeps its own manifest in Cascade, so neither sync can touch the other's
+  # assets. Manual-only until the cutover finishes, then gated on the
+  # CASCADE_SYNC_ENABLED repository variable. The environment holds
+  # CASCADE_API_KEY — a dedicated service user's key, never a personal one.
+  publish-cascade:
+    needs: okf-conformance
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'push' && github.ref == 'refs/heads/main' && vars.CASCADE_SYNC_ENABLED == 'true')
+    environment: unm-production
+    runs-on: ubuntu-latest
+    concurrency:
+      group: publish-cascade-docs
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7
+        with:
+          repository: UNM-CARC/unm-carc.github.io
+          ref: 5591a3821fc967fbade12b8f9d0c249f9a5026e9
+          path: .sync
+          sparse-checkout: scripts/cascade_sync.py
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: 3.x
+      - run: pip install zensical pyyaml
+      - run: zensical build --clean
+      - run: python scripts/postbuild_agent_surface.py site
+
+      - name: Check the Cascade key is configured
+        id: check
+        env:
+          KEY: ${{ secrets.CASCADE_API_KEY }}
+        run: |
+          if [ -z "$KEY" ]; then
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::CASCADE_API_KEY not set; skipping publish to carc.unm.edu/docs/"
+          else
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Sync the built documentation into Cascade at /docs/
+        if: steps.check.outputs.configured == 'true'
+        env:
+          CASCADE_API_KEY: ${{ secrets.CASCADE_API_KEY }}
+          MODE: ${{ inputs.mode || 'sync' }}
+        run: |
+          set -euo pipefail
+          python .sync/scripts/cascade_sync.py "$MODE" --site site --prefix docs \
+            --exclude objects.inv --publish changed --verify-live
