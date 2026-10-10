@@ -153,22 +153,17 @@ Section listing  /running-jobs/              ->  https://raw.githubusercontent.c
 
 ## About
 
-- [For AI agents](https://unm-carc.github.io/docs/about/ai-agents/): How agents and harnesses should consume this documentation: llms.txt, per-page Markdown with OKF frontmatter, and trust signals.
-- [Contributing to these docs](https://unm-carc.github.io/docs/about/contributing/): How to edit pages, the OKF frontmatter contract, verifying migrated content, and building the site locally.
-- [Facilities description](https://unm-carc.github.io/docs/about/facilities/): Boilerplate facilities description for grant proposals: clusters, storage, networking, and the data center.
-- [History of CARC computing](https://unm-carc.github.io/docs/about/history/): Historical record of the supercomputers in the Galles Building machine room, 1994 to today: machines, funding, processing power, costs, directors, and the PIs who contributed hardware. (draft)
-- [Mission and vision](https://unm-carc.github.io/docs/about/mission/): CARC's vision and mission: leading and growing the computational research community at UNM.
-- [Partner cyberinfrastructure](https://unm-carc.github.io/docs/about/partners/): National and regional platforms CARC users can reach: ACCESS-CI, Jetstream2, CyVerse, and MESA.
-- [Web archive of the old center websites](https://unm-carc.github.io/docs/about/web-archive/): Browsable copies of the HPCERC, AHPCC, Alliance Supercluster, HPC@UNM and early CARC websites, 1998 to 2016, rebuilt from Internet Archive captures with working local links and images. (draft)
 - [Mission and vision](https://carc.unm.edu/docs/about/mission/): CARC's vision and mission: leading and growing the computational research community at UNM. Markdown twin: https://carc.unm.edu/docs/about/mission/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/about/mission.md
 - [Facilities description](https://carc.unm.edu/docs/about/facilities/): Boilerplate facilities description for grant proposals: clusters, storage, networking, and the data center. Markdown twin: https://carc.unm.edu/docs/about/facilities/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/about/facilities.md
+- [History of CARC computing](https://carc.unm.edu/docs/about/history/): Historical record of the supercomputers in the Galles Building machine room, 1994 to today: machines, funding, processing power, costs, directors, and the PIs who contributed hardware. (draft) Markdown twin: https://carc.unm.edu/docs/about/history/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/about/history.md
+- [Web archive of the old center websites](https://carc.unm.edu/docs/about/web-archive/): Browsable copies of the HPCERC, AHPCC, Alliance Supercluster, HPC@UNM and early CARC websites, 1998 to 2016, rebuilt from Internet Archive captures with working local links and images. (draft) Markdown twin: https://carc.unm.edu/docs/about/web-archive/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/about/web-archive.md
 - [Partner cyberinfrastructure](https://carc.unm.edu/docs/about/partners/): National and regional platforms CARC users can reach: ACCESS-CI, Jetstream2, CyVerse, and MESA. Markdown twin: https://carc.unm.edu/docs/about/partners/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/about/partners.md
 - [Contributing to these docs](https://carc.unm.edu/docs/about/contributing/): How to edit pages, the OKF frontmatter contract, verifying migrated content, and building the site locally. Markdown twin: https://carc.unm.edu/docs/about/contributing/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/about/contributing.md
 - [For AI agents](https://carc.unm.edu/docs/about/ai-agents/): How agents and harnesses should consume this documentation: llms.txt, per-page Markdown with OKF frontmatter, raw source on GitHub, trust signals, and what to do if you cannot fetch this site. Markdown twin: https://carc.unm.edu/docs/about/ai-agents/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/about/ai-agents.md
 
 ## Meta
 
-- [Full corpus in one file](https://carc.unm.edu/docs/llms-full.txt): every page's Markdown with frontmatter, links made absolute; about 554 KB, roughly 142,000 tokens. Prefer it over fetching pages one at a time.
+- [Full corpus in one file](https://carc.unm.edu/docs/llms-full.txt): every page's Markdown with frontmatter, links made absolute; about 663 KB, roughly 170,000 tokens. Prefer it over fetching pages one at a time.
 - [Documentation update log](https://carc.unm.edu/docs/log/): dated history of changes to this bundle.
 - [For AI agents](https://carc.unm.edu/docs/about/ai-agents/): endpoints, trust signals, and how to answer questions from this corpus; includes what to do if you cannot fetch this site.
 - [Sitemap](https://carc.unm.edu/docs/sitemap.xml) and [robots.txt](https://carc.unm.edu/docs/robots.txt).
