@@ -314,6 +314,38 @@ ATTR_RE = re.compile(r"""(\s)(href|src|background|action|lowsrc)(\s*=\s*)("[^"]*
 REFRESH_RE = re.compile(r"""(url\s*=\s*)([^"'>;]+)""", re.I)
 BODY_RE = re.compile(r"<body\b[^>]*>", re.I)
 
+CHARSET_RE = re.compile(rb"(<meta\b[^>]*?charset\s*=\s*[\"']?)([\w-]+)", re.I)
+HEAD_RE = re.compile(rb"<head\b[^>]*>", re.I)
+
+
+def to_utf8(data: bytes) -> bytes:
+    """Re-encode an archived page as UTF-8 with LF line endings.
+
+    The 1990s pages are Latin-1 or Windows-1252. Cascade stores HTML as
+    UTF-8 text, so anything else comes back changed and the sync's
+    read-back check fails. Pages that are already UTF-8 keep their bytes.
+    """
+    try:
+        data.decode("utf-8")
+    except UnicodeDecodeError:
+        text = "".join(ch if ch.isascii() else _cp1252(ch) for ch in data.decode("latin-1"))
+        data = text.encode("utf-8")
+        if CHARSET_RE.search(data):
+            data = CHARSET_RE.sub(rb"\1utf-8", data)
+        elif (m := HEAD_RE.search(data)):
+            data = data[:m.end()] + b'<meta charset="utf-8">' + data[m.end():]
+        else:
+            data = b'<meta charset="utf-8">\n' + data
+    return data.replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+
+
+def _cp1252(ch: str) -> str:
+    """Map one Latin-1-decoded character through Windows-1252 where it differs."""
+    try:
+        return ch.encode("latin-1").decode("cp1252")
+    except UnicodeDecodeError:  # 0x81, 0x8d, 0x8f, 0x90, 0x9d are undefined in cp1252
+        return ch
+
 
 # File names too generic to match across folders (Image1.gif, map.gif ...).
 GENERIC_NAME_RE = re.compile(r"(image|img|picture|pic|photo|untitled|map|logo|banner|header|"
@@ -561,7 +593,7 @@ def main() -> int:
         home = next((p for p in era.pages.values() if p.out == "index.html"), None)
         for page in era.pages.values():
             rw = Rewriter(era, page, images, all_pages)
-            data = rw.run()
+            data = to_utf8(rw.run())
             dest = root / page.out
             dest.parent.mkdir(parents=True, exist_ok=True)
             dest.write_bytes(data)
