@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 FINAL//EN"> 
+<HTML>
+<!-- #BeginTemplate "/Templates/computing.dwt" --> 
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<!-- #BeginEditable "doctitle" --> 
+<TITLE>education</TITLE>
+<!-- #EndEditable --> 
+<META NAME="Generator" CONTENT="NetObjects Fusion  3.0.1 for Windows">
+</HEAD>
+<BODY  BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#FF6666" TEXT="#000000" TOPMARGIN=0 LEFTMARGIN=0 MARGINWIDTH=0 MARGINHEIGHT=0>
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">ahpcc.unm.edu/Computing/AHPCC/Documentation/mpich-gm/index.html</code> as captured by the Internet Archive on 4 July 2002. Links to pages that were not saved here go to the Wayback Machine. Icons the Internet Archive did not save were redrawn for this copy and are not originals (hover over one to see). Grey boxes mark images that were never archived. <a style="color:#0b5cad" href="https://web.archive.org/web/20020704001756/http://www.ahpcc.unm.edu:80/Computing/AHPCC/Documentation/mpich-gm/index.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../../../">Web archive index</a></div>
+
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=660>
+  <TR VALIGN="top" ALIGN="left"> 
+    <TD WIDTH=660 HEIGHT =81><IMG id="Banner1" HEIGHT=81 WIDTH=660 SRC="../../../../_img/standin/_not-archived.gif"  BORDER=0  alt=" Education  (image not archived)" title="Image not archived"></TD>
+  </TR>
+</TABLE>
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=657 height="22">
+  <tr valign="top" align="left"> 
+    <td width=666 height =27> 
+      <table id="NavigationBar2" border=0 cellspacing=0 cellpadding=0  width=660 >
+        <tr valign="top" align="left"> 
+          <td width=94><a href="../../../../index.html"><img id="NavigationButton7" height=20 width=94 src="../../../../_img/standin/home_tab.gif"  border=0  alt=" Home  (modern recreation, not an archived original)" title="Modern recreation, not an archived original"></a></td>
+          <td width=94><a href="https://web.archive.org/web/20020704001756/http://www.ahpcc.unm.edu/Intranet/intranet.html"><img id="NavigationButton8" height=20 width=94 src="../../../../_img/Images/Page/Intranet_tab.gif"  border=0  alt=" Inside Us " ></a></td>
+          <td width=94><a href="../../../computing.html"><img id="NavigationButton9" height=20 width=94 src="../../../../_img/standin/computing_tab_hi.gif"  border=0  alt=" Computing  (modern recreation, not an archived original)" title="Modern recreation, not an archived original"></a></td>
+          <td width=94><a href="https://web.archive.org/web/20020704001756/http://www.ahpcc.unm.edu/Computing/help.html"><img src="../../../../_img/Images/Page/Help_Desk_tab.gif" width="94" height="20" border="0"></a></td>
+          <td width=94><a href="https://web.archive.org/web/20020704001756/http://www.ahpcc.unm.edu/Research/index.html"><img id="NavigationButton10" height=20 width=94 src="../../../../_img/Images/Page/Research_tab.gif"  border=0  alt=" Research " ></a></td>
+          <td width=94><a href="https://web.archive.org/web/20020704001756/http://www.ahpcc.unm.edu/Education/education.html"><img id="NavigationButton11" height=20 width=94 src="../../../../_img/Images/Page/Education_tab.gif"  border=0  alt=" Education " ></a></td>
+          <td width=94 height=20><a href="https://web.archive.org/web/20020704001756/http://www.ahpcc.unm.edu/SiteMap/sitemap.html"><img id="NavigationButton12" height=20 width=94 src="../../../../_img/Images/Page/SiteMap_tab.gif"  border=0  alt=" SiteMap " ></a></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</TABLE>
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=660>
+  <TR VALIGN="top" ALIGN="left"> 
+    <TD></TD>
+    <TD WIDTH=655> <!-- #BeginEditable "type%20content%20in%20here" --> *** MPICH-GM 
+      1.2.1 Usage Information ***<br>
+      *** ch_gm version ..4- July 25, 2001***<br>
+      *** Author - tensile@alliance.unm.edu*** 
+      <p>---Description:<br>
+        This is an entirely new ch_gm device written for the MPICH 1.2.1 release 
+        by Patrick Geoffray at <br>
+        Myricom, in close coordination with the systems group at AHPCC. It is 
+        architecturally different from<br>
+        previous implementations of GM devices for MPICH, and is believed to be 
+        both faster and more reliable.</p>
+      <p>---Locations and Compilers:<br>
+        Currently, only Gnu and PGI versions of this MPICH are available. </p>
+      <p> The standard, most-tested version of MPICH-GM will always be installed 
+        in:<br>
+        /usr/parallel/ll/mpich-gm.&lt;compiler&gt; </p>
+      <p> The following information is for those wanting to use specific versions 
+        of the software.</p>
+      <p> For each of the compilers, there is both a highly optimized version 
+        and a version with debugging symbols and no optimization. </p>
+      <p>All versions are in /usr/parallel/ll/&lt;version&gt; </p>
+      <p>GNU Optimized: <br>
+        &lt;version&gt; = mpich-gm.gnu-4<br>
+        GNU Debugging:<br>
+        &lt;version&gt; = mpich-gm.gnu-4g</p>
+      <p>PGI Optimized:<br>
+        &lt;version&gt; = mpich-gm.pgi-4<br>
+        PGI Debugging:<br>
+        &lt;version&gt; = mpich-gm.pgi-4g</p>
+      <p>For example, to use the optimized pgcc version, set:</p>
+      <p>MPIHOME=/usr/parallel/ll/mpich-gm.pgi-4<br>
+        PATH=$MPIHOME/bin:$PATH<br>
+        CC=$MPIHOME/bin/mpicc</p>
+      <p>---Running Programs:<br>
+        There are several specialized options for the ch_gm device which are not 
+        accessible through mpirun; for this reason, we recommend running with: 
+      </p>
+      <p> {gmpiconf or gmpiconf2}<br>
+        $MPIHOME/bin/mpirun.ch_gm &lt;args&gt; &lt;program&gt; &lt;program-args&gt;</p>
+      <p>Important arguments to the ch_gm device follow, along with information 
+        on their functionality.</p>
+      <p>GMPI_EAGER_SIZE=&lt;number of bytes&gt;<br>
+        This sets both the threshold for small messages, and the buffer size for 
+        messages. <br>
+        There are two ways that GM sends packets to another node - Eager(small 
+        packets) and Rendez-vous(large packets). The small packet mode simply 
+        puts the packet on the card and sends it, w/o any negotiation - the receiving 
+        end must buffer the packet if it is not expected. The large packet mode 
+        first buffers the packet, then queries the receiving end - the receiving 
+        end then allocates a buffer for the packet, and signals the sender to 
+        go ahead. By default, the threshold for large packets is set at 16K - 
+        if your application send many small packets, it is more efficient to set 
+        the threshold lower, so that MPICH_GM allocates smaller buffers for these 
+        packets.</p>
+      <p>--gm-recv &lt;mode&gt; {blocking, polling, hybrid}<br>
+        This selects the mode used for all MPI calls which receive messages. Polling 
+        is the default mode, and is the most reliable. You would only want to 
+        change this option if you are running with more than one process per CPU, 
+        in which case the blocking mode will allow other processes to take CPU 
+        time while one waits for communication. </p>
+      <p>-np &lt;number of processors&gt; (This is unneccesary with gmpiconf)</p>
+      <p>--gm-v (Turns on verbose operation)</p>
+      <p><br>
+        Note: Because we are working so closely with Myricom on this release, 
+        bugs in the device code are being addressed with unusual speed. Therefore 
+        we request that you copy all MPI or GM errors to the help desk, along 
+        with your MPIHOME and PBS_NODEFILE.</p>
+      <p><br>
+        ---- gmpiconf usage</p>
+      <p>Before running an mpich-gm program, you must run the &quot;gmpiconf&quot; 
+        program to prepare a process group file for mpich. The standard versions 
+        of gmpiconf are:</p>
+      <p>/usr/local/bin/gmpiconf for one processor per node<br>
+        /usr/local/bin/gmpicnf2 for 2 processors per node</p>
+      <p>However, there may be situations, for example when processes spend a 
+        lot of time waiting on communication, in which you would want to run more 
+        than one process per CPU. In this case, you can use:</p>
+      <p><br>
+        /usr/local/bin/gmpiconf3 for 3 processes per node<br>
+        /usr/local/bin/gmpiconf4 for 4 processes per node</p>
+      <p>In any situation, the command:</p>
+      <p>gmpiconf[n] $PBS_NODEFILE</p>
+      <p>Will work within PBS to prepare your process group file.</p>
+      <p></p>
+      <p>**********************************************************************<br>
+        * Please report errors in this document to: *<br>
+        * <a href="mailto:tensile@alliance.unm.edu">tensile@alliance.unm.edu</a> 
+        *<br>
+        **********************************************************************</p>
+      <p></p>
+      <!-- #EndEditable --></TD>
+  </TR>
+</TABLE>
+<TABLE CELLPADDING=0 CELLSPACING=0 BORDER=0 WIDTH=642>
+  <TR VALIGN="top" ALIGN="left"> 
+    <TD> 
+      <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+        <TR VALIGN="top" ALIGN="left"> 
+          <TD WIDTH=85 HEIGHT =49><IMG SRC="../../../../_img/spacer.gif" WIDTH =85 HEIGHT=1 BORDER=0></TD>
+          <TD></TD>
+        </TR>
+        <TR VALIGN="top" ALIGN="left"> 
+          <TD></TD>
+          <TD NOWRAP> [<A HREF="../../../../index.html">Home</A>] [<A HREF="https://web.archive.org/web/20020704001756/http://www.ahpcc.unm.edu/Intranet/intranet.html">Inside&nbsp;Us</A>] 
+            [<A HREF="../../../computing.html">Computing</A>] 
+            [<A HREF="https://web.archive.org/web/20020704001756/http://www.ahpcc.unm.edu/Research/index.html">Research</A>] 
+            [<A HREF="https://web.archive.org/web/20020704001756/http://www.ahpcc.unm.edu/Education/education.html">Education</A>] 
+            [<A HREF="https://web.archive.org/web/20020704001756/http://www.ahpcc.unm.edu/SiteMap/sitemap.html">SiteMap</A>] 
+          </TD>
+        </TR>
+      </TABLE>
+      <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+        <TR VALIGN="top" ALIGN="left"> 
+          <TD WIDTH=98 HEIGHT =10><IMG SRC="../../../../_img/spacer.gif" WIDTH =98 HEIGHT=1 BORDER=0></TD>
+          <TD WIDTH=399><IMG SRC="../../../../_img/spacer.gif" WIDTH =399 HEIGHT=1 BORDER=0></TD>
+        </TR>
+        <TR VALIGN="top" ALIGN="left"> 
+          <TD></TD>
+          <TD WIDTH=399> 
+            <P ALIGN="CENTER"><FONT SIZE="-1">Please contact our </FONT><A HREF="mailto:webmaster@ahpcc.unm.edu"><FONT SIZE="-1">Webmaster</FONT></A><FONT SIZE="-1"> 
+              with questions or comments. <BR>
+              </FONT><FONT SIZE="-2">© Copyright 2001 Albuquerque High Performance 
+              Computing Center.&nbsp; All rights reserved.</FONT>
+          </TD>
+        </TR>
+      </TABLE>
+    </TD>
+    <TD> 
+      <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=133>
+        <TR VALIGN="top" ALIGN="left"> 
+          <TD WIDTH=53 HEIGHT =47><IMG SRC="../../../../_img/spacer.gif" WIDTH =53 HEIGHT=1 BORDER=0></TD>
+          <TD></TD>
+        </TR>
+        <TR VALIGN="top" ALIGN="left"> 
+          <TD HEIGHT =58></TD>
+          <TD WIDTH=80 ALIGN="left" VALIGN="top"><A HREF="https://web.archive.org/web/20020704001756/http://www.unm.edu/"><IMG id="Picture72" HEIGHT=58 WIDTH=80 SRC="../../../../_img/Images/UNM_Logo_Small.jpg"  BORDER=0 ></A></TD>
+        </TR>
+      </TABLE>
+    </TD>
+  </TR>
+</TABLE>
+</BODY>
+<!-- #EndTemplate -->
+</HTML>

@@ -1,0 +1,700 @@
+<html><!-- #BeginTemplate "/Templates/Computing_Systems_Template.dwt" -->
+<head>
+<!-- #BeginEditable "doctitle" --> <!-- #EndEditable --> 
+<style type="text/css">
+<!--
+-->
+</style>
+<title>AHPCC Computing Systems</title>
+<link rel="stylesheet" href="https://web.archive.org/web/20010128163500cs_/http://ahpcc.unm.edu/Classes/AHPCC.css">
+<SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+       <!--
+
+          NS4 = (document.layers);
+          IE4 = (document.all);
+         ver4 = (NS4 || IE4);   
+        isMac = (navigator.appVersion.indexOf("Mac") != -1);
+       isMenu = (NS4 || (IE4 && !isMac));
+
+       function popUp(){return};
+       function popDown(){return};
+
+       if (!ver4) event = null;
+
+       //-->
+       </SCRIPT>
+<SCRIPT LANGUAGE="JavaScript1.2" TYPE="text/javascript">
+       <!--
+
+       if (isMenu) {
+           menuVersion = 3;
+           
+           menuWidth = 150;
+           childOverlap = 50;
+           childOffset = 5;
+           perCentOver = null;
+           secondsVisible = .5;
+           
+           fntCol = "white";
+           fntSiz = "8";
+           fntBold = true;
+           fntItal = false;
+           fntFam = "Arial,Geneva,sans-serif";
+           
+           backCol = "#4a0239";
+           overCol = "#eaae69";
+           overFnt = "black";
+           
+           borWid = 1;
+           borCol = "white";
+           borSty = "solid";
+           itemPad = 3;
+           
+           imgSrc = "http://www.dhtmlab.com/hiermenus/tri.gif";
+           imgSiz = 10;
+           
+           separator = 1;
+           separatorCol = "white";
+           
+           isFrames = false;      // <-- IMPORTANT for full window
+           navFrLoc = "left";     // <-- display. see below
+           
+           keepHilite = true; 
+           NSfontOver = true;
+           clickStart = false;
+           clickKill = false;
+       }
+
+       //-->
+       </SCRIPT>
+<SCRIPT LANGUAGE="JavaScript1.2" TYPE="text/javascript">
+       <!--
+       if (isMenu) {
+       document.write("<SCRIPT LANGUAGE='JavaScript1.2' SRC="https://web.archive.org/web/20010128163500js_/http://ahpcc.unm.edu/JS/Computing_Systems_Menu.js"><\/SCRIPT>");
+       }
+       //-->
+       </SCRIPT>
+<SCRIPT LANGUAGE="JavaScript1.2" TYPE="text/javascript">
+       <!--
+       if (isMenu) {
+       document.write("<SCRIPT LANGUAGE='JavaScript1.2' SRC="https://web.archive.org/web/20010128163500js_/http://ahpcc.unm.edu/JS/hierMenus.js"><\/SCRIPT>");
+       }
+       //-->
+       </SCRIPT>
+<meta name="AHPCC Computing Systems high performance computing HPC" content="AHPCC Computing Systems">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#660066" vlink="#000000" alink="#CC6633" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">ahpcc.unm.edu/Systems/Documentation/LinuxSupercluster/UsersGuide/index.html</code> as captured by the Internet Archive on 28 January 2001. Links to pages that were not saved here go to the Wayback Machine. Icons the Internet Archive did not save were redrawn for this copy and are not originals (hover over one to see). <a style="color:#0b5cad" href="https://web.archive.org/web/20010128163500/http://www.ahpcc.unm.edu:80/Systems/Documentation/LinuxSupercluster/UsersGuide/index.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../../../">Web archive index</a></div>
+
+<table width="660" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td colspan="5" align="right"> <img src="../../../../_img/Images/Header.jpg" width="660" height="81"><br>
+      <a href="../../../../index.html" onMouseOver="popUp('elMenu1',event)"
+          onMouseOut="popDown('elMenu1')"><img src="../../../../_img/Images/Tabs/Tab_AHPCC.jpg" width="61" height="25" border="0"></a><a href="../../../index.html" onMouseOver="popUp('elMenu2',event)"
+          onMouseOut="popDown('elMenu2')"><img src="../../../../_img/Images/Tabs/Tab_Computing_Systems.jpg" width="130" height="25" border="0"></a><a href="https://web.archive.org/web/20010128163500/http://ahpcc.unm.edu/Knowledge/index.html" onMouseOver="popUp('elMenu3',event)"
+          onMouseOut="popDown('elMenu3')"><img src="../../../../_img/Images/Tabs/Tab_Knowledge_Community.jpg" width="147" height="25" border="0"></a><a href="https://web.archive.org/web/20010128163500/http://ahpcc.unm.edu/Research" onMouseOver="popUp('elMenu4',event)"
+          onMouseOut="popDown('elMenu4')" ><img src="../../../../_img/Images/Tabs/Tab_Research_Activities.jpg" width="125" height="25" border="0"></a><a href="../../../../index.html"><img src="../../../../_img/Images/Tabs/Tab_Search.jpg" width="60" height="25" border="0"></a> 
+    </td>
+  </tr>
+</table>
+<table width="660" border="0" cellspacing="0" cellpadding="0">
+  <tr> 
+    <td rowspan="11" height="275" valign="top" align="left"> 
+      <table width="132" border="1" cellspacing="0" cellpadding="0" align="left">
+        <tr> 
+          <td width="132" height="23"><a href="../RefCard/index.html"><font size="-1"><b>Linux 
+            Supercluster Reference Card</b></font></a> </td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="../../../../NewsPress/index.html">News</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="../../../Allocations/index.html">Accounts-Allocations</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="../../../Hardware/index.html">All 
+            Machines</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="../../../help/index.html">Help 
+            Desk</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="../../index.html">Documentation</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="https://web.archive.org/web/20010128163500/http://ahpcc.unm.edu/EducationTraining/">Training</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font face="Arial, Helvetica, sans-serif" size="-1"><a href="https://web.archive.org/web/20010128163500/http://ahpcc.unm.edu/Research/">Research</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font size="-1"><a href="../../../Downloads/index.html">Downloads</a></font></td>
+        </tr>
+        <tr> 
+          <td width="132" height="23"><font size="-2"><a href="mailto:research@ahpcc.unm.edu,systems@ahpcc.unm.edu,staff@ahpcc.unm.edu"><font size="-1">Ask 
+            Users</font></a></font></td>
+        </tr>
+      </table>
+    </td>
+    <td width="528" rowspan="11" valign="top"><!-- #BeginEditable "Main" --> 
+      <h3 align="center">Linux Supercluster General User Information <a href="https://web.archive.org/web/20010128163500/http://www.ncsa.uiuc.edu/"><img border=0 
+      src="../../../../_img/Images/logos/Alliance.jpg" 
+valign="middle" align="middle" width="69" height="100"></a> </h3>
+      <BLOCKQUOTE> 
+          
+        <P align=left><b>Contents: (The Roadrunner Linux Supercluster is used 
+          as an example throughout the guide.)</b></P>
+        <P align=left><STRONG>1. <A 
+    href="https://web.archive.org/web/20010128163500/http://www.alliance.unm.edu/documentation/UG.html#Access">Access</A><BR>
+          2. <A 
+    href="https://web.archive.org/web/20010128163500/http://www.alliance.unm.edu/documentation/UG.html#Your Account">Your 
+          Account</A><BR>
+          3. <A 
+    href="https://web.archive.org/web/20010128163500/http://www.alliance.unm.edu/documentation/UG.html#Environment">Environment</A></STRONG><BR>
+          <STRONG>4. Software:</STRONG><BR>
+          &nbsp;&nbsp;&nbsp;&nbsp; <A 
+    href="https://web.archive.org/web/20010128163500/http://www.alliance.unm.edu/documentation/UG.html#Compilers">Compilers</A><BR>
+          &nbsp;&nbsp;&nbsp;&nbsp; <A 
+    href="https://web.archive.org/web/20010128163500/http://www.alliance.unm.edu/documentation/UG.html#Programming Tools">Programming 
+          Tools</A><BR>
+          &nbsp;&nbsp;&nbsp;&nbsp; <A 
+    href="https://web.archive.org/web/20010128163500/http://www.alliance.unm.edu/documentation/UG.html#Message Passing">Programming 
+          for MPI</A><BR>
+          &nbsp;&nbsp;&nbsp;&nbsp; <A 
+    href="https://web.archive.org/web/20010128163500/http://www.alliance.unm.edu/documentation/UG.html#Mathematic and Scientific Libraries">Mathematic 
+          and Scientific Libraries</A><BR>
+          <STRONG>5. Running Jobs</STRONG><BR>
+          &nbsp;&nbsp;&nbsp;&nbsp; <A 
+    href="https://web.archive.org/web/20010128163500/http://www.alliance.unm.edu/documentation/UG.html#Selecting MPI Libraries">Selecting 
+          MPI Libraries</A><BR>
+          &nbsp;&nbsp;&nbsp;&nbsp; <A 
+    href="https://web.archive.org/web/20010128163500/http://www.alliance.unm.edu/documentation/UG.html#Compiling">Compiling</A><BR>
+          &nbsp;&nbsp;&nbsp;&nbsp; <A 
+    href="https://web.archive.org/web/20010128163500/http://www.alliance.unm.edu/documentation/UG.html#Running MPI jobs">Running 
+          MPI programs</A><BR>
+          &nbsp;&nbsp;&nbsp;&nbsp; <A 
+    href="https://web.archive.org/web/20010128163500/http://www.alliance.unm.edu/documentation/UG.html#Using the Batch Scheduler">Using 
+          the Batch Scheduler (PBS)</A><BR>
+          &nbsp;&nbsp;&nbsp;&nbsp; <A 
+    href="https://web.archive.org/web/20010128163500/http://www.alliance.unm.edu/documentation/UG.html#Submiting jobs to PBS">Submitting 
+          Jobs to PBS</A><BR>
+          &nbsp;&nbsp;&nbsp;&nbsp; <A 
+    href="https://web.archive.org/web/20010128163500/http://www.alliance.unm.edu/documentation/UG.html#Running Interactive Jobs">Running 
+          Interactive Jobs</A><BR>
+          <b>6. <A 
+    href="https://web.archive.org/web/20010128163500/http://www.alliance.unm.edu/documentation/UG.html#Storage">Storage</A></b><BR>
+          &nbsp;&nbsp;&nbsp;&nbsp; </P>
+      </BLOCKQUOTE>
+      <TABLE border=0 cellPadding=0 cellSpacing=0>
+        <TBODY> 
+        <TR> 
+          <TD bgColor=#000000><SPAN><IMG src="../../../../_img/standin/dot.gif" alt="Modern recreation, not an archived original" title="Modern recreation, not an archived original"></SPAN></TD>
+          <TD> 
+            <H3><A name=Access><STRONG>Access</STRONG></A></H3>
+            <P>The Linux Supercluster is accessed through one machine. This front-end 
+              system, named <STRONG><EM>roadrunner.alliance.unm.edu</EM></STRONG>, 
+              is intended for code development and submitting jobs to the Roadrunner 
+              compute nodes.</P>
+            <P><STRONG>Logging in:<BR>
+              </STRONG>Use a secure login utility such as secure shell (ssh) to 
+              login to the Roadrunner systems.<BR>
+              <FONT 
+      color=#008000 face=Courier>ssh roadrunner.alliance.unm.edu</FONT></P>
+            <P><STRONG>FTP:<BR>
+              </STRONG>Use a secure file transfer utility such as secure copy 
+              (scp) to transfer files to the Roadrunner systems.<BR>
+              <FONT 
+      color=#008000 face=Courier>scp <EM>file</EM> <EM>rr_user</EM>@roadrunner.alliance.unm.edu:<EM>dest_file</EM></FONT> 
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -&gt; uploads a local <EM>file</EM> 
+              to Roadrunner</P>
+            <P>Users can FTP their files from Roadrunner.<FONT color=#008000 
+      face=Courier><BR>
+              &nbsp; </FONT></P>
+          </TD>
+        </TR>
+        <TR> 
+          <TD bgColor=#000000 colSpan=2><SPAN><IMG 
+      src="../../../../_img/standin/dot.gif" alt="Modern recreation, not an archived original" title="Modern recreation, not an archived original"></SPAN></TD>
+        </TR>
+        <TR> 
+          <TD></TD>
+          <TD>&nbsp; </TD>
+        </TR>
+        <TR> 
+          <TD bgColor=#000000><IMG src="../../../../_img/standin/dot.gif" alt="Modern recreation, not an archived original" title="Modern recreation, not an archived original"></TD>
+          <TD> 
+            <H3><A name="Your Account">Your Account</A></H3>
+            <P>You can change your password using the "yppasswd" command. You 
+              will be prompted for your current password in order to change it.<BR>
+              <FONT 
+      color=#008000 face=Courier>yppasswd</FONT></P>
+            <P>Changing your default shell is similar to changing your password. 
+              Use the "ypchsh" command and you will be prompted for your password 
+              and then the new shell you wish to use (including full path - e.g., 
+              /bin/tcsh)<BR>
+              <FONT color=#008000 
+    face=Courier>ypchsh</FONT><BR>
+              &nbsp;</P>
+          </TD>
+        </TR>
+        <TR> 
+          <TD bgColor=#000000 colSpan=2><SPAN><IMG 
+      src="../../../../_img/standin/dot.gif" alt="Modern recreation, not an archived original" title="Modern recreation, not an archived original"></SPAN></TD>
+        </TR>
+        <TR> 
+          <TD></TD>
+          <TD>&nbsp; </TD>
+        </TR>
+        <TR> 
+          <TD bgColor=#000000><SPAN><IMG src="../../../../_img/standin/dot.gif" alt="Modern recreation, not an archived original" title="Modern recreation, not an archived original"></SPAN></TD>
+          <TD> 
+            <H3><A name=Environment>Environment</A></H3>
+            <P><FONT color=#000000>Many environment variables needed for compilers 
+              and libraries are defined in your .cshrc. Users can copy the current 
+              default files from /etc/skel.</FONT> 
+            <UL>
+              <LI><A href="https://web.archive.org/web/20010128163500/http://www.alliance.unm.edu/documentation/cshrc"><FONT 
+        color=#000000>.cshrc</FONT></A> (for Csh and Tcsh users) </LI>
+            </UL>
+            <P>&nbsp;</P>
+          </TD>
+        </TR>
+        <TR> 
+          <TD bgColor=#000000 colSpan=2><SPAN><IMG 
+      src="../../../../_img/standin/dot.gif" alt="Modern recreation, not an archived original" title="Modern recreation, not an archived original"></SPAN></TD>
+        </TR>
+        <TR> 
+          <TD></TD>
+          <TD>&nbsp; </TD>
+        </TR>
+        <TR> 
+          <TD bgColor=#000000><IMG src="../../../../_img/standin/dot.gif" alt="Modern recreation, not an archived original" title="Modern recreation, not an archived original"></TD>
+          <TD> 
+            <H3>Software</H3>
+          </TD>
+        </TR>
+        <TR> 
+          <TD bgColor=#000000 width=1><IMG src="../../../../_img/standin/dot.gif" alt="Modern recreation, not an archived original" title="Modern recreation, not an archived original"></TD>
+          <TD>Roadrunner has a number of compilers (C, C++, Fortran 77/90, and 
+            HPF) including the GNU and Portland Group suite. The tables below 
+            list the specific compiler commands and links to documentation when 
+            available. 
+            <DIV align=center> 
+              <CENTER>
+                <TABLE border=1 width="528">
+                  <TBODY> 
+                  <TR> 
+                    <TD align=middle colSpan=5 width=501><A 
+            name=Compilers><STRONG>Compilers</STRONG></A></TD>
+                  </TR>
+                  <TR> 
+                    <TD align=middle width=85><STRONG>C</STRONG></TD>
+                    <TD align=middle width=85><STRONG>C++</STRONG></TD>
+                    <TD align=middle width=85><STRONG>Fortran77</STRONG></TD>
+                    <TD align=middle width=86><STRONG>Fortran90/95</STRONG></TD>
+                    <TD align=middle width=166><STRONG>High. Perf. Fortran<BR>
+                      (HPF)</STRONG></TD>
+                  </TR>
+                  <TR> 
+                    <TD align=middle width=85><FONT color=#008000>gcc<BR>
+                      <A 
+            href="https://web.archive.org/web/20010128163500/http://www.alliance.unm.edu/documentation/PGI" 
+            target=new>pgcc</A></FONT></TD>
+                    <TD align=middle width=85><FONT color=#008000>g++<BR>
+                      <A 
+            href="https://web.archive.org/web/20010128163500/http://www.alliance.unm.edu/documentation/PGI" 
+            target=new>pgCC</A></FONT></TD>
+                    <TD align=middle width=85><FONT color=#008000>g77<BR>
+                      <A 
+            href="https://web.archive.org/web/20010128163500/http://www.alliance.unm.edu/documentation/PGI" 
+            target=new>pgf77</A></FONT></TD>
+                    <TD align=middle width=86><FONT color=#008000><A 
+            href="https://web.archive.org/web/20010128163500/http://www.alliance.unm.edu/documentation/VAST/vastf90.pdf" 
+            target=new>f90</A><BR>
+                      <A 
+            href="https://web.archive.org/web/20010128163500/http://www.alliance.unm.edu/documentation/PGI" 
+            target=new>pgf90</A></FONT></TD>
+                    <TD align=middle width=166><A 
+            href="https://web.archive.org/web/20010128163500/http://www.alliance.unm.edu/documentation/PGI" 
+            target=new><FONT 
+      color=#008000>pghpf</FONT></A></TD>
+                  </TR>
+                  </TBODY> 
+                </TABLE>
+              </CENTER>
+            </DIV>
+            <P>Included in the Portland Group suite are two useful programming 
+              tools. The source code debugger and performance profiler is documented 
+              in the on-line PGI manual.</P>
+            <DIV align=center> 
+              <CENTER>
+                <TABLE border=1 height=73>
+                  <TBODY> 
+                  <TR> 
+                    <TD align=middle colSpan=2 height=20 width=422><A 
+            name="Programming Tools"><STRONG>Programming Tools</STRONG></A></TD>
+                  </TR>
+                  <TR> 
+                    <TD align=middle height=19 width=222><STRONG>Source Code Debugger</STRONG></TD>
+                    <TD align=middle height=19 width=200><STRONG>Performance Profiler</STRONG></TD>
+                  </TR>
+                  <TR> 
+                    <TD align=middle height=16 width=222><A 
+            href="https://web.archive.org/web/20010128163500/http://www.alliance.unm.edu/documentation/PGI" 
+            target=new>pgdbg</A></TD>
+                    <TD align=middle height=16 width=200><A 
+            href="https://web.archive.org/web/20010128163500/http://www.alliance.unm.edu/documentation/PGI" 
+            target=new>pgprof</A></TD>
+                  </TR>
+                  </TBODY> 
+                </TABLE>
+              </CENTER>
+            </DIV>
+            <P align=left>Compile scripts are available for compiling MPI code. 
+              These scripts automatically link in all MPI libraries and include 
+              files.</P>
+            <DIV align=center> 
+              <CENTER>
+                <TABLE border=1>
+                  <TBODY> 
+                  <TR> 
+                    <TD colSpan=4 width="80%"> 
+                      <P align=center><A name="Message Passing"><FONT 
+            color=#000000><STRONG>Compiling for MPI</STRONG></FONT></A></P>
+                    </TD>
+                  </TR>
+                  <TR> 
+                    <TD align=middle width="20%"><STRONG>C</STRONG></TD>
+                    <TD align=middle width="20%"><STRONG>C++</STRONG></TD>
+                    <TD align=middle width="20%"><STRONG>Fortran77</STRONG></TD>
+                    <TD align=middle width="20%"><STRONG>Fortran90</STRONG></TD>
+                  </TR>
+                  <TR> 
+                    <TD align=middle width="20%"><FONT color=#008000 
+            face=Courier>mpicc</FONT></TD>
+                    <TD align=middle width="20%"><FONT color=#008000 
+            face=Courier>mpiCC</FONT></TD>
+                    <TD align=middle width="20%"><FONT color=#008000 
+            face=Courier>mpif77</FONT></TD>
+                    <TD align=middle width="20%"><FONT color=#008000 
+            face=Courier>mpif90</FONT></TD>
+                  </TR>
+                  </TBODY> 
+                </TABLE>
+              </CENTER>
+            </DIV>
+            <P>&nbsp;</P>
+            <DIV align=center> 
+              <CENTER>
+                <TABLE border=1 width=528>
+                  <TBODY> 
+                  <TR> 
+                    <TD colSpan=3 width=502> 
+                      <P align=center><A 
+            name="Mathematic and Scientific Libraries"><STRONG>Mathematic and 
+                        Scientific Libraries</STRONG></A></P>
+                    </TD>
+                  </TR>
+                  <TR> 
+                    <TD colSpan=3 width=490><STRONG>Linear Algebra</STRONG></TD>
+                  </TR>
+                  <TR> 
+                    <TD width=47>&nbsp;</TD>
+                    <TD width=199>BLAS<BR>
+                      (Basic Linear Algebra Subroutines)</TD>
+                    <TD 
+            width=244><STRONG>/usr/lib/libblas.a<BR>
+                      /usr/pgi/linux86/lib/libblas.a</STRONG>*<BR>
+                      * (for PGI compilers only)</TD>
+                  </TR>
+                  <TR> 
+                    <TD width=47>&nbsp;</TD>
+                    <TD width=199>LAPACK</TD>
+                    <TD 
+            width=244><STRONG>/usr/lib/liblapack.a<BR>
+                      /usr/pgi/linux86/lib/liblapack.a</STRONG>*<BR>
+                      * (for PGI compilers only)</TD>
+                  </TR>
+                  <TR> 
+                    <TD colSpan=3 width=490><STRONG>FFT</STRONG></TD>
+                  </TR>
+                  <TR> 
+                    <TD width=47>&nbsp;</TD>
+                    <TD width=199><A href="https://web.archive.org/web/20010128163500/http://www.fftw.org/doc/" 
+            target=_blank>FFTW</A></TD>
+                    <TD 
+            width=244><STRONG>/usr/local/lib/libfftw_mpi.a</STRONG><BR>
+                      <STRONG>/usr/local/lib/librfftw_mpi.a</STRONG></TD>
+                  </TR>
+                  </TBODY> 
+                </TABLE>
+              </CENTER>
+            </DIV>
+            <P align=center><BR>
+              &nbsp; </P>
+          </TD>
+        </TR>
+        <TR align=middle> 
+          <TD bgColor=#000000 colSpan=2><IMG src="../../../../_img/standin/dot.gif" alt="Modern recreation, not an archived original" title="Modern recreation, not an archived original"></TD>
+        </TR>
+        <TR> 
+          <TD></TD>
+          <TD></TD>
+        </TR>
+        <TR> 
+          <TD></TD>
+          <TD></TD>
+        </TR>
+        <TR> 
+          <TD bgColor=#000000><IMG src="../../../../_img/standin/dot.gif" alt="Modern recreation, not an archived original" title="Modern recreation, not an archived original"></TD>
+          <TD> 
+            <H3>Running Jobs</H3>
+            <H4><A name="Selecting MPI Libraries">Selecting MPI Libraries</A></H4>
+            <P>There are four MPI libraries on the Roadrunner Supercluster, two 
+              using Myrinet (for PGI and GNU compilers) and two using Ethernet 
+              (for PGI and GNU). Select a library by setting the MPIHOME environment 
+              variable. Refer to your .cshrc file for examples.</P>
+            <P>Use the "which" command to verify your compile library. For example, 
+            </P>
+            <P><FONT color=#008000 face=Courier>% which mpicc<BR>
+              /usr/parallel/mpich-eth.gnu/bin/mpicc</FONT><BR>
+              shows that you are using Ethernet with GNU compilers. And, </P>
+            <P><FONT color=#008000 face=Courier>% which mpicc<BR>
+              /usr/parallel/mpich-gm.pgi/bin/mpicc</FONT><BR>
+              shows that you are using Myrinet with PGI compilers.</P>
+            <H4><A name=Compiling>Compiling</A></H4>
+            <P>Compile and link C code with MPI libraries<BR>
+              <FONT color=#008000 
+      face=Courier>% mpicc -o exec [options] filename(s).c</FONT><BR>
+              <BR>
+              Compile and link C++ code with MPI libraries<BR>
+              <FONT color=#008000 face=Courier>% mpiCC -o exec [options] filename(s).C</FONT><BR>
+              <BR>
+              Compile and link Fortran77 code with MPI libraries<BR>
+              <FONT color=#008000 face=Courier>% mpif77 -o exec [options] filename(s).f</FONT><BR>
+              <BR>
+              Compile and link Fortran90 code with MPI libraries <BR>
+              <FONT color=#008000 face=Courier>% mpif90 -o exec [options] filename(s).f90</FONT></P>
+            <P>&nbsp;</P>
+          </TD>
+        </TR>
+        <TR> 
+          <TD bgColor=#000000><IMG src="../../../../_img/standin/dot.gif" alt="Modern recreation, not an archived original" title="Modern recreation, not an archived original"></TD>
+          <TD> 
+            <H4><A name="Running MPI jobs">Running MPI jobs</A></H4>
+            <P>MPI can only be run on the Roadrunner compute nodes through PBS. 
+              You can use the "mpirun" script to run an MPI job. The script has 
+              the following syntax</P>
+            <BLOCKQUOTE> 
+              <P>mpirun -np <EM>n</EM> <EM>full_path</EM>/<EM>executable</EM></P>
+              <BLOCKQUOTE> 
+                <P><STRONG>-np <EM>n</EM></STRONG>&nbsp; - Number of nodes to 
+                  start program on<BR>
+                  <STRONG><EM>full_path</EM>/<EM>executable</EM></STRONG>&nbsp; 
+                  - Executable including full path name</P>
+              </BLOCKQUOTE>
+            </BLOCKQUOTE>
+            <H4><A name="Using the Batch Scheduler">Using the Batch Scheduler</A> 
+              (PBS)</H4>
+            <P>Roadrunner uses the Portable Batch System (PBS) to manage parallel 
+              job scheduling. Users can run batch or interactive jobs on the Roadrunner 
+              Supercluster through PBS. Batch jobs are described in command files 
+              which are submitted to PBS for execution. </P>
+            <DIV align=center> 
+              <CENTER>
+                <TABLE bgColor=#c0c0c0 border=0 width=255>
+                  <TBODY> 
+                  <TR> 
+                    <TD align=middle colSpan=2 width=223> 
+                      <H4>PBS Queue Limits</H4>
+                    </TD>
+                  </TR>
+                  <TR> 
+                    <TD width=186>Maximum Job Length*:</TD>
+                    <TD width=61>6 hours</TD>
+                  </TR>
+                  </TBODY> 
+                </TABLE>
+              </CENTER>
+            </DIV>
+            <P align=center><EM>* Job length can be extended for special requests.<BR>
+              Please contact <A 
+      href="mailto:help@alliance.unm.edu">help@alliance.unm.edu</A> </EM></P>
+            <H4>PBS Command Files</H4>
+            <P>The PBS job command file defines the number of nodes you are requesting 
+              and contains the shell commands you wish to be executed. One or 
+              two processes per node can be started. Some samples are listed below 
+              for a job to run the executable <STRONG><EM>complete_path/test_prog</EM> 
+              </STRONG>on <STRONG><EM>N</EM></STRONG> nodes:&nbsp; </P>
+            <BLOCKQUOTE> 
+              <P><STRONG>For Myrinet jobs (one process per node)</STRONG></P>
+              <PRE>#PBS -l nodes=<EM>N</EM>
+gmpiconf $PBS_NODEFILE
+mpirun <EM>complete_path/test_prog</EM></PRE>
+              <P>For MPI jobs to run using Myrinet, the "gmpiconf" command must 
+                be used to create a configuration file ($HOME/.gmpi/conf). To 
+                run two processes per node, use the <STRONG>gmpiconf2</STRONG> 
+                command and double the number of processes (-np <EM>2*n</EM>) 
+                for the mpirun command as shown below:</P>
+              <P><STRONG>For Myrinet jobs (two processes per node)</STRONG></P>
+              <PRE>#PBS -l nodes=<EM>N</EM>
+gmpiconf2 $PBS_NODEFILE
+mpirun -np <EM>2*N</EM> <EM>complete_path/test_prog</EM></PRE>
+              <P><STRONG>For Ethernet jobs (one process per node)</STRONG></P>
+              <PRE>#PBS -l nodes=<EM>N</EM>
+mpirun <EM>complete_path/test_prog</EM></PRE>
+              <P><STRONG>For Ethernet jobs (two processes per node)</STRONG></P>
+              <PRE>#PBS -l nodes=<EM>N</EM>
+mpirun -np <EM>2*N</EM> <EM>complete_path/test_prog</EM></PRE>
+            </BLOCKQUOTE>
+            <P>The "#PBS -l nodes=<EM>N</EM>" line defines how many nodes are 
+              being requested. The PBS environment variables which are used in 
+              the script above are defined below. These variables are set when 
+              PBS allocates nodes for a user.</P>
+            <BLOCKQUOTE> 
+              <P>Example script (sample.cmd): 32-node Myrinet using two processes 
+                per node:</P>
+              <PRE>#PBS -l nodes=32
+<STRONG><FONT color=#804040>gmpiconf2 $PBS_NODEFILE</FONT></STRONG>
+mpirun <B>-np 64</B> /users/wilson/solve_run.exe</PRE>
+            </BLOCKQUOTE>
+            <BLOCKQUOTE> 
+              <P><STRONG>PBS Environment Variables</STRONG> 
+              <UL>
+                <LI><STRONG>PBS_O_WORKDIR</STRONG> - user's current directory 
+                  when "qsub" command was issued 
+                <LI><STRONG>PBS_NODEFILE</STRONG> - file containing the list of 
+                  nodes the user was allocated </LI>
+              </UL>
+            </BLOCKQUOTE>
+            <P><A name="Submiting jobs to PBS"><STRONG>Submiting jobs to PBS</STRONG></A><BR>
+              <FONT color=#008000 face=Courier>qsub [flags] (script_name) </FONT></P>
+            <BLOCKQUOTE> 
+              <P>Submit a batch job listed in scriptname.pbs file<BR>
+                <FONT 
+        color=#008000 face=Courier>qsub scriptname.pbs </FONT></P>
+            </BLOCKQUOTE>
+            <P><STRONG>Displaying the queue contents and status <BR>
+              </STRONG><FONT 
+      color=#008000 face=Courier>qstat [flags]</FONT></P>
+            <BLOCKQUOTE> 
+              <P>i.e., <FONT color=#008000 face=Courier>qstat -s </FONT>(displays 
+                status and elapsed time of job)</P>
+              <PRE><SMALL><FONT color=#800080>Job ID          Username Queue    Jobname    SessID NDS TSK Memory Time  S Time</FONT><FONT color=#008000>
+--------------- -------- -------- ---------- ------ --- --- ------ ----- - -----
+2534.rr         nestor12 rr       STDIN       23483  16  --    --  06:00 R 01:04
+   Job started on Fri Jul 09 at 15:53
+2554.rr         corona   rr       STDIN       19704   2  --    --  06:00 R 00:44
+   Job started on Fri Jul 09 at 16:14
+2557.rr         corona   rr       STDIN       22012   2  --    --  06:00 R 00:42
+   Job started on Fri Jul 09 at 16:15
+2559.rr         nestor12 rr       alltoall.p    --   64  --    --  06:00 Q   --
+   Not Running: Not enough of the right type of nodes are available
+2560.rr         nestor12 rr       alltoall12    --   64  --    --  06:00 Q   --
+   Not Running: Not enough of the right type of nodes are available</FONT></SMALL></PRE>
+              <UL>
+                <LI><STRONG>Job ID: </STRONG>ID for users' job in queue 
+                <LI><STRONG>Username:</STRONG> job owner 
+                <LI><STRONG>Jobname:</STRONG> name of script submitted to PBS 
+                  or STDIN if user is in an interactive session 
+                <LI><STRONG>NDS:</STRONG> number of nodes allocated 
+                <LI><STRONG>Time:</STRONG> maximum wall clock run time 
+                <LI><STRONG>S (State): </STRONG>R - Running; Q - Waiting in queue; 
+                  E - Job is in error state 
+                <LI><STRONG>Time (last column):</STRONG> job's elapsed time </LI>
+              </UL>
+            </BLOCKQUOTE>
+            <P><STRONG>Remove job from queue<BR>
+              </STRONG><FONT color=#008000 
+      face=Courier>qdel (job_id)</FONT></P>
+            <P>where job_id can be obtained from the queue listing using "qstat".</P>
+            <H4><STRONG>Output and Error files</STRONG></H4>
+            <P>Standard error and output are contained in two files with the names:</P>
+            <BLOCKQUOTE> 
+              <PRE><FONT color=#008000>
+      <EM>Jobname</EM>.<STRONG>e</STRONG><EM>Job_ID</EM>
+      <EM>Jobname</EM>.<STRONG>o</STRONG><EM>Job_ID</EM></FONT></PRE>
+            </BLOCKQUOTE>
+            <P>using the Jobname and Job_ID from your job in the queue.</P>
+            <H4><A name="Running Interactive Jobs">Running Interactive Jobs</A></H4>
+            <P>You can initiate an interactive session on Roadrunner nodes through 
+              PBS. This is the only case where a user has direct access to a compute 
+              node. </P>
+            <P>Initiate an interactive session using <STRONG><EM>n</EM></STRONG> 
+              nodes<BR>
+              <FONT color=#008000 face=Courier>qsub -I -l nodes=n</FONT></P>
+            <P>Once an interactive session is granted, you are placed in your 
+              home directory on one of the nodes you were allocated. Execute the 
+              code as described in MPIRUN section.</P>
+          </TD>
+        </TR>
+        <TR> 
+          <TD bgColor=#000000 colSpan=2><IMG src="../../../../_img/standin/dot.gif" alt="Modern recreation, not an archived original" title="Modern recreation, not an archived original"></TD>
+        </TR>
+        <TR> 
+          <TD></TD>
+          <TD>&nbsp;</TD>
+        </TR>
+        <TR> 
+          <TD bgColor=#000000><IMG src="../../../../_img/standin/dot.gif" alt="Modern recreation, not an archived original" title="Modern recreation, not an archived original"></TD>
+          <TD><A name=Storage></A> 
+            <H3>Storage</H3>
+            <P>Approximately 4 GB of scratch space is available on each Roadrunner 
+              compute node in<EM> <STRONG>/localscratch</STRONG></EM>. </P>
+            <I><B>/localscratch is for TEMPORARY storage only - All files in /localscratch 
+            will be deleted when the job has finished</B></I> 
+            <P>&nbsp;</P>
+          </TD>
+        </TR>
+        <TR> 
+          <TD bgColor=#000000 colSpan=2><IMG src="../../../../_img/standin/dot.gif" alt="Modern recreation, not an archived original" title="Modern recreation, not an archived original"></TD>
+        </TR>
+        <TR> 
+          <TD></TD>
+          <TD></TD>
+        </TR>
+        </TBODY> 
+      </TABLE>
+      <P align=center><EM><SMALL><SMALL>© Copyright 1999, <A 
+href="../../../../index.html" target=_top>Albuquerque High Performance Computing 
+        Center</A></SMALL></SMALL></EM></P>
+      <!-- #EndEditable --></td>
+  </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> </tr>
+  <tr> 
+    <td colspan="2" valign="top"><font size="1" face="Arial, Helvetica, sans-serif"><img src="../../../../_img/Images/Footer.jpg" width="660" height="72" usemap="#Map2" border="0"><map name="Map2"><area shape="rect" coords="573,45,650,61" href="mailto:webmaster@ahpcc.unm.edu"><area shape="rect" coords="496,13,562,60" href="https://web.archive.org/web/20010128163500/http://www.unm.edu/"></map></font></td>
+  </tr>
+  <tr> 
+    <td colspan="2" valign="top"> 
+      <div align="left"> 
+        <table width="660" border="0" cellspacing="0" cellpadding="0">
+          <tr> 
+            <td width="268"><font size="1" face="Arial, Helvetica, sans-serif">The 
+              University of New Mexico<br>
+              <b>Albuquerque High Performance Computing Center</b><br>
+              Galles Building - 1601 Central Avenue, NE<br>
+              Albuquerque, NM 87131<map name="Map"><area shape="RECT" coords="497,11,561,62" href="https://web.archive.org/web/20010128163500/http://www.unm.edu" alt="UNM" title="UNM"></map><br>
+              Phone # 505.277.8249<font color="#FFFFFF">000000</font>Fax # 505.277.8235</font></td>
+            <td width="392" valign="top"> 
+              <div align="right"><font size="1">Last Modified: December 1, 2000</font></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </td>
+  </tr>
+</table>
+</body>
+
+<!-- #EndTemplate --></html>

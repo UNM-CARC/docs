@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p1 release (March 2nd, 1998)
+originally by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Hybrid High-Performance Computing Using Clusters of SMP nodes</TITLE>
+<META NAME="description" CONTENT="Hybrid High-Performance Computing Using Clusters of SMP nodes">
+<META NAME="keywords" CONTENT="nprop">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="https://web.archive.org/web/20010222125512cs_/http://ahpcc.unm.edu/projects/vista-azul/proposal/nprop.css">
+<LINK REL="next" HREF="node7.html">
+<LINK REL="previous" HREF="node5.html">
+<LINK REL="up" HREF="node4.html">
+<LINK REL="next" HREF="node7.html">
+</HEAD>
+<BODY >
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">ahpcc.unm.edu/projects/vista-azul/proposal/node6.html</code> as captured by the Internet Archive on 22 February 2001. Links to pages that were not saved here go to the Wayback Machine. Icons the Internet Archive did not save were redrawn for this copy and are not originals (hover over one to see). <a style="color:#0b5cad" href="https://web.archive.org/web/20010222125512/http://www.ahpcc.unm.edu:80/projects/vista-azul/proposal/node6.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../../">Web archive index</a></div>
+
+<!--Navigation Panel-->
+<A NAME="tex2html115"
+ HREF="node7.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="next (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/next_motif.gif" title="Modern recreation, not an archived original"></A> 
+<A NAME="tex2html113"
+ HREF="node4.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="up (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/up_motif.gif" title="Modern recreation, not an archived original"></A> 
+<A NAME="tex2html107"
+ HREF="node5.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="previous (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/previous_motif.gif" title="Modern recreation, not an archived original"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html116"
+ HREF="node7.html">Visualization Research</A>
+<B> Up:</B> <A NAME="tex2html114"
+ HREF="node4.html">Network, Hybrid Programming, and</A>
+<B> Previous:</B> <A NAME="tex2html108"
+ HREF="node5.html">Network Research</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00031200000000000000">
+Hybrid High-Performance Computing Using Clusters of SMP nodes</A>
+</H3>
+
+<P>
+For the foreseeable future, high-performance computing architectures
+will be based on SMP clusters.  Current examples of such platforms
+include Sun Ultra HPC machines, Compaq AlphaServers with Quadrics
+switches, SGI Origins, and the IBM SP system with SMP nodes. Moreover,
+the Department of Energy's Accelerated Strategic Computing Initiative
+(ASCI) program relies on the success of computational clusters (e.g.,
+Option White, a 512-node IBM SP-2 with 16-way SMP nodes).  While
+methodologies for symmetric multiprocessors and message-passing
+primitives for clusters are well developed, performance concerns
+dictate the use of a hybrid solution.  Our complexity model and
+programming methodology will be based hierarchically upon realistic
+model components for message-passing and for symmetric multiprocessor
+parallel architectures.  The current deployment of teraflops and the
+future development of petaflops systems will certainly require the
+exploitation of similar performance engineering models.
+
+<P>
+The future of high-performance computing relies on the efficient and
+scalable use of clusters with symmetric multiprocessor (SMP) nodes and
+low-latency, high-bandwidth interconnection networks.  Hardware
+benchmark results reveal awesome performance rates for each component;
+however, few applications on SMP clusters ever reach a fraction of
+these peak speeds.  We claim that the two predominant models for
+designing algorithms for shared-memory and for message-passing systems
+that have been extended to SMP clusters actually hinder scalable,
+high-performance applications.  In contrast, our approach, a hybrid,
+hierarchical methodology, is a much closer abstraction of the
+underlying machine and is ideally suited to SMP clusters.
+
+<P>
+Our goal is to validate and refine a core complexity model,
+efficient primitives and libraries, along with the programming environment and
+performance monitoring and analysis tools needed to support the
+effective use of SMP clusters.  Our approach is based on a hybrid
+model that will enable sophisticated users (computational scientists)
+to take full advantage of a system by using an iterative approach for
+refining a high-performance algorithm to discover its optimal
+implementation.  Initially, we will focus on the development and
+prototyping of the complexity model and primitives and initiate work
+on the development of measurement tools.  We will also show how to
+design, implement, analyze, and refine algorithms that take advantage
+of the hybrid programming model and contribute to significant
+speed-ups for real computational science problems.  These will include
+some basic combinatorial support tasks (e.g., searching, sorting, and
+basic graph and multidimensional geometric algorithms) and selected
+numerical computations (e.g., fast transforms).  Our goal of
+supporting high-performance applications will be driven through the
+use of real codes for combinatorics, landscape ecology,
+remotely-sensed image processing, multi-phase fluid flow, and particle
+physics simulation applications.
+
+<P>
+Our project is based on and will benefit from a large number of
+ongoing activities and funded projects at the University of New
+Mexico.  The High Performance Computing, Education and Research Center
+(HPCERC), affiliated with the NSF Partnerships for Advanced
+Computational Infrastructure NCSA, provides an umbrella for
+high-performance computing research activities on campus.  HPCERC has
+on-going research activities in algorithms; computational mechanics,
+physics, and chemistry; image processing; and visualization.  HPCERC
+operates and manages several high-performance computing platforms
+accessible and applicable to our project: the new NSF PACI Alliance /
+University of New Mexico Roadrunner Linux SuperCluster (64
+dual-Pentium II processors, interconnected by Myrinet) and a large
+SP with SMP nodes at the Maui High Performance Computing Center.
+The Department of Computer Science, under an NSF Infrastructure grant,
+has set up a cluster of workstations connected with Myrinet.  These
+clusters will serve as the main platforms for our effort; they can be
+linked to each other through ATM switches and the campus network.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html115"
+ HREF="node7.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="next (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/next_motif.gif" title="Modern recreation, not an archived original"></A> 
+<A NAME="tex2html113"
+ HREF="node4.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="up (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/up_motif.gif" title="Modern recreation, not an archived original"></A> 
+<A NAME="tex2html107"
+ HREF="node5.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="previous (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/previous_motif.gif" title="Modern recreation, not an archived original"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html116"
+ HREF="node7.html">Visualization Research</A>
+<B> Up:</B> <A NAME="tex2html114"
+ HREF="node4.html">Network, Hybrid Programming, and</A>
+<B> Previous:</B> <A NAME="tex2html108"
+ HREF="node5.html">Network Research</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I>Bob Ballance</I>
+<BR><I>1999-12-07</I>
+</ADDRESS>
+</BODY>
+</HTML>

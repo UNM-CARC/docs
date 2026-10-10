@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+   
+<script language="JavaScript">
+<!--
+
+
+
+<!-- This script and many more are available free online at -->
+<!-- The JavaScript Source!! http://javascript.internet.com -->
+<!-- Begin
+function GetTime() {
+var dt = new Date();
+var def = dt.getTimezoneOffset()/60;
+var gmt = (dt.getHours() + def);
+var ending = ":" + IfZero(dt.getMinutes()) + ":" +
+IfZero(dt.getSeconds());
+var haw =check24(((gmt + (24-10)) > 24) ? ((gmt +
+(24-10)) - 24) : (gmt + (24-10)));
+document.clock.Hawaii.value = (IfZero(haw) + ending + " HST");
+setTimeout("GetTime()", 1000);
+}
+function IfZero(num) {
+return ((num <= 9) ? ("0" + num) : num);
+}
+function check24(hour) {
+return (hour >= 24) ? hour - 24 : hour;
+}
+//  End -->
+//-->
+  </script>
+<style type="text/css">
+<!--
+a:hover {  text-decoration: underline; font-weight: bold; color: #003366}
+a:active {  font-weight: bold; text-decoration: none; font-family: Verdana, Arial, Helvetica, sans-serif; color: #003366}
+a:link {  font-weight: bold; text-decoration: none; color: #003366}
+a:visited {  font-weight: bold; text-decoration: none; color: #666699}
+-->
+  </style>
+<meta content="text/html; charset=iso-8859-1"
+ http-equiv="Content-Type">
+<title>HPC@UNM: Condor</title>
+</head>
+<body bgcolor="#ffffff" leftmargin="0" topmargin="0" marginwidth="0"
+ marginheight="0">
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">hpc.unm.edu/computing_resources/systems/docs/condor/index.html</code> as captured by the Internet Archive on 10 March 2004. Links to pages that were not saved here go to the Wayback Machine. <a style="color:#0b5cad" href="https://web.archive.org/web/20040310040055/http://www.hpc.unm.edu:80/computing_resources/systems/docs/condor/index.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../../../">Web archive index</a></div>
+
+<center>
+</center>
+<center>
+  <h2 align="center"><font face="Arial, Helvetica, sans-serif">HPC@UNM Condor 
+    Flock Information</font></h2>
+  <hr width="100%" align="left">
+</center>
+<div align="left"></div>
+<ul>
+  <li> 
+    <h4 align="left"><font face="Arial, Helvetica, sans-serif"><b><a href="condor_jobs.html">Running 
+      Jobs on the HPC@UNM Condor Flock</a></b></font></h4>
+  </li>
+  <li> 
+    <h4 align="left"><font face="Arial, Helvetica, sans-serif"><a href="CondorTutorial.html">Take 
+      the Condor Tutorial</a>&nbsp;</font></h4>
+  </li>
+</ul>
+<hr width="100%" align="left">
+<h3 align="left"><font face="Arial, Helvetica, sans-serif">What is Condor?</font></h3>
+<p align="left"><font face="Arial, Helvetica, sans-serif"> Condor is a job submission 
+  facility that manages and schedules a pool of computing resources in a manner 
+  that focuses on High Throughput Computing (HTC). High Throughput Computing supports 
+  a large amount of processing capacity sustained over a very long period of time. 
+  Condor, in focusing HTC, allows users to submit jobs which are then executed 
+  using idle cycles on machines otherwise not being used. Whenever the load on 
+  the machine exceeds a certain predefined level or the mouse or keyboard is activated, 
+  Condor will remove any processes on that machine and not schedule it further. 
+  Condor programs are linked with checkpoint code that allows them to be unloaded 
+  from one machine and restarted, from where they left off, on another. Probably 
+  the best way to describe how Condor implements HTC is to use the terms "bottom 
+  feeder" or "cycle stealing" system. Condor supports both parallel (MPI/PVM) 
+  as well as serial jobs. </font></p>
+<p align="left"><font face="Arial, Helvetica, sans-serif">The idea behind condor 
+  is to allow users to submit jobs which are then executed using idle cycles on 
+  machines otherwise not being used. These machines are usually assumed to be 
+  "owned" by individuals who have the machines on a local area network. The "owners" 
+  wish to share and pool these machines together to provide in effect a large 
+  computing resource which is made available when the owners are not using the 
+  machines. Thus, whenever the load on the machine exceeds a certain predefined 
+  level or the mouse or keyboard is activated, Condor system will remove any processes 
+  on that machine and not schedule it further. </font></p>
+<h3 align="left"><font face="Arial, Helvetica, sans-serif">Download Condor</font></h3>
+<p align="left"><font face="Arial, Helvetica, sans-serif"> Condor is publicly 
+  available in binary for several different platforms at <a
+ href="https://web.archive.org/web/20040310040055/http://www.cs.wisc.edu/condor">http://www.cs.wisc.edu/condor</a>.</font></p>
+<h3 align="left"><font face="Arial, Helvetica, sans-serif">Projects</font></h3>
+<p align="left"><font face="Arial, Helvetica, sans-serif">"Flocking Pools" Currently, 
+  we have been connecting the HPC@UNM pool with one of the pools at the University 
+  of Wisconsin. Jobs submitted to either pool can run on available resources in 
+  the other pool. The pools are set up so that if a job submitted to one pool 
+  has no available resources and the other pool does, the jobs will migrate to 
+  the second pool. Preemptive criterion have been established so that jobs submitted 
+  to a particular pool from accounts in that pool have preference to run in that 
+  pool over jobs from "outside" pools. For example, if a job is submitted to the 
+  University of Wisconsin's pool and that pool is busy with jobs with accounts 
+  from the HPC@UNM pool, the HPC@UNM jobs are check-pointed and migrated out of 
+  the University of Wisconsin's pool,&nbsp; allowing the newly entered job from 
+  the CS department's pool to run. The check-pointed jobs may then run later on 
+  any available machine of the same architecture when one becomes available.</font></p>
+<h3 align="left"><font face="Arial, Helvetica, sans-serif">Experience with Condor</font></h3>
+<p align="left"><font face="Arial, Helvetica, sans-serif">Condor has been very 
+  reliable and robust and has provided an effective computational service to HPC@UNM 
+  users that complements and supplements our relatively large parallel systems. 
+  Computations that do not require specialized high performance networking capabilities 
+  but run for a long time or represent a large number of jobs are best done on 
+  the Condor pool.</font></p>
+<hr width="100%">
+<ul>
+  <li> 
+    <center>
+      <h3><font face="Arial, Helvetica, sans-serif"><a href="https://web.archive.org/web/20040310040055/http://santafe.hpc.unm.edu/irs/ticket/">Help 
+        Desk</a></font></h3>
+    </center>
+  </li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+
+<meta content="text/html; charset=iso-8859-1"
+ http-equiv="Content-Type">
+<title></title>
+</head>
+<body bgcolor="#ffffff" leftmargin="0" topmargin="0" marginwidth="0"
+ marginheight="0">
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">alliance.unm.edu/computing_resources/systems/docs/condor/requirements.html</code> as captured by the Internet Archive on 6 September 2006. Links to pages that were not saved here go to the Wayback Machine. <a style="color:#0b5cad" href="https://web.archive.org/web/20060906182751/http://www.alliance.unm.edu/computing_resources/systems/docs/condor/requirements.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../../../">Web archive index</a></div>
+
+<h2 align="center"><font face="Arial, Helvetica, sans-serif">Submitting Jobs with 
+  Requirements and Rank</font></h2>
+<center>
+  <hr width="100%">
+</center>
+<center>
+  <ul>
+  </ul>
+</center>
+<p><font face="Arial, Helvetica, sans-serif"> In this section we will learn how 
+  to leverage the flexibility of the ClassAd mechanism to attach sophisticated 
+  requirements and preferences to jobs so that they find the "best possible machine" 
+  to run on. </font></p>
+<p><font face="Arial, Helvetica, sans-serif"> In this examples section, we will 
+  express constraints that users generally desire to give a flavor of Condor's 
+  mechanisms. However, keep in mind that Condor's flexibility lies in the fact 
+  that ClassAds can contain arbitrary expressions: feel free to be creative and 
+  try out expressions of your own! </font></p>
+<hr noshade>
+<p><font face="Arial, Helvetica, sans-serif">First, change into a directory where 
+  we will build and link a job for Condor that we will use in all the following 
+  examples: </font></p>
+<pre><font face="Arial, Helvetica, sans-serif">% cd ~/examples/requirements/common<br></font></pre>
+<p><font face="Arial, Helvetica, sans-serif">Now, let us compile the loop.C program 
+  and link it for Condor: </font></p>
+<pre><font face="Arial, Helvetica, sans-serif">% condor_compile g++ loop.C -o loop.remote<br></font></pre>
+<p><font face="Arial, Helvetica, sans-serif">Now we can look at some specific 
+  examples. </font></p>
+<center>
+  <font face="Arial, Helvetica, sans-serif"><br>
+  </font>
+  <hr width="100%">
+  <center>
+    <p align="left"></p>
+  </center>
+</center>
+<div align="left"> 
+  <h3><font face="Arial, Helvetica, sans-serif">Job 1: Explicitly choosing machines 
+    to run on</font></h3>
+  <p><font face="Arial, Helvetica, sans-serif">First, change into a directory 
+    with an example job: </font></p>
+  <pre><font face="Arial, Helvetica, sans-serif">% cd ~/examples/requirements/example1</font></pre>
+  <p><font face="Arial, Helvetica, sans-serif"> We will now place some constraints 
+    on where the job will run. Users sometimes want their jobs to only run on 
+    specific machines that they choose. Assume that you want your job to run only 
+    on your neighbors' machines. </font></p>
+  <p><font face="Arial, Helvetica, sans-serif"> Load the submit command file <tt>example1.cmd</tt> 
+    into your favorite editor. </font></p>
+  <pre><font face="Arial, Helvetica, sans-serif">% emacs example1.cmd</font></pre>
+  <font face="Arial, Helvetica, sans-serif"> or 
+  <pre>% pico example1.cmd</pre>
+  or 
+  <pre>% vi example1.cmd</pre>
+  </font> 
+  <p><font face="Arial, Helvetica, sans-serif">You will see the following <tt>Requirements</tt> 
+    expression: </font></p>
+  <pre><font face="Arial, Helvetica, sans-serif">Requirements =  Name=="machine_LL.ahpcc.unm.edu" || \</font></pre>
+  <pre><font face="Arial, Helvetica, sans-serif">                Name=="machine_RR.ahpcc.unm.edu"</font></pre>
+  <font face="Arial, Helvetica, sans-serif"><br>
+  <p>(Use <tt>condor_status</tt> to determine the format of the names and the 
+    names of the machines available in the current cluster.)</p>
+  <p>Edit the <tt>Requirements</tt> line and change <tt>machine_LL</tt> and <tt>machine_RR</tt> 
+    to the machine names of your left and right neighbors. </p>
+  <p> Now submit <tt>example1</tt> by typing: </p>
+  <pre>% condor_submit example1.cmd</pre>
+  </font> <font face="Arial, Helvetica, sans-serif"><br>
+  <p> You can view the ClassAd of the submitted job by typing (it will be at the 
+    end of the output because the ClassAd you want to see is the ClassAd of the 
+    last job submitted) </p>
+  <pre>% condor_q -long</pre>
+  </font> <font face="Arial, Helvetica, sans-serif"><br>
+  Find out where your job is running by typing 
+  <pre>% condor_status -run</pre>
+  </font> <font face="Arial, Helvetica, sans-serif"><br>
+  and viewing the entry where your username is listed as the <tt>RemoteUser</tt> 
+  of a machine. </font>
+  <hr noshade>
+  <h3><font face="Arial, Helvetica, sans-serif">Example 2: Qualitatively choosing 
+    machines</font></h3>
+  <p><font face="Arial, Helvetica, sans-serif">First, change into a directory 
+    with an example job: </font></p>
+  <pre><font face="Arial, Helvetica, sans-serif">% cd ~/examples/requirements/example2</font></pre>
+  <font face="Arial, Helvetica, sans-serif"><br>
+  <p> In this exercise, we will choose machines to run on not by their names, 
+    but by their attributes. </p>
+  <p>View the contents of the <tt>example2a</tt> submit command file. </p>
+  <pre>% cat example2a.cmd</pre>
+  </font> <font face="Arial, Helvetica, sans-serif"><br>
+  <p> The requirements expression asks for any machine with more than 32Mb of 
+    physical memory and more than 100 Mb of virtual memory. Notice that (RAM) 
+    memory is measured in megabytes and virtual memory is measured in kilobytes. 
+  </p>
+  <p>Submit this example by typing: </p>
+  <pre>% condor_submit example2a.cmd</pre>
+  </font> <font face="Arial, Helvetica, sans-serif"><br>
+  <p>You can find the machine your job runs on by typing: </p>
+  <pre>% condor_status -run</pre>
+  </font> <font face="Arial, Helvetica, sans-serif"><br>
+  If you find that your job is running on machine_XX, type 
+  <pre>% condor_status -long machine_XX</pre>
+  </font> <font face="Arial, Helvetica, sans-serif"><br>
+  and view the ClassAd of machine_XX to verify that it does indeed satisfy the 
+  job's constraints. 
+  <p>Similarly, <tt>example2b</tt> (in the same directory), asks for machines 
+    which have a certain MIPS (Million Instructions Per Second) and KFLOPS (Kilo 
+    Floating point Operations Per Second) rating. Feel free to edit the command 
+    file and edit the expression to include other criteria, and submit it by typing: 
+  </p>
+  <pre>% condor_submit example2b.cmd</pre>
+  </font> <font face="Arial, Helvetica, sans-serif"><br>
+  If you'd like, use <tt>condor_status</tt> to find the machine your job is running 
+  on and view the ClassAd of the machine. </font>
+  <hr noshade>
+  <h3><font face="Arial, Helvetica, sans-serif">Example 3: Weighted preferences</font></h3>
+  <p><font face="Arial, Helvetica, sans-serif">First, change into a directory 
+    with an example job: </font></p>
+  <pre><font face="Arial, Helvetica, sans-serif">% cd ~/examples/requirements/example3</font></pre>
+  <font face="Arial, Helvetica, sans-serif"><br>
+  The flexibility of the <tt>Rank</tt> mechanism allows submitters to specify 
+  arbitrary values over machines. For example, they can place weights on machine 
+  attributes as in <tt>example3</tt>. Let us look at the submit file: 
+  <pre>% cat example3.cmd</pre>
+  </font> <font face="Arial, Helvetica, sans-serif"><br>
+  <p>Notice the Rank expression: </p>
+  <pre>Rank = ( Memory&gt;=32 ) * \</pre>
+  </font> <font face="Arial, Helvetica, sans-serif"><br>
+  <pre>       ( 10*Mips + 2*KFlops + 100*Memory + 8*VirtualMemory )</pre>
+  </font> <font face="Arial, Helvetica, sans-serif"><br>
+  The <tt>Rank</tt> expression states that all machines will less than 32 Mb of 
+  memory are weighted equally (at zero), and machines with 32 Mb or more memory 
+  are weighted according to their Mips, KFlops, Memory and VirtualMemory. 
+  <p>Submit this example by typing: </p>
+  <pre>% condor_submit example3.cmd</pre>
+  </font> <font face="Arial, Helvetica, sans-serif"><br>
+  and find the machine which is running your job with: 
+  <pre>% condor_status -run</pre>
+  </font> <font face="Arial, Helvetica, sans-serif"><br>
+  </font>
+  <hr noshade>
+  <p><font face="Arial, Helvetica, sans-serif">That's it, we're done! </font></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>UNM-HPCERC: Computer Policies- GnuPG</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF">
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">hpc.unm.edu/computing/security/gnupg.html</code> as captured by the Internet Archive on 25 July 2003. Links to pages that were not saved here go to the Wayback Machine. <a style="color:#0b5cad" href="https://web.archive.org/web/20030725190549/http://www.hpc.unm.edu:80/computing/security/gnupg.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../">Web archive index</a></div>
+
+<h1>GnuPG in a Tiny Nutshell </h1>
+<p> by Dave Worth (cesium@hpc.unm.edu)</p>
+<p>&nbsp;</p>
+<p>First note, for the real details that I may gloss over %man gpg </p>
+<p>Target Audience: Those unfamilar with PGP/GPG or only familar with PGP 2.6.x 
+</p>
+<p>GPG is a free, opensource implementation of the OpenPGP standard, and is thus 
+  cool. It generates big keys and has a very friendly interface unlike bits of 
+  PGP. </p>
+<p> 1. Get GPG or use a machine which has it. <br>
+  2. This is actually a personal decision and one probably based on where you 
+  plan on checking your mail. Truchas have gpg version 1.0.1 and if you check 
+  your mail there it's not such a bad idea to generate your key there. If you 
+  fetchmail your mail locally then you probably want gpg locally. The source is 
+  available from It's in the FreeBSD ports tree. </p>
+<p> 3. To generate a key just run %gpg --gen-key and follow the instructions. 
+</p>
+<blockquote>
+  <p> 1.Choose a key type, DSA and ElGamal (default) are generally appropriate. 
+  </p>
+  <p> 2.Choose a key size, the minimum should be 1024, 2048 is better. (1024 is 
+    default) </p>
+  <p> 3.Choose a key expiration. This is up to you and for general purpose, non-super-secret 
+    uses never is fine. Though in more<br>
+    important circumstances expiring keys can be useful. </p>
+  <p> 4.When asked give gpg your real name, your email address, you can generally 
+    give the comment field a miss. </p>
+  <p> 5.When prompted choose a passphrase, make it long enough to be secure, but 
+    make sure you remember it... numbers, letters,<br>
+    symbols, etc... the usual password stuff. </p>
+  <p> GPG will now begin to generate the actual key, it will say: </p>
+  <p> &quot;We need to generate a lot of random bytes. It is a good idea to perform 
+    some other action (type on the keyboard, move the mouse, utilize the disks) 
+    during the prime generation; this gives the random number generator a better 
+    chance to gain enough entropy.&quot; </p>
+  <p> Do that, give it something to generate entropy... It may ask for more bytes, 
+    do more stuff... it did this 3 times on truchas for me. </p>
+</blockquote>
+<p> 4. Generate a revocation key by running %gpg --gen-revoke and follow instructions. 
+  It will ask for your passphrase... Print out the generated revocation key and 
+  keep it safe somewhere. </p>
+<p> 5. Export your ascii armored public key. The term ascii armor is key in GPG 
+  land... If you do not ascii armor all output from GPG is binary, which is sometimes 
+  not so helpful (and harder to include in the body of an email message). To export 
+  your key run %gpg --armor --export &quot;&lt;real name&gt;&quot;. Copy the output 
+  and put it in your .plan in your home directory, and mail it systems. </p>
+<ul>
+  <li>List all of the keys in your keyring run %gpg --list-keys </li>
+  <li>To list a small subset of keys in your keyring then you may follow list 
+    keys by the first few characters (taken case-insensitively) of their &quot;real 
+    name&quot; thus to find all the people who's keys you have whose first name 
+    starts with a ''d'' just run %gpg --list-keys d </li>
+  <li>To sign a file run %gpg --clearsign &lt;filename&gt; Note: %gpg --sign &lt;filename&gt; 
+    will make the output binary and less useful </li>
+  <li>To verify a signature run %gpg --verify &lt;filename&gt; The owner of the 
+    signature's public key must be in your keyring for this to work. </li>
+  <li>To encrypt a file run %gpg --encrypt &lt;filename&gt; </li>
+  <li>To sign an encrypt run %gpg --sign --encrypt &lt;filename&gt; or for fun 
+    %gpg -se &lt;filename&gt; You will be asked for the name of the person you 
+    are encrypting to... </li>
+  <li>To decrypt a file run %gpg --decrypt &lt;filename&gt; </li>
+</ul>
+</body>
+</html>

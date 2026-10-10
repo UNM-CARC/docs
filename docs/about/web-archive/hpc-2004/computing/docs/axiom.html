@@ -1,0 +1,129 @@
+<html>
+<head>
+<title>UNM-HPCERC: Axiom</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF">
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">hpc.unm.edu/computing/docs/axiom.html</code> as captured by the Internet Archive on 25 July 2003. Links to pages that were not saved here go to the Wayback Machine. <a style="color:#0b5cad" href="https://web.archive.org/web/20030725183544/http://www.hpc.unm.edu:80/computing/docs/axiom.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../">Web archive index</a></div>
+
+<p> 
+
+    <b><i><font size=+2>AXIOM, </font></i><font size=+2>the computer algebra system</font></b> 
+
+</p>
+<p><br>
+<p><b><font size=+1>Table of Contents</font></b></p>
+<ul>
+  <li> <b><a href="#Description">Description</a></b> </li>
+  <li><b><a href="#Doc">Documentation</a></b> </li>
+  <li><a href="#localInfo"><b><i>AXIOM</i> </b></a>at the High Performance Computing, 
+    Education and Resehpcerch Center<br>
+    <br>
+  </li>
+</ul>
+<hr align=LEFT>
+<a name="Description"></a><b><font size=+1>Description</font></b>
+<p></p>
+<p><a href="https://web.archive.org/web/20030725183544/http://www.nag.co.uk:70/symbolic/AX.html"><i>AXIOM</i></a> is a computer 
+  algebra system (a.k.a. symbolic manipulator) which evolved out of <i>IBM</i>'s 
+  <i>SCRATCHPAD II</i> and is currently owned by <i><a href=
+
+"https://web.archive.org/web/20030725183544/http://www.nag.co.uk:70/">NAG</a></i> (Numerical Algorithm Group). <i><a
+
+href="https://web.archive.org/web/20030725183544/http://www.nag.co.uk:70/symbolic/AX.html">AXIOM</a></i> is the only general 
+  purpose computer algebra system which is truly object oriented and in which 
+  object types are well defined and integrated; this allows for reusable code 
+  and relatively bug free development but sometimes trips novice users. <i><a href="https://web.archive.org/web/20030725183544/http://www.nag.co.uk:70/symbolic/AX.html">AXIOM</a></i>'s 
+  ability to run in compiled mode also makes it particularly suitable for large 
+  problems. <br>
+  <br>
+<hr align=LEFT>
+<a name="Doc"></a><b><font size=+1>Documentation</font></b>
+<p></p>
+<p><a href="https://web.archive.org/web/20030725183544/http://www.nag.co.uk:70/symbolic/AX.html"><i>AXIOM</i></a> has excellent 
+  on-line hypertex documentation which contains most of what is found in the main 
+  reference book and more, and through which the source code can be accessed. 
+  The main reference book is <br>
+  <i>Jenks, R. D., Sutor, R. S. (1992); <b>AXIOM: the Scientific Computation System; 
+  </b>New York, NY, USA: Springer-Verlag. <br>
+  </i>which is available in bookstores or by phoning 1-800-springe with your credit 
+  card in hand. <br>
+  <br>
+  Also check out <i><a href="https://web.archive.org/web/20030725183544/http://www.nag.co.uk:70/symbolic/AX.html">AXIOM</a></i>'s 
+  home page. <br>
+  <br>
+<hr align=LEFT>
+<p></p>
+<p><a name="localInfo"></a><b><i><font size=+1>AXIOM</font></i></b><font
+
+ size=+1> at the High Performance Computing, Education and Resehpcerch Center</font></p>
+<p> The following documentation is somewhat outdated. For example, you may see 
+  references to the no longer available machine <tt>zia.hpcerc.unm.edu</tt>. <br>
+  <br>
+  Besides the ASCII version of the following file, the directory <tt>/usr/local/axiom_hpcerc</tt> 
+  contains a lot of goodies, including a script <tt>xon_hpcerc</tt> which allows 
+  running remotely utilities (related or not to AXIOM) very conveniently. <br>
+</p>
+<p><a href="#README"><tt>/usr/local/axiom_hpcerc/README (html formatted)</tt></a></p>
+<p>
+<hr align=LEFT>
+<p></p>
+<p><a name="README"></a><b><tt>/usr/local/axiom_hpcerc/README</tt></b></p>
+<p>Axiom at the HPCERC: <br>
+  You essentially have 3 options:</p>
+<ul>
+  <li>OPTION 1 (less convenient, less pretty, more robust): 
+    <ul>
+      <li><tt>xhost +</tt> on your local console/terminal 
+      <li><tt>rlogin </tt>onto acoma, taos or zia and in some window there: <br>
+        make sure that you have the substance of /usr/local/axiom_hpcerc/cshrc_for_axiom 
+        in your HPCERC .cshrc file (otherwise source it). 
+      <li><tt>setenv DISPLAY &quot;your local console DISPLAY location&quot;</tt> 
+        (if you do not know what it is, echo <tt>$DISPLAY</tt> on your local console; 
+        you should get something like cutemachinename.unm.edu:0.0 or about 10 
+        numbers with periods sprinkled around). 
+      <li><tt>axiom </tt> 
+    </ul>
+  <li>OPTION 2 (more convenient, more pretty, less robust): 
+    <ul>
+      <li><tt>xhost +</tt> on your local console/terminal 
+      <li><tt>rlogin</tt> onto ANY machine at the HPCERC make sure that you have 
+        the substance of /usr/local/axiom_hpcerc/cshrc_for_axiom in your HPCERC 
+        .cshrc file (otherwise source it). 
+      <li><tt>setenv DISPLAY</tt> &quot;your local console DISPLAY location&quot; 
+        (if you do not know what it is, echo <tt>$DISPLAY</tt> on your local console) 
+        <br>
+        If you are at the HPCERC and use a .rhosts file, all the previous steps 
+        are superfluous (except the .cshrc one, of course, which is a one time 
+        deal). 
+      <li><tt>doaxiom</tt> (prettier) or <tt>doaxiom x </tt>(more robust) or any 
+        other variations (see /usr/local/axiom_hpcerc/bin/doaxiom_hpcerc for details) 
+    </ul>
+  <li>OPTION 3 (more convenient still) 
+    <ul>
+      <li>Install /usr/local/axiom_hpcerc/bin/xon_hpcerc in your REMOTE bin directory. 
+        Make sure that it has execute permission (ls -l ~/bin); if not cd ~/bin; 
+        chmod u+x xon_hpcerc). 
+      <li>At the HPCERC, make sure that the machine names and your user name as 
+        it is at the remote location are in the file .rhosts, and that it has 
+        universal read permission (<tt>chmod a+r ~/.rhosts</tt>) xon_hpcerc anyMachineAtThehpcerc.hpcerc.unm.edu 
+        <br>
+        with, maybe, additional options toggled (see /use/local/axiom_hpcerc/bin/xon_hpcerc) 
+        <br>
+        This is very convenient (especially if aliased) to run ANYTHING at the 
+        HPCERC (or anywhere except on your local system). 
+      <li>An xterm window with all environment variables set properly will appear 
+        (see CAVEAT in xon_hpcerc's source code). 
+    </ul>
+</ul>
+<p>In that window: make sure that you have the substance of /usr/local/axiom_hpcerc/cshrc_for_axiom 
+  in your hpcerc .cshrc file (otherwise source it). <br>
+  <tt>doaxiom</tt> (or its variations; see above). <br>
+  <br>
+  <font color="#ff0000">WARNING: </font>If you get a login prompt in the Axiom 
+  window, kill the window or the Axiom job; if things only look funny (you get 
+  A with two dots on top when asking for 1/2 for example) issue &quot;) se ou 
+  ch plain&quot; at the Axiom prompt.</p>
+</body>
+</html>

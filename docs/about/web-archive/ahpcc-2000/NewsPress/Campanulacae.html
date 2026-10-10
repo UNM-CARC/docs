@@ -1,0 +1,174 @@
+ 
+<html>
+<!-- #BeginTemplate "/Templates/News&Press_Template.dwt" --> 
+<head>
+<!-- #BeginEditable "doctitle" --> <!-- #EndEditable --> 
+<style type="text/css">
+<!--
+-->
+</style>
+<title>AHPCC News &amp; Press</title>
+<link rel="stylesheet" href="https://web.archive.org/web/20010201171800cs_/http://ahpcc.unm.edu/Classes/AHPCC.css">
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#660066" vlink="#000000" alink="#CC6633" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">ahpcc.unm.edu/NewsPress/Campanulacae.html</code> as captured by the Internet Archive on 1 February 2001. Links to pages that were not saved here go to the Wayback Machine. <a style="color:#0b5cad" href="https://web.archive.org/web/20010201171800/http://www.ahpcc.unm.edu:80/NewsPress/Campanulacae.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../">Web archive index</a></div>
+
+<table width="660" border="0">
+  <tr ALIGN="RIGHT"> 
+    <td colspan="5"> <img src="../_img/Images/Header.jpg" width="660" height="81"><br>
+      <a href="../index.html" onMouseOver="popUp('elMenu1',event)"
+          onMouseOut="popDown('elMenu1')"><img src="../_img/Images/Tabs/Tab_AHPCC.jpg" width="61" height="25" border="0"></a><a href="../Systems/index.html" onMouseOver="popUp('elMenu2',event)"
+          onMouseOut="popDown('elMenu2')"><img src="../_img/Images/Tabs/Tab_Computing_Systems.jpg" width="130" height="25" border="0"></a><a href="https://web.archive.org/web/20010201171800/http://ahpcc.unm.edu/Knowledge/index.html" onMouseOver="popUp('elMenu3',event)"
+          onMouseOut="popDown('elMenu3')"><img src="../_img/Images/Tabs/Tab_Knowledge_Community.jpg" width="147" height="25" border="0"></a><a href="https://web.archive.org/web/20010201171800/http://ahpcc.unm.edu/Research" onMouseOver="popUp('elMenu4',event)"
+          onMouseOut="popDown('elMenu4')" ><img src="../_img/Images/Tabs/Tab_Research_Activities.jpg" width="125" height="25" border="0"></a><a href="../index.html"><img src="../_img/Images/Tabs/Tab_Search.jpg" width="60" height="25" border="0"></a> 
+    </td>
+  </tr>
+</table>
+<!-- #BeginEditable "main" --><b>October 23, 2000 </b> 
+<h2 align="center">Campanulacae Runs in a RECORD time of<br>
+  6138 seconds ~= 1 hour 43 minutes</h2>
+<p> The &quot;holy grail&quot; of biology is to understand the miracle of life, 
+  which can be studied through the myriad of species now living in our planet's 
+  seas, land, and sky. A key to this understanding is determining the &quot;tree 
+  of life&quot; (called a phylogeny), that represents the evolutionary process 
+  from the start of life itself to the present day species found all around us. 
+  In a phylogeny, known species are placed at the leaves of the tree, while ancestry 
+  (extinct) species are conjectured where branches split in the tree. This process 
+  is followed down to the base of the tree, normally represented by the three 
+  major limbs for plants, animals, and single-celled organisms.</p>
+<p>During reproduction, species pass down genetic material (the instruction code 
+  for life) from parent(s) to offspring. In the last decade, techniques for determining 
+  these genetic sequences has been highly automated and several species now have 
+  their complete genomes known. However, finding the set of nucleotide sequences 
+  on each chromosome in a species is only the first task in understanding how 
+  life works. Next, genes, which are coding regions on the nucleotide sequence, 
+  must be found, and the protein functions from these genes must be understood.</p>
+<p>In nature, many processes can change and alter the genetic material, for instance, 
+  sexual reproduction may combine information from both mother and father, or 
+  mistakes in translation can occur. For determining evolution, gene sequences 
+  in Mitochondrial DNA (for animals) and Chloroplasts (for plants) are often studied, 
+  since these typically mutate less frequently, and are often recorded on a circular 
+  strand of information. The evolutionary process typically contains changes where 
+  the circular band gets added genes (&quot;insertion&quot;), deleted genes (&quot;deletion&quot;), 
+  a portion twisted and re-attached in the same place (&quot;inversion&quot;), 
+  and portions snipped out but re-attached in a different location (&quot;translocations&quot;). 
+  Most of these changes are lethal, but occasionally a mutation causes the genesis 
+  of a new, related species.</p>
+<p>These evolutionary models are approximations at best, but nevertheless, provide 
+  the best guidance for determining the interrelation of species. Often biologists 
+  are concerned with a small portion of the phylogeny (a subtree) containing a 
+  family of related species. It is thought that Nature follows a path of minimizing 
+  evolutionary processes, but even computing the minimum evolutionary tree (called 
+  &quot;phylogeny reconstruction&quot;) for a handful of species is intractable 
+  on several levels.</p>
+<p>Using the largest open, production Linux supercluster, LosLobos, researchers 
+  at The University of New Mexico's Albuquerque High Performance Computing Center 
+  (www.ahpcc.unm.edu) have achieved a nearly one-million-fold speedup in solving 
+  the computationally-hard phylogeny reconstruction problem for the family of 
+  twelve Bluebell<br>
+  species (scientific name: Campanulacae) from the flowers' chloroplast gene order 
+  data. (The problem size includes a thirteenth plant, Tobacco, used as a distantly-related 
+  outgroup). Phylogenies derived from gene order data may prove crucial in answering 
+  some fundamental open questions in biomolecular evolution. Yet very few techniques 
+  are available for such phylogenetic reconstructions.</p>
+<p>One method is breakpoint analysis, developed by Blanchette and Sankoff for 
+  solving the ``breakpoint phylogeny.'' Earlier experiments with various techniques 
+  for reconstructing phylogenies from gene order data suggested that Sankoff and 
+  Blanchette's implementation of BPAnalysis is much too slow. On a collection 
+  of Campanulaceae with 13 genomes of 105 gene segments, it is estimated that 
+  Sankoff and Blanchette's BPAnalysis would take well over 200 years to complete---an 
+  estimate based on the average number of trees processed by the code per unit 
+  time and extended to the 13,749,310,575 tree topologies on 13 leaves.</p>
+<p>Professors David A. Bader (EECE, UNM) and Bernard M.E. Moret (Computer Science, 
+  UNM) along with Professor Tandy Warnow (Computer Science, University of Texas 
+  -- Austin) have solved the Campanulacae problem in about one hour and forty 
+  minutes on the 512-processor UNM/Alliance LosLobos supercluster, an IBM Netfinity 
+  cluster with 512 733MHz Pentium III processors, interconnected with four 64-way 
+  Myrinet 2000 switches, and running the Linux 2.2 operating system. The parallelization 
+  uses MPI and includes techniques for concurrently<br>
+  evaluating candidate trees and sharing improved upper and lower bounds by the 
+  processors.</p>
+<p>The new phylogeny reconstruction code, GRAPPA, is freely available as open 
+  source from http://www.cs.unm.edu/~moret/GRAPPA/ and shows the power of algorithmic 
+  engineering techniques. Run on a single processor, GRAPPA performs 2500 times 
+  faster than the BPAnalysis code, using similar algorithms, but with the implementation 
+  paying close attention to the detail of cache-sensitive and efficient data structures 
+  and algorithms. GRAPPA is able to take full advantage of parallel computers 
+  like the LosLobos supercluster, for additional speedups. Hence, the total speedup 
+  for our solution (going from an estimated 200 years down to 100 minutes) is 
+  one million -- nearly 6 orders of magnitude.</p>
+<p>This research is part of Moret and Bader's NSF Information Technology Research 
+  project &quot;Algorithms for Irregular Discrete Computations on SMPs&quot; based 
+  at the High Performance Computing, Educational and Research Center (HPCERC), 
+  a strategic center at The University of New Mexico.</p>
+<p>*****************************************************************************</p>
+<p>Using the largest open-production Linux supercluster in the world, LosLobos, 
+  researchers at The University of New Mexico's Albuquerque High Performance Computing 
+  Center (<a href="../index.html">http://www.ahpcc.unm.edu</a>) have 
+  achieved a nearly one-million-fold speedup in solving the computationally-hard 
+  phylogeny reconstruction problem for the family of twelve Bluebell species (scientific 
+  name: Campanulacae) from the flowers' chloroplast gene order data. (The problem 
+  size includes a thirteenth plant, Tobacco, used as a distantly-related outgroup). 
+  Phylogenies derived from gene order data may prove crucial in answering some 
+  fundamental open questions in biomolecular evolution. Yet very few techniques 
+  are available for such phylogenetic reconstructions.</p>
+<p>One method is breakpoint analysis, developed by Blanchette and Sankoff for 
+  solving the ``breakpoint phylogeny.'' Earlier experiments with various techniques 
+  for reconstructing phylogenies from gene order data suggested that Sankoff and 
+  Blanchette's implementation of BPAnalysis is much too slow. On a collection 
+  of Campanulaceae with 13 genomes of 105 gene segments, it is estimated that 
+  Sankoff and Blanchette's BPAnalysis would take well over 200 years to complete---an 
+  estimate based on the average number of trees processed by the code per unit 
+  time and extended to the 13,749,310,575 tree topologies on 13 leaves.</p>
+<p>Professors Bernard M.E. Moret (Computer Science, University fo New Mexico) 
+  and David A. Bader (Department of Electrical and Computer Engineering, University 
+  of New Mexico) along with Professor Tandy Warnow (Computer Science, University 
+  of Texas -- Austin) have solved the Campanulacae problem in about one hour and 
+  forty minutes on the 512-processor UNM/Alliance LosLobos supercluster, an IBM 
+  Netfinity cluster with 512 733MHz Pentium III processors, interconnected with 
+  four 64-way Myrinet 2000 switches, and running the Linux 2.2 operating system.</p>
+<p>The new phylogeny reconstruction code, GRAPPA, is freely available as open 
+  source from <a href="https://web.archive.org/web/20010201171800/http://www.cs.unm.edu/%7Emoret/GRAPPA/">http://www.cs.unm.edu/~moret/GRAPPA/</a> 
+  and shows the power of algorithmic engineering techniques. Run on a single processor, 
+  GRAPPA performs 2500 times faster than the BPAnalysis code, using similar algorithms, 
+  but with the implementation paying close attention to the detail of cache-sensitive 
+  and efficient data structures and algorithms. GRAPPA is able to take full advantage 
+  of parallel computers like the LosLobos supercluster, for additional speedups. 
+  Hence, the total speedup for our solution (going from an estimated 200 years 
+  down to 100 minutes) is one million -- nearly 6 orders of magnitude.</p>
+<p>This research is part of Moret and Bader's NSF Information Technology Research 
+  project &quot;Algorithms for Irregular Discrete Computations on SMPs&quot; based 
+  at the High Performance Computing, Educational and Research Center (HPCERC), 
+  a strategic center at The University of New Mexico.</p>
+<p>&nbsp;</p>
+<p><a href="index.html">News Archive</a></p>
+<!-- #EndEditable --> 
+<table width="660" border="0">
+  <tr> 
+    <td colspan="5"><img src="../_img/Images/Footer.jpg" width="660" height="72" usemap="#Map" border="0"><map name="Map"><area shape="RECT" coords="576,46,643,61" href="mailto:%20editor@ahpcc.unm.edu" alt="Web Editor" title="Web Editor"><area shape="RECT" coords="497,11,561,62" href="https://web.archive.org/web/20010201171800/http://www.unm.edu" alt="UNM" title="UNM"></map></td>
+  </tr>
+  <tr> 
+    <td colspan="5"> 
+      <table border="0" width="100%">
+        <tr> 
+          <td bgcolor="#FFFFFF" bordercolor="#FFFFFF" width="46%" rowspan="2" class="footer"><font size="1" face="Arial, Helvetica, sans-serif">The 
+            University of New Mexico<br>
+            <b>Albuquerque High Performance Computing Center</b><br>
+            Galles Building - 1601 Central Avenue, NE<br>
+            Albuquerque, NM 87131<br>
+            Phone # 505.277.8249<font color="#FFFFFF">000000</font>Fax # 505.277.8235</font></td>
+          <td align="right" valign="top" width="54%"> 
+            <div align="right"><font face="Arial, Helvetica, sans-serif" size="1" class="footer">Last 
+              Modified: <!-- #BeginDate format:Am1 -->November 20, 2000<!-- #EndDate --></font></div>
+          </td>
+        </tr>
+        <tr> 
+          <td align="right" valign="top" width="54%">&nbsp;</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body>
+<!-- #EndTemplate -->
+</html>

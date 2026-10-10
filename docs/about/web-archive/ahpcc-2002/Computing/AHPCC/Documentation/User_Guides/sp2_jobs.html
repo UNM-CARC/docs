@@ -1,0 +1,303 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 FINAL//EN">
+
+<HTML><!-- #BeginTemplate "/Templates/computing.dwt" -->
+<HEAD><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<!-- #BeginEditable "doctitle" --> 
+<TITLE>education</TITLE>
+<!-- #EndEditable --> 
+<META NAME="Generator" CONTENT="NetObjects Fusion  3.0.1 for Windows">
+
+</HEAD>
+
+<BODY  BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#FF6666" TEXT="#000000" TOPMARGIN=0 LEFTMARGIN=0 MARGINWIDTH=0 MARGINHEIGHT=0>
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">ahpcc.unm.edu/Computing/AHPCC/Documentation/User_Guides/sp2_jobs.html</code> as captured by the Internet Archive on 14 February 2002. Links to pages that were not saved here go to the Wayback Machine. Icons the Internet Archive did not save were redrawn for this copy and are not originals (hover over one to see). Grey boxes mark images that were never archived. <a style="color:#0b5cad" href="https://web.archive.org/web/20020214033525/http://www.ahpcc.unm.edu:80/Computing/AHPCC/Documentation/User_Guides/sp2_jobs.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../../../">Web archive index</a></div>
+
+
+  <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=660>
+   <TR VALIGN="top" ALIGN="left">
+	<TD WIDTH=660 HEIGHT =81><IMG id="Banner1" HEIGHT=81 WIDTH=660 SRC="../../../../_img/standin/_not-archived.gif"  BORDER=0  alt=" Education  (image not archived)" title="Image not archived"></TD>
+   </TR>
+  </TABLE>
+  
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=657 height="22">
+  <tr valign="top" align="left"> 
+    <td width=666 height =27> 
+      <table id="NavigationBar2" border=0 cellspacing=0 cellpadding=0  width=660 >
+          <tr valign="top" align="left"> 
+            
+          <td width=94><a href="../../../../index.html"><img id="NavigationButton7" height=20 width=94 src="../../../../_img/standin/home_tab.gif"  border=0  alt=" Home  (modern recreation, not an archived original)" title="Modern recreation, not an archived original"></a></td>
+            <td width=94><a href="https://web.archive.org/web/20020214033525/http://www.ahpcc.unm.edu/Intranet/intranet.html"><img id="NavigationButton8" height=20 width=94 src="../../../../_img/Images/Page/Intranet_tab.gif"  border=0  alt=" Inside Us " ></a></td>
+            
+          <td width=94><a href="../../../computing.html"><img id="NavigationButton9" height=20 width=94 src="../../../../_img/standin/computing_tab_hi.gif"  border=0  alt=" Computing  (modern recreation, not an archived original)" title="Modern recreation, not an archived original"></a></td>
+            <td width=94><a href="https://web.archive.org/web/20020214033525/http://www.ahpcc.unm.edu/Computing/help.html"><img src="../../../../_img/Images/Page/Help_Desk_tab.gif" width="94" height="20" border="0"></a></td>
+            <td width=94><a href="https://web.archive.org/web/20020214033525/http://www.ahpcc.unm.edu/Research/index.html"><img id="NavigationButton10" height=20 width=94 src="../../../../_img/Images/Page/Research_tab.gif"  border=0  alt=" Research " ></a></td>
+            <td width=94><a href="https://web.archive.org/web/20020214033525/http://www.ahpcc.unm.edu/Education/education.html"><img id="NavigationButton11" height=20 width=94 src="../../../../_img/Images/Page/Education_tab.gif"  border=0  alt=" Education " ></a></td>
+            <td width=94 height=20><a href="https://web.archive.org/web/20020214033525/http://www.ahpcc.unm.edu/SiteMap/sitemap.html"><img id="NavigationButton12" height=20 width=94 src="../../../../_img/Images/Page/SiteMap_tab.gif"  border=0  alt=" SiteMap " ></a></td>
+          </tr>
+        </table>
+      
+    </td>
+  </tr>
+</TABLE>
+  
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=660>
+  <TR VALIGN="top" ALIGN="left"> 
+    <TD></TD>
+    <TD WIDTH=655> <!-- #BeginEditable "type%20content%20in%20here" --> 
+      <h2 align="center"><font size="+2">Running Jobs on the AHPCC SP/2</font></h2>
+      <hr WIDTH="100%">
+      <h2><a NAME="Table of Contents"></a>Table of Contents</h2>
+      <ul>
+        <li><a HREF="#Running Interactively">Running Interactively</a></li>
+        <li><a HREF="#Running Batch Jobs">Running Batch Jobs</a> 
+          <ul>
+            <li><a HREF="#Using LoadLeveler/Maui Scheduler">LoadLeveler/Maui Scheduler</a>:</li>
+            <li><a HREF="#Job Command Files">Job Command Files</a></li>
+            <li><a HREF="#Commands">Commands</a></li>
+            <li><a href="https://web.archive.org/web/20020214033525/http://ahpcc.unm.edu/Computing/AHPCC/Documentation/User_Guides/sp2_features.html">Features of SP/2</a></li>
+            <li><a HREF="LoadLevelerTips.html">Tips on Using LoadLeveler</a>:</li>
+          </ul>
+        </li>
+      </ul>
+      <hr WIDTH="100%">
+      <h2><a NAME="Running Interactively"></a>Running Interactively</h2>
+      <p>Interactive jobs on the AHPCC SP2 can only run on the interactive SP2 
+        nodes (fr1n05-08). 
+      <ol>
+        <li>Login to an interactive SP2 node using 'ssh'</li>
+        <li><br>
+          <font FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp; ssh fr1n05</font> 
+          <br>
+          &nbsp; </li>
+        <li>Compile code if necessary:</li>
+        <li><br>
+          <font FACE="Courier">&nbsp;&nbsp;&nbsp; </font><font SIZE="+1" COLOR="#008000"
+    FACE="Courier">mpcc </font><font SIZE="+1"><font COLOR="#008000"><i>filename.c</i></font><font
+    FACE="Courier"> </font></font>or<font SIZE="+1" FACE="Courier"> </font><font
+    COLOR="#008000" SIZE="+1" FACE="Courier">mpxlf </font><font COLOR="#008000" SIZE="+1"><i>filename.f</i></font> 
+          <font COLOR="#008000" SIZE="+1" FACE="Courier"> -qnolm</font> <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Compiles MPI programs 
+          for C or Fortran respectively) <br>
+          &nbsp; </li>
+        <li>Set necessary environment variables:</li>
+        <ul>
+          <li><font COLOR="#006600">setenv MP_PROCS <i>n</i>&nbsp; </font>(when 
+            using <i>n</i> processors. Max - 4.)</li>
+          <li><font COLOR="#006600">setenv MP_EUIDEVICE en0</font>&nbsp; (to use 
+            ethernet for communication)</li>
+          <li><font COLOR="#006600">setenv MP_EUILIB ip</font>&nbsp; (to use IP 
+            protocol for communication)</li>
+          <li><font COLOR="#006600">setenv MP_RMPOOL 0</font> (to specify Resource 
+            Manager pool)</li>
+        </ul>
+        <li>Run program</li>
+      </ol>
+      <b><u> 
+      <p>Tips: 
+      </u></b> 
+      <ol>
+        <li>Make sure the interactive node names are in your .rhosts file</li>
+        <li><br>
+          fr1n05 <br>
+          fr1n06 <br>
+          fr1n07 <br>
+          fr1n08</li>
+      </ol>
+      <p> <a HREF="#Table of Contents">[Back to TOP]</a> <br>
+      </p>
+      <hr WIDTH="100%">
+      <h2><a NAME="Running Batch Jobs"></a>Running Batch Jobs</h2>
+      <p>Batch jobs on the AHPCC SP2 must be submitted from one of the interactive 
+        SP2 nodes (fr1n05-08) using LoadLeveler/Maui Scheduler. 
+      <ol>
+        <li>Login to the interactive SP2 nodes using 'ssh'</li>
+        <li><br>
+          <font FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp; ssh fr1n05</font> 
+        </li>
+        <li>Compile code if necessary:</li>
+        <li><br>
+          <font FACE="Courier">&nbsp;&nbsp;&nbsp; </font><font SIZE="+1" COLOR="#008000"
+    FACE="Courier">mpcc </font><font SIZE="+1"><font COLOR="#008000"><i>filename.c</i></font><font
+    FACE="Courier"> </font></font>or<font SIZE="+1" FACE="Courier"> </font><font
+    COLOR="#008000" SIZE="+1" FACE="Courier">mpxlf </font><font COLOR="#008000" SIZE="+1"><i>filename.f</i></font> 
+          <font COLOR="#008000" SIZE="+1" FACE="Courier"> -qnolm</font> <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Compiles MPI programs 
+          for C or Fortran respectively) </li>
+        <li>Create Job Command file (e.g., test_run.cmd)</li>
+        <li>Submit job using &quot;llsubmit&quot; command</li>
+        <li><br>
+          <font FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp; llsubmit test_run.cmd</font> 
+        </li>
+        <li>View job status in queue using &quot;llq&quot; and wait for completion</li>
+        <li><br>
+          <font FACE="Courier New,Courier">&nbsp;&nbsp;&nbsp; llq</font></li>
+      </ol>
+      <p> <a HREF="#Table of Contents">[Back to TOP]</a> <br>
+      </p>
+      <hr WIDTH="100%">
+      <h4>AHPCC SP/2 Node Policy</h4>
+      <div align="center"> 
+        <center>
+          <table border="0" width="40%">
+            <tr> 
+              <td width="37%" bgcolor="#C0C0C0"><strong>Max. Jobs per User*:</strong></td>
+              <td width="29%" align="center" bgcolor="#C0C0C0"><strong>2</strong></td>
+            </tr>
+            <tr> 
+              <td width="37%" bgcolor="#C0C0C0"><strong>Max. Nodes per Job:</strong></td>
+              <td width="29%" align="center" bgcolor="#C0C0C0"><strong>32</strong></td>
+            </tr>
+            <tr> 
+              <td width="37%" bgcolor="#C0C0C0"><strong>Max. Job Length</strong></td>
+              <td width="29%" align="center" bgcolor="#C0C0C0"><strong>36 hours**</strong></td>
+            </tr>
+          </table>
+        </center>
+      </div>
+      <p align="center">* Limit applies to jobs <em>running</em> under Loadleveler 
+        only.<br>
+        Does not apply to idle jobs waiting in the queue.</p>
+      <p align="center">** Job length can be extended for special requests</p>
+      <hr>
+      <h4><a NAME="Using LoadLeveler/Maui Scheduler"></a>Using LoadLeveler/Maui 
+        Scheduler</h4>
+      <p>LoadLeveler is a batch job scheduling application and program product 
+        of IBM.&nbsp; Maui Scheduler uses LoadLeveler but allocates jobs more 
+        fairly and efficiently. It also includes additional commands which give 
+        the user more information on jobs in the queue. </p>
+      <p><a NAME="Job Command Files"></a><b>Job Command Files:</b> <br>
+        Command files describe the requirements and parameters for the job to 
+        be executed such as; number of processors, input/output files needed, 
+        memory/hardware requirements, etc.)&nbsp; Comment lines begin with '#'. 
+        Valid LoadLeveler keywords begin with '#@'. Any line after the '#@ queue' 
+        will be executed at run-time. </p>
+      <p>Below is an sample command file. The file executes a program named &quot;test_run&quot; 
+        which resides in /home/joebloe/sp2example. Email will notify the user 
+        when the job is complete. Standard error and standard output are captured 
+        in&nbsp; files &quot;test.err&quot; and &quot;test.out&quot; respectively 
+        as described by the &quot;error&quot; and &quot;output&quot; keywords. 
+        The &quot;class&quot; line identifies the processor-pool name that the 
+        program will run in. Maui Scheduler only has one pool name - &quot;batch&quot;. 
+      </p>
+      <p>The program has the following requirement: Adapter==&quot;hps_user&quot;. 
+        This means the program must use the high-performance communication switch. 
+        View the <a
+href="https://web.archive.org/web/20020214033525/http://www.arc.unm.edu/UserSupport/Guides/sp2_features.html">other possible 
+        SP2 features</a> that are available (RAM, disk space, etc.) </p>
+      <p>The environment variable MP_EUILIB supporting this requirement is set 
+        by &quot;environment&quot;. Finally, the number of processors is set by 
+        min_processors and max_processors <font COLOR="#008000">(the maximum number 
+        is currently 16.)</font> </p>
+      <p>Sample job command file at AHPCC </p>
+      <blockquote> 
+        <p><font FACE="Courier New,Courier"># Example MPI / MPL job command file</font> 
+          <br>
+          <font FACE="Courier New,Courier">#</font> <br>
+          <font FACE="Courier New,Courier">#@ initialdir&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+          = /home/joebloe/sp2example</font> <br>
+          <font FACE="Courier New,Courier">#@ notification&nbsp;&nbsp;&nbsp; = 
+          complete</font> <br>
+          <font FACE="Courier New,Courier">#@ notify_user&nbsp;&nbsp;&nbsp;&nbsp; 
+          = joebloe@arc.unm.edu</font> <br>
+          <font FACE="Courier New,Courier">#@ error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+          = test.err</font> <br>
+          <font FACE="Courier New,Courier">#@ output&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+          = test.out</font> <br>
+          <font FACE="Courier New,Courier">#@ class&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+          = batch</font> <br>
+          <font FACE="Courier New,Courier">#@ job_type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+          = parallel</font> <br>
+          <font FACE="Courier New,Courier">#@ <a
+  href="https://web.archive.org/web/20020214033525/http://www.arc.unm.edu/UserSupport/Guides/sp2_features.html">requirements</a>&nbsp;&nbsp;&nbsp; 
+          = (Adapter == &quot;hps_user&quot;)</font> <br>
+          <font FACE="Courier New,Courier">#@ min_processors&nbsp; = 4</font> 
+          <br>
+          <font FACE="Courier New,Courier">#@ max_processors&nbsp; = 4</font> 
+          <br>
+          <font FACE="Courier New,Courier">#@ environment&nbsp;&nbsp;&nbsp;&nbsp; 
+          = MP_EUILIB=us</font> <br>
+          <font FACE="Courier New,Courier">#@ queue</font> <br>
+          <font FACE="Courier New,Courier">test_run</font></p>
+      </blockquote>
+      <p>For additional keyword information, check out MHPCC's <a
+HREF="https://web.archive.org/web/20020214033525/http://www.mhpcc.edu/training/workshop/loadleveler/keywords.html">command 
+        reference</a> <br>
+        <a HREF="#Table of Contents">[Back to TOP]</a> </p>
+      <p><a NAME="Commands"></a><b>Commands:</b> </p>
+      <blockquote> 
+        <h4>llsubmit&nbsp; <i><font COLOR="#009900">job_command_file</font></i></h4>
+        <p>Submits a job into the job queue. <br>
+        </p>
+        <hr WIDTH="100%">
+        <h4>llq</h4>
+        <p>Obtains information in the job queue <br>
+        </p>
+        <hr WIDTH="100%">
+        <h4>llcancel&nbsp; <i><font COLOR="#009900">job_id</font></i></h4>
+        <p><font COLOR="#000000">Removes the job from the queue. The job is identified 
+          by its job_id which can be obtained from the <b>llq</b> command.</font> 
+          <br>
+        </p>
+        <hr WIDTH="100%">
+      </blockquote>
+      <blockquote> 
+        <h4>showq</h4>
+        <p>Displays how many nodes are available for immediate use on the system. 
+          <br>
+        </p>
+        <hr WIDTH="100%">
+        <h4>showbf</h4>
+        <p>Displays the actual job ordering under the new scheduler</p>
+      </blockquote>
+      <p><br>
+        <a HREF="#Table of Contents">[Back to TOP]</a> </p>
+      <hr>
+      <!-- #EndEditable --></TD>
+  </TR>
+</TABLE>
+<TABLE CELLPADDING=0 CELLSPACING=0 BORDER=0 WIDTH=642>
+<TR VALIGN="top" ALIGN="left">
+<TD>
+
+  <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+   <TR VALIGN="top" ALIGN="left">
+	<TD WIDTH=85 HEIGHT =49><IMG SRC="../../../../_img/spacer.gif" WIDTH =85 HEIGHT=1 BORDER=0></TD>
+	<TD></TD>
+   </TR>
+   <TR VALIGN="top" ALIGN="left">
+	<TD></TD>
+	      <TD NOWRAP> [<A HREF="../../../../index.html">Home</A>] [<A HREF="https://web.archive.org/web/20020214033525/http://www.ahpcc.unm.edu/Intranet/intranet.html">Inside&nbsp;Us</A>] 
+            [<A HREF="../../../computing.html">Computing</A>] 
+            [<A HREF="https://web.archive.org/web/20020214033525/http://www.ahpcc.unm.edu/Research/index.html">Research</A>] 
+            [<A HREF="https://web.archive.org/web/20020214033525/http://www.ahpcc.unm.edu/Education/education.html">Education</A>] 
+            [<A HREF="https://web.archive.org/web/20020214033525/http://www.ahpcc.unm.edu/SiteMap/sitemap.html">SiteMap</A>] 
+          </TD>
+   </TR>
+  </TABLE>
+  <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+   <TR VALIGN="top" ALIGN="left">
+	<TD WIDTH=98 HEIGHT =10><IMG SRC="../../../../_img/spacer.gif" WIDTH =98 HEIGHT=1 BORDER=0></TD>
+	<TD WIDTH=399><IMG SRC="../../../../_img/spacer.gif" WIDTH =399 HEIGHT=1 BORDER=0></TD>
+   </TR>
+   <TR VALIGN="top" ALIGN="left">
+	<TD></TD>
+	<TD WIDTH=399>
+<P ALIGN="CENTER"><FONT SIZE="-1">Please contact our </FONT><A HREF="mailto:webmaster@ahpcc.unm.edu"><FONT SIZE="-1">Webmaster</FONT></A><FONT SIZE="-1"> with questions or comments. <BR></FONT><FONT SIZE="-2">© Copyright 2001 Albuquerque High Performance Computing Center.&nbsp; All rights reserved.</FONT></TD>
+   </TR>
+  </TABLE></TD>
+<TD>
+
+  <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=133>
+   <TR VALIGN="top" ALIGN="left">
+	<TD WIDTH=53 HEIGHT =47><IMG SRC="../../../../_img/spacer.gif" WIDTH =53 HEIGHT=1 BORDER=0></TD>
+	<TD></TD>
+   </TR>
+   <TR VALIGN="top" ALIGN="left">
+	<TD HEIGHT =58></TD>
+	      <TD WIDTH=80 ALIGN="left" VALIGN="top"><A HREF="https://web.archive.org/web/20020214033525/http://www.unm.edu/"><IMG id="Picture72" HEIGHT=58 WIDTH=80 SRC="../../../../_img/Images/UNM_Logo_Small.jpg"  BORDER=0 ></A></TD>
+   </TR>
+  </TABLE></TD>
+</TR>
+</TABLE>
+</BODY>
+<!-- #EndTemplate --></HTML>

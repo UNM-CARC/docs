@@ -15,3 +15,6 @@ Thumbs.db
 # Editors
 .idea/
 .vscode/
+
+# Raw Wayback Machine captures (source for scripts/build_web_archive.py)
+.wayback/

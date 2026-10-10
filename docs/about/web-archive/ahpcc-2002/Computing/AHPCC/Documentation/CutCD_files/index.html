@@ -1,0 +1,290 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 FINAL//EN">
+
+<HTML><!-- #BeginTemplate "/Templates/computing.dwt" -->
+<HEAD><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<!-- #BeginEditable "doctitle" --> <!-- #EndEditable --> 
+<META NAME="Generator" CONTENT="NetObjects Fusion  3.0.1 for Windows">
+
+</HEAD>
+
+<BODY  BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#FF6666" TEXT="#000000" TOPMARGIN=0 LEFTMARGIN=0 MARGINWIDTH=0 MARGINHEIGHT=0>
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">ahpcc.unm.edu/Computing/AHPCC/Documentation/CutCD_files/</code> as captured by the Internet Archive on 23 September 2002. Links to pages that were not saved here go to the Wayback Machine. Icons the Internet Archive did not save were redrawn for this copy and are not originals (hover over one to see). Grey boxes mark images that were never archived. <a style="color:#0b5cad" href="https://web.archive.org/web/20020923233503/http://www.ahpcc.unm.edu:80/Computing/AHPCC/Documentation/CutCD_files/">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../../../">Web archive index</a></div>
+
+
+  <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=660>
+   <TR VALIGN="top" ALIGN="left">
+	<TD WIDTH=660 HEIGHT =81><IMG id="Banner1" HEIGHT=81 WIDTH=660 SRC="../../../../_img/standin/_not-archived.gif"  BORDER=0  alt=" Education  (image not archived)" title="Image not archived"></TD>
+   </TR>
+  </TABLE>
+  
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=657 height="22">
+  <tr valign="top" align="left"> 
+    <td width=666 height =27> 
+      <table id="NavigationBar2" border=0 cellspacing=0 cellpadding=0  width=660 >
+          <tr valign="top" align="left"> 
+            
+          <td width=94><a href="../../../../index.html"><img id="NavigationButton7" height=20 width=94 src="../../../../_img/standin/home_tab.gif"  border=0  alt=" Home  (modern recreation, not an archived original)" title="Modern recreation, not an archived original"></a></td>
+            <td width=94><a href="https://web.archive.org/web/20020923233503/http://www.ahpcc.unm.edu/Intranet/intranet.html"><img id="NavigationButton8" height=20 width=94 src="../../../../_img/Images/Page/Intranet_tab.gif"  border=0  alt=" Inside Us " ></a></td>
+            
+          <td width=94><a href="../../../computing.html"><img id="NavigationButton9" height=20 width=94 src="../../../../_img/standin/computing_tab_hi.gif"  border=0  alt=" Computing  (modern recreation, not an archived original)" title="Modern recreation, not an archived original"></a></td>
+            <td width=94><a href="https://web.archive.org/web/20020923233503/http://www.ahpcc.unm.edu/Computing/help.html"><img src="../../../../_img/Images/Page/Help_Desk_tab.gif" width="94" height="20" border="0"></a></td>
+            <td width=94><a href="https://web.archive.org/web/20020923233503/http://www.ahpcc.unm.edu/Research/index.html"><img id="NavigationButton10" height=20 width=94 src="../../../../_img/Images/Page/Research_tab.gif"  border=0  alt=" Research " ></a></td>
+            <td width=94><a href="https://web.archive.org/web/20020923233503/http://www.ahpcc.unm.edu/Education/education.html"><img id="NavigationButton11" height=20 width=94 src="../../../../_img/Images/Page/Education_tab.gif"  border=0  alt=" Education " ></a></td>
+            <td width=94 height=20><a href="https://web.archive.org/web/20020923233503/http://www.ahpcc.unm.edu/SiteMap/sitemap.html"><img id="NavigationButton12" height=20 width=94 src="../../../../_img/Images/Page/SiteMap_tab.gif"  border=0  alt=" SiteMap " ></a></td>
+          </tr>
+        </table>
+      
+    </td>
+  </tr>
+</TABLE>
+  
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=660>
+  <TR VALIGN="top" ALIGN="left"> 
+    <TD></TD>
+    <TD WIDTH=655> <!-- #BeginEditable "type%20content%20in%20here" --> 
+      <H2> 
+        <CENTER>
+        </CENTER>
+      </H2>
+      <H2> 
+        <CENTER>
+        </CENTER>
+      </H2>
+      <H2> 
+        <CENTER>
+          How to Cut a CD under Linux at the AHPCC 
+        </CENTER>
+      </H2>
+      <H2> 
+        <CENTER>
+        </CENTER>
+      </H2>
+      <P> 
+      <CENTER>
+        <HR>
+      </CENTER>
+      <P></P>
+      <P>A CD-R is a CDROM&nbsp;drive that also is capable of writing WORMs (Write 
+        Once, Read Many). These WORMs are then readable by a standard CDROM&nbsp;drive.</P>
+      <P>The AHPCC&nbsp;has an HP6020i double speed CD-R writer available for 
+        use in AHPCC&nbsp;projects. It can write CDs in an hour or so (depending 
+        on data size) and is capable of writing audio, data, photo-CD, or mixed 
+        format CDs. The unit is currently installed in artesia, one of the AHPCCs 
+        Linux PCs.</P>
+      <P>Under Linux (so far) only CDROM (data) images are supported. Anybody 
+        that discovers how to do audio or any of the other formats the drive is 
+        capable of is welcome to document the process and it will be included 
+        here. The other image formats are supported under Windows 95, but that 
+        is outside the scope of this document.</P>
+      <P>CD images are generated by the program <TT>mkisofs</TT>. This program 
+        takes a directory structure and creates a single file with the entire 
+        CD image inside, including the ISO 9660 format (ISO 9660 is the international 
+        standard file system for data CDROMs). After the image has been generated 
+        the CD&nbsp;is cut off of that image using the program <TT>cdwrite</TT>.</P>
+      <P>The image file produced by <TT>mkisofs</TT> must be stored locally on 
+        artesia. This is because during the cutting process there must be an uninterrupted 
+        flow of data to the CD writer. If the flow is interrupted the CD&nbsp;will 
+        be corrupted and be unusable. This is also the reason we don't just pipe 
+        the output of the <TT>mkisofs</TT> program directly to the CD writer.</P>
+      <P>This document is intended as the quick-start, get-the-job-done-now-with-a-minimum-of-fuss 
+        method. If you want more detail, and a better understanding of how to 
+        use the CD writer, or you want to know more about the subjects just touched 
+        upon here, please read the <A 
+href="https://web.archive.org/web/20020923233503/http://sunsite.unc.edu/mdw/HOWTO/CD-Writing-HOWTO.html">Linux CD Writing 
+        mini-HOWTO</A>.</P>
+      <P> 
+      <CENTER>
+        <HR>
+      </CENTER>
+      <P></P>
+      <P><B><FONT size=+1>Before You Begin</FONT></B></P>
+      <P>In order to "cut" or "burn" a CD you must have a blank CD-R disk. You 
+        must also have exclusive use of the machine (i.e., no one else should 
+        be logged on or, at the very least, not doing anything significant).</P>
+      <P><B><FONT size=+1>Generating an image</FONT></B></P>
+      <P>Artesia has space set aside on the local hard drive to develop images. 
+        The initial image does not have to be on artesia, but the iso9660 image 
+        created by mkisofs <I>must</I> be local to artesia. This is to ensure 
+        that there is an uninterrupted flow of data to the CD writer. In any case, 
+        there should be enough room in the directory</P>
+      <UL>
+        <P><TT>/cdimaging</TT> </P>
+      </UL>
+      <P>on artesia to both develop then image the CD.</P>
+      <H4>Gathering the files</H4>
+      <P>In order to make a CD, you must make a directory structure that looks 
+        just like the directory structure you will be writing to the CD. For example, 
+        when I built the Debian installation CD, I copied the entire Debian mirror 
+        to</P>
+      <UL>
+        <P><TT>/cdimaging/scratch/Debian_install/</TT> </P>
+      </UL>
+      <P>on artesia. Unfortunately, this is about 1.2 Gb of information... a CD&nbsp;can 
+        only hold approximately 650 Mb. So I trimmed. I finally got an image I 
+        could use that was about 600 Mb. You should make a directory in <TT>/cdimaging/scratch</TT> 
+        on artesia and put the files you want on the CD in there. This will avoid 
+        confusion if others are also trying to build images.</P>
+      <P>Trust me, gathering the files is the most time consuming part of the 
+        process. Be sure you have everything you want, since once you cut the 
+        CD, you can't add anything else :-).</P>
+      <H4>Create an iso9660 filesystem</H4>
+      <P>To create the image that will be cut onto the CD you must execute the 
+        following command:</P>
+      <UL>
+        <P><TT>mkisofs -r -K -o cd_image.img private_collection/</TT> </P>
+      </UL>
+      <P>where <TT>-r</TT> sets the permissions of all files to be public readable 
+        on the CD&nbsp;and enables Rock Ridge extensions (a system for writing 
+        Unix filesystems, especially Unix filenames, on standard CDROMs), <TT>-k 
+        </TT>fixes a bug in the Linux kernel and prevents the last file on the 
+        CD&nbsp;from being "destroyed" (not really, but Linux can't read it), 
+        <TT>-o cd_image.img</TT> is the output flag and the name of the output 
+        file that you want the image written to, and <TT>private_collection/</TT> 
+        is the directory where the CD&nbsp;data has been gathered (in the previous 
+        step).</P>
+      <P>The output file should be placed in the directory</P>
+      <UL>
+        <P><TT>/cdimaging/images</TT> </P>
+      </UL>
+      <P>on artesia.</P>
+      <P>So, for example: In order to create an image for my Debian installation 
+        CD, I used the commands</P>
+      <UL>
+        <P><TT>cd /cdimaging/images</TT> 
+        <P><TT>mkisofs -r -k -o Debian_install.img /cdimaging/images/scratch/Debian_install/</TT> 
+        </P>
+      </UL>
+      <P>which built the image file <TT>Debian_install.img</TT> from the files 
+        I had gathered in the <TT>Debian_install/</TT> scratch directory.</P>
+      <P>You will probably get a whole mess of messages describing how <TT>mkisofs</TT> 
+        is trying to map your files into 8.3 format. <B>Don't Panic!</B> By using 
+        the Rock Ridge extensions you will never see the 8.3 format while you 
+        are using Unix. But it also means the CD&nbsp;can be read by an MS-DOS 
+        machine, as well.</P>
+      <P>In case you haven't already guessed, the image produced by <TT>mkisofs</TT> 
+        is the same size as the collection of files that went into it. So you 
+        must be sure you have enough space to accommodate both. If not, you might 
+        try gathering the files on some other machine, then nfs mounting that 
+        collection to artesia. We won't go into how that's done here.</P>
+      <H4>Test the CD image</H4>
+      <P>Before you go any further you should test the image you just made. Linux 
+        has the ability to mount files as if they were disk partitions. You can 
+        use that here to check and see if the layout of your CD image is OK.</P>
+      <P>To mount the file you created above on the directory <TT>/cdimagetst</TT>, 
+        give the command</P>
+      <UL>
+        <P><TT>mount -t iso9660 -o ro,loop=/dev/loop0 cd_image.img /cdimagetst</TT> 
+        </P>
+      </UL>
+      <P>where <TT>cd_image.img</TT> is the name of your image file. This will 
+        mount your image file under the directory</P>
+      <UL>
+        <P><TT>/cdimagetst</TT> </P>
+      </UL>
+      <P>on artesia. The unfortunate part of this is that (at least for now) you 
+        must be root user in order to make use of this feature. But, you must 
+        also be root user to cut the CD, so you might as well do it now.</P>
+      <P>For obvious reasons the root passwords aren't published here... you will 
+        have to get someone who knows the password to log in as root for you. 
+        Your best bet is John Barnes or Ken Summers.</P>
+      <P>Look your image over and make sure it has everything it is supposed to, 
+        where it is supposed to be. When you are done give the command</P>
+      <UL>
+        <P><TT>unmount /cdimagetst</TT> </P>
+      </UL>
+      <P>to unmount the image.</P>
+      <H4>Cut the CD</H4>
+      <P>The moment of truth has arrived. Be sure no one else is using the machine. 
+        It is extremely important that the machine not be distracted while trying 
+        to cut a CD. If the dataflow stops even for a moment the CD&nbsp;will 
+        be corrupted and be useless (well, not entirely useless: they make cool 
+        frizbies, although they don't fly very well). To check for usage just 
+        type "w" at the unix prompt. This will give a list of all the people logged 
+        on to the machine, as well as the machine load. If somebody else is on, 
+        well, you'll have to go find them and negotiate an understanding, capish?</P>
+      <P>The simplest way to keep somebody from loging in in the middle of your 
+        run is to unplug the ethernet cable from the wall. This has some unpleasant 
+        side effects, but nothing harmful. Just remember to plug it back when 
+        you're done!</P>
+      <P>Before you actually cut the CD I would <I>strongly</I> recommend that 
+        you test the burn first. The test performs all of the IO, moves the drive 
+        head, does everything it would during the actual burn, but leaves the 
+        laser off. This allows you to see if you are able to cut at the speed 
+        you want, see if the image actually fits on the CD, and a host of other 
+        things.</P>
+      <P>In order to cut the CD you must be logged in as root. John Barnes or 
+        Ken Summers can accomplish this magical feat for you.</P>
+      <P>To run the test, put your blank CD-R in the drive (the HP one),and give 
+        the following command:</P>
+      <UL>
+        <P><TT>cd /cdimaging/images</TT> 
+        <P><TT>cdwrite -vy cd_image.img</TT> </P>
+      </UL>
+      <P>where <TT>cd_image.img</TT> is the name of your image file. The <TT>-vy</TT> 
+        causes a verbose test output.</P>
+      <P>If your test run finishes successfully (after a long while: better go 
+        find something else to do in the mean time) you can issue the command</P>
+      <UL>
+        <P><TT>cdwrite -ev cd_image.img</TT> </P>
+      </UL>
+      <P>where <TT>cd_image.img</TT> is the name of your image file and the <TT>-ev</TT> 
+        causes verbose output and causes the tray to be ejected when the job is 
+        done (this is a wonderful visual cue that it finished).</P>
+      <P>Now pop that disk into a CD&nbsp;drive, mount it up, and see what you 
+        have wrought!</P>
+      <P> 
+        <CENTER>
+          <A href="../../../../index.html">Return to the Albuquerque High Performance 
+          Computing Center</A> 
+        </CENTER>
+      <P></P>
+      <P> 
+      <!-- #EndEditable --></TD>
+  </TR>
+</TABLE>
+<TABLE CELLPADDING=0 CELLSPACING=0 BORDER=0 WIDTH=642>
+<TR VALIGN="top" ALIGN="left">
+<TD>
+
+  <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+   <TR VALIGN="top" ALIGN="left">
+	<TD WIDTH=85 HEIGHT =49><IMG SRC="../../../../_img/spacer.gif" WIDTH =85 HEIGHT=1 BORDER=0></TD>
+	<TD></TD>
+   </TR>
+   <TR VALIGN="top" ALIGN="left">
+	<TD></TD>
+	      <TD NOWRAP> [<A HREF="../../../../index.html">Home</A>] [<A HREF="https://web.archive.org/web/20020923233503/http://www.ahpcc.unm.edu/Intranet/intranet.html">Inside&nbsp;Us</A>] 
+            [<A HREF="../../../computing.html">Computing</A>] 
+            [<A HREF="https://web.archive.org/web/20020923233503/http://www.ahpcc.unm.edu/Research/index.html">Research</A>] 
+            [<A HREF="https://web.archive.org/web/20020923233503/http://www.ahpcc.unm.edu/Education/education.html">Education</A>] 
+            [<A HREF="https://web.archive.org/web/20020923233503/http://www.ahpcc.unm.edu/SiteMap/sitemap.html">SiteMap</A>] 
+          </TD>
+   </TR>
+  </TABLE>
+  <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+   <TR VALIGN="top" ALIGN="left">
+	<TD WIDTH=98 HEIGHT =10><IMG SRC="../../../../_img/spacer.gif" WIDTH =98 HEIGHT=1 BORDER=0></TD>
+	<TD WIDTH=399><IMG SRC="../../../../_img/spacer.gif" WIDTH =399 HEIGHT=1 BORDER=0></TD>
+   </TR>
+   <TR VALIGN="top" ALIGN="left">
+	<TD></TD>
+	<TD WIDTH=399>
+<P ALIGN="CENTER"><FONT SIZE="-1">Please contact our </FONT><A HREF="mailto:webmaster@ahpcc.unm.edu"><FONT SIZE="-1">Webmaster</FONT></A><FONT SIZE="-1"> with questions or comments. <BR></FONT><FONT SIZE="-2">© Copyright 2001 Albuquerque High Performance Computing Center.&nbsp; All rights reserved.</FONT></TD>
+   </TR>
+  </TABLE></TD>
+<TD>
+
+  <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=133>
+   <TR VALIGN="top" ALIGN="left">
+	<TD WIDTH=53 HEIGHT =47><IMG SRC="../../../../_img/spacer.gif" WIDTH =53 HEIGHT=1 BORDER=0></TD>
+	<TD></TD>
+   </TR>
+   <TR VALIGN="top" ALIGN="left">
+	<TD HEIGHT =58></TD>
+	      <TD WIDTH=80 ALIGN="left" VALIGN="top"><A HREF="https://web.archive.org/web/20020923233503/http://www.unm.edu/"><IMG id="Picture72" HEIGHT=58 WIDTH=80 SRC="../../../../_img/Images/UNM_Logo_Small.jpg"  BORDER=0 ></A></TD>
+   </TR>
+  </TABLE></TD>
+</TR>
+</TABLE>
+</BODY>
+<!-- #EndTemplate --></HTML>

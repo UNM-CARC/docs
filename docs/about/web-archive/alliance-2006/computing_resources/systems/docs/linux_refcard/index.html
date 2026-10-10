@@ -1,0 +1,559 @@
+<html>
+
+<head>
+
+<title>Linux Cluster Reference Card</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+</head>
+
+
+
+<body bgcolor="#FFFFFF">
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">alliance.unm.edu/computing_resources/systems/docs/linux_refcard/index.html</code> as captured by the Internet Archive on 6 September 2006. Links to pages that were not saved here go to the Wayback Machine. <a style="color:#0b5cad" href="https://web.archive.org/web/20060906172613/http://www.alliance.unm.edu/computing_resources/systems/docs/linux_refcard/index.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../../../">Web archive index</a></div>
+
+
+<h2><b><font face="Arial, Helvetica, sans-serif">Linux Cluster Reference Card</font></b></h2>
+<h3 align="left"> <font face="Arial, Helvetica, sans-serif"><b>This page includes: 
+  </b> </font></h3>
+<div align="left"> 
+  <ul type="disc">
+    <li><font face="Arial, Helvetica, sans-serif"><a href="#access">Access</a></font></li>
+    <li><font face="Arial, Helvetica, sans-serif"><a href="#mail">Mail</a></font></li>
+    <li><font face="Arial, Helvetica, sans-serif"><a href="#compilers">Compilers</a></font></li>
+    <li><font face="Arial, Helvetica, sans-serif"><a href="#account">Your Account</a></font></li>
+    <li><font face="Arial, Helvetica, sans-serif"><a href="#progtools">Programming 
+      Tools</a></font></li>
+    <li><font face="Arial, Helvetica, sans-serif"><a href="#selectingmpi">Selecting 
+      an MPI Library</a></font></li>
+    <li><font face="Arial, Helvetica, sans-serif"><a href="#compilingmpi">Compiling 
+      with MPI</a></font></li>
+    <li><font face="Arial, Helvetica, sans-serif"><a href="#linking_serial_libs">Linking 
+      Serial Libraries</a></font></li>
+    <li><font face="Arial, Helvetica, sans-serif"><a href="#linking_parallel_libs">Linking 
+      Parallel Libraries</a></font></li>
+    <li><font face="Arial, Helvetica, sans-serif"><a href="#jobmanagers">Submitting 
+      PBS Jobs</a></font></li>
+  </ul>
+</div>
+<p align="left"><font face="Arial, Helvetica, sans-serif">For assistance, please 
+  contact the Help Desk at <a href="mailto:help@hpc.unm.edu">help@hpc.unm.edu</a> 
+  or (505)&nbsp; 277-8348 (Monday through Friday, 9 a.m. to 5 p.m. Mountain Time)</font></p>
+<p align="left"> </p>
+<hr id="HRRule2" width="99%" align="left" size="2"
+
+
+
+ noshade="noshade">
+<div align="left"> 
+  <h3><font face="Arial, Helvetica, sans-serif"><b><a name="access"></a>Access</b> 
+    </font></h3>
+</div>
+<p align="left"></p>
+<p align="left"><font face="Arial, Helvetica, sans-serif">Login using secure-shell 
+  (ssh):</font></p>
+<div align="left"> 
+  <ul>
+  </ul>
+</div>
+<ul>
+  <p align="left"><font color="#0000ff"
+
+ face="Arial, Helvetica, sans-serif">%&nbsp; <b><font size="2">ssh loslobos.alliance.unm.edu</font></b></font></p>
+</ul>
+<p align="left"><font face="Arial, Helvetica, sans-serif"> Transfer files <u>to</u> 
+  the Linux cluster from your home machine&nbsp; using secure copy protocol (scp): 
+  </font></p>
+<div align="left"> 
+  <ul>
+  </ul>
+</div>
+<ul>
+  <p align="left"><font color="#0000ff"
+
+
+
+ face="Arial, Helvetica, sans-serif">%&nbsp; <b><font size="2">scp</font></b> 
+    <font size="2"><i>&lt;file&gt; &lt;user&gt;</i><b>@loslobos.alliance.unm.edu:</b><i>&lt;dest&gt;</i></font></font></p>
+</ul>
+<p align="left"> </p>
+<hr id="HRRule4" width="99%" align="left" size="2"
+
+
+
+ noshade="noshade">
+<div align="left"> 
+  <h3><font face="Arial, Helvetica, sans-serif"><b><a name="account"></a>Your 
+    Account</b> </font></h3>
+</div>
+<p align="left"></p>
+<p align="left"><font face="Arial, Helvetica, sans-serif">Change your password 
+  on the Linux cluster: </font></p>
+<div align="left"> 
+  <ul>
+  </ul>
+</div>
+<ul>
+  <p align="left"><font color="#0000ff"
+
+
+
+ face="Arial, Helvetica, sans-serif">%&nbsp; <b><font size="2">yppasswd</font></b></font></p>
+</ul>
+<p align="left"><font face="Arial, Helvetica, sans-serif"> Change your login shell 
+  on the Linux cluster: </font></p>
+<div align="left"> 
+  <ul>
+  </ul>
+</div>
+<ul>
+  <p align="left"><font color="#0000ff"
+
+
+
+ face="Arial, Helvetica, sans-serif">%&nbsp; <b><font size="2">ypchsh</font></b></font></p>
+</ul>
+<p align="left"> </p>
+<hr id="HRRule6" width="99%" align="left" size="2"
+
+
+
+ noshade="noshade">
+<div align="left"> 
+  <h3><font face="Arial, Helvetica, sans-serif"><b><a name="mail"></a>Mail</b> 
+    </font></h3>
+</div>
+<p align="left"></p>
+<p align="left"><font face="Arial, Helvetica, sans-serif">Please forward your 
+  mail to your local system. To forward mail,&nbsp; create a <font color="#0000ff">.forward</font> 
+  file in your Linux cluster home directory and put your email address in it: 
+  </font></p>
+<div align="left"> 
+  <ul>
+  </ul>
+</div>
+<ul>
+  <p align="left"><font color="#0000ff" face="Arial, Helvetica, sans-serif"><font size="2"> 
+    <i>&lt;username&gt;</i><b>@</b><i>&lt;host.domain&gt;</i> </font></font></p>
+</ul>
+<p align="left"> </p>
+<hr id="HRRule8" width="99%" align="left" size="2"
+
+
+
+ noshade="noshade">
+<div align="left"> 
+  <h3><font face="Arial, Helvetica, sans-serif"><b><a name="compilers"></a>Compilers</b> 
+    </font></h3>
+</div>
+<p align="left"></p>
+<p align="left"><font face="Arial, Helvetica, sans-serif">Compilers from GNU, 
+  PGI are installed. 
+  <!--
+
+  If you are interested in debugging your Fortran program, try the 
+
+  NAG&nbsp; compiler first. If you are interested in performance, try all compilers&nbsp;since 
+
+  each are optimized differently. MPI C++ is only supported on Ethernet&nbsp;and 
+
+  may work on Myrinet. 
+
+-->
+  </font></p>
+<p align="left"><font face="Arial, Helvetica, sans-serif">GNU C</font></p>
+<p align="left"><font color="#0000ff"
+
+ face="Arial, Helvetica, sans-serif">%&nbsp; <b><font size="2">gcc &#8211;o exec 
+  [options]</font></b> <font size="2"><i>filename(s).c</i></font></font></p>
+<p align="left"><font face="Arial, Helvetica, sans-serif">GNU C++</font></p>
+<p align="left"><font color="#0000ff"
+
+ face="Arial, Helvetica, sans-serif">%&nbsp; <b><font size="2">g++ &#8211;o exec 
+  [options]</font></b> <font size="2"><i>filename(s).C</i></font></font></p>
+<font face="Arial, Helvetica, sans-serif">
+<!--
+
+<p align="left"> C - PGI</p>
+
+<p align="left"><font color="#0000ff"
+
+ face="Courier New,Courier">%&nbsp; <b><font size="2">pgcc &#8211;o exec [options]</font></b> 
+
+  <font size="2"><i>filename(s).c</i></font></font></p>
+
+
+
+<p align="left"> C++ - PGI</p>
+
+<p align="left"><font color="#0000ff"
+
+ face="Courier New,Courier">%&nbsp; <b><font size="2">pgCC &#8211;o exec [options]</font></b> 
+
+  <font size="2"><i>filename(s).C</i></font></font></p>
+
+-->
+<p align="left">GNU Fortran77</p>
+</font>
+<p align="left"><font color="#0000ff"
+
+ face="Arial, Helvetica, sans-serif">%&nbsp; <b><font size="2">g77 &#8211;o exec 
+  [options]</font></b> <font size="2"><i>filename(s).f</i></font></font></p>
+<p align="left"><font face="Arial, Helvetica, sans-serif">PGI Fortran77</font></p>
+<p align="left"><font color="#0000ff"
+
+ face="Arial, Helvetica, sans-serif">%&nbsp; <b><font size="2">pgf77 &#8211;o 
+  exec [options]</font></b> <font size="2"><i>filename(s).f</i></font></font></p>
+<p align="left"><font face="Arial, Helvetica, sans-serif">PGI Fortran90/95</font></p>
+<p align="left"><font color="#0000ff"
+
+ face="Arial, Helvetica, sans-serif">%&nbsp; <b><font size="2">pgf90 &#8211;o 
+  exec [options]</font></b> <font size="2"><i>filename(s).f90</i></font></font></p>
+<p align="left"> </p>
+<hr id="HRRule10" width="99%" align="left" size="2"
+
+
+
+ noshade="noshade">
+<div align="left"> 
+  <h3><font face="Arial, Helvetica, sans-serif"><b><a name="progtools"></a>Programming 
+    Tools</b> </font></h3>
+</div>
+<p align="left"></p>
+<p align="left"><font face="Arial, Helvetica, sans-serif"><b>Source code debuggers:</b></font></p>
+<p align="left"><font face="Arial, Helvetica, sans-serif">GNU </font></p>
+<p align="left"> <font color="#0000ff"
+
+ face="Arial, Helvetica, sans-serif">%&nbsp; <b><font size="2">gdb</font></b></font></p>
+<p align="left"><font face="Arial, Helvetica, sans-serif">PGI</font></p>
+<p align="left"> <font color="#0000ff"
+
+ face="Arial, Helvetica, sans-serif">%&nbsp; <b><font size="2">pgdbg</font></b></font></p>
+<p align="left">&nbsp;</p>
+<p align="left"><font face="Arial, Helvetica, sans-serif"><b>Performance profiler:</b></font></p>
+<p align="left"><font face="Arial, Helvetica, sans-serif"> PGI</font></p>
+<p align="left"><font color="#0000ff"
+
+ face="Arial, Helvetica, sans-serif">%&nbsp; <b><font size="2">pgprof</font></b></font></p>
+<p align="left"> </p>
+<hr id="HRRule12" width="99%" align="left" size="2"
+
+
+
+ noshade="noshade">
+<div align="left"> 
+  <h3><font face="Arial, Helvetica, sans-serif"><b><a name="selectingmpi"></a>Selecting 
+    an MPI Library</b></font></h3>
+  <p><font face="Arial, Helvetica, sans-serif">There are several builds of the 
+    MPICH MPI library on each Linux cluster. &nbsp;Some use the special GM interface 
+    to the Myrinet high-speed network hardware and some use TCP/IP. Select&nbsp; 
+    an MPICH build by setting the MPIHOME environment variable in your .cshrc 
+    file (if your login shell is tcsh). You can set this&nbsp; variable by editing 
+    your .cshrc file and removing the comment sentinel (#) from the beginning 
+    of the&nbsp; line specifying the MPICH library build that you want to use. 
+    Be sure all other lines setting a value for MPIHOME start with the comment 
+    sentinel (#).&nbsp; Refer to your <font color="#0000ff">.cshrc</font> file 
+    for examples. Log out and log back in to load the new environment. &nbsp;Use 
+    the "which mpirun" command to verify the MPICH library build you have chosen. 
+    </font></p>
+</div>
+<p align="left"></p>
+<p align="left"><font face="Arial, Helvetica, sans-serif">For example:</font></p>
+<div align="left"> 
+  <ul>
+  </ul>
+</div>
+<ul>
+  <p align="left"><font color="#0000ff"
+
+
+
+ face="Arial, Helvetica, sans-serif">%&nbsp; <b><font size="2">which mpirun</font></b></font></p>
+  <p align="left"><font size="2" face="Arial, Helvetica, sans-serif"><font color="#0000ff">/usr/parallel/mpich-gm.pgi/bin/mpirun</font></font></p>
+</ul>
+<p align="left"><font face="Arial, Helvetica, sans-serif"> shows that you are 
+  using MPICH with the GM interface, and the corresponding MPICH compiling scripts 
+  mpif77 and mpif90 will use the PGI Fortran compilers.</font></p>
+<p align="left"> </p>
+<hr id="HRRule14" width="99%" align="left" size="2"
+
+
+
+ noshade="noshade">
+<div align="left"> 
+  <h3><font face="Arial, Helvetica, sans-serif"><b><a name="compilingmpi"></a>Compiling 
+    with&nbsp; MPI</b> </font></h3>
+</div>
+<p align="left"></p>
+<p align="left"><font face="Arial, Helvetica, sans-serif">C</font></p>
+<p align="left"> <font color="#0000ff"
+
+
+
+ face="Arial, Helvetica, sans-serif">%&nbsp; <b><font size="2">mpicc &#8211;o 
+  exec [options]</font></b> <font size="2"><i>filename(s).c</i></font></font></p>
+<p align="left">&nbsp;</p>
+<p align="left"><font face="Arial, Helvetica, sans-serif">C++ </font></p>
+<p align="left"> <font color="#0000ff"
+
+
+
+ face="Arial, Helvetica, sans-serif">%&nbsp; <b><font size="2">mpiCC &#8211;o 
+  exec [options]</font></b> <font size="2"><i>filename(s).C</i></font></font></p>
+<p align="left">&nbsp;</p>
+<p align="left"><font face="Arial, Helvetica, sans-serif">Fortran77 </font></p>
+<p align="left"> <font color="#0000ff"
+
+
+
+ face="Arial, Helvetica, sans-serif">%&nbsp; <b><font size="2">mpif77 &#8211;o 
+  exec [options]</font></b> <font size="2"><i>filename(s).f</i></font></font></p>
+<p align="left">&nbsp;</p>
+<p align="left"><font face="Arial, Helvetica, sans-serif">Fortran90 </font></p>
+<p align="left"> <font color="#0000ff"
+
+
+
+ face="Arial, Helvetica, sans-serif">%&nbsp; <b><font size="2">mpif90 -o exec 
+  [options]</font></b> <font size="2"><i>filename(s).f90</i></font></font></p>
+<p align="left"> </p>
+<hr id="HRRule16" width="99%" align="left" size="2"
+
+ noshade="noshade">
+<div align="left"> 
+  <h3><font face="Arial, Helvetica, sans-serif"><b><a name="linking_serial_libs"></a>Linking 
+    Serial Libraries</b> </font></h3>
+</div>
+<p align="left"></p>
+<p align="left"><font face="Arial, Helvetica, sans-serif">ATLAS BLAS</font></p>
+<p align="left"> <font color="#0000ff" face="Arial, Helvetica, sans-serif">%&nbsp; 
+  <b><font size="2"> -L/usr/local/lib -lcblas -lf77blas -latlas </font></b> </font></p>
+<p align="left"></p>
+<p align="left"><font face="Arial, Helvetica, sans-serif">LAPACK</font></p>
+<p align="left"> <font color="#0000ff" face="Arial, Helvetica, sans-serif">%&nbsp; 
+  <b><font size="2"> -L/usr/local/lib -llapack -lcblas -lf77blas -latlas </font></b> 
+  </font></p>
+<p align="left"></p>
+<p align="left"><font face="Arial, Helvetica, sans-serif">FFTW release 2, complex 
+  input</font></p>
+<p align="left"> <font color="#0000ff" face="Arial, Helvetica, sans-serif">%&nbsp; 
+  <b><font size="2"> -L/usr/local/lib -lfftw </font></b> </font></p>
+<p align="left"></p>
+<p align="left"><font face="Arial, Helvetica, sans-serif">FFTW release 2, real 
+  input</font></p>
+<p align="left"> <font color="#0000ff" face="Arial, Helvetica, sans-serif">%&nbsp; 
+  <b><font size="2"> -L/usr/local/lib -lrfftw </font></b> </font></p>
+<p align="left"></p>
+<p align="left"><font face="Arial, Helvetica, sans-serif">FFTW release 3, real 
+  or complex input</font></p>
+<p align="left"> <font color="#0000ff" face="Arial, Helvetica, sans-serif">%&nbsp; 
+  <b><font size="2"> -L/usr/local/lib -lfftw3 </font></b> </font></p>
+<p align="left"> </p>
+<hr id="HRRule16" width="99%" align="left" size="2"
+
+ noshade="noshade">
+<div align="left"> 
+  <h3><font face="Arial, Helvetica, sans-serif"><b><a name="linking_parallel_libs"></a>Linking 
+    Parallel Libraries</b> </font></h3>
+</div>
+<font face="Arial, Helvetica, sans-serif"> 
+<!-- 
+
+<div align="left"> 
+
+  <h3><i>MPICH P4 Compatible Libraries</i> </h3>
+
+</div>
+
+<p align="left"><b>MPICH P4 Compatible Libraries:</b></p> 
+
+-->
+</font> 
+<hr>
+<p align="left">
+<h3><font face="Arial, Helvetica, sans-serif">MPICH P4 Compatible Libraries:</font></h3>
+<p></p>
+<p align="left"></p>
+<p align="left"><font face="Arial, Helvetica, sans-serif">FFTW release 2, complex 
+  input</font></p>
+<p align="left"> <font color="#0000ff" face="Arial, Helvetica, sans-serif">%&nbsp; 
+  <b><font size="2"> -L/usr/parallel/lib/p4 -lfftw_mpi -lfftw </font></b> </font></p>
+<p align="left"></p>
+<p align="left"><font face="Arial, Helvetica, sans-serif">FFTW release 2, real 
+  input</font></p>
+<p align="left"> <font color="#0000ff" face="Arial, Helvetica, sans-serif">%&nbsp; 
+  <b><font size="2"> -L/usr/parallel/lib/p4 -lrfftw_mpi -lrfftw </font></b> </font></p>
+<p align="left"></p>
+<p align="left"><font face="Arial, Helvetica, sans-serif">Scalapack</font></p>
+<p align="left"> <font color="#0000ff" face="Arial, Helvetica, sans-serif">%&nbsp; 
+  <b><font size="2"> <nobr> -L/usr/parallel/lib/p4 -lscalapack <wbr> -lblacsf77init 
+  -lblacs -lblacsf77init <wbr> -L/usr/local/lib -lf77blas -latlas </nobr> </font></b> 
+  </font></p>
+<font face="Arial, Helvetica, sans-serif"> 
+<!-- 
+
+<div align="left"> 
+
+  <h3><i>MPICH GM Compatible Libraries</i> </h3>
+
+</div>
+
+<p align="left"><b>MPICH GM Compatible Libraries:</b></p> 
+
+-->
+</font> 
+<hr>
+<p align="left">
+<h3><font face="Arial, Helvetica, sans-serif">MPICH GM Compatible Libraries:</font></h3>
+<p></p>
+<p align="left"></p>
+<p align="left"><font face="Arial, Helvetica, sans-serif">FFTW release 2, complex 
+  input</font></p>
+<p align="left"> <font color="#0000ff" face="Arial, Helvetica, sans-serif">%&nbsp; 
+  <b><font size="2"> -L/usr/parallel/lib/gm -lfftw_mpi -lfftw </font></b> </font></p>
+<p align="left"></p>
+<p align="left"><font face="Arial, Helvetica, sans-serif">FFTW release 2, real 
+  input</font></p>
+<p align="left"> <font color="#0000ff" face="Arial, Helvetica, sans-serif">%&nbsp; 
+  <b><font size="2"> -L/usr/parallel/lib/gm -lrfftw_mpi -lrfftw </font></b> </font></p>
+<p align="left"></p>
+<p align="left"><font face="Arial, Helvetica, sans-serif">Scalapack</font></p>
+<p align="left"> <font color="#0000ff" face="Arial, Helvetica, sans-serif">%&nbsp; 
+  <b><font size="2"> <nobr> -L/usr/parallel/lib/gm -lscalapack <wbr> -lblacsf77init 
+  -lblacs -lblacsf77init <wbr> -L/usr/local/lib -lf77blas -latlas </nobr> </font></b> 
+  </font></p>
+<font face="Arial, Helvetica, sans-serif">
+<!-- ############################################################### -->
+</font>
+<hr id="HRRule16" width="99%" align="left" size="2"
+
+ noshade="noshade">
+<div align="left"> 
+  <h3><font face="Arial, Helvetica, sans-serif"><b><a name="jobmanagers"></a>Submitting 
+    PBS Jobs</b> </font></h3>
+</div>
+<p align="left"></p>
+<p align="left"><font face="Arial, Helvetica, sans-serif">PBS supports two modes 
+  for running jobs &#8211; batch&nbsp; and interactive. With batch mode, a user 
+  submits a job, and the job is queued, scheduled and run without any further 
+  interaction. &nbsp;With interactive mode, a user submits a request for an interactive 
+  session on a set of compute nodes assigned by the PBS job manager. <br>
+  </font></p>
+<p align="left"><font face="Arial, Helvetica, sans-serif">The following examples 
+  show simple scripts for batch mode jobs. &nbsp; </font></p>
+<p align="left"><font face="Arial, Helvetica, sans-serif"><b>Portable Batch System 
+  (PBS)</b></font></p>
+<p align="left"><font face="Arial, Helvetica, sans-serif"><b>PBS Batch Mode Sample 
+  Scripts:</b></font></p>
+<p align="left"><font face="Arial, Helvetica, sans-serif">Request 16 nodes and 
+  start one mpi process on each node:</font></p>
+<p><font face="Arial, Helvetica, sans-serif" color="#0000ff">#PBS -l nodes=16:ppn=2<br>
+  mpirun -machinefile $PBS_NODEFILE -np 16 myprog.exe</font></p>
+<p align="left"><font face="Arial, Helvetica, sans-serif"><br>
+  Request 8 nodes and start 2 mpi processes on each node:</font></p>
+<p><font face="Arial, Helvetica, sans-serif" color="#0000ff">#PBS -l nodes=8:ppn=2<br>
+  mpirun -machinefile $PBS_NODEFILE -np 16 myprog.exe</font></p>
+<font face="Arial, Helvetica, sans-serif"><br>
+</font>
+<p align="left"></p>
+<p align="left"><font face="Arial, Helvetica, sans-serif">Standard output and 
+  error files will be written to your working directory.&nbsp; To submit the script 
+  to PBS, use the following command: </font></p>
+<div align="left"> 
+  <ul>
+  </ul>
+</div>
+<ul>
+  <p align="left"><font color="#0000ff"
+
+
+
+ face="Arial, Helvetica, sans-serif">%&nbsp;<b><font size="2">qsub</font></b> 
+    <font size="2"><i>&lt;pbs_script_file&gt;</i></font></font></p>
+</ul>
+<p align="left">&nbsp;</p>
+<p align="left"><font face="Arial, Helvetica, sans-serif"><b>PBS Interactive Mode 
+  Sample Session:<br>
+  </b>Request an interactive session with 8 nodes: </font></p>
+<div align="left"> 
+  <ul>
+  </ul>
+</div>
+<ul>
+  <p align="left"><font color="#0000ff"
+
+
+
+ face="Arial, Helvetica, sans-serif">%&nbsp;<b><font size="2">qsub &#8211;I &#8211;l 
+    nodes=8</font></b><font size="2"> </font></font></p>
+</ul>
+<ul>
+  <p align="left"></p>
+</ul>
+<p align="left"><font face="Arial, Helvetica, sans-serif">Run your program as 
+  follows:</font></p>
+<p align="left"><font face="Arial, Helvetica, sans-serif">Start one mpi process 
+  on each node:&nbsp;</font></p>
+<p align="left"> <font
+
+
+
+ color="#0000ff" face="Arial, Helvetica, sans-serif">% <b><font
+
+
+
+ size="2">mpirun -machinefile $PBS_NODEFILE -np 8<prog><prog> myprog.exe</prog></prog></font></b></font></p>
+<p align="left"><font face="Arial, Helvetica, sans-serif">Start two mpi processes 
+  on each node:</font></p>
+<p align="left"><font color="#0000ff"
+
+
+
+ face="Arial, Helvetica, sans-serif">% <b><font size="2">mpirun -machinefile $PBS_NODEFILE 
+  -np 16 myprog.exe</font></b></font></p>
+<p align="left"><font face="Arial, Helvetica, sans-serif"> Release your nodes 
+  when finished by typing: </font></p>
+<div align="left"> 
+  <ul>
+  </ul>
+</div>
+<ul>
+  <p align="left"><font color="#0000ff"
+
+
+
+ face="Arial, Helvetica, sans-serif">% <b><font size="2">exit</font></b></font></p>
+</ul>
+<p align="left"><font face="Arial, Helvetica, sans-serif"> Display contents and 
+  status of queue: </font></p>
+<div align="left"> 
+  <ul>
+  </ul>
+</div>
+<ul>
+  <p align="left"><font color="#0000ff"
+
+
+
+ face="Arial, Helvetica, sans-serif">% <b><font size="2">qstat -a</font></b></font></p>
+</ul>
+<p align="left"><font face="Arial, Helvetica, sans-serif"> Remove job from queue: 
+  </font></p>
+<div align="left"> 
+  <ul>
+  </ul>
+</div>
+<ul>
+  <p align="left"><font color="#0000ff"
+
+
+
+ face="Arial, Helvetica, sans-serif">% <b><font size="2">qdel</font></b> <font size="2"><i>&lt;job_id&gt;</i></font></font></p>
+
+</ul>
+
+</body>
+
+</html>
+

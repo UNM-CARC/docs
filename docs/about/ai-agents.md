@@ -37,6 +37,11 @@ through these endpoints rather than scraping rendered HTML.
 
 | Endpoint | What you get |
 | -------- | ------------ |
+| [`/llms.txt`](../llms.txt) | Linked outline of every page with one-line descriptions ([llms.txt convention](https://llmstxt.org){target=_blank}) |
+| [`/llms-full.txt`](../llms-full.txt) | The entire corpus in one file — every page's Markdown with frontmatter, prefixed by its canonical URL. **It is large (hundreds of KB) and may exceed your fetch window** — if it truncates, use [`/llms.txt`](../llms.txt) as the outline and fetch pages individually via their `index.md` mirrors |
+| Any page URL + `index.md` | That page's Markdown source with full OKF frontmatter (e.g. `/running-jobs/slurm-intro/index.md`) |
+| `/sitemap.xml`, `/robots.txt` | Standard crawl surface; robots.txt repeats these pointers |
+| [Source repository](https://github.com/UNM-CARC/docs){target=_blank} | The bundle itself, plus `AGENTS.md` with contribution rules for coding agents |
 | [`https://carc.unm.edu/docs/llms.txt`](https://carc.unm.edu/docs/llms.txt) | Linked outline of every page with one-line descriptions ([llms.txt convention](https://llmstxt.org){target=_blank}); every entry lists the HTML page, its Markdown twin, and its raw GitHub source |
 | [`https://carc.unm.edu/docs/llms-full.txt`](https://carc.unm.edu/docs/llms-full.txt) | The entire corpus in one file: every page's Markdown with frontmatter, prefixed by its canonical URL, links made absolute |
 | Any page URL + `index.md` | That page's Markdown source with full OKF frontmatter, served as `text/markdown` (for example [`https://carc.unm.edu/docs/running-jobs/slurm-intro/index.md`](https://carc.unm.edu/docs/running-jobs/slurm-intro/index.md)); section listings too (`https://carc.unm.edu/docs/running-jobs/index.md`). Every rendered page links it from a "View this page as Markdown" button beside the edit and view-source buttons, and from a "Machine-readable versions" line at the end of the article |

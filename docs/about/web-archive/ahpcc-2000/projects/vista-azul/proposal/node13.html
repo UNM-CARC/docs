@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p1 release (March 2nd, 1998)
+originally by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Data Mining Primitives</TITLE>
+<META NAME="description" CONTENT="Data Mining Primitives">
+<META NAME="keywords" CONTENT="nprop">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="https://web.archive.org/web/20010222103456cs_/http://ahpcc.unm.edu/projects/vista-azul/proposal/nprop.css">
+<LINK REL="previous" HREF="node12.html">
+<LINK REL="up" HREF="node9.html">
+<LINK REL="next" HREF="node14.html">
+</HEAD>
+<BODY >
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">ahpcc.unm.edu/projects/vista-azul/proposal/node13.html</code> as captured by the Internet Archive on 22 February 2001. Links to pages that were not saved here go to the Wayback Machine. Icons the Internet Archive did not save were redrawn for this copy and are not originals (hover over one to see). <a style="color:#0b5cad" href="https://web.archive.org/web/20010222103456/http://www.ahpcc.unm.edu:80/projects/vista-azul/proposal/node13.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../../">Web archive index</a></div>
+
+<!--Navigation Panel-->
+<A NAME="tex2html185"
+ HREF="node14.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="next (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/next_motif.gif" title="Modern recreation, not an archived original"></A> 
+<A NAME="tex2html183"
+ HREF="node9.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="up (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/up_motif.gif" title="Modern recreation, not an archived original"></A> 
+<A NAME="tex2html179"
+ HREF="node12.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="previous (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/previous_motif.gif" title="Modern recreation, not an archived original"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html186"
+ HREF="node14.html">Scientific Applications Research</A>
+<B> Up:</B> <A NAME="tex2html184"
+ HREF="node9.html">Data Intensive Applications Research</A>
+<B> Previous:</B> <A NAME="tex2html180"
+ HREF="node12.html">I/O Performance</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00032400000000000000">
+Data Mining Primitives</A>
+</H3>
+
+<P>
+What are some of the most commonly used but time consumptive
+operations (primitives) encountered in data mining, knowledge
+discovery, and decision support systems?  How are the performance and
+scalability of these primitives affected by key hardware and software
+attributes of parallel systems? Can currently available algorithms be improved?
+Are these primitives candidates for inclusion in datamining and decision support software libraries?
+Should they be implemented in silicon?
+
+<P>
+The relevance of the planned data-mining research is that in the
+past, high performance computer hardware and software tended to be
+optimized for numerically rather than data intensive applications. The
+basic vector, matrix, and other mathematical operators prevalent in
+scientific computing have been well understood for decades and this
+knowledge has been used in many studies devoted to the investigation
+of factors affecting the performance of high end machines in such
+application areas. The results of these studies have led to the
+development of important new architectures, algorithms, and entire
+mathematical libraries all highly optimized for high speed execution
+of the most commom mathematical operations in scientific and technical
+computing. Over the past 20 years, they have led to the doubling in
+floating point performance every 18-24 months.
+
+<P>
+This has not been the case for the processing and I/O performance
+needed by data intensive applications encounterd not only in
+datamining and decision support systems, but also in many scientific
+codes where output increases rapidly with the dimensionality of the
+problem. An example is the ARPI3D weather model which spends 69
+the elapsed time in doing various I/O operations (initialization,
+message passing and output) and only 31
+including computation, when using 64 nodes on UNM's Roadrunner
+SuperCluster. Consequently, studies such as the one planned here are
+important to understand the characteristics of REAL (as opposed to
+synthetic) I/O workloads, the I/O constraints of today's machines, and
+the need for architectural changes in order to effectively support
+fast data movement as well as commonly occurring but complex
+operations during knowledge discovery, business intelligence, and
+decision-support applications.  That understanding should lead to the
+design of new hardware and software systems with more effective data
+caching and prefetching strategies, greater use of file striping, much
+improved parallel file systems, as well as new instruction,
+architectures, and libraries to handle complex operations on very
+large data sets.  Such systems would have more balanced compute and
+I/O performance and therfore be more effective for running a much
+wider range of applications than the less balanced systems of today.
+
+<P>
+The planned studies will be conducted using the wide variety of
+hardware, interconnects, and software resources currently existing at
+UNM, including those requested under this award.  This includes the
+existing Linux Roadrunner SuperCluster, as well as IBM Power3 SMP and
+the Netfinity clusters.  The resources also include a wide
+array of scientific application codes for computational physics,
+chemistry, and fluid dynamics to study scientific I/O workloads, while
+the UNM data warehouse could provide similar information for data
+mining and decision support systems.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html185"
+ HREF="node14.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="next (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/next_motif.gif" title="Modern recreation, not an archived original"></A> 
+<A NAME="tex2html183"
+ HREF="node9.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="up (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/up_motif.gif" title="Modern recreation, not an archived original"></A> 
+<A NAME="tex2html179"
+ HREF="node12.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="previous (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/previous_motif.gif" title="Modern recreation, not an archived original"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html186"
+ HREF="node14.html">Scientific Applications Research</A>
+<B> Up:</B> <A NAME="tex2html184"
+ HREF="node9.html">Data Intensive Applications Research</A>
+<B> Previous:</B> <A NAME="tex2html180"
+ HREF="node12.html">I/O Performance</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I>Bob Ballance</I>
+<BR><I>1999-12-07</I>
+</ADDRESS>
+</BODY>
+</HTML>

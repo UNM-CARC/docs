@@ -1,0 +1,371 @@
+<html>
+<head>
+<title>UNM-HPCERC: SP2 Jobs &amp; Features</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF">
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">hpc.unm.edu/computing/sp2/ug/index.html</code> as captured by the Internet Archive on 24 July 2003. Links to pages that were not saved here go to the Wayback Machine. <a style="color:#0b5cad" href="https://web.archive.org/web/20030724014432/http://www.hpc.unm.edu:80/computing/sp2/ug/index.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../../">Web archive index</a></div>
+
+<h2 align="center"><font size="+2">Running Jobs on the AHPCC SP/2</font></h2>
+<hr width="100%">
+<h2><a name="Table of Contents"></a>Table of Contents</h2>
+<ul>
+  <li><a href="#Running Interactively">Running Interactively</a></li>
+  <li><a href="#Running Batch Jobs">Running Batch Jobs</a> 
+    <ul>
+      <li><a href="#Using LoadLeveler/Maui Scheduler">LoadLeveler/Maui Scheduler</a>:</li>
+      <li><a href="#Job Command Files">Job Command Files</a></li>
+      <li><a href="#Commands">Commands</a></li>
+      <li><a href="../../docs/loadleveler.html">Tips on Using LoadLeveler</a></li>
+    </ul>
+  </li>
+  <li><a href="#features">HPCERC SP2 Features</a></li>
+</ul>
+<hr width="100%">
+<h2><a name="Running Interactively"></a>Running Interactively</h2>
+<p>Interactive jobs on the AHPCC SP2 can only run on the interactive SP2 nodes 
+  (fr1n05-08). 
+<ol>
+  <li>Login to an interactive SP2 node using 'ssh'</li>
+  <li><br>
+    <font face="Courier New,Courier">&nbsp;&nbsp;&nbsp; ssh fr1n05</font> <br>
+    &nbsp; </li>
+  <li>Compile code if necessary:</li>
+  <li><br>
+    <font face="Courier">&nbsp;&nbsp;&nbsp; </font><font size="+1" color="#008000"
+    face="Courier">mpcc </font><font size="+1"><font color="#008000"><i>filename.c</i></font><font
+    face="Courier"> </font></font>or<font size="+1" face="Courier"> </font><font
+    color="#008000" size="+1" face="Courier">mpxlf </font><font color="#008000" size="+1"><i>filename.f</i></font> 
+    <font color="#008000" size="+1" face="Courier"> -qnolm</font> <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Compiles MPI programs for 
+    C or Fortran respectively) <br>
+    &nbsp; </li>
+  <li>Set necessary environment variables:</li>
+  <ul>
+    <li><font color="#006600">setenv MP_PROCS <i>n</i>&nbsp; </font>(when using 
+      <i>n</i> processors. Max - 4.)</li>
+    <li><font color="#006600">setenv MP_EUIDEVICE en0</font>&nbsp; (to use ethernet 
+      for communication)</li>
+    <li><font color="#006600">setenv MP_EUILIB ip</font>&nbsp; (to use IP protocol 
+      for communication)</li>
+    <li><font color="#006600">setenv MP_RMPOOL 0</font> (to specify Resource Manager 
+      pool)</li>
+  </ul>
+  <li>Run program</li>
+</ol>
+<b><u> 
+<p>Tips: 
+</u></b> 
+<ol>
+  <li>Make sure the interactive node names are in your .rhosts file</li>
+  <li><br>
+    fr1n05 <br>
+    fr1n06 <br>
+    fr1n07 <br>
+    fr1n08</li>
+</ol>
+<p> <a href="#Table of Contents">[Back to TOP]</a> <br>
+</p>
+<hr width="100%">
+<h2><a name="Running Batch Jobs"></a>Running Batch Jobs</h2>
+<p>Batch jobs on the AHPCC SP2 must be submitted from one of the interactive SP2 
+  nodes (fr1n05-08) using LoadLeveler/Maui Scheduler. 
+<ol>
+  <li>Login to the interactive SP2 nodes using 'ssh'</li>
+  <li><br>
+    <font face="Courier New,Courier">&nbsp;&nbsp;&nbsp; ssh fr1n05</font> </li>
+  <li>Compile code if necessary:</li>
+  <li><br>
+    <font face="Courier">&nbsp;&nbsp;&nbsp; </font><font size="+1" color="#008000"
+    face="Courier">mpcc </font><font size="+1"><font color="#008000"><i>filename.c</i></font><font
+    face="Courier"> </font></font>or<font size="+1" face="Courier"> </font><font
+    color="#008000" size="+1" face="Courier">mpxlf </font><font color="#008000" size="+1"><i>filename.f</i></font> 
+    <font color="#008000" size="+1" face="Courier"> -qnolm</font> <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (Compiles MPI programs for 
+    C or Fortran respectively) </li>
+  <li>Create Job Command file (e.g., test_run.cmd)</li>
+  <li>Submit job using &quot;llsubmit&quot; command</li>
+  <li><br>
+    <font face="Courier New,Courier">&nbsp;&nbsp;&nbsp; llsubmit test_run.cmd</font> 
+  </li>
+  <li>View job status in queue using &quot;llq&quot; and wait for completion</li>
+  <li><br>
+    <font face="Courier New,Courier">&nbsp;&nbsp;&nbsp; llq</font></li>
+</ol>
+<p> <a href="#Table of Contents">[Back to TOP]</a> <br>
+</p>
+<hr width="100%">
+<h4>AHPCC SP/2 Node Policy</h4>
+<div align="center"> 
+  <center>
+    <table border="0" width="40%">
+      <tr> 
+        <td width="37%" bgcolor="#C0C0C0"><strong>Max. Jobs per User*:</strong></td>
+        <td width="29%" align="center" bgcolor="#C0C0C0"><strong>2</strong></td>
+      </tr>
+      <tr> 
+        <td width="37%" bgcolor="#C0C0C0"><strong>Max. Nodes per Job:</strong></td>
+        <td width="29%" align="center" bgcolor="#C0C0C0"><strong>32</strong></td>
+      </tr>
+      <tr> 
+        <td width="37%" bgcolor="#C0C0C0"><strong>Max. Job Length</strong></td>
+        <td width="29%" align="center" bgcolor="#C0C0C0"><strong>36 hours**</strong></td>
+      </tr>
+    </table>
+  </center>
+</div>
+<p align="center">* Limit applies to jobs <em>running</em> under Loadleveler only.<br>
+  Does not apply to idle jobs waiting in the queue.</p>
+<p align="center">** Job length can be extended for special requests</p>
+<hr>
+<h4><a name="Using LoadLeveler/Maui Scheduler"></a>Using LoadLeveler/Maui Scheduler</h4>
+<p>LoadLeveler is a batch job scheduling application and program product of IBM.&nbsp; 
+  Maui Scheduler uses LoadLeveler but allocates jobs more fairly and efficiently. 
+  It also includes additional commands which give the user more information on 
+  jobs in the queue. </p>
+<p><a name="Job Command Files"></a><b>Job Command Files:</b> <br>
+  Command files describe the requirements and parameters for the job to be executed 
+  such as; number of processors, input/output files needed, memory/hardware requirements, 
+  etc.)&nbsp; Comment lines begin with '#'. Valid LoadLeveler keywords begin with 
+  '#@'. Any line after the '#@ queue' will be executed at run-time. </p>
+<p>Below is an sample command file. The file executes a program named &quot;test_run&quot; 
+  which resides in /home/joebloe/sp2example. Email will notify the user when the 
+  job is complete. Standard error and standard output are captured in&nbsp; files 
+  &quot;test.err&quot; and &quot;test.out&quot; respectively as described by the 
+  &quot;error&quot; and &quot;output&quot; keywords. The &quot;class&quot; line 
+  identifies the processor-pool name that the program will run in. Maui Scheduler 
+  only has one pool name - &quot;batch&quot;. </p>
+<p>The program has the following requirement: Adapter==&quot;hps_user&quot;. This 
+  means the program must use the high-performance communication switch. View the 
+  <a
+href="#features">other possible SP2 features</a> that are available (RAM, disk 
+  space, etc.) </p>
+<p>The environment variable MP_EUILIB supporting this requirement is set by &quot;environment&quot;. 
+  Finally, the number of processors is set by min_processors and max_processors 
+  <font color="#008000">(the maximum number is currently 16.)</font> </p>
+<p>Sample job command file at AHPCC </p>
+<blockquote> 
+  <p><font face="Courier New,Courier"># Example MPI / MPL job command file</font> 
+    <br>
+    <font face="Courier New,Courier">#</font> <br>
+    <font face="Courier New,Courier">#@ initialdir&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    = /home/joebloe/sp2example</font> <br>
+    <font face="Courier New,Courier">#@ notification&nbsp;&nbsp;&nbsp; = complete</font> 
+    <br>
+    <font face="Courier New,Courier">#@ notify_user&nbsp;&nbsp;&nbsp;&nbsp; = 
+    joebloe@arc.unm.edu</font> <br>
+    <font face="Courier New,Courier">#@ error&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    = test.err</font> <br>
+    <font face="Courier New,Courier">#@ output&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    = test.out</font> <br>
+    <font face="Courier New,Courier">#@ class&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    = batch</font> <br>
+    <font face="Courier New,Courier">#@ job_type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+    = parallel</font> <br>
+    <font face="Courier New,Courier">#@ <a
+  href="https://web.archive.org/web/20030724014432/http://www.arc.unm.edu/UserSupport/Guides/sp2_features.html">requirements</a>&nbsp;&nbsp;&nbsp; 
+    = (Adapter == &quot;hps_user&quot;)</font> <br>
+    <font face="Courier New,Courier">#@ min_processors&nbsp; = 4</font> <br>
+    <font face="Courier New,Courier">#@ max_processors&nbsp; = 4</font> <br>
+    <font face="Courier New,Courier">#@ environment&nbsp;&nbsp;&nbsp;&nbsp; = 
+    MP_EUILIB=us</font> <br>
+    <font face="Courier New,Courier">#@ queue</font> <br>
+    <font face="Courier New,Courier">test_run</font></p>
+</blockquote>
+<p><br>
+  <a href="#Table of Contents">[Back to TOP]</a> </p>
+<p><a name="Commands"></a><b>Commands:</b> </p>
+<blockquote> 
+  <h4>llsubmit&nbsp; <i><font color="#009900">job_command_file</font></i></h4>
+  <p>Submits a job into the job queue. <br>
+  </p>
+  <hr width="100%">
+  <h4>llq</h4>
+  <p>Obtains information in the job queue <br>
+  </p>
+  <hr width="100%">
+  <h4>llcancel&nbsp; <i><font color="#009900">job_id</font></i></h4>
+  <p><font color="#000000">Removes the job from the queue. The job is identified 
+    by its job_id which can be obtained from the <b>llq</b> command.</font> <br>
+  </p>
+  <hr width="100%">
+</blockquote>
+<blockquote> 
+  <h4>showq</h4>
+  <p>Displays how many nodes are available for immediate use on the system. <br>
+  </p>
+  <hr width="100%">
+  <h4>showbf</h4>
+  <p>Displays the actual job ordering under the new scheduler</p>
+</blockquote>
+<p><a name="features"></a></p>
+<h4 align="left">AHPCC SP/2 Features</h4>
+<hr width="100%">
+<div align="center">
+  <center>
+    <table border="0">
+      <tr> 
+        <td width="174" bgcolor="#FFFFFF">&nbsp;&nbsp;&nbsp;&nbsp; </td>
+        <td width="204" bgcolor="#FFFFFF">
+          <p align="center"><strong>&quot;Requirements&quot; Syntax</strong>
+        </td>
+        <td width="60" colspan="4" bgcolor="#FFFFFF">
+          <p align="center"><strong>Nodes</strong>
+        </td>
+      </tr>
+      <tr> 
+        <td width="560" colspan="6" bgcolor="#F3AA21"><strong>Communications</strong></td>
+      </tr>
+      <tr> 
+        <td width="174" bgcolor="#C0C0C0" valign="top"><strong>Adaptor type</strong></td>
+        <td width="204" bgcolor="#C0C0C0">
+          <pre>Adapter==&quot;hps_user&quot;</pre>
+        </td>
+        <td width="243" align="center" colspan="4" bgcolor="#C0C0C0">
+          <p align="center">All nodes
+        </td>
+      </tr>
+      <tr> 
+        <td width="560" colspan="6" bgcolor="#F3AA21"><strong>Memory</strong></td>
+      </tr>
+      <tr> 
+        <td width="174" valign="top" bgcolor="#C0C0C0"><strong>RAM - 64 Mb</strong></td>
+        <td width="204" valign="top" bgcolor="#C0C0C0">
+          <pre>Memory==64</pre>
+        </td>
+        <td width="92" valign="top" bgcolor="#C0C0C0">fr1n02<br>
+          fr1n09<br>
+          fr1n10<br>
+          fr1n11<br>
+          fr1n12<br>
+          fr1n13<br>
+          fr1n14<br>
+          fr1n15<br>
+          fr1n16
+          <p>fr5n03<br>
+            fr5n08
+        </td>
+        <td width="89" valign="top" bgcolor="#C0C0C0">fr2n01<br>
+          fr2n02<br>
+          fr2n03<br>
+          fr2n04<br>
+          fr2n05<br>
+          fr2n06<br>
+          fr2n07<br>
+          fr2n08<br>
+          fr2n09<br>
+          fr2n10<br>
+          fr2n11<br>
+          fr2n12<br>
+          fr2n13<br>
+          fr2n14<br>
+          fr2n15<br>
+          fr2n16</td>
+        <td width="92" valign="top" bgcolor="#C0C0C0">fr3n01<br>
+          fr3n02<br>
+          fr3n03<br>
+          fr3n04<br>
+          fr3n05<br>
+          fr3n06<br>
+          fr3n07<br>
+          fr3n08<br>
+          fr3n09<br>
+          fr3n10<br>
+          fr3n11<br>
+          fr3n12<br>
+          fr3n13<br>
+          fr3n14<br>
+          fr3n15<br>
+          fr3n16</td>
+        <td width="89" valign="top" bgcolor="#C0C0C0">fr4n01<br>
+          fr4n02<br>
+          fr4n03<br>
+          fr4n04<br>
+          fr4n05<br>
+          fr4n06<br>
+          fr4n07<br>
+          fr4n08<br>
+          fr4n09<br>
+          fr4n10<br>
+          fr4n11<br>
+          fr4n12<br>
+          fr4n13<br>
+          fr4n14<br>
+          fr4n15<br>
+          fr4n16</td>
+      </tr>
+      <tr> 
+        <td width="174" valign="top" bgcolor="#808080"><strong>RAM - 128 Mb</strong></td>
+        <td width="204" valign="top" bgcolor="#808080">
+          <pre>Memory==128</pre>
+        </td>
+        <td width="92" bgcolor="#808080">fr5n01<br>
+          fr5n02<br>
+          fr5n04<br>
+          fr5n05<br>
+        </td>
+        <td width="89" bgcolor="#808080" valign="top">fr5n06<br>
+          fr5n07<br>
+          fr5n09</td>
+        <td width="52" bgcolor="#808080">&nbsp;&nbsp;&nbsp;&nbsp; </td>
+        <td width="51" bgcolor="#808080">&nbsp;&nbsp;&nbsp; </td>
+      </tr>
+      <tr> 
+        <td width="174" valign="top" bgcolor="#C0C0C0"><strong>RAM - 256 Mb</strong></td>
+        <td width="204" valign="top" bgcolor="#C0C0C0">
+          <pre>Memory==256</pre>
+        </td>
+        <td width="92" bgcolor="#C0C0C0">fr5n10<br>
+          fr5n11<br>
+          fr5n12<br>
+        </td>
+        <td width="89" bgcolor="#C0C0C0" valign="top">fr5n13<br>
+          fr5n15</td>
+        <td width="52" bgcolor="#C0C0C0">&nbsp;</td>
+        <td width="51" bgcolor="#C0C0C0">&nbsp;</td>
+      </tr>
+      <tr> 
+        <td width="560" colspan="6" bgcolor="#F3AA21"><strong>Disk Space</strong></td>
+      </tr>
+      <tr> 
+        <td width="174" valign="top" bgcolor="#C0C0C0"><strong>Scratch space<br>
+          (1 Gb)</strong>
+          <p>Use /scratch
+        </td>
+        <td width="204" valign="top" bgcolor="#C0C0C0">
+          <pre>Feature==&quot;1G_SCRATCH&quot;</pre>
+        </td>
+        <td width="92" valign="top" bgcolor="#C0C0C0">fr1n09<br>
+          fr1n10<br>
+          fr1n11<br>
+          fr1n12<br>
+          fr1n13<br>
+          fr1n14<br>
+          fr1n15<br>
+          fr1n16</td>
+        <td width="89" bgcolor="#C0C0C0">fr3n01<br>
+          fr3n02<br>
+          fr3n03<br>
+          fr3n04<br>
+          fr3n05<br>
+          fr3n06<br>
+          fr3n07<br>
+          fr3n08</td>
+        <td width="52" valign="top" bgcolor="#C0C0C0">fr3n09<br>
+          fr3n10<br>
+          fr3n11<br>
+          fr3n12<br>
+          fr3n13<br>
+          fr3n14<br>
+          fr3n15<br>
+          fr3n16</td>
+        <td width="51" valign="top" bgcolor="#C0C0C0">&nbsp;</td>
+      </tr>
+    </table>
+  </center>
+</div>
+<p><br>
+  <a href="#Table of Contents">[Back to TOP]</a> </p>
+</body>
+</html>

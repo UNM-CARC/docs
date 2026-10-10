@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <title>HPC@UNM: VMware</title>
+</head>
+ 
+<body bgcolor="#ffffff" vlink="#000000"
+ alink="#999999">
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">hpc.unm.edu/computing_resources/systems/docs/vmware/index.html</code> as captured by the Internet Archive on 18 March 2004. Links to pages that were not saved here go to the Wayback Machine. <a style="color:#0b5cad" href="https://web.archive.org/web/20040318014939/http://www.hpc.unm.edu:80/computing_resources/systems/docs/vmware/index.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../../../">Web archive index</a></div>
+
+<h2 align="center"><font face="Arial, Helvetica, sans-serif">VMware online support 
+  page for HPC@UNM </font></h2>
+<hr>
+<p align="center"><font face="Arial, Helvetica, sans-serif"></font> </p>
+<p><font face="Arial, Helvetica, sans-serif"><b><img src="https://web.archive.org/web/20040318014939im_/http://hpc.unm.edu/computing_resources/systems/docs/vmware/logo-home.gif" width="279"
+ height="68"></b> </font></p>
+<p>&nbsp; </p>
+<h3><font face="Arial, Helvetica, sans-serif">Introduction:</font></h3>
+<p><font face="Arial, Helvetica, sans-serif">This online support page is intended 
+  for user reference and is supplemental to the <a
+ href="https://web.archive.org/web/20040318014939/http://santafe.hpc.unm.edu/irs/ticket/" target="_blank">help desk</a> services. 
+  Basically with this page you should be able to run VMware successful and find 
+  some answers to questions you may have about VMware.</font></p>
+<h3><font face="Arial, Helvetica, sans-serif">Hardware Capability:</font></h3>
+<p><font face="Arial, Helvetica, sans-serif">VMware is intended for use on the 
+  Truchas cluster located in the workshop room at <a
+ href="../../../../index.html" target="_blank"> HPC@UNM</a>. The Truchas Cluster 
+  is a cluster of Dual Processor Pentium III 650 MHz running Red Hat Linux 7.2.3 
+  Kernel Version 2.4.18. Users can take advantage of this tremendous computing 
+  power by running two operating systems simultaneously through the software known 
+  as VMware.</font></p>
+<h3><font face="Arial, Helvetica, sans-serif">Why not just use lilo and dual-boot 
+  the computers?</font></h3>
+<p><font face="Arial, Helvetica, sans-serif">The workshop computers are also known 
+  as the Truchas Cluster here at HPC@UNM and because of their intense computing 
+  power they are used as a cluster and run a type of software called <a
+ href="../../../../computing/condor/index.html">Condor</a>. This software would 
+  be interrupted on reboot of any single one of the Truchas computers. VMware 
+  allows for guest operating systems to be started without reboot of the computers 
+  and even shares processor power with Condor if needed. Not only that but VMware 
+  allows for multiple operating systems to be stored on all Truchas computers. 
+  So on the administrative level this makes tasks like imaging and software installation 
+  efficient. The Truchas cluster is also used as a place for workshops at HPC@UNM 
+  so with VMware running any user can still login to the machine remotely while 
+  a workshop is going on.</font></p>
+<h3><font face="Arial, Helvetica, sans-serif">Getting Started:</font></h3>
+<p><font face="Arial, Helvetica, sans-serif">Follow these easy steps and you will 
+  be on your way running VMware.</font></p>
+<ol>
+  <li><font face="Arial, Helvetica, sans-serif">Run a script placing a necessary 
+    file in your account.<br>
+    At a command prompt type:<br>
+    <br>
+    ~vmware/scripts/vmware-licenselinker.sh<br>
+    <br>
+    </font></li>
+  <li><font face="Arial, Helvetica, sans-serif">Start VMware.<br>
+    At a command prompt type:<br>
+    <br>
+    vmware &amp;<br>
+    <br>
+    </font></li>
+  <li><font face="Arial, Helvetica, sans-serif">Choose which operating system 
+    you wish to run.<br>
+    Double click the corresponding configuration on the startup screen.<br>
+    <br>
+    </font></li>
+  <li><font face="Arial, Helvetica, sans-serif">No Configurations? <br>
+    If there are no configurations to choose from click on the File menu ~&gt; 
+    Open. A window will pop up and there you can navigate to the file directories 
+    until you get to /vmware. Here are located all the operating systems and their 
+    configurations. Find the operating system that you need and click on its corresponding 
+    configuration. For example if you need the NT5 image for the bio544 class 
+    go to /vmware/bio544/win2000/ and click on the win2000.cfg file. or type the 
+    whole path into the Selection prompt located right above the [OK] [Filter] 
+    [Cancel] buttons. Then click [OK]. (This should only happen on the rare instances 
+    of the fresh installation of a guest operating system).<br>
+    <br>
+    </font></li>
+  <li><font face="Arial, Helvetica, sans-serif">Power on.<br>
+    Click the [Power On] button in the upper left hand of the VMware window.<br>
+    <br>
+    </font></li>
+  <li><font face="Arial, Helvetica, sans-serif">Change in and out of Full Screen 
+    mode.<br>
+    Click the [Full Screen] button to bring VMware to the full screen.<br>
+    To bring VMware out of this mode press [CTRL] + [ALT] + [ESC] simultaneously.<br>
+    <br>
+    Reminder: If you are running your guest operating system in window mode the 
+    mouse will jump between operating systems as you move the mouse pointer arrow 
+    in and out of the VMware window to reclaim your mouse arrow to the Linux side 
+    press [CTRL] + [ALT] + [ESC]. To give it back to the guest operating system 
+    simply click inside the VMware window.<br>
+    <br>
+    </font></li>
+  <li><font face="Arial, Helvetica, sans-serif">Your guest operating system should 
+    now be booting up just wait for a normal user login prompt and sign in as 
+    usual.</font></li>
+</ol>
+<h3><font face="Arial, Helvetica, sans-serif">Finishing Up:</font></h3>
+<p><font face="Arial, Helvetica, sans-serif">To close up vmware follow these steps.</font></p>
+<ol>
+  <li><font face="Arial, Helvetica, sans-serif">Make sure you have saved any work 
+    or data on a network drive or floppy disk.<br>
+    <br>
+    </font></li>
+  <li><font face="Arial, Helvetica, sans-serif">Shutdown the guest operating system 
+    as usual.<br>
+    <br>
+    </font></li>
+  <li><font face="Arial, Helvetica, sans-serif">If you are in Full Screen mode 
+    press [CTRL] + [ALT] + [ESC] simultaneously to place VMware in window mode.<br>
+    <br>
+    </font></li>
+  <li><font face="Arial, Helvetica, sans-serif">When the guest operating systems 
+    says it is safe to power off. Click the [Power Off] button again in the upper 
+    left hand corner of the VMware window.<br>
+    <br>
+    </font></li>
+  <li><font face="Arial, Helvetica, sans-serif">Close VMware</font></li>
+</ol>
+<h3><font face="Arial, Helvetica, sans-serif">Operating Systems:</font></h3>
+<p><font face="Arial, Helvetica, sans-serif">Currently Available on the Truchas 
+  cluster is a Microsoft Windows NT4 configuration and a Microsoft Windows 2000 
+  configuration. Accessibility to these configurations change depending on class 
+  and workshops that may be going on in the lab at the time. Both configurations 
+  have adequate office suite software installed. Requests for additional software 
+  can be made (as usual) via the <a href="https://web.archive.org/web/20040318014939/http://santafe.hpc.unm.edu/irs/ticket/"
+ target="_blank">help desk</a>.</font></p>
+<h3><font face="Arial, Helvetica, sans-serif">Caveats:</font></h3>
+<p><font face="Arial, Helvetica, sans-serif">A setting in VMware can be set where 
+  all data written to the guest operating system disk will be lost at shutdown 
+  so if you have any data please save it to a floppy disk or mounted network drive. 
+  VMware supports the mounting of network drives and the use of floppy disk storage. 
+  Zip drives, however, are currently unsupported by VMware.</font></p>
+<h3><font face="Arial, Helvetica, sans-serif">Helpful Links:</font></h3>
+<ul>
+  <li><font face="Arial, Helvetica, sans-serif"><a
+ href="../../../../index.html">HPC@UNM</a></font></li>
+  <li><font face="Arial, Helvetica, sans-serif"><a href="https://web.archive.org/web/20040318014939/http://santafe.hpc.unm.edu/irs/ticket/" target="_blank">HPC@UNM 
+    Help Desk</a></font></li>
+  <li><font face="Arial, Helvetica, sans-serif"><a
+ href="https://web.archive.org/web/20040318014939/http://www.vmware.com" target="_blank">VMware Webpage</a></font></li>
+  <li><font face="Arial, Helvetica, sans-serif"><a
+ href="https://web.archive.org/web/20040318014939/http://support.microsoft.com" target="_blank">Microsoft Support&nbsp;</a></font></li>
+</ul>
+<h3><font face="Arial, Helvetica, sans-serif">Questions, Comments &amp; Suggestions:</font></h3>
+<p><font face="Arial, Helvetica, sans-serif">For suggestions and comments about 
+  this online supplement to the Help Desk please e-mail: <a
+ href="mailto:vmware@hpc.unm.edu">vmware@hpc.unm.edu</a></font></p>
+<p><font face="Arial, Helvetica, sans-serif">For systems service and if things 
+  are not working correctly please go to the <a
+ href="https://web.archive.org/web/20040318014939/http://santafe.hpc.unm.edu/irs/ticket/" target="_blank">help desk</a>.</font></p>
+<h3><font face="Arial, Helvetica, sans-serif">Updates:</font></h3>
+<p><font face="Arial, Helvetica, sans-serif">This page was last updated: Thursday, 
+  June 12, 2003</font> </p>
+</body>
+</html>

@@ -1,0 +1,809 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 FINAL//EN">
+
+<HTML><!-- #BeginTemplate "/Templates/computing.dwt" -->
+<HEAD><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<!-- #BeginEditable "doctitle" --> <!-- #EndEditable --> 
+<META NAME="Generator" CONTENT="NetObjects Fusion  3.0.1 for Windows">
+
+</HEAD>
+
+<BODY  BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#FF6666" TEXT="#000000" TOPMARGIN=0 LEFTMARGIN=0 MARGINWIDTH=0 MARGINHEIGHT=0>
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">ahpcc.unm.edu/Computing/AHPCC/Documentation/ClusterBuilding/</code> as captured by the Internet Archive on 17 December 2002. Links to pages that were not saved here go to the Wayback Machine. Icons the Internet Archive did not save were redrawn for this copy and are not originals (hover over one to see). Grey boxes mark images that were never archived. <a style="color:#0b5cad" href="https://web.archive.org/web/20021217010917/http://www.ahpcc.unm.edu:80/Computing/AHPCC/Documentation/ClusterBuilding/">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../../../">Web archive index</a></div>
+
+
+  <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=660>
+   <TR VALIGN="top" ALIGN="left">
+	<TD WIDTH=660 HEIGHT =81><IMG id="Banner1" HEIGHT=81 WIDTH=660 SRC="../../../../_img/standin/_not-archived.gif"  BORDER=0  alt=" Education  (image not archived)" title="Image not archived"></TD>
+   </TR>
+  </TABLE>
+  
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=657 height="22">
+  <tr valign="top" align="left"> 
+    <td width=666 height =27> 
+      <table id="NavigationBar2" border=0 cellspacing=0 cellpadding=0  width=660 >
+          <tr valign="top" align="left"> 
+            
+          <td width=94><a href="../../../../index.html"><img id="NavigationButton7" height=20 width=94 src="../../../../_img/standin/home_tab.gif"  border=0  alt=" Home  (modern recreation, not an archived original)" title="Modern recreation, not an archived original"></a></td>
+            <td width=94><a href="https://web.archive.org/web/20021217010917/http://www.ahpcc.unm.edu/Intranet/intranet.html"><img id="NavigationButton8" height=20 width=94 src="../../../../_img/Images/Page/Intranet_tab.gif"  border=0  alt=" Inside Us " ></a></td>
+            
+          <td width=94><a href="../../../computing.html"><img id="NavigationButton9" height=20 width=94 src="../../../../_img/standin/computing_tab_hi.gif"  border=0  alt=" Computing  (modern recreation, not an archived original)" title="Modern recreation, not an archived original"></a></td>
+            <td width=94><a href="https://web.archive.org/web/20021217010917/http://www.ahpcc.unm.edu/Computing/help.html"><img src="../../../../_img/Images/Page/Help_Desk_tab.gif" width="94" height="20" border="0"></a></td>
+            <td width=94><a href="https://web.archive.org/web/20021217010917/http://www.ahpcc.unm.edu/Research/index.html"><img id="NavigationButton10" height=20 width=94 src="../../../../_img/Images/Page/Research_tab.gif"  border=0  alt=" Research " ></a></td>
+            <td width=94><a href="https://web.archive.org/web/20021217010917/http://www.ahpcc.unm.edu/Education/education.html"><img id="NavigationButton11" height=20 width=94 src="../../../../_img/Images/Page/Education_tab.gif"  border=0  alt=" Education " ></a></td>
+            <td width=94 height=20><a href="https://web.archive.org/web/20021217010917/http://www.ahpcc.unm.edu/SiteMap/sitemap.html"><img id="NavigationButton12" height=20 width=94 src="../../../../_img/Images/Page/SiteMap_tab.gif"  border=0  alt=" SiteMap " ></a></td>
+          </tr>
+        </table>
+      
+    </td>
+  </tr>
+</TABLE>
+  
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=660>
+  <TR VALIGN="top" ALIGN="left"> 
+    <TD></TD>
+    <TD WIDTH=655> <!-- #BeginEditable "type%20content%20in%20here" --> 
+      <H2> 
+        <CENTER>
+        </CENTER>
+      </H2>
+      <H2> 
+        <CENTER>
+          <IMG align=bottom alt=Penguine height=150 
+src="../../../../_img/Images/Graphics/penguineyes.gif" width=128 
+NATURALSIZEFLAG="3"> 
+        </CENTER>
+      </H2>
+      <H2> 
+        <CENTER>
+          How to build a Linux system 
+        </CENTER>
+      </H2>
+      <P> 
+      <CENTER>
+        <HR>
+      </CENTER>
+      <P></P>
+      <P>What we have here is a discussion about how to build a Linux system using 
+        Debian Linux for use here at the AHPCC&nbsp;(although the instructions 
+        could easily be modified for any site).<BR>
+      </P>
+      <P>This document was take from notes I made while installing various Debian 
+        Linux systems here at the AHPCC. Any updates or suggestions welcome. For 
+        generic instructions on setting up a Debian Linux system, see the <A 
+href="https://web.archive.org/web/20021217010917/http://www.ssc.com/lg/issue15/debian.html">Debian Linux Installation &amp; 
+        Getting Started guide</A>.</P>
+      <P>For instructions on how to use our spiffy CD-R writer under Linux, see 
+        <A 
+href="https://web.archive.org/web/20021217010917/http://www.arc.unm.edu/Debian/debianCD-R.html">How to cut a CD&nbsp;at the 
+        AHPCC</A>.</P>
+      <P>Here is a <A href="https://web.archive.org/web/20021217010917/http://www.arc.unm.edu/Debian/debianAddPkgs.html">list 
+        of packages</A> included in a standard AHPCC&nbsp;setup.</P>
+      <P>This is a step by step process. Follow these instructions and I guarantee 
+        you that you might come up with something that resembles what I came up 
+        with. So there.</P>
+      <P> 
+      <CENTER>
+        <HR>
+      </CENTER>
+      <P></P>
+      <H1><FONT size=+2>Contents</FONT></H1>
+      <UL>
+        <P><IMG align=top alt=Bullet height=15 
+  src="../../../../_img/Computing/Images/Bullets/AHPCC_Bullet.gif" width=15 NATURALSIZEFLAG="3"> 
+          <A href="https://web.archive.org/web/20021217010917/http://www.arc.unm.edu/Debian/debianARC.html#Part 0">Part 0: 
+          Getting it all together.</A> 
+        <P><IMG align=top alt=Bullet height=15 
+  src="../../../../_img/Computing/Images/Bullets/AHPCC_Bullet.gif" width=15 NATURALSIZEFLAG="3"> 
+          <A href="https://web.archive.org/web/20021217010917/http://www.arc.unm.edu/Debian/debianARC.html#Part 1">Part 1: 
+          Installing the basic system.</A> 
+        <P><IMG align=top alt=Bullet height=15 
+  src="../../../../_img/Computing/Images/Bullets/AHPCC_Bullet.gif" width=15 NATURALSIZEFLAG="3"> 
+          <A href="https://web.archive.org/web/20021217010917/http://www.arc.unm.edu/Debian/debianARC.html#Part 2">Part 2: 
+          Selecting and installing packages.</A> 
+        <P><IMG align=top alt=Bullet height=15 
+  src="../../../../_img/Computing/Images/Bullets/AHPCC_Bullet.gif" width=15 NATURALSIZEFLAG="3"> 
+          <A href="https://web.archive.org/web/20021217010917/http://www.arc.unm.edu/Debian/debianARC.html#Part 3">Part 3: 
+          NFS.</A> 
+        <P><IMG align=top alt=Bullet height=15 
+  src="../../../../_img/Computing/Images/Bullets/AHPCC_Bullet.gif" width=15 NATURALSIZEFLAG="3"> 
+          <A href="https://web.archive.org/web/20021217010917/http://www.arc.unm.edu/Debian/debianARC.html#Part 4">Part 4: 
+          Various cleanup: Installing Netscape, amd, etc.</A> </P>
+      </UL>
+      <P> 
+      <CENTER>
+        <HR>
+      </CENTER>
+      <P></P>
+      <P><A name="Part 0"></A><B><FONT size=+1>Part 0: Getting it all together.</FONT></B></P>
+      <P>First of all, you will need the installation diskettes or an installation 
+        CD. They are available from Ken Summers or you can <A 
+href="https://web.archive.org/web/20021217010917/http://www.arc.unm.edu/Debian/debian_base.html">download the images</A>. 
+        Following is an excerpt from the <A 
+href="https://web.archive.org/web/20021217010917/http://www.ssc.com/lg/issue15/debian.html">Debian Linux Installation &amp; 
+        Getting Started guide</A>:</P>
+      <UL>
+        <P>Preparing the floppies: 
+        <P>Next step is to prepare the floppies for the installation by copying 
+          the images into disks. Hence those files are disk images, they should 
+          be copied block-by-block. In Dos you can use the RAWRITE utility for 
+          that purpose located at ftp://ftp.debian.org/pub/debian/tools/rawrite2.exe. 
+          Here is a brief explanation on how to use it: 
+        <P>C:\&gt; RAWRITE2 &lt;file&gt; &lt;drive&gt; 
+        <P>By executing the RAWRITE2 command as stated above, you will accomplish 
+          the following, the file "&lt;file&gt;" will be copied block-by-block 
+          into the drive "&lt;drive&gt;". 
+        <P>On any Unix like operation systems you can use dd(1): 
+        <P># dd if=file of=/dev/fd0 bs=10k 
+        <P>META: In some Unix systems the first floppy device maybe named differently. 
+        <P>When you finish rawriting don't forget to mark the floppies else you 
+          will get confused later. </P>
+      </UL>
+      <P>Next up is the system information you need to know before you get started. 
+        I would strongly urge you to <B>know</B> this information before you start. 
+        Those who have installed Linux before will know what I mean. If you haven't, 
+        let's just say that guessing at some of this stuff can cause you no end 
+        of grief and convert a RipSnorter 2000 super PC into a large boat anchor 
+        in approximately one hour. Less if you try hard. So, with that said...</P>
+      <UL>
+        <P><B>Things to know before starting the installation.</B> 
+        <UL>
+          <LI>The machine name (artesia, lion, deming, etc.). 
+          <LI>The domain name. At the AHPCC&nbsp;this will be arc.unm.edu. 
+          <LI>The IP address of your machine. This is a set of numbers separated 
+            by dots, like 198.59.173.78 (artesia). 
+          <LI>The NIS domain for the AHPCC. This is a pseudo-secret, so ask John 
+            Barnes or Ken Summers for it. 
+          <LI>The manufacturer and model number of the network card in your machine. 
+            In fact, you should know as much as possible about this card, but 
+            at least the manufacturer and model number. </LI>
+        </UL>
+      </UL>
+      <BLOCKQUOTE> 
+        <P><B>To set up X11 you need to know several things:</B></P>
+      </BLOCKQUOTE>
+      <UL>
+        <UL>
+          <LI>The type of mouse (Mousman, MS bus mouse, etc.). 
+          <LI>The manufacturer, type, model number, and anything else you can 
+            find out about the video card. 
+          <LI>How much memory is on the video card. 
+          <LI>The vertical and horizontal refresh rates, as well as resolution 
+            your monitor is capable of. This is extremely important as damage 
+            could result from bad values. Unfortunately this is typically very 
+            hard information to get, unless you have the manual in hand. </LI>
+        </UL>
+      </UL>
+      <P><A name="Part 1"></A><B><FONT size=+1>Part 1: Installing the basic system.</FONT></B></P>
+      <UL>
+        <LI><B>Boot and prep the system</B> 
+          <UL>
+            <LI>Insert the Rescue floppy and boot the machine, or boot the machine 
+              with the CD&nbsp;in the CD-ROM&nbsp;drive. 
+            <LI>At the "<TT>boot:</TT>" prompt press Enter. 
+            <LI>Press "C" to select color display (presuming you <I>have</I> a 
+              color display) then press Enter twice. 
+            <LI>Select "<TT>Next</TT>" (press Enter) to configure the keyboard. 
+              NOTE that this is the default and will not be mentioned in the future. 
+              <UL>
+                <LI>Select "<TT>US</TT>" as the keyboard type </LI>
+              </UL>
+            </LI>
+          </UL>
+        <LI><B>Initialize and Activate the Swap Disk Partition.</B> 
+          <UL>
+            <LI>If you want to repartition the disk, now is the time to do it. 
+              <UL>
+                <LI>A discussion of repartitioning the hard drive(s) is far beyond 
+                  the scope of this document, but a couple of gotachas should 
+                  be noted: 
+                  <UL>
+                    <LI>There is a hardware restriction which requires all bootable 
+                      disks to start in the first 1024 cylinders of the disk. 
+                      This means you must begin the Linux root partition <I>and</I>&nbsp;any 
+                      DOS&nbsp;or Windows partitions in the first 1024 cylinders. 
+                    <LI>For large disks (&gt; 1Gb) you may have to make a root 
+                      partition (generally quite small: 50-100 Mb or so) and a 
+                      /usr partition (the rest of the available space). The Debian 
+                      install understands this. Just be sure to initialize and 
+                      mount <I>both</I> partitions in the next step, <I>Initialize 
+                      a Linux Disk Partition</I>. </LI>
+                  </UL>
+                </LI>
+              </UL>
+            <LI>I used <TT>/dev/hda2</TT> as my swap partition. It should select 
+              the correct one by default. 
+            <LI>Say "yes," you want to check for bad blocks. This doesn't take 
+              too long. 
+            <LI>Yes, you are sure. </LI>
+          </UL>
+        <LI><B>Initialize a Linux Disk Partition</B> 
+          <UL>
+            <LI>Select a disk partition(normally <TT>/dev/hda1</TT>). 
+            <LI>Perform bad-block scan. 
+            <LI>Yes, you are sure. This will take quite a while on a large disk 
+              (about 15-20 minutes/Gb). 
+            <LI>When it is done with the bad-block scan: Yes, mount the root filesystem. 
+            <LI>If you partitioned your disk with more than one Linux partition, 
+              repeat this step for each of the other Linux partitions. </LI>
+          </UL>
+        <LI><B>Install the base system</B> 
+          <UL>
+            <LI>You will probably use <TT>/dev/fd0 or the CD drive (usually /dev/hdb 
+              or /dev/hdc)</TT>. 
+            <LI>If you are using the diskettes, use the "Base X" disks, inserting 
+              as prompted. </LI>
+          </UL>
+        <LI><B>Install the OS Kernel</B> 
+          <UL>
+            <LI>You will probably use <TT>/dev/fd0</TT> (or whatever you used 
+              above). 
+            <LI>If you are using the diskettes, put the rescue floppy in the drive 
+              when prompted. </LI>
+          </UL>
+        <LI><B>Install the device drivers</B> 
+          <UL>
+            <LI>Once again, whatever you used above. If you are using the CD it 
+              may not prompt you for this but go ahead and use the cd anyway. 
+            <LI>Use the device driver diskette. </LI>
+          </UL>
+        <LI><B>Configure the device driver modules</B><FONT size=+1> </FONT>(These 
+          instructions assume a deming class machine) 
+          <UL>
+            <LI>Assume for all of these options that you will select install with 
+              no command line options, unless specified otherwise. 
+            <LI>Select <B>block</B>. 
+              <UL>
+                <LI>Select <B>loop</B> for the loopback device (a handy thing 
+                  to have around) </LI>
+              </UL>
+            <LI>Select <B>cdrom</B>. 
+              <UL>
+                <LI>Select <B>cdrom</B> for the standard CDROM&nbsp;utilities. 
+                </LI>
+              </UL>
+            <LI>Select <B>fs</B>. 
+              <UL>
+                <LI>Select <B>bin_fmt_aout</B> for a.out program support. 
+                <LI>Select <B>bin_fmt_java</B> to be able to run Java executables 
+                  from the command line. 
+                <LI>Select <B>nfs</B> to install the Network File System. 
+                <LI>Select <B>smbfs</B> to support Windows 95 disk sharing. 
+                <LI>Select <B>umsdos</B> to support Unix file system features 
+                  on MS-DOS&nbsp;file systems. 
+                <LI>Select <B>vfat</B> to support Windows 95 long filenames on 
+                  an MS-DOS&nbsp;file system. </LI>
+              </UL>
+            <LI>Select <B>Misc</B>. 
+              <UL>
+                <LI>Select <B>ftape</B> if you have a Colorado or similar "floppy 
+                  tape" drive (a floppy tape is a drive that uses the floppy disk 
+                  controller for the tape drive). 
+                <LI>Select <B>lp</B> to control line printer ports. 
+                <LI>Select <B>serial</B> for serial port support. </LI>
+              </UL>
+            <LI>Select <B>net.</B> 
+              <UL>
+                <LI>Select <B>3c509</B> for Etherlink card (<B>NOTE:</B> be sure 
+                  you have a 3c509 Ethernet card installed. If you have some other 
+                  card, select it, otherwise don't select anything here!). 
+                <LI>Select <B>ppp</B> if you want this machine to be able to act 
+                  as either a PPP client or server. </LI>
+              </UL>
+            </LI>
+          </UL>
+        <LI><B>Configure the base system</B> 
+          <UL>
+            <LI>Timezone Setup: 
+              <UL>
+                <LI>Select <TT>America/</TT>. 
+                  <UL>
+                    <LI>Select <TT>Denver</TT>. </LI>
+                  </UL>
+                <LI>No, we use local time. </LI>
+              </UL>
+            </LI>
+          </UL>
+        <LI><B>Configure the network</B> 
+          <UL>
+            <LI>Supply the system name (e.g., "deming"). 
+            <LI>Yes, we are connected to the network. 
+            <LI>The domain name for the AHPCC is "arc.unm.edu". 
+            <LI>Yes, the correct name is <TT>deming.arc.unm.edu</TT> (with your 
+              system name instead of <TT>deming</TT>). 
+            <LI>The IP&nbsp;address of deming is "198.59.173.77". You need to 
+              use the IP&nbsp;address assigned to the machine you are using. DON'T 
+              GUESS ON THIS! 
+            <LI>The network address is "255.255.255.0". 
+            <LI>The network IP address is "198.59.173.0". 
+            <LI>The IP broadcast address is "198.59.173.255". 
+            <LI>Yes, we have a gateway: its address is "198.59.173.1" (cisco). 
+            <LI>Another system will be the DNS&nbsp;server. There are two: 
+              <UL>
+                <LI>"198.59.173.3" (taos) and 
+                <LI>"198.59.173.6" (acoma). </LI>
+              </UL>
+            <LI>Verify that all of the information is correct. 
+            <LI>Answer "yes." </LI>
+          </UL>
+        <LI><B>Make Linux bootable directly from the hard drive</B> 
+          <UL>
+            <LI>Yes, install a master boot record on <TT>/dev/???</TT> (typically 
+              <TT>/dev/hda1</TT>). 
+            <LI>Yes, boot the Debian system as default. </LI>
+          </UL>
+        <LI><B>Make a boot floppy</B> 
+          <UL>
+            <LI>Put a blank floppy in <TT>/dev/fd0</TT>. 
+            <LI>Wait... approximately 2 minutes. </LI>
+          </UL>
+        <LI><B>Reboot the system</B> 
+          <UL>
+            <LI>Remove the floppy! 
+            <LI>Yes, reboot. </LI>
+          </UL>
+        <LI><B>Set the root password</B> 
+          <UL>
+            <LI>After reboot the system will ask you for a root password. Since 
+              you will be installing the mail system you will have to pick a password 
+              of unusual grace and futility (for hackers). I suggest you log in 
+              to deming and run the command "<TT>pwgen 8</TT>" which will generate 
+              an easy-to-remember password. Write it down and give it to John 
+              Barnes. </LI>
+          </UL>
+        <LI><B>Create a user</B> 
+          <UL>
+            <LI>This part is a royal pain, since we will be using NIS&nbsp;and 
+              AMD&nbsp;for user accounts, but there doesn't seem to be any way 
+              around it. Create a username not actually in use by anybody (random 
+              letters would probably work). You needn't enter any finger information 
+              for them. And don't pick an easy password. This fake user could 
+              be used to crack your system! </LI>
+          </UL>
+        </LI>
+      </UL>
+      <P><A name="Part 2"></A><B><FONT size=+1>Part 2: Selecting and installing 
+        packages.</FONT></B></P>
+      <UL>
+        <LI><B>Running dselect</B> 
+          <UL>
+            <LI>Select <B>Access</B>. If you are on a fast network (ethernet) 
+              you are probably best off using the ftp access method, as this information 
+              is up to date. If, on the other hand, you are installing on a remote 
+              or disconnected machine, you better access the CD. We will describe 
+              only the ftp method here. 
+              <UL>
+                <LI>Select <B>ftp</B>. 
+                  <UL>
+                    <LI>The mirror site closest to us is "deming". 
+                    <LI>Yes, you want passive mode. 
+                    <LI>The username to use is "anonymous" (the default). 
+                    <LI>The password to use is "root@xxx.arc.unm.edu" (the default). 
+                    <LI>The Debian directory is "/pub/mirrors/debian" 
+                    <LI>The distributions you want are stable, non-free, and contrib 
+                      (the default). 
+                    <LI>The download directory is "debian" (the default). </LI>
+                  </UL>
+                </LI>
+              </UL>
+            <LI>Select <B>Update</B>. 
+              <UL>
+                <LI>Yes, clear the available list. The machine will go to the 
+                  ftp site you specified and download the latest list of available 
+                  packages. </LI>
+              </UL>
+            <LI>Select <B>Select</B>. 
+              <UL>
+                <LI>The first thing you will see is a help screen. Press the space 
+                  bar to continue. dselect allows you to select which packages 
+                  you want installed on your machine. To that end it automatically 
+                  detects when dependencies and conflicts arise. To select a package, 
+                  scroll to the package and press "+". To deselect, press "-". 
+                  When the program detects a conflict or dependency it will bring 
+                  you to a conflict/dependency resolution screen. To exit that 
+                  screen press Enter. To exit the Select screen altogether press 
+                  enter. In order to search for a package (a very handy thing 
+                  to do in the next couple of steps) type "/" followed by the 
+                  search string. If you want more information <A 
+      href="https://web.archive.org/web/20021217010917/ftp://ftp.debian.org/pub/debian/stable/disks-i386/current/dselect.beginner.6.html">RTfM</A> 
+                  (or man dselect). 
+                <LI>Accept all defaults. 
+                <LI>Add the software listed <A 
+      href="https://web.archive.org/web/20021217010917/http://www.arc.unm.edu/Debian/debianAddPkgs.html">here</A>. </LI>
+              </UL>
+            <LI>Select <B>Install</B>. 
+              <UL>
+                <LI>No, you don't want to select the files to get (get them all). 
+                <LI>Yes, you want to download the files. 
+                <LI>Wait... This takes from 45 minuets to about 2 hours when connected 
+                  to the Ethernet. 
+                <LI>Yes, install fetched files. 
+                  <UL>
+                    <LI>You may get errors unpacking various packages. Sometimes 
+                      this can be fixed by merely running Install again. Other 
+                      times you must disable that package in Select, finish the 
+                      install, then re-enable it later. </LI>
+                  </UL>
+                <LI>Configure smail for "Satellite system." 
+                  <UL>
+                    <LI>Take the default visible mail name (e.g., <TT>deming.arc.unm.edu</TT>). 
+                    <LI>Send all locally generated mail to "<TT>mail.arc.unm.edu</TT>". 
+                    <LI>Yes, that's OK. 
+                    <LI>No, don't send a test message. It gets clogged up in the 
+                      works. If you want to try it out, send a message to yourself 
+                      after the installation is finished. </LI>
+                  </UL>
+                </LI>
+              </UL>
+              <P>From this point on I have documented various components that 
+                asked for input when I configured several Linux systems. You may 
+                not see all of these, or you may see additional questions. You 
+                certainly won't see them in this order because they are alphabetical! 
+                Some modules, like base-passwd try to reinstall critical files 
+                like <TT>/etc/passwd</TT>. Unless you find an entry below telling 
+                you to let it replace a specific file, it would be safest to forbid 
+                all requests to change anything (the default). Also, at various 
+                times you will be asked to decide a priority conflict for mime 
+                types (usually between xv and xanim). This is a matter of personal 
+                taste, since both will do the job. My preference is to let xv 
+                deal with the picture formats (gif, jpeg, etc.) and let the other 
+                programs deal with things they are more suited for (e.g., xanim 
+                is a movie/audio viewer first, picture viewer second). 
+              <UL>
+                <LI>amd: 
+                  <UL>
+                    <LI>Yes, configure the automounter. 
+                    <LI>amd messages should go to <TT>syslog</TT>. 
+                    <LI>No, your site does not propagate amd maps through NIS. 
+                    <LI>No, don't emulate Sun's hostmap. 
+                    <LI>Yes, access home directories with automounter. 
+                    <LI>No, do not add map entries for the RWHO spool. 
+                    <LI>gpm: No, do not change anything. </LI>
+                  </UL>
+                <LI>inewsinn: 
+                  <UL>
+                    <LI>Yes, configure inews. 
+                    <LI>Return mail name is "arc.unm.edu". 
+                    <LI>Organization is "Albuquerque Resource Center". 
+                    <LI>News server is "news.arc.unm.edu". 
+                    <LI>Yes, these settings are correct. </LI>
+                  </UL>
+                <LI>ispell: Use the American dictionary. 
+                <LI>lynx: Accept the default URL. 
+                <LI>Minicom: No, do not put usage of META key in config file. 
+                <LI>Netscape: Ignore error messages (we will take care of it later). 
+                <LI>nis: NIS&nbsp;domain is... a secret. Ask Ken Summers for the 
+                  NIS&nbsp;domain name. And Yes, add plus-entries 
+                <LI>Pine: mail name is "arc.unm.edu". 
+                <LI>tgif: Paper size is "Letter", Grid system is "English". 
+                <LI>wenglish: Yes, use English for the standard dictionary. 
+                <LI>xanim: 
+                  <UL>
+                    <LI>Various messages. See note in the Install section. </LI>
+                  </UL>
+                <LI>xbase:&nbsp;"N" keep your currently-installed version. 
+                <LI>xdm: 
+                  <UL>
+                    <LI>Yes, allow replacement of <TT>/etc/init.d/xdm</TT>. 
+                    <LI>Yes, start xdm at boot time. 
+                    <LI>No, do not start xdm now. </LI>
+                  </UL>
+                <LI>XFree86: 
+                  <UL>
+                    <LI>Yes, create the XFree86 config file. 
+                    <LI>The mouse (at least on deming) is a MouseMan type. 
+                    <LI>No, do not enable ChordMiddle (this will cause <I>very</I> 
+                      strange behavior with the middle mouse button). 
+                    <LI>No, do not Emulate3Buttons. 
+                    <LI>Mouse device is <TT>/dev/ttyS0</TT> (case is important). 
+                    <LI>Yes, you want to use XKB. 
+                      <UL>
+                        <LI>Use the Standard 101-key US encoding </LI>
+                      </UL>
+                    <LI>Select a horizontal sync range of 31.5-64.3. <B>NOTE:<FONT size=+1> 
+                      </FONT><FONT color=#ff0000 size=+1>VERY&nbsp;IMPORTANT!</FONT><FONT 
+        size=+1> </FONT></B>you can literally smoke your monitor if this is set 
+                      wrong. Do <B>NOT</B> trust me on this. Find out what your 
+                      monitor can do. Accept no substitutes. This setting works 
+                      for a Mitsubishi Diamond Pro 17, a CMS1561 Multiscan, and 
+                      a Midwest Micro Low Radiation MPR II. 
+                    <LI>Select a vertical sync range of 50-90. Same caution applies. 
+                    <LI>Enter the default id/description strings (three of them) 
+                      (you can leave them blank if you wish). 
+                    <LI>Yes, look at the video card database. 
+                    <LI>The deming class machines use the "S3 86C764 (generic)" 
+                      entry. You need to find out what kind of video card you 
+                      have and select the appropriate one. 
+                    <LI>Chose server option 5, choose server from card definition. 
+                    <LI>The deming class machines have 2048KB of video memory. 
+                    <LI>Enter the default id/description strings (three of them). 
+                    <LI>Enter 'q' to not select a RAMDAC. 
+                    <LI>Just press Enter to forgo a Clockchip setting. 
+                    <LI>No, do not run "X-probeonly" now (this is based on the 
+                      fact that the S3 86C764 card recommends you not run this 
+                      probe. YMMV). 
+                    <LI>At this point you may want to reorder the video modes 
+                      so that the screen comes up in the highest possible resolution 
+                      for each color style. If not, choose 5. 
+                    <LI>Yes, write <TT>/etc/X11/XF86Config</TT>. 
+                    <LI>Yes, run X using xdm. 
+                    <LI>Yes, test it all out. If it doesn't work, get help. </LI>
+                  </UL>
+                <LI>xserver-S3: Yes, make S3 the default. 
+                <LI>xv: 
+                  <UL>
+                    <LI>Various messages. See note in the Install section. </LI>
+                  </UL>
+                </LI>
+              </UL>
+              <P>When everything else is done: 
+              <UL>
+                <LI>Yes, delete the installed package files (unless you feel you 
+                  still need them for some reason. If the install completed normally 
+                  there will be no reason to keep it, and if it didn't it won't 
+                  delete the ones that failed anyway). 
+                <LI>No, do not delete the debian directory. </LI>
+              </UL>
+            <LI>Run <B>Install</B> again to fix anything that didn't install due 
+              to sequencing problems ("I won't install because I require Y and 
+              Y isn't installed" types of things, where Y is installed later in 
+              the process). 
+              <UL>
+                <LI>Yes, you want to install files fetched (even though it didn't 
+                  fetch any). 
+                <LI>Yes, delete the installed package files. 
+                <LI>No, do not delete the debian directory. </LI>
+              </UL>
+            <LI>Select <B>Config</B>. 
+              <UL>
+                <LI>This is much the same as the install. See the Install section 
+                  for details on specific packages. </LI>
+              </UL>
+            <LI>Select <B>Quit</B>. </LI>
+          </UL>
+        </LI>
+      </UL>
+      <P><A name="Part 3"></A><B><FONT size=+1>Part 3: NFS.</FONT></B></P>
+      <P><B>NFS mount:</B></P>
+      <P>You must create the <TT>/nfs</TT> mount point. Add the following line 
+        to the end of<TT>/etc/fstab</TT>:</P>
+      <UL>
+        <P><TT>laguna:/nfs /nfs nfs soft,intr,rw</TT> </P>
+      </UL>
+      <P>Now create the <TT>/nfs</TT> directory locally:</P>
+      <UL>
+        <P><TT>mkdir /nfs</TT> </P>
+      </UL>
+      <P>From now on <TT>/nfs</TT> will mount when you boot, but to continue now 
+        you must mount it manually:</P>
+      <UL>
+        <P><TT>mount /nfs</TT> </P>
+      </UL>
+      <P><A name="Part 4"></A><B><FONT size=+1>Part 4: Various cleanup: Installing 
+        Netscape, AMD, etc.</FONT></B></P>
+      <P>This section can be done either manually or it can be (mostly) automated 
+        by typing (as root, again)</P>
+      <UL>
+        <P><TT>cd /nfs/setup</TT> 
+        <P><TT>make -f Makefile basic</TT> </P>
+      </UL>
+      <P>After the make finishes (it didn't have any errors, did it?) you will 
+        have to do the Config part of the Netscape setup (below) and the Windows 
+        or DOS&nbsp;setup by hand.</P>
+      <P>If you want to do this stuff manually, here's the procedure.</P>
+      <P><B>Shells:</B></P>
+      <P>Log in as root (if you are continuing from Part 2, you probably already 
+        are). Enter the commands</P>
+      <UL>
+        <P><TT>ln -s /usr/bin/ksh /bin/ksh</TT> 
+        <P><TT>mkdir /usr/local/bin</TT> 
+        <P><TT>ln -s /usr/bin/tcsh /usr/local/bin/tcsh</TT> </P>
+      </UL>
+      <P>to allow folks to boot using the korn shell and Tcsh.</P>
+      <P><B>Mail:</B></P>
+      <P>To configure Linux to receive AHPCC system mail you need to create a 
+        new entry in the mount table. Edit <TT>/etc/fstab</TT> and add this line 
+        at the bottom of the file:</P>
+      <UL>
+        <P><TT>laguna:/var/mail /var/spool/mail nfs soft,intr,rw</TT> </P>
+      </UL>
+      <P><B>AMD:</B></P>
+      <P>Change directories to <TT>/etc/amd</TT>. FTP&nbsp;to laguna (you can 
+        log in using your personal account). In FTP&nbsp;type these commands:</P>
+      <UL>
+        <P><TT>cd ~debian/misc</TT> 
+        <P><TT>get amd_map_arc.mak</TT> 
+        <P><TT>bye</TT> </P>
+      </UL>
+      <P>You must create a cron job to update the table hourly to do this type 
+        (as root)</P>
+      <UL>
+        <P><TT>crontab -e</TT> </P>
+      </UL>
+      <P>It will put you into the vi editor (you do know the vi editor, don't 
+        you?). Enter the following line and save the file:</P>
+      <UL>
+        <P><TT>56 * * * * cd /etc/amd; make -s -f amd_map_arc.mak</TT> </P>
+      </UL>
+      <P>This will copy the new user list every hour at 56 minutes past.</P>
+      <P>You must perform the same operation the cron will later, so type</P>
+      <UL>
+        <P><TT>cd /etc/amd</TT> 
+        <P><TT>make -f amd_map_arc.mak</TT> </P>
+      </UL>
+      <P>This should create the file <TT>/etc/amd/amd_map_arc</TT> which allows 
+        the automount daemon to find your home directory.</P>
+      <P>Finally, edit <TT>/etc/amd/amd.master</TT> and replace the only line 
+        there with:</P>
+      <UL>
+        <P><TT>-a /tmp_mnt -xall -r -- /home /etc/amd/amd_map_arc</TT> </P>
+      </UL>
+      <P>This will prepare amd to use the system here at the AHPCC.</P>
+      <P><B>X:</B></P>
+      <P>In order to get xdm and XF86 to recognize the configuration files used 
+        here at the AHPCC, some modifications must be made. Check the file <TT>/etc/X11/config</TT> 
+        and make sure the following lines exist:</P>
+      <UL>
+        <P>allow-user-xsession 
+        <P>allow-user-resources 
+        <P>allow-user-modmap </P>
+      </UL>
+      <P>In the file <TT>/etc/X11/Xsession</TT> change the line that reads</P>
+      <UL>
+        <P><TT>usrresources=$HOME/.Xresources</TT> </P>
+      </UL>
+      <P>to</P>
+      <UL>
+        <P><TT>usrresources=$HOME/.Xdefaults</TT> </P>
+      </UL>
+      <P>In the file <TT>/etc/X11/XF86Config</TT> uncomment all lines beginning 
+        with the word <TT>FontPath</TT>. There should be at about seven lines. 
+        Remove any # from in front of each line to uncomment it.</P>
+      <P><B>Cool logo:</B></P>
+      <P>To get the cool AHPCC&nbsp;logo for the login screen: As root change 
+        directory to <TT>/etc/X11/xdm</TT>; FTP&nbsp;to laguna, go to the directory 
+        <TT>~debian/misc</TT>, and get the file <TT>ahpcc_corner.gif</TT>. Then 
+        edit the file <TT>/etc/X11/xdm/Xsetup</TT> and add the following line 
+        just before the line with <TT>exit 0</TT> (or the last line, if there 
+        is no exit):</P>
+      <UL>
+        <P><TT>xv -rmode 2 -root -quit /etc/X11/xdm/ahpcc_corner.gif</TT> </P>
+      </UL>
+      <P>In order to get the logo on your screen, as well as everybody elses, 
+        you must add the same line to the file <TT>/etc/X11/xdm/Xsetup_0</TT>.</P>
+      <P><B>MWM:</B></P>
+      <P>In order for the default login script to work (.xsession) there must 
+        be a mwm window manager. Linux doesn't come with such a thing so do the 
+        following:</P>
+      <UL>
+        <P><TT>cd /usr/bin/X11</TT> 
+        <P><TT>ln -s fvwm mwm</TT> </P>
+      </UL>
+      <P>This will use fvwm instead of mwm. fvwm is a mwm lookalike that takes 
+        a lot less memory.</P>
+      <P><B>Printers:</B></P>
+      <P>Change to the /etc directory. FTP&nbsp;to laguna and get the file ~debian/misc/printcap. 
+        This will allow you to remote print to the various network printers.</P>
+      <P><B>Name resolution:</B></P>
+      <P>Finally, to fix domain name resolution, your <TT>/etc/resolv.conf</TT> 
+        should look like this:</P>
+      <UL>
+        <P><TT>domain arc.unm.edu</TT> 
+        <P><TT>search arc.unm.edu unm.edu</TT> 
+        <P><TT>nameserver 198.59.173.3</TT> 
+        <P><TT>nameserver 198.59.173.6</TT> </P>
+      </UL>
+      <P><B>Netscape:</B></P>
+      <P>Change directories to /tmp. Enter the following command:</P>
+      <UL>
+        <UL>
+          <UL>
+            <P><TT>cp /home/debian/misc/netscape-v301-<BR>
+              export.x86-unknown-linux-elf.tar.gz .</TT> </P>
+          </UL>
+        </UL>
+      </UL>
+      <P>(Don't forget the trailing "."). This will download the public domain 
+        version of Netscape 3.01 gold. Now run dselect again and select <B>Configure</B>. 
+        Netscape will be unpacked and installed. Remove the downloaded file when 
+        you have finished installing Netscape.</P>
+      <P><B>Windows or DOS:</B></P>
+      <P>If you want to be able to dual boot your machine using an existing DOS&nbsp;or 
+        Windows partition you need to edit <TT>/etc/lilo.conf</TT>. Following 
+        is the lilo configuration file used on artesia (Windows 95/Debian Linux 
+        dual boot):</P>
+      <UL>
+        <P><TT>boot=/dev/hda3</TT> 
+        <P><TT>root=/dev/hda3</TT> 
+        <P><TT>compact</TT> 
+        <P><TT>install=/boot/boot.b</TT> 
+        <P><TT>map=/boot/map</TT> 
+        <P><TT>vga=normal</TT> 
+        <P><TT>delay=20</TT> 
+        <P><TT>image=/vmlinuz</TT> 
+        <P><TT>label=Linux</TT> 
+        <P><TT>read-only</TT> 
+        <P><TT>other = /dev/hda1</TT> 
+        <P><TT>label = win95</TT> 
+        <P><TT>table = /dev/hda</TT> </P>
+      </UL>
+      <P>The information before the line <TT>other = /dev/hda1 </TT>was created 
+        by the Debian install (if you are installing a later version, this section 
+        may be slightly different). You do not have to (and in fact should NOT) 
+        modify this section. The information on that and the following lines was 
+        added to allow the machine to boot Windows 95 from partition<TT>/dev/hda1</TT>. 
+        If you don't know what drive your other operating system lives on, use 
+        the <TT>cfdisk</TT> command to see what partitions have been formatted 
+        with what operating systems. When the other operating system is installed 
+        you will have to run the command "<TT>lilo</TT>" to install the proper 
+        boot record.</P>
+      <P>To boot the alternate OS, hold down the shift key while the machine is 
+        booting. Lilo will prompt you with <TT>boot:</TT>, at which time you type 
+        in the label for the OS&nbsp;you want followed by Enter.</P>
+      <P>Reboot (type "<TT>shutdown -r now</TT>" at the prompt).</P>
+      <P> 
+        <CENTER>
+          <B>Congratulations! You have a Linux system!</B> 
+        </CENTER>
+      <P></P>
+      <P> 
+        <CENTER>
+          <A href="../../../../index.html">Return to the Albuquerque High Performance 
+          Computing Center</A> 
+        </CENTER>
+      <P></P>
+      <P> 
+      <CENTER>
+        <HR>
+        <BR>
+        <I><FONT size=-1>Copyright 1998-2000, High Performance Computing Education 
+        and Research Center</FONT></I> 
+      </CENTER>
+      <!-- #EndEditable --></TD>
+  </TR>
+</TABLE>
+<TABLE CELLPADDING=0 CELLSPACING=0 BORDER=0 WIDTH=642>
+<TR VALIGN="top" ALIGN="left">
+<TD>
+
+  <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+   <TR VALIGN="top" ALIGN="left">
+	<TD WIDTH=85 HEIGHT =49><IMG SRC="../../../../_img/spacer.gif" WIDTH =85 HEIGHT=1 BORDER=0></TD>
+	<TD></TD>
+   </TR>
+   <TR VALIGN="top" ALIGN="left">
+	<TD></TD>
+	      <TD NOWRAP> [<A HREF="../../../../index.html">Home</A>] [<A HREF="https://web.archive.org/web/20021217010917/http://www.ahpcc.unm.edu/Intranet/intranet.html">Inside&nbsp;Us</A>] 
+            [<A HREF="../../../computing.html">Computing</A>] 
+            [<A HREF="https://web.archive.org/web/20021217010917/http://www.ahpcc.unm.edu/Research/index.html">Research</A>] 
+            [<A HREF="https://web.archive.org/web/20021217010917/http://www.ahpcc.unm.edu/Education/education.html">Education</A>] 
+            [<A HREF="https://web.archive.org/web/20021217010917/http://www.ahpcc.unm.edu/SiteMap/sitemap.html">SiteMap</A>] 
+          </TD>
+   </TR>
+  </TABLE>
+  <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+   <TR VALIGN="top" ALIGN="left">
+	<TD WIDTH=98 HEIGHT =10><IMG SRC="../../../../_img/spacer.gif" WIDTH =98 HEIGHT=1 BORDER=0></TD>
+	<TD WIDTH=399><IMG SRC="../../../../_img/spacer.gif" WIDTH =399 HEIGHT=1 BORDER=0></TD>
+   </TR>
+   <TR VALIGN="top" ALIGN="left">
+	<TD></TD>
+	<TD WIDTH=399>
+<P ALIGN="CENTER"><FONT SIZE="-1">Please contact our </FONT><A HREF="mailto:webmaster@ahpcc.unm.edu"><FONT SIZE="-1">Webmaster</FONT></A><FONT SIZE="-1"> with questions or comments. <BR></FONT><FONT SIZE="-2">© Copyright 2001 Albuquerque High Performance Computing Center.&nbsp; All rights reserved.</FONT></TD>
+   </TR>
+  </TABLE></TD>
+<TD>
+
+  <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=133>
+   <TR VALIGN="top" ALIGN="left">
+	<TD WIDTH=53 HEIGHT =47><IMG SRC="../../../../_img/spacer.gif" WIDTH =53 HEIGHT=1 BORDER=0></TD>
+	<TD></TD>
+   </TR>
+   <TR VALIGN="top" ALIGN="left">
+	<TD HEIGHT =58></TD>
+	      <TD WIDTH=80 ALIGN="left" VALIGN="top"><A HREF="https://web.archive.org/web/20021217010917/http://www.unm.edu/"><IMG id="Picture72" HEIGHT=58 WIDTH=80 SRC="../../../../_img/Images/UNM_Logo_Small.jpg"  BORDER=0 ></A></TD>
+   </TR>
+  </TABLE></TD>
+</TR>
+</TABLE>
+</BODY>
+<!-- #EndTemplate --></HTML>

@@ -1,0 +1,1137 @@
+
+<HTML><!-- #BeginTemplate "/Templates/compsys.dwt" -->
+<HEAD>
+<script LANGUAGE="JavaScript">
+<!--
+
+
+
+<!-- This script and many more are available free online at -->
+<!-- The JavaScript Source!! http://javascript.internet.com -->
+<!-- Begin
+function GetTime() {
+var dt = new Date();
+var def = dt.getTimezoneOffset()/60;
+var gmt = (dt.getHours() + def);
+var ending = ":" + IfZero(dt.getMinutes()) + ":" +
+IfZero(dt.getSeconds());
+var haw =check24(((gmt + (24-10)) > 24) ? ((gmt +
+(24-10)) - 24) : (gmt + (24-10)));
+document.clock.Hawaii.value = (IfZero(haw) + ending + " HST");
+setTimeout("GetTime()", 1000);
+}
+function IfZero(num) {
+return ((num <= 9) ? ("0" + num) : num);
+}
+function check24(hour) {
+return (hour >= 24) ? hour - 24 : hour;
+}
+//  End -->
+//-->
+</script>
+<style type="text/css">
+<!--
+a:hover {  text-decoration: underline; font-weight: bold; color: #003366}
+a:active {  font-weight: bold; text-decoration: none; font-family: Verdana, Arial, Helvetica, sans-serif; color: #003366}
+a:link {  font-weight: bold; text-decoration: none; color: #003366}
+a:visited {  font-weight: bold; text-decoration: none; color: #666699}
+-->
+</style>
+</head>
+
+
+
+ <!-- #BeginEditable "doctitle" --> 
+<TITLE>UNM-HPCERC: Computing &amp; Systems</TITLE>
+<!-- #EndEditable --> 
+<META content="text/html; charset=iso-8859-1" http-equiv=Content-Type>
+
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">hpc.unm.edu/computing/index.html</code> as captured by the Internet Archive on 25 June 2003. Links to pages that were not saved here go to the Wayback Machine. Icons the Internet Archive did not save were redrawn for this copy and are not originals (hover over one to see). Grey boxes mark images that were never archived. <a style="color:#0b5cad" href="https://web.archive.org/web/20030625084635/http://www.hpc.unm.edu:80/computing/index.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../">Web archive index</a></div>
+
+<TABLE border=0 cellPadding=0 cellSpacing=0 width="100%">
+  <TBODY>
+  <TR> 
+    <TD> 
+      <table border=0 cellpadding=0 cellspacing=0 width="100%">
+        <tbody> 
+        <tr background="../_img/standin/_not-archived.gif"> 
+          <td>
+            <table border=0 cellpadding=0 cellspacing=0>
+              <tbody> 
+              <tr> 
+                <td><a href="../index.html"><img src="../_img/images/top-left-hpc-unm-logo.gif" width="181" height="82" border="0" alt="hpc_logo"></a><img src="../_img/standin/_not-archived.gif" width="578" height="82" alt="banner (image not archived)" title="Image not archived"></td>
+              </tr>
+              <tr> 
+                <td colspan=2><img src="../_img/standin/_not-archived.gif" width="759" height="13" alt="banner_2 (image not archived)" title="Image not archived"></td>
+              </tr>
+              </tbody> 
+            </table>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </TD>
+  </TR></TBODY></TABLE>
+<TABLE border=0 cellPadding=0 cellSpacing=0 height="100%" width="100%">
+  <TBODY>
+  <TR height="100%" vAlign=top>
+    <TD width=157> <img src="../_img/spacer.gif" width="157" height="1"><br>
+      <table border=0 cellpadding=0 cellspacin="0" cellspacing="0" width="157">
+        <tbody> 
+        <tr bgcolor="#666699"> 
+          <td valign=top width=157> 
+            <table border=0 cellpadding=0 cellspacing=0 width="157">
+              <tr> 
+                <td height="20"><a name="top"></a></td>
+              </tr>
+              <tr> 
+                <td> 
+                  <div align="center"><b> <a name="top"></a> <font color="#FFFFFF"> 
+                    <script language="JavaScript">
+<!-- This script and many more are available free online at -->
+<!-- The JavaScript Source!! http://javascript.internet.com -->
+<!-- Begin
+var months=new Array(13);
+months[1]="January";
+months[2]="February";
+months[3]="March";
+months[4]="April";
+months[5]="May";
+months[6]="June";
+months[7]="July";
+months[8]="August";
+months[9]="September";
+months[10]="October";
+months[11]="November";
+months[12]="December";
+var time=new Date();
+var lmonth=months[time.getMonth() + 1];
+var date=time.getDate();
+var year=time.getYear();
+
+if ((navigator.appName == "Microsoft Internet Explorer") && (year < 2000))		
+year="19" + year;
+if (navigator.appName == "Netscape")
+year=1900 + year;
+document.write(lmonth + " ");
+document.write(date + ", " + year);
+// End -->
+</script>
+                    </font> </b></div>
+                </td>
+              </tr>
+              <tr> 
+                <td>&nbsp;</td>
+              </tr>
+              <tbody> 
+              <tr bgcolor="#CCCC99"> 
+                <td><img src="../_img/standin/_not-archived.gif" width="157" height="24" alt="Image not archived" title="Image not archived"></td>
+              </tr>
+              <tr bgcolor="#CCCC99"> 
+                <td> 
+                  <form method=GET action="https://web.archive.org/web/20030625084635/http://www.google.com/u/hpc">
+                    <div align="center"> 
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr> 
+                          <td> 
+                            <div align="center"> 
+                              <input type=text name=q size=10 maxlength=255 value="">
+                            </div>
+                          </td>
+                          <td> 
+                            <div align="center"> 
+                              <input type=image name=sa img src="../_img/standin/gobuttonp.gif" width="16" height="17" alt="search (modern recreation, not an archived original)" align="middle" nobold title="Modern recreation, not an archived original">
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                      <input type=hidden name=domains value="www.hpc.unm.edu">
+                      <input type=hidden name=sitesearch value="www.hpc.unm.edu">
+                    </div>
+                  </form>
+                </td>
+              </tr>
+              <tr> 
+                <td><span class=txt><a href="../index.html"><img border=0 height=9 
+                  name=img2 src="../_img/standin/_not-archived.gif" width=68 alt="home (image not archived)" title="Image not archived"></a><a href="../about/index.html"><img border=0 height=9 
+                  name=img3 src="../_img/standin/_not-archived.gif" width=89 alt="info_request (image not archived)" title="Image not archived"></a></span></td>
+              </tr>
+              <tr> 
+                <td><img src="../_img/standin/_not-archived.gif" width="157" height="24" alt="Image not archived" title="Image not archived"></td>
+              </tr>
+              </tbody> 
+            </table>
+            <table width="157" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="10" bgcolor="#666666">&nbsp;</td>
+                <td bgcolor="#FFFFFF" width="1">&nbsp;</td>
+                <td width="4">&nbsp;</td>
+                <td><font size="2"><b><a href="../about/index.html"><font color="#FFFFFF">Organization</font></a></b></font></td>
+              </tr>
+              <tr> 
+                <td colspan="4" bgcolor="#FFFFFF"><img src="../_img/spacer.gif" width="3" height="1"></td>
+              </tr>
+              <tr> 
+                <td width="10" bgcolor="#CC9966">&nbsp;</td>
+                <td bgcolor="#FFFFFF" width="1">&nbsp;</td>
+                <td width="4">&nbsp;</td>
+                <td><font size="2"><a href="index.html"><font color="#FFFFFF"><b>Computing</b></font></a></font></td>
+              </tr>
+              <tr> 
+                <td width="10" bgcolor="#CC9966">&nbsp;</td>
+                <td bgcolor="#FFFFFF" width="1">&nbsp;</td>
+                <td width="4">&nbsp;</td>
+                <td><font size="-2"><a href="https://web.archive.org/web/20030625084635/http://santafe.ahpcc.unm.edu/irs/" target="_blank"><font color="#CCCC99">Accounts 
+                  &amp; Allocations</font></a></font></td>
+              </tr>
+              <tr> 
+                <td width="10" bgcolor="#CC9966">&nbsp;</td>
+                <td bgcolor="#FFFFFF" width="1">&nbsp;</td>
+                <td width="4">&nbsp;</td>
+                <td><font size="-2"><a href="index.html#docs"><font color="#CCCC99">Documentation</font></a></font></td>
+              </tr>
+              <tr> 
+                <td width="10" bgcolor="#CC9966">&nbsp;</td>
+                <td bgcolor="#FFFFFF" width="1">&nbsp;</td>
+                <td width="4">&nbsp;</td>
+                <td><font size="-2"><a href="https://web.archive.org/web/20030625084635/http://hpc.unm.edu/help/index.html" target="_blank"><font color="#CCCC99">Help 
+                  Desk</font></a></font></td>
+              </tr>
+              <tr> 
+                <td width="10" bgcolor="#CC9966">&nbsp;</td>
+                <td bgcolor="#FFFFFF" width="1">&nbsp;</td>
+                <td width="4">&nbsp;</td>
+                <td><font size="-2"><a href="docs/systems.html"><font color="#CCCC99">Machines</font></a> 
+                  </font></td>
+              </tr>
+              <tr> 
+                <td width="10" bgcolor="#CC9966">&nbsp;</td>
+                <td bgcolor="#FFFFFF" width="1">&nbsp;</td>
+                <td width="4">&nbsp;</td>
+                <td><font size="-2"><a href="services/index.html"><font color="#CCCC99">User 
+                  Services</font></a></font></td>
+              </tr>
+              <tr> 
+                <td colspan="4" bgcolor="#FFFFFF"><img src="../_img/spacer.gif" width="3" height="1"></td>
+              </tr>
+              <tr> 
+                <td width="10" bgcolor="#9999CC">&nbsp;</td>
+                <td bgcolor="#FFFFFF" width="1">&nbsp;</td>
+                <td width="4">&nbsp;</td>
+                <td><font size="2"><a href="https://web.archive.org/web/20030625084635/http://hpc.unm.edu/education/index.html"><font color="#FFFFFF"><b>Education 
+                  &amp; Outreach</b></font></a></font></td>
+              </tr>
+              <tr> 
+                <td colspan="4" bgcolor="#FFFFFF"><img src="../_img/spacer.gif" width="3" height="1"></td>
+              </tr>
+              <tr> 
+                <td width="10" bgcolor="#3399CC">&nbsp;</td>
+                <td bgcolor="#FFFFFF" width="1">&nbsp;</td>
+                <td width="4">&nbsp;</td>
+                <td><font size="2"><a href="https://web.archive.org/web/20030625084635/http://hpc.unm.edu/events/index.html"><b><font color="#FFFFFF">Events</font></b></a></font></td>
+              </tr>
+              <tr> 
+                <td colspan="4" bgcolor="#FFFFFF"><img src="../_img/spacer.gif" width="3" height="1"></td>
+              </tr>
+              <tr> 
+                <td width="10" bgcolor="#FFCC99">&nbsp;</td>
+                <td bgcolor="#FFFFFF" width="1">&nbsp;</td>
+                <td width="4">&nbsp;</td>
+                <td><font size="2"><a href="https://web.archive.org/web/20030625084635/http://hpc.unm.edu/help/index.html" target="_blank"><font color="#FFFFFF"><b>Help 
+                  Desk</b></font></a></font></td>
+              </tr>
+              <tr> 
+                <td colspan="4" bgcolor="#FFFFFF"><img src="../_img/spacer.gif" width="3" height="1"></td>
+              </tr>
+              <tr> 
+                <td width="10" bgcolor="#CCCC99">&nbsp;</td>
+                <td bgcolor="#FFFFFF" width="1">&nbsp;</td>
+                <td width="4">&nbsp;</td>
+                <td><font size="2"><a href="../news/index.html"><b><font color="#FFFFFF">News</font></b></a></font></td>
+              </tr>
+              <tr> 
+                <td colspan="4" bgcolor="#FFFFFF"><img src="../_img/spacer.gif" width="3" height="1"></td>
+              </tr>
+              <tr> 
+                <td width="10" bgcolor="#006699">&nbsp;</td>
+                <td bgcolor="#FFFFFF" width="1">&nbsp;</td>
+                <td width="4">&nbsp;</td>
+                <td><font size="2"><b><font size="2"><a href="https://web.archive.org/web/20030625084635/http://hpc.unm.edu/projects/index.html"><font color="#FFFFFF"><b>Projects</b></font></a></font></b></font></td>
+              </tr>
+              <tr> 
+                <td colspan="4" bgcolor="#FFFFFF"><img src="../_img/spacer.gif" width="3" height="1"></td>
+              </tr>
+              <tr> 
+                <td width="10" bgcolor="#333366">&nbsp;</td>
+                <td bgcolor="#FFFFFF" width="1">&nbsp;</td>
+                <td width="4">&nbsp;</td>
+                <td><font size="2"><a href="https://web.archive.org/web/20030625084635/http://hpc.unm.edu/Research/index.html"><b><font color="#FFFFFF">Research</font></b></a></font></td>
+              </tr>
+              <tr> 
+                <td colspan="4"><font color="#333366"><img src="../_img/standin/_not-archived.gif" width="157" height="24" alt="Image not archived" title="Image not archived"></font></td>
+              </tr>
+              <tr> 
+                <td colspan="4" bgcolor="#CCCC99"> 
+                  <p align="center"><font color="#333366"><a href="https://web.archive.org/web/20030625084635/http://www.unm.edu/"><img src="../_img/images/UNM_Logo_trans.gif" width="80" height="61" alt="unm_logo" border="0"></a></font></p>
+                  <p align="center"><font size="1" color="#333366">HPC@UNM<br>
+                    1601 Central Ave. NE<br>
+                    Albuquerque NM 87131-0001</font><font size="1" color="#333366"><br>
+                    505-277-8249<br>
+                    </font><font size="1" color="#CCCC99"> <a href="mailto:webmaster@hpc.unm.edu"><font color="#FFFFFF">webmaster</font></a><br>
+                    <font color="#333366">Copyright </font> <font color="#333366"> 
+                    <script language="JavaScript">
+var year=time.getYear();
+
+if ((navigator.appName == "Microsoft Internet Explorer") && (year < 2000))		
+year="19" + year;
+if (navigator.appName == "Netscape")
+year=1900 + year;
+document.write(year);
+// End -->
+</script>
+                    </font> </font></p>
+                </td>
+              </tr>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0">
+
+            </table>
+
+        </tr>
+        </tbody>
+      </table>
+      
+    </TD>
+    <TD vAlign=top> 
+      <table border=0 bordercolor=red cellpadding=0 cellspacing=0 
+        width="100%">
+        <tbody> 
+        <tr> 
+          <td height=47><img border=0 height=47 src="../_img/spacer.gif" 
+            width=10></td>
+          <td colspan=2><img border=0 height=47 src="../_img/spacer.gif" 
+            width=532></td>
+        </tr>
+        <tr> 
+          <td rowspan=2 valign=top width=90><img src="../_img/standin/_not-archived.gif" width="90" height="80" alt="Image not archived" title="Image not archived"> 
+          </td>
+          <td bgcolor=#cccc99 height=1><img border=0 height=1 
+            src="../_img/spacer.gif"></td>
+          <td bgcolor=#cccc99 height=1><img border=0 height=1 
+            src="../_img/spacer.gif" width=10></td>
+        </tr>
+        <tr> 
+          <td valign=top><img height=10 
+            src="../_img/standin/_not-archived.gif" width=6 alt="Image not archived" title="Image not archived">&nbsp;<b><font size="+1"><!-- #BeginEditable "title" -->HPC@UNM 
+            Computing Environment<!-- #EndEditable --></font></b> 
+            <br>
+            <br>
+            <!-- #BeginEditable "body" --> 
+            <p align="left"><!-- default font size --> <a name=top> </a> </p>
+            <center>
+            </center>
+            <br>
+            <a name=TOC> &nbsp; </a> <b> Table of Contents </b> 
+            <ol>
+              <p> 
+              <li><a href="#accounts">Accounts &amp; Allocations</a> 
+                <ol>
+                  <li><a href="#ar">Account Requests</a></li>
+                  <li><a href="#projects">Project Requests &amp; Allocations</a></li>
+                  <li><a href="#special">Special requests</a> </li>
+                </ol>
+              <li><a href="#Hardware">Machines &amp; Systems</a> 
+                <ol>
+                  <li><a href="#SPSystems">Systems Map</a> 
+                  <li><a href="#Network">Network Configuration</a> 
+                  <li><a href="#OtherMachines">List of Machines</a> 
+                </ol>
+              <li><a href="#Software">Software</a> 
+                <ol>
+                  <li><a href="#Software">Applications</a> 
+                  <li><a href="#SwDocumentation">Software Documentation</a> 
+                </ol>
+              <li><a href="#Documentation">HPC@UNM Documentation</a> 
+                <ol>
+                  <li><a href="#apps">Applications</a></li>
+                  <li><a href="#compilers">Compilers</a></li>
+                  <li><a href="#comlibs">Communication Libraries</a></li>
+                  <li><a href="#refcard">Linux Supercluster Reference Card</a></li>
+                  <li><a href="#gnupg">GnuPG Reference Card</a></li>
+                  <li><a href="#makefiles">Makefiles</a></li>
+                  <li><a href="#schedulers">Schedulers</a></li>
+                  <li><a href="#numlibs">Numerical Libraries</a></li>
+                  <li><a href="#monitors">Performance Monitors and Optimization</a></li>
+                  <li><a href="#userguides">User Guides- LosLobos, Roadrunner, 
+                    Blackbear, Truchas</a></li>
+                  <li><a href="docs/axiom.html">Axiom</a></li>
+                  <li><a href="docs/cde.html">CDE</a></li>
+                  <li><a href="condor/index.html">Condor</a></li>
+                  <li><a href="docs/connect.html">Connect</a></li>
+                  <li><a href="docs/debian/debian_base.html">Debian</a></li>
+                  <li><a href="docs/emacs.html">Emacs</a></li>
+                  <li><a href="https://web.archive.org/web/20030625084635/http://hpc.unm.edu/computing/docs/linux.html">Linux</a></li>
+                  <li><a href="docs/loadleveler.html">Loadleveler</a></li>
+                  <li><a href="docs/mpich-gm.html">MPICH-GM</a></li>
+                  <li><a href="docs/makefiles/index.html">Makefile</a></li>
+                  <li><a href="docs/nedit.html">Nedit</a></li>
+                  <li><a href="docs/queuing.html">Queuing</a></li>
+                  <li><a href="ssh/index.html">SSH Keys</a></li>
+                </ol>
+              <li><a href="#services">User Services</a> 
+                <ol>
+                  <li><a href="#MailList">HPC@UNM Announcements Mailing List</a> 
+                  <li><a href="#ftp">Anonymous FTP</a> 
+                  <li><a href="#SecureAccess">Secure Access to HPC@UNM Systems</a> 
+                  <li><a href="#linux">Linux</a> 
+                  <li><a href="#email">Email</a> 
+                  <li><a href="#connections">SSH</a> 
+                  <li><a href="#web">Web </a> 
+                </ol>
+            </ol>
+            <p>&nbsp;</p>
+            <p><a name="accounts"></a></p>
+            <table border=0 cellpadding=5 cellspacing=0 width=100%>
+              <tr bgcolor="#336699"> 
+                <td width="84%"><font color="white"><b>Accounts</b></font> 
+            </table>
+            <ul>
+              <li>HPC@UNM uses the <b>Albuquerque Integrated Reporting System (AIRS)</b> 
+                for managing accounts and allocations. 
+                <ul>
+                  <li><b><a name="ar"></a>Account Requests/Add User:</b> <a href="https://web.archive.org/web/20030625084635/http://santafe.ahpcc.unm.edu/irs/request_account.html">http://santafe.hpc.unm.edu/irs/request_account.html</a></li>
+                  <li><b><a name="projects"></a>Project Allocation Requests:</b> 
+                    <a href="https://web.archive.org/web/20030625084635/http://santafe.ahpcc.unm.edu/irs/request_project.html">http://santafe.hpc.unm.edu/irs/request_project.html</a></li>
+                  <li><b><a name="special"></a>Special requests:</b> <a href="mailto:help@hpcerc.unm.edu">help@hpc.unm.edu</a></li>
+                </ul>
+              </li>
+            </ul>
+            <p>&nbsp;</p>
+            <p><a name=Hardware> <br>
+              </a></p>
+            <table border=0 cellpadding=5 cellspacing=0 width=100%>
+              <tr bgcolor="#336699"> 
+                <td width="84%"><font color="white"><b>Hardware</b></font> 
+            </table>
+            <p> 
+              <center>
+                <b><font color=red>***** NOTE *****</font></b> 
+              </center>
+            <ul>
+              <p> 
+              <li>The HPCERC hardware configuration centers around several IBM 
+                Linux clusters. These systems are supported by a network of communications 
+                devices, a mass storage system, visualization hardware, file servers, 
+                PCs, Macintoshes and peripherals. 
+                <p align="left"> 
+            </ul>
+            <div align="center"><img src="https://web.archive.org/web/20030625084635im_/http://hpc.unm.edu/computing/hpcerc_systems.jpg" border=1 
+alt='HPCERC Hardware Configuration' width="500" height="375"> <a name=SPSystems> 
+              <br>
+              <br>
+              &nbsp; </a> </div>
+            <table border=0 cellpadding=5 cellspacing=0 width=100%>
+              <tr bgcolor="#336699"> 
+                <td width="84%"><font color="white"><b>Machines-Systems</b></font> 
+            </table>
+            <ul>
+            </ul>
+            <p>The complete list of systems including their compilers, schedulers, 
+              and user guides is located at <a href="docs/systems.html">http://www.hpc.unm.edu/docs/systems.html</a></p>
+            <p><a name=Network> &nbsp; </a> </p>
+            <table border=0 cellpadding=5 cellspacing=0 width=100%>
+              <tr bgcolor="#336699"> 
+                <td width="84%"> <font color="#FFFFFF"><b>Network Configuration</b></font> 
+            </table>
+            <ul>
+              <p> 
+              <li>External Connectivity 
+                <ul>
+                  <p> 
+                  <li>T3 connection to the Abilene network and a T3 connection 
+                    to the Internet backbone, with each connection offering transmission 
+                    speeds of up to 45 megabits of data per second. 
+                    <p> 
+                </ul>
+                <p> 
+              <li>Internal Connectivity 
+                <ul>
+                  <p> 
+                  <li>Gigabit ethernet backbone &amp; fast ethernet (100 Mbps) 
+                    <p> 
+                  <li>The nodes in each SP system are internally connected within 
+                    themselves by a high performance switch (40MB/sec). 
+                    <p> 
+                  <li>SP external disk drives are connected to general purpose 
+                    machines by SCSI (10MB/sec). 
+                </ul>
+            </ul>
+            <a name=OtherMachines> <br>
+            <br>
+            &nbsp; </a> 
+            <table border=0 cellpadding=5 cellspacing=0 width=100%>
+              <tr bgcolor="#336699"> 
+                <td width="84%"><b><font color="#FFFFFF">Other Machines</font></b> 
+            </table>
+            <ul>
+              <p> 
+              <li>The HPCERC Visualization Lab includes a number of SGI machines 
+                (indigo, indy, onyx2) used primarily by onsite visitors/researchers 
+                or local users. 
+                <p> 
+              <li>The HPCERC employs a number of other machines for various purposes: 
+                <ul>
+                  <li>File servers 
+                  <li>Control workstations 
+                  <li>Training / Workshop 
+                  <li>DNS, NIS, Internal-only news server 
+                  <li>WWW and anonymous FTP server 
+                  <li>Mail servers 
+                  <li>Testing 
+                  <li>Guest machines 
+                  <li>Staff machines 
+                  <li>other special purposes 
+                </ul>
+                <p> 
+              <li>Most of these machines are inaccessible to users. Users should 
+                not attempt use any machine which is not approved for public use 
+                unless otherwise directed. 
+            </ul>
+            <a name=Software> <br>
+            &nbsp; </a> 
+            <table border=0 cellpadding=5 cellspacing=0 width=100%>
+              <tr bgcolor="#336699"> 
+                <td width="84%"> <font color="white"><b><font color="#FFFFFF">Software</font></b></font> 
+                  <b><font color="#FFFFFF">Applications </font></b> 
+            </table>
+            <ul>
+              <p> 
+              <li>The HPC@UNM offers a number of software applications in the following 
+                categories: 
+                <ul>
+                  <p> 
+                  <li> System Software 
+                    <p> 
+                  <li> Message Passing Libraries / Parallel Tools 
+                    <p> 
+                  <li> Compilers / Preprocessors / Debuggers 
+                    <p> 
+                  <li> Math Subroutine Libraries 
+                    <p> 
+                  <li> Image Processing / Visualization / Graphics 
+                    <p> 
+                  <li> Molecular Modeling / Quantum Chemistry 
+                    <p> 
+                  <li> Computational Fluid Dynamics / Electrical and Mechanical 
+                    Engineering 
+                    <p> 
+                  <li> UNIX and Local Utilities / Information Software 
+                </ul>
+            </ul>
+            <p> <a name=SwDocumentation> <br>
+              &nbsp; </a> 
+            <table border=0 cellpadding=5 cellspacing=0 width=100%>
+              <tr> 
+                <td bgcolor="#336699" colspan="2"><font color="#FFFFFF"><b>Software 
+                  Documentation </b></font> 
+            </table>
+            <ul>
+              <p> 
+              <li>Documentation for software installed on the general purpose 
+                systems can include any of the following: 
+                <ul>
+                  <p> 
+                  <li>Info pages 
+                  <li>Man pages 
+                  <li>Read me files 
+                  <li>PostScript documents 
+                  <li>On-line help (internal to the application) 
+                  <li>HTML documents 
+                  <li>InfoExplorer (IBM's on-line manuals) 
+                  <li>Web links to Vendor materials 
+                </ul>
+                <p> 
+              <li>For documentation that is included with the package distribution, 
+                be sure to check its install directory. The HPC@UNM does not maintain 
+                a central repository of all software documentation. 
+              <li>Consult vendor WWW servers. Most software vendors have web pages 
+                which include product information and documentation. 
+            </ul>
+            <!-- do not delete the next line - it is needed by links elsewhere --> 
+            <a name=ibmman></a> &nbsp; 
+            <p> 
+            <table border=0 cellpadding=5 cellspacing=0 width=100%>
+              <tr> 
+                <td bgcolor="#336699" colspan="2"><b><font color="#FFFFFF">IBM 
+                  Software Documentation </font></b> 
+            </table>
+            <p> <b><i>WWW Resources</i></b> 
+            <ul>
+              <p> The <b><i>BEST</i></b> place for documentation about IBM software 
+                products including the parallel environment, AIX operating system, 
+                hardware, technical reports and more, is located on IBM's various 
+                web pages. Some starting points: 
+              <ul>
+                <p> 
+                <li><a href="https://web.archive.org/web/20030625084635/http://www.rs6000.ibm.com/support/sp/resctr/">SP Resources</a> 
+                  - probably the most complete source for SP information of all 
+                  types 
+                  <p> 
+                <li><a href="https://web.archive.org/web/20030625084635/http://www.rs6000.ibm.com/resource/technology">IBM 
+                  Tech Resources</a> - good place for technical reports and "internals" 
+                  documentation. 
+                  <p> 
+                <li><a href="https://web.archive.org/web/20030625084635/http://www.rs6000.ibm.com">IBM RS/6000</a> - covers 
+                  the entire RS/6000 product line 
+                  <p> 
+                <li><a href="https://web.archive.org/web/20030625084635/http://www.ibm.com">IBM's homepage</a> - if you can't 
+                  find it anywhere else, this is the launching point. 
+              </ul>
+            </ul>
+            <p> <b><i>Hardcopy</i></b> 
+            <ul>
+              <p> 
+              <li>Ordering IBM Manuals: see the <b><i>Services and Support</i></b> 
+                section on <a href="https://web.archive.org/web/20030625084635/http://www.ibm.com" target=W2 onClick="blur()"> 
+                IBM's home page</a> 
+                <p> 
+              <li>Many IBM Manuals are available free of charge by download from 
+                the various IBM web pages cited above. 
+            </ul>
+            <!-- do not delete the next line - it is needed by links elsewhere --> 
+            <a name=infoexplorer> &nbsp; </a> <br>
+            <b><i>InfoExplorer</i></b> 
+            <ul>
+              <p> 
+              <li>InfoExplorer provides an ascii or X-based utility for accessing 
+                most of IBM manuals while you are logged into an HPC@UNM SP machine. 
+                <p> 
+              <li>The following IBM manuals in InfoExplorer format: 
+                <p> 
+                <table BORDER cellpadding=5>
+                  <tr align=CENTER> 
+                    <th bgcolor=slateblue> <font color="#FFFFFF">IBM PRODUCT</font> 
+                    <th bgcolor=slateblue> <font color="#FFFFFF">X COMMAND</font> 
+                    <th bgcolor=slateblue><font color="white">ASCII COMMAND </font> 
+                  <tr align=LEFT> 
+                    <th>AIX InfoExplorer 
+                    <th>info 
+                    <th>info -a 
+                  <tr align=LEFT> 
+                    <th>XL FORTRAN 
+                    <th>info -l xlf 
+                    <th>info -a -l xlf 
+                  <tr align=LEFT> 
+                    <th>XL C Compiler 
+                    <th>info -l c 
+                    <th>info -a -l c 
+                  <tr align=LEFT> 
+                    <th>XL C++ Compiler Set 
+                    <th>info -l cset 
+                    <th>info -a -l cset 
+                  <tr align=LEFT> 
+                    <th>LoadLeveler 
+                    <th>info -l LoadL 
+                    <th>info -a -l LoadL 
+                  <tr align=LEFT> 
+                    <th>ESSL 
+                    <th>info -l essl 
+                    <th>info -a -l essl 
+                  <tr align=LEFT> 
+                    <th>PESSL 
+                    <th>info -l pessl 
+                    <th>info -a -l pessl 
+                  <tr align=LEFT> 
+                    <th>Parallel Environment 
+                    <th>info -l pe 
+                    <th>info -a -l pe 
+                  <tr align=LEFT> 
+                    <th>PVMe 
+                    <th>info -l pvm3 
+                    <th>info -a -l pvm3 
+                  <tr align=LEFT> 
+                    <th>SP2 Systems Support 
+                    <th>info -l sp2 
+                    <th>info -a -l sp2 
+                  <tr align=LEFT> 
+                </table>
+                <p> 
+              <li>Instructions for using IBM's InfoExplorer are available. 
+            </ul>
+            <a name=FuturePlans> &nbsp; </a> 
+            <table border=0 cellpadding=5 cellspacing=0 width=100%>
+              <tr bgcolor="#336699"> 
+                <td width="84%"> <font color="#FFFFFF"><b>Software Future Plans</b></font> 
+            </table>
+            <ul>
+              <p> 
+              <li>The HPC@UNM is continually ordering and installing new software 
+                packages that will meet its users needs. We strive to keep existing 
+                software up to date. Periodically we review packages for usefulness 
+                and remove any that are outdated or unused. 
+                <p> 
+              <li>All users are encouraged to send suggestions for software acquisitions, 
+                the on-line software pages and documentation to the User Services 
+                Consultants. 
+                <p> 
+              <li>Please send suggestions by email to <a href="mailto:webmaster@hpcerc.unm.edu">webmaster@hpc.unm.edu</a>. 
+            </ul>
+            <p> <a name=Documentation> </a> 
+            <table border=0 cellpadding=5 cellspacing=0 width=100%>
+              <tr bgcolor="#336699"> 
+                <td width="84%"> <font color="white"><b>HPC@UNM Documentation</b></font> 
+            </table>
+            <ul>
+              <p> 
+              <li>Nearly everything users need to know about the HPC@UNM can be 
+                found on the Center's WWW server, located at: 
+                <p><b> <a href="../index.html">http://www.hpc.unm.edu</a> 
+                  </b> 
+                <p> 
+              <li>Important links to check out: 
+                <ul>
+                  <p> 
+                  <li><b><a href="../news/index.html">What's New</a></b> - News 
+                    and information posted daily 
+                    <p> 
+                  <li><b><a href="docs/systems.html">Technical Documentation</a></b> 
+                    - Main page for documentation topics 
+                    <p> 
+                  <li><b><a href="https://web.archive.org/web/20030625084635/http://hpc.unm.edu/events/index.html" target=W2 onClick="blur()"> 
+                    Training</a></b> - Workshop schedules and registration, links 
+                    to workshop tutorials and exercises. 
+                    <p> 
+                  <li><b><a href="https://web.archive.org/web/20030625084635/http://santafe.ahpcc.unm.edu/irs/"
+        target=W2 onClick="blur()"> Accounts &amp; Access </a></b> - Different 
+                    types of accounts and how to obtain one; how to access the 
+                    HPC@UNM systems, including Secure Access. 
+                    <p> 
+                  <li><b><a href="docs/systems.html"
+        target=W2 onClick="blur()"> Resource Limits</a></b> - CPU and disk limits, 
+                    scratch file space. 
+                    <p> 
+                  <li><b><a href="https://web.archive.org/web/20030625084635/http://santafe.hpcerc.unm.edu/irs/"
+        target=W2 onClick="blur()">Password Policy</a></b> 
+                    <p> 
+                  <li><b><a href="https://web.archive.org/web/20030625084635/http://hpc.unm.edu/help/index.html"
+        target=W2 onClick="blur()">Help Desk</a></b> - How to contact the Help 
+                    Desk, 24x7 coverage, Help Desk hours and technical consulting. 
+                </ul>
+            </ul>
+            <p><b><a name="apps"></a></b></p>
+            <table border=0 cellpadding=5 cellspacing=0 width=100%>
+              <tr bgcolor="#336699"> 
+                <td width="84%"> <font color="white"><b>Applications</b></font> 
+            </table>
+            <p><a href="https://web.archive.org/web/20030625084635/http://www.msg.ameslab.gov/GAMESS/GAMESS.html">GAMESS</a>, 
+              HONDO, GAUSSIAN, NWChem, Molden, MD Poly, <a href="https://web.archive.org/web/20030625084635/http://www.cactuscode.org/">CACTUS</a>, 
+              <a href="https://web.archive.org/web/20030625084635/http://zeus.ncsa.uiuc.edu/lca_intro_zeusmp.html">ZEUS-MP</a>, 
+              <a href="https://web.archive.org/web/20030625084635/http://aips2.nrao.edu/docs/aips++.html">AIPS++</a>, <a href="https://web.archive.org/web/20030625084635/http://icl.cs.utk.edu/projects/papi/">PAPI</a>, 
+              <a href="https://web.archive.org/web/20030625084635/http://www.fz-juelich.de/zam/PCL/">PCL</a>, <a href="https://web.archive.org/web/20030625084635/http://hpc.unm.edu/homunculus">Flatland</a>, 
+              <a href="https://web.archive.org/web/20030625084635/http://www.hpcerc.unm.edu/%7Ecara/DX/vis.html">OpenDX</a>, 
+              AVS </p>
+            <table border="1" width="100%" cellpadding="5" cellspacing="0">
+              <tr bgcolor="#BD96B5"> 
+                <td width="124"><b>Name</b></td>
+                <td width="153"><b>Applications</b></td>
+                <td width="237"><b>Installed On:</b></td>
+              </tr>
+              <tr bgcolor="#FFFFCA"> 
+                <td width="124">Chemistry</td>
+                <td width="153"><a href="https://web.archive.org/web/20030625084635/http://www.msg.ameslab.gov/GAMESS/GAMESS.html">GAMESS</a>, 
+                  HONDO, NWChem, Molden, MD Poly</td>
+                <td width="237"><a href="roadrunner/index.html">Roadrunner</a>, 
+                  <a href="loslobos/index.html">LosLobos</a>, <a href="azul/index.html">Azul</a></td>
+              </tr>
+              <tr bgcolor="#FFFFCA"> 
+                <td width="124">Climate and Weather Modelling</td>
+                <td width="153">RAMS, NCAR Graphics</td>
+                <td width="237">&nbsp;</td>
+              </tr>
+              <tr bgcolor="#FFFFCA"> 
+                <td width="124">Astrophysics, Computational Physics</td>
+                <td width="153"><a href="https://web.archive.org/web/20030625084635/http://www.cactuscode.org/">CACTUS</a>, 
+                  <a href="https://web.archive.org/web/20030625084635/http://zeus.ncsa.uiuc.edu/lca_intro_zeusmp.html">ZEUS-MP</a>, 
+                  <a href="https://web.archive.org/web/20030625084635/http://aips2.nrao.edu/docs/aips++.html">AIPS++</a></td>
+                <td width="237"><a href="roadrunner/index.html">Roadrunner</a>, 
+                  <a href="loslobos/index.html">LosLobos</a>, <a href="azul/index.html">Azul</a>, 
+                  <a href="blackbear/index.html">BlackBear</a></td>
+              </tr>
+              <tr bgcolor="#FFFFCA"> 
+                <td width="124">Performance Counters</td>
+                <td width="153"><a href="https://web.archive.org/web/20030625084635/http://icl.cs.utk.edu/projects/papi/">PAPI</a>, 
+                  <a href="https://web.archive.org/web/20030625084635/http://www.fz-juelich.de/zam/PCL/">PCL</a>, <a href="https://web.archive.org/web/20030625084635/http://counter.li.org/">Linux-counters</a></td>
+                <td width="237"><a href="roadrunner/index.html">Roadrunner</a>, 
+                  <a href="loslobos/index.html">LosLobos</a>, <a href="azul/index.html">Azul</a>, 
+                  <a href="blackbear/index.html">BlackBear</a></td>
+              </tr>
+              <tr bgcolor="#FFFFCA"> 
+                <td width="124">Scientific Visualization</td>
+                <td width="153"><a href="https://web.archive.org/web/20030625084635/http://hpc.unm.edu/homunculus">Flatland</a>, <a href="https://web.archive.org/web/20030625084635/http://www.hpcerc.unm.edu/%7Ecara/DX/vis.html">OpenDX</a>, 
+                  AVS</td>
+                <td width="237">AIX</td>
+              </tr>
+            </table>
+            <p><b><a name="compilers"></a></b></p>
+            <table border=0 cellpadding=5 cellspacing=0 width=100%>
+              <tr bgcolor="#336699"> 
+                <td width="84%"> <b><font color="#FFFFFF">Compilers</font></b> 
+            </table>
+            <p>Compliers can run on many systems.&nbsp; Click on the complier 
+              to learn more. </p>
+            <table border="1" width="100%" cellpadding="5" cellspacing="0">
+              <tr valign="top" bgcolor="#E7D3E7"> 
+                <td width="88"><b>Compiler</b></td>
+                <td width="154"><b>Description</b></td>
+                <td width="136"><b>Languages</b></td>
+                <td width="140"><b>Machines</b></td>
+              </tr>
+              <tr valign="top" bgcolor="#FFFFCC"> 
+                <td width="88"><b><a href="https://web.archive.org/web/20030625084635/http://www.gnu.org/">GNU</a></b></td>
+                <td width="154">The GNU Project was launched in 1984 to develop 
+                  a complete Unix-like operating system which is free software: 
+                  the GNU system.</td>
+                <td width="136">F77, C, C++</td>
+                <td width="140"><a href="roadrunner/index.html">Roadrunner</a>, 
+                  <a href="loslobos/index.html">LosLobos</a>, <a href="azul/index.html">Azul</a>, 
+                  <a href="blackbear/index.html">BlackBear,</a> <a href="nambe/index.html">Nambe</a>, 
+                  <a href="trucha/index.html">Truchas</a></td>
+              </tr>
+              <tr valign="top" bgcolor="#FFFFCC"> 
+                <td width="88"><b><a href="https://web.archive.org/web/20030625084635/http://www.pgroup.com/docs.htm">PGI</a></b></td>
+                <td width="154">Portland Group compilation, debugging, and optimization 
+                  system.</td>
+                <td width="136">F77, F90, HPF, C, C++</td>
+                <td width="140"> 
+                  <p><a href="roadrunner/index.html">Roadrunner</a>, <a href="loslobos/index.html">LosLobos</a>, 
+                    <a href="azul/index.html">Azul</a>, <a href="blackbear/index.html">BlackBear</a></p>
+                </td>
+              </tr>
+              <tr valign="top" bgcolor="#FFFFCC"> 
+                <td width="88"><b>NAG</b></td>
+                <td width="154">&nbsp;</td>
+                <td width="136">F90/95</td>
+                <td width="140">&nbsp;</td>
+              </tr>
+            </table>
+            <p><b><a name="comlibs"></a></b></p>
+            <table border=0 cellpadding=5 cellspacing=0 width=100%>
+              <tr bgcolor="#336699"> 
+                <td width="84%"> <b><font color="#FFFFFF">Communication Libraries</font></b> 
+            </table>
+            <br>
+            <table width="100%" border="1" cellspacing="0" cellpadding="5">
+              <tr valign="top" bgcolor="#E7D3E7"> 
+                <td width="88"><b>Library</b></td>
+                <td width="154"><b>Description</b></td>
+                <td width="135"><b>Languages</b></td>
+                <td width="141"><b>Machines</b></td>
+              </tr>
+              <tr valign="top" bgcolor="#FFFFCC"> 
+                <td width="88"><a href="https://web.archive.org/web/20030625084635/http://hpc.unm.edu/computing/mpich-gm.html"><b>MPICH-GM</b></a></td>
+                <td width="154">Documentation written by Christopher Jordan.</td>
+                <td width="135">F77, F90, C</td>
+                <td width="141"><a href="roadrunner/index.html">Roadrunner</a>, 
+                  <a href="loslobos/index.html">LosLobos</a>, <a href="azul/index.html">Azul</a>, 
+                  <a href="blackbear/index.html">BlackBear</a></td>
+              </tr>
+              <tr bgcolor="#FFFFCC"> 
+                <td><a href="https://web.archive.org/web/20030625084635/http://hpc.unm.edu/computing/AHPCC/Documentation/mpich-tcp/index.html"><b>MPICH-TCP</b></a></td>
+                <td width="154" valign="top">Documentation written by Patricia 
+                  Kovatch</td>
+                <td width="135" valign="top">F77, F90, C</td>
+                <td width="141" valign="top"><a href="roadrunner/index.html">Roadrunner</a>, 
+                  <a href="loslobos/index.html">LosLobos</a>, <a href="azul/index.html">Azul</a>, 
+                  <a href="blackbear/index.html">BlackBear</a></td>
+              </tr>
+            </table>
+            <p><b><a name="numlibs"></a></b></p>
+            <table border=0 cellpadding=5 cellspacing=0 width=100%>
+              <tr bgcolor="#336699"> 
+                <td width="84%"> <b><font color="#FFFFFF">Numerical Libraries</font></b> 
+            </table>
+            <br>
+            <table border="1" width="100%" cellpadding="5" cellspacing="0">
+              <tr bgcolor="#CEAAC6" valign="top"> 
+                <td width="113"><b>Name</b></td>
+                <td width="289"><b>Description</b></td>
+                <td width="236"><b>Installed On:</b></td>
+              </tr>
+              <tr bgcolor="#FFFFCA" valign="top"> 
+                <td width="113"><b><a href="https://web.archive.org/web/20030625084635/http://www.netlib.org/blas/">BLAS</a></b></td>
+                <td width="289">BLAS (Basic Linear Algebra Subroutines) The BLAS 
+                  are building blocks for constructing efficient and portable 
+                  linear algebra software for high-performance computers. </td>
+                <td width="236"><a href="roadrunner/index.html">Roadrunner</a>, 
+                  <a href="loslobos/index.html">LosLobos</a>, <a href="azul/index.html">Azul</a>, 
+                  <a href="blackbear/index.html">BlackBear</a></td>
+              </tr>
+              <tr bgcolor="#FFFFCA" valign="top"> 
+                <td width="113"><b><a href="https://web.archive.org/web/20030625084635/http://netlib2.cs.utk.edu/blacs/">BLACS</a></b></td>
+                <td width="289">The BLACS exist in order to make linear algebra 
+                  applications both easier to program and more portable. It is 
+                  for this reason that the BLACS are used as the communication 
+                  layer of ScaLAPACK.</td>
+                <td width="236"><a href="roadrunner/index.html">Roadrunner</a>, 
+                  <a href="loslobos/index.html">LosLobos</a>, <a href="azul/index.html">Azul</a>, 
+                  <a href="blackbear/index.html">BlackBear</a></td>
+              </tr>
+              <tr bgcolor="#FFFFCA" valign="top"> 
+                <td width="113"><b><a href="https://web.archive.org/web/20030625084635/http://www.netlib.org/scalapack/">ScaLAPACK</a></b></td>
+                <td width="289">ScaLAPACK is a library of high performance linear 
+                  algebra routines for distributed memory MIMD computers. </td>
+                <td width="236"><a href="roadrunner/index.html">Roadrunner</a>, 
+                  <a href="loslobos/index.html">LosLobos</a>, <a href="azul/index.html">Azul</a>, 
+                  <a href="blackbear/index.html">BlackBear</a></td>
+              </tr>
+              <tr bgcolor="#FFFFCA" valign="top"> 
+                <td width="113"><b><a href="https://web.archive.org/web/20030625084635/http://www.fftw.org/">FFTw</a></b></td>
+                <td width="289">FFTW is a free collection of fast C routines for 
+                  computing the Discrete Fourier Transform in one or more dimensions.</td>
+                <td width="236"><a href="roadrunner/index.html">Roadrunner</a>, 
+                  <a href="loslobos/index.html">LosLobos</a>, <a href="azul/index.html">Azul</a>, 
+                  <a href="blackbear/index.html">BlackBear</a></td>
+              </tr>
+              <tr bgcolor="#FFFFCA" valign="top"> 
+                <td width="113"><b><a href="https://web.archive.org/web/20030625084635/http://www-fp.mcs.anl.gov/petsc/">PETSc</a></b></td>
+                <td width="289">PETSc provides a rich environment for modeling 
+                  scientific applications as well as for rapid algorithm design 
+                  and prototyping. </td>
+                <td width="236"><a href="roadrunner/index.html">Roadrunner</a>, 
+                  <a href="loslobos/index.html">LosLobos</a>, <a href="azul/index.html">Azul</a>, 
+                  <a href="blackbear/index.html">BlackBear</a></td>
+              </tr>
+              <tr bgcolor="#FFFFCA" valign="top"> 
+                <td width="113"><a href="https://web.archive.org/web/20030625084635/http://www.netlib.org/lapack/lug/index.html"><b>LAPACK</b></a></td>
+                <td width="289">LAPACK is a library of Fortran 77 subroutines 
+                  for solving the most commonly occurring problems in numerical 
+                  linear algebra. It has been designed to be efficient on a wide 
+                  range of modern high-performance computers.</td>
+                <td width="236">&nbsp;</td>
+              </tr>
+            </table>
+            <p><b><a name="refcard"></a></b></p>
+            <table border=0 cellpadding=5 cellspacing=0 width=100%>
+              <tr bgcolor="#336699"> 
+                <td width="84%"><b><font color="#FFFFFF">Linux Supercluster Reference 
+                  Card</font></b> 
+            </table>
+            <p><a href="refcard/index.html">Linux Supercluster Reference Card</a></p>
+            <p><b><a name="schedulers"></a></b></p>
+            <table border=0 cellpadding=5 cellspacing=0 width=100%>
+              <tr bgcolor="#336699"> 
+                <td width="84%"> <b><b><font color="#FFFFFF">Schedulers</font></b></b> 
+            </table>
+            <p><a href="condor/index.html">Condor</a>, <a href="https://web.archive.org/web/20030625084635/http://pbs.mrj.com/">PBS</a></p>
+            <p><b><a name="monitors"></a></b></p>
+            <table border=0 cellpadding=5 cellspacing=0 width=100%>
+              <tr bgcolor="#336699"> 
+                <td width="84%"> <b><font color="#FFFFFF">Performance Monitors 
+                  and Optimization</font></b> 
+            </table>
+            <p><a href="https://web.archive.org/web/20030625084635/http://icl.cs.utk.edu/projects/papi/">PAPI</a>, <a href="https://web.archive.org/web/20030625084635/http://counter.li.org/">Linux-counters</a>, 
+              MILC, ARPI3D</p>
+            <table border=0 cellpadding=5 cellspacing=0 width=100%>
+              <tr bgcolor="#336699"> 
+                <td width="84%"><b><font color="#FFFFFF">Miscellaneous</font></b> 
+            </table>
+            <p><a href="https://web.archive.org/web/20030625084635/http://hpc.unm.edu/System/Documentation/irix/irix-ref.pdf">IRIX</a> </p>
+            <p>MPICH - MPICH is a freely available, portable implementation of 
+              <a href="https://web.archive.org/web/20030625084635/http://www-unix.mcs.anl.gov/mpi/">MPI</a>, the new Standard 
+              for message-passing libraries. (<a 
+        href="https://web.archive.org/web/20030625084635/http://www.mpi-forum.org/docs/mpi-11-html/mpi-report.html" 
+        target=_top>HTML</a>) <a 
+        href="https://web.archive.org/web/20030625084635/http://www.alliance.unm.edu/documentation/MPI/mpi-11.ps">Postscript 
+              (1,347 Kb)</a>, (<a 
+        href="https://web.archive.org/web/20030625084635/http://www.alliance.unm.edu/documentation/MPI/mpi-11.ps.Z">compressed 
+              Postscript (496 Kb) </a>) or <a 
+        href="https://web.archive.org/web/20030625084635/http://www.alliance.unm.edu/documentation/MPI/mpi-11.pdf" 
+        target=new>PDF (1,172 Kb)</a> </p>
+            <p><a name="userguides"></a></p>
+            <table border=0 cellpadding=5 cellspacing=0 width=100%>
+              <tr> 
+                <td width="84%" bgcolor="#336699"> <font color="white"><b><font color="#FFFFFF">HPC@UNM 
+                  </font></b></font><b><font color="#FFFFFF">User Guides </font></b> 
+            </table>
+            <ul>
+              <li><a href="blackbear/ug/index.html">Blackbear</a></li>
+              <li><a href="https://web.archive.org/web/20030625084635/http://hpc.unm.edu/computing/loslobos/ug/index.html">LosLobos</a></li>
+              <li><a href="roadrunner/ug/index.html">Roadrunner</a></li>
+              <li><a href="sp2/ug/index.html">SP2</a></li>
+              <li><a href="trucha/ug/index.html">Truchas</a></li>
+            </ul>
+            <p><a name="makefiles"></a></p>
+            <table border=0 cellpadding=5 cellspacing=0 width=100%>
+              <tr> 
+                <td width="84%" bgcolor="#336699"> <b><font color="#FFFFFF">Makefiles</font></b> 
+            </table>
+            <ul>
+              <li><a href="docs/makefiles/index.html">cc+</a></li>
+              <li><a href="docs/makefiles/index.html">f77</a></li>
+              <li><a href="https://web.archive.org/web/20030625084635/http://hpc.unm.edu/computing/docs/makefiles/essl_manual.ps">essl manual</a></li>
+            </ul>
+            <p>&nbsp;</p>
+            <p><a name="security"></a></p>
+            <table border=0 cellpadding=5 cellspacing=0 width=100%>
+              <tr bgcolor="#336699"> 
+                <td width="84%"> <font color="#FFFFFF"><b>Computing Security - 
+                  General</b></font> <b><font color="#FFFFFF">Policy</font> </b> 
+            </table>
+            <p>HPC@UNM constantly inspects its systems and networks according to 
+              the HPC@UNM Security and Account Usage Policy.</p>
+            <ul>
+              <li><a href="https://web.archive.org/web/20030625084635/http://hpc.unm.edu/computing/policies/aup.pdf">http://www.hpc.unm.edu/computing/policies/aup.pdf</a></li>
+            </ul>
+            <p><a name="gnupg"></a></p>
+            <table border=0 cellpadding=5 cellspacing=0 width=100%>
+              <tr bgcolor="#336699"> 
+                <td width="84%"> <font color="#FFFFFF"><b>GnuGP</b></font> <b><font color="#FFFFFF">Reference 
+                  Card </font> </b> 
+            </table>
+            <ul>
+              <li>GnuPG users may access HPC@UNM's GnuPG Reference Card at <a href="security/gnupg.html">http://www.hpc.unm.edu/security/gnugp.html</a> 
+              </li>
+            </ul>
+            <p><a name="support"></a> </p>
+            <table border=0 cellpadding=5 cellspacing=0 width=100%>
+              <tr bgcolor="#336699"> 
+                <td width="84%"> <font color="#FFFFFF"><b>Guidelines for Acknowledging 
+                  Support</b></font> <b><font color="#FFFFFF">Policies</font> 
+                  </b> 
+            </table>
+            <p align=left>An acknowledgement of UNM-Alliance support must appear 
+              in publications of any material, whether copyrighted or not, based 
+              on or developed with resources of the University of New Mexico and 
+              the Alliance.</p>
+            <p><b>Suggested Wording</b></p>
+            <ul>
+              <block>We would like to thank the University of New Mexico for access 
+              to their Albuquerque High Performance Computing Center. This work 
+              utilized the UNM-Alliance Supercluster. </block> 
+            </ul>
+            <p><b>Submitting Copies</b></p>
+            <p>Copies of technical reports and publications using HPC@UNM resources 
+              should be sent to HPC@UNM with the grant number listed with your 
+              login information.<a name=services><br>
+              </a><a name=MailList> </a></p>
+            <table border=0 cellpadding=5 cellspacing=0 width=100%>
+              <tr bgcolor="#336699"> 
+                <td width="84%"> <font color="white"><b><font color="#FFFFFF">Services: 
+                  </font></b></font><b><font color="#FFFFFF">HPC@UNM Announcements 
+                  Mailing List </font></b> 
+            </table>
+            <ul>
+              <p> 
+              <li>HPC@UNM offers a moderated email Mailman service. Users will 
+                be kept receive timely information about changes to HPC@UNM machines. 
+                It includes information about configuration changes, downtimes, 
+                important events and other topics of potential interest to those 
+                using the HPC@UNM computing resources. 
+                <p> 
+              <li>To subscribe: 
+                <ul>
+                  <p> 
+                  <li>Please visit <a href="https://web.archive.org/web/20030625084635/https://mailman.hpcerc.unm.edu/mailman/listinfo/">https://mailman.hpc.unm.edu/mailman/listinfo/</a> 
+                </ul>
+                <blockquote>&nbsp; </blockquote>
+            </ul>
+            <!--   do not remove this name tag - it is used elsewhere ----------> 
+            <a name=ftp></a> &nbsp; 
+            <p> 
+            <table border=0 cellpadding=5 cellspacing=0 width=100%>
+              <tr bgcolor="#336699"> 
+                <td width="84%"> <font color="white"><b><font color="#FFFFFF">Services: 
+                  </font></b></font><font color="#FFFFFF"><b>Anonymous FTP </b></font> 
+            </table>
+            <p>Anonymous FTP is closed for security reasons. Please contact <a href="mailto:help@hpcerc.unm.edu">help@hpc.unm.edu</a> 
+              for special requests. 
+            <p><a name="SecureAccess"></a> 
+            <table border=0 cellpadding=5 cellspacing=0 width=100%>
+              <tr bgcolor="#336699"> 
+                <td width="84%"> <b><font color="#FFFFFF">Secure Access</font></b> 
+            </table>
+            <p> 
+            <ul>
+              <li>HPC@UNM uses secure shell (ssh). </li>
+              <li>HPC@UNM supports the following ssh clients: 1) openssh for Unix, 
+                2) putty for Windows</li>
+              <li>Other ssh clients may work. They are not supported by HPC@UNM. 
+                Your milage may vary.</li>
+            </ul>
+            <p><a name="email"></a></p>
+            <table border=0 cellpadding=5 cellspacing=0 width=100%>
+              <tr bgcolor="#336699"> 
+                <td width="84%"> <b><font color="#FFFFFF">Email</font></b> 
+            </table>
+            <ul>
+              <li>HPC@UNM currently supports PINE and Netscape email clients. </li>
+            </ul>
+            <p><a name="linux"></a></p>
+            <table border=0 cellpadding=5 cellspacing=0 width=100%>
+              <tr bgcolor="#336699"> 
+                <td width="84%"> <b><font color="#FFFFFF">Linux Environment</font></b> 
+            </table>
+            <ul>
+              <li>Setup guidelines for user environments are available at: <a href="https://web.archive.org/web/20030625084635/http://hpc.unm.edu/computing/docs/linux.html">http://www.hpc.unm.edu/docs/linux.html</a></li>
+            </ul>
+            <p><a name="connections"></a></p>
+            <table border=0 cellpadding=5 cellspacing=0 width=100%>
+              <tr bgcolor="#336699"> 
+                <td width="84%"> <b><font color="#FFFFFF">SSH</font></b> 
+              </table>
+            <p><b>SSH:</b><br>
+              Users must use secure-shell when connecting to other HPC@UNM systems 
+              once logged in.</p>
+            <p><font face="Courier New, Courier, mono">% ssh nambe.hpc.unm.edu</font></p>
+            <p><font face="Courier New, Courier, mono">% ssh blackbear.hpc.unm.edu</font></p>
+            <p><font face="Courier New, Courier, mono">% ssh loslobos.alliance.unm.edu</font></p>
+            <p><font face="Courier New, Courier, mono">% ssh roadrunner.alliance.unm.edu</font></p>
+            <p><a name="web"></a></p>
+            <table border=0 cellpadding=5 cellspacing=0 width=100%>
+              <tr bgcolor="#336699"> 
+                <td width="84%"> <b><font color="#FFFFFF">Web</font></b> 
+            </table>
+            <p>Research and distribution projects are often posted to the HPC@UNM´s 
+              public web as separate directories.&nbsp; Please contact the <a href="mailto:webmaster@ahpcc.unm.edu">Webmaster</a> 
+              to discuss hosting your own web site.</p>
+            <!-- #EndEditable --></td>
+          <!--right margin--> 
+          <td width=10><img height=1 src="../_img/spacer.gif" width=10></td>
+        </tr>
+        <tr height=15> 
+          <td colspan=3><img height=15 src="../_img/spacer.gif" width=1></td>
+        </tr>
+        <!--back and top links--> 
+        <tr valign=bottom> 
+          <td align=left></td>
+          <td align=left> 
+            <table border=0 cellpadding=0 cellspacing=0 width="100%">
+              <tbody> 
+              <tr valign=bottom> 
+                <td align=left width="50%"></td>
+                <td align=right width="50%"><a 
+                  href="#top"><img 
+                  border=0 height=8 src="../_img/standin/_not-archived.gif" 
+              width=8 alt="Image not archived" title="Image not archived"></a></td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+          <td></td>
+        </tr>
+        <!--bottom line--> 
+        <tr> 
+          <td bgcolor=#cccc99 colspan=3 height=1><img border=0 height=1 
+            src="../_img/spacer.gif" width=50></td>
+        </tr>
+        <tr> 
+          <td colspan=3 height=15><img border=0 height=15 
+            src="../_img/spacer.gif" 
+width=50></td>
+        </tr>
+        </tbody>
+      </table>
+      
+    </TD>
+  </TR></TBODY></TABLE></BODY><!-- #EndTemplate --></HTML>

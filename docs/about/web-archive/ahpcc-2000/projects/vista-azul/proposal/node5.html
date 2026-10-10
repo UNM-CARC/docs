@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.1p1 release (March 2nd, 1998)
+originally by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Network Research</TITLE>
+<META NAME="description" CONTENT="Network Research">
+<META NAME="keywords" CONTENT="nprop">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="https://web.archive.org/web/20010222125743cs_/http://ahpcc.unm.edu/projects/vista-azul/proposal/nprop.css">
+<LINK REL="next" HREF="node6.html">
+<LINK REL="previous" HREF="node4.html">
+<LINK REL="up" HREF="node4.html">
+<LINK REL="next" HREF="node6.html">
+</HEAD>
+<BODY >
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">ahpcc.unm.edu/projects/vista-azul/proposal/node5.html</code> as captured by the Internet Archive on 22 February 2001. Links to pages that were not saved here go to the Wayback Machine. Icons the Internet Archive did not save were redrawn for this copy and are not originals (hover over one to see). <a style="color:#0b5cad" href="https://web.archive.org/web/20010222125743/http://www.ahpcc.unm.edu:80/projects/vista-azul/proposal/node5.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../../">Web archive index</a></div>
+
+<!--Navigation Panel-->
+<A NAME="tex2html105"
+ HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="next (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/next_motif.gif" title="Modern recreation, not an archived original"></A> 
+<A NAME="tex2html103"
+ HREF="node4.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="up (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/up_motif.gif" title="Modern recreation, not an archived original"></A> 
+<A NAME="tex2html97"
+ HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="previous (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/previous_motif.gif" title="Modern recreation, not an archived original"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html106"
+ HREF="node6.html">Hybrid High-Performance Computing Using</A>
+<B> Up:</B> <A NAME="tex2html104"
+ HREF="node4.html">Network, Hybrid Programming, and</A>
+<B> Previous:</B> <A NAME="tex2html98"
+ HREF="node4.html">Network, Hybrid Programming, and</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H3><A NAME="SECTION00031100000000000000">
+Network Research</A>
+</H3>
+
+<P>
+A SuperCluster typically includes a high-performance communication
+network to support the interprocess communication needed by the
+applications running on the system along with one or two networks with
+significantly lower performance requirements for administrative tasks.
+There is no fundamental reason that the administrative traffic could
+not use the high-performance network; however, the separation is
+frequently exploited in the communication protocols supported by each
+network.  For example, the Roadrunner SuperCluster uses a Myrinet
+network for application level interprocess communication and a 100
+BaseT Ethernet network for administrative tasks.  The Myrinet network
+supports MPI which is used for interprocess communication in most
+scientific applications, but does not support TCP/IP which is for most
+administrative tasks.  TCP/IP is supported on the 100 BaseT network.
+In the SUR Netfinity cluster, we propose to use the Gigabit ethernet network to
+support MPI traffic and the 100 BaseT network to support TCP/IP
+traffic. 
+
+<P>
+By separating the classes of traffic, the performance of each network
+can be tuned to the expected traffic patterns.  In particular, it has
+been our experience that we can gain significant advantages by tuning
+the network to support MPI traffic.  In particular, MPI is easily
+layered on most of the current OS Bypass protocols (e.g., Myricom's
+GM, VIA and Scheduled Transfer).  In developing the Portals API with
+Sandia National Laboratories, we have found that we can gain
+additional performance benefits using techniques that enable
+application bypass.  That is, techniques that allow large message
+transfers using remote puts and gets without the need for any
+intervention on the part of the application or an application level
+thread.  Taking advantage of these techniques requires message
+matching on the network interface card (NIC) and, as such, requires a
+programmable interface for the NIC.
+
+<P>
+The IBM Netfinity cluster will provide us with the equipment needed to
+compare a commodity (e.g. TCP/IP over Gigabit ethernet) network
+similar to the next generation of Beowulf clusters with a faster
+implementation (using OS Bypass or Portals) as well as with the
+networking speeds of Myrinet (from RoadRunner) and the SP switch.
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html105"
+ HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="next (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/next_motif.gif" title="Modern recreation, not an archived original"></A> 
+<A NAME="tex2html103"
+ HREF="node4.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="up (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/up_motif.gif" title="Modern recreation, not an archived original"></A> 
+<A NAME="tex2html97"
+ HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" alt="previous (modern recreation, not an archived original)"
+ SRC="../../../_img/standin/previous_motif.gif" title="Modern recreation, not an archived original"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html106"
+ HREF="node6.html">Hybrid High-Performance Computing Using</A>
+<B> Up:</B> <A NAME="tex2html104"
+ HREF="node4.html">Network, Hybrid Programming, and</A>
+<B> Previous:</B> <A NAME="tex2html98"
+ HREF="node4.html">Network, Hybrid Programming, and</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I>Bob Ballance</I>
+<BR><I>1999-12-07</I>
+</ADDRESS>
+</BODY>
+</HTML>

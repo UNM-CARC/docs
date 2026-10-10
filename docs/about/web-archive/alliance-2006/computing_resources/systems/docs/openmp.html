@@ -1,0 +1,55 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>OpenMP @ HPC.UNM</title>
+</head>
+
+<body>
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">alliance.unm.edu/computing_resources/systems/docs/openmp.html</code> as captured by the Internet Archive on 6 September 2006. Links to pages that were not saved here go to the Wayback Machine. <a style="color:#0b5cad" href="https://web.archive.org/web/20060906172431/http://www.alliance.unm.edu/computing_resources/systems/docs/openmp.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../../">Web archive index</a></div>
+
+
+<p><font face="Arial Unicode MS" size="6">OpenMP </font>
+<font face="Arial Unicode MS" size="4">@</font><font face="Arial Unicode MS" size="6">&nbsp; 
+HPC</font></p>
+<p>&nbsp;</p>
+<p><font face="Arial Unicode MS"><b>OpenMP</b> (Open specifications for 
+MultiProcessing) is an API which supports programming on shared-memory 
+multiprocessors, mostly in C/C++ and Fortran. It has a simple and accommodating 
+because of its portable, scalable programming model. Its three basic API 
+elements are compiler directives, environment variables, and runtime library 
+routines. The programming model is explicit and thread-based, mostly specified 
+through compiler directives. It does allow nested parallelism and dynamic 
+threading although various implementations may not support this feature.</font></p>
+<p><font face="Arial Unicode MS">At HPC, OpenMP is supported by the PGI 
+compilers on Los Lobos and Azul. For C/C++ programs, use the PGCC compiler and 
+the -mp (implies -Mreentrant) option. For example,</font></p>
+<p><font face="Courier">pgcc -mp foo.c -o foo</font></p>
+<p><font face="Arial Unicode MS">Make sure you have the compiler directive
+</font><font face="Courier">#include &lt;omp.h&gt;</font><font face="Arial Unicode MS">, 
+which allows you to use OpenMP functions. For FORTRAN, use the PGF77/PGF90 
+compiler again with the -mp option. </font></p>
+<p><font face="Courier">pgf77 -mp foo.f </font><font face="Arial Unicode MS">or&nbsp;
+</font><font face="Courier">pgf90 -mp foo.f</font></p>
+<p><font face="Arial Unicode MS">Also, before running the program, you 
+may have to set the environment variable (if its not specified within your code) that holds the number of threads 
+allowed on a system by running</font></p>
+<p><font face="Courier">setenv OMP_NUM_THREADS &lt;#&gt; </font>
+<font face="Arial Unicode MS">or </font><font face="Courier">&nbsp;setenv 
+OMP_DYNAMIC</font></p>
+<p><font face="Arial Unicode MS">The </font><font face="Courier">&lt;#&gt; </font>
+<font face="Arial Unicode MS">is the number of threads to be used during 
+execution of a program, the maximum being the number of CPUs on each system. For 
+LosLobos, it can be at maximum 2 while on Azul it can be up to 4. The default 
+for each system is only to use the head/master node so be careful.</font></p>
+
+<p><font face="Arial Unicode MS">For more information on using OpenMP, you can 
+take a look at the <a href="https://web.archive.org/web/20060906172431/http://www.pgroup.com/doc/pgiug.pdf">PGI User's 
+Guide</a>. To learn how to use OpenMP,
+<a href="https://web.archive.org/web/20060906172431/http://www.llnl.gov/computing/tutorials/openMP/">this</a> is a good 
+tutorial with understandable examples. </font></p>
+
+</body>
+
+</html>

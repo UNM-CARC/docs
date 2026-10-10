@@ -1,0 +1,215 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 FINAL//EN">
+
+<HTML><!-- #BeginTemplate "/Templates/computing.dwt" -->
+<HEAD><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<!-- #BeginEditable "doctitle" --> 
+<TITLE>education</TITLE>
+<!-- #EndEditable --> 
+<META NAME="Generator" CONTENT="NetObjects Fusion  3.0.1 for Windows">
+
+</HEAD>
+
+<BODY  BGCOLOR="#FFFFFF" LINK="#0000FF" VLINK="#FF6666" TEXT="#000000" TOPMARGIN=0 LEFTMARGIN=0 MARGINWIDTH=0 MARGINHEIGHT=0>
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">ahpcc.unm.edu/Computing/AHPCC/Documentation/User_Guides/rr-debug.html</code> as captured by the Internet Archive on 25 February 2002. Links to pages that were not saved here go to the Wayback Machine. Icons the Internet Archive did not save were redrawn for this copy and are not originals (hover over one to see). Grey boxes mark images that were never archived. <a style="color:#0b5cad" href="https://web.archive.org/web/20020225155809/http://www.ahpcc.unm.edu:80/Computing/AHPCC/Documentation/User_Guides/rr-debug.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../../../">Web archive index</a></div>
+
+
+  <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=660>
+   <TR VALIGN="top" ALIGN="left">
+	<TD WIDTH=660 HEIGHT =81><IMG id="Banner1" HEIGHT=81 WIDTH=660 SRC="../../../../_img/standin/_not-archived.gif"  BORDER=0  alt=" Education  (image not archived)" title="Image not archived"></TD>
+   </TR>
+  </TABLE>
+  
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=657 height="22">
+  <tr valign="top" align="left"> 
+    <td width=666 height =27> 
+      <table id="NavigationBar2" border=0 cellspacing=0 cellpadding=0  width=660 >
+          <tr valign="top" align="left"> 
+            
+          <td width=94><a href="../../../../index.html"><img id="NavigationButton7" height=20 width=94 src="../../../../_img/standin/home_tab.gif"  border=0  alt=" Home  (modern recreation, not an archived original)" title="Modern recreation, not an archived original"></a></td>
+            <td width=94><a href="https://web.archive.org/web/20020225155809/http://www.ahpcc.unm.edu/Intranet/intranet.html"><img id="NavigationButton8" height=20 width=94 src="../../../../_img/Images/Page/Intranet_tab.gif"  border=0  alt=" Inside Us " ></a></td>
+            
+          <td width=94><a href="../../../computing.html"><img id="NavigationButton9" height=20 width=94 src="../../../../_img/standin/computing_tab_hi.gif"  border=0  alt=" Computing  (modern recreation, not an archived original)" title="Modern recreation, not an archived original"></a></td>
+            <td width=94><a href="https://web.archive.org/web/20020225155809/http://www.ahpcc.unm.edu/Computing/help.html"><img src="../../../../_img/Images/Page/Help_Desk_tab.gif" width="94" height="20" border="0"></a></td>
+            <td width=94><a href="https://web.archive.org/web/20020225155809/http://www.ahpcc.unm.edu/Research/index.html"><img id="NavigationButton10" height=20 width=94 src="../../../../_img/Images/Page/Research_tab.gif"  border=0  alt=" Research " ></a></td>
+            <td width=94><a href="https://web.archive.org/web/20020225155809/http://www.ahpcc.unm.edu/Education/education.html"><img id="NavigationButton11" height=20 width=94 src="../../../../_img/Images/Page/Education_tab.gif"  border=0  alt=" Education " ></a></td>
+            <td width=94 height=20><a href="https://web.archive.org/web/20020225155809/http://www.ahpcc.unm.edu/SiteMap/sitemap.html"><img id="NavigationButton12" height=20 width=94 src="../../../../_img/Images/Page/SiteMap_tab.gif"  border=0  alt=" SiteMap " ></a></td>
+          </tr>
+        </table>
+      
+    </td>
+  </tr>
+</TABLE>
+  
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=660>
+  <TR VALIGN="top" ALIGN="left"> 
+    <TD></TD>
+    <TD WIDTH=655> <!-- #BeginEditable "type%20content%20in%20here" --><!--  MAIN BODY ENDS #include virtual="Standards/FooterAHPCC.html"  --> 
+      <p><a name="top"></a> <b><font size="+3">Debugging and optimizing codes 
+        on Roadrunner </font></b>
+      <ol type="1">
+        <b><font size="+3"></font></b> 
+        <li><a href="debug.html">Available debuggers</a></li>
+        <ol type="1">
+          <li><a href="#11">GNU gdb</a></li>
+          <ol type="1">
+            <li><a href="#111">X Windows interface</a></li>
+          </ol>
+          <li><a href="#12">PGI pgdbg</a></li>
+          <ol type="1">
+            <li><a href="#121">X Windows interface</a></li>
+          </ol>
+          <li><a href="#13">Etnus TotalView for MPI</a></li>
+        </ol>
+        <li><a href="#2">Available profilers</a></li>
+        <ol type="1">
+          <li><a href="#21">PGI pgprof</a></li>
+        </ol>
+      </ol>
+      <p>
+      <hr id="HRRule8" width=100% align=CENTER size=2>
+      1.0 Available debuggers
+      <p></p>
+      <p><b><font size="+2"><a name="11"></a></font><font size="+1">1.1 GNU gdb</font></b></p>
+      <p><b> <font size="+1"></font></b>The GNU debugger gdb is available on Roadrunner 
+        for debugging C and C++ codes. Fortran support is not available at this 
+        time.</p>
+      <p>To debug your code using gdb first compile using the '-g' flag for the 
+        compiler, and then enter</p>
+      <p><br>
+        <font face="Courier New,Courier">$ <b>gdb</b></font><i><font face="Courier New,Courier"> 
+        a.out<br>
+        &nbsp;</font></i></p>
+      <p><i> <font face="Courier New,Courier"></font></i>where a.out is your executable. 
+      </p>
+      <p>More information is available by entering &quot;<font face="Courier New,Courier"><b>man 
+        gdb</b></font>&quot; to read the man page, or by entering &quot;<font face="Courier New,Courier"><b>info 
+        gdb</b></font>&quot;.</p>
+      <p><b>Note</b>: The gdb debugger does not allow you to debug multiple threads 
+        of a MPI code. To debug MPI codes use <a href="#13">TotalView</a>.</p>
+      <p><a name="111"></a><b>1.1.1 X Windows interface</b></p>
+      <p> <b></b>The X Windows interface <font face="Courier New,Courier">xxgdb</font> 
+        to gdb is available. It provides visual feedback and mouse input for the 
+        user to control program executions, to examine the function call stack, 
+        and to display values of variables. To debug your code enter</p>
+      <p><br>
+        <font face="Courier New,Courier">$ <b>xxgdb</b> </font><i><font face="Courier New,Courier">a.out<br>
+        &nbsp;</font></i></p>
+      <p><i> <font face="Courier New,Courier"></font></i>where a.out is your executable. 
+        More information is available by entering &quot;<font face="Courier New,Courier">man 
+        xxgdb</font>&quot; to read the man page.</p>
+      <p><b>Note</b>: You must be using a terminal or workstation capable of displaying 
+        X Windows in order to use xxgdb. See<a href="https://web.archive.org/web/20020225155809/http://www.ncsa.uiuc.edu/SCD/Hardware/CommonDoc/X_Window_System.html"> 
+        Using the X Window System</a> for more information.</p>
+      <p><a name="12"></a><b><font size="+1">1.2 PGI pgdbg</font></b></p>
+      <p><b> <font size="+1"></font></b>The <font face="Courier New,Courier"><b>pgdbg</b></font> 
+        debugger from PGI is available on the Roadrunner cluster. To debug your 
+        code enter</p>
+      <p><br>
+        <font face="Courier New,Courier">$ <b>pgdbg -text</b> </font><i><font face="Courier New,Courier">a.out<br>
+        &nbsp;</font></i></p>
+      <p><i> <font face="Courier New,Courier"></font></i>where a.out is your executable. 
+        For more information enter &quot;<font face="Courier New,Courier"><b>man 
+        pgdbg</b></font>&quot; to read the man page.</p>
+      <p><b>Note</b>: The pgdbg debugger does not allow you to debug multiple 
+        threads of a MPI code. To debug MPI codes use <a href="#13">TotalView</a>.</p>
+      <p><a name="121"></a><b><font size="+1">1.2.1 X Windows interface</font></b></p>
+      <p><b> <font size="+1"></font></b>The X Windows interface <font face="Courier New,Courier">Xpgdbg</font> 
+        to pgdbg is available. It provides visual feedback and mouse input for 
+        the user to control program executions, to examine the function call stack, 
+        and to display values of variables. To debug your code enter</p>
+      <p><br>
+        <font face="Courier New,Courier">$ <b>Xpgdbg</b> </font><i><font face="Courier New,Courier">a.out<br>
+        &nbsp;</font></i></p>
+      <p><i> <font face="Courier New,Courier"></font></i>where a.out is your executable. 
+      </p>
+      <p><b>Note</b>: You must be using a terminal or workstation capable of displaying 
+        X Windows in order to use Xpgdbg. See <a href="https://web.archive.org/web/20020225155809/http://www.ncsa.uiuc.edu/SCD/Hardware/CommonDoc/X_Window_System.html"> 
+        Using the X Window System</a> for more information.</p>
+      <p><a name="13"></a><b><font size="+1">1.3 Etnus TotalView for MPI</font></b></p>
+      <p><b> <font size="+1"></font></b>TotalView is a full-featured, source-level, 
+        graphical debugger for C, C++, and Fortran (77 and 90), assembler, and 
+        mixed source/assembler codes based on the X Window System. TotalView supports 
+        PVM, MPI, and HPF. </p>
+      <p>Start up the debugger (after setting your display and xhost appropriately) 
+        by entering</p>
+      <p><br>
+        <font face="Courier New,Courier">$ <b>totalview</b></font><i><font face="Courier New,Courier"><br>
+        &nbsp;</font></i></p>
+      <p><i> <font face="Courier New,Courier"></font></i>See &quot;<b>man totalview</b>&quot; 
+        for command syntax and options. </p>
+      <p>More information is available in the release notes, which can be found 
+        in <font face="Courier New,Courier">/usr/local/totalview/docs</font>.</p>
+      <p><a href="#top">back to Top</a></p>
+      <p><a name="2"></a><b><font size="+2">2.0 Available profilers</font></b></p>
+      <p> <b><font size="+2"><a name="21"></a></font><font size="+1">2.1 PGI pgprof</font></b></p>
+      <p><b> <font size="+1"></font></b>The PGI profiling tool <font face="Courier New,Courier"><b>pgprof</b></font> 
+        is available on the Roadrunner cluster. To use <b>pgprof</b> to profile 
+        your code you must first compile your code using either the <font face="Courier New,Courier"><b>-Mprof=func</b></font> 
+        flag or the <font face="Courier New,Courier"><b>-Mprof=lines</b></font>. 
+        Then run your code as usual. </p>
+      <p>After your code finishes a datafile named &quot;<i>pgprof.out</i>&quot; 
+        containing the profiling data that will be generated. To examine the datafile 
+        on the command line enter:</p>
+      <p><br>
+        <font face="Courier New,Courier">$ <b>pgprof -s</b> </font><i><font face="Courier New,Courier">pgprof.out<br>
+        &nbsp;</font></i></p>
+      <p>The <b>pgprof</b> tool also has an X Windows interface. To examine the 
+        datafile using the X Windows interface enter</p>
+      <p><br>
+        <font face="Courier New,Courier">$ <b>pgprof</b> </font><i><font face="Courier New,Courier">pgprof.out<br>
+        &nbsp;</font></i></p>
+      <p><i> <font face="Courier New,Courier"></font></i>More information is available 
+        by entering &quot;<font face="Courier New,Courier"><b>man pgprof</b></font>&quot; 
+        to read the man page for <b>pgprof</b>.</p>
+      <p><b>Note</b>: The PGI profiler pgprof does not allow you to profile multiple 
+        threads of a MPI code. </p>
+      <p><a href="#top">back to Top</a>
+      <!-- #EndEditable --></TD>
+  </TR>
+</TABLE>
+<TABLE CELLPADDING=0 CELLSPACING=0 BORDER=0 WIDTH=642>
+<TR VALIGN="top" ALIGN="left">
+<TD>
+
+  <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+   <TR VALIGN="top" ALIGN="left">
+	<TD WIDTH=85 HEIGHT =49><IMG SRC="../../../../_img/spacer.gif" WIDTH =85 HEIGHT=1 BORDER=0></TD>
+	<TD></TD>
+   </TR>
+   <TR VALIGN="top" ALIGN="left">
+	<TD></TD>
+	      <TD NOWRAP> [<A HREF="../../../../index.html">Home</A>] [<A HREF="https://web.archive.org/web/20020225155809/http://www.ahpcc.unm.edu/Intranet/intranet.html">Inside&nbsp;Us</A>] 
+            [<A HREF="../../../computing.html">Computing</A>] 
+            [<A HREF="https://web.archive.org/web/20020225155809/http://www.ahpcc.unm.edu/Research/index.html">Research</A>] 
+            [<A HREF="https://web.archive.org/web/20020225155809/http://www.ahpcc.unm.edu/Education/education.html">Education</A>] 
+            [<A HREF="https://web.archive.org/web/20020225155809/http://www.ahpcc.unm.edu/SiteMap/sitemap.html">SiteMap</A>] 
+          </TD>
+   </TR>
+  </TABLE>
+  <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+   <TR VALIGN="top" ALIGN="left">
+	<TD WIDTH=98 HEIGHT =10><IMG SRC="../../../../_img/spacer.gif" WIDTH =98 HEIGHT=1 BORDER=0></TD>
+	<TD WIDTH=399><IMG SRC="../../../../_img/spacer.gif" WIDTH =399 HEIGHT=1 BORDER=0></TD>
+   </TR>
+   <TR VALIGN="top" ALIGN="left">
+	<TD></TD>
+	<TD WIDTH=399>
+<P ALIGN="CENTER"><FONT SIZE="-1">Please contact our </FONT><A HREF="mailto:webmaster@ahpcc.unm.edu"><FONT SIZE="-1">Webmaster</FONT></A><FONT SIZE="-1"> with questions or comments. <BR></FONT><FONT SIZE="-2">© Copyright 2001 Albuquerque High Performance Computing Center.&nbsp; All rights reserved.</FONT></TD>
+   </TR>
+  </TABLE></TD>
+<TD>
+
+  <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=133>
+   <TR VALIGN="top" ALIGN="left">
+	<TD WIDTH=53 HEIGHT =47><IMG SRC="../../../../_img/spacer.gif" WIDTH =53 HEIGHT=1 BORDER=0></TD>
+	<TD></TD>
+   </TR>
+   <TR VALIGN="top" ALIGN="left">
+	<TD HEIGHT =58></TD>
+	      <TD WIDTH=80 ALIGN="left" VALIGN="top"><A HREF="https://web.archive.org/web/20020225155809/http://www.unm.edu/"><IMG id="Picture72" HEIGHT=58 WIDTH=80 SRC="../../../../_img/Images/UNM_Logo_Small.jpg"  BORDER=0 ></A></TD>
+   </TR>
+  </TABLE></TD>
+</TR>
+</TABLE>
+</BODY>
+<!-- #EndTemplate --></HTML>

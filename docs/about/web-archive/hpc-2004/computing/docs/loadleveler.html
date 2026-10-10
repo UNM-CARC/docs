@@ -1,0 +1,77 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF">
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">hpc.unm.edu/computing/docs/loadleveler.html</code> as captured by the Internet Archive on 25 July 2003. Links to pages that were not saved here go to the Wayback Machine. <a style="color:#0b5cad" href="https://web.archive.org/web/20030725184615/http://www.hpc.unm.edu:80/computing/docs/loadleveler.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../">Web archive index</a></div>
+
+<p align="left"><font color="#000000" size="+2"><b>Tips on Running Parallel Jobs 
+  with LoadLeveler</b></font> </p>
+<ol>
+  <li>For any jobs which intend to use the high performance switch and User Space 
+    protocol for communications, you will need to specify both of the following 
+    in order to insure running in User Space mode: <br>
+    <br>
+    <font color="#004080">#@ requirements = (Adapter == &quot;hps_user&quot;)<br>
+    #@ environment = MP_EUILIB=us</font><br>
+  </li>
+  <br>
+  <li>If you have multiple #@ requirements statements, only the last will have 
+    effect. If you need to specify multiple requirements, group them with the 
+    proper syntax. For example: <br>
+    <br>
+    <font color="#004080">#@ requirements = (Adapter == &quot;hps_user&quot;) 
+    &amp;&amp; (Memory &gt;= 256)</font><br>
+  </li>
+  <br>
+  <li>If you have multiple #@ environment statements, only the last will have 
+    effect. If you need to specify multiple environment variables, separate them 
+    by semi-colons with a single #@ environment statment. For example: <br>
+    <br>
+    <font color="#004080">#@ environment = MP_EUILIB=us;MP_INFOLEVEL=3;MP_LABELIO=yes</font><br>
+  </li>
+  <br>
+  <li>Be careful about setting MP_EUILIB in your .cshrc or .profile file. This 
+    will override whatever you specify in your LoadLeveler command script. If 
+    your communications throughput does not come close to the figures below, it 
+    is probably because of this. <br>
+  </li>
+  <br>
+  <li>Communications throughput - rough estimates. You should expect something 
+    close to these for jobs with message sizes greater than 500,000 bytes in length. 
+    <br>
+    IP over ethernet = &lt; 1 MB/sec <br>
+    IP over switch = 9-12 MB/sec <br>
+    US over switch = 30-34 MB/sec <br>
+  </li>
+  <br>
+  <li>LoadLeveler will &quot;source&quot; both your .cshrc and .login files. C 
+    Shell users may wish to exclude LoadLeveler from running interactive only 
+    commands in these files by doing something like: <br>
+    <br>
+    <font color="#004080">if ($?prompt) then<br>
+    setenv TERM vt100<br>
+    set filec<br>
+    set prompt = &quot;`hostname -s`% &quot;<br>
+    setenv MP_EUILIB us<br>
+    :<br>
+    :<br>
+    endif</font><br>
+  </li>
+  <br>
+  <li>Do not use the #@ executable statement if you are running parallel jobs. 
+    Parallel jobs use the job command file as the executable. <br>
+  </li>
+  <br>
+  <li>Use your FULL email address if you specify &quot;notify_user&quot; in your 
+    command script. <br>
+  </li>
+  <br>
+  <li>Do not try to use LoadLeveler macros, such as $(job_name), $(cluster) or 
+    $(process) as script variables. They will not be recognized by the shell. 
+  </li>
+</ol>
+</body>
+</html>

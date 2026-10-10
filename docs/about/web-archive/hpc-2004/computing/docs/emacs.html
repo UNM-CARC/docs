@@ -1,0 +1,1415 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF">
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">hpc.unm.edu/computing/docs/emacs.html</code> as captured by the Internet Archive on 25 July 2003. Links to pages that were not saved here go to the Wayback Machine. <a style="color:#0b5cad" href="https://web.archive.org/web/20030725184242/http://www.hpc.unm.edu:80/computing/docs/emacs.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../">Web archive index</a></div>
+
+<p> 
+  
+    <b><font size=+2>GNU Emacs Reference Card</font></b> 
+  
+</p>
+<p align="left"> 
+<div align="left"><b><em>(for version 19)</em> </b> </div>
+<hr>
+<p></p>
+<p><b><font size=+1>Starting Emacs</font></b></p>
+<p> 
+<table width="489" border="1" cellspacing="2" cellpadding="0" height=
+
+"29">
+  <tr> 
+    <td width="63%" bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          &nbsp;To enter GNU Emacs 19, just type its name: 
+        </center>
+    </td>
+    <td width="37%" bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          &nbsp; <tt>emacs</tt> 
+        </center>
+    </td>
+  </tr>
+</table>
+<p></p>
+<p><br>
+  To read in a file to edit, see <a href="#files">Files</a>, below.</p>
+<p><b><font size=+1>Leaving Emacs</font></b></p>
+<p> 
+<table width="489" border="1" cellspacing="2" cellpadding="0" height=
+
+"55">
+  <tr> 
+    <td width="63%" bgcolor="#ffffc8" height="24"> 
+      <p> 
+        <center>
+          &nbsp;suspend Emacs (or iconify it under X) 
+        </center>
+    </td>
+    <td width="37%" bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          &nbsp;<tt>C-z</tt> 
+        </center>
+    </td>
+  </tr>
+  <tr> 
+    <td bgcolor="#ffffc8" height="24"> 
+      <p> 
+        <center>
+          &nbsp;exit Emacs permanently 
+        </center>
+    </td>
+    <td bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          &nbsp;<tt>C-x C-c</tt> 
+        </center>
+    </td>
+  </tr>
+</table>
+<p></p>
+<p><a name="files"></a><b><font size=+1>Files</font></b> 
+<table width="492"
+
+height="159" border="1" cellspacing="2" cellpadding="0">
+  <tr> 
+    <td width="63%" height="24" bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          &nbsp;read a file into Emacs 
+        </center>
+    </td>
+    <td width="37%" bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          &nbsp;<tt>C-x C-f</tt> 
+        </center>
+    </td>
+  </tr>
+  <tr> 
+    <td height="24" bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          &nbsp;save a file back to disk 
+        </center>
+    </td>
+    <td bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          &nbsp;<tt>C-x C-s</tt> 
+        </center>
+    </td>
+  </tr>
+  <tr> 
+    <td height="24" bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          &nbsp;save all files 
+        </center>
+    </td>
+    <td bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          &nbsp;<tt>C-x s</tt> 
+        </center>
+    </td>
+  </tr>
+  <tr> 
+    <td height="24" bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          &nbsp;insert contents of another file into this buffer 
+        </center>
+    </td>
+    <td bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          &nbsp;<tt>C-x i</tt> 
+        </center>
+    </td>
+  </tr>
+  <tr> 
+    <td height="24" bgcolor="#ffffc8">&nbsp;replace this file with the file you 
+      really want</td>
+    <td bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          &nbsp;<tt>C-x C-v</tt> 
+        </center>
+    </td>
+  </tr>
+  <tr> 
+    <td height="24" bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          write buffer to a specified file 
+        </center>
+    </td>
+    <td bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          &nbsp;<tt>C-x C-w</tt> 
+        </center>
+    </td>
+  </tr>
+</table>
+<p></p>
+<p><b><font size=+1>Getting Help</font></b></p>
+<p>The Help system is simple. Type <tt>C-h</tt> and follow the directions. If 
+  you are a first-time user, type <tt>C-h t</tt> for a tutorial.<font color="#f75000"> 
+  <br>
+  </font> 
+<table width="484" border="1" cellspacing="2" cellpadding="0" height=
+
+"55">
+  <tr> 
+    <td width="62%" bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          &nbsp;remove Help window 
+        </center>
+    </td>
+    <td width="38%" bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          &nbsp;<tt>C-x 1</tt> 
+        </center>
+    </td>
+  </tr>
+  <tr> 
+    <td bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          &nbsp;scroll Help window<font color="#f75000"> </font> 
+        </center>
+    </td>
+    <td bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          <tt>ESC C-v</tt> 
+        </center>
+    </td>
+  </tr>
+</table>
+<p></p>
+<p> 
+<table width="488" border="1" cellspacing="2" cellpadding="0" height=
+
+"107">
+  <tr> 
+    <td width="61%" bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          &nbsp;apropos: show commands matching a string 
+        </center>
+    </td>
+    <td width="39%" bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          &nbsp;<tt>C-h a</tt> 
+        </center>
+    </td>
+  </tr>
+  <tr> 
+    <td bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          show the function a key runs &nbsp; 
+        </center>
+    </td>
+    <td bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          <tt>C-h c</tt>&nbsp; 
+        </center>
+    </td>
+  </tr>
+  <tr> 
+    <td bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          describe a function&nbsp; 
+        </center>
+    </td>
+    <td bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          <tt>C-h f</tt>&nbsp; 
+        </center>
+    </td>
+  </tr>
+  <tr> 
+    <td bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          get mode-specific information&nbsp; 
+        </center>
+    </td>
+    <td bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          <tt>C-h m</tt>&nbsp; 
+        </center>
+    </td>
+  </tr>
+</table>
+<p></p>
+<p><b><font size=+1>Error Recovery</font></b> 
+<table width="496" border=
+
+"1" cellspacing="2" cellpadding="0" height="134">
+  <tr> 
+    <td width="60%" height="24" align="CENTER" bgcolor="#ffffc8">abort partially 
+      typed or executing command &nbsp;</td>
+    <td width="40%" align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>C-g</tt></td>
+  </tr>
+  <tr> 
+    <td height="24" align="CENTER" bgcolor="#ffffc8">recover a file lost by a 
+      system crash&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>M-x recover-file</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td height="24" align="CENTER" bgcolor="#ffffc8">undo an unwanted change&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-x u or C-`</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td height="23" align="CENTER" bgcolor="#ffffc8">restore a buffer to its original 
+      contents &nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>M-x revert-buffer</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td height="24" align="CENTER" bgcolor="#ffffc8">redraw garbaged screen&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-l</tt>&nbsp;</td>
+  </tr>
+</table>
+<p></p>
+<p><b><font size=+1>Incremental Search</font></b> <br>
+<table width="496" border="1" cellspacing="2" cellpadding="0" height="237">
+  <tr> 
+    <td width="60%" align="CENTER" bgcolor="#ffffc8" height="24">&nbsp;search 
+      forward</td>
+    <td width="40%" align="CENTER" bgcolor="#ffffc8"><tt>C-s</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8" height="24">search backward&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-r</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8" height="24">&nbsp;regular expression 
+      search</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-M-s</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8" height="24">reverse regular expression 
+      search&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-M-r</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8" height="24">select previous search string&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>M-p</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8" height="24">select next later search 
+      string &nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>M-n</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8" height="24">exit incremental search&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>RET</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8" height="24">undo effect of last character&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>DEL</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8" height="24">abort current search&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>C-g</tt></td>
+  </tr>
+</table>
+<p></p>
+<p>Use <tt>C-s</tt> or <tt>C-r</tt> again to repeat the search in either direction. 
+  If Emacs is still searching, <tt>C-g</tt> cancels only the part not done.</p>
+<p><b><font size=+1>Motion</font></b></p>
+<p> 
+<table width="481" height="263" border="1" cellspacing="2" cellpadding=
+
+"0">
+  <tr> 
+    <td width="43%" height="24" bgcolor="#ffffc8">entity to move over</td>
+    <td width="22%" bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          <tt>backward</tt>&nbsp; 
+        </center>
+    </td>
+    <td width="35%" bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          &nbsp;<tt>forward</tt> 
+        </center>
+    </td>
+  </tr>
+  <tr> 
+    <td height="24" bgcolor="#ffffc8">character</td>
+    <td bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          <tt>C-b</tt> 
+        </center>
+    </td>
+    <td bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          &nbsp;<tt>C-f</tt> 
+        </center>
+    </td>
+  </tr>
+  <tr> 
+    <td height="24" bgcolor="#ffffc8">word</td>
+    <td bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          <tt>M-b</tt> 
+        </center>
+    </td>
+    <td bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          <tt>M-f</tt> 
+        </center>
+    </td>
+  </tr>
+  <tr> 
+    <td height="24" bgcolor="#ffffc8">line</td>
+    <td bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          <tt>C-p</tt> 
+        </center>
+    </td>
+    <td bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          <tt>C-n</tt> 
+        </center>
+    </td>
+  </tr>
+  <tr> 
+    <td height="24" bgcolor="#ffffc8">go to line beginning (or end)</td>
+    <td bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          &nbsp;<tt>C-a</tt> 
+        </center>
+    </td>
+    <td bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          <tt>C-e</tt> 
+        </center>
+    </td>
+  </tr>
+  <tr> 
+    <td height="24" bgcolor="#ffffc8">sentence</td>
+    <td bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          &nbsp;<tt>M-a</tt> 
+        </center>
+    </td>
+    <td bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          <tt>M-e</tt> 
+        </center>
+    </td>
+  </tr>
+  <tr> 
+    <td height="24" bgcolor="#ffffc8">paragraph</td>
+    <td bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          <tt>M--</tt> 
+        </center>
+    </td>
+    <td bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          &nbsp;<tt>M-&quot;</tt> 
+        </center>
+    </td>
+  </tr>
+  <tr> 
+    <td height="24" bgcolor="#ffffc8">page</td>
+    <td bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          <tt>C-x [<font color="#f75000"> </font></tt> 
+        </center>
+    </td>
+    <td bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          <tt>C-x ]</tt> 
+        </center>
+    </td>
+  </tr>
+  <tr> 
+    <td height="24" bgcolor="#ffffc8">sexp</td>
+    <td bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          <tt>C-M-b</tt> 
+        </center>
+    </td>
+    <td bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          <tt>C-M-f</tt> 
+        </center>
+    </td>
+  </tr>
+  <tr> 
+    <td height="24" bgcolor="#ffffc8">function</td>
+    <td bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          <tt>C-M-a</tt> 
+        </center>
+    </td>
+    <td bgcolor="#ffffc8"> 
+      <p> 
+        <center>
+          <tt>C-M-e</tt> 
+        </center>
+    </td>
+  </tr>
+</table>
+<p></p>
+<p>&nbsp;</p>
+<p> 
+<table width="474" height="159" border="1" cellspacing="2" cellpadding=
+
+"0">
+  <tr> 
+    <td width="69%" align="CENTER" bgcolor="#ffffc8">&nbsp;go to buffer beginning 
+      (or end)</td>
+    <td width="31%" align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>M-&lt; M-&gt;</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;scroll to next screen</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>C-v</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;scroll to previous screen</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>M-v</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;scroll left</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-x &lt;</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;scroll right</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>C-x &gt;</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;scroll current line to center of 
+      screen</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>C-u C-l</tt></td>
+  </tr>
+</table>
+<p></p>
+<p><b><font size=+1>Killing and Deleting</font></b></p>
+<p> 
+<table width="468" height="159" border="1" cellspacing="2" cellpadding=
+
+"0">
+  <tr> 
+    <td width="52%" align="CENTER" bgcolor="#ffffc8" height="24">&nbsp;entity 
+      to kill</td>
+    <td width="26%" align="CENTER" bgcolor="#ffffc8"><tt>&nbsp;backward</tt></td>
+    <td width="22%" align="CENTER" bgcolor="#ffffc8"><tt><font color="#f75000">&nbsp;</font>forward</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8" height="24">&nbsp;character (delete, 
+      not kill)</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>DEL</tt>&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-d</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8" height="23">word &nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>M-DEL</tt>&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>M-d</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8" height="24">line (to end of)&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>M-0 C-k</tt>&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-k</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8" height="23">sentence &nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>C-x DEL</tt></td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>M-k</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8" height="24">sexp&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>M-- C-M-k</tt></td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>C-M-k</tt></td>
+  </tr>
+</table>
+<table width="465" border="1" cellspacing="2" cellpadding="0">
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8" height="24">kill region &nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-w</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8" height="24">&nbsp;copy region to kill 
+      ring</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>M-w</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8" height="24">&nbsp;kill through next occurrence 
+      of char</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>M-z char</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8" height="24">yank back last thing killed&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-y</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8" height="24">replace last yank with previous 
+      kill &nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>M-y</tt>&nbsp;</td>
+  </tr>
+</table>
+<p></p>
+<p><b><font size=+1>Marking</font></b></p>
+<p> 
+<table width="474" border="1" cellspacing="2" cellpadding="0" height=
+
+"217">
+  <tr> 
+    <td width="70%" align="CENTER" bgcolor="#ffffc8" height="24">&nbsp;set mark 
+      here</td>
+    <td width="30%" align="CENTER" bgcolor="#ffffc8"><tt>C-@ or C-SPC</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8" height="24">exchange point and mark&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>C-x C-x</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8" height="24">set mark arg words away&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>M-@</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8" height="28">mark paragraph &nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>M-h</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8" height="24">&nbsp;mark page</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>C-x C-p</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8" height="24">mark sexp&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>C-M-@</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8" height="24">&nbsp;mark function</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>C-M-h</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8" height="24">&nbsp;mark entire buffer</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-x h</tt></td>
+  </tr>
+</table>
+<p></p>
+<p><b><font size=+1>Query Replace</font></b></p>
+<p> 
+<table width="512" border="1" cellspacing="2" cellpadding="0" height=
+
+"75">
+  <tr> 
+    <td width="48%" align="CENTER" bgcolor="#ffffc8">interactively replace a text 
+      string&nbsp;</td>
+    <td width="52%" align="CENTER" bgcolor="#ffffc8">&nbsp; <tt>M-%</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">using regular expressions&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>M-x query-replace-regexp</tt></td>
+  </tr>
+</table>
+<p></p>
+<p><b><font size=+1>Valid responses in query-replace mode are:</font></b><tt><font
+
+ color="#f75000"> </font></tt></p>
+<p> 
+<table width="510" border="1" cellspacing="2" cellpadding="0" height=
+
+"185">
+  <tr> 
+    <td width="67%" align="CENTER" bgcolor="#ffffc8">&nbsp;replace this one, go 
+      on to next</td>
+    <td width="33%" align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>SPC</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;replace this one, don't move</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>,</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;skip to next without replacing</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>DEL</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;replace all remaining matches</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>!</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;back up to the previous match</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>^</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;exit query-replace</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>ESC</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;enter recursive edit (C-M-c to 
+      exit)</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>C-r</tt></td>
+  </tr>
+</table>
+<p></p>
+<p><b><font size=+1>Multiple Windows</font></b></p>
+<p> 
+<table width="504" border="1" cellspacing="2" cellpadding="0" height=
+
+"419">
+  <tr> 
+    <td width="64%" align="CENTER" bgcolor="#ffffc8">delete all other windows&nbsp;</td>
+    <td width="36%" align="CENTER" bgcolor="#ffffc8"><tt>C-x 1</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">delete this window&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-x 0</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">split window in two vertically&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-x 2</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">split window in two horizontally&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-x 3</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">scroll other window&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-M-v</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;switch cursor to another window</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-x o</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">shrink window shorter&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>M-x shrink-window</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">grow window taller&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-x ^</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">shrink window narrower&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-x -</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">grow window wider &nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-x &quot;</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">select buffer in other window&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>C-x 4 b</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">display buffer in other window&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-x 4 C-o</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">find file in other window&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-x 4 f</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">find file read-only in other window&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-x 4 r</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">run Dired in other window&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-x 4 d</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">find tag in other window&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>C-x 4.</tt></td>
+  </tr>
+</table>
+<p></p>
+<p><b><font size=+1>Formatting</font></b></p>
+<p> 
+<table width="511" height="343" border="1" cellspacing="2" cellpadding=
+
+"0">
+  <tr> 
+    <td width="63%" height="24" align="CENTER" bgcolor="#ffffc8">indent current 
+      line (mode-dependent)&nbsp;</td>
+    <td width="37%" align="CENTER" bgcolor="#ffffc8"><tt>TAB</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td height="24" align="CENTER" bgcolor="#ffffc8">indent region (mode-dependent)</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-M-&quot;</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td height="24" align="CENTER" bgcolor="#ffffc8">indent sexp (mode-dependent)&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-M-q</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td height="24" align="CENTER" bgcolor="#ffffc8">indent region rigidly arg 
+      columns&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>C-x TAB</tt></td>
+  </tr>
+  <tr> 
+    <td height="24" align="CENTER" bgcolor="#ffffc8">insert newline after point 
+      &nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-o</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td height="24" align="CENTER" bgcolor="#ffffc8">move rest of line vertically 
+      down&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-M-o</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td height="24" align="CENTER" bgcolor="#ffffc8">delete blank lines around 
+      point&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-x C-o</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td height="24" align="CENTER" bgcolor="#ffffc8">join line with previous (with 
+      arg, next)&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>M-^</tt></td>
+  </tr>
+  <tr> 
+    <td height="24" align="CENTER" bgcolor="#ffffc8">&nbsp;delete all white space 
+      around point</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>M-&quot;</tt></td>
+  </tr>
+  <tr> 
+    <td height="24" align="CENTER" bgcolor="#ffffc8">put exactly one space at 
+      point&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>M-SPC</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td height="24" align="CENTER" bgcolor="#ffffc8">fill paragraph&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>M-q</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td height="24" align="CENTER" bgcolor="#ffffc8">set fill column&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-x f</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td height="24" align="CENTER" bgcolor="#ffffc8">set prefix each line starts 
+      with&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>C-x .</tt></td>
+  </tr>
+</table>
+<p></p>
+<p><b><font size=+1>Case Change</font></b></p>
+<p> 
+<table width="503" height="159" border="1" cellspacing="2" cellpadding=
+
+"0">
+  <tr> 
+    <td width="53%" align="CENTER" bgcolor="#ffffc8">&nbsp;uppercase word</td>
+    <td width="47%" align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>M-u</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;lowercase word</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>M-l</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;capitalize word</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>M-c</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;uppercase region</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>C-x C-u</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;lowercase region</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>C-x C-l</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;capitalize region</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>M-x capitalize-region</tt></td>
+  </tr>
+</table>
+<p></p>
+<p><b><font size=+1>The Minibuffer</font></b></p>
+<p>The following keys are defined in the minibuffer:</p>
+<p> 
+<table width="494" height="238" border="1" cellspacing="2" cellpadding=
+
+"0">
+  <tr> 
+    <td width="57%" align="CENTER" bgcolor="#ffffc8" height="24">complete as much 
+      as possible&nbsp;</td>
+    <td width="43%" align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>TAB</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8" height="24">complete up to one word&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>SPC</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8" height="24">complete and execute&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>RET</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8" height="24">show possible completions&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>?</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8" height="24">fetch previous minibuffer 
+      input&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>M-p</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8" height="23">fetch next later minibuffer 
+      input&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt><font color="#000000">M-n</font></tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8" height="24">regexp search backward through 
+      history&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>M-r</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8" height="24">&nbsp;regexp search forward 
+      through history</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>M-s</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8" height="24">&nbsp;abort command</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>C-g</tt></td>
+  </tr>
+</table>
+<p></p>
+<p>Type <tt>C-x ESC ESC</tt> to edit and repeat the last command that used the 
+  minibuffer. The following keys are then defined:<tt><font color="#f75000"> </font></tt></p>
+<p> 
+<table width="477" border="1" cellspacing="2" cellpadding="0" height=
+
+"55">
+  <tr> 
+    <td width="58%" align="CENTER" bgcolor="#ffffc8">previous minibuffer command 
+      &nbsp;</td>
+    <td width="42%" align="CENTER" bgcolor="#ffffc8"><tt>M-p</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">next minibuffer command &nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>M-n</tt>&nbsp;</td>
+  </tr>
+</table>
+<p></p>
+<p><b><font size=+1>Buffers</font></b> 
+<table width="474" border="1" cellspacing=
+
+"2" cellpadding="0" height="81">
+  <tr> 
+    <td width="59%" align="CENTER" bgcolor="#ffffc8">select another buffer&nbsp;</td>
+    <td width="41%" align="CENTER" bgcolor="#ffffc8"><tt>C-x b</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;list all buffers</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-x C-b</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">kill a buffer&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>C-x k</tt></td>
+  </tr>
+</table>
+<p></p>
+<p><b><font size=+1>Transposing</font></b> 
+<table width="482" height="107"
+
+border="1" cellspacing="2" cellpadding="0">
+  <tr> 
+    <td width="58%" align="CENTER" bgcolor="#ffffc8">transpose characters&nbsp;</td>
+    <td width="42%" align="CENTER" bgcolor="#ffffc8"><tt>C-t</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">transpose words&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>M-t</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">transpose lines&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>C-x C-t</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;transpose sexps</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>C-M-t</tt></td>
+  </tr>
+</table>
+<p></p>
+<p><b><font size=+1>Spelling Check</font></b> 
+<table width="482" height=
+
+"81" border="1" cellspacing="2" cellpadding="0">
+  <tr> 
+    <td width="57%" align="CENTER" bgcolor="#ffffc8">check spelling of current 
+      word&nbsp;</td>
+    <td width="43%" align="CENTER" bgcolor="#ffffc8"><tt>M-$</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">check spelling of all words in region&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>M-x ispell-region</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">check spelling of entire buffer</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>M-x ispell-buffer</tt></td>
+  </tr>
+</table>
+<p></p>
+<p>&nbsp;<b><font size=+1>Tags</font></b> 
+<table width="536" height="165"
+
+border="1" cellspacing="2" cellpadding="0">
+  <tr> 
+    <td width="56%" align="CENTER" bgcolor="#ffffc8" height="24">find a tag (a 
+      definition)&nbsp;</td>
+    <td width="44%" align="CENTER" bgcolor="#ffffc8"><tt>M-.</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8" height="24">find next occurrence of tag 
+      &nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-u M-.</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8" height="24">specify a new tags file&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>M-x visit-tags-table</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8" height="24">regexp search on all files 
+      in tags table</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>M-x tags-search</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8" height="28">&nbsp;run query-replace on 
+      all the files</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>M-x tags-query-replace</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8" height="24">continue last tags search 
+      or query-replace&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>M-,</tt>&nbsp;</td>
+  </tr>
+</table>
+<p></p>
+<p><b><font size=+1>Shells</font></b><tt><font color="#f75000"> </font></tt> 
+<table
+
+width="532" height="107" border="1" cellspacing="2" cellpadding="0">
+  <tr> 
+    <td width="57%" align="CENTER" bgcolor="#ffffc8">&nbsp;execute a shell command</td>
+    <td width="43%" align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>M-!</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;run a shell command on the region</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>M-_</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;filter region through a shell command</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>C-u M-_</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;start a shell in window *shell*</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>M-x shell</tt></td>
+  </tr>
+</table>
+<p></p>
+<p><b><font size=+1>Rectangles</font></b> 
+<table width="525" border="1"
+
+cellspacing="2" cellpadding="0" height="159">
+  <tr> 
+    <td width="57%" align="CENTER" bgcolor="#ffffc8">copy rectangle to register&nbsp;</td>
+    <td width="43%" align="CENTER" bgcolor="#ffffc8"><tt>C-x r r</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">kill rectangle&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-x r k</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">yank rectangle&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-x r y</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">open rectangle, shifting text right&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>C-x r o</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">blank out rectangle&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>M-x clear-rectangle</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">prefix each line with a string&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>M-x string-rectangle</tt>&nbsp;</td>
+  </tr>
+</table>
+<p></p>
+<p><b><font size=+1>Abbrevs</font></b></p>
+<p> 
+<table width="523" height="159" border="1" cellspacing="2" cellpadding=
+
+"0">
+  <tr> 
+    <td width="58%" align="CENTER" bgcolor="#ffffc8">add global abbrev&nbsp;</td>
+    <td width="42%" align="CENTER" bgcolor="#ffffc8"><tt>C-x a g</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">add mode-local abbrev&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>C-x a l</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">add global expansion for this abbrev&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-x a i g</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">add mode-local expansion for this abbrev 
+      &nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-x a i l</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">explicitly expand abbrev &nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-x a e</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">expand previous word dynamically&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>M-/</tt></td>
+  </tr>
+</table>
+<p></p>
+<p><b><font size=+1>Regular Expressions</font></b></p>
+<p> 
+<table width="519" border="1" cellspacing="2" cellpadding="0" height=
+
+"595">
+  <tr> 
+    <td width="60%" align="CENTER" bgcolor="#ffffc8">&nbsp;any single character 
+      except a newline</td>
+    <td width="40%" align="CENTER" bgcolor="#ffffc8"><tt>.(dot)</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;zero or more repeats</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>*</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;one or more repeats</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>+</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">zero or one repeat</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>?</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;any character in the set</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>[ : : :]</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;any character not in the set</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>[^ : : :]</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;beginning of line</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp; <tt>^</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;end of line</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>$</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;quote a special character c</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>&quot;c</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;alternative (&quot;or&quot;)</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>&quot;_</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;grouping</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>&quot;( : : :&quot;)</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;nth group</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>&quot;n</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">beginning of buffer</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>&quot;`</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;end of buffer</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>&quot;'</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;word break</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>&quot;b</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;not beginning or end of word</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>&quot;B</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;beginning of word</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>&quot;&lt;</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;end of word</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>&quot;&gt;</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;any word-syntax character</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>&quot;w</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;any non-word-syntax character</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>&quot;W</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;character with syntax c</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>&quot;sc</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;character with syntax not c</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>&quot;Sc</tt></td>
+  </tr>
+</table>
+<p></p>
+<p><b><font size=+1>Registers</font></b></p>
+<p> 
+<table width="512" height="107" border="1" cellspacing="2" cellpadding=
+
+"0">
+  <tr> 
+    <td width="60%" align="CENTER" bgcolor="#ffffc8">save region in register&nbsp;</td>
+    <td width="40%" align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>C-x r s</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">insert register contents into buffer&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-x r i</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">save value of point in register&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-x r SPC</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">jump to point saved in register &nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>C-x r j</tt></td>
+  </tr>
+</table>
+<p></p>
+<p><b><font size=+1>Info</font></b> 
+<table width="506" height="29" border=
+
+"1" cellspacing="2" cellpadding="0">
+  <tr> 
+    <td width="60%" align="CENTER" bgcolor="#ffffc8">enter the Info documentation 
+      reader &nbsp;</td>
+    <td width="40%" align="CENTER" bgcolor="#ffffc8"><tt>C-h i</tt>&nbsp;</td>
+  </tr>
+</table>
+<p></p>
+<p><b><font size=+1>Moving within a node:</font></b> 
+<table width="505"
+
+height="81" border="1" cellspacing="2" cellpadding="0">
+  <tr> 
+    <td width="60%" align="CENTER" bgcolor="#ffffc8">scroll forward&nbsp;</td>
+    <td width="40%" align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>SPC</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">scroll reverse&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>DEL</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;beginning of node</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>.(dot)</tt></td>
+  </tr>
+</table>
+<p></p>
+<p><b><font size=+1>Moving between nodes:</font></b></p>
+<p> 
+<table width="498" border="1" cellspacing="2" cellpadding="0" height=
+
+"237">
+  <tr> 
+    <td width="60%" align="CENTER" bgcolor="#ffffc8">next node&nbsp;</td>
+    <td width="40%" align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>n</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;previous node</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>p</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;move up</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>u</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">select menu item by name&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>m</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">select nth menu item by number&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>(1-5)n</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">follow cross reference (return with l)&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>f</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">return to last node you saw&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>l</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">return to directory node&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>d</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">go to any node by name&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>g</tt></td>
+  </tr>
+</table>
+<p></p>
+<p><b><font size=+1>Other:</font></b> 
+<table width="491" height="107" border=
+
+"1" cellspacing="2" cellpadding="0">
+  <tr> 
+    <td width="61%" align="CENTER" bgcolor="#ffffc8">run Info tutorial&nbsp;</td>
+    <td width="39%" align="CENTER" bgcolor="#ffffc8"><tt>h</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">list Info commands &nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>?</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">quit Info&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>q</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;search nodes for regexp</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>s</tt>&nbsp;</td>
+  </tr>
+</table>
+<p></p>
+<p><b><font size=+1>Keyboard Macros</font></b></p>
+<p> 
+<table width="567" border="1" cellspacing="2" cellpadding="0" height=
+
+"177">
+  <tr> 
+    <td width="54%" align="CENTER" bgcolor="#ffffc8">start defining a keyboard 
+      macro&nbsp;</td>
+    <td width="46%" align="CENTER" bgcolor="#ffffc8"><tt>C-x (</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">end keyboard macro definition &nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>C-x )</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">execute last-defined keyboard macro&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-x e</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">append to last keyboard macro&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-u C-x (</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">name last keyboard macro&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>M-x name-last-kbd-macro</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">insert Lisp definition in buffer&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>M-x insert-kbd-macro</tt></td>
+  </tr>
+</table>
+<p></p>
+<p><font size=+1>Commands Dealing with Emacs Lisp</font></p>
+<p> 
+<table width="546" height="211" border="1" cellspacing="2" cellpadding=
+
+"0">
+  <tr> 
+    <td width="53%" align="CENTER" bgcolor="#ffffc8">eval sexp before point&nbsp;</td>
+    <td width="47%" align="CENTER" bgcolor="#ffffc8"><tt>C-x C-e</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;eval current defun</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-M-x</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">eval region&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>M-x eval-region</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;eval entire buffer</td>
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;<tt>M-x eval-current-buffer</tt></td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">read and eval minibuffer&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>M-ESC</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">re-execute last minibuffer command&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>C-x ESC ESC</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">&nbsp;read and eval Emacs Lisp file</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>M-x load-file</tt>&nbsp;</td>
+  </tr>
+  <tr> 
+    <td align="CENTER" bgcolor="#ffffc8">load from standard system directory&nbsp;</td>
+    <td align="CENTER" bgcolor="#ffffc8"><tt>M-x load-library</tt>&nbsp;</td>
+  </tr>
+</table>
+<p></p>
+<p><b><font size=+1>Simple Customization</font></b></p>
+<p>Here are some examples of binding global keys in Emacs Lisp. Note that you 
+  cannot say <tt>&quot;&quot;M-#&quot;</tt>; you must say <tt>&quot;&quot;e#&quot;</tt>. 
+  <br>
+  <tt>(global-set-key &quot;&quot;C-cg&quot; 'goto-line)<br>
+  (global-set-key &quot;&quot;C-x&quot;C-k&quot; 'kill-region)<br>
+  (global-set-key &quot;&quot;e#&quot; 'query-replace-regexp)</tt></p>
+<p>An example of setting a variable in Emacs Lisp:<br>
+  <tt>(setq backup-by-copying-when-linked t)</tt></p>
+<p><b><font size=+1>Writing Commands</font></b></p>
+<p><tt>(defun command-name (args) &quot;documentation&quot; (interactive &quot;template&quot;) 
+  body)</tt></p>
+<p>An example:<tt> (defun this-line-to-top-of-window (line) <br>
+  &quot;Reposition line point is on to top of window. With ARG, put point on line 
+  ARG. Negative counts from bottom.&quot;<br>
+  (interactive &quot;P&quot;)<br>
+  (recenter (if (null line)<br>
+  0<br>
+  (prefix-numeric-value line))))</tt></p>
+<p>The argument to interactive is a string specifying how to get the arguments 
+  when the function is called interactively. Type <tt>C-h f</tt> interactive for 
+  more information.</p>
+<p><b><i>Copyright c 1993 Free Software Foundation, Inc.<br>
+  designed by Stephen Gildea, May 1993 v2.0<br>
+  for GNU Emacs version 19 on Unix systems</i></b></p>
+<p>Permission is granted to make and distribute copies of this card provided the 
+  copyright notice and this permission notice are preserved on all copies.</p>
+<p>For copies of the GNU Emacs manual, write to the Free Software Foundation, 
+  Inc., 675 Massachusetts Ave, Cambridge MA 02139.</p>
+</body>
+</html>

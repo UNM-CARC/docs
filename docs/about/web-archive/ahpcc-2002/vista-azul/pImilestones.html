@@ -1,0 +1,150 @@
+<head>
+<title>
+ Milestones for the UNM SUR Project
+</title>
+<link rel="stylesheet" href="https://web.archive.org/web/20030323085513cs_/http://ahpcc.unm.edu/vista-azul/basefiles/style.css">
+</head>
+<body bgcolor="#ffffff">
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">ahpcc.unm.edu/vista-azul/pImilestones.html</code> as captured by the Internet Archive on 23 March 2003. Links to pages that were not saved here go to the Wayback Machine. <a style="color:#0b5cad" href="https://web.archive.org/web/20030323085513/http://www.ahpcc.unm.edu:80/vista-azul/pImilestones.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../">Web archive index</a></div>
+ 
+<center>
+<h1>
+Development and Investigation of an Interoperable, Hybrid Technology System
+for Local/Remote Scientific and Visual Computing
+</h1>
+<h3>
+ An Award To The High Performance Computing, Education, and Research
+                  Center
+<br> Of 
+<br>The University Of New Mexico
+</h3>
+<h2>
+                 Milestones for the UNM SUR Project
+</h2>
+</center>
+<h3>
+         Point Of Contact:  Robert A. Ballance, ballance@ahpcc.unm.edu
+<br>
+Principal Investigators:
+<ul>
+<li>Susan Atlas, AHPCC & Physics&Astronomy</li>
+<li>David Bader, AHPCC & EECE</li>
+<li>Robert Ballance, AHPCC & CS</li>
+<li>Thomas Caudell, AHPCC & EECE</li>
+<li>Brian Smith, AHPCC & CS</li>
+<li>John Sobolewski, AHPCC, CIRT, and EECE</li>
+</ul>
+</h3>
+<p>
+This project addresses the issues of interoperability in scientific
+computing environments. We will proceeed
+by assembling and investigating a hybrid computing environment
+that combines differing computing platforms
+(hardware and software), networking fabrics, storage subsystems, and
+programming methods. Selected real, scientific problems---including
+the biophysics of protein folding, the quantum mechanics of materials
+engineering, the dynamics of atom-ion collisions, the physics of
+multiphase flows,  characterization of data mining,
+and the optimization of workloads in high performance
+computing---will serve as test cases for
+investigating the structure and dynamics of interoperating hybrid
+computer clusters.  Integrated visualization using cluster resources
+will provide a means for scientists to interact with their
+computations dynamically in real time.  The resulting system
+will be a highly productive environment for high-performance computing
+and visualization.
+<p>
+The project has 3 phases:
+<ol>
+<li> Construct an IBM Netfinity/Gigabit Ethernet Linux Cluster
+  using PCI based adapters.  This phase will study processor and
+  network performance, interoperability with the Albuquerque
+  High-Performance Computing Center (AHPCC) Linux
+  Superclusters via an IBM SP Switch Router, and will initiate a
+  comparison study of distributed visualization using software
+  rendering versus hardware accelerated rendering.
+</li>
+<li>
+  Commencing with the installation of an IBM SP Winterhawk-II
+  system connected by a Trailblazer switch and the attachment of
+  Scalable Graphics Engines (SGE) to the Trailblazer switches at both
+  the Maui High-Performance Computer Center (MHPCC) and AHPCC, issues such as
+  workload characterization,
+  scheduling, remote access, hybrid programming, and parallel I/O
+  performance will be investigated.  Scientific applications will be
+  ported to exploit the mixed-mode parallelism and the capability for
+  doing large-scale computation and concurrent, immersive
+  visualization to steer and track using both the SGE and the
+  clusters.
+</li>
+<li>
+  Finally,  the entire system will be migrated toward complete MPI
+  interoperability through switch-attached interconnection and an SP
+  switch router.  Additional issues such as remote visualization,
+  web-based access and application performance, will round out this
+  technically challenging project.
+</ol>
+<p>
+As part of the project, UNM researchers, in collaboration with
+researchers at Sandia National Laboratory, Los Alamos National
+Laboratory and IBM Research, plan to develop and port a number of
+computational applications to this computing environment. UNM will
+also connect the hybrid cluster to its existing AHPCC Linux
+Supercluster -- a shared resource on the National Computational Grid
+-- to demonstrate complete interoperability in Next Generation
+Internet applications such as portal-based supercomputing, remote
+graphics delivery and rendering, and Internet multicasting for
+scientific collaboration.
+</p>
+<p>
+    The following is a list of the UNM SUR Project milestones to be completed
+for phase I:
+<ul>
+<li>
+Demonstrate the basic operability of the Netfinity
+     cluster using the 10/100/1000 Ethernet fabric
+<p>
+     The tasks required to accomplish this milestone include the
+     installation of the Linux operating system, a file system and the
+     open MPI communication system on the 8 Netfinity nodes.  Correct
+     operation of MPI will be validated by using standard
+     communication validation programs which accompany the MPI
+     installation and other communication test programs provided by
+     UNM researchers.
+</p>
+</li>
+<li>
+Demonstrate the effective parallel operation of the cluster.
+<p>
+  This milestone requires the completion of several subtasks:
+<ul>
+<li> running local scientific application programs in parallel using multiple
+nodes
+</li>
+<li> running an application program that relies on the storage system
+</li>
+<li> running a parallel job demonstrating the communication between the
+        Netfinity cluster and one of the UNM Linux Superclusters
+</li>
+<li> running an application that demonstrations the graphics capabilities of the cluster
+</li>
+</ul>
+<li>
+Distribute preliminary baseline benchmarks on the Netfinity cluster to project participants.
+<p>
+    The benchmarks will measure both computational and communication
+    performance of the Netfinity cluster.
+</p>
+<li>
+Provision of training courses on the effective use of both the
+   Netfinity and the SP2 cluster at AHPCC and MHPCC.
+<p>
+    The training courses will use modules developed by IBM's 
+	Advanced Computing Technology Center.
+</p>
+</li>
+
+</ul>
+<!-- #BeginLibraryItem "/Library/footer.lbi" --><font size="-1">Copyright (c) 1999 The University of New Mexico.<br> Please send suggestions to <a href="mailto:ballance@ahpcc.unm.edu%20?subject=Azul%20Project%20Pages">vista-azul@ahpcc.unm.edu 
+</a></font><!-- #EndLibraryItem --> 
+</body>

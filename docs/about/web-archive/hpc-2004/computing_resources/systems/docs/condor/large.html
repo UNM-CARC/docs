@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta content="text/html; charset=iso-8859-1"
+ http-equiv="Content-Type">
+<title></title>
+</head>
+<body bgcolor="#ffffff" leftmargin="0" topmargin="0" marginwidth="0"
+ marginheight="0">
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">hpc.unm.edu/computing_resources/systems/docs/condor/large.html</code> as captured by the Internet Archive on 20 March 2004. Links to pages that were not saved here go to the Wayback Machine. <a style="color:#0b5cad" href="https://web.archive.org/web/20040320025229/http://www.hpc.unm.edu:80/computing_resources/systems/docs/condor/large.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../../../">Web archive index</a></div>
+
+<center>
+  <h2><font face="Arial, Helvetica, sans-serif">HPC@UNM Condor Flock Information</font></h2>
+  <h3 align="center"><font face="Arial, Helvetica, sans-serif">Submitting a Large 
+    Cluster</font></h3>
+  <hr width="100%">
+</center>
+<center>
+  <ul>
+  </ul>
+</center>
+<font face="Arial, Helvetica, sans-serif">We will now use some of the more advanced 
+features of the submit description file to submit a large cluster of jobs. <br>
+</font>
+<center>
+  <font face="Arial, Helvetica, sans-serif"> </font> 
+</center>
+<div align="left"> 
+  <center>
+    <hr width="100%">
+  </center>
+  <div align="left"> 
+    <p><font face="Arial, Helvetica, sans-serif">First, change into a directory 
+      with an example job: </font></p>
+  </div>
+  <div align="left"> 
+    <pre><font face="Arial, Helvetica, sans-serif">% cd ~/examples/large/one_dir</font></pre>
+  </div>
+  <div align="left"> 
+    <p><font face="Arial, Helvetica, sans-serif">This example will use a cluster 
+      of 50 jobs, each with a different command line argument and a different 
+      output file. First, take a look at the submit file: </font></p>
+    <pre><font face="Arial, Helvetica, sans-serif">% cat one_dir.submit</font></pre>
+    <p><font face="Arial, Helvetica, sans-serif">There are a couple of interesting 
+      things in the file: </font></p>
+    <ol>
+      <li><font face="Arial, Helvetica, sans-serif">We are using a single log 
+        file for the entire cluster </font></li>
+      <li><font face="Arial, Helvetica, sans-serif">The use of "$(Process)" in 
+        specifying the filename for STDOUT </font></li>
+      <li><font face="Arial, Helvetica, sans-serif">The use of "$(Process)" in 
+        specifying the command-line argument for each job </font></li>
+      <li><font face="Arial, Helvetica, sans-serif">The use of "Notification = 
+        Never" to disable email for this cluster </font></li>
+      <li><font face="Arial, Helvetica, sans-serif">The "Queue 50" line to specify 
+        we want 50 jobs </font></li>
+    </ol>
+    <p><font face="Arial, Helvetica, sans-serif">Now, build the large.condor program 
+      using make: </font></p>
+    <pre><font face="Arial, Helvetica, sans-serif">% make</font></pre>
+    <p><font face="Arial, Helvetica, sans-serif">This will compile large.condor 
+      and link it with condor_compile. This program just prints out the command 
+      line argument it is given to STDOUT. </font></p>
+    <p><font face="Arial, Helvetica, sans-serif">Now, we can submit the cluster: 
+      </font></p>
+    <pre><font face="Arial, Helvetica, sans-serif">% condor_submit one_dir.submit</font></pre>
+    <p><font face="Arial, Helvetica, sans-serif">You will see that 50 jobs were 
+      submitted to your cluster. Remember the cluster number it tells you, you'll 
+      need this number in a little while. Now, you can monitor the progress of 
+      your jobs with condor_q and by viewing the User Log. </font></p>
+    <pre><font face="Arial, Helvetica, sans-serif">% condor_q</font></pre>
+    <pre><font face="Arial, Helvetica, sans-serif">% less large.log</font></pre>
+    <p><font face="Arial, Helvetica, sans-serif">Now, we'll change the job priority 
+      of some jobs to see them executed faster: <em>(Note: You must change each 
+      instance of "cluster" in the command below to be the number of the cluster 
+      you actually submitted -- you can determine this number by remembering the 
+      cluster number in response to the <tt>condor_submit</tt> command or can 
+      obtain it from the first column of the response from the <tt>condor_q</tt> 
+      command for the particular job).</em> </font></p>
+    <pre><font face="Arial, Helvetica, sans-serif">% condor_prio -p 19 cluster_number.48 cluster_number.49 </font></pre>
+    <p><font face="Arial, Helvetica, sans-serif">This will give processes 48 and 
+      49 a higher priority, so they should be the next ones to run. You can see 
+      the higher priority and watch them execute faster with condor_q: </font></p>
+    <pre><font face="Arial, Helvetica, sans-serif">% condor_q</font></pre>
+    <p><font face="Arial, Helvetica, sans-serif">As jobs complete, you can examine 
+      their output in the appropriate large.out.* file. In each one, the data 
+      in the file should be the same as the number in the filename. </font></p>
+    <pre><font face="Arial, Helvetica, sans-serif">% cat large.out.48</font></pre>
+    <p><font face="Arial, Helvetica, sans-serif">Keep running condor_q until all 
+      the jobs in your cluster complete. If you're tired of waiting, you can remove 
+      the remaining jobs in your cluster with "condor_rm -a". </font></p>
+    <p><font face="Arial, Helvetica, sans-serif">You might notice there are a 
+      lot of files in your directory. This can be hard to manage particularly 
+      with hundreds or thousands of jobs, instead of just 50. The next example 
+      will solve this. </font></p>
+  </div>
+  <center>
+    <hr noshade>
+  </center>
+  <font face="Arial, Helvetica, sans-serif"> </font> 
+  <center>
+    <h4 align="left"></h4>
+  </center>
+</div>
+<center>
+  <p align="left"></p>
+</center>
+<p><font face="Arial, Helvetica, sans-serif">Now, we'll submit another large cluster, 
+  this time using a directory hierarchy to make things more manageable, instead 
+  of one big directory. Each job will run in its own directory. </font></p>
+<p><font face="Arial, Helvetica, sans-serif">First, change into the new example 
+  directory: </font></p>
+<pre><font face="Arial, Helvetica, sans-serif">% cd ~/examples/large/many_dirs<br></font></pre>
+<p><font face="Arial, Helvetica, sans-serif">Now, examine the new submit file: 
+  </font></p>
+<pre><font face="Arial, Helvetica, sans-serif">% cat many_dirs.submit<br></font></pre>
+<p><font face="Arial, Helvetica, sans-serif">There are a couple of interesting 
+  things in the file: </font></p>
+<ol>
+  <li><font face="Arial, Helvetica, sans-serif">The use of "$(Process)" in specifying 
+    the Initialdir, or the directory that each jobs uses when it starts up. </font></li>
+  <li><font face="Arial, Helvetica, sans-serif">Once again, we are using a single 
+    log file for the entire cluster, but notice that we have to use "../" because 
+    each job is running in its own subdirectory </font></li>
+  <li><font face="Arial, Helvetica, sans-serif">We are using the exact same large.condor 
+    program from before. Notice that we have to use two levels of "../" because 
+    Executable is found relative to Initialdir, so we must use "../" once to get 
+    to the "many_dirs" directory, and another to get to the "large" directory, 
+    from which "one_dir/large.condor" is the right path. </font></li>
+  <li><font face="Arial, Helvetica, sans-serif">We don't have to specify separate 
+    filenames for the output files, since a large.out file will appear in each 
+    subdirectory. </font></li>
+</ol>
+<p><font face="Arial, Helvetica, sans-serif">Next, we must create the directory 
+  tree for all the jobs. Someday, Condor will be able to do this for you, but 
+  for now, you must do it yourself. There's a simple perl script that will create 
+  the 50 directories: </font></p>
+<pre><font face="Arial, Helvetica, sans-serif">% cat setup_directories<br></font></pre>
+<p><font face="Arial, Helvetica, sans-serif">Now, just run this script: </font></p>
+<pre><font face="Arial, Helvetica, sans-serif">% ./setup_directories<br></font></pre>
+<p><font face="Arial, Helvetica, sans-serif">Finally, we can submit the cluster 
+  to Condor: </font></p>
+<pre><font face="Arial, Helvetica, sans-serif">% condor_submit many_dirs.submit<br></font></pre>
+<p><font face="Arial, Helvetica, sans-serif">Again, you can monitor the progress 
+  of your cluster with condor_q: </font></p>
+<pre><font face="Arial, Helvetica, sans-serif">% condor_q<br></font></pre>
+<p><font face="Arial, Helvetica, sans-serif">As jobs complete, you can examine 
+  the output in each subdirectory: </font></p>
+<pre><font face="Arial, Helvetica, sans-serif">% cat 0/large.out<br>% cat 1/large.out<br>...</font></pre>
+<p><font face="Arial, Helvetica, sans-serif">You can leave the cluster running 
+  while we continue with the presentation, or you can remove all your jobs "condor_rm 
+  -a". </font></p>
+<p><font face="Arial, Helvetica, sans-serif">That's it, we're done! </font></p>
+</body>
+</html>

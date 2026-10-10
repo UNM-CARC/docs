@@ -1,0 +1,152 @@
+<html>
+<head>
+<title>UNM-HPCERC: Queuing System</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF">
+<div id="carc-archive-banner" style="all:initial;display:block;background:#fff8dc;border-bottom:2px solid #ba0c2f;color:#222;font:13px/1.45 Helvetica,Arial,sans-serif;padding:6px 12px;text-align:left;position:relative;z-index:2147483647"><b style="color:#ba0c2f">CARC web archive</b> &middot; Archived copy of <code style="font:12px monospace">hpc.unm.edu/computing/docs/queuing.html</code> as captured by the Internet Archive on 25 July 2003. Links to pages that were not saved here go to the Wayback Machine. <a style="color:#0b5cad" href="https://web.archive.org/web/20030725185310/http://www.hpc.unm.edu:80/computing/docs/queuing.html">Wayback copy</a> &middot; <a style="color:#0b5cad" href="../../archive-contents.html">All pages in this snapshot</a> &middot; <a style="color:#0b5cad" href="../../../">Web archive index</a></div>
+
+<p> 
+ 
+    <b><font size=+2>Chapter 5: Queuing System</font></b> 
+
+</p>
+<p> 
+<hr align=LEFT>
+<p></p>
+<p>Warning: These pages are not up to date and are currently being reconstructed. 
+  If there is any problems please contact <a
+
+href="mailto:webmaster@ahpcc.unm.edu">webmaster@ahpcc.unm.edu</a>. Thank you.</p>
+<p> 
+<center>
+  <hr>
+</center>
+<p></p>
+<ul>
+  <li><b> <a href="#purpose">5.1 Purpose of Queuing System</a> </b></li>
+  <li><b> <a href="#policy">5.2 Queue Policy</a> </b></li>
+  <li><b> <a href="#ll_commands">5.3 Batch Queuing System -- LoadLeveler</a> </b></li>
+  <li><b> <a href="#jqs_commands">5.4 Linux Batch Queuing System -- Job Queuing 
+    System (JQS)</a> </b></li>
+  <li><b> <a href="#ll_examples">5.5 Queuing Examples -- LoadLeveler</a> </b></li>
+  <li><b> <a href="#advanced_ll">5.6 Special/Advanced Requests in LoadLeveler</a> 
+    </b><br>
+  </li>
+</ul>
+<p> 
+<hr align=LEFT>
+<a name="purpose"></a><b><font size=+1>5.1 Purpose of Queuing System</font></b> 
+<p></p>
+<p>More efficient use of the computing resources can be made through the use of 
+  a queuing system. All jobs with expected run times greater than eight hours 
+  should be submitted through the batch queuing system. Some tolerance for long 
+  running jobs running interactively will be given for testing or unusual situations. 
+  The effect of too many of these jobs can slow down the performance of the entire 
+  AHPCC computing systems. Therefore, we reserve the right to limit the use of 
+  the interactive running of long running jobs.</p>
+<p> 
+<hr align=LEFT>
+<a name="policy"></a><b><font size=+1>5.2 Queuing Policy</font></b> 
+<p></p>
+<dl> 
+  <dt><b>5.2.1 Current Queuing Policy (August 23rd, 1996)</b> 
+  <dd>Queue Number Per CPU Per Job Machine Type of Name of Nodes Time Limit Time 
+    Limit Names Nodes ---------------------------------------------------------------- 
+    short 16 2 hours 16 hours chen01-chen16 parallel long 12 72 hours 288 hours 
+    zen01-zen12 parallel limit 2 jobs/user mixed 4 2 hours 8 hours zen13-zen16 
+    parallel batch/interactive Notes: 
+    <ul>
+      <li>Per job time limit is maximum total CPU time available to all processors 
+      <li>Per cpu time limit is maximum CPU time per processor 
+      <li>The long queue has a limit of two jobs per user 
+      <li>The only nodes that you can log into are zen13, zen14, zen15, zen16 
+      <li>A priority system gives preference to users that have two or less jobs 
+        submitted. 
+      <li>Actual breakdown of CPU limits for the short queue are: Processors CPU 
+        Limit ------------------------------------------ 1 to 8 02:00:00 or 7200 
+        seconds 9 to 10 01:45:00 or 6300 seconds 11 to 12 01:30:00 or 5400 seconds 
+        13 to 14 01:30:00 or 4500 seconds 15 to 16 01:00:00 or 3600 seconds 
+    </ul>
+  <dt><b>5.2.2 Future Queues</b> 
+  <dd>Two additional queues are in the process of being setup. Queue Number Per 
+    CPU Per Job Machine Type of Name of Nodes Time Limit Time Limit Names Nodes 
+    ------------------------------------------------------------------------ serial 
+    2 120 hours 120 hours gallup, grants serial 2 43Ps (RS6000s) batch/interactive 
+    cluster 3 120 hours 360 hours artesia, deming Serial, parallel clovis batch/interactive 
+</dl>
+<p> 
+<hr align=LEFT>
+<a name="ll_commands"></a><b><font size=+1>5.3 Batch Queuing System -- LoadLeveler</font></b> 
+<p></p>
+<p>The current implementation of the queuing policies for the SP1 is done using 
+  IBM's LoadLeveler. LoadLeveler is a complex system with many potential pitfalls. 
+  Therefore, it is highly recommended to start with an existing example LoadLeveler 
+  script and a standard environment setup. The following are the basic LoadLeveler 
+  commands.</p>
+<p><b><i>llsubmit:</i></b> submits a LoadLeveler command file. The syntax is llsubmit 
+  [filename] where filename is a file containing a set of LoadLeveler commands.</p>
+<p><b><i>llq: </i></b>checks queue status. llq -u [userid] lists userid jobs only. 
+  llq -l [job_id] gives a long listing for the specified job. llq -s [job_id] 
+  gives node allocation details which can be helpful in tracking down problems 
+  with jobs not starting.</p>
+<p><b><i>llcancel: </i></b>llcancel [job_id] cancels a previously submitted job.</p>
+<p><b><i>llhold: </i></b>llhold [job_id] places a job on hold. llhold -r [job_id] 
+  will release the job.</p>
+<p> 
+<hr align=LEFT>
+<a name="jqs_commands"></a><b><font size=+1>5.4 Linux Batch Queuing System -- 
+Job Queuing System (JQS)</font></b> 
+<p></p>
+<p>******** Under Development ***********</p>
+<p>The Job Queuing System (JQS) is being written to provide a queuing system for 
+  the Linux cluster. It is planned to be a simple system with a deterministic 
+  scheduling algorithm that guarantees that a job will run no later than a time 
+  determined at submission.</p>
+<p> 
+<hr align=LEFT>
+<a name="ll_examples"></a><b><font size=+1>5.5 Queuing Examples -- LoadLeveler</font></b> 
+<p></p>
+<dl> 
+  <dt><b>5.5.1 Serial Jobs</b> 
+  <dd>&nbsp; 
+  <dt><b>5.5.2 MPI Jobs</b> 
+  <dd>&nbsp; 
+  <dt><b>5.5.3 PVM Jobs</b> 
+  <dd>&nbsp; 
+  <dt><b>5.5.4 MPL Jobs</b> 
+  <dt>&nbsp; 
+  <dt><b>5.5.5 P4 Jobs</b> 
+  <dd>&nbsp; 
+  <dt><b>5.5.6 PGI HPF Jobs</b> 
+  <dd>&nbsp; 
+  <dt><b>5.5.7 IBM HPF Jobs</b> 
+  <dd>&nbsp; 
+  <dt><b>5.5.8 Gaussian Jobs</b> 
+  <dd>&nbsp; 
+  <dt><b>5.5.9 Phylip/Parboot Jobs</b> 
+</dl>
+<p> 
+<hr align=LEFT>
+<a name="advanced_ll"></a><b><font size=+1>5.6 Special/Advanced Requests in LoadLeveler</font></b> 
+<p></p>
+<dl> 
+  <dt><b>5.6.1 Special Requirements</b> 
+</dl>
+<ul>
+  <li>Wide Nodes 
+  <li>Memory Size 
+  <li>Exclude Nodes 
+</ul>
+<dl> 
+  <dt><b>5.6.2 Using Localscratch<br>
+    </b> 
+  <dt><b>5.6.3 Multiple Job Steps</b> 
+  <dd>&nbsp; 
+  <dt><b>5.6.4 Waiting for Job Completion</b> 
+  <dd>&nbsp; 
+  <dt><b>5.6.5 QRUN Scripts -- LoadLeveler scripts on the fly</b> 
+</dl>
+</body>
+</html>
