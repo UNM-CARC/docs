@@ -87,7 +87,7 @@ jobs:
       - uses: actions/checkout@v7
         with:
           repository: UNM-CARC/unm-carc.github.io
-          ref: 5591a3821fc967fbade12b8f9d0c249f9a5026e9
+          ref: 8acd4bfb407bac0fbcf6bd5a4b3a3e6201951900
           path: .sync
           sparse-checkout: scripts/cascade_sync.py
           sparse-checkout-cone-mode: false
