@@ -1,5 +1,9 @@
 # Documentation update log
 
+## 2026-10-11
+
+* **Update**: [History of CARC computing](about/history.md) has a new section on the Maui High Performance Computing Center (1993–2001), which UNM ran for the Department of Defense and whose funds built the Albuquerque center. It covers the center's TOP500 systems, UNM's 2025 purchase of the MHPCC building, and six new timeline rows, with the MHPCC logo and sign added to `assets/images/history/`. The news releases and articles reposted on David A. Bader's site are now cited by original publisher, title and date, with links to the archived originals. They add Roadrunner's 1998 prototype and funding, the 2001 NSF phylogeny grants, the 2003 IBM PERCS collaboration and the 2003 HPC@UNM steering committee, and a reported $1.5 million cost for Los Lobos.
+
 ## 2026-10-10
 
 * **Update**: The [web archive](about/web-archive.md) pages are now stored as UTF-8 with LF line endings. 186 of the 1990s pages were Latin-1 or Windows-1252, which Cascade changes on upload, so the carc.unm.edu publish stopped at its read-back check. `scripts/build_web_archive.py` now writes UTF-8 itself.
