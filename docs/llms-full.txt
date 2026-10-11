@@ -13041,6 +13041,18 @@ sources:
     resource: "https://www.top500.org/system/167391"
     title: "TOP500: Los Lobos"
     author: "team:top500"
+  - id: top500-mhpcc
+    resource: "https://top500.org/site/48326/"
+    title: "TOP500: Maui High-Performance Computing Center"
+    author: "team:top500"
+  - id: hicss-1996
+    resource: "https://ieeexplore.ieee.org/document/493240"
+    title: "Gilfeather, Smith, Sobolewski and Kahaner, Maui High Performance Computing Center: a resource for the Pacific Basin (HICSS-29, 1996)"
+    author: "team:ieee"
+  - id: davidbader-news
+    resource: "https://davidbader.net/post/"
+    title: "David A. Bader's archive of UNM, AHPCC and Alliance news releases and articles, 1999–2005"
+    author: "human:david-bader"
 ---
 
 # History of CARC computing
@@ -13059,6 +13071,11 @@ sources:
     specifications, and **unknown** means no source could be found.
     Corrections from people who ran these machines are very welcome; see
     [contributing](https://carc.unm.edu/docs/about/contributing/).
+
+UNM's supercomputing began in 1993 with the Maui High Performance Computing
+Center, which UNM ran for the Department of Defense until 2001 and which
+paid for and supplied the first Albuquerque center (see
+[Origins](#origins-the-maui-high-performance-computing-center-19932001)).[^ahpcc-2003][^hpcerc-2002]
 
 Since 1994, UNM's research supercomputers have lived in the machine room
 of the **Galles Building** (the former Galles Motor Company showroom at
@@ -13114,6 +13131,172 @@ Ulam could run.[^lobo-2015]
 *The HPC@UNM machine plaques that still hang on the Galles Building
 machine-room wall (photo, July 2026).*
 
+## Origins: the Maui High Performance Computing Center (1993–2001)
+
+CARC's story begins on Maui, not in Albuquerque. In 1993 UNM won the
+national competition to build and run a new Department of Defense
+supercomputing center in Kihei, Hawaii: the **Maui High Performance
+Computing Center (MHPCC)**.[^ahpcc-2003] Its founders were three UNM
+professors, **Frank Gilfeather** (Mathematics and Statistics), **Brian T.
+Smith** (Computer Science) and **John S. Sobolewski** (Electrical and
+Computer Engineering), who were the co-PIs on the original
+grant.[^carc-history][^carc-about-2016][^hpc-staff-2007]
+
+[![MHPCC logo, 2000](https://carc.unm.edu/docs/assets/images/history/2000-mhpcc-logo.gif){ width="200" }](https://web.archive.org/web/20000823213213/http://hpcerc.unm.edu:80/HPCERC_Images/logos/Mhpcc.GIF){target=_blank}
+
+*The MHPCC logo as it appeared on the HPCERC website (captured Aug 2000).*
+
+UNM was "competitively selected by the United States Air Force Phillips
+Laboratory to establish, operate, and manage a world class supercomputer
+center on the island of Maui".[^hicss-1996] The award was "neither a
+contract nor a grant, but a cooperative agreement which gives both the
+university and the government (Phillips Laboratory) a voice in the
+direction of the center".[^hicss-1996] It was made in September
+1993 by Phillips Laboratory, with support from the
+Advanced Research Projects Agency (ARPA) and the DoD High Performance
+Computing Modernization Program (HPCMP). A consortium led by UNM developed
+and managed it. Of the **$21 million** initial funding, about 70% was to be
+spent on equipment and communications.[^top500-1995] MHPCC was a Support
+Center of the HPCMP in 1995 and, through the Air Force Research Laboratory
+(AFRL), a Distributed Center by 1998. It was also a member of the NSF's
+National Computational Science Alliance.[^top500-1995][^newswise-1998]
+
+The cooperative agreement set five founding goals: to foster high
+performance computing technology exchange between business, government and
+education; to develop software tools for grand challenge problems; to
+sponsor HPC education; to build a center for advanced image processing and
+visualization; and to support the Air Force observatories on top of
+Haleakalā.[^hicss-1996] UNM led a consortium of partners: the Cornell
+Theory Center, the Environmental Research Institute of Michigan,
+Carnegie Mellon University, the Numerical Algorithms Group, SETS
+Technology (a Hawaiian company that hired the local systems staff),
+Advanced Network Services, and IBM, which supplied the hardware, a lead
+systems engineer and the associate director for systems and
+operations.[^hicss-1996]
+
+**The machines.** MHPCC was built around IBM's scalable POWERparallel
+systems. Its first machine was an IBM SP1, and by 1995 its main resource
+was a **384-processor IBM SP2**.[^ahpcc-2000][^top500-1995] The founders' 1996
+paper counts it among the ten largest supercomputer centers in the world
+(127.7 peak theoretical GFLOPS) and claims two firsts: the first
+installation of a large SP2 system, and the first single-purpose
+transoceanic fiber-optic T3 (45 Mbps) data link.[^hicss-1996] The TOP500
+1995 report called MHPCC "the newest TOP25 supercomputer
+center".[^top500-1995]
+An MHPCC system was in the top 100 of every TOP500 list from June 1994 to
+November 2001, peaking at **#8 in November 1995**.[^top500-mhpcc] In January
+1998 UNM announced a 192-node upgrade of 160 MHz RS/6000 SP nodes, worth
+more than $5 million and paid for partly by an HPCMP grant. Gilfeather said
+it would raise the center's capacity from 167 to 255 billion calculations
+per second.[^newswise-1998]
+
+| TOP500 system at MHPCC | Year | Cores | Rmax (GFLOPS) | Rpeak (GFLOPS) |
+| ---------------------- | ---- | ----- | ------------- | -------------- |
+| IBM SP2/400 | 1994 | 400 | 44.2 | 106.4 |
+| IBM SP2/384 | 1994 | 384 | 66.3 | 102.1 |
+| IBM SP P2SC 160 MHz | 1998 | 243 | 106.1 | 155.5 |
+| IBM SP Power3 222 MHz | 1999 | 200 | 123.9 | 177.6 |
+| IBM SP Power3 375 MHz | 2000 | 320 | 327 | 480 |
+| IBM Netfinity Cluster, PIII 933 MHz, Myrinet | 2001 | 520 | 285 | 485.2 |
+| IBM SP Power3 375 MHz 16-way | 2001 | 812 | 891 | 1,218 |
+
+*Largest MHPCC systems on TOP500 from the UNM years.[^top500-mhpcc]
+"Year" is TOP500's installation year; it does not say whether the two 2001
+systems arrived before or after UNM's operation ended in September 2001.
+TOP500 also lists smaller SP2 partitions (16 to 224 processors) for 1994
+and a 51-node P2SC for 1997.*
+
+**The users.** In 1998 MHPCC served about 1,500 scientists and engineers
+over the Internet: more than 500 DoD users, including four DoD Challenge
+Projects, and about 1,000 from other government, commercial and academic
+organizations.[^newswise-1998] By 2000 HPCERC described it as having "among
+the top 20 most powerful supercomputers in the world" and as "the DoD's
+largest supercomputer facility".[^hpcerc-1998] In January 1996 the three
+founders and David K. Kahaner of UNM's Asian Technology Information
+Program (ATIP) in Tokyo presented the center at the 29th Hawaii
+International Conference on System Sciences (HICSS-29) as "a resource for
+the Pacific Basin". MHPCC teams had trained more than 100 people in eight
+Asian and Pacific countries on the IBM SP2 and briefed visitors from Japan,
+China, Korea, Singapore, Indonesia, Australia and Switzerland, and the
+center's web server was handling about 150,000 requests a
+month.[^hicss-1996]
+
+### How MHPCC built the Albuquerque center
+
+Everything that became CARC grew out of the Maui contract:
+
+* **The umbrella center.** UNM set up the High Performance Computing,
+  Education and Research Center (HPCERC) in 1994, "shortly after" winning
+  MHPCC, to coordinate HPC education and research at UNM.[^hicss-1996][^ahpcc-2003]
+  From the start it was "partly funded through indirect and direct costs to
+  the UNM for managing the MHPCC". By 1995 its workshops drew 100 to 200
+  people a semester, and it had helped create a graduate certificate in
+  scientific and engineering computing and faculty focus groups in
+  computational fluid dynamics, computational chemistry, and scientific
+  visualization and imaging.[^hicss-1996] HPCERC administered MHPCC as one
+  of its units.[^newswise-1998]
+* **The Albuquerque Resource Center.** The "Maui Project", HPCERC's
+  forerunner, opened the Albuquerque Resource Center (ARC) in the Galles
+  Building in 1994.[^ahpcc-2000] It had two missions: to give UNM researchers access to
+  the new parallel computers through training and education, and "to assist
+  DOD researchers in using the MHPCC by providing access to UNM faculty
+  expertise".[^ahpcc-2003] The founders explained that because most MHPCC
+  users were "multiple time zones away on the U. S. mainland", MHPCC
+  "developed the concept of a Resource Center" as a satellite support
+  center. The ARC linked MHPCC to "its primary source of engineering and
+  scientific support which is the UNM faculty", served researchers at
+  Phillips Laboratory, Sandia and Los Alamos, and exchanged training
+  materials with Maui.[^hicss-1996] CARC's own site later described the Albuquerque
+  center as founded "as a sister Center to the Maui High Performance
+  Computing Center, on behalf of the DoD High Performance Computing
+  Modernization Program".[^carc-about-2016]
+* **The money.** HPCERC's own 2002 summary says: "Overhead and direct funds
+  from the MHPCC allowed HPCERC to establish and build the Albuquerque High
+  Performance Computing Center (AHPCC), a substantial HPC center on
+  campus."[^hpcerc-2002]
+* **The first machines.** The first supercomputer in the Galles Building
+  was MHPCC's original SP1, moved to Albuquerque in late 1995, and in
+  mid-1997 AHPCC prepared for 128 SP2 nodes, "again from
+  MHPCC".[^ahpcc-2000] In 1998 that SP system was described as supporting
+  "UNM and MHPCC computing work".[^newswise-1998]
+* **The people.** In 1995 a joint UNM/MHPCC applications organization was
+  being formed under Marc Ingber, Professor of Mechanical Engineering and a
+  1994 Gordon Bell Award winner.[^hicss-1996] Two MHPCC founders stayed central to the Albuquerque
+  center: Gilfeather as HPCERC Executive Director until about 2003, and
+  Smith as AHPCC Director and later Chief Scientist of HPC@UNM and CARC (see
+  [Leadership](#leadership)). MHPCC staff Steve Karwoski and Mitch Murphy
+  were co-investigators on AHPCC's 1999 Vista Azul proposal, which planned
+  to deliver visualization hardware to MHPCC for DoD
+  applications.[^vista-azul-personnel]
+
+[![MHPCC sign reading "Maui High Performance Computing Center, A Center of the University of New Mexico"](https://carc.unm.edu/docs/assets/images/history/2015-mhpcc-sign.jpg)](https://web.archive.org/web/20151001023531/http://www.hpcerc.unm.edu/common/images/shade4.jpg){target=_blank}
+
+*An MHPCC sign reading "A Center of the University of New Mexico", the
+image CARC used on its Center History page (captured Sep 2015).*
+
+**The end of UNM's operation.** In 2001 the University of Hawaii won the
+bid to operate MHPCC over UNM.[^uh-2001] UNM's operation ended in
+September 2001, and AHPCC was folded into HPCERC, which became UNM's main
+high performance computing center.[^ahpcc-2003] In 2002 HPCERC still ran a
+smaller Maui Scientific Research Center (MSRC) alongside
+AHPCC.[^hpcerc-2002] MHPCC carries on as an AFRL DoD Supercomputing
+Resource Center managed by the University of Hawaii,[^mhpcc-amos] and its
+later systems (Jaws, #11 in November 2006, then Mana, Riptide and
+Hōkūle'a) also made the TOP500.[^top500-mhpcc]
+
+**UNM buys the building (2025).** UNM's tie to Maui outlasted its operation
+of the center. The MHPCC building at 550 Lipoa Parkway in Kihei (31,337 sq
+ft, built in 1994) was leased by UNM, which used 95% of it to run the
+center. After the owner sold the property to Palm Capital Investors in
+2000, UNM held it under a "Master Lease" with the Bank of Hawaii as trustee:
+25 one-year terms through June 30, 2025, with a $9.1 million purchase option
+from 2010. UNM renewed the lease every year until it expired, and closed on
+the purchase of the property on **June 30, 2025**. The Air Force, which now
+operates the center (home of the Riptide supercomputer), was expected to
+lease it from UNM for about $992,000 a year for two years. Lobo Development
+Corp.'s interim executive director, Tom Neale, put the net benefit to UNM at
+$6.75 million.[^abq-biz-2025]
+
 ## Timeline
 
 Bars show the years each system was in service. Where an install or
@@ -13157,25 +13340,33 @@ gantt
 
 | Year | Event |
 | ---- | ----- |
-| 1993 | Frank Gilfeather, Brian T. Smith and John S. Sobolewski found the Maui High Performance Computing Center (MHPCC) for the DoD, with about $21M of initial Air Force/ARPA funding.[^carc-history][^top500-1995] |
+| 1993 | UNM wins the competition to build and run the Maui High Performance Computing Center (MHPCC) in Kihei, Hawaii, for the DoD. Frank Gilfeather, Brian T. Smith and John S. Sobolewski are the founders and co-PIs; the Air Force Phillips Laboratory cooperative agreement (Sep 1993) brings about $21M of initial funding.[^carc-history][^ahpcc-2003][^top500-1995] |
 | 1994 | The Albuquerque Resource Center (ARC), later AHPCC, opens in the Galles Building under the new HPCERC umbrella, with 10 students and one research scientist.[^carc-history][^ahpcc-2000] |
+| Jun 1994 | MHPCC's IBM SP2 enters the TOP500 (#89). An MHPCC system stays in the top 100 of every list through Nov 2001.[^top500-mhpcc] |
 | Late 1995 | The original IBM SP1 from MHPCC is installed in Albuquerque, the first supercomputer in the Galles Building.[^ahpcc-2000] A 1998 HPCERC page describes it as a 32-node SP1.[^hpcerc-1998] |
+| Nov 1995 | MHPCC reaches its highest TOP500 rank, **#8**; its main machine is a 384-processor IBM SP2.[^top500-mhpcc][^top500-1995] |
+| Jan 1996 | Gilfeather, Smith, Sobolewski and D. K. Kahaner present MHPCC at HICSS-29 as "a resource for the Pacific Basin".[^hicss-1996] |
 | 1996 | The ARC is formally chartered. AHPCC hosts an NSF Chautauqua meeting.[^ahpcc-2000][^carc-history] |
 | Mid-1997 | The ARC is renamed the Albuquerque High Performance Computing Center (AHPCC). It prepares to receive 128 IBM SP2 nodes from MHPCC and gets an 8-node SGI Origin SMP, the machine later listed as **Nambe**.[^ahpcc-2000][^ahpcc-systems-1998] An undated AHPCC page from this period names Marc Ingber as AHPCC Director and Ernie Herrera as Deputy Director.[^ahpcc-about-old] |
+| Jan 1998 | MHPCC installs 192 new 160 MHz IBM SP nodes (over $5M), raising capacity from 167 to 255 GFLOPS.[^newswise-1998] |
+| 1998 | A Jan 1998 release says AHPCC was "establishing a 128-node IBM SP system", which matches the SP2 nodes from MHPCC.[^newswise-1998][^ahpcc-2000] David Bader joins UNM and AHPCC in January as sole PI of its SMP Cluster Computing Project, and his 16-CPU Roadrunner prototype (eight dual 333 MHz Pentium II nodes) is running by April.[^bader-annals-2021][^arxiv-linux] The building expansion starts in November.[^ahpcc-2000] |
 | Nov 1998 | AHPCC's systems guide lists the SP2 (96 of 128 nodes configured), Nambe, the 12-node **Turing** Pentium cluster and a set of SGI and RS/6000 workstations; the SP1 is no longer listed.[^ahpcc-systems-1998] |
-| 1998 | A Jan 1998 release says AHPCC was "establishing a 128-node IBM SP system", which matches the SP2 nodes from MHPCC.[^newswise-1998][^ahpcc-2000] The 16-CPU Roadrunner prototype is running by April. The building expansion starts in November.[^arxiv-linux][^ahpcc-2000] |
 | Jan 1999 | The NCSA Alliance funds a 128-processor Linux supercluster, which becomes Roadrunner.[^ahpcc-2000] |
-| Mar–Jul 1999 | **Roadrunner** arrives (Mar 17 and 31), is dedicated Apr 8 with Sen. Pete Domenici and NCSA's Larry Smarr, and opens to national users Jul 1, the first Linux cluster available through NSF national allocation.[^arxiv-linux][^bader-ncsa-1999][^carc-history] |
-| 1999 | The Access Grid teleconferencing system is installed; UNM hosts the first-ever Access Grid session and Alliance Chautauqua '99 (Aug 9–10).[^carc-history][^evl-1999] |
+| Mar–Jul 1999 | **Roadrunner** arrives (Mar 17 and 31), is dedicated Apr 8 with Sen. Pete Domenici and NCSA's Larry Smarr, and opens to national users Jul 1, the first Linux cluster available through NSF national allocation.[^arxiv-linux][^bader-hpcwire-0499][^bader-ncsa-1999][^bader-hpcwire-1999][^carc-history] |
+| 1999 | The Access Grid teleconferencing system is installed; UNM hosts the first-ever Access Grid session and Alliance Chautauqua '99 (Aug 9–10), aimed at Native American colleges.[^carc-history][^evl-1999][^bader-chautauqua-1999] |
 | Dec 1999 | IBM announces the **Vista Azul** Shared University Research (SUR) award. Azul's Netfinity nodes arrive Dec 16 and are running by Jan 5, 2000.[^bader-ibm-1999][^vista-azul-status] |
 | Mar 2000 | The SP2 is retired: Feb 29 is the last day for production runs, and by March "the SP-2 has left the building". Users move to **BlackBear**.[^ahpcc-nl-2000] |
 | 2000 | **Los Lobos** (512 processors, IBM) is announced Mar 21, delivered in April and formally opened Sep 13. IBM opens its Linux Supercluster Briefing Center at AHPCC on Sep 15.[^bader-lobos-2000][^bader-opening-2000][^bader-briefing-2000] |
 | 2000 | **Vista Azul** is deployed (PI Brian T. Smith).[^carc-history] |
 | Jul 2000 | The W.M. Keck Foundation gives the UNM Health Sciences Center a $1 million cancer-genomics grant (lead investigator Cheryl Willman) in which HPCERC develops the data storage and analysis, with Sandia as a partner.[^keck-2000][^ahpcc-news-2000] |
 | Nov 2000 | Los Lobos enters the TOP500 at **#80**; it drops off after Nov 2002 (#297).[^top500] |
+| 2001 | The University of Hawaii wins the bid to operate MHPCC.[^uh-2001] |
 | Sep 2001 | UNM's operation of MHPCC ends, and AHPCC is folded into HPCERC.[^hpcerc-2003-about] |
-| 2003 | Marc Ingber is named Executive Director in January (Interim Director in the April staff directory) and the center becomes HPC@UNM.[^hpcerc-2003-about][^hpcerc-2003-dir] The **Delphi** parallel Oracle server hosts the UNM Cancer Center's GenomeDW genomics data warehouse.[^carc-history][^bader-hpc-2003] Roadrunner is last listed in Aug 2003 and is gone from the machine list by November.[^hpcerc-2003][^hpc-machines-2003] |
+| Oct 2001 | Bernard Moret (Computer Science) and David Bader (ECE) receive more than $1.1M in NSF ITR and Biocomplexity grants for phylogeny reconstruction, alongside Bader's NSF CAREER award.[^bader-nsf-2001] |
+| 2003 | Marc Ingber is named Executive Director in January (Interim Director in the April staff directory) and the center becomes HPC@UNM.[^hpcerc-2003-about][^hpcerc-2003-dir] The **Delphi** parallel Oracle server hosts the UNM Cancer Center's GenomeDW genomics data warehouse.[^carc-history] Roadrunner is last listed in Aug 2003 and is gone from the machine list by November.[^hpcerc-2003][^hpc-machines-2003] |
+| Aug 2003 | IBM wins more than $53M from DARPA's High Productivity Computing Systems program for its PERCS design. UNM's Patrick Bridges, Barney Maccabe, Bernard Moret and David Bader take part, in cooperation with the Center for High Performance Computing.[^bader-percs-2003] |
 | Sep 2003 | NASA awards $1.78M (secured by Sen. Jeff Bingaman) for CREATE's satellite receiving and processing system, the origin of **Rio Bravo**.[^lobo-2003] |
+| Sep 2003 | UNM announces the reorganized Center for HPC@UNM, led by Director Marc Ingber, new Associate Director Barney Maccabe and a faculty steering committee: David Bader and Wennie Shu (ECE), Vageli Coutsias (Mathematics), Debi Evans (Chemistry), Richard Larson (Pathology) and Tudor Oprea (Biochemistry).[^bader-hpc-2003] |
 | 2004 | Barney Maccabe is named Director and Tim Thomas Deputy Director (from June 1). NSF awards MRI **DBI-0420513** ($350,378), the shared-memory computer the plaques identify as **Pequin** and **Poblano**.[^carc-history][^physics-2004][^nsf-0420513] |
 | 2005 | The new Galles Building machine room is dedicated; the ARTS Lab opens in December.[^carc-history][^lobo-2005] |
 | Nov 2005 | Every system is moved into the new machine room on Nov 9, 2005: the Army-funded **Ristra** and **Hammer** clusters (until then "located outside the Gallas building"), the ARTS Lab's **Yenta**, the MRI's **Pequin** and **Poblano**, Delphi, the CREATE cluster, Azul and BlackBear's rack. Los Lobos and Vista stay where they are. All are back up by Nov 11.[^hpc-move-2005] |
@@ -13197,6 +13388,7 @@ gantt
 | 2021 | CREATE ends after 17 years at CARC. Ylva Pihlström becomes Associate Director. A Hopper condo base system is ordered from Dell.[^carc-history][^carc-assoc-2021][^iab-2021] |
 | 2022 | **Hopper** launches as a condo cluster (53 nodes at launch).[^carc-hopper] |
 | 2025 | **Easley** (Dell, NVIDIA, IBM storage) replaces Wheeler.[^carc-easley] |
+| Jun 30, 2025 | UNM buys the MHPCC building in Kihei at the end of its 25-year lease, with a net benefit to UNM of about $6.75M.[^abq-biz-2025] |
 | 2026 | Wheeler, Taos, Gibbs and Xena are recorded as retired (exact decommission dates unknown).[^legacy-specs] NSF awards MRI **2511915** ($1,399,999) for a new GPU cluster for quantum- and AI-driven chemistry (start Mar 15, 2026).[^nsf-2511915] Tyson L. Swetnam becomes Director on Jul 1, 2026.[^carc-swetnam] |
 
 ## Leadership
@@ -13311,7 +13503,7 @@ HPCERC systems inventory.
 | Roadrunner | 1999–2003 | Alta Technology AltaCluster | 128 | 63 GFLOPS | NSF / NCSA Alliance, matched by UNM | about $400,000 (< $6,500 per node); $400K NSF for Phase 2 |
 | BlackBear | by Feb 2000–2004+ | VA Linux 501 | 32 | ~18 GFLOPS (est.) | unknown | unknown |
 | Vista Azul | Jan 2000–2008 | IBM RS/6000 SP + Netfinity 5500 | 32 + 32 | ~40 GFLOPS (est.) | IBM SUR award | unknown |
-| Los Lobos | 2000–2007+ | IBM Netfinity 4500R cluster | 512 | 375.3 GFLOPS (Rmax 237) | NSF via NCSA Alliance | unknown |
+| Los Lobos | 2000–2007+ | IBM Netfinity 4500R cluster | 512 | 375.3 GFLOPS (Rmax 237) | NSF via NCSA Alliance | $1.5 million (2000 press report) |
 | Delphi | 2003–2015 | IBM xSeries 342 | 8 | ~8 GFLOPS (est.) | UNM Cancer Center (SRBCB) | unknown |
 | Rio Bravo | 2004–c. 2021 | TeraScan (SeaSpace) on a 5-node Xeon cluster | 10 CPUs | ~50 GFLOPS (est.) | NASA (congressional appropriation) | part of $1.78M award |
 | Pequin | by Nov 2005–2010+ (gone by 2013) | IBM eServer p5 550 | 4 | 12 GFLOPS | NSF MRI DBI-0420513 | $350,378 award (both machines) |
@@ -13436,15 +13628,28 @@ Nov 2003.[^hpc-machines-2003] Peak and cost: unknown.
 Sandy, Utah, later Linux Networx): 64 nodes of dual 450 MHz Pentium II,
 512 MB ECC SDRAM and a 6.4 GB disk per node, a Myrinet data network and a
 Fast Ethernet control network. Peak was 63 GFLOPS and nodes cost under
-$6,500 each.[^bader-alliance-1999] Nodes arrived Mar 17 and Mar 31, 1999;
-users got access Jun 1 and national allocations started Jul 1. NCSA
+$6,500 each.[^bader-alliance-1999] It grew from Bader's 1998 prototype,
+eight dual 333 MHz Pentium II nodes, and NSF and NCSA allocated $400,000
+for the full machine on the strength of its demonstrations.[^bader-annals-2021]
+Nodes arrived Mar 17 and Mar 31, 1999;
+users got access Jun 1 and national allocations started Jul 1. About 150
+people, including Sen. Pete Domenici, attended the Apr 8
+dedication.[^bader-ncsa-1999] Bader and Barney Maccabe ran the project,
+with Patricia Kovatch as project engineer.[^bader-hpcwire-1999] NCSA
 allocated $400,000 for Phase 2.[^arxiv-linux] It ran Linux, PBS and
 Globus,[^bader-iwcc-1999] and was the first Linux cluster available
 through NSF national allocation.[^carc-history] AHPCC's 2000 history dates
 the Alliance funding to January 1999 and the unveiling to April
 1999.[^ahpcc-2000] A 2000 news story puts the system's price at $400,000.[^alliance-cnet-2000]
-It is last listed in Aug 2003 and is gone from the machine list by Nov
-2003.[^hpcerc-2003][^hpc-roadrunner-2003][^hpc-machines-2003]
+The 1999 announcements planned to grow it to 512 processors within a
+year; that never happened, and the Alliance's 512-processor machine became
+Los Lobos instead.[^bader-hpcwire-0499][^bader-lobos-2000] It is last listed
+in Aug 2003 and is gone from the machine list by Nov
+2003.[^hpcerc-2003][^hpc-roadrunner-2003][^hpc-machines-2003] Bader later
+wrote that he packed it up for shipping to the Arctic Region Supercomputing
+Center; the date is not recorded.[^bader-annals-2021] The Computer History
+Museum's timeline lists the UNM prototype under 1998 and Roadrunner's
+production use from April 1999.[^chm-1998]
 
 [![Roadrunner machine specifications graphic](https://carc.unm.edu/docs/assets/images/history/2000-roadrunner-specs.jpg)](https://web.archive.org/web/20000516203849/http://www.alliance.unm.edu:80/Images/Machine_Specs.jpg){target=_blank}
 
@@ -13493,13 +13698,16 @@ It was IBM's first Linux production system and the top open Linux cluster
 on the TOP500.[^carc-history] TOP500 lists Rpeak 375.3 GFLOPS and Rmax 237
 GFLOPS, ranked #80 (Nov 2000), #101, #125, #228 and #297 (Nov
 2002).[^top500] A Reuters projection of "No. 24" was based on peak, not a
-listed rank.[^bader-reuters-2000] Funded and supported by NSF through the
+listed rank.[^bader-reuters-2000] Bader's later retrospectives repeat #24
+as its TOP500 debut,[^bader-annals-2021] but TOP500's own record starts at
+#80.[^top500] Funded and supported by NSF through the
 National Computational Science Alliance.[^bader-opening-2000] The money came
 through NCSA's Alliance cooperative agreement (NSF ACI-9619019), which does
 not itemize subawards; no UNM award record exists.[^nsf-9619019] Alliance
 allocations started Sep 1, 2000.[^ahpcc-lobos-2000] It was still running in
 Nov 2005 and Aug 2007, and is gone from the systems table by Aug
-2008.[^hpc-move-2005][^hpc-outage-2007][^hpc-systems-2008] Cost: unknown. The
+2008.[^hpc-move-2005][^hpc-outage-2007][^hpc-systems-2008] Network World
+gave its cost as $1.5 million when IBM announced it.[^bader-networkworld-2000] The
 April 2003 HPCERC inventory still lists it: 4 head and 256 compute nodes,
 730 MHz Pentium III, 1 GB per node, Myrinet, 2 TB NFS and PBS Pro, open to
 "HPCERC & Alliance" users.[^hpcerc-2003]
@@ -13547,7 +13755,9 @@ agree. Roadrunner's arrival is given as January 1999 (when funded) or
 April 1999 (when unveiled); Los Lobos's processors as 733 MHz or 730 MHz,
 and its start as summer or August 2000; and HPCERC's founding as 1994 or
 1995.[^ahpcc-2000][^hpcerc-2003][^carc-history] This page uses the
-earliest dated primary source for each.
+earliest dated primary source for each. For HPCERC that is the January
+1996 HICSS paper by its founders, which says it was "established in
+1994".[^hicss-1996]
 
 ### HPC@UNM era (2003–2009)
 
@@ -13774,7 +13984,9 @@ yet and may help with the earliest machines.
   (see the machine notes) but no decommission notice was found.
 * The dates Marc Ingber directed AHPCC before Brian Smith, and the dates
   of Smith's own term. The only source for Ingber's earlier term is one
-  undated page.
+  undated page. The 1996 HICSS paper confirms he was already leading a
+  joint UNM/MHPCC applications group in 1995, but it gives him no AHPCC
+  title.[^hicss-1996]
 * The Army award numbers and costs for Ristra and Hammer, and Yenta's
   cost. No Army award record was found.
 * The exact month Xena entered production (between late 2015 and Sep 2016),
@@ -13785,23 +13997,32 @@ yet and may help with the earliest machines.
 * Purchase costs for Hopper, Easley and the BeeGFS, IBM and NetApp storage.
 * Condo PIs on Taos and Hopper beyond those named here.
 * Term end dates for the associate and deputy directors.
+* Who directed MHPCC day to day under UNM (1993–2001), and when the
+  University of Hawaii's contract started. HPCwire reported an interim MHPCC
+  director in Feb 2001, but the article could not be retrieved.
+* How long the Maui Scientific Research Center (MSRC) lasted after 2002.
+* The 2025 Business First article quotes Neale as saying UNM created MHPCC
+  "in 1994". Every other source gives 1993 for the award (1994 is when the
+  building was built), so the page keeps 1993.
+* The Maui Scheduler used on AHPCC's SP2 takes its name from MHPCC, where it
+  is generally said to have been written; no source was found for this yet.
 
 ## Sources
 
 [^carc-history]: https://carc.unm.edu/docs/about/UNM CARC, [History](https://carc.unm.edu/about/history/){target=_blank} (also at [carc.unm.edu/about-carc/history.html](https://carc.unm.edu/about-carc/history.html){target=_blank}).
 [^plaques]: https://carc.unm.edu/docs/about/HPC@UNM machine plaques, Galles Building machine room, photographed Jul 1, 2026 (image above).
-[^bader-1999]: https://carc.unm.edu/docs/about/UNM, "UNM dedicates Roadrunner" (Apr 5, 1999), [davidbader.net/post/19990405-unm](https://davidbader.net/post/19990405-unm/){target=_blank}.
+[^bader-1999]: https://carc.unm.edu/docs/about/UNM Public Affairs, "UNM to Dedicate Supercluster Computing Facility", news release (Apr 5, 1999), [archived original](https://web.archive.org/web/19990916095140/http://www.unm.edu/~paaffair/news/news%20releases/Apl5ahpcc.htm){target=_blank}; reposted at [davidbader.net](https://davidbader.net/post/19990405-unm/){target=_blank}.
 [^top500-1995]: https://carc.unm.edu/docs/about/TOP500 1995 report, MHPCC center description, [netlib.org](https://netlib.org/benchmark/top500/reports/report95/Centers/node14.html){target=_blank}.
 [^newswise-1998]: https://carc.unm.edu/docs/about/UNM, "Maui High Performance Computing Center to increase computing capacity by 50 percent" (Jan 12, 1998), [newswise.com](https://www.newswise.com/articles/maui-high-performance-computing-center-to-increase-computing-capacity-by-50-percent-with-new-technology){target=_blank}.
-[^arxiv-linux]: https://carc.unm.edu/docs/about/"Linux and High-Performance Computing", [arXiv:2603.22495](https://arxiv.org/pdf/2603.22495){target=_blank}.
-[^bader-ncsa-1999]: https://carc.unm.edu/docs/about/NCSA Access (Apr 20, 1999), [davidbader.net/post/19990420-ncsaaccess](https://davidbader.net/post/19990420-ncsaaccess/){target=_blank}.
+[^arxiv-linux]: https://carc.unm.edu/docs/about/D. A. Bader, "Linux and High-Performance Computing", [arXiv:2603.22495](https://arxiv.org/pdf/2603.22495){target=_blank} (Mar 2026).
+[^bader-ncsa-1999]: https://carc.unm.edu/docs/about/NCSA/Alliance *Access*, "Ceremony Dedicates Linux Supercluster" (Apr 20, 1999), [archived original](https://web.archive.org/web/19990508225855/http://access.ncsa.uiuc.edu/Briefs/990420.Linux.html){target=_blank}; reposted at [davidbader.net](https://davidbader.net/post/19990420-ncsaaccess/){target=_blank}.
 [^evl-1999]: https://carc.unm.edu/docs/about/EVL, Alliance Chautauqua '99, [evl.uic.edu/events/346](https://www.evl.uic.edu/events/346){target=_blank}.
-[^bader-ibm-1999]: https://carc.unm.edu/docs/about/IBM, Vista Azul SUR announcement (Dec 13, 1999), [davidbader.net/post/19991213-ibm](https://davidbader.net/post/19991213-ibm/){target=_blank}.
-[^bader-lobos-2000]: https://carc.unm.edu/docs/about/UNM, Los Lobos announcement (Mar 21, 2000), [davidbader.net/post/20000321-unm](https://davidbader.net/post/20000321-unm/){target=_blank}.
-[^bader-concurrency-2000]: https://carc.unm.edu/docs/about/IEEE Concurrency (Apr 2000), [davidbader.net/post/20000401-ieeeconcurrency](https://davidbader.net/post/20000401-ieeeconcurrency/){target=_blank}.
-[^bader-opening-2000]: https://carc.unm.edu/docs/about/HPCERC, Los Lobos grand opening invitation (Sep 13, 2000), [davidbader.net/post/20000808-hpcerc](https://davidbader.net/post/20000808-hpcerc/){target=_blank}.
-[^bader-briefing-2000]: https://carc.unm.edu/docs/about/HPCwire, IBM Linux Supercluster Briefing Center (Sep 15, 2000), [davidbader.net/post/20000915-hpcwire](https://davidbader.net/post/20000915-hpcwire/){target=_blank}.
-[^bader-reuters-2000]: https://carc.unm.edu/docs/about/Reuters (Mar 23, 2000), [davidbader.net/post/20000323-reuters](https://davidbader.net/post/20000323-reuters/){target=_blank}.
+[^bader-ibm-1999]: https://carc.unm.edu/docs/about/IBM and UNM, "IBM RS/6000 SP and Linux Clusters Getting Hitched in New Mexico", press release (Dec 13, 1999), [archived original](https://web.archive.org/web/20010119111200/http://ibm.com/Press/prnews.nsf/jan/3F4E88B102477AA5852568460067A52A){target=_blank}; reposted at [davidbader.net](https://davidbader.net/post/19991213-ibm/){target=_blank}.
+[^bader-lobos-2000]: https://carc.unm.edu/docs/about/UNM Public Affairs, "Alliance Introduces 512-Processor LosLobos Supercluster", news release (Mar 21, 2000), [archived original](https://web.archive.org/web/20000819060614/http://www.unm.edu/~paaffair/news/news%20releases/Mar21hpcc.html){target=_blank}; reposted at [davidbader.net](https://davidbader.net/post/20000321-unm/){target=_blank}.
+[^bader-concurrency-2000]: https://carc.unm.edu/docs/about/"Gigantic clusters: Where are they and what are they doing?", *IEEE Concurrency* (Apr 2000), quoting David Bader; reposted at [davidbader.net](https://davidbader.net/post/20000401-ieeeconcurrency/){target=_blank}.
+[^bader-opening-2000]: https://carc.unm.edu/docs/about/Frank Gilfeather (HPCERC), "Grand Opening of the University of New Mexico's LosLobos Supercomputer", invitation letter for Sep 13, 2000 (dated Aug 8, 2000); reposted at [davidbader.net](https://davidbader.net/post/20000808-hpcerc/){target=_blank}.
+[^bader-briefing-2000]: https://carc.unm.edu/docs/about/*HPCwire*, "IBM And UNM Open Linux Supercluster Center" (Sep 15, 2000), [original](https://www.hpcwire.com/2000/09/15/ibm-and-unm-open-linux-supercluster-center/){target=_blank}; reposted at [davidbader.net](https://davidbader.net/post/20000915-hpcwire/){target=_blank}.
+[^bader-reuters-2000]: https://carc.unm.edu/docs/about/Reuters, "IBM develops low-cost Linux supercomputer system" (Mar 23, 2000), as carried by [ITWeb](https://www.itweb.co.za/content/LPwQ57ly2PoMNgkj){target=_blank}; reposted at [davidbader.net](https://davidbader.net/post/20000323-reuters/){target=_blank}.
 [^hpcerc-2003]: https://carc.unm.edu/docs/about/HPCERC, "Technical Summary & Software Inventory" (captured Apr 16, 2003), [web.archive.org](https://web.archive.org/web/20030416160312/http://www.hpcerc.unm.edu/computing/docs/systems.html){target=_blank}.
 [^ahpcc-2000]: https://carc.unm.edu/docs/about/AHPCC, "History" (captured Aug 17, 2000), [web.archive.org](https://web.archive.org/web/20000817235728/http://www.ahpcc.unm.edu:80/About/History.html){target=_blank}.
 [^hpcerc-1998]: https://carc.unm.edu/docs/about/HPCERC, "About HPCERC" (captured Mar 1, 2000), [web.archive.org](https://web.archive.org/web/20000301011731/http://hpcerc.unm.edu:80/about_hpcerc.html){target=_blank}.
@@ -13816,14 +14037,14 @@ yet and may help with the earliest machines.
 [^carc-systems-2015]: https://carc.unm.edu/docs/about/CARC, "Systems" (captured Apr 20, 2015), [web.archive.org](https://web.archive.org/web/20150420043138/http://www.carc.unm.edu:80/systems-software/systems.html){target=_blank}.
 [^carc-systems-2016]: https://carc.unm.edu/docs/about/CARC, "Systems" (captured Sep 20, 2016), [web.archive.org](https://web.archive.org/web/20160920212936/http://www.carc.unm.edu:80/systems-software/systems.html){target=_blank}.
 [^top500]: https://carc.unm.edu/docs/about/TOP500, [Los Lobos system page](https://www.top500.org/system/167391){target=_blank}.
-[^bader-alliance-1999]: https://carc.unm.edu/docs/about/Roadrunner presentation to the Alliance (May 12, 1999), [PDF](https://davidbader.net/events/19990512-alliance/19990512-Alliance.pdf){target=_blank}.
+[^bader-alliance-1999]: https://carc.unm.edu/docs/about/D. A. Bader, Roadrunner presentation to the Alliance (May 12, 1999), [PDF on davidbader.net](https://davidbader.net/events/19990512-alliance/19990512-Alliance.pdf){target=_blank}.
 [^bader-iwcc-1999]: https://carc.unm.edu/docs/about/Bader, Maccabe, Mastaler, McIver and Kovatch, "Design and analysis of the Alliance/University of New Mexico Roadrunner Linux SMP SuperCluster", IWCC 1999, [doi:10.1109/IWCC.1999.810804](https://doi.org/10.1109/IWCC.1999.810804){target=_blank}.
-[^bader-hpcwire-1999]: https://carc.unm.edu/docs/about/HPCwire (Jul 23, 1999), [davidbader.net/post/19990723-hpcwire](https://davidbader.net/post/19990723-hpcwire/){target=_blank}.
-[^bader-hpc-2003]: https://carc.unm.edu/docs/about/UNM, HPC@UNM leadership announcement (Sep 5, 2003), [davidbader.net/post/20030905-unm-hpc](https://davidbader.net/post/20030905-unm-hpc/){target=_blank}.
+[^bader-hpcwire-1999]: https://carc.unm.edu/docs/about/*HPCwire*, "Alliance Roadrunner Supercluster Now on the Grid" (Jul 23, 1999), [original](https://www.hpcwire.com/1999/07/23/alliance-roadrunner-supercluster-now-on-the-grid/){target=_blank}; reposted at [davidbader.net](https://davidbader.net/post/19990723-hpcwire/){target=_blank}.
+[^bader-hpc-2003]: https://carc.unm.edu/docs/about/UNM, "Center for High Performance Computing at UNM Undergoes Reorganization Plan", news release (Sep 5, 2003), [archived original](https://web.archive.org/web/20031025143953/http://www.unm.edu/news/Releases/03-09-05hpc.htm){target=_blank}; reposted at [davidbader.net](https://davidbader.net/post/20030905-unm-hpc/){target=_blank}.
 [^lobo-2003]: https://carc.unm.edu/docs/about/Daily Lobo, "Grant will bring project to UNM" (Sep 25, 2003), [dailylobo.com](https://www.dailylobo.com/article/2003/09/grant_will_bring_project_to_unm){target=_blank}.
 [^physics-2004]: https://carc.unm.edu/docs/about/UNM Physics and Astronomy, Tim Thomas named Deputy Director (Oct 26, 2004), [physics.unm.edu](https://physics.unm.edu/news/2004/10/thomas_20041026.html){target=_blank}.
 [^nsf-0420513]: https://carc.unm.edu/docs/about/NSF award [DBI-0420513](https://api.nsf.gov/services/v1/awards/0420513.json){target=_blank}.
-[^bader-mri-2004]: https://carc.unm.edu/docs/about/UNM, MRI award release (Sep 21, 2004), [davidbader.net/post/20040921-unm-mri](https://davidbader.net/post/20040921-unm-mri/){target=_blank}.
+[^bader-mri-2004]: https://carc.unm.edu/docs/about/UNM, "NSF Awards Major Research Instrumentation Grant to UNM", news release (Sep 21, 2004), [archived original](https://web.archive.org/web/20041010142607/http://www.unm.edu/~market/cgi-bin/archives/000303.html){target=_blank}; reposted at [davidbader.net](https://davidbader.net/post/20040921-unm-mri/){target=_blank}.
 [^lobo-2005]: https://carc.unm.edu/docs/about/Daily Lobo, ARTS Lab opening (Dec 2005), [dailylobo.com](https://www.dailylobo.com/article/2005/12/25_million_arts_lab_opens_doors){target=_blank}.
 [^cs-2005]: https://carc.unm.edu/docs/about/UNM Computer Science, ARTS Lab (Sep 2005), [cs.unm.edu](https://www.cs.unm.edu/news/2005/09/arts-lab.html){target=_blank}.
 [^engr-2007]: https://carc.unm.edu/docs/about/UNM Engineering, "Prof. Caudell to direct Center for High Performance Computing" (Jan 2007), [engineering.unm.edu](https://engineering.unm.edu/news/2007/01/prof.-caudell-to-direct-center-for-high-performance-computing.html){target=_blank}.
@@ -13890,6 +14111,23 @@ yet and may help with the earliest machines.
 [^nsf-1042537]: https://carc.unm.edu/docs/about/NSF award [CNS-1042537](https://api.nsf.gov/services/v1/awards/1042537.json){target=_blank} (New Mexico Consortium, PRObE): PI Gary Grider; former co-PI Timothy L. Thomas; Oct 2010–Jun 2017.
 [^nsf-9619019]: https://carc.unm.edu/docs/about/NSF award [ACI-9619019](https://api.nsf.gov/services/v1/awards/9619019.json){target=_blank}, the National Computational Science Alliance cooperative agreement with the University of Illinois (1997–2005).
 [^nsf-2146272]: https://carc.unm.edu/docs/about/NSF award [2146272](https://api.nsf.gov/services/v1/awards/2146272.json){target=_blank}, "Acquisition of Computing Facilities to support Collaborative Geophysics Research at the University of New Mexico" (Apr 2022–Mar 2023).
+[^ahpcc-2003]: https://carc.unm.edu/docs/about/AHPCC home page, "AHPCC expands into HPCERC" and "History of AHPCC" (dated Jan 27, 2003; captured Feb 8, 2003), [web.archive.org](https://web.archive.org/web/20030208131617/http://www.ahpcc.unm.edu:80/){target=_blank}.
+[^hpcerc-2002]: https://carc.unm.edu/docs/about/HPCERC, "About" executive summary (captured Jun 29, 2002), [web.archive.org](https://web.archive.org/web/20020629064316/http://www.ahpcc.unm.edu:80/Intranet/About/about.html){target=_blank}.
+[^carc-about-2016]: https://carc.unm.edu/docs/about/CARC, "About" (captured Oct 10, 2016), [web.archive.org](https://web.archive.org/web/20161010103011/http://www.ahpcc.unm.edu/about/index.html){target=_blank}.
+[^hpc-staff-2007]: https://carc.unm.edu/docs/about/HPC@UNM, staff directory entry for Brian Smith (captured Mar 2, 2007), [web.archive.org](https://web.archive.org/web/20070302075916/http://www.hpc.unm.edu:80/info/staff-information/staff_directory){target=_blank}.
+[^vista-azul-personnel]: https://carc.unm.edu/docs/about/AHPCC, Vista Azul SUR proposal, introduction and personnel (Dec 1, 1999; captured Feb 2001), [web.archive.org](https://web.archive.org/web/20010222102242/http://www.ahpcc.unm.edu:80/projects/vista-azul/proposal/node1.html){target=_blank}.
+[^top500-mhpcc]: https://carc.unm.edu/docs/about/TOP500, [Maui High-Performance Computing Center site page](https://top500.org/site/48326/){target=_blank} (systems and highest rank per list).
+[^hicss-1996]: https://carc.unm.edu/docs/about/F. L. Gilfeather, B. T. Smith, J. S. Sobolewski and D. K. Kahaner, "Maui High Performance Computing Center: a resource for the Pacific Basin", *Proceedings of HICSS-29*, vol. 3, pp. 444–448 (Jan 1996), [doi:10.1109/HICSS.1996.493240](https://ieeexplore.ieee.org/document/493240){target=_blank}.
+[^uh-2001]: https://carc.unm.edu/docs/about/Hawaii Bulletin, "University of Hawaii celebrates supercomputer milestone", [hawaiibulletin.com](https://www.hawaiibulletin.com/p/university-of-hawaii-supercomputer){target=_blank}.
+[^mhpcc-amos]: https://carc.unm.edu/docs/about/MHPCC DSRC overview page (last updated Mar 27, 2013), [hpc-educ.org](https://www.hpc-educ.org/Danz/MHPCC-AMOS-Page.pdf){target=_blank}.
+[^abq-biz-2025]: https://carc.unm.edu/docs/about/C. Metts, "UNM acquires Maui supercomputing center in unusual deal, netting $6.75 million benefit", *Albuquerque Business First* (Jul 9, 2025), [bizjournals.com](https://www.bizjournals.com/albuquerque/inno/stories/news/2025/07/09/unm-buys-hawaiian-computing-center.html){target=_blank} (archived copy: [archive.is/qv5og](https://archive.is/qv5og){target=_blank}).
+[^bader-hpcwire-0499]: https://carc.unm.edu/docs/about/*HPCwire*, "NCSA Unveils Roadrunner Linux-based Workstation Supercluster" (Apr 2, 1999), [original](https://www.hpcwire.com/1999/04/02/ncsa-unveils-roadrunner-linux-based-workstation-supercluster/){target=_blank}; reposted at [davidbader.net](https://davidbader.net/post/19990402-hpcwire/){target=_blank}.
+[^bader-chautauqua-1999]: https://carc.unm.edu/docs/about/National Computational Science Alliance, "Chautauquas Revive an American Forum for a New Era" (Aug 4, 1999); reposted at [davidbader.net](https://davidbader.net/post/19990804-chautauqua/){target=_blank}.
+[^bader-networkworld-2000]: https://carc.unm.edu/docs/about/M. Songini, "IBM builds Linux supercluster", *Network World* (Mar 27, 2000), [print edition](https://books.google.com/books?id=fBcEAAAAMBAJ&pg=PA14){target=_blank}; reposted at [davidbader.net](https://davidbader.net/post/20000327-networkworld/){target=_blank}.
+[^bader-nsf-2001]: https://carc.unm.edu/docs/about/UNM, "UNM Engineering Professors receive $1.1 million in NSF Grants", news release (Oct 11, 2001), [archived original](https://web.archive.org/web/20011124182239/http://www.unm.edu/news/Releases/Oct11nsf.htm){target=_blank}; reposted at [davidbader.net](https://davidbader.net/post/20011011-unm-nsfgrants/){target=_blank}.
+[^bader-percs-2003]: https://carc.unm.edu/docs/about/UNM, "UNM Computing Faculty Collaborating with IBM to Design Next-Gen Supercomputer", news release (Aug 25, 2003), [archived original](https://web.archive.org/web/20031206001124/http://www.unm.edu/news/Releases/03-08-25percs.htm){target=_blank}; reposted at [davidbader.net](https://davidbader.net/post/20030825-unm-ibm/){target=_blank}.
+[^bader-annals-2021]: https://carc.unm.edu/docs/about/D. A. Bader, "Linux and Supercomputing: How My Passion for Building COTS Systems Led to an HPC Revolution", *IEEE Annals of the History of Computing* 43(3):73–80 (2021), [doi:10.1109/MAHC.2021.3101415](https://doi.org/10.1109/MAHC.2021.3101415){target=_blank}; summary at [davidbader.net](https://davidbader.net/post/20210426-linuxsupercomputer/){target=_blank}.
+[^chm-1998]: https://carc.unm.edu/docs/about/Computer History Museum, [Timeline of Computer History: 1998](https://www.computerhistory.org/timeline/1998/){target=_blank} ("Linux-based Supercomputing"); reposted at [davidbader.net](https://davidbader.net/post/20231110-chm/){target=_blank}.
 
 ---8<--- https://carc.unm.edu/docs/about/web-archive/
 
@@ -14435,6 +14673,10 @@ Rscript my_script.R
 ---8<--- https://carc.unm.edu/docs/log/
 
 # Documentation update log
+
+## 2026-10-11
+
+* **Update**: [History of CARC computing](https://carc.unm.edu/docs/about/history/) has a new section on the Maui High Performance Computing Center (1993–2001), which UNM ran for the Department of Defense and whose funds built the Albuquerque center. It covers the center's TOP500 systems, UNM's 2025 purchase of the MHPCC building, and six new timeline rows, with the MHPCC logo and sign added to `assets/images/history/`. The news releases and articles reposted on David A. Bader's site are now cited by original publisher, title and date, with links to the archived originals. They add Roadrunner's 1998 prototype and funding, the 2001 NSF phylogeny grants, the 2003 IBM PERCS collaboration and the 2003 HPC@UNM steering committee, and a reported $1.5 million cost for Los Lobos.
 
 ## 2026-10-10
 
