@@ -2,7 +2,7 @@
 
 ## 2026-10-20
 
-* **Update**: [Storage and backups](systems/storage.md) now clearly distinguishes backed-up Enterprise Storage from temporary, unprotected scratch storage; lists current per-user, per-project, and per-PI capacity limits and full project-scratch path shapes; documents Easley's 180-day expiration policy; directs restore requests to help@carc.unm.edu; and removes the obsolete storage diagram. The [resource limits](systems/resource-limits.md) table carries the same quotas.
+* **Update**: [Storage and backups](systems/storage.md) now uses one primary table to distinguish backed-up Enterprise Storage from temporary, unprotected scratch storage and list current per-user, per-project, and per-PI limits and full project-scratch path shapes. Repetitive legacy explanations and the obsolete storage diagram are removed; concise guidance covers choosing a tier, Easley's 180-day expiration policy, `quotas`, and restore requests through help@carc.unm.edu. The [resource limits](systems/resource-limits.md) table carries the same quotas.
 
 ## 2026-10-11
 
