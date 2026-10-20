@@ -32,14 +32,14 @@ current values.
 
 ## Storage quotas
 
-| Storage tier | Path | Size quota | File-count quota | Available on | Backed up |
-| ------------ | ---- | ---------- | ---------------- | ------------ | --------- |
-| Home | `/users/<username>` | 100 GB soft / 200 GB hard | — | both clusters | yes |
-| Project storage | `/projects/...` | 250 GB default allocation | — | both clusters | yes |
-| Center-wide user scratch | `/carc/scratch/users/<username>` | 100 GB | 22,460 (soft) | both clusters | no |
-| Center-wide project scratch | `/carc/scratch/projects/...` | 1 TB | 625,000 | both clusters | no |
-| Easley-local user scratch | `/easley/scratch/users/<username>` | 1 TB | 100,000 soft / 120,000 hard | Easley only | no |
-| Easley-local project scratch | `/easley/scratch/projects/...` | 5 TB soft / 6 TB hard | 500,000 soft / 600,000 hard | Easley only | no |
+| Storage tier | Path | User or project quota | PI quota | File-count quota | Available on | Backed up |
+| ------------ | ---- | --------------------- | -------- | ---------------- | ------------ | --------- |
+| Home | `/users/{username}` | 100 GB per user | — | — | both clusters | yes |
+| Enterprise Project Storage | `/projects/...` | 500 GB per project | 2.5 TB | — | both clusters | yes |
+| Center-wide user scratch | `/carc/scratch/users/{username}` | 100 GB per user | — | 22,460 (soft) | both clusters | no |
+| Center-wide project scratch | `/carc/scratch/projects/{PI username}/{name}` | 1 TB per project | 5 TB | 625,000 | both clusters | no |
+| Easley-local user scratch | `/easley/scratch/users/{username}` | 1 TB per user | — | 100,000 soft / 120,000 hard | Easley only | no |
+| Easley-local project scratch | `/easley/scratch/projects/{PI username}/{name}` | 5 TB per project | 25 TB | 500,000 soft / 600,000 hard | Easley only | no |
 
 Once you exceed a soft limit we will ask you to reduce your usage; you
 cannot write beyond a hard limit. Note that the file-count limits are

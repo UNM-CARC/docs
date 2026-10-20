@@ -1,5 +1,9 @@
 # Documentation update log
 
+## 2026-10-20
+
+* **Update**: [Storage and backups](systems/storage.md) now clearly distinguishes backed-up Enterprise Storage from temporary, unprotected scratch storage; lists current per-user, per-project, and per-PI capacity limits and full project-scratch path shapes; documents Easley's 180-day expiration policy; directs restore requests to help@carc.unm.edu; and removes the obsolete storage diagram. The [resource limits](systems/resource-limits.md) table carries the same quotas.
+
 ## 2026-10-11
 
 * **Update**: [History of CARC computing](about/history.md) has a new section on the Maui High Performance Computing Center (1993–2001), which UNM ran for the Department of Defense and whose funds built the Albuquerque center. It covers the center's TOP500 systems, UNM's 2025 purchase of the MHPCC building, and six new timeline rows, with the MHPCC logo and sign added to `assets/images/history/`. The news releases and articles reposted on David A. Bader's site are now cited by original publisher, title and date, with links to the archived originals. They add Roadrunner's 1998 prototype and funding, the 2001 NSF phylogeny grants, the 2003 IBM PERCS collaboration and the 2003 HPC@UNM steering committee, and a reported $1.5 million cost for Los Lobos.
