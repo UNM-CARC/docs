@@ -1,5 +1,9 @@
 # Documentation update log
 
+## 2026-10-21
+
+* **Creation**: Added [Transferring data with Globus](getting-started/globus.md) (draft): the three CARC Globus collections (home, projects, scratch), what each one can reach, first-time setup linking a UNM Globus login to a CARC account through the UNM CARC login, the 24-hour re-login, login lockouts, and troubleshooting. [Transferring data](getting-started/transferring-data.md) now points to it for large transfers.
+
 ## 2026-10-20
 
 * **Update**: [Storage and backups](systems/storage.md) now uses one primary table to distinguish backed-up Enterprise Storage from temporary, unprotected scratch storage and list current per-user, per-project, and per-PI limits and full project-scratch path shapes. Repetitive legacy explanations and the obsolete storage diagram are removed; concise guidance covers choosing a tier, Easley's 180-day expiration policy, `quotas`, and restore requests through help@carc.unm.edu. The [resource limits](systems/resource-limits.md) table carries the same quotas.

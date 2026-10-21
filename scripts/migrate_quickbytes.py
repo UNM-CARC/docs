@@ -90,6 +90,9 @@ PAGES: list[Page] = [
     Page("transfer_data.md", "getting-started/transferring-data.md", "Transferring data",
          "Move data to and from CARC systems with scp, rsync, sftp, and Globus.",
          "Guide", ["Data", "Storage"], videos=[("2UphEzHOHGM", "Transferring data")]),
+    Page("", "getting-started/globus.md", "Transferring data with Globus",
+         "Move large datasets to and from CARC home, project, and scratch storage with Globus, using your UNM login and your CARC account.",
+         "Guide", ["Data", "Storage", "Globus"], status="draft", repo="hand"),
     Page("linux_intro.md", "getting-started/linux-intro.md", "Introduction to Linux",
          "A first tour of the Linux command line for new HPC users.",
          "Tutorial", ["Linux", "New users"]),
@@ -540,6 +543,12 @@ PATCHES = {
     # 2026-09-01: ticket-derived transfer-hang guidance (knowledge store,
     # fix-large-rsync-transfer-hangs).
     "getting-started/transferring-data.md": [
+        ("### Where is your data?",
+         "!!! tip \"Moving a lot of data?\"\n\n"
+         "    For large datasets or many files, use [Globus](globus.md): transfers\n"
+         "    run in the background, resume after interruptions, and verify every\n"
+         "    file.\n\n"
+         "### Where is your data?"),
         ("The `-vhatP` flags instruct rsync to print the progress of the transfer verbosely and in a human-readable format.",
          "The `-vhatP` flags instruct rsync to print the progress of the transfer verbosely and in a human-readable format.\n\n"
          "!!! tip \"Large transfer keeps hanging or timing out?\"\n\n"
