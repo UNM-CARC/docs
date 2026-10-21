@@ -18,6 +18,12 @@ sources:
 
 # Transferring data
 
+!!! tip "Moving a lot of data?"
+
+    For large datasets or many files, use [Globus](globus.md): transfers
+    run in the background, resume after interruptions, and verify every
+    file.
+
 ### Where is your data?
 
 Your home directory, `/users/your-user-name/`, is shared across all CARC machines, meaning that once your data has been uploaded to your home directory, it is accessible regardless of which machine you are logged in to.

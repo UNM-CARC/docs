@@ -9,5 +9,6 @@ New to CARC? Start here: accounts, policies, logging in, and moving data.
 * [SSH keys and client configuration](ssh-keys.md) - Generate SSH key pairs and configure your SSH client for convenient, secure logins.
 * [X11 forwarding](x11-forwarding.md) - Display graphical applications from CARC machines on your local screen with X11 forwarding.
 * [Transferring data](transferring-data.md) - Move data to and from CARC systems with scp, rsync, sftp, and Globus.
+* [Transferring data with Globus](globus.md) - Move large datasets to and from CARC home, project, and scratch storage with Globus, using your UNM login and your CARC account.
 * [Introduction to Linux](linux-intro.md) - A first tour of the Linux command line for new HPC users.
 * [Learning Linux resources](learning-linux.md) - Curated external resources for learning the Linux command line.

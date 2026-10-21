@@ -22,6 +22,7 @@ Section listing  /running-jobs/              ->  https://raw.githubusercontent.c
 - [SSH keys and client configuration](https://carc.unm.edu/docs/getting-started/ssh-keys/): Generate SSH key pairs and configure your SSH client for convenient, secure logins. Markdown twin: https://carc.unm.edu/docs/getting-started/ssh-keys/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/getting-started/ssh-keys.md
 - [X11 forwarding](https://carc.unm.edu/docs/getting-started/x11-forwarding/): Display graphical applications from CARC machines on your local screen with X11 forwarding. Markdown twin: https://carc.unm.edu/docs/getting-started/x11-forwarding/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/getting-started/x11-forwarding.md
 - [Transferring data](https://carc.unm.edu/docs/getting-started/transferring-data/): Move data to and from CARC systems with scp, rsync, sftp, and Globus. Markdown twin: https://carc.unm.edu/docs/getting-started/transferring-data/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/getting-started/transferring-data.md
+- [Transferring data with Globus](https://carc.unm.edu/docs/getting-started/globus/): Move large datasets to and from CARC home, project, and scratch storage with Globus, using your UNM login and your CARC account. (draft) Markdown twin: https://carc.unm.edu/docs/getting-started/globus/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/getting-started/globus.md
 - [Introduction to Linux](https://carc.unm.edu/docs/getting-started/linux-intro/): A first tour of the Linux command line for new HPC users. Markdown twin: https://carc.unm.edu/docs/getting-started/linux-intro/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/getting-started/linux-intro.md
 - [Learning Linux resources](https://carc.unm.edu/docs/getting-started/learning-linux/): Curated external resources for learning the Linux command line. Markdown twin: https://carc.unm.edu/docs/getting-started/learning-linux/index.md Raw source: https://raw.githubusercontent.com/UNM-CARC/docs/main/docs/getting-started/learning-linux.md
 
@@ -163,7 +164,7 @@ Section listing  /running-jobs/              ->  https://raw.githubusercontent.c
 
 ## Meta
 
-- [Full corpus in one file](https://carc.unm.edu/docs/llms-full.txt): every page's Markdown with frontmatter, links made absolute; about 682 KB, roughly 175,000 tokens. Prefer it over fetching pages one at a time.
+- [Full corpus in one file](https://carc.unm.edu/docs/llms-full.txt): every page's Markdown with frontmatter, links made absolute; about 690 KB, roughly 177,000 tokens. Prefer it over fetching pages one at a time.
 - [Documentation update log](https://carc.unm.edu/docs/log/): dated history of changes to this bundle.
 - [For AI agents](https://carc.unm.edu/docs/about/ai-agents/): endpoints, trust signals, and how to answer questions from this corpus; includes what to do if you cannot fetch this site.
 - [Sitemap](https://carc.unm.edu/docs/sitemap.xml) and [robots.txt](https://carc.unm.edu/docs/robots.txt).
