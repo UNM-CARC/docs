@@ -1,5 +1,9 @@
 # Documentation update log
 
+## 2026-10-23
+
+* **Update**: Added Matthew Fricke's one-hour intermediate workshop slides on neuromorphic computing with snnTorch on Easley to the [workshop archive](training/workshops.md).
+
 ## 2026-10-20
 
 * **Update**: [Storage and backups](systems/storage.md) now uses one primary table to distinguish backed-up Enterprise Storage from temporary, unprotected scratch storage and list current per-user, per-project, and per-PI limits and full project-scratch path shapes. Repetitive legacy explanations and the obsolete storage diagram are removed; concise guidance covers choosing a tier, Easley's 180-day expiration policy, `quotas`, and restore requests through help@carc.unm.edu. The [resource limits](systems/resource-limits.md) table carries the same quotas.
