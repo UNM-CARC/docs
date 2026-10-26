@@ -8,7 +8,7 @@ tags:
   - Globus
 generated:
   by: "claude/opus-5-5"
-  at: "2026-10-21T00:00:00Z"
+  at: "2026-10-22T00:00:00Z"
 sources:
   - id: globus-docs
     resource: "https://docs.globus.org/guides/tutorials/manage-files/transfer-files/"
@@ -81,15 +81,61 @@ check your usage before a large transfer.
 
 Setup takes a couple of minutes and happens once.
 
-1. Go to [app.globus.org](https://app.globus.org){ target=_blank } and log in.
-   Choose *University of New Mexico* and sign in with your NetID.
-2. Open one of the CARC collections, for example
-   [UNM CARC home](https://app.globus.org/file-manager?origin_id=858a3d27-0cbf-4de1-8dc8-89d14a3f1714){ target=_blank }.
-3. Globus says the collection needs another login. Continue, and choose
-   **UNM CARC**.
-4. On the UNM CARC login page, enter your **CARC username and password**.
-5. Globus asks to link this identity to your Globus account. Accept.
-6. The File Manager opens in your home directory, `/users/your-username`.
+1. Go to [app.globus.org](https://app.globus.org){ target=_blank }. You can
+   also get there from the [CARC homepage](https://carc.unm.edu){ target=_blank }:
+   open the **HPC Resources** menu and click **Transfer Data (Globus)**.
+
+    ![CARC homepage HPC Resources menu with the Transfer Data (Globus) link](../assets/images/globus/carc-homepage-menu.png)
+
+2. Under *Use your organizational login*, choose
+   *University of New Mexico*, click **Continue**, and sign in with your
+   NetID.
+
+    ![Globus login page with the organizational login search box](../assets/images/globus/globus-login.png)
+
+3. UNM asks to share your name and email with CILogon, which Globus uses
+   for university logins. Choose one of the consent options and click
+   **Accept**.
+
+    ![UNM consent page for releasing information to CILogon](../assets/images/globus/unm-cilogon-consent.png)
+
+4. The first time you log in, Globus asks whether to link an existing Globus
+   account. If you haven't used Globus before, click **Continue**.
+
+    ![Globus first-login page with Continue and Link to an existing account buttons](../assets/images/globus/globus-first-login.png)
+
+    Agree to the Terms of Service and Privacy Policy, click **Continue**, and
+    click **Allow** when prompted.
+
+    ![Globus sign-up page with the Terms of Service checkbox](../assets/images/globus/globus-signup.png)
+
+5. You're now on the Globus Dashboard. The menu on the left switches between
+   pages; this guide uses **File Manager** and **Activity**.
+
+    ![Globus Dashboard with the navigation menu on the left](../assets/images/globus/globus-dashboard.png)
+
+6. Open one of the CARC collections, for example
+   [UNM CARC home](https://app.globus.org/file-manager?origin_id=858a3d27-0cbf-4de1-8dc8-89d14a3f1714){ target=_blank },
+   or search for **UNM CARC** in the File Manager's *Collection* box. Globus
+   says authentication/consent is required. Click **Continue**.
+
+    ![File Manager saying authentication/consent is required for a CARC collection](../assets/images/globus/collection-consent-required.png)
+
+7. Click **Link a UNM CARC (carc.unm.edu) identity**. On the UNM CARC login
+   page, enter your **CARC username and password**, and click **Allow** when
+   prompted.
+
+    ![Globus prompt to link a UNM CARC identity](../assets/images/globus/link-carc-identity.png)
+
+8. The File Manager now lists your files. To go to another directory, type
+   its path in the *Path* box.
+
+    ![File Manager listing files in the UNM CARC home collection](../assets/images/globus/file-manager-home.png)
+
+The first time you open each of the other CARC collections, Globus may ask
+which identity to use. Click **Use my your-username@carc.unm.edu identity**.
+
+![Globus prompt to use an already linked CARC identity](../assets/images/globus/use-carc-identity.png)
 
 To check the link, open **Settings → Identities** in Globus. You'll see
 `your-username@carc.unm.edu` listed under your Globus account.
@@ -103,8 +149,8 @@ To check the link, open **Settings → Identities** in Globus. You'll see
 
 A transfer always runs between two collections. In the File Manager, open a
 CARC collection in one panel and the other end in the second panel, select
-files, then click **Start**. You can close the browser; Globus emails you when
-the transfer finishes.
+files, then click the **Start** button above the panel you're copying from.
+You can close the browser; Globus emails you when the transfer finishes.
 
 * **Your laptop or desktop:** install
   [Globus Connect Personal](https://www.globus.org/globus-connect-personal){ target=_blank }.
@@ -117,11 +163,63 @@ the transfer finishes.
 Transfers to and from CARC are always encrypted. Sharing data with people
 outside CARC through Globus isn't enabled yet.
 
+### Example: home to scratch
+
+This example copies a directory from UNM CARC home to UNM CARC scratch. The
+same steps work between any two collections.
+
+1. In the File Manager, click the middle **Panels** button in the top right
+   to show two collections side by side. The left panel keeps the collection
+   you already had open.
+
+    ![File Manager in two-panel view](../assets/images/globus/two-panel-view.png)
+
+2. In the left panel, choose the source collection and path. In the right
+   panel, search for the destination collection and enter its path.
+
+    ![UNM CARC home on the left and UNM CARC scratch on the right](../assets/images/globus/source-and-destination.png)
+
+3. Optionally, open **Transfer & Timer Options**. The defaults suit most
+   transfers. Useful settings:
+
+    * **apply sync level:** copy only files that are new or changed on the
+      source, like `rsync`. Handy for rerunning the same transfer.
+    * **preserve source file modification times:** otherwise copied files
+      get the transfer time as their modification time.
+    * **Schedule Start / Repeat:** start later, or repeat on a schedule.
+
+    File integrity checking and encryption are on by default, and the CARC
+    collections require encryption.
+
+    ![Transfer and Timer Options panel](../assets/images/globus/transfer-options.png)
+
+4. Select the files or folders to copy, or click **select all**. Then click
+   the **Start** button on the source side, above the panel you're copying
+   from. Each **Start** button sends files from its own panel to the other
+   one; the one above the destination panel won't transfer your selection.
+   A green *Transfer request submitted successfully* message appears.
+
+    ![Files selected in the left panel with the transfer submitted message](../assets/images/globus/transfer-submitted.png)
+
+5. Click **View details** on the message, or **Activity** in the left menu,
+   to follow the transfer. You don't need to keep the page open.
+
+    ![Activity page for a completed transfer](../assets/images/globus/transfer-details.png)
+
+    Globus also emails you a summary when the transfer finishes.
+
+    ![Globus transfer completion email](../assets/images/globus/transfer-email.png)
+
+6. The destination panel doesn't update on its own. Click **refresh list**
+   above the destination panel to see the copied files.
+
+    ![Destination panel after refreshing, showing the copied files](../assets/images/globus/refresh-destination.png)
+
 ## Logging in again
 
 Every 24 hours, Globus asks for your CARC password again. When you open a CARC
 collection after that, you'll see the UNM CARC login page; sign in as in step
-4. You don't need to link anything again, and transfers that are already
+7. You don't need to link anything again, and transfers that are already
 running keep going.
 
 !!! tip "Locked out after wrong passwords?"

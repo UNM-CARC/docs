@@ -1,5 +1,9 @@
 # Documentation update log
 
+## 2026-10-22
+
+* **Update**: [Transferring data with Globus](getting-started/globus.md) now has screenshots for first-time setup (reaching Globus from the CARC homepage, the UNM consent page, creating the Globus account, and linking a CARC identity) and a step-by-step home-to-scratch transfer example covering the two-panel view, transfer options, which **Start** button to use, the completion email, and refreshing the destination panel.
+
 ## 2026-10-21
 
 * **Creation**: Added [Transferring data with Globus](getting-started/globus.md) (draft): the three CARC Globus collections (home, projects, scratch), what each one can reach, first-time setup linking a UNM Globus login to a CARC account through the UNM CARC login, the 24-hour re-login, login lockouts, and troubleshooting. [Transferring data](getting-started/transferring-data.md) now points to it for large transfers.
