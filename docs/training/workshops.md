@@ -51,6 +51,7 @@ Introductions to CARC through the lens of a research domain or application.
 
 | Slides | Topic |
 | ------ | ----- |
+| [Intermediate Introduction to CARC with Neuromorphic Computing (2026, 1 hour)](../assets/files/workshops/NeuromorphicComputing_1hr_easley.pdf) | Neuromorphic computing / snnTorch |
 | [Intro to CARC with Quantum Computing (2025)](../assets/files/workshops/IntroToCARCWithQuantumComputing2025-0.1.pdf) | Quantum computing |
 | [Intro to CARC with Computational Fluid Dynamics (2025)](../assets/files/workshops/IntroToCARCWithComputationalFluidDynamics2025-0.1.pdf) | CFD |
 | [Intro to CARC with Crystallography (2025)](../assets/files/workshops/IntroToCARCWithCrystallography2025-0.1.pdf) | Crystallography |

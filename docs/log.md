@@ -1,5 +1,9 @@
 # Documentation update log
 
+## 2026-10-23
+
+* **Update**: Added Matthew Fricke's one-hour intermediate workshop slides on neuromorphic computing with snnTorch on Easley to the [workshop archive](training/workshops.md).
+
 ## 2026-10-22
 
 * **Update**: [Transferring data with Globus](getting-started/globus.md) now has screenshots for first-time setup (reaching Globus from the CARC homepage, the UNM consent page, creating the Globus account, and linking a CARC identity) and a step-by-step home-to-scratch transfer example covering the two-panel view, transfer options, which **Start** button to use, the completion email, and refreshing the destination panel.
