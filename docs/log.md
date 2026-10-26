@@ -4,6 +4,14 @@
 
 * **Update**: Added Matthew Fricke's one-hour intermediate workshop slides on neuromorphic computing with snnTorch on Easley to the [workshop archive](training/workshops.md).
 
+## 2026-10-22
+
+* **Update**: [Transferring data with Globus](getting-started/globus.md) now has screenshots for first-time setup (reaching Globus from the CARC homepage, the UNM consent page, creating the Globus account, and linking a CARC identity) and a step-by-step home-to-scratch transfer example covering the two-panel view, transfer options, which **Start** button to use, the completion email, and refreshing the destination panel.
+
+## 2026-10-21
+
+* **Creation**: Added [Transferring data with Globus](getting-started/globus.md) (draft): the three CARC Globus collections (home, projects, scratch), what each one can reach, first-time setup linking a UNM Globus login to a CARC account through the UNM CARC login, the 24-hour re-login, login lockouts, and troubleshooting. [Transferring data](getting-started/transferring-data.md) now points to it for large transfers.
+
 ## 2026-10-20
 
 * **Update**: [Storage and backups](systems/storage.md) now uses one primary table to distinguish backed-up Enterprise Storage from temporary, unprotected scratch storage and list current per-user, per-project, and per-PI limits and full project-scratch path shapes. Repetitive legacy explanations and the obsolete storage diagram are removed; concise guidance covers choosing a tier, Easley's 180-day expiration policy, `quotas`, and restore requests through help@carc.unm.edu. The [resource limits](systems/resource-limits.md) table carries the same quotas.
