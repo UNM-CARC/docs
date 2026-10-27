@@ -2,6 +2,10 @@
 
 Short, practical CARC guides for software, programming environments, and research workflows.
 
+## Data transfer
+
+* [Transferring data with Globus](../tutorials/data-transfer/globus.md) - Move large datasets to and from CARC home, project, and scratch storage with Globus, using your UNM login and your CARC account.
+
 ## Conda
 
 * [Conda and Miniconda: introduction](conda-intro.md) - What conda is, how environments work, and how to use Miniconda on CARC systems.
@@ -11,8 +15,8 @@ Short, practical CARC guides for software, programming environments, and researc
 ## JupyterHub
 
 * [Conda environments in JupyterHub](conda-jupyterhub.md) - Make your conda environments available as kernels in CARC JupyterHub.
-* [MPI parallelization from JupyterHub](jupyterhub-mpi.md) - Run MPI-parallel Python (mpi4py/ipyparallel) from CARC JupyterHub sessions.
-* [Parallel Python with Dask and scikit-learn](dask-scikit-learn.md) - Scale scikit-learn workloads across cluster nodes from JupyterHub using Dask.
+* [MPI parallelization from JupyterHub](../tutorials/jupyterhub-mpi.md) - Run MPI-parallel Python (mpi4py/ipyparallel) from CARC JupyterHub sessions.
+* [Parallel Python with Dask and scikit-learn](../tutorials/dask-scikit-learn.md) - Scale scikit-learn workloads across cluster nodes from JupyterHub using Dask.
 
 ## Julia
 
@@ -23,7 +27,7 @@ Short, practical CARC guides for software, programming environments, and researc
 * [R on CARC systems](r-usage.md) - Load R, run scripts in batch jobs, and use R interactively on CARC clusters.
 * [Getting R software](getting-r.md) - Available R versions and how to load them with environment modules.
 * [Installing R packages](r-packages.md) - Install R packages into your user library on CARC systems.
-* [Parallel R with the future package](parallel-r-future.md) - Parallelize R code across cores and nodes using the future framework.
+* [Parallel R with the future package](../tutorials/parallel-r-future.md) - Parallelize R code across cores and nodes using the future framework.
 * [Gurobi optimizer with R](gurobi-r.md) - Use the Gurobi optimization solver from R on CARC clusters.
 
 ## Other programming languages
@@ -37,24 +41,24 @@ Short, practical CARC guides for software, programming environments, and researc
 * [Parallel MATLAB: profile setup and batch submission](parallel-matlab.md) - Configure a cluster profile and submit parallel MATLAB jobs.
 * [MATLAB Parallel Server](matlab-parallel-server.md) - Use MATLAB Parallel Server to scale parpool jobs across multiple nodes.
 * [MATLAB on GPUs](matlab-gpu.md) - Accelerate MATLAB computations with GPUs on CARC clusters.
-* [MATLAB deep learning](matlab-deep-learning.md) - Train deep learning models in MATLAB using CARC GPU nodes.
+* [MATLAB deep learning](../tutorials/matlab-deep-learning.md) - Train deep learning models in MATLAB using CARC GPU nodes.
 
 ## Mathematica
 
-* [Mathematica on Easley](mathematica.md) - Derive exact beam-deflection formulas with Mathematica, then run the examples across CPUs, nodes, and a GPU on Easley.
+* [Mathematica on Easley](../tutorials/mathematica.md) - Derive exact beam-deflection formulas with Mathematica, then run the examples across CPUs, nodes, and a GPU on Easley.
 
 ## AI and machine learning
 
 * [Installing deep learning packages](deep-learning-packages.md) - Install GPU-enabled deep learning frameworks (PyTorch, TensorFlow) into conda environments.
 * [PyTorch on CARC GPUs](pytorch.md) - Install and run GPU-enabled PyTorch on CARC clusters.
-* [PyTorch image classifier walkthrough](pytorch-classifier.md) - End-to-end example: train an image classifier with PyTorch on a CARC GPU node.
+* [PyTorch image classifier walkthrough](../tutorials/pytorch-classifier.md) - End-to-end example: train an image classifier with PyTorch on a CARC GPU node.
 * [TensorFlow on CARC GPUs](tensorflow.md) - Install and run GPU-enabled TensorFlow on CARC clusters.
-* [Multi-GPU TensorFlow](tensorflow-multi-gpu.md) - Distribute TensorFlow training across multiple GPUs on a CARC node.
+* [Multi-GPU TensorFlow](../tutorials/tensorflow-multi-gpu.md) - Distribute TensorFlow training across multiple GPUs on a CARC node.
 * [AlphaFold](alphafold.md) - Run AlphaFold protein structure prediction on CARC systems.
 
 ## Data, visualization, and parallel computing
 
-* [Apache Spark](spark.md) - Launch Apache Spark clusters inside Slurm allocations for large-scale data analysis.
+* [Apache Spark](../tutorials/spark.md) - Launch Apache Spark clusters inside Slurm allocations for large-scale data analysis.
 * [ParaView remote visualization](paraview.md) - Run the ParaView server on CARC compute nodes and connect from your desktop client.
 * [CUDA-aware MPI](cuda-aware-mpi.md) - Pass GPU device pointers directly to MPI calls with the CUDA-aware OpenMPI/UCX stack, and fix the mixed-environment segfault.
 

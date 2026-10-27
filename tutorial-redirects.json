@@ -1,0 +1,12 @@
+{
+  "software/spark.md": "tutorials/spark.md",
+  "software/jupyterhub-mpi.md": "tutorials/jupyterhub-mpi.md",
+  "software/matlab-deep-learning.md": "tutorials/matlab-deep-learning.md",
+  "software/tensorflow-multi-gpu.md": "tutorials/tensorflow-multi-gpu.md",
+  "software/pytorch-classifier.md": "tutorials/pytorch-classifier.md",
+  "software/parallel-r-future.md": "tutorials/parallel-r-future.md",
+  "software/mathematica.md": "tutorials/mathematica.md",
+  "software/dask-scikit-learn.md": "tutorials/dask-scikit-learn.md",
+  "getting-started/linux-intro.md": "tutorials/linux-intro.md",
+  "getting-started/globus.md": "tutorials/data-transfer/globus.md"
+}

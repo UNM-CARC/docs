@@ -54,9 +54,9 @@ register it as a Jupyter kernel — the walkthrough is in
 
 Notebooks don't have to stay single-threaded:
 
-* [Parallel Python with Dask and scikit-learn](../software/dask-scikit-learn.md) -
+* [Parallel Python with Dask and scikit-learn](../tutorials/dask-scikit-learn.md) -
   scale scikit-learn across cluster workers from a notebook.
-* [MPI parallelization from JupyterHub](../software/jupyterhub-mpi.md) - drive
+* [MPI parallelization from JupyterHub](../tutorials/jupyterhub-mpi.md) - drive
   mpi4py/ipyparallel from a notebook session.
 * For long or heavy computations, move to a
   [batch job](../running-jobs/example-slurm-scripts.md) — notebooks are for

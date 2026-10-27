@@ -91,7 +91,7 @@ restrictions on regulated data (HIPAA, PHI, PCI, FERPA, CUI) in the
 * [Log in to a cluster](https://carc.unm.edu/docs/getting-started/logging-in/) with SSH.
 * [Transfer your data](https://carc.unm.edu/docs/getting-started/transferring-data/) onto CARC storage.
 * [Run your first Slurm job](https://carc.unm.edu/docs/running-jobs/slurm-intro/).
-* New to the command line? Start with the [introduction to Linux](https://carc.unm.edu/docs/getting-started/linux-intro/).
+* New to the command line? Start with the [introduction to Linux](https://carc.unm.edu/docs/tutorials/linux-intro/).
 
 ## Video walkthroughs
 
@@ -542,7 +542,7 @@ sources:
 
 !!! tip "Moving a lot of data?"
 
-    For large datasets or many files, use [Globus](https://carc.unm.edu/docs/getting-started/globus/): transfers
+    For large datasets or many files, use [Globus](https://carc.unm.edu/docs/tutorials/data-transfer/globus/): transfers
     run in the background, resume after interruptions, and verify every
     file.
 
@@ -619,12 +619,12 @@ As you can see, the syntax for these two programs is very similar; however, the 
 
 <p class="carc-provenance" markdown>Migrated from [UNM-CARC QuickBytes](https://github.com/UNM-CARC/QuickBytes/blob/master/transfer_data.md){target=_blank} (last source update 2026-08-03). Spotted a problem? [Open an issue or pull request](https://github.com/UNM-CARC/QuickBytes){target=_blank}.</p>
 
----8<--- https://carc.unm.edu/docs/getting-started/globus/
+---8<--- https://carc.unm.edu/docs/tutorials/data-transfer/globus/
 
 ---
 title: "Transferring data with Globus"
 description: "Move large datasets to and from CARC home, project, and scratch storage with Globus, using your UNM login and your CARC account."
-type: Guide
+type: Tutorial
 tags:
   - Data
   - Storage
@@ -886,7 +886,7 @@ running keep going.
 * [Storage and backups](https://carc.unm.edu/docs/systems/storage/) - paths, quotas, and what is backed up.
 * [Getting help](https://carc.unm.edu/docs/support/help/) - open a ticket if Globus misbehaves.
 
----8<--- https://carc.unm.edu/docs/getting-started/linux-intro/
+---8<--- https://carc.unm.edu/docs/tutorials/linux-intro/
 
 ---
 title: "Introduction to Linux"
@@ -3483,9 +3483,9 @@ register it as a Jupyter kernel — the walkthrough is in
 
 Notebooks don't have to stay single-threaded:
 
-* [Parallel Python with Dask and scikit-learn](https://carc.unm.edu/docs/software/dask-scikit-learn/) -
+* [Parallel Python with Dask and scikit-learn](https://carc.unm.edu/docs/tutorials/dask-scikit-learn/) -
   scale scikit-learn across cluster workers from a notebook.
-* [MPI parallelization from JupyterHub](https://carc.unm.edu/docs/software/jupyterhub-mpi/) - drive
+* [MPI parallelization from JupyterHub](https://carc.unm.edu/docs/tutorials/jupyterhub-mpi/) - drive
   mpi4py/ipyparallel from a notebook session.
 * For long or heavy computations, move to a
   [batch job](https://carc.unm.edu/docs/running-jobs/example-slurm-scripts/) — notebooks are for
@@ -3835,7 +3835,7 @@ After your environments have been modified to include the ipykernel, you can ope
 
 <p class="carc-provenance" markdown>Migrated from [UNM-CARC QuickBytes](https://github.com/UNM-CARC/QuickBytes/blob/master/Conda_JupyterHub.md){target=_blank} (last source update 2023-06-27). Spotted a problem? [Open an issue or pull request](https://github.com/UNM-CARC/QuickBytes){target=_blank}.</p>
 
----8<--- https://carc.unm.edu/docs/software/jupyterhub-mpi/
+---8<--- https://carc.unm.edu/docs/tutorials/jupyterhub-mpi/
 
 ---
 title: "MPI parallelization from JupyterHub"
@@ -4096,7 +4096,7 @@ inlinesum()
 
 <p class="carc-provenance" markdown>Migrated from [UNM-CARC QuickBytes](https://github.com/UNM-CARC/QuickBytes/blob/master/parallelization_with%20Jupyterhub_using_mpi.md){target=_blank} (last source update 2019-10-23). Spotted a problem? [Open an issue or pull request](https://github.com/UNM-CARC/QuickBytes){target=_blank}.</p>
 
----8<--- https://carc.unm.edu/docs/software/dask-scikit-learn/
+---8<--- https://carc.unm.edu/docs/tutorials/dask-scikit-learn/
 
 ---
 title: "Parallel Python with Dask and scikit-learn"
@@ -4682,7 +4682,7 @@ The first two lines are only necessary when you have not created a personal libr
 
 <p class="carc-provenance" markdown>Migrated from [UNM-CARC QuickBytes](https://github.com/UNM-CARC/QuickBytes/blob/master/R_at_CARC/installing_packages.md){target=_blank} (last source update 2026-07-30). Spotted a problem? [Open an issue or pull request](https://github.com/UNM-CARC/QuickBytes){target=_blank}.</p>
 
----8<--- https://carc.unm.edu/docs/software/parallel-r-future/
+---8<--- https://carc.unm.edu/docs/tutorials/parallel-r-future/
 
 ---
 title: "Parallel R with the future package"
@@ -6876,7 +6876,7 @@ Coming Soon! (Maybe)
 
 <p class="carc-provenance" markdown>Migrated from [UNM-CARC QuickBytes](https://github.com/UNM-CARC/QuickBytes/blob/master/Using%20GPUs%20on%20Xena%20with%20MATLAB.md){target=_blank} (last source update 2022-05-25). Spotted a problem? [Open an issue or pull request](https://github.com/UNM-CARC/QuickBytes){target=_blank}.</p>
 
----8<--- https://carc.unm.edu/docs/software/matlab-deep-learning/
+---8<--- https://carc.unm.edu/docs/tutorials/matlab-deep-learning/
 
 ---
 title: "MATLAB deep learning"
@@ -7369,7 +7369,7 @@ The results are also saved to an image ('results_roi.tif') that can be viewed in
 
 <p class="carc-provenance" markdown>Migrated from [UNM-CARC QuickBytes](https://github.com/UNM-CARC/QuickBytes/blob/master/MATLAB%20Deep%20Learning%20on%20Xena.md){target=_blank} (last source update 2022-05-25). Spotted a problem? [Open an issue or pull request](https://github.com/UNM-CARC/QuickBytes){target=_blank}.</p>
 
----8<--- https://carc.unm.edu/docs/software/mathematica/
+---8<--- https://carc.unm.edu/docs/tutorials/mathematica/
 
 ---
 title: "Mathematica on Easley"
@@ -8031,7 +8031,7 @@ With 2 GPUs, you should get an output of 2.
 
 <p class="carc-provenance" markdown>Migrated from [UNM-CARC QuickBytes](https://github.com/UNM-CARC/QuickBytes/blob/master/PyTorch_1.9_Xena.md){target=_blank} (last source update 2023-09-20). Spotted a problem? [Open an issue or pull request](https://github.com/UNM-CARC/QuickBytes){target=_blank}.</p>
 
----8<--- https://carc.unm.edu/docs/software/pytorch-classifier/
+---8<--- https://carc.unm.edu/docs/tutorials/pytorch-classifier/
 
 ---
 title: "PyTorch image classifier walkthrough"
@@ -8404,7 +8404,7 @@ Most of the complex computing strategies can be simplified into basic linear alg
 
 Most matrix operations are performed sequentially on the CPU resulting in computation time that scales with the size of the matrix as a factor &theta;(n<sup>3</sup>). Hence, computation cycles and duration of time to be allocated towards computation is proportional to the size of matrices under the constrained hardware with limited cache memory and RAM. The same problem still exists with multicore systems or distributed systems due to the threshold on the resources mentioned. On the other hand, a GPU is composed of several thousand cores, combining to provide the user with several GBs of computational memory compared to the MBs provided by CPU cache memory. The distributed computing this configuration provides enables parallelism across GPU cores and allows a super fast flow of data resulting from incredibly high bandwidth. This distribution across multiple cores amounts to massively reduced computation time as the device is able to scale its performance with data size.
 
-The enormous gains in computation time should give researchers a valid reason to switch from CPUs to GPUs for computationally heavy operations where the CPU-based operations do not scale with the data at a constant rate. Utilization of this methodology will provide enormous benefits for the computationally heavy domains such as machine learning, deep learning, linear algebra, optimization, data structures, etc. For real CPU-vs-GPU benchmark numbers on current CARC hardware, see the [Tensorflow with multiple GPUs](https://carc.unm.edu/docs/software/tensorflow-multi-gpu/) QuickByte.
+The enormous gains in computation time should give researchers a valid reason to switch from CPUs to GPUs for computationally heavy operations where the CPU-based operations do not scale with the data at a constant rate. Utilization of this methodology will provide enormous benefits for the computationally heavy domains such as machine learning, deep learning, linear algebra, optimization, data structures, etc. For real CPU-vs-GPU benchmark numbers on current CARC hardware, see the [Tensorflow with multiple GPUs](https://carc.unm.edu/docs/tutorials/tensorflow-multi-gpu/) QuickByte.
 
 TensorFlow is an open source deep learning library provided by Google. It provides primitives for function definitions on tensors and a mechanism to compute their derivatives automatically. It uses a tensor to represent any multidimensional array of numbers.
 
@@ -8545,7 +8545,7 @@ tf.Tensor([14.], shape=(1,), dtype=float32)
 
 <p class="carc-provenance" markdown>Migrated from [UNM-CARC QuickBytes](https://github.com/UNM-CARC/QuickBytes/blob/master/Tensorflow_documentation.md){target=_blank} (last source update 2019-03-06). Spotted a problem? [Open an issue or pull request](https://github.com/UNM-CARC/QuickBytes){target=_blank}.</p>
 
----8<--- https://carc.unm.edu/docs/software/tensorflow-multi-gpu/
+---8<--- https://carc.unm.edu/docs/tutorials/tensorflow-multi-gpu/
 
 ---
 title: "Multi-GPU TensorFlow"
@@ -8920,7 +8920,7 @@ Now that it is on your local computer, you can now view this file on your comput
 
 <p class="carc-provenance" markdown>Migrated from [UNM-CARC QuickBytes](https://github.com/UNM-CARC/QuickBytes/blob/master/alphafold.md){target=_blank} (last source update 2024-07-23). Spotted a problem? [Open an issue or pull request](https://github.com/UNM-CARC/QuickBytes){target=_blank}.</p>
 
----8<--- https://carc.unm.edu/docs/software/spark/
+---8<--- https://carc.unm.edu/docs/tutorials/spark/
 
 ---
 title: "Apache Spark"
@@ -12851,8 +12851,8 @@ it straight through here, or jump to an episode:
 | [X11 Forwarding](https://www.youtube.com/watch?v=-5ic9JWHuqI){target=_blank} | 10:41 | [X11 forwarding](https://carc.unm.edu/docs/getting-started/x11-forwarding/) |
 | [Parallelization 1: An Example Problem](https://www.youtube.com/watch?v=UWAReJqVIfU){target=_blank} | 16:14 | — |
 | [Parallelization 3: GNU Parallel](https://www.youtube.com/watch?v=Rl06WD60afA){target=_blank} | 28:01 | [GNU Parallel](https://carc.unm.edu/docs/running-jobs/gnu-parallel/) |
-| [Parallelization 4: The Message Passing Interface (MPI)](https://www.youtube.com/watch?v=JrCMi3_yCA0){target=_blank} | 24:27 | [MPI from JupyterHub](https://carc.unm.edu/docs/software/jupyterhub-mpi/) |
-| [Parallel R with Future](https://www.youtube.com/watch?v=G5xGfF151Co){target=_blank} | — | [Parallel R with the future package](https://carc.unm.edu/docs/software/parallel-r-future/) |
+| [Parallelization 4: The Message Passing Interface (MPI)](https://www.youtube.com/watch?v=JrCMi3_yCA0){target=_blank} | 24:27 | [MPI from JupyterHub](https://carc.unm.edu/docs/tutorials/jupyterhub-mpi/) |
+| [Parallel R with Future](https://www.youtube.com/watch?v=G5xGfF151Co){target=_blank} | — | [Parallel R with the future package](https://carc.unm.edu/docs/tutorials/parallel-r-future/) |
 | [Computational Chemistry: Avogadro and Gaussian](https://www.youtube.com/watch?v=Jqyf7bodT4U){target=_blank} | 28:38 | — |
 | [CS491/591: SimCov Compilation and Submission](https://www.youtube.com/watch?v=7x3voqNX0QY){target=_blank} | 8:14 | [SimCov](https://carc.unm.edu/docs/tutorials/simcov/) |
 
@@ -14932,17 +14932,21 @@ Rscript my_script.R
 
 # Documentation update log
 
+## 2026-10-27
+
+* **Update**: Consolidated all pages marked Tutorial, plus the Globus walkthrough, under `tutorials/`. Updated navigation, links, and migration destinations; generated compatibility pages preserve old URLs and section anchors on both publishing hosts.
+
 ## 2026-10-23
 
 * **Update**: Added Matthew Fricke's one-hour intermediate workshop slides on neuromorphic computing with snnTorch on Easley to the [workshop archive](https://carc.unm.edu/docs/training/workshops/).
 
 ## 2026-10-22
 
-* **Update**: [Transferring data with Globus](https://carc.unm.edu/docs/getting-started/globus/) now has screenshots for first-time setup (reaching Globus from the CARC homepage, the UNM consent page, creating the Globus account, and linking a CARC identity) and a step-by-step home-to-scratch transfer example covering the two-panel view, transfer options, which **Start** button to use, the completion email, and refreshing the destination panel.
+* **Update**: [Transferring data with Globus](https://carc.unm.edu/docs/tutorials/data-transfer/globus/) now has screenshots for first-time setup (reaching Globus from the CARC homepage, the UNM consent page, creating the Globus account, and linking a CARC identity) and a step-by-step home-to-scratch transfer example covering the two-panel view, transfer options, which **Start** button to use, the completion email, and refreshing the destination panel.
 
 ## 2026-10-21
 
-* **Creation**: Added [Transferring data with Globus](https://carc.unm.edu/docs/getting-started/globus/) (draft): the three CARC Globus collections (home, projects, scratch), what each one can reach, first-time setup linking a UNM Globus login to a CARC account through the UNM CARC login, the 24-hour re-login, login lockouts, and troubleshooting. [Transferring data](https://carc.unm.edu/docs/getting-started/transferring-data/) now points to it for large transfers.
+* **Creation**: Added [Transferring data with Globus](https://carc.unm.edu/docs/tutorials/data-transfer/globus/) (draft): the three CARC Globus collections (home, projects, scratch), what each one can reach, first-time setup linking a UNM Globus login to a CARC account through the UNM CARC login, the 24-hour re-login, login lockouts, and troubleshooting. [Transferring data](https://carc.unm.edu/docs/getting-started/transferring-data/) now points to it for large transfers.
 
 ## 2026-10-20
 
@@ -14966,25 +14970,25 @@ Rscript my_script.R
 
 * **Update**: Added static notation for the governing equation, boundary
   conditions, and uniform-load midpoint deflection in the [Mathematica on
-  Easley](https://carc.unm.edu/docs/software/mathematica/) beam example, plus measured Easley scaling
+  Easley](https://carc.unm.edu/docs/tutorials/mathematica/) beam example, plus measured Easley scaling
   results for 128 symbolic calculations.
-* **Update**: Retitled the worked example in [Mathematica on Easley](https://carc.unm.edu/docs/software/mathematica/)
+* **Update**: Retitled the worked example in [Mathematica on Easley](https://carc.unm.edu/docs/tutorials/mathematica/)
   as "Example: Beam Deflection."
-* **Update**: Published the [Mathematica on Easley](https://carc.unm.edu/docs/software/mathematica/)
+* **Update**: Published the [Mathematica on Easley](https://carc.unm.edu/docs/tutorials/mathematica/)
   examples as a ZIP archive containing the Slurm scripts, Wolfram Language
   inputs, and kernel launcher.
 * **Update**: Moved the Mathematica launcher permission check into each Slurm
   script. The archive setup now only downloads and extracts the ZIP.
 * **Correction**: Restored the `math-kernel.sh` helper to the
-  [Mathematica on Easley](https://carc.unm.edu/docs/software/mathematica/) examples. Its process-based
+  [Mathematica on Easley](https://carc.unm.edu/docs/tutorials/mathematica/) examples. Its process-based
   license file is required by the Mathematica worker-launch workflow.
 * **Update**: Added the complete `parallel.wl`, `distributed.wl`, and `gpu.wl`
-  sources to [Mathematica on Easley](https://carc.unm.edu/docs/software/mathematica/), alongside the
+  sources to [Mathematica on Easley](https://carc.unm.edu/docs/tutorials/mathematica/), alongside the
   existing beam model, Slurm scripts, and downloadable archive.
 * **Update**: Removed the duplicate page table of contents from
   [QuickByte Tutorials](https://carc.unm.edu/docs/software/); its expandable sidebar groups are
   now the single navigation layer.
-* **Update**: Replaced [Mathematica on Easley](https://carc.unm.edu/docs/software/mathematica/) with
+* **Update**: Replaced [Mathematica on Easley](https://carc.unm.edu/docs/tutorials/mathematica/) with
   the CARC beam-deflection tutorial and its complete, downloadable example
   archive: shared license launcher, Wolfram Language inputs, and single-node,
   multi-node, and GPU Slurm scripts.
@@ -15000,7 +15004,7 @@ Rscript my_script.R
 * **Update**: Merged the former Software and Tutorials navigation into
   [QuickByte tutorials](https://carc.unm.edu/docs/software/). Its scrollable contents page now
   gives each active domain tutorial a home alongside the software guides.
-* **Creation**: Added [Mathematica on Easley](https://carc.unm.edu/docs/software/mathematica/), a
+* **Creation**: Added [Mathematica on Easley](https://carc.unm.edu/docs/tutorials/mathematica/), a
   curated QuickByte covering interactive, serial, multicore, multinode, GPU,
   and license-server workflows with Mathematica 15.0.1 and WolframScript.
 * **Update**: Refreshed the [systems overview](https://carc.unm.edu/docs/systems/overview/) from
@@ -15052,7 +15056,7 @@ Rscript my_script.R
 * **Creation**: Rebuilt the [Workshops and slides](https://carc.unm.edu/docs/training/workshops/) page (previously a stub) as a curated catalog of 33 slide decks: the Introduction to CARC series, domain-focused workshops, course guest lectures, and legacy material.
 
 * **Update**: The Xena cluster has been retired. Removed Xena from the [Systems overview](https://carc.unm.edu/docs/systems/overview/), [Facilities description](https://carc.unm.edu/docs/about/facilities/), FAQ, and landing page; added it to the retired-systems list in [Cluster specifications](https://carc.unm.edu/docs/systems/cluster-specifications/); marked Xena-specific GPU guides (PyTorch, MATLAB GPU/deep learning, deep-learning packages) as `status: draft` with legacy notices pending review against Hopper and Easley GPUs.
-* **Update**: Annotated all code across the corpus: tab-indented QuickBytes code now renders as language-fenced blocks with syntax highlighting; restructured [Installing deep learning packages](https://carc.unm.edu/docs/software/deep-learning-packages/) (now curated in-repo); annotated inline code references in [Parallel R with the future package](https://carc.unm.edu/docs/software/parallel-r-future/).
+* **Update**: Annotated all code across the corpus: tab-indented QuickBytes code now renders as language-fenced blocks with syntax highlighting; restructured [Installing deep learning packages](https://carc.unm.edu/docs/software/deep-learning-packages/) (now curated in-repo); annotated inline code references in [Parallel R with the future package](https://carc.unm.edu/docs/tutorials/parallel-r-future/).
 
 * **Creation**: Added the Interactive computing section ([Open OnDemand](https://carc.unm.edu/docs/interactive/open-ondemand/), [JupyterHub](https://carc.unm.edu/docs/interactive/jupyterhub/)) and the FAQ section ([General FAQ](https://carc.unm.edu/docs/faq/general/), [Troubleshooting](https://carc.unm.edu/docs/faq/troubleshooting/)).
 * **Creation**: Added [Contributing to these docs](https://carc.unm.edu/docs/about/contributing/) — the OKF frontmatter contract, verification workflow, and local build instructions for CARC staff.

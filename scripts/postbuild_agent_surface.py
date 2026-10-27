@@ -27,12 +27,18 @@ Run AFTER `zensical build`. It:
    path prefix (carc.unm.edu/docs/) the host's root robots.txt must list
    this site's sitemap for the file to take effect.
 
+5. Generates HTML redirects and Markdown compatibility routes from
+   tutorial-redirects.json for moved tutorials.
+
 Usage: python3 scripts/postbuild_agent_surface.py [site_dir]
 """
 
 from __future__ import annotations
 
 import html
+import json
+import posixpath
+import shutil
 import sys
 from pathlib import Path
 
@@ -196,6 +202,30 @@ def main():
         + raw_line +
         f"#   Agent guide:               {base}about/ai-agents/\n",
         encoding="utf-8")
+
+    # Static compatibility routes work on GitHub Pages and Cascade alike.
+    # Relative destinations preserve the host/prefix; JS carries query and hash.
+    redirects = json.loads((ROOT / "tutorial-redirects.json").read_text())
+    for old, new in redirects.items():
+        source = dest_for(Path(old), site)
+        target = dest_for(Path(new), site)
+        if not target.with_suffix(".html").is_file():
+            raise ValueError(f"Missing tutorial redirect target: {new}")
+        source.parent.mkdir(parents=True, exist_ok=True)
+        href = posixpath.relpath(target.parent.as_posix(), source.parent.as_posix()) + "/"
+        canonical = page_url(base, new)
+        source.with_suffix(".html").write_text(
+            '<!doctype html><html lang="en"><head><meta charset="utf-8">'
+            + '<title>Page moved</title><link rel="canonical" href="'
+            + html.escape(canonical, quote=True) + '">'
+            + '<meta name="robots" content="noindex, follow">'
+            + '<script>location.replace(' + json.dumps(href)
+            + '+location.search+location.hash);</script></head><body>'
+            + '<p>This page has moved. <a href="' + html.escape(href, quote=True)
+            + '">Continue to the tutorial</a>.</p></body></html>\n',
+            encoding="utf-8")
+        # Old Markdown twins stay readable, with links resolved at the new URL.
+        shutil.copyfile(target, source)
 
     print(f"agent surface: mirrored {mirrored} markdown files, "
           f"annotated {injected} pages, wrote robots.txt")

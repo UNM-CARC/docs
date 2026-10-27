@@ -63,3 +63,13 @@ python3 scripts/find_unfenced_code.py       # report code not annotated as code
 8. `scripts/okf_common.py` holds the shared helpers (config loading, nav
    walking, link absolutizing) and is kept in step with the copies in
    UNM-CARC/dust-2026 and UNM-CARC/foss; change it there too.
+
+## Tutorial locations
+
+Pages with `type: Tutorial` belong under `docs/tutorials/`, even when linked
+from Getting started or a software topic. When moving a published page, add
+its old and new docs-relative paths to `tutorial-redirects.json`; the post-build
+step generates compatibility HTML and Markdown routes for both hosting targets.
+
+After the build and post-build steps, run
+`python3 scripts/check_tutorial_routes.py site` to verify the old tutorial URLs.

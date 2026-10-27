@@ -59,6 +59,7 @@ jobs:
       - run: zensical build --clean
       # Agent surface: markdown mirror, OKF meta injection, robots.txt
       - run: python scripts/postbuild_agent_surface.py site
+      - run: python scripts/check_tutorial_routes.py site
       - uses: actions/upload-pages-artifact@v5
         with:
           path: site
@@ -97,6 +98,7 @@ jobs:
       - run: pip install zensical pyyaml
       - run: zensical build --clean
       - run: python scripts/postbuild_agent_surface.py site
+      - run: python scripts/check_tutorial_routes.py site
 
       - name: Check the Cascade key is configured
         id: check

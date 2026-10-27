@@ -20,7 +20,7 @@ sources:
 
 !!! tip "Moving a lot of data?"
 
-    For large datasets or many files, use [Globus](globus.md): transfers
+    For large datasets or many files, use [Globus](../tutorials/data-transfer/globus.md): transfers
     run in the background, resume after interruptions, and verify every
     file.
 

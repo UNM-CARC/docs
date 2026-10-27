@@ -85,7 +85,7 @@ restrictions on regulated data (HIPAA, PHI, PCI, FERPA, CUI) in the
 * [Log in to a cluster](logging-in.md) with SSH.
 * [Transfer your data](transferring-data.md) onto CARC storage.
 * [Run your first Slurm job](../running-jobs/slurm-intro.md).
-* New to the command line? Start with the [introduction to Linux](linux-intro.md).
+* New to the command line? Start with the [introduction to Linux](../tutorials/linux-intro.md).
 
 ## Video walkthroughs
 

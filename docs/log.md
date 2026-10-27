@@ -1,16 +1,20 @@
 # Documentation update log
 
+## 2026-10-27
+
+* **Update**: Consolidated all pages marked Tutorial, plus the Globus walkthrough, under `tutorials/`. Updated navigation, links, and migration destinations; generated compatibility pages preserve old URLs and section anchors on both publishing hosts.
+
 ## 2026-10-23
 
 * **Update**: Added Matthew Fricke's one-hour intermediate workshop slides on neuromorphic computing with snnTorch on Easley to the [workshop archive](training/workshops.md).
 
 ## 2026-10-22
 
-* **Update**: [Transferring data with Globus](getting-started/globus.md) now has screenshots for first-time setup (reaching Globus from the CARC homepage, the UNM consent page, creating the Globus account, and linking a CARC identity) and a step-by-step home-to-scratch transfer example covering the two-panel view, transfer options, which **Start** button to use, the completion email, and refreshing the destination panel.
+* **Update**: [Transferring data with Globus](tutorials/data-transfer/globus.md) now has screenshots for first-time setup (reaching Globus from the CARC homepage, the UNM consent page, creating the Globus account, and linking a CARC identity) and a step-by-step home-to-scratch transfer example covering the two-panel view, transfer options, which **Start** button to use, the completion email, and refreshing the destination panel.
 
 ## 2026-10-21
 
-* **Creation**: Added [Transferring data with Globus](getting-started/globus.md) (draft): the three CARC Globus collections (home, projects, scratch), what each one can reach, first-time setup linking a UNM Globus login to a CARC account through the UNM CARC login, the 24-hour re-login, login lockouts, and troubleshooting. [Transferring data](getting-started/transferring-data.md) now points to it for large transfers.
+* **Creation**: Added [Transferring data with Globus](tutorials/data-transfer/globus.md) (draft): the three CARC Globus collections (home, projects, scratch), what each one can reach, first-time setup linking a UNM Globus login to a CARC account through the UNM CARC login, the 24-hour re-login, login lockouts, and troubleshooting. [Transferring data](getting-started/transferring-data.md) now points to it for large transfers.
 
 ## 2026-10-20
 
@@ -34,25 +38,25 @@
 
 * **Update**: Added static notation for the governing equation, boundary
   conditions, and uniform-load midpoint deflection in the [Mathematica on
-  Easley](software/mathematica.md) beam example, plus measured Easley scaling
+  Easley](tutorials/mathematica.md) beam example, plus measured Easley scaling
   results for 128 symbolic calculations.
-* **Update**: Retitled the worked example in [Mathematica on Easley](software/mathematica.md)
+* **Update**: Retitled the worked example in [Mathematica on Easley](tutorials/mathematica.md)
   as "Example: Beam Deflection."
-* **Update**: Published the [Mathematica on Easley](software/mathematica.md)
+* **Update**: Published the [Mathematica on Easley](tutorials/mathematica.md)
   examples as a ZIP archive containing the Slurm scripts, Wolfram Language
   inputs, and kernel launcher.
 * **Update**: Moved the Mathematica launcher permission check into each Slurm
   script. The archive setup now only downloads and extracts the ZIP.
 * **Correction**: Restored the `math-kernel.sh` helper to the
-  [Mathematica on Easley](software/mathematica.md) examples. Its process-based
+  [Mathematica on Easley](tutorials/mathematica.md) examples. Its process-based
   license file is required by the Mathematica worker-launch workflow.
 * **Update**: Added the complete `parallel.wl`, `distributed.wl`, and `gpu.wl`
-  sources to [Mathematica on Easley](software/mathematica.md), alongside the
+  sources to [Mathematica on Easley](tutorials/mathematica.md), alongside the
   existing beam model, Slurm scripts, and downloadable archive.
 * **Update**: Removed the duplicate page table of contents from
   [QuickByte Tutorials](software/index.md); its expandable sidebar groups are
   now the single navigation layer.
-* **Update**: Replaced [Mathematica on Easley](software/mathematica.md) with
+* **Update**: Replaced [Mathematica on Easley](tutorials/mathematica.md) with
   the CARC beam-deflection tutorial and its complete, downloadable example
   archive: shared license launcher, Wolfram Language inputs, and single-node,
   multi-node, and GPU Slurm scripts.
@@ -68,7 +72,7 @@
 * **Update**: Merged the former Software and Tutorials navigation into
   [QuickByte tutorials](software/index.md). Its scrollable contents page now
   gives each active domain tutorial a home alongside the software guides.
-* **Creation**: Added [Mathematica on Easley](software/mathematica.md), a
+* **Creation**: Added [Mathematica on Easley](tutorials/mathematica.md), a
   curated QuickByte covering interactive, serial, multicore, multinode, GPU,
   and license-server workflows with Mathematica 15.0.1 and WolframScript.
 * **Update**: Refreshed the [systems overview](systems/overview.md) from
@@ -120,7 +124,7 @@
 * **Creation**: Rebuilt the [Workshops and slides](training/workshops.md) page (previously a stub) as a curated catalog of 33 slide decks: the Introduction to CARC series, domain-focused workshops, course guest lectures, and legacy material.
 
 * **Update**: The Xena cluster has been retired. Removed Xena from the [Systems overview](systems/overview.md), [Facilities description](about/facilities.md), FAQ, and landing page; added it to the retired-systems list in [Cluster specifications](systems/cluster-specifications.md); marked Xena-specific GPU guides (PyTorch, MATLAB GPU/deep learning, deep-learning packages) as `status: draft` with legacy notices pending review against Hopper and Easley GPUs.
-* **Update**: Annotated all code across the corpus: tab-indented QuickBytes code now renders as language-fenced blocks with syntax highlighting; restructured [Installing deep learning packages](software/deep-learning-packages.md) (now curated in-repo); annotated inline code references in [Parallel R with the future package](software/parallel-r-future.md).
+* **Update**: Annotated all code across the corpus: tab-indented QuickBytes code now renders as language-fenced blocks with syntax highlighting; restructured [Installing deep learning packages](software/deep-learning-packages.md) (now curated in-repo); annotated inline code references in [Parallel R with the future package](tutorials/parallel-r-future.md).
 
 * **Creation**: Added the Interactive computing section ([Open OnDemand](interactive/open-ondemand.md), [JupyterHub](interactive/jupyterhub.md)) and the FAQ section ([General FAQ](faq/general.md), [Troubleshooting](faq/troubleshooting.md)).
 * **Creation**: Added [Contributing to these docs](about/contributing.md) — the OKF frontmatter contract, verification workflow, and local build instructions for CARC staff.

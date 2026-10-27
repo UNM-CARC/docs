@@ -90,10 +90,10 @@ PAGES: list[Page] = [
     Page("transfer_data.md", "getting-started/transferring-data.md", "Transferring data",
          "Move data to and from CARC systems with scp, rsync, sftp, and Globus.",
          "Guide", ["Data", "Storage"], videos=[("2UphEzHOHGM", "Transferring data")]),
-    Page("", "getting-started/globus.md", "Transferring data with Globus",
+    Page("", "tutorials/data-transfer/globus.md", "Transferring data with Globus",
          "Move large datasets to and from CARC home, project, and scratch storage with Globus, using your UNM login and your CARC account.",
-         "Guide", ["Data", "Storage", "Globus"], status="draft", repo="hand"),
-    Page("linux_intro.md", "getting-started/linux-intro.md", "Introduction to Linux",
+         "Tutorial", ["Data", "Storage", "Globus"], status="draft", repo="hand"),
+    Page("linux_intro.md", "tutorials/linux-intro.md", "Introduction to Linux",
          "A first tour of the Linux command line for new HPC users.",
          "Tutorial", ["Linux", "New users"]),
     Page("learning_linux.md", "getting-started/learning-linux.md", "Learning Linux resources",
@@ -173,13 +173,13 @@ PAGES: list[Page] = [
     Page("Install deep learning packages.md", "software/deep-learning-packages.md", "Installing deep learning packages",
          "Install GPU-enabled deep learning frameworks (PyTorch, TensorFlow) into conda environments.",
          "Guide", ["Python", "GPU", "Machine learning"], frozen=True),
-    Page("parallel_jupyterhub_with_dask_and_scikit-learn.md", "software/dask-scikit-learn.md", "Parallel Python with Dask and scikit-learn",
+    Page("parallel_jupyterhub_with_dask_and_scikit-learn.md", "tutorials/dask-scikit-learn.md", "Parallel Python with Dask and scikit-learn",
          "Scale scikit-learn workloads across cluster nodes from JupyterHub using Dask.",
          "Tutorial", ["Python", "Jupyter", "Parallel", "Dask"]),
     Page("", "software/cuda-aware-mpi.md", "CUDA-aware MPI",
          "Pass GPU device pointers directly to MPI calls with the CUDA-aware OpenMPI/UCX stack, and fix the mixed-environment segfault.",
          "Guide", ["MPI", "GPU", "CUDA"], repo="hand"),
-    Page("parallelization_with Jupyterhub_using_mpi.md", "software/jupyterhub-mpi.md", "MPI parallelization from JupyterHub",
+    Page("parallelization_with Jupyterhub_using_mpi.md", "tutorials/jupyterhub-mpi.md", "MPI parallelization from JupyterHub",
          "Run MPI-parallel Python (mpi4py/ipyparallel) from CARC JupyterHub sessions.",
          "Tutorial", ["Python", "Jupyter", "MPI", "Parallel"]),
 
@@ -193,7 +193,7 @@ PAGES: list[Page] = [
     Page("R_at_CARC/installing_packages.md", "software/r-packages.md", "Installing R packages",
          "Install R packages into your user library on CARC systems.",
          "Guide", ["R"]),
-    Page("Parallel_R_with_Future.ipynb", "software/parallel-r-future.md", "Parallel R with the future package",
+    Page("Parallel_R_with_Future.ipynb", "tutorials/parallel-r-future.md", "Parallel R with the future package",
          "Parallelize R code across cores and nodes using the future framework.",
          "Tutorial", ["R", "Parallel"], notebook=True,
          videos=[("G5xGfF151Co", "Parallel R with Future")]),
@@ -218,12 +218,12 @@ PAGES: list[Page] = [
     Page("Using GPUs on Xena with MATLAB.md", "software/matlab-gpu.md", "MATLAB on GPUs",
          "Accelerate MATLAB computations with GPUs on CARC clusters.",
          "Guide", ["MATLAB", "GPU"], status="draft"),
-    Page("MATLAB Deep Learning on Xena.md", "software/matlab-deep-learning.md", "MATLAB deep learning",
+    Page("MATLAB Deep Learning on Xena.md", "tutorials/matlab-deep-learning.md", "MATLAB deep learning",
          "Train deep learning models in MATLAB using CARC GPU nodes.",
          "Tutorial", ["MATLAB", "GPU", "Machine learning"], status="draft"),
 
     # ---- Software: Mathematica (curated from a post-migration QuickByte)
-    Page("", "software/mathematica.md", "Mathematica on Easley",
+    Page("", "tutorials/mathematica.md", "Mathematica on Easley",
          "Derive exact beam-deflection formulas with Mathematica, then run the examples across CPUs, nodes, and a GPU on Easley.",
          "Tutorial", ["Mathematica", "Wolfram Language", "Slurm", "Easley", "GPU"], repo="hand"),
 
@@ -231,13 +231,13 @@ PAGES: list[Page] = [
     Page("PyTorch_1.9_Xena.md", "software/pytorch.md", "PyTorch on CARC GPUs",
          "Install and run GPU-enabled PyTorch on CARC clusters.",
          "Guide", ["Python", "GPU", "Machine learning", "PyTorch"], status="draft"),
-    Page("PyTorch_Classifier_Xena .ipynb", "software/pytorch-classifier.md", "PyTorch image classifier walkthrough",
+    Page("PyTorch_Classifier_Xena .ipynb", "tutorials/pytorch-classifier.md", "PyTorch image classifier walkthrough",
          "End-to-end example: train an image classifier with PyTorch on a CARC GPU node.",
          "Tutorial", ["Python", "GPU", "Machine learning", "PyTorch"], notebook=True, status="draft"),
     Page("Tensorflow_documentation.md", "software/tensorflow.md", "TensorFlow on CARC GPUs",
          "Install and run GPU-enabled TensorFlow on CARC clusters.",
          "Guide", ["Python", "GPU", "Machine learning", "TensorFlow"], code_lang="python"),
-    Page("multiGPU_tensorflow_tutorial.md", "software/tensorflow-multi-gpu.md", "Multi-GPU TensorFlow",
+    Page("multiGPU_tensorflow_tutorial.md", "tutorials/tensorflow-multi-gpu.md", "Multi-GPU TensorFlow",
          "Distribute TensorFlow training across multiple GPUs on a CARC node.",
          "Tutorial", ["Python", "GPU", "Machine learning", "TensorFlow"]),
     Page("alphafold.md", "software/alphafold.md", "AlphaFold",
@@ -248,7 +248,7 @@ PAGES: list[Page] = [
     Page("singularity-markdown-version.md", "software/singularity.md", "Singularity / Apptainer containers",
          "Build, pull, and run software containers on CARC clusters.",
          "Guide", ["Containers", "Singularity"]),
-    Page("spark_tutorial.md", "software/spark.md", "Apache Spark",
+    Page("spark_tutorial.md", "tutorials/spark.md", "Apache Spark",
          "Launch Apache Spark clusters inside Slurm allocations for large-scale data analysis.",
          "Tutorial", ["Spark", "Big data", "Parallel"]),
     Page("paraview.md", "software/paraview.md", "ParaView remote visualization",
@@ -356,7 +356,9 @@ SECTIONS = {
     "software": ("QuickByte Tutorials",
         "Short, practical CARC guides for software, programming environments, and research workflows."),
     "tutorials": ("Tutorials",
-        "Domain-science QuickBytes: complete worked examples from genomics to materials science."),
+        "Worked tutorials covering Linux, data transfers, software, and domain science."),
+    "tutorials/data-transfer": ("Data transfer tutorials",
+        "Worked tutorials for moving data to and from CARC storage."),
     "faq": ("FAQ & troubleshooting",
         "Quick answers to common questions and fixes for the problems users hit most."),
     "training": ("Training",
@@ -369,18 +371,19 @@ SECTIONS = {
 
 # QuickByte groups for the combined software/tutorials contents page and nav.
 QUICKBYTE_GROUPS = [
+    ("Data transfer", ["tutorials/data-transfer/globus.md"]),
     ("Conda", [
         "software/conda-intro.md", "software/conda-environments.md",
         "software/conda-channels-pip.md",
     ]),
     ("JupyterHub", [
-        "software/conda-jupyterhub.md", "software/jupyterhub-mpi.md",
-        "software/dask-scikit-learn.md",
+        "software/conda-jupyterhub.md", "tutorials/jupyterhub-mpi.md",
+        "tutorials/dask-scikit-learn.md",
     ]),
     ("Julia", ["software/julia-jupyterhub.md"]),
     ("R", [
         "software/r-usage.md", "software/getting-r.md", "software/r-packages.md",
-        "software/parallel-r-future.md", "software/gurobi-r.md",
+        "tutorials/parallel-r-future.md", "software/gurobi-r.md",
     ]),
     ("Other programming languages", [
         "software/haskell.md", "software/perl-libraries.md",
@@ -388,16 +391,16 @@ QUICKBYTE_GROUPS = [
     ("MATLAB", [
         "software/matlab-jobs.md", "software/parallel-matlab.md",
         "software/matlab-parallel-server.md", "software/matlab-gpu.md",
-        "software/matlab-deep-learning.md",
+        "tutorials/matlab-deep-learning.md",
     ]),
-    ("Mathematica", ["software/mathematica.md"]),
+    ("Mathematica", ["tutorials/mathematica.md"]),
     ("AI and machine learning", [
         "software/deep-learning-packages.md", "software/pytorch.md",
-        "software/pytorch-classifier.md", "software/tensorflow.md",
-        "software/tensorflow-multi-gpu.md", "software/alphafold.md",
+        "tutorials/pytorch-classifier.md", "software/tensorflow.md",
+        "tutorials/tensorflow-multi-gpu.md", "software/alphafold.md",
     ]),
     ("Data, visualization, and parallel computing", [
-        "software/spark.md", "software/paraview.md", "software/cuda-aware-mpi.md",
+        "tutorials/spark.md", "software/paraview.md", "software/cuda-aware-mpi.md",
     ]),
     ("Bioinformatics", [
         "tutorials/gatk.md", "tutorials/metabarcoding.md", "tutorials/stacks.md",
@@ -428,7 +431,7 @@ FILE_ASSETS = [
 # Surgical, reproducible content fixes applied to migrated pages
 # (dest path -> list of literal (old, new) replacements).
 PATCHES = {
-    "software/parallel-r-future.md": [
+    "tutorials/parallel-r-future.md": [
         ("seet the", "see the"),
         ("the plan() object", "the `plan()` object"),
         ("the future({}) object", "the `future({})` object"),
@@ -545,7 +548,7 @@ PATCHES = {
     "getting-started/transferring-data.md": [
         ("### Where is your data?",
          "!!! tip \"Moving a lot of data?\"\n\n"
-         "    For large datasets or many files, use [Globus](globus.md): transfers\n"
+         "    For large datasets or many files, use [Globus](../tutorials/data-transfer/globus.md): transfers\n"
          "    run in the background, resume after interruptions, and verify every\n"
          "    file.\n\n"
          "### Where is your data?"),
@@ -734,10 +737,10 @@ LEGACY_FIXES = {
          "in your Slurm batch script, but we will get to that later."),
         ("module load anaconda3", "module load miniconda3"),
     ],
-    "software/jupyterhub-mpi.md": [
+    "tutorials/jupyterhub-mpi.md": [
         ("wheeler-sn.alli", "hopper.alli"),
     ],
-    "software/matlab-deep-learning.md": [
+    "tutorials/matlab-deep-learning.md": [
         ("These tools can make use of GPUs, which are available for use on the Xena cluster.",
          "These tools can make use of GPUs, which are available on the CARC clusters "
          "— see the [current systems](../systems/overview.md)."),
@@ -825,13 +828,13 @@ LEGACY_FIXES = {
         ("Xena has nodes with single GPU and dual GPU.",
          "That system had nodes with a single GPU and dual GPUs."),
     ],
-    "software/tensorflow-multi-gpu.md": [
+    "tutorials/tensorflow-multi-gpu.md": [
         ("here are benchmarks run on the (legacy) Xena system at CARC using",
          "here are benchmarks run on a previous CARC GPU system using"),
         ("The old Xena cluster had nodes with both single- and dual-GPU configurations.",
          "That system had nodes with both single- and dual-GPU configurations."),
     ],
-    "software/dask-scikit-learn.md": [
+    "tutorials/dask-scikit-learn.md": [
         ("go to https://wheeler.alliance.unm.edu:8000 where",
          "go to https://hopper.alliance.unm.edu where"),
     ],
@@ -1274,7 +1277,7 @@ def write_index(section: str, pages_by_dest: dict):
     def entry(dest: str) -> str:
         p = pages_by_dest[dest]
         suffix = " *(legacy)*" if p.status == "deprecated" else ""
-        href = dest.split("/", 1)[1] if dest.startswith(section + "/") else f"../{dest}"
+        href = os.path.relpath(dest, section).replace(os.sep, "/")
         return f"* [{p.title}]({href}) - {p.description}{suffix}"
 
     if section == "software":
@@ -1283,9 +1286,14 @@ def write_index(section: str, pages_by_dest: dict):
             lines += [entry(f) for f in files]
             lines.append("")
     else:
-        ordered = [d for d in pages_by_dest if d.startswith(section + "/")]
+        ordered = [d for d in pages_by_dest if d.startswith(section + "/")
+                   and (section != "tutorials" or not d.startswith("tutorials/data-transfer/"))]
         lines += [entry(d) for d in ordered]
         lines.append("")
+    if section == "tutorials":
+        lines += ["## Data transfer", "", "* [Data transfer tutorials](data-transfer/index.md) - Moving data to and from CARC storage.", ""]
+    if section == "getting-started":
+        lines += ["## Introductory tutorials", "", entry("tutorials/linux-intro.md"), entry("tutorials/data-transfer/globus.md"), ""]
     if section == "about":
         lines += ["* [Documentation update log](../log.md) - Chronological history of changes to this documentation bundle.", ""]
     (DOCS / section / "index.md").write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")

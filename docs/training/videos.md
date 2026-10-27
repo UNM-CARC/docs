@@ -52,8 +52,8 @@ it straight through here, or jump to an episode:
 | [X11 Forwarding](https://www.youtube.com/watch?v=-5ic9JWHuqI){target=_blank} | 10:41 | [X11 forwarding](../getting-started/x11-forwarding.md) |
 | [Parallelization 1: An Example Problem](https://www.youtube.com/watch?v=UWAReJqVIfU){target=_blank} | 16:14 | — |
 | [Parallelization 3: GNU Parallel](https://www.youtube.com/watch?v=Rl06WD60afA){target=_blank} | 28:01 | [GNU Parallel](../running-jobs/gnu-parallel.md) |
-| [Parallelization 4: The Message Passing Interface (MPI)](https://www.youtube.com/watch?v=JrCMi3_yCA0){target=_blank} | 24:27 | [MPI from JupyterHub](../software/jupyterhub-mpi.md) |
-| [Parallel R with Future](https://www.youtube.com/watch?v=G5xGfF151Co){target=_blank} | — | [Parallel R with the future package](../software/parallel-r-future.md) |
+| [Parallelization 4: The Message Passing Interface (MPI)](https://www.youtube.com/watch?v=JrCMi3_yCA0){target=_blank} | 24:27 | [MPI from JupyterHub](../tutorials/jupyterhub-mpi.md) |
+| [Parallel R with Future](https://www.youtube.com/watch?v=G5xGfF151Co){target=_blank} | — | [Parallel R with the future package](../tutorials/parallel-r-future.md) |
 | [Computational Chemistry: Avogadro and Gaussian](https://www.youtube.com/watch?v=Jqyf7bodT4U){target=_blank} | 28:38 | — |
 | [CS491/591: SimCov Compilation and Submission](https://www.youtube.com/watch?v=7x3voqNX0QY){target=_blank} | 8:14 | [SimCov](../tutorials/simcov.md) |
 

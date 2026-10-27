@@ -1,7 +1,7 @@
 ---
 title: "Transferring data with Globus"
 description: "Move large datasets to and from CARC home, project, and scratch storage with Globus, using your UNM login and your CARC account."
-type: Guide
+type: Tutorial
 tags:
   - Data
   - Storage
@@ -36,8 +36,8 @@ first time you open a CARC collection.
   (another university, ORCID, Google) also works.
 * **An active CARC account** on Hopper or Easley, with your CARC username and
   password: the same ones you use for SSH and
-  [Open OnDemand](../interactive/open-ondemand.md). If you don't have an
-  account yet, start with [Getting started at CARC](overview.md).
+  [Open OnDemand](../../interactive/open-ondemand.md). If you don't have an
+  account yet, start with [Getting started at CARC](../../getting-started/overview.md).
 
 Your CARC username can differ from your NetID. That's expected: Globus links
 the two the first time you open a CARC collection.
@@ -67,7 +67,7 @@ can on the clusters, within these areas:
   `/carc/scratch/projects/`, subject to the usual file permissions.
 
 Quotas and backup policies are the same as on the clusters; see
-[Storage and backups](../systems/storage.md). Run `quotas` on a login node to
+[Storage and backups](../../systems/storage.md). Run `quotas` on a login node to
 check your usage before a large transfer.
 
 !!! note "Easley scratch isn't available through Globus"
@@ -85,57 +85,57 @@ Setup takes a couple of minutes and happens once.
    also get there from the [CARC homepage](https://carc.unm.edu){ target=_blank }:
    open the **HPC Resources** menu and click **Transfer Data (Globus)**.
 
-    ![CARC homepage HPC Resources menu with the Transfer Data (Globus) link](../assets/images/globus/carc-homepage-menu.png)
+    ![CARC homepage HPC Resources menu with the Transfer Data (Globus) link](../../assets/images/globus/carc-homepage-menu.png)
 
 2. Under *Use your organizational login*, choose
    *University of New Mexico*, click **Continue**, and sign in with your
    NetID.
 
-    ![Globus login page with the organizational login search box](../assets/images/globus/globus-login.png)
+    ![Globus login page with the organizational login search box](../../assets/images/globus/globus-login.png)
 
 3. UNM asks to share your name and email with CILogon, which Globus uses
    for university logins. Choose one of the consent options and click
    **Accept**.
 
-    ![UNM consent page for releasing information to CILogon](../assets/images/globus/unm-cilogon-consent.png)
+    ![UNM consent page for releasing information to CILogon](../../assets/images/globus/unm-cilogon-consent.png)
 
 4. The first time you log in, Globus asks whether to link an existing Globus
    account. If you haven't used Globus before, click **Continue**.
 
-    ![Globus first-login page with Continue and Link to an existing account buttons](../assets/images/globus/globus-first-login.png)
+    ![Globus first-login page with Continue and Link to an existing account buttons](../../assets/images/globus/globus-first-login.png)
 
     Agree to the Terms of Service and Privacy Policy, click **Continue**, and
     click **Allow** when prompted.
 
-    ![Globus sign-up page with the Terms of Service checkbox](../assets/images/globus/globus-signup.png)
+    ![Globus sign-up page with the Terms of Service checkbox](../../assets/images/globus/globus-signup.png)
 
 5. You're now on the Globus Dashboard. The menu on the left switches between
    pages; this guide uses **File Manager** and **Activity**.
 
-    ![Globus Dashboard with the navigation menu on the left](../assets/images/globus/globus-dashboard.png)
+    ![Globus Dashboard with the navigation menu on the left](../../assets/images/globus/globus-dashboard.png)
 
 6. Open one of the CARC collections, for example
    [UNM CARC home](https://app.globus.org/file-manager?origin_id=858a3d27-0cbf-4de1-8dc8-89d14a3f1714){ target=_blank },
    or search for **UNM CARC** in the File Manager's *Collection* box. Globus
    says authentication/consent is required. Click **Continue**.
 
-    ![File Manager saying authentication/consent is required for a CARC collection](../assets/images/globus/collection-consent-required.png)
+    ![File Manager saying authentication/consent is required for a CARC collection](../../assets/images/globus/collection-consent-required.png)
 
 7. Click **Link a UNM CARC (carc.unm.edu) identity**. On the UNM CARC login
    page, enter your **CARC username and password**, and click **Allow** when
    prompted.
 
-    ![Globus prompt to link a UNM CARC identity](../assets/images/globus/link-carc-identity.png)
+    ![Globus prompt to link a UNM CARC identity](../../assets/images/globus/link-carc-identity.png)
 
 8. The File Manager now lists your files. To go to another directory, type
    its path in the *Path* box.
 
-    ![File Manager listing files in the UNM CARC home collection](../assets/images/globus/file-manager-home.png)
+    ![File Manager listing files in the UNM CARC home collection](../../assets/images/globus/file-manager-home.png)
 
 The first time you open each of the other CARC collections, Globus may ask
 which identity to use. Click **Use my your-username@carc.unm.edu identity**.
 
-![Globus prompt to use an already linked CARC identity](../assets/images/globus/use-carc-identity.png)
+![Globus prompt to use an already linked CARC identity](../../assets/images/globus/use-carc-identity.png)
 
 To check the link, open **Settings → Identities** in Globus. You'll see
 `your-username@carc.unm.edu` listed under your Globus account.
@@ -172,12 +172,12 @@ same steps work between any two collections.
    to show two collections side by side. The left panel keeps the collection
    you already had open.
 
-    ![File Manager in two-panel view](../assets/images/globus/two-panel-view.png)
+    ![File Manager in two-panel view](../../assets/images/globus/two-panel-view.png)
 
 2. In the left panel, choose the source collection and path. In the right
    panel, search for the destination collection and enter its path.
 
-    ![UNM CARC home on the left and UNM CARC scratch on the right](../assets/images/globus/source-and-destination.png)
+    ![UNM CARC home on the left and UNM CARC scratch on the right](../../assets/images/globus/source-and-destination.png)
 
 3. Optionally, open **Transfer & Timer Options**. The defaults suit most
    transfers. Useful settings:
@@ -191,7 +191,7 @@ same steps work between any two collections.
     File integrity checking and encryption are on by default, and the CARC
     collections require encryption.
 
-    ![Transfer and Timer Options panel](../assets/images/globus/transfer-options.png)
+    ![Transfer and Timer Options panel](../../assets/images/globus/transfer-options.png)
 
 4. Select the files or folders to copy, or click **select all**. Then click
    the **Start** button on the source side, above the panel you're copying
@@ -199,21 +199,21 @@ same steps work between any two collections.
    one; the one above the destination panel won't transfer your selection.
    A green *Transfer request submitted successfully* message appears.
 
-    ![Files selected in the left panel with the transfer submitted message](../assets/images/globus/transfer-submitted.png)
+    ![Files selected in the left panel with the transfer submitted message](../../assets/images/globus/transfer-submitted.png)
 
 5. Click **View details** on the message, or **Activity** in the left menu,
    to follow the transfer. You don't need to keep the page open.
 
-    ![Activity page for a completed transfer](../assets/images/globus/transfer-details.png)
+    ![Activity page for a completed transfer](../../assets/images/globus/transfer-details.png)
 
     Globus also emails you a summary when the transfer finishes.
 
-    ![Globus transfer completion email](../assets/images/globus/transfer-email.png)
+    ![Globus transfer completion email](../../assets/images/globus/transfer-email.png)
 
 6. The destination panel doesn't update on its own. Click **refresh list**
    above the destination panel to see the copied files.
 
-    ![Destination panel after refreshing, showing the copied files](../assets/images/globus/refresh-destination.png)
+    ![Destination panel after refreshing, showing the copied files](../../assets/images/globus/refresh-destination.png)
 
 ## Logging in again
 
@@ -229,7 +229,7 @@ running keep going.
     minutes and try again; repeated lockouts last longer, up to 15 minutes.
     The lockout also applies to Open OnDemand logins, but not to SSH or your
     running jobs. If your password has expired, see
-    [Password reset and one-time passwords](password-reset.md).
+    [Password reset and one-time passwords](../../getting-started/password-reset.md).
 
 ## Troubleshooting
 
@@ -237,7 +237,7 @@ running keep going.
 
     Your CARC account isn't allowed to use Globus: it's an administrative
     account, or it isn't an active HPC account. Use your ordinary CARC
-    account, or [open a ticket](../support/help.md).
+    account, or [open a ticket](../../support/help.md).
 
 ??? question "The UNM CARC login rejects a password that works for SSH"
 
@@ -254,11 +254,11 @@ running keep going.
 ??? question "A transfer is slow or stuck"
 
     Check its status under **Activity** in Globus. Globus retries on its own.
-    If it stays stuck, [open a ticket](../support/help.md) with the transfer's
+    If it stays stuck, [open a ticket](../../support/help.md) with the transfer's
     task ID, which you'll find on its Activity page.
 
 ## Related pages
 
-* [Transferring data](transferring-data.md) - scp and rsync for smaller transfers.
-* [Storage and backups](../systems/storage.md) - paths, quotas, and what is backed up.
-* [Getting help](../support/help.md) - open a ticket if Globus misbehaves.
+* [Transferring data](../../getting-started/transferring-data.md) - scp and rsync for smaller transfers.
+* [Storage and backups](../../systems/storage.md) - paths, quotas, and what is backed up.
+* [Getting help](../../support/help.md) - open a ticket if Globus misbehaves.
