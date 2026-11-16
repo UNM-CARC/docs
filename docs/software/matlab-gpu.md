@@ -1,15 +1,16 @@
 ---
 title: "MATLAB on GPUs"
-description: "Accelerate MATLAB computations with GPUs on CARC clusters."
+description: "Accelerate MATLAB computations with the L40S and H100 GPUs on Easley, interactively or in Slurm batch jobs, on one GPU or several."
 type: Guide
 tags:
   - MATLAB
   - GPU
-status: draft
-generated:
-  by: "claude/fable-5"
-  at: "2026-08-29T00:00:00Z"
+stale_after: "2027-08-31T00:00:00Z"
 sources:
+  - id: quickbytes-pr-276
+    resource: "https://github.com/UNM-CARC/QuickBytes/pull/276"
+    title: "UNM-CARC QuickBytes PR #276: Using GPUs on Easley with MATLAB.md (tested on Easley)"
+    author: "human:hfricke"
   - id: quickbytes
     resource: "https://github.com/UNM-CARC/QuickBytes/blob/master/Using%20GPUs%20on%20Xena%20with%20MATLAB.md"
     title: "UNM-CARC QuickBytes: Using GPUs on Xena with MATLAB.md"
@@ -19,122 +20,98 @@ sources:
 
 # MATLAB on GPUs
 
-1. [Using a single GPU](#1)
-     1. [Use GPU in Interactive Session](#1.1)
-          1. [Identify and Select GPU](#1.1.1)
-          2. [Using Arrays on GPU](#1.1.2)
-          3. [Initialize Array](#1.1.3)
-          4. [Test if array is on GPU](#1.1.4)
-          5. [Retrieve Array from GPU](#1.1.5)
-          6. [Use functions on GPU Arrays](#1.1.6)
-     2. [Schedule a job](#1.2)
-          1. [MATLAB Script](#1.2.1)
-          2. [PBS Script](#1.2.2)
-          3. [Slurm Script](#1.2.3)
-          4. [Submit Job to Queue](#1.2.4)
-2. [Using multiple GPUs on a single node](#2)
-    1. [MATLAB Script](#2.2)
-    2. [Slurm Script](#2.2)
-    3. [Submit Job to Queue](#2.3) 
-3. [Using Multiple Nodes with their own GPUs](#3)
+MATLAB's Parallel Computing Toolbox can run array operations on a GPU. On CARC,
+the GPU nodes are on [Easley](../systems/overview.md): the `l40s` partition
+(NVIDIA L40S) and the `h100` partition (NVIDIA H100). Request GPUs with
+`--gres=gpu:<type>:<count>`, for example `--gres=gpu:l40s:1`.
 
+This page covers using a single GPU interactively, running the same work as a
+Slurm batch job, and spreading work across several GPUs on one node.
 
-## Using a single GPU <a name="1"></a>
+## Using a single GPU
 
-MATLAB allows the utilization of a single GPU that is part of a machine.
-The following sections show how to access and utilize a GPU.
+### Start MATLAB on a GPU node
 
-### Use GPU in Interactive Session <a name="1.1"></a>
-
-First, we will open MATLAB in an interactive session on a GPU compute node.
-
-#### Identify and Select GPU <a name="1.1.1"></a>
-
-Start by requesting an interactive session:
+Request an interactive session with one GPU:
 
 ```bash
-hopper:~$ srun -G 1 --pty bash
+easley-sn:~$ srun --partition l40s --gres=gpu:l40s:1 --pty bash
 ```
 
-Once you have a node allocated to you, load the MATLAB module and start a MATLAB session:
+Once a node is allocated, load MATLAB and start it:
 
 ```bash
-xena01:~$ module load matlab
-xena01:~$ matlab
-
-To get started, type doc.
-For product information, visit www.mathworks.com.
->>
+easley055:~$ module load matlab/R2024b
+easley055:~$ matlab
 ```
 
-Now you can check to see the number of GPUs available:
-```bash
+### Identify and select the GPU
+
+Check how many GPUs MATLAB can see:
+
+```matlab
 >> gpuDeviceCount("available")
-```
-You should see the following:
-```bash
-ans = 
+
+ans =
+
      1
 ```
-This means that you have access to a single GPU.
 
-To get information about the available gpus, use this function:
-```bash
+This means you have access to a single GPU. To see its details, run:
+
+```matlab
 >> gpuDeviceTable
-```
-That will print something like this:
-```bash
+
 ans =
 
   1x5 table
 
-    Index        Name        ComputeCapability    DeviceAvailable    DeviceSelected
-    _____    ____________    _________________    _______________    ______________
+    Index        Name         ComputeCapability    DeviceAvailable    DeviceSelected
+    _____    _____________    _________________    _______________    ______________
 
-      1      "Tesla K40m"          "3.5"               true              false
+      1      "NVIDIA L40S"          "8.9"               true              false
 ```
 
-Next, you can tell MATLAB which GPU to use (pass in the desired index from the above table).
-If you do not do this, MATLAB will automatically grab the lowest index GPU when you try to use one.
-```bash
+You can tell MATLAB which GPU to use by passing its index from that table. If
+you don't, MATLAB uses the lowest-numbered GPU the first time you need one.
+
+```matlab
 >> gpuDevice(1)
 ```
 
-Running the `gpuDeviceTable` command again shows this change:
-```bash
+MATLAB prints the selected GPU's properties, including its name, memory, and
+compute capability. Running `gpuDeviceTable` again shows `DeviceSelected` is
+now `true`:
+
+```matlab
 >> gpuDeviceTable
 
 ans =
 
   1x5 table
 
-    Index        Name        ComputeCapability    DeviceAvailable    DeviceSelected
-    _____    ____________    _________________    _______________    ______________
+    Index        Name         ComputeCapability    DeviceAvailable    DeviceSelected
+    _____    _____________    _________________    _______________    ______________
 
-      1      "Tesla K40m"          "3.5"               true              true
-
+      1      "NVIDIA L40S"          "8.9"               true              true
 ```
 
-#### Using Arrays on GPU <a name="1.1.2"></a>
+### Move arrays to and from the GPU
 
-In order to utilize the GPU, data must be loaded into a `gpuArray` object.
-For a full description of the `gpuArray` object, please visit the official MathWorks Documentation at [https://www.mathworks.com/help/parallel-computing/gpuarray.html](https://www.mathworks.com/help/parallel-computing/gpuarray.html){target=_blank}
+To use the GPU, data must be in a `gpuArray` object. See the
+[MathWorks `gpuArray` documentation](https://www.mathworks.com/help/parallel-computing/gpuarray.html){target=_blank}
+for the full reference.
 
-##### Initialize Array <a name="1.1.3"></a>
-First, create a normal array using any method you like.
-In this example we will use the `magic(8)` function to create a magic square matrix that is 8x8.
-```bash
->> A = magic(8)
-```
-Next, pass that into a `gpuArray` object.
-This will copy the contents of a normal array into an array on the GPU.
-```bash
->> B = gpuArray(A)
+Create an ordinary array (here an 8x8 magic square), then copy it to the GPU:
+
+```matlab
+>> A = magic(8);
+>> B = gpuArray(A);
 ```
 
-##### Test if array is on GPU <a name="1.1.4"></a>
-The `isgpuarray` function tests if an array is on a GPU:
-```bash
+`isgpuarray` tells you where an array lives:
+
+```matlab
 >> isgpuarray(A)
 
 ans =
@@ -151,17 +128,12 @@ ans =
 
    1
 ```
-This confirms that array A is not on the GPU, but array B is.
 
-##### Retrieve Array from GPU <a name="1.1.5"></a>
-In order to retrieve an array from the GPU and put it back in the MATLAB workspace, use the `gather` function.
-It will copy the contents of an array on the GPU into a normal array.
-This is neccesary if you want to to perform non-GPU actions on your data after using the GPU.
-```bash
->> C = gather(B)
-```
-Now, we can test to see if C is stored on the gpu:
-```bash
+To bring results back into the normal MATLAB workspace, for example before
+saving them or using functions that don't support GPUs, use `gather`:
+
+```matlab
+>> C = gather(B);
 >> isgpuarray(C)
 
 ans =
@@ -171,15 +143,13 @@ ans =
    0
 ```
 
-#### Use functions on GPU Arrays <a name="1.1.6"></a>
-To perform functions on `gpuArray` objects, use the `arrayfun` function.
-In this example, we will apply the MATLAB `sqrt` function to the array (B) that we created in the previous step:
-```bash
-result = arrayfun(@sqrt,B)
-```
-This will apply the `sqrt` function to every element in the GPU array.
-`result` is also a GPU array:
-```bash
+### Run functions on GPU arrays
+
+`arrayfun` applies a function to every element of a `gpuArray` on the GPU, and
+the result stays on the GPU:
+
+```matlab
+>> result = arrayfun(@sqrt, B);
 >> isgpuarray(result)
 
 ans =
@@ -187,26 +157,22 @@ ans =
   logical
 
    1
-
 ```
 
-To see a list of MATLAB functions that are supported using gpus, visit [https://www.mathworks.com/help/parallel-computing/gpuarray.html](https://www.mathworks.com/help/parallel-computing/gpuarray.html){target=_blank}
+You can pass your own functions to `arrayfun` as well. MathWorks keeps a
+[list of functions that support GPU arrays](https://www.mathworks.com/help/parallel-computing/gpuarray.html){target=_blank}.
 
-You can also create your own functions to pass into `arrayfun`.
+## Run a GPU job with Slurm
 
-### Schedule a job <a name="1.2"></a>
-It is good idea to do everything using a batch script and avoid the mistakes associated with interactive computing.
-To get an idea of why performing functions on `gpuArray` objects is a good idea, let's create a simple MATLAB script that displays the amount of time it takes to perform the same computation on a cpu and on a gpu.
-We will then create a PBS script that schedules a job with a GPU to run the MATLAB script for us.
+Batch jobs avoid the mistakes that come with interactive work and free the GPU
+as soon as your script finishes. This example times the same `sqrt` on the CPU
+and on the GPU.
 
+### MATLAB script
 
-#### MATLAB Script <a name="1.2.1"></a>
-We will perform the `sqrt` function on a 5000x5000 array.
-The use of `tic` and `toc` allow us to time the seperate applications of `sqrt`.
+Save this as `gpu_matlab.m`. `tic` and `toc` time each version:
 
-Create the following script with the name `gpu_matlab.m`:
-
-```bash 
+```matlab
 gpuDevice(1);
 
 A = magic(5000);
@@ -217,38 +183,15 @@ toc
 disp("sqrt of 5000x5000 matrix on gpu:")
 C = gpuArray(magic(5000));
 tic
-D = arrayfun(@sqrt,C);
+D = arrayfun(@sqrt, C);
 toc
 ```
-#### PBS Script <a name="1.2.2"></a>
 
-Now, let's create a PBS script called `gpu_matlab.pbs`. 
-Replace the `<DIR>` with the path to the directory containing the MATLAB script created above. 
-This script will request the desired resrouces, load the MATLAB module, then run the script.
-The output of the script will be sent to the file: `gpu_matlab.out`
+### Slurm script
 
-```bash
-#!/bin/bash
-
-#PBS -N gpu_test
-#PBS -l walltime=00:05:00
-#PBS -l nodes=1:ppn=1:gpus=1
-#PBS -j oe
-
-cd <DIR>
-
-module load matlab
-
-matlab -nodisplay -r gpu_matlab > gpu_matlab.out
-
-```
-
-#### Slurm Script <a name="1.2.3"></a>
-
-Now, let's create a Slurm script called `gpu_matlab.sh`. 
-Replace the `<DIR>` with the path to the directory containing the MATLAB script created above. 
-This script will request the desired resrouces, load the MATLAB module, then run the script.
-The output of the script will be sent to the file: `gpu_matlab.out`
+Save this as `gpu_matlab.sh`, replacing `<DIR>` with the directory that holds
+`gpu_matlab.m`. It requests one L40S GPU, loads MATLAB, and runs the script,
+writing MATLAB's output to `gpu_matlab.out`:
 
 ```bash
 #!/bin/bash
@@ -257,52 +200,56 @@ The output of the script will be sent to the file: `gpu_matlab.out`
 #SBATCH --output gpu_matlab_job.out
 #SBATCH --error gpu_matlab_job.err
 #SBATCH --time 00:05:00
+#SBATCH --partition l40s
 #SBATCH --ntasks 1
-#SBATCH -G 1
+#SBATCH --gres=gpu:l40s:1
 
 cd <DIR>
 
-module load matlab
+module load matlab/R2024b
 matlab -nodisplay -r gpu_matlab > gpu_matlab.out
 ```
 
+### Submit the job
 
-#### Submit Job to Queue <a name="1.2.4"></a>
-
-Now we can submit the job to the scheduler from the head node:
+Submit from the Easley head node, then read the results when it finishes:
 
 ```bash
-hopper:~$ sbatch gpu_matlab.sh
+easley-sn:~$ sbatch gpu_matlab.sh
+easley-sn:~$ cat gpu_matlab.out
 ```
 
-View the results:
-```bash
-hopper:~$ cat gpu_matlab.out
+After MATLAB's startup banner, `gpu_matlab.out` from a run on one L40S ends
+with:
+
+```text
+sqrt of 5000x5000 matrix on cpu:
+Elapsed time is 12.389680 seconds.
+sqrt of 5000x5000 matrix on gpu:
+Elapsed time is 0.381576 seconds.
 ```
 
-## Using multiple GPUs on a single node <a name="2"></a>
+Your times will vary a little from run to run.
 
-Some CARC nodes contain multiple GPUs.
-MATLAB allows for the utilization of multiple GPUs on a single node in the same way you use multiple CPUs.
-To show how this works, below is an example MATLAB script that will create a logistic map using all available GPU's on the assigned node.
+## Using multiple GPUs on one node
 
-The `parpool` object is used to create workers to parallelize the execution.
-Each worker will grab it's own GPU when performing actions with `gpuArray` objects.
-For this to work properly, ensure that you have been allocated an equal number of CPUs as GPUs on the machine.
-An example slurm script is included below to give an idea of how to ask for the proper resources to be allocated.
+Easley's `l40s` nodes have up to four L40S GPUs. MATLAB uses several GPUs the
+same way it uses several CPUs: a `parpool` starts one worker per GPU, and each
+worker picks up its own GPU when it works with `gpuArray` objects.
 
-### MATLAB Script <a name="2.1"></a>
+!!! note "Request one CPU per GPU"
+    MATLAB uses a CPU to drive each GPU, so set `--cpus-per-task` to the same
+    number as the GPU count in `--gres`. If the numbers don't match, MATLAB
+    may not find or use all the GPUs you were given.
 
-Create the following MATLAB script called `gpu_logistic_map.m`
-This simple MATLAB script creates a Logistic Map by iterating the logistic equation on a set of random populations.
-A worker is created for each available GPU.
-They will then split up the work performed in the `parfor` loop.
-The result is a logistic map figure saved as 'logistic_map.jpg'
-It also contains calls to time the execution of the `parfor` loop.
+### MATLAB script
 
+Save this as `gpu_logistic_map.m`. It builds a logistic map by iterating the
+logistic equation over a set of random populations. The `parfor` loop splits
+the simulations across one worker per GPU, the loop is timed, and the figure
+is saved as `logistic_map.jpg`:
 
-```bash
-
+```matlab
 N = 1000;
 r = gpuArray.linspace(0,4,N);
 
@@ -318,7 +265,7 @@ disp("Timing execution of parfor loop:")
 
 tic
 parfor i=1:numSimulations
-  X(i,:) = rand(1,N,'gpuArray')
+  X(i,:) = rand(1,N,'gpuArray');
   for n=1:numIterations
     X(i,:) = r.*X(i,:).*(1-X(i,:));
   end
@@ -332,21 +279,10 @@ saveas(f,'logistic_map','jpg')
 return
 ```
 
-### Slurm Script <a name="2.2"></a>
+### Slurm script
 
-
-When requesting two GPUs, you must also set `--cpus-per-task 2` and `-G 2` for MATLAB to correctly find and utilize the available GPUs.
-These numbers should match, as MATLAB will use a CPU to access each GPU.
-We ask for two CPUs and two GPUs.
-
-Create the following slurm scrpt called `gpu_logistic_map.sh`.
-Replace the `<DIR>` with the path to the directory containing the MATLAB script created above. 
-This script will ask the scheduler for the proper resources.
-Once the resrouces are allocated, the script will run the MATLAB script from the above step.
-The MATLAB script will create a .jpg image once it has finished.
-Any output of the MATLAB script is redirected to `gpu_logistic_map.out`.
-
-
+Save this as `gpu_logistic_map.sh`, replacing `<DIR>` as before. It asks for
+two L40S GPUs and two CPUs:
 
 ```bash
 #!/bin/bash
@@ -355,33 +291,39 @@ Any output of the MATLAB script is redirected to `gpu_logistic_map.out`.
 #SBATCH --output gpu_logistic_map_job.out
 #SBATCH --error gpu_logistic_map_job.err
 #SBATCH --time 00:10:00
+#SBATCH --partition l40s
 #SBATCH --ntasks 1
 #SBATCH --cpus-per-task 2
-#SBATCH -G 2
+#SBATCH --gres=gpu:l40s:2
 
 cd <DIR>
 
-module load matlab
+module load matlab/R2024b
 matlab -nodisplay -r gpu_logistic_map > gpu_logistic_map.out
-
 ```
 
-### Submit Job to Queue <a name="2.3"></a>
+### Submit the job
 
-Now we can submit the job to the scheduler from the head node:
 ```bash
-hopper:~$ sbatch gpu_logistic_map.sh
-```
-View the results:
-```bash
-hopper:~$ cat gpu_logistic_map.out
+easley-sn:~$ sbatch gpu_logistic_map.sh
+easley-sn:~$ cat gpu_logistic_map.out
 ```
 
-You can also view the `logistic_map.jpg` image using your preferred method.
+After MATLAB's startup banner, `gpu_logistic_map.out` shows a pool with one
+worker per GPU and the loop's run time:
 
+```text
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 2 workers.
+Timing execution of parfor loop:
+Elapsed time is 3.062344 seconds.
+Parallel pool using the 'Processes' profile is shutting down.
+```
 
-## Using Multiple Nodes with their own GPUs <a name="3"></a>
+When the job finishes, `logistic_map.jpg` is in the same directory. Copy it to
+your computer or open it in [Open OnDemand](../interactive/open-ondemand.md) to
+view it.
 
-Coming Soon! (Maybe)
+*Every command and script on this page was tested on Easley on November 16, 2026.*
 
-<p class="carc-provenance" markdown>Migrated from [UNM-CARC QuickBytes](https://github.com/UNM-CARC/QuickBytes/blob/master/Using%20GPUs%20on%20Xena%20with%20MATLAB.md){target=_blank} (last source update 2022-05-25). Spotted a problem? [Open an issue or pull request](https://github.com/UNM-CARC/QuickBytes){target=_blank}.</p>
+<p class="carc-provenance" markdown>Curated from [QuickBytes PR #276](https://github.com/UNM-CARC/QuickBytes/pull/276){target=_blank} (tested on Easley) and the earlier [QuickByte](https://github.com/UNM-CARC/QuickBytes/blob/master/Using%20GPUs%20on%20Xena%20with%20MATLAB.md){target=_blank}. Spotted a problem? [Open an issue or pull request](https://github.com/UNM-CARC/docs){target=_blank}.</p>

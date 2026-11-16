@@ -21,7 +21,7 @@ sources:
 # R batch jobs with PBS (retired)
 
 !!! warning "Please note"
-    CARC schedulers now run Slurm. See [R on CARC systems](r-usage.md) and [Example Slurm scripts](../running-jobs/example-slurm-scripts.md) instead.
+    CARC schedulers now run Slurm. See [R batch jobs with Slurm](r-slurm-jobs.md), [R on CARC systems](r-usage.md), and [Example Slurm scripts](../running-jobs/example-slurm-scripts.md) instead.
 
 ## The PBS script
 In order to actually submit a job to the cluster you need a PBS script that lists all of the resources you are requesting, the software you want to use, and the commands to that software. So pretend we have an R script called "my_script.R" that you want to run on Wheeler, the PBS script would look something like this:
