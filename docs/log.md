@@ -1,5 +1,11 @@
 # Documentation update log
 
+## 2026-11-16
+
+* **Update**: [MATLAB on GPUs](software/matlab-gpu.md), [Parallel MATLAB batch jobs](software/parallel-matlab.md) and [PyTorch on CARC GPUs](software/pytorch.md) are rewritten for Easley from Graviton28's QuickBytes PRs #276, #277 and #275, which the migration never picked up because the source files had been renamed. Every command and script was re-run on Easley and every output shown is from those runs. MATLAB uses the `l40s`/`h100` partitions with `--gres`; parallel MATLAB uses the local worker pool instead of the old cluster-profile import; PyTorch uses the shared `pytorch-2.5.1` environment and lists the real JupyterHub GPU server options and kernel name. The three pages are now `frozen` in `migrate_quickbytes.py` so a re-run can't revert them.
+* **Creation**: [CuPy: NumPy on the GPU](software/cupy.md) (QuickBytes PR #261), [Gaussian](software/gaussian.md) (PR #259) and [R batch jobs with Slurm](software/r-slurm-jobs.md) (PR #270), each tested on Easley. The R page fixes the draft script, which started 8 copies of the R script, and adds `assets/files/r/sequential_r.sh`. [R batch jobs with PBS (retired)](software/r-pbs-jobs.md) now points to it.
+* **Update**: [Getting started at CARC](getting-started/overview.md) adds a plain-language introduction for new users, what Mokey and ColdFront are each for, a who-needs-what table, and account self-service in Mokey, merged from QuickBytes PRs #318 and #295.
+
 ## 2026-10-27
 
 * **Update**: Consolidated all pages marked Tutorial, plus the Globus walkthrough, under `tutorials/`. Updated navigation, links, and migration destinations; generated compatibility pages preserve old URLs and section anchors on both publishing hosts.

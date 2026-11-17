@@ -19,6 +19,14 @@ sources:
     resource: "https://carc.unm.edu/new-users/getting-started-at-carc1.html"
     title: "Getting started at CARC (carc.unm.edu)"
     author: "team:unm-carc"
+  - id: quickbytes-pr-318
+    resource: "https://github.com/UNM-CARC/QuickBytes/pull/318"
+    title: "UNM-CARC QuickBytes PR #318: new-user onboarding (Welcome to CARC; Getting access)"
+    author: "human:hfricke"
+  - id: quickbytes-pr-295
+    resource: "https://github.com/UNM-CARC/QuickBytes/pull/295"
+    title: "UNM-CARC QuickBytes PR #295: ColdFront and Mokey account services"
+    author: "human:hfricke"
 ---
 
 # Getting started at CARC
@@ -28,9 +36,44 @@ computing resources to facilitate UNM research — free of charge to faculty,
 staff, and student researchers, with support from the UNM Office of the Vice
 President for Research.
 
+## New to research computing?
+
+You don't need a coding background to get started, and asking questions is
+exactly what CARC is for.
+
+CARC runs **clusters**: large groups of computers, called *nodes*, that many
+researchers share. Instead of running a program the moment you press Enter, as
+on a laptop, you ask for a share of the cluster's time and resources. Your work
+waits briefly until that share is free, then runs. A scheduler called
+[Slurm](https://carc.unm.edu/docs/running-jobs/slurm-intro/) handles the waiting and placement for
+you. CARC's current clusters are **Easley**, the general-purpose cluster most
+people use, and **Hopper** (see the [systems overview](https://carc.unm.edu/docs/systems/overview/)).
+
+Besides the clusters and storage, CARC offers one-on-one help running your
+research code, [workshops](https://carc.unm.edu/docs/training/workshops/) and
+[videos](https://carc.unm.edu/docs/training/videos/), these guides, and troubleshooting when
+something isn't working. See [Getting help](https://carc.unm.edu/docs/support/help/).
+
+## Accounts and projects
+
 Access is organized around **CARC accounts** (people) and **CARC projects**
 (resources). Every user needs an active account, and that account must belong
 to a project that holds the compute and storage resources you want to use.
+Each lives on its own website:
+
+| Website | What it's for |
+|---|---|
+| **Mokey** ([mokey.alliance.unm.edu](https://mokey.alliance.unm.edu){ target=_blank }) | Your personal account: username, password, two-factor authentication, and SSH keys. |
+| **ColdFront** ([coldfront.alliance.unm.edu](https://coldfront.alliance.unm.edu/){ target=_blank }) | Projects: a research group's space on CARC, led by a PI. Compute and storage allocations are requested and assigned here. |
+
+A Mokey account on its own doesn't give you access to anything: you also need
+to be added to a project in ColdFront.
+
+| You are... | What you need |
+|---|---|
+| A student or collaborator whose PI already has a project | A Mokey account, then ask your PI to add you in ColdFront |
+| A collaborator without a UNM email address | Your UNM PI requests an account for you |
+| A PI starting a new project | Confirm eligibility, create the project, and request resources in ColdFront |
 
 !!! note "Good Neighbor Use Policy"
 
@@ -58,8 +101,22 @@ Resources (compute time, storage) are attached to projects, managed through
 **ColdFront** at [coldfront.alliance.unm.edu](https://coldfront.alliance.unm.edu/){ target=_blank }.
 
 Ask the project's Principal Investigator — typically your research advisor or
-UNM collaborator — to add your account to their project. Once you are on a
-project, you can use every resource allocated to it.
+UNM collaborator — to add your account to their project. Adding people to a
+project is the PI's job (or the lab's designated project manager's); you can't
+add yourself. Once you are on a project, you can use every resource allocated
+to it.
+
+## Managing your account
+
+Use [Mokey](https://mokey.alliance.unm.edu){ target=_blank } to look after your
+own account at any time:
+
+* [Reset or change your password](https://carc.unm.edu/docs/getting-started/password-reset/), including after it
+  expires.
+* Turn on two-factor authentication and add or remove one-time-password
+  (TOTP) tokens.
+* [Add or remove SSH public keys](https://carc.unm.edu/docs/getting-started/ssh-keys/) for password-free logins.
+* See which projects and groups your account belongs to.
 
 ## For Principal Investigators
 
@@ -4682,6 +4739,165 @@ The first two lines are only necessary when you have not created a personal libr
 
 <p class="carc-provenance" markdown>Migrated from [UNM-CARC QuickBytes](https://github.com/UNM-CARC/QuickBytes/blob/master/R_at_CARC/installing_packages.md){target=_blank} (last source update 2026-07-30). Spotted a problem? [Open an issue or pull request](https://github.com/UNM-CARC/QuickBytes){target=_blank}.</p>
 
+---8<--- https://carc.unm.edu/docs/software/r-slurm-jobs/
+
+---
+title: "R batch jobs with Slurm"
+description: "Write and submit a Slurm script that runs an R script on Easley, line by line, using a CARC R module or your own conda R environment."
+type: Guide
+tags:
+  - R
+  - Slurm
+sources:
+  - id: quickbytes-pr-270
+    resource: "https://github.com/UNM-CARC/QuickBytes/pull/270"
+    title: "UNM-CARC QuickBytes PR #270: R_at_CARC for Easley and Slurm"
+    author: "human:hfricke"
+  - id: quickbytes
+    resource: "https://github.com/UNM-CARC/QuickBytes/blob/master/R_at_CARC/PBS_job_submission.md"
+    title: "UNM-CARC QuickBytes: R_at_CARC/PBS_job_submission.md"
+    author: "team:unm-carc"
+    last_modified: "2019-12-03T10:18:11-07:00"
+---
+
+# R batch jobs with Slurm
+
+To run R on a cluster, you write a **Slurm script**: a short bash script that
+lists the resources you want, loads R, and runs your R script. You submit it
+with `sbatch`, and Slurm runs it on a compute node when resources are free.
+This page builds one line by line. If you haven't set up R yet, start with
+[Getting R software](https://carc.unm.edu/docs/software/getting-r/).
+
+## An example R script
+
+Save this one-line R script as `my_script.R`. It prints the R version and the
+node it ran on:
+
+```r
+cat("Hello from R", R.version.string, "on", Sys.info()[["nodename"]], "\n")
+```
+
+## The Slurm script
+
+Save this as `my_slurm_script.sh` in the same directory, changing
+`my_name@unm.edu` to your email address:
+
+```bash
+#!/bin/bash
+
+#SBATCH --job-name my_r_job
+#SBATCH --partition general
+#SBATCH --ntasks 1
+#SBATCH --cpus-per-task 8
+#SBATCH --time 48:00:00
+#SBATCH --output my_r_job.out
+#SBATCH --error my_r_job.err
+#SBATCH --mail-type begin,end,fail
+#SBATCH --mail-user my_name@unm.edu
+
+cd $SLURM_SUBMIT_DIR
+
+module load libdeflate/1.14-2pby r/4.5.2-pspo
+export LD_LIBRARY_PATH=$LIBDEFLATE_LIB:$LD_LIBRARY_PATH
+
+Rscript my_script.R
+```
+
+Submit it from the Easley head node:
+
+```bash
+sbatch my_slurm_script.sh
+```
+
+When it finishes, `my_r_job.out` holds the script's output:
+
+```text
+Hello from R R version 4.5.2 (2025-10-31) on easley005
+```
+
+Your node name will differ.
+
+## What each part does
+
+A Slurm script is a bash script with extra lines that start with `#SBATCH`.
+Bash treats those lines as comments, but `sbatch` reads them as resource
+requests. The first line, `#!/bin/bash`, tells the system to run the rest of
+the file with bash.
+
+| Line | Meaning |
+|---|---|
+| `--job-name my_r_job` | The name shown in the queue (`squeue --me`). |
+| `--partition general` | Which group of nodes to run on. `general` is the default partition most users have. |
+| `--ntasks 1` | Run one copy of your program. |
+| `--cpus-per-task 8` | Give that one copy 8 CPU cores, which R can use through parallel packages such as `parallel` or `future`. |
+| `--time 48:00:00` | The most time your job may run (here 48 hours). Slurm stops the job when it runs out. |
+| `--output`, `--error` | Files for normal output and error messages. Point both at the same file if you want them combined. |
+| `--mail-type`, `--mail-user` | Email you when the job begins, ends, or fails. |
+
+Always set the time limit and the resources your job needs. For every option,
+run `man sbatch` on the head node or see the
+[Slurm introduction](https://carc.unm.edu/docs/running-jobs/slurm-intro/).
+
+The rest of the script is ordinary bash:
+
+* `cd $SLURM_SUBMIT_DIR` moves to the directory you ran `sbatch` from, so the
+  script finds `my_script.R` and writes its output there.
+* `module load libdeflate/1.14-2pby r/4.5.2-pspo` and the `export` line load
+  CARC's R 4.5.2. Keep both: without the `export` line, R fails inside Slurm
+  jobs with
+  `error while loading shared libraries: libdeflate.so.0: cannot open shared object file: No such file or directory`.
+* `Rscript my_script.R` runs your script. `Rscript` replaces the older
+  `R CMD BATCH`.
+
+!!! warning "One task, several CPUs"
+    Request `--ntasks 1` with `--cpus-per-task` for an ordinary R script.
+    If you ask for several tasks (for example `--ntasks-per-node 8`) and start
+    R with `srun`, Slurm runs **8 separate copies** of your script.
+
+## Using your own conda R environment
+
+If you installed R into a conda environment, as described in
+[Getting R software](https://carc.unm.edu/docs/software/getting-r/), replace the two R module lines in the
+script with:
+
+```bash
+module load miniconda3/latest
+source activate my_r_env
+```
+
+## A longer example
+
+The [sequential.R](https://carc.unm.edu/docs/assets/files/r/sequential.R) script simulates gene trees
+and compares them to a species tree. It needs the `TreeSim` and `phangorn`
+packages: install them first as described in
+[Installing R packages](https://carc.unm.edu/docs/software/r-packages/). Download
+[sequential_r.sh](https://carc.unm.edu/docs/assets/files/r/sequential_r.sh), put both files in the
+same directory, change the email address, and submit:
+
+```bash
+sbatch sequential_r.sh
+```
+
+The script saves the trees to `all_the_species_trees.pdf` and writes the mean
+and median tree distances to `r_sequential.out`. The trees are random, so your
+numbers will differ:
+
+```text
+null device
+          1
+[1] "mean is"
+[1] 2.593317
+[1] "median is"
+[1] 2.511453
+```
+
+`r_sequential.err` lists the packages R loaded (`ape`, `geiger`, `phytools`,
+`maps`). Those messages are normal.
+
+*Every command and script on this page was tested on Easley on November 16, 2026.*
+
+<p class="carc-provenance" markdown>Curated from [QuickBytes PR #270](https://github.com/UNM-CARC/QuickBytes/pull/270){target=_blank} and the earlier [PBS QuickByte](https://github.com/UNM-CARC/QuickBytes/blob/master/R_at_CARC/PBS_job_submission.md){target=_blank}. Spotted a problem? [Open an issue or pull request](https://github.com/UNM-CARC/docs){target=_blank}.</p>
+
 ---8<--- https://carc.unm.edu/docs/tutorials/parallel-r-future/
 
 ---
@@ -6225,16 +6441,18 @@ Monitor job output.
 ---8<--- https://carc.unm.edu/docs/software/parallel-matlab/
 
 ---
-title: "Parallel MATLAB: profile setup and batch submission"
-description: "Configure a cluster profile and submit parallel MATLAB jobs."
+title: "Parallel MATLAB batch jobs"
+description: "Run parfor loops on many cores of one Easley node with MATLAB's local worker pool, interactively or as a Slurm batch job."
 type: Guide
 tags:
   - MATLAB
   - Parallel
-generated:
-  by: "claude/fable-5"
-  at: "2026-08-29T00:00:00Z"
+  - Slurm
 sources:
+  - id: quickbytes-pr-277
+    resource: "https://github.com/UNM-CARC/QuickBytes/pull/277"
+    title: "UNM-CARC QuickBytes PR #277: Parallel MATLAB batch submission.md (tested on Easley)"
+    author: "human:hfricke"
   - id: quickbytes
     resource: "https://github.com/UNM-CARC/QuickBytes/blob/master/Parallel%20MATLAB%20profile%20setup%20and%20batch%20submission.md"
     title: "UNM-CARC QuickBytes: Parallel MATLAB profile setup and batch submission.md"
@@ -6242,88 +6460,137 @@ sources:
     last_modified: "2022-05-11T10:43:18-06:00"
 ---
 
-# Parallel MATLAB: profile setup and batch submission
+# Parallel MATLAB batch jobs
 
-### Setting up the cluster profile
-In order to submit a batch script that takes advantage of MATLAB Parallel Server you first need to set up a cluster profile. Thankfully this has already been done and all you need to do as a user is import the profile and that only needs to be done once. If you would like to do this interactively you can start an interactive session with the following:
+MATLAB's Parallel Computing Toolbox can split loops across many CPU cores. On
+Easley you request cores from Slurm as usual, then start a pool of MATLAB
+workers on those cores. There's no cluster profile to import.
+
+This page covers work that fits on one node. To spread MATLAB workers across
+several nodes, see [MATLAB Parallel Server](https://carc.unm.edu/docs/software/matlab-parallel-server/).
+
+!!! note "No profile import needed"
+    Older versions of this guide imported a cluster profile with
+    `parallel.importProfile('/opt/local/MATLAB/<cluster>-normal.settings')`.
+    You don't need that on Easley. `parpool` uses MATLAB's built-in local
+    (`Processes`) profile and the cores Slurm gave you.
+
+## Try it interactively
+
+Start an interactive session with 16 cores:
 
 ```bash
-hopper:~$ srun --pty bash
+easley-sn:~$ srun --partition general --ntasks 1 --cpus-per-task 16 --pty bash
 ```
-Once you have a node allocated to you load the MATLAB module and start a MATLAB session:
+
+Once a node is allocated, load MATLAB and start it:
 
 ```bash
-wheeler001:~$ module load matlab
-wheeler001:~$ matlab
-
-To get started, type doc.
-For product information, visit www.mathworks.com.
->>
+easley021:~$ module load matlab/R2024b
+easley021:~$ matlab
 ```
-Now simply import the cluster profile available in the root MATLAB folder:
 
-```
->> profile = parallel.importProfile('/opt/local/MATLAB/<cluster>-normal.settings')
-```
-With the settings imported you can now launch parallel pools for computation using the imported cluster profile. The code below is an example to test parallel computing across two nodes while timing execution:
+Start a pool the same size as the cores you requested, and time a `parfor`
+loop on it:
 
-```
->> poolobj = parpool(profile, 16)
->> tic
->> n = 200
->> A = 500
->> a = zeros(1,n)
->> parfor i = 1:n
->> a(i) = max(abs(eig(rand(A))))
->> end % You may need to hit enter more than once to get the prompt back.
->> toc
->> delete(poolobj);
-```
-Even better is to do everything using a batch script and avoid the mistakes associated with interactive computing. Below is an example MATLAB script named `parallel_matlab.m` that will import our cluster profile and compare the time of computation for a sequential for loop and a parallel for loop with 16 cores ('workers' in MATLAB speak):
-
-```
-profile = parallel.importProfile('/opt/local/MATLAB/<cluster>-normal.settings')
-
-poolobj = parpool(profile, 16);
-
+```matlab
+poolobj = parpool(16);
 tic
 n = 200;
 A = 500;
 a = zeros(1,n);
-for i=1:n;
-    a(i) = max(abs(eig(rand(A))))
-end
-toc
-
-tic
-n = 200;
-A = 500;
-a = zeros(1,n);
-parfor i=1:n;
-    a(i) = max(abs(eig(rand(A))))
+parfor i = 1:n
+    a(i) = max(abs(eig(rand(A))));
 end
 toc
 delete(poolobj);
 ```
-Now the PBS script we will call `parallel_matlab.pbs` to submit your sample MATLAB program:
 
+## Run it as a batch job
+
+A batch job avoids the mistakes that come with interactive work. This example
+compares a regular `for` loop with a 16-worker `parfor` loop.
+
+### MATLAB script
+
+Save this as `parallel_matlab.m`:
+
+```matlab
+poolobj = parpool(16);
+
+tic
+n = 200;
+A = 500;
+a = zeros(1,n);
+for i=1:n
+    a(i) = max(abs(eig(rand(A))));
+end
+toc
+
+tic
+n = 200;
+A = 500;
+a = zeros(1,n);
+parfor i=1:n
+    a(i) = max(abs(eig(rand(A))));
+end
+toc
+delete(poolobj);
 ```
+
+### Slurm script
+
+Save this as `parallel_matlab.sh`. Request as many `--cpus-per-task` as the
+worker count you pass to `parpool`:
+
+```bash
 #!/bin/bash
 
-#PBS -N parallel_matlab
-#PBS -l walltime=01:00:00
-#PBS -l nodes=1:ppn=8
-#PBS -j oe
+#SBATCH --job-name parallel_matlab
+#SBATCH --partition general
+#SBATCH --ntasks 1
+#SBATCH --cpus-per-task 16
+#SBATCH --time 00:10:00
+#SBATCH --output parallel_matlab_job.out
+#SBATCH --error parallel_matlab_job.err
 
-cd #PBS_O_WORKDIR
+cd $SLURM_SUBMIT_DIR
 
-module load matlab/R2019a
+module load matlab/R2024b
 
-matlab -r -nodisplay parallel_matlab > parallel_matlab.out
+matlab -nodisplay -r parallel_matlab > parallel_matlab.out
 ```
-Submit your PBS script with `qsub parallel_matlab.pbs` and hopefully all goes swimmingly. If you require assistance with MATLAB parallel computing please send an email to help@carc.unm.edu.
 
-<p class="carc-provenance" markdown>Migrated from [UNM-CARC QuickBytes](https://github.com/UNM-CARC/QuickBytes/blob/master/Parallel%20MATLAB%20profile%20setup%20and%20batch%20submission.md){target=_blank} (last source update 2022-05-11). Spotted a problem? [Open an issue or pull request](https://github.com/UNM-CARC/QuickBytes){target=_blank}.</p>
+!!! tip "Match the pool to the job automatically"
+    Instead of hard-coding `16` in both files, you can size the pool from
+    Slurm's allocation inside the MATLAB script:
+    `parpool(str2double(getenv('SLURM_CPUS_PER_TASK')))`.
+
+### Submit the job
+
+```bash
+easley-sn:~$ sbatch parallel_matlab.sh
+```
+
+After MATLAB's startup banner, `parallel_matlab.out` shows the regular loop's
+time first and the 16-worker `parfor` loop's second:
+
+```text
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 16 workers.
+Elapsed time is 21.161951 seconds.
+Elapsed time is 1.688252 seconds.
+Parallel pool using the 'Processes' profile is shutting down.
+```
+
+Your times will vary from run to run.
+
+If you need help with parallel MATLAB, email
+[help@carc.unm.edu](mailto:help@carc.unm.edu).
+
+*Every command and script on this page was tested on Easley on November 16, 2026.*
+
+<p class="carc-provenance" markdown>Curated from [QuickBytes PR #277](https://github.com/UNM-CARC/QuickBytes/pull/277){target=_blank} (tested on Easley) and the earlier [QuickByte](https://github.com/UNM-CARC/QuickBytes/blob/master/Parallel%20MATLAB%20profile%20setup%20and%20batch%20submission.md){target=_blank}. Spotted a problem? [Open an issue or pull request](https://github.com/UNM-CARC/docs){target=_blank}.</p>
 
 ---8<--- https://carc.unm.edu/docs/software/matlab-parallel-server/
 
@@ -6490,16 +6757,17 @@ If you are testing small scripts, they may run before you can type squeue. To wa
 
 ---
 title: "MATLAB on GPUs"
-description: "Accelerate MATLAB computations with GPUs on CARC clusters."
+description: "Accelerate MATLAB computations with the L40S and H100 GPUs on Easley, interactively or in Slurm batch jobs, on one GPU or several."
 type: Guide
 tags:
   - MATLAB
   - GPU
-status: draft
-generated:
-  by: "claude/fable-5"
-  at: "2026-08-29T00:00:00Z"
+stale_after: "2027-08-31T00:00:00Z"
 sources:
+  - id: quickbytes-pr-276
+    resource: "https://github.com/UNM-CARC/QuickBytes/pull/276"
+    title: "UNM-CARC QuickBytes PR #276: Using GPUs on Easley with MATLAB.md (tested on Easley)"
+    author: "human:hfricke"
   - id: quickbytes
     resource: "https://github.com/UNM-CARC/QuickBytes/blob/master/Using%20GPUs%20on%20Xena%20with%20MATLAB.md"
     title: "UNM-CARC QuickBytes: Using GPUs on Xena with MATLAB.md"
@@ -6509,122 +6777,98 @@ sources:
 
 # MATLAB on GPUs
 
-1. [Using a single GPU](#1)
-     1. [Use GPU in Interactive Session](#1.1)
-          1. [Identify and Select GPU](#1.1.1)
-          2. [Using Arrays on GPU](#1.1.2)
-          3. [Initialize Array](#1.1.3)
-          4. [Test if array is on GPU](#1.1.4)
-          5. [Retrieve Array from GPU](#1.1.5)
-          6. [Use functions on GPU Arrays](#1.1.6)
-     2. [Schedule a job](#1.2)
-          1. [MATLAB Script](#1.2.1)
-          2. [PBS Script](#1.2.2)
-          3. [Slurm Script](#1.2.3)
-          4. [Submit Job to Queue](#1.2.4)
-2. [Using multiple GPUs on a single node](#2)
-    1. [MATLAB Script](#2.2)
-    2. [Slurm Script](#2.2)
-    3. [Submit Job to Queue](#2.3)
-3. [Using Multiple Nodes with their own GPUs](#3)
+MATLAB's Parallel Computing Toolbox can run array operations on a GPU. On CARC,
+the GPU nodes are on [Easley](https://carc.unm.edu/docs/systems/overview/): the `l40s` partition
+(NVIDIA L40S) and the `h100` partition (NVIDIA H100). Request GPUs with
+`--gres=gpu:<type>:<count>`, for example `--gres=gpu:l40s:1`.
 
+This page covers using a single GPU interactively, running the same work as a
+Slurm batch job, and spreading work across several GPUs on one node.
 
-## Using a single GPU <a name="1"></a>
+## Using a single GPU
 
-MATLAB allows the utilization of a single GPU that is part of a machine.
-The following sections show how to access and utilize a GPU.
+### Start MATLAB on a GPU node
 
-### Use GPU in Interactive Session <a name="1.1"></a>
-
-First, we will open MATLAB in an interactive session on a GPU compute node.
-
-#### Identify and Select GPU <a name="1.1.1"></a>
-
-Start by requesting an interactive session:
+Request an interactive session with one GPU:
 
 ```bash
-hopper:~$ srun -G 1 --pty bash
+easley-sn:~$ srun --partition l40s --gres=gpu:l40s:1 --pty bash
 ```
 
-Once you have a node allocated to you, load the MATLAB module and start a MATLAB session:
+Once a node is allocated, load MATLAB and start it:
 
 ```bash
-xena01:~$ module load matlab
-xena01:~$ matlab
-
-To get started, type doc.
-For product information, visit www.mathworks.com.
->>
+easley055:~$ module load matlab/R2024b
+easley055:~$ matlab
 ```
 
-Now you can check to see the number of GPUs available:
-```bash
+### Identify and select the GPU
+
+Check how many GPUs MATLAB can see:
+
+```matlab
 >> gpuDeviceCount("available")
-```
-You should see the following:
-```bash
+
 ans =
+
      1
 ```
-This means that you have access to a single GPU.
 
-To get information about the available gpus, use this function:
-```bash
+This means you have access to a single GPU. To see its details, run:
+
+```matlab
 >> gpuDeviceTable
-```
-That will print something like this:
-```bash
+
 ans =
 
   1x5 table
 
-    Index        Name        ComputeCapability    DeviceAvailable    DeviceSelected
-    _____    ____________    _________________    _______________    ______________
+    Index        Name         ComputeCapability    DeviceAvailable    DeviceSelected
+    _____    _____________    _________________    _______________    ______________
 
-      1      "Tesla K40m"          "3.5"               true              false
+      1      "NVIDIA L40S"          "8.9"               true              false
 ```
 
-Next, you can tell MATLAB which GPU to use (pass in the desired index from the above table).
-If you do not do this, MATLAB will automatically grab the lowest index GPU when you try to use one.
-```bash
+You can tell MATLAB which GPU to use by passing its index from that table. If
+you don't, MATLAB uses the lowest-numbered GPU the first time you need one.
+
+```matlab
 >> gpuDevice(1)
 ```
 
-Running the `gpuDeviceTable` command again shows this change:
-```bash
+MATLAB prints the selected GPU's properties, including its name, memory, and
+compute capability. Running `gpuDeviceTable` again shows `DeviceSelected` is
+now `true`:
+
+```matlab
 >> gpuDeviceTable
 
 ans =
 
   1x5 table
 
-    Index        Name        ComputeCapability    DeviceAvailable    DeviceSelected
-    _____    ____________    _________________    _______________    ______________
+    Index        Name         ComputeCapability    DeviceAvailable    DeviceSelected
+    _____    _____________    _________________    _______________    ______________
 
-      1      "Tesla K40m"          "3.5"               true              true
-
+      1      "NVIDIA L40S"          "8.9"               true              true
 ```
 
-#### Using Arrays on GPU <a name="1.1.2"></a>
+### Move arrays to and from the GPU
 
-In order to utilize the GPU, data must be loaded into a `gpuArray` object.
-For a full description of the `gpuArray` object, please visit the official MathWorks Documentation at [https://www.mathworks.com/help/parallel-computing/gpuarray.html](https://www.mathworks.com/help/parallel-computing/gpuarray.html){target=_blank}
+To use the GPU, data must be in a `gpuArray` object. See the
+[MathWorks `gpuArray` documentation](https://www.mathworks.com/help/parallel-computing/gpuarray.html){target=_blank}
+for the full reference.
 
-##### Initialize Array <a name="1.1.3"></a>
-First, create a normal array using any method you like.
-In this example we will use the `magic(8)` function to create a magic square matrix that is 8x8.
-```bash
->> A = magic(8)
-```
-Next, pass that into a `gpuArray` object.
-This will copy the contents of a normal array into an array on the GPU.
-```bash
->> B = gpuArray(A)
+Create an ordinary array (here an 8x8 magic square), then copy it to the GPU:
+
+```matlab
+>> A = magic(8);
+>> B = gpuArray(A);
 ```
 
-##### Test if array is on GPU <a name="1.1.4"></a>
-The `isgpuarray` function tests if an array is on a GPU:
-```bash
+`isgpuarray` tells you where an array lives:
+
+```matlab
 >> isgpuarray(A)
 
 ans =
@@ -6641,17 +6885,12 @@ ans =
 
    1
 ```
-This confirms that array A is not on the GPU, but array B is.
 
-##### Retrieve Array from GPU <a name="1.1.5"></a>
-In order to retrieve an array from the GPU and put it back in the MATLAB workspace, use the `gather` function.
-It will copy the contents of an array on the GPU into a normal array.
-This is neccesary if you want to to perform non-GPU actions on your data after using the GPU.
-```bash
->> C = gather(B)
-```
-Now, we can test to see if C is stored on the gpu:
-```bash
+To bring results back into the normal MATLAB workspace, for example before
+saving them or using functions that don't support GPUs, use `gather`:
+
+```matlab
+>> C = gather(B);
 >> isgpuarray(C)
 
 ans =
@@ -6661,15 +6900,13 @@ ans =
    0
 ```
 
-#### Use functions on GPU Arrays <a name="1.1.6"></a>
-To perform functions on `gpuArray` objects, use the `arrayfun` function.
-In this example, we will apply the MATLAB `sqrt` function to the array (B) that we created in the previous step:
-```bash
-result = arrayfun(@sqrt,B)
-```
-This will apply the `sqrt` function to every element in the GPU array.
-`result` is also a GPU array:
-```bash
+### Run functions on GPU arrays
+
+`arrayfun` applies a function to every element of a `gpuArray` on the GPU, and
+the result stays on the GPU:
+
+```matlab
+>> result = arrayfun(@sqrt, B);
 >> isgpuarray(result)
 
 ans =
@@ -6677,26 +6914,22 @@ ans =
   logical
 
    1
-
 ```
 
-To see a list of MATLAB functions that are supported using gpus, visit [https://www.mathworks.com/help/parallel-computing/gpuarray.html](https://www.mathworks.com/help/parallel-computing/gpuarray.html){target=_blank}
+You can pass your own functions to `arrayfun` as well. MathWorks keeps a
+[list of functions that support GPU arrays](https://www.mathworks.com/help/parallel-computing/gpuarray.html){target=_blank}.
 
-You can also create your own functions to pass into `arrayfun`.
+## Run a GPU job with Slurm
 
-### Schedule a job <a name="1.2"></a>
-It is good idea to do everything using a batch script and avoid the mistakes associated with interactive computing.
-To get an idea of why performing functions on `gpuArray` objects is a good idea, let's create a simple MATLAB script that displays the amount of time it takes to perform the same computation on a cpu and on a gpu.
-We will then create a PBS script that schedules a job with a GPU to run the MATLAB script for us.
+Batch jobs avoid the mistakes that come with interactive work and free the GPU
+as soon as your script finishes. This example times the same `sqrt` on the CPU
+and on the GPU.
 
+### MATLAB script
 
-#### MATLAB Script <a name="1.2.1"></a>
-We will perform the `sqrt` function on a 5000x5000 array.
-The use of `tic` and `toc` allow us to time the seperate applications of `sqrt`.
+Save this as `gpu_matlab.m`. `tic` and `toc` time each version:
 
-Create the following script with the name `gpu_matlab.m`:
-
-```bash
+```matlab
 gpuDevice(1);
 
 A = magic(5000);
@@ -6707,38 +6940,15 @@ toc
 disp("sqrt of 5000x5000 matrix on gpu:")
 C = gpuArray(magic(5000));
 tic
-D = arrayfun(@sqrt,C);
+D = arrayfun(@sqrt, C);
 toc
 ```
-#### PBS Script <a name="1.2.2"></a>
 
-Now, let's create a PBS script called `gpu_matlab.pbs`.
-Replace the `<DIR>` with the path to the directory containing the MATLAB script created above.
-This script will request the desired resrouces, load the MATLAB module, then run the script.
-The output of the script will be sent to the file: `gpu_matlab.out`
+### Slurm script
 
-```bash
-#!/bin/bash
-
-#PBS -N gpu_test
-#PBS -l walltime=00:05:00
-#PBS -l nodes=1:ppn=1:gpus=1
-#PBS -j oe
-
-cd <DIR>
-
-module load matlab
-
-matlab -nodisplay -r gpu_matlab > gpu_matlab.out
-
-```
-
-#### Slurm Script <a name="1.2.3"></a>
-
-Now, let's create a Slurm script called `gpu_matlab.sh`.
-Replace the `<DIR>` with the path to the directory containing the MATLAB script created above.
-This script will request the desired resrouces, load the MATLAB module, then run the script.
-The output of the script will be sent to the file: `gpu_matlab.out`
+Save this as `gpu_matlab.sh`, replacing `<DIR>` with the directory that holds
+`gpu_matlab.m`. It requests one L40S GPU, loads MATLAB, and runs the script,
+writing MATLAB's output to `gpu_matlab.out`:
 
 ```bash
 #!/bin/bash
@@ -6747,52 +6957,56 @@ The output of the script will be sent to the file: `gpu_matlab.out`
 #SBATCH --output gpu_matlab_job.out
 #SBATCH --error gpu_matlab_job.err
 #SBATCH --time 00:05:00
+#SBATCH --partition l40s
 #SBATCH --ntasks 1
-#SBATCH -G 1
+#SBATCH --gres=gpu:l40s:1
 
 cd <DIR>
 
-module load matlab
+module load matlab/R2024b
 matlab -nodisplay -r gpu_matlab > gpu_matlab.out
 ```
 
+### Submit the job
 
-#### Submit Job to Queue <a name="1.2.4"></a>
-
-Now we can submit the job to the scheduler from the head node:
+Submit from the Easley head node, then read the results when it finishes:
 
 ```bash
-hopper:~$ sbatch gpu_matlab.sh
+easley-sn:~$ sbatch gpu_matlab.sh
+easley-sn:~$ cat gpu_matlab.out
 ```
 
-View the results:
-```bash
-hopper:~$ cat gpu_matlab.out
+After MATLAB's startup banner, `gpu_matlab.out` from a run on one L40S ends
+with:
+
+```text
+sqrt of 5000x5000 matrix on cpu:
+Elapsed time is 12.389680 seconds.
+sqrt of 5000x5000 matrix on gpu:
+Elapsed time is 0.381576 seconds.
 ```
 
-## Using multiple GPUs on a single node <a name="2"></a>
+Your times will vary a little from run to run.
 
-Some CARC nodes contain multiple GPUs.
-MATLAB allows for the utilization of multiple GPUs on a single node in the same way you use multiple CPUs.
-To show how this works, below is an example MATLAB script that will create a logistic map using all available GPU's on the assigned node.
+## Using multiple GPUs on one node
 
-The `parpool` object is used to create workers to parallelize the execution.
-Each worker will grab it's own GPU when performing actions with `gpuArray` objects.
-For this to work properly, ensure that you have been allocated an equal number of CPUs as GPUs on the machine.
-An example slurm script is included below to give an idea of how to ask for the proper resources to be allocated.
+Easley's `l40s` nodes have up to four L40S GPUs. MATLAB uses several GPUs the
+same way it uses several CPUs: a `parpool` starts one worker per GPU, and each
+worker picks up its own GPU when it works with `gpuArray` objects.
 
-### MATLAB Script <a name="2.1"></a>
+!!! note "Request one CPU per GPU"
+    MATLAB uses a CPU to drive each GPU, so set `--cpus-per-task` to the same
+    number as the GPU count in `--gres`. If the numbers don't match, MATLAB
+    may not find or use all the GPUs you were given.
 
-Create the following MATLAB script called `gpu_logistic_map.m`
-This simple MATLAB script creates a Logistic Map by iterating the logistic equation on a set of random populations.
-A worker is created for each available GPU.
-They will then split up the work performed in the `parfor` loop.
-The result is a logistic map figure saved as 'logistic_map.jpg'
-It also contains calls to time the execution of the `parfor` loop.
+### MATLAB script
 
+Save this as `gpu_logistic_map.m`. It builds a logistic map by iterating the
+logistic equation over a set of random populations. The `parfor` loop splits
+the simulations across one worker per GPU, the loop is timed, and the figure
+is saved as `logistic_map.jpg`:
 
-```bash
-
+```matlab
 N = 1000;
 r = gpuArray.linspace(0,4,N);
 
@@ -6808,7 +7022,7 @@ disp("Timing execution of parfor loop:")
 
 tic
 parfor i=1:numSimulations
-  X(i,:) = rand(1,N,'gpuArray')
+  X(i,:) = rand(1,N,'gpuArray');
   for n=1:numIterations
     X(i,:) = r.*X(i,:).*(1-X(i,:));
   end
@@ -6822,21 +7036,10 @@ saveas(f,'logistic_map','jpg')
 return
 ```
 
-### Slurm Script <a name="2.2"></a>
+### Slurm script
 
-
-When requesting two GPUs, you must also set `--cpus-per-task 2` and `-G 2` for MATLAB to correctly find and utilize the available GPUs.
-These numbers should match, as MATLAB will use a CPU to access each GPU.
-We ask for two CPUs and two GPUs.
-
-Create the following slurm scrpt called `gpu_logistic_map.sh`.
-Replace the `<DIR>` with the path to the directory containing the MATLAB script created above.
-This script will ask the scheduler for the proper resources.
-Once the resrouces are allocated, the script will run the MATLAB script from the above step.
-The MATLAB script will create a .jpg image once it has finished.
-Any output of the MATLAB script is redirected to `gpu_logistic_map.out`.
-
-
+Save this as `gpu_logistic_map.sh`, replacing `<DIR>` as before. It asks for
+two L40S GPUs and two CPUs:
 
 ```bash
 #!/bin/bash
@@ -6845,36 +7048,42 @@ Any output of the MATLAB script is redirected to `gpu_logistic_map.out`.
 #SBATCH --output gpu_logistic_map_job.out
 #SBATCH --error gpu_logistic_map_job.err
 #SBATCH --time 00:10:00
+#SBATCH --partition l40s
 #SBATCH --ntasks 1
 #SBATCH --cpus-per-task 2
-#SBATCH -G 2
+#SBATCH --gres=gpu:l40s:2
 
 cd <DIR>
 
-module load matlab
+module load matlab/R2024b
 matlab -nodisplay -r gpu_logistic_map > gpu_logistic_map.out
-
 ```
 
-### Submit Job to Queue <a name="2.3"></a>
+### Submit the job
 
-Now we can submit the job to the scheduler from the head node:
 ```bash
-hopper:~$ sbatch gpu_logistic_map.sh
-```
-View the results:
-```bash
-hopper:~$ cat gpu_logistic_map.out
+easley-sn:~$ sbatch gpu_logistic_map.sh
+easley-sn:~$ cat gpu_logistic_map.out
 ```
 
-You can also view the `logistic_map.jpg` image using your preferred method.
+After MATLAB's startup banner, `gpu_logistic_map.out` shows a pool with one
+worker per GPU and the loop's run time:
 
+```text
+Starting parallel pool (parpool) using the 'Processes' profile ...
+Connected to parallel pool with 2 workers.
+Timing execution of parfor loop:
+Elapsed time is 3.062344 seconds.
+Parallel pool using the 'Processes' profile is shutting down.
+```
 
-## Using Multiple Nodes with their own GPUs <a name="3"></a>
+When the job finishes, `logistic_map.jpg` is in the same directory. Copy it to
+your computer or open it in [Open OnDemand](https://carc.unm.edu/docs/interactive/open-ondemand/) to
+view it.
 
-Coming Soon! (Maybe)
+*Every command and script on this page was tested on Easley on November 16, 2026.*
 
-<p class="carc-provenance" markdown>Migrated from [UNM-CARC QuickBytes](https://github.com/UNM-CARC/QuickBytes/blob/master/Using%20GPUs%20on%20Xena%20with%20MATLAB.md){target=_blank} (last source update 2022-05-25). Spotted a problem? [Open an issue or pull request](https://github.com/UNM-CARC/QuickBytes){target=_blank}.</p>
+<p class="carc-provenance" markdown>Curated from [QuickBytes PR #276](https://github.com/UNM-CARC/QuickBytes/pull/276){target=_blank} (tested on Easley) and the earlier [QuickByte](https://github.com/UNM-CARC/QuickBytes/blob/master/Using%20GPUs%20on%20Xena%20with%20MATLAB.md){target=_blank}. Spotted a problem? [Open an issue or pull request](https://github.com/UNM-CARC/docs){target=_blank}.</p>
 
 ---8<--- https://carc.unm.edu/docs/tutorials/matlab-deep-learning/
 
@@ -7893,18 +8102,19 @@ conda install numpy pandas matplotlib scikit-learn
 
 ---
 title: "PyTorch on CARC GPUs"
-description: "Install and run GPU-enabled PyTorch on CARC clusters."
+description: "Use CARC's shared PyTorch 2.5.1 conda environment on Easley's L40S and H100 GPUs from Slurm jobs or JupyterHub, or build your own environment."
 type: Guide
 tags:
   - Python
   - GPU
   - Machine learning
   - PyTorch
-status: draft
-generated:
-  by: "claude/fable-5"
-  at: "2026-08-29T00:00:00Z"
+stale_after: "2027-08-31T00:00:00Z"
 sources:
+  - id: quickbytes-pr-275
+    resource: "https://github.com/UNM-CARC/QuickBytes/pull/275"
+    title: "UNM-CARC QuickBytes PR #275: PyTorch on Easley (tested on Easley)"
+    author: "human:hfricke"
   - id: quickbytes
     resource: "https://github.com/UNM-CARC/QuickBytes/blob/master/PyTorch_1.9_Xena.md"
     title: "UNM-CARC QuickBytes: PyTorch_1.9_Xena.md"
@@ -7914,122 +8124,149 @@ sources:
 
 # PyTorch on CARC GPUs
 
-### SSH in to the cluster
-To connect to a CARC cluster (Hopper in this example), you will need to use the secure shell command below with your username in place of $USERNAME. This will prompt you for your password. When typing your password, you will not get any visual feedback. If you have issues with connecting to the machine, please reach out to the CARC helpdesk.
-```
-ssh $USERNAME@hopper.alliance.unm.edu
+CARC maintains a shared, pre-built PyTorch conda environment on Easley, so most
+users don't need to install PyTorch at all. This page shows how to use it from
+a Slurm job and from JupyterHub, and how to build your own environment if you
+need a different version.
+
+Easley's GPU partitions are `l40s` (NVIDIA L40S) and `h100` (NVIDIA H100).
+Request GPUs with `--gres=gpu:<type>:<count>`. See the
+[systems overview](https://carc.unm.edu/docs/systems/overview/) for current hardware.
+
+## Log in to Easley
+
+```bash
+ssh $USERNAME@easley.alliance.unm.edu
 ```
 
-### Create the Condarc File
-To create the Condarc file that you will need, use your favorite text editor to create an empty file '.condarc'. For this tutorial I will use nano, which is an easy beginning text editor.
-```
-nano .condarc
-```
-The above code creates a blank file using the nano text editor.
+Replace `$USERNAME` with your CARC username. You won't see any characters
+while you type your password. See [Logging in](https://carc.unm.edu/docs/getting-started/logging-in/)
+if you have trouble connecting.
 
-In the condarc file you just created, paste the following then change the $USERNAME prompt to your username.
-```
-auto_activate_base: false
-channels:
-  - conda-forge
-  - defaults
-envs_dirs:
-  - /users/$USERNAME/.conda/envs
-pkgs_dirs:
-  - /users/$USERNAME/.conda/pkgs
-```
-If you are using nano, notice that at the bottom of the screen below, it lists options for how users can interact with the open file.
+## Use the shared PyTorch environment
 
-<img width="719" alt="Screenshot 2023-08-29 at 11 01 54 PM" src="https://github.com/UNM-CARC/QuickBytes/assets/130007104/c647a39d-c6d8-437f-917d-f9e1cee8d7e5">
+Load Miniconda and activate the shared environment:
 
-To save the lines of code you just pasted into the file, hold down the control key and press 'O'. This "writes out" or saves the text. You can then exit the text editor by holding down the control key and pressing 'X'.
-
-To confirm that the file has been edited and contains the correct code, run the command.
-
-```
-cat .condarc
+```bash
+module load miniconda3/latest
+source activate /projects/shared/conda/envs/pytorch-2.5.1
 ```
 
-The following text should appear under your command line.
-```
-auto_activate_base: false
-channels:
-  - conda-forge
-  - defaults
-envs_dirs:
-  - /users/{YOUR USERNAME HERE}/.conda/envs
-pkgs_dirs:
-  - /users/{YOUR USERNAME HERE}/.conda/pkgs
-```
-If you do not see this text appear, walk through the creation of the condarc file again.
+Your prompt now shows the environment name:
 
-## Navigate to the PyTorch1.9-K40-Compatible directory
-
-Run the following code to change directories into the PyTorch1.9-K40-Compatible directory.
-```
-cd /projects/shared/pytorch/PyTorch1.9-K40-Compatible
-
-```
-Assuming you have a default command line prompt, this will change your command prompt to reflect the updated directory. If you are not in the PyTorch1.9-K40-Compatible directory, you will run into issues in later steps. To confirm that you are in the correct directory, print your working directory with the following command.
-```
-pwd
-
+```text
+(pytorch-2.5.1) [username@easley ~]$
 ```
 
-### Create the Conda Environment
-Now that you are in the correct directory, you'll create your python environment. To create a python environment, you first need to load the miniconda3 module with the following command: (No output should print from this command)
-```
-module load miniconda3
-```
-You can then create the python environment by running the following command:
-```
-conda env create -f torch-1.9.0+cu11.1-K40.yml
-```
-When asked to proceed, enter "y"
+!!! note "Use `source activate`"
+    Use `source activate` rather than `conda activate` in your shell and in
+    Slurm scripts. `conda activate` needs shell initialization that isn't
+    reliably set up on CARC nodes.
 
-## Activate the Conda Environment
+## Test PyTorch on a GPU
 
-Once the environment is created, you will need to activate it before you start the pytorch installation. Activate the environment by running the following:
-```
-conda activate pytorch-1.9-cuda-11-K40
-```
-This command will add a prefix to your command prompt that indicates which environment you are in. Your command line prompt should take the form of:
-```
-(pytorch-1.9-cuda-11-K40)[(username)@(hostname) PyTorch1.9-K40-Compatible]$
-```
-## Pip installation
-To install pytorch, run the following command:
-```
-pip3 install --user torch-1.9.0+cu11.1-cp39-cp39-linux_x86_64.whl
-```
-After the installation is complete, we can confirm that the torch install was sucessful in JupyterHub. Follow the link below to the CARC website.
-```
-http://carc.unm.edu
-Navigate to Systems > JupyterHub Cluster Links > Hopper
-```
-<img width="1265" alt="Screenshot 2023-09-05 at 9 36 45 PM" src="https://github.com/UNM-CARC/QuickBytes/assets/130007104/eaeb6530-4627-4927-99c2-63b6cb34686f">
+This Slurm script requests two L40S GPUs and prints how many GPUs PyTorch can
+see. Save it as `gputest.sh`:
 
-Next, log in to JupyterHub with your CARC username and password. If you are logged in without being prompted to select a server, click on the control panel button in the upper right corner. Then select "Stop My Server", then select "Start Server"
+```bash
+#!/bin/bash
+#SBATCH --job-name gputest
+#SBATCH --partition l40s
+#SBATCH --gres=gpu:l40s:2
+#SBATCH --ntasks 1
+#SBATCH --cpus-per-task 4
+#SBATCH --time 00:05:00
+#SBATCH --output gputest.out
+#SBATCH --error gputest.err
 
-You will be prompted to choose a server. For this tutorial, I will choose a server option with GPUs.
+module load miniconda3/latest
+source activate /projects/shared/conda/envs/pytorch-2.5.1
+python3 -c "import torch; print(torch.cuda.device_count())"
 ```
-Example:
-1 hour, 2 GPUs, 16 cores, 60 GB RAM
+
+Submit it:
+
+```bash
+sbatch gputest.sh
 ```
-Create a new notebook by selecting new > Python [conda env:.conda-pytorch-1.9-cuda-11-K40]
 
+When it finishes, `gputest.out` contains:
 
-<img width="1184" alt="Screenshot 2023-09-05 at 9 41 11 PM" src="https://github.com/UNM-CARC/QuickBytes/assets/130007104/1e1505a7-a610-4ed4-a13a-e77d0a922738">
-
-
-To test that the installation was successful, run the following code.
+```text
+2
 ```
-import torch
-torch.cuda.device_count()
-```
-With 2 GPUs, you should get an output of 2.
 
-<p class="carc-provenance" markdown>Migrated from [UNM-CARC QuickBytes](https://github.com/UNM-CARC/QuickBytes/blob/master/PyTorch_1.9_Xena.md){target=_blank} (last source update 2023-09-20). Spotted a problem? [Open an issue or pull request](https://github.com/UNM-CARC/QuickBytes){target=_blank}.</p>
+`gputest.err` holds a short notice from Miniconda about conda-forge licensing.
+It appears every time the module loads and isn't an error.
+
+## Use PyTorch in JupyterHub
+
+1. Go to [easley.alliance.unm.edu/jupyter](https://easley.alliance.unm.edu/jupyter){target=_blank}
+   and log in with your CARC username and password. See
+   [JupyterHub](https://carc.unm.edu/docs/interactive/jupyterhub/) for more about CARC's
+   JupyterHub.
+2. If you are logged in without being asked to choose a server, open the
+   **Control Panel** (upper right), click **Stop My Server**, then
+   **Start Server**.
+3. Choose a server option with a GPU: `8 hours, 16 cores, 55GB RAM, 1 L40s GPU`,
+   `8 hours, 48 cores, 165GB RAM, 3 L40s GPU`, or
+   `8 hours, 32 cores, 500GB RAM, 1 H100 GPU`.
+4. Create a notebook with the **Python [conda env:conda-pytorch-2.5.1]**
+   kernel and run:
+
+    ```python
+    import torch
+    torch.cuda.device_count()
+    ```
+
+    The output is the number of GPUs in the option you chose: `1` for a
+    1-GPU server, `3` for the 3-GPU server.
+
+## Build your own environment
+
+If you need a different PyTorch version, or packages the shared environment
+doesn't have, create your own:
+
+```bash
+module load miniconda3/latest
+conda create -n my-pytorch-env python=3.11 pytorch torchvision pytorch-cuda -c pytorch -c nvidia -y
+source activate my-pytorch-env
+```
+
+This installs PyTorch 2.5.1 built for CUDA 12.4, which runs on Easley's GPUs.
+To use it in JupyterHub, register it as a kernel as described in
+[Conda environments in JupyterHub](https://carc.unm.edu/docs/software/conda-jupyterhub/).
+
+!!! warning "Don't `pip install torch` without choosing a CUDA version"
+    A plain `pip install torch` currently installs a build for CUDA 13, which
+    needs a newer NVIDIA driver than Easley has. It installs without complaint,
+    but the first GPU operation fails with
+    `RuntimeError: The NVIDIA driver on your system is too old (found version 12080)`.
+
+??? tip "Optional: keep environments and package caches in your home directory"
+    A `~/.condarc` file controls where conda puts environments and its package
+    cache, and which channels it searches. To keep both under your home
+    directory and prefer conda-forge, create `~/.condarc` with your preferred
+    editor (for example `nano ~/.condarc`) containing the following, with
+    `$USERNAME` replaced by your CARC username:
+
+    ```yaml
+    auto_activate_base: false
+    channels:
+      - conda-forge
+      - defaults
+    envs_dirs:
+      - /users/$USERNAME/.conda/envs
+    pkgs_dirs:
+      - /users/$USERNAME/.conda/pkgs
+    ```
+
+    Check it with `cat ~/.condarc`. See
+    [Conda channels and pip](https://carc.unm.edu/docs/software/conda-channels-pip/) for more about channels.
+
+*Every command and script on this page was tested on Easley on November 16, 2026.*
+
+<p class="carc-provenance" markdown>Curated from [QuickBytes PR #275](https://github.com/UNM-CARC/QuickBytes/pull/275){target=_blank} (tested on Easley) and the earlier [QuickByte](https://github.com/UNM-CARC/QuickBytes/blob/master/PyTorch_1.9_Xena.md){target=_blank}. Spotted a problem? [Open an issue or pull request](https://github.com/UNM-CARC/docs){target=_blank}.</p>
 
 ---8<--- https://carc.unm.edu/docs/tutorials/pytorch-classifier/
 
@@ -9459,6 +9696,197 @@ application-side pointer bug or a genuine gap in the CUDA-aware build —
 call, and the backtrace.
 
 <p class="carc-provenance" markdown>Distilled from a staff-reviewed, user-confirmed support-ticket resolution in the [CARC knowledge store](https://git.repo.alliance.unm.edu/CARC/CARC-knowledge-store){target=_blank}. Spotted a problem? [Open an issue or pull request](https://github.com/UNM-CARC/docs){target=_blank}.</p>
+
+---8<--- https://carc.unm.edu/docs/software/cupy/
+
+---
+title: "CuPy: NumPy on the GPU"
+description: "Install CuPy on Easley with the CUDA 12 wheel, move NumPy code onto L40S and H100 GPUs, and see when the GPU is and isn't faster."
+type: Guide
+tags:
+  - Python
+  - GPU
+  - CUDA
+stale_after: "2027-08-31T00:00:00Z"
+sources:
+  - id: quickbytes-pr-261
+    resource: "https://github.com/UNM-CARC/QuickBytes/pull/261"
+    title: "UNM-CARC QuickBytes PR #261: Refresh GPU benchmarks + add CuPy QuickByte (tested on Easley 2026-07-07)"
+    author: "human:hfricke"
+  - id: cs491-lecture-20
+    resource: "https://fricke.co.uk/Teaching/CS491_591_HPC_2025_Fall/Lectures/Lecture_20-GPU_Computation.pdf"
+    title: "UNM CS491/591 HPC, Lecture 20: GPU Computation"
+    author: "human:gmfricke"
+---
+
+# CuPy: NumPy on the GPU
+
+[CuPy](https://cupy.dev/){target=_blank} is a GPU array library that
+implements almost all of the NumPy API and much of SciPy. A `cupy.ndarray`
+lives in GPU memory and its operations run as CUDA kernels, so array-heavy
+NumPy code can often move to the GPU with very few changes.
+
+This page covers installing CuPy on Easley, basic use, and a CPU-versus-GPU
+benchmark. Easley's GPU partitions are `l40s` (NVIDIA L40S) and `h100`
+(NVIDIA H100); see the [systems overview](https://carc.unm.edu/docs/systems/overview/).
+
+## Install CuPy
+
+Create a conda environment (see [Conda environments](https://carc.unm.edu/docs/software/conda-environments/)
+for the basics):
+
+```bash
+module load miniconda3
+conda create -n cupy_env python=3.11 -y
+source activate cupy_env
+```
+
+Then install CuPy's CUDA 12 wheel with pip:
+
+```bash
+pip install "cupy-cuda12x[ctk]"
+```
+
+!!! warning "Don't install CuPy from conda-forge"
+    `conda install -c conda-forge cupy` currently installs a build linked
+    against CUDA 13, which needs a newer NVIDIA driver than Easley's GPU nodes
+    have. The first GPU operation then fails with
+    `cudaErrorInsufficientDriver: CUDA driver version is insufficient for CUDA runtime version`.
+    The `cupy-cuda12x` wheel matches Easley's driver.
+
+!!! note "Keep the `[ctk]` extra"
+    Without `[ctk]`, CuPy imports and handles simple operations, but features
+    that need other CUDA libraries fail. For example, `cupy.random` stops with
+    `ImportError: Failure finding "libcurand.so.11 or libcurand.so.10"`. The
+    extra installs the CUDA toolkit libraries and headers CuPy needs, so you
+    don't need `module load cuda`.
+
+## Basic use
+
+Request a GPU and start Python in your environment:
+
+```bash
+srun --partition l40s --mem 16G --ntasks 1 --cpus-per-task 4 -G 1 --pty bash
+module load miniconda3
+source activate cupy_env
+python3
+```
+
+```python
+import numpy as np
+import cupy as cp
+
+a_cpu = np.array([1, 2, 3])
+a_gpu = cp.array([1, 2, 3])
+print(a_gpu)
+print(type(a_gpu))
+print(a_gpu.sum())
+```
+
+```text
+[1 2 3]
+<class 'cupy.ndarray'>
+6
+```
+
+`a_gpu.sum()` runs as a CUDA kernel. To bring a result back into an ordinary
+NumPy array, use `cp.asnumpy`:
+
+```python
+print(cp.asnumpy(a_gpu))
+```
+
+```text
+[1 2 3]
+```
+
+Much NumPy code ports by swapping `import numpy as np` for
+`import cupy as cp` and calling `cp.asnumpy()` on anything you need back on
+the CPU, for example before plotting with Matplotlib, which doesn't accept
+GPU arrays.
+
+## CPU versus GPU benchmark
+
+This script times matrix multiplication with NumPy on the CPU and CuPy on the
+GPU at increasing sizes. CUDA calls return before the GPU finishes, so
+`cp.cuda.Stream.null.synchronize()` makes the timer wait for the GPU.
+
+Save it as `cupy_benchmark.py`:
+
+```python
+import time
+import numpy as np
+import cupy as cp
+
+SIZES = [1000, 2000, 4000, 8000]
+
+def bench_matmul_cpu(n):
+    a = np.random.rand(n, n)
+    b = np.random.rand(n, n)
+    start = time.perf_counter()
+    a @ b
+    return time.perf_counter() - start
+
+def bench_matmul_gpu(n):
+    a = cp.random.rand(n, n)
+    b = cp.random.rand(n, n)
+    cp.cuda.Stream.null.synchronize()
+    start = time.perf_counter()
+    a @ b
+    cp.cuda.Stream.null.synchronize()
+    return time.perf_counter() - start
+
+for n in SIZES:
+    cpu_t = bench_matmul_cpu(n)
+    gpu_t = bench_matmul_gpu(n)
+    print(f"N={n}  CPU: {cpu_t:.4f}s  GPU: {gpu_t:.4f}s  speedup: {cpu_t / gpu_t:.1f}x")
+```
+
+Run it on the GPU node:
+
+```bash
+python cupy_benchmark.py
+```
+
+Output from one L40S on Easley:
+
+```text
+N=1000  CPU: 0.0560s  GPU: 0.9546s  speedup: 0.1x
+N=2000  CPU: 0.0619s  GPU: 0.0141s  speedup: 4.4x
+N=4000  CPU: 0.4587s  GPU: 0.1043s  speedup: 4.4x
+N=8000  CPU: 3.5086s  GPU: 0.8313s  speedup: 4.2x
+```
+
+At N=1000 the GPU is slower. Every GPU operation pays a fixed cost for kernel
+launch and memory allocation, and the first one in a program also loads the
+CUDA math libraries. For small arrays that cost outweighs the GPU's speed, and
+the N=1000 timing varies a lot from run to run. Where the crossover falls depends on the operation and the
+hardware, but small workloads can run slower on a GPU, not faster.
+
+## Going further: several GPUs with NCCL and MPI
+
+Once code works on one GPU, you can spread it across several with
+[NCCL](https://developer.nvidia.com/nccl){target=_blank} (NVIDIA Collective
+Communication Library) and `mpi4py`. NCCL mirrors MPI's API (`ncclAllReduce`
+for `MPI_Allreduce`, `ncclBroadcast` for `MPI_Bcast`) but works directly on
+GPU memory. See also [CUDA-aware MPI](https://carc.unm.edu/docs/software/cuda-aware-mpi/).
+
+The [CS491/591 HPC course, Lecture 20: GPU Computation](https://fricke.co.uk/Teaching/CS491_591_HPC_2025_Fall/Lectures/Lecture_20-GPU_Computation.pdf){target=_blank}
+walks through converting an MPI loop to CuPy and NCCL. One lesson from it: for
+cheap per-element work, process the data in fixed-size batches rather than one
+huge array per GPU. A single huge array runs out of GPU memory
+(`cupy.cuda.memory.OutOfMemoryError`), and extra GPUs only pay off once the
+problem is very large.
+
+## Further reading
+
+* [CuPy documentation](https://docs.cupy.dev/en/stable/){target=_blank}
+* [CuPy and NumPy API comparison](https://docs.cupy.dev/en/stable/reference/comparison.html){target=_blank}
+* [NCCL user guide](https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/index.html){target=_blank}
+
+*Every command and script on this page was tested on Easley on November 16, 2026.*
+
+<p class="carc-provenance" markdown>Curated from [QuickBytes PR #261](https://github.com/UNM-CARC/QuickBytes/pull/261){target=_blank} (tested on Easley 2026-07-07). Spotted a problem? [Open an issue or pull request](https://github.com/UNM-CARC/docs){target=_blank}.</p>
 
 ---8<--- https://carc.unm.edu/docs/tutorials/gatk/
 
@@ -11697,6 +12125,187 @@ The output should be a job log (joined with any potential error file), and a .tr
 with BEAST at CARC please email help@carc.unm.edu.
 
 <p class="carc-provenance" markdown>Migrated from [UNM-CARC QuickBytes](https://github.com/UNM-CARC/QuickBytes/blob/master/Beast_at_CARC.md){target=_blank} (last source update 2019-10-15). Spotted a problem? [Open an issue or pull request](https://github.com/UNM-CARC/QuickBytes){target=_blank}.</p>
+
+---8<--- https://carc.unm.edu/docs/software/gaussian/
+
+---
+title: "Gaussian"
+description: "Run Gaussian 16 quantum chemistry jobs on Easley: load the module, write an input file, run interactively, and scale across nodes with Linda."
+type: Guide
+tags:
+  - Chemistry
+  - Gaussian
+  - Slurm
+stale_after: "2027-08-31T00:00:00Z"
+sources:
+  - id: quickbytes-pr-259
+    resource: "https://github.com/UNM-CARC/QuickBytes/pull/259"
+    title: "UNM-CARC QuickBytes PR #259: Add Gaussian QuickByte (tested on Easley 2026-07-07)"
+    author: "human:hfricke"
+  - id: gaussian-workshop
+    resource: "https://carc.unm.edu/docs/assets/files/workshops/IntermediateIntroToCARCWorkshopGaussian_1hr.pdf"
+    title: "CARC Intermediate Introduction to Computing at CARC: 1 hour version with Gaussian"
+    author: "team:unm-carc"
+---
+
+# Gaussian
+
+[Gaussian](https://gaussian.com/){target=_blank} is a general-purpose
+computational chemistry package for quantum chemistry calculations such as
+geometry optimizations, energies, and vibrational frequencies. This page
+covers loading Gaussian 16 on Easley, running a job interactively, and
+submitting a batch job that runs across two nodes.
+
+## Load Gaussian
+
+```bash
+module load gaussian/g16
+```
+
+Loading the module sets Gaussian's scratch directory for you:
+
+```text
+Gaussian scratch directory (GAUSS_SCRDIR) set to /easley/scratch/users/<your_username>/
+```
+
+## Create an input file
+
+A Gaussian job is a plain-text `.com` input file: a route line (the
+calculation to run), a title, the charge and spin multiplicity, and a
+molecular geometry. You can draw a molecule in
+[Avogadro](https://two.avogadro.cc/){target=_blank} and export it with
+**File > Export > Molecule...** as "Gaussian Z-Matrix Input", or write a small
+geometry by hand. For example, save this as `water.com`:
+
+```text
+%chk=water.chk
+%mem=4GB
+%nprocshared=4
+# opt B3LYP/6-31G(d)
+
+Water molecule optimization
+
+0 1
+O    0.000000    0.000000    0.000000
+H    0.000000    0.757000    0.586000
+H    0.000000   -0.757000    0.586000
+
+```
+
+* `# opt B3LYP/6-31G(d)` runs a geometry optimization (`opt`) with the B3LYP
+  functional and the 6-31G(d) basis set.
+* `0 1` is the molecule's charge and spin multiplicity.
+* The file must end with a blank line, or Gaussian won't read the input.
+
+## Run interactively
+
+Gaussian must run on a compute node, not the login node. Request one, then
+run the job:
+
+```bash
+srun --partition debug --ntasks 1 --cpus-per-task 4 --mem 8G --pty bash
+module load gaussian/g16
+g16 water.com water.log
+```
+
+Check whether it succeeded:
+
+```bash
+grep -i "normal termination" water.log
+```
+
+```text
+ Normal termination of Gaussian 16 at Mon Nov 16 10:32:29 2026.
+```
+
+"Normal termination" means the job finished successfully; this small
+optimization takes a few seconds. If a job fails, that line is missing and
+the last lines of the log describe the error.
+
+## Run across nodes with Linda
+
+To use more than one node, Gaussian uses **Linda** to coordinate copies of
+itself across nodes. Linda doesn't read Slurm's allocation directly, so the
+batch script converts the node list in `$CARC_NODEFILE` (set by CARC once your
+job starts) into the format Linda expects.
+
+Remove the output from the interactive run first:
+
+```bash
+rm -f water.log water.chk
+```
+
+Save this as `gaussian16_linda_water.sh`:
+
+```bash
+#!/bin/bash
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=4
+#SBATCH --time=00:10:00
+#SBATCH --job-name=g16_water
+
+module load gaussian/g16
+
+# To make linda print verbose messages
+export GAUSS_LFLAGS="-v"
+
+INPUT_MOLECULE=$SLURM_SUBMIT_DIR/water.com
+OUTPUT_FILE=$SLURM_SUBMIT_DIR/water.log
+
+# Reformat the SLURM provided list of compute nodes to a format Gaussian can understand
+# i.e. remove duplicates and replace newlines with commas
+export GAUSS_WDEF=$(cat $CARC_NODEFILE | uniq | sed -z 's/\n/,/g;s/,$/\n/')
+
+# Tell Linda to use as many nodes as requested by the user
+export GAUSS_PDEF=$SLURM_CPUS_PER_TASK
+echo "Parallelizing $GAUSS_PDEF processes across $GAUSS_WDEF nodes."
+
+# Set the memory Gaussian variable
+export GAUSS_MDEF=4GB
+
+# Run Gaussian
+g16 $INPUT_MOLECULE $OUTPUT_FILE
+```
+
+Submit it and watch the queue:
+
+```bash
+sbatch gaussian16_linda_water.sh
+squeue --me
+```
+
+When the job finishes, its Slurm output file shows Linda splitting the work
+between the two nodes:
+
+```text
+Gaussian scratch directory (GAUSS_SCRDIR) set to /easley/scratch/users/<your_username>/
+Parallelizing 4 processes across easley012,easley013 nodes.
+ntsnet: using executable file /opt/local/gaussian/g16/C.01/avx2/g16/linda-exe/l302.exel
+ntsnet: trying to schedule 1 worker
+ntsnet: scheduled a total of 1 worker
+ntsnet: starting master process on easley012
+ntsnet: starting 1 worker on easley013
+...
+```
+
+Your node names and the `linda-exe` programs listed will differ; what matters
+is a master process on one node and a worker on the other. Check `water.log`
+as before: it should end with "Normal termination of Gaussian 16."
+
+## Further reading
+
+* [Gaussian 16 manual](https://gaussian.com/man/){target=_blank}
+* [Route-line keyword reference](https://gaussian.com/keywords/){target=_blank}
+  (functionals, basis sets, job types)
+* CARC workshop slides:
+  [Intermediate workshop: Gaussian (1 hour)](https://carc.unm.edu/docs/assets/files/workshops/IntermediateIntroToCARCWorkshopGaussian_1hr.pdf)
+  and [Slurm with Gaussian and Abinit](https://carc.unm.edu/docs/assets/files/workshops/IntroToCARCWorkshopSlurmGaussianAbinit.pdf).
+  See [Workshops](https://carc.unm.edu/docs/training/workshops/) for more.
+
+*Every command and script on this page was tested on Easley on November 16, 2026.*
+
+<p class="carc-provenance" markdown>Curated from [QuickBytes PR #259](https://github.com/UNM-CARC/QuickBytes/pull/259){target=_blank} (tested on Easley 2026-07-07), based on the CARC intermediate workshop with Gaussian. Spotted a problem? [Open an issue or pull request](https://github.com/UNM-CARC/docs){target=_blank}.</p>
 
 ---8<--- https://carc.unm.edu/docs/tutorials/vasp/
 
@@ -14844,7 +15453,7 @@ sources:
 # R batch jobs with PBS (retired)
 
 !!! warning "Please note"
-    CARC schedulers now run Slurm. See [R on CARC systems](https://carc.unm.edu/docs/software/r-usage/) and [Example Slurm scripts](https://carc.unm.edu/docs/running-jobs/example-slurm-scripts/) instead.
+    CARC schedulers now run Slurm. See [R batch jobs with Slurm](https://carc.unm.edu/docs/software/r-slurm-jobs/), [R on CARC systems](https://carc.unm.edu/docs/software/r-usage/), and [Example Slurm scripts](https://carc.unm.edu/docs/running-jobs/example-slurm-scripts/) instead.
 
 ## The PBS script
 In order to actually submit a job to the cluster you need a PBS script that lists all of the resources you are requesting, the software you want to use, and the commands to that software. So pretend we have an R script called "my_script.R" that you want to run on Wheeler, the PBS script would look something like this:
@@ -14931,6 +15540,12 @@ Rscript my_script.R
 ---8<--- https://carc.unm.edu/docs/log/
 
 # Documentation update log
+
+## 2026-11-16
+
+* **Update**: [MATLAB on GPUs](https://carc.unm.edu/docs/software/matlab-gpu/), [Parallel MATLAB batch jobs](https://carc.unm.edu/docs/software/parallel-matlab/) and [PyTorch on CARC GPUs](https://carc.unm.edu/docs/software/pytorch/) are rewritten for Easley from Graviton28's QuickBytes PRs #276, #277 and #275, which the migration never picked up because the source files had been renamed. Every command and script was re-run on Easley and every output shown is from those runs. MATLAB uses the `l40s`/`h100` partitions with `--gres`; parallel MATLAB uses the local worker pool instead of the old cluster-profile import; PyTorch uses the shared `pytorch-2.5.1` environment and lists the real JupyterHub GPU server options and kernel name. The three pages are now `frozen` in `migrate_quickbytes.py` so a re-run can't revert them.
+* **Creation**: [CuPy: NumPy on the GPU](https://carc.unm.edu/docs/software/cupy/) (QuickBytes PR #261), [Gaussian](https://carc.unm.edu/docs/software/gaussian/) (PR #259) and [R batch jobs with Slurm](https://carc.unm.edu/docs/software/r-slurm-jobs/) (PR #270), each tested on Easley. The R page fixes the draft script, which started 8 copies of the R script, and adds `assets/files/r/sequential_r.sh`. [R batch jobs with PBS (retired)](https://carc.unm.edu/docs/software/r-pbs-jobs/) now points to it.
+* **Update**: [Getting started at CARC](https://carc.unm.edu/docs/getting-started/overview/) adds a plain-language introduction for new users, what Mokey and ColdFront are each for, a who-needs-what table, and account self-service in Mokey, merged from QuickBytes PRs #318 and #295.
 
 ## 2026-10-27
 

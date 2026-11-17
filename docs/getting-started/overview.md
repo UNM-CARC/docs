@@ -13,6 +13,14 @@ sources:
     resource: "https://carc.unm.edu/new-users/getting-started-at-carc1.html"
     title: "Getting started at CARC (carc.unm.edu)"
     author: "team:unm-carc"
+  - id: quickbytes-pr-318
+    resource: "https://github.com/UNM-CARC/QuickBytes/pull/318"
+    title: "UNM-CARC QuickBytes PR #318: new-user onboarding (Welcome to CARC; Getting access)"
+    author: "human:hfricke"
+  - id: quickbytes-pr-295
+    resource: "https://github.com/UNM-CARC/QuickBytes/pull/295"
+    title: "UNM-CARC QuickBytes PR #295: ColdFront and Mokey account services"
+    author: "human:hfricke"
 ---
 
 # Getting started at CARC
@@ -22,9 +30,44 @@ computing resources to facilitate UNM research — free of charge to faculty,
 staff, and student researchers, with support from the UNM Office of the Vice
 President for Research.
 
+## New to research computing?
+
+You don't need a coding background to get started, and asking questions is
+exactly what CARC is for.
+
+CARC runs **clusters**: large groups of computers, called *nodes*, that many
+researchers share. Instead of running a program the moment you press Enter, as
+on a laptop, you ask for a share of the cluster's time and resources. Your work
+waits briefly until that share is free, then runs. A scheduler called
+[Slurm](../running-jobs/slurm-intro.md) handles the waiting and placement for
+you. CARC's current clusters are **Easley**, the general-purpose cluster most
+people use, and **Hopper** (see the [systems overview](../systems/overview.md)).
+
+Besides the clusters and storage, CARC offers one-on-one help running your
+research code, [workshops](../training/workshops.md) and
+[videos](../training/videos.md), these guides, and troubleshooting when
+something isn't working. See [Getting help](../support/help.md).
+
+## Accounts and projects
+
 Access is organized around **CARC accounts** (people) and **CARC projects**
 (resources). Every user needs an active account, and that account must belong
 to a project that holds the compute and storage resources you want to use.
+Each lives on its own website:
+
+| Website | What it's for |
+|---|---|
+| **Mokey** ([mokey.alliance.unm.edu](https://mokey.alliance.unm.edu){ target=_blank }) | Your personal account: username, password, two-factor authentication, and SSH keys. |
+| **ColdFront** ([coldfront.alliance.unm.edu](https://coldfront.alliance.unm.edu/){ target=_blank }) | Projects: a research group's space on CARC, led by a PI. Compute and storage allocations are requested and assigned here. |
+
+A Mokey account on its own doesn't give you access to anything: you also need
+to be added to a project in ColdFront.
+
+| You are... | What you need |
+|---|---|
+| A student or collaborator whose PI already has a project | A Mokey account, then ask your PI to add you in ColdFront |
+| A collaborator without a UNM email address | Your UNM PI requests an account for you |
+| A PI starting a new project | Confirm eligibility, create the project, and request resources in ColdFront |
 
 !!! note "Good Neighbor Use Policy"
 
@@ -52,8 +95,22 @@ Resources (compute time, storage) are attached to projects, managed through
 **ColdFront** at [coldfront.alliance.unm.edu](https://coldfront.alliance.unm.edu/){ target=_blank }.
 
 Ask the project's Principal Investigator — typically your research advisor or
-UNM collaborator — to add your account to their project. Once you are on a
-project, you can use every resource allocated to it.
+UNM collaborator — to add your account to their project. Adding people to a
+project is the PI's job (or the lab's designated project manager's); you can't
+add yourself. Once you are on a project, you can use every resource allocated
+to it.
+
+## Managing your account
+
+Use [Mokey](https://mokey.alliance.unm.edu){ target=_blank } to look after your
+own account at any time:
+
+* [Reset or change your password](password-reset.md), including after it
+  expires.
+* Turn on two-factor authentication and add or remove one-time-password
+  (TOTP) tokens.
+* [Add or remove SSH public keys](ssh-keys.md) for password-free logins.
+* See which projects and groups your account belongs to.
 
 ## For Principal Investigators
 

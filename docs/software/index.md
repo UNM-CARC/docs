@@ -27,6 +27,7 @@ Short, practical CARC guides for software, programming environments, and researc
 * [R on CARC systems](r-usage.md) - Load R, run scripts in batch jobs, and use R interactively on CARC clusters.
 * [Getting R software](getting-r.md) - Available R versions and how to load them with environment modules.
 * [Installing R packages](r-packages.md) - Install R packages into your user library on CARC systems.
+* [R batch jobs with Slurm](r-slurm-jobs.md) - Write and submit a Slurm script that runs an R script on Easley, line by line, using a CARC R module or your own conda R environment.
 * [Parallel R with the future package](../tutorials/parallel-r-future.md) - Parallelize R code across cores and nodes using the future framework.
 * [Gurobi optimizer with R](gurobi-r.md) - Use the Gurobi optimization solver from R on CARC clusters.
 
@@ -38,9 +39,9 @@ Short, practical CARC guides for software, programming environments, and researc
 ## MATLAB
 
 * [Running MATLAB jobs](matlab-jobs.md) - Run MATLAB non-interactively in Slurm batch jobs on CARC clusters.
-* [Parallel MATLAB: profile setup and batch submission](parallel-matlab.md) - Configure a cluster profile and submit parallel MATLAB jobs.
+* [Parallel MATLAB batch jobs](parallel-matlab.md) - Run parfor loops on many cores of one Easley node with MATLAB's local worker pool, interactively or as a Slurm batch job.
 * [MATLAB Parallel Server](matlab-parallel-server.md) - Use MATLAB Parallel Server to scale parpool jobs across multiple nodes.
-* [MATLAB on GPUs](matlab-gpu.md) - Accelerate MATLAB computations with GPUs on CARC clusters.
+* [MATLAB on GPUs](matlab-gpu.md) - Accelerate MATLAB computations with the L40S and H100 GPUs on Easley, interactively or in Slurm batch jobs, on one GPU or several.
 * [MATLAB deep learning](../tutorials/matlab-deep-learning.md) - Train deep learning models in MATLAB using CARC GPU nodes.
 
 ## Mathematica
@@ -50,7 +51,7 @@ Short, practical CARC guides for software, programming environments, and researc
 ## AI and machine learning
 
 * [Installing deep learning packages](deep-learning-packages.md) - Install GPU-enabled deep learning frameworks (PyTorch, TensorFlow) into conda environments.
-* [PyTorch on CARC GPUs](pytorch.md) - Install and run GPU-enabled PyTorch on CARC clusters.
+* [PyTorch on CARC GPUs](pytorch.md) - Use CARC's shared PyTorch 2.5.1 conda environment on Easley's L40S and H100 GPUs from Slurm jobs or JupyterHub, or build your own environment.
 * [PyTorch image classifier walkthrough](../tutorials/pytorch-classifier.md) - End-to-end example: train an image classifier with PyTorch on a CARC GPU node.
 * [TensorFlow on CARC GPUs](tensorflow.md) - Install and run GPU-enabled TensorFlow on CARC clusters.
 * [Multi-GPU TensorFlow](../tutorials/tensorflow-multi-gpu.md) - Distribute TensorFlow training across multiple GPUs on a CARC node.
@@ -61,6 +62,7 @@ Short, practical CARC guides for software, programming environments, and researc
 * [Apache Spark](../tutorials/spark.md) - Launch Apache Spark clusters inside Slurm allocations for large-scale data analysis.
 * [ParaView remote visualization](paraview.md) - Run the ParaView server on CARC compute nodes and connect from your desktop client.
 * [CUDA-aware MPI](cuda-aware-mpi.md) - Pass GPU device pointers directly to MPI calls with the CUDA-aware OpenMPI/UCX stack, and fix the mixed-environment segfault.
+* [CuPy: NumPy on the GPU](cupy.md) - Install CuPy on Easley with the CUDA 12 wheel, move NumPy code onto L40S and H100 GPUs, and see when the GPU is and isn't faster.
 
 ## Bioinformatics
 
@@ -74,6 +76,7 @@ Short, practical CARC guides for software, programming environments, and researc
 
 ## Chemistry & materials
 
+* [Gaussian](gaussian.md) - Run Gaussian 16 quantum chemistry jobs on Easley: load the module, write an input file, run interactively, and scale across nodes with Linda.
 * [VASP materials simulation](../tutorials/vasp.md) - Set up and run VASP density-functional-theory calculations on CARC clusters.
 * [ORCA quantum chemistry](../tutorials/orca.md) - Run ORCA quantum chemistry calculations in parallel on CARC clusters.
 

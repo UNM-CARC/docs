@@ -176,6 +176,10 @@ PAGES: list[Page] = [
     Page("parallel_jupyterhub_with_dask_and_scikit-learn.md", "tutorials/dask-scikit-learn.md", "Parallel Python with Dask and scikit-learn",
          "Scale scikit-learn workloads across cluster nodes from JupyterHub using Dask.",
          "Tutorial", ["Python", "Jupyter", "Parallel", "Dask"]),
+    Page("cupy_intro.md", "software/cupy.md", "CuPy: NumPy on the GPU",
+         "Install CuPy on Easley with the CUDA 12 wheel, move NumPy code onto L40S and H100 GPUs, and see when the GPU is and isn't faster.",
+         "Guide", ["Python", "GPU", "CUDA"], stale_after=HW_STALE,
+         frozen=True),  # 2026-11-16: curated from QuickBytes PR #261, tested on Easley
     Page("", "software/cuda-aware-mpi.md", "CUDA-aware MPI",
          "Pass GPU device pointers directly to MPI calls with the CUDA-aware OpenMPI/UCX stack, and fix the mixed-environment segfault.",
          "Guide", ["MPI", "GPU", "CUDA"], repo="hand"),
@@ -203,21 +207,27 @@ PAGES: list[Page] = [
     Page("R_at_CARC/PBS_job_submission.md", "software/r-pbs-jobs.md", "R batch jobs with PBS (retired)",
          "Historical instructions for submitting R jobs with PBS/Torque, which CARC has replaced with Slurm.",
          "Guide", ["R", "PBS", "Legacy"], status="deprecated",
-         note="CARC schedulers now run Slurm. See [R on CARC systems](r-usage.md) and [Example Slurm scripts](../running-jobs/example-slurm-scripts.md) instead."),
+         note="CARC schedulers now run Slurm. See [R batch jobs with Slurm](r-slurm-jobs.md), [R on CARC systems](r-usage.md), and [Example Slurm scripts](../running-jobs/example-slurm-scripts.md) instead."),
+    Page("R_at_CARC/Slurm_job_submission.md", "software/r-slurm-jobs.md", "R batch jobs with Slurm",
+         "Write and submit a Slurm script that runs an R script on Easley, line by line, using a CARC R module or your own conda R environment.",
+         "Guide", ["R", "Slurm"],
+         frozen=True),  # 2026-11-16: curated from QuickBytes PR #270, tested on Easley
 
     # ---- Software: MATLAB
     Page("running_matlab_jobs.md", "software/matlab-jobs.md", "Running MATLAB jobs",
          "Run MATLAB non-interactively in Slurm batch jobs on CARC clusters.",
          "Guide", ["MATLAB", "Jobs"]),
-    Page("Parallel MATLAB profile setup and batch submission.md", "software/parallel-matlab.md", "Parallel MATLAB: profile setup and batch submission",
-         "Configure a cluster profile and submit parallel MATLAB jobs.",
-         "Guide", ["MATLAB", "Parallel"]),
+    Page("Parallel MATLAB batch submission.md", "software/parallel-matlab.md", "Parallel MATLAB batch jobs",
+         "Run parfor loops on many cores of one Easley node with MATLAB's local worker pool, interactively or as a Slurm batch job.",
+         "Guide", ["MATLAB", "Parallel", "Slurm"],
+         frozen=True),  # 2026-11-16: curated from QuickBytes PR #277, tested on Easley
     Page("ParallelMatlabServer.md", "software/matlab-parallel-server.md", "MATLAB Parallel Server",
          "Use MATLAB Parallel Server to scale parpool jobs across multiple nodes.",
          "Guide", ["MATLAB", "Parallel"]),
-    Page("Using GPUs on Xena with MATLAB.md", "software/matlab-gpu.md", "MATLAB on GPUs",
-         "Accelerate MATLAB computations with GPUs on CARC clusters.",
-         "Guide", ["MATLAB", "GPU"], status="draft"),
+    Page("Using GPUs on Easley with MATLAB.md", "software/matlab-gpu.md", "MATLAB on GPUs",
+         "Accelerate MATLAB computations with the L40S and H100 GPUs on Easley, interactively or in Slurm batch jobs, on one GPU or several.",
+         "Guide", ["MATLAB", "GPU"], stale_after=HW_STALE,
+         frozen=True),  # 2026-11-16: curated from QuickBytes PR #276, tested on Easley
     Page("MATLAB Deep Learning on Xena.md", "tutorials/matlab-deep-learning.md", "MATLAB deep learning",
          "Train deep learning models in MATLAB using CARC GPU nodes.",
          "Tutorial", ["MATLAB", "GPU", "Machine learning"], status="draft"),
@@ -228,9 +238,10 @@ PAGES: list[Page] = [
          "Tutorial", ["Mathematica", "Wolfram Language", "Slurm", "Easley", "GPU"], repo="hand"),
 
     # ---- Software: AI & ML
-    Page("PyTorch_1.9_Xena.md", "software/pytorch.md", "PyTorch on CARC GPUs",
-         "Install and run GPU-enabled PyTorch on CARC clusters.",
-         "Guide", ["Python", "GPU", "Machine learning", "PyTorch"], status="draft"),
+    Page("PyTorch_on_Easley.md", "software/pytorch.md", "PyTorch on CARC GPUs",
+         "Use CARC's shared PyTorch 2.5.1 conda environment on Easley's L40S and H100 GPUs from Slurm jobs or JupyterHub, or build your own environment.",
+         "Guide", ["Python", "GPU", "Machine learning", "PyTorch"], stale_after=HW_STALE,
+         frozen=True),  # 2026-11-16: curated from QuickBytes PR #275, tested on Easley
     Page("PyTorch_Classifier_Xena .ipynb", "tutorials/pytorch-classifier.md", "PyTorch image classifier walkthrough",
          "End-to-end example: train an image classifier with PyTorch on a CARC GPU node.",
          "Tutorial", ["Python", "GPU", "Machine learning", "PyTorch"], notebook=True, status="draft"),
@@ -289,6 +300,10 @@ PAGES: list[Page] = [
     Page("test_vasp_quickbyte.md", "tutorials/vasp.md", "VASP materials simulation",
          "Set up and run VASP density-functional-theory calculations on CARC clusters.",
          "Tutorial", ["Materials science", "Chemistry"]),
+    Page("gaussian.md", "software/gaussian.md", "Gaussian",
+         "Run Gaussian 16 quantum chemistry jobs on Easley: load the module, write an input file, run interactively, and scale across nodes with Linda.",
+         "Guide", ["Chemistry", "Gaussian", "Slurm"], stale_after=HW_STALE,
+         frozen=True),  # 2026-11-16: curated from QuickBytes PR #259, tested on Easley
     Page("orca_easley_hopper.md", "tutorials/orca.md", "ORCA quantum chemistry",
          "Run ORCA quantum chemistry calculations in parallel on CARC clusters.",
          "Tutorial", ["Chemistry"]),
@@ -383,7 +398,7 @@ QUICKBYTE_GROUPS = [
     ("Julia", ["software/julia-jupyterhub.md"]),
     ("R", [
         "software/r-usage.md", "software/getting-r.md", "software/r-packages.md",
-        "tutorials/parallel-r-future.md", "software/gurobi-r.md",
+        "software/r-slurm-jobs.md", "tutorials/parallel-r-future.md", "software/gurobi-r.md",
     ]),
     ("Other programming languages", [
         "software/haskell.md", "software/perl-libraries.md",
@@ -401,13 +416,14 @@ QUICKBYTE_GROUPS = [
     ]),
     ("Data, visualization, and parallel computing", [
         "tutorials/spark.md", "software/paraview.md", "software/cuda-aware-mpi.md",
+        "software/cupy.md",
     ]),
     ("Bioinformatics", [
         "tutorials/gatk.md", "tutorials/metabarcoding.md", "tutorials/stacks.md",
         "tutorials/genome-evaluation.md", "tutorials/msprime.md",
         "tutorials/psmc.md", "tutorials/beast.md",
     ]),
-    ("Chemistry & materials", ["tutorials/vasp.md", "tutorials/orca.md"]),
+    ("Chemistry & materials", ["software/gaussian.md", "tutorials/vasp.md", "tutorials/orca.md"]),
     ("Computational immunology", ["tutorials/simcov.md"]),
     ("Astronomy", ["tutorials/mpi-casa.md"]),
     ("Containers", ["software/singularity.md"]),
@@ -424,6 +440,7 @@ FILE_ASSETS = [
     ("R_at_CARC/parallel_r.pbs", "r/parallel_r.pbs"),
     ("R_at_CARC/sequential.R", "r/sequential.R"),
     ("R_at_CARC/sequential_r.pbs", "r/sequential_r.pbs"),
+    ("R_at_CARC/sequential_r.sh", "r/sequential_r.sh"),
     ("matlabImportWheelerProfile.pbs", "matlab/matlabImportWheelerProfile.pbs"),
     ("beginner_intro_slides_2022.pdf", "workshops/beginner_intro_slides_2022.pdf"),
 ]
